@@ -32,6 +32,8 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Shop</h2>
 
+http://www.the-odin.com
+
 <h2>Videos</h2>
 
 <h2></h2>
