@@ -110,6 +110,8 @@ List of useful resources for Biohacking studies and operations:
  
  <a href="https://www.youtube.com/watch?v=GfE04tpaqxU">DNA Extraction from Blood</a>
  
+ </BR>
+ 
  
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/brain-hack.JPG)
 
