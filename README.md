@@ -14,7 +14,7 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Associations & Community Projects</h2>
 
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/4ThievesVinegar.jpg)
 
 <a href="https://fourthievesvinegar.org/">Four Thieves Vinegar</a>
 
