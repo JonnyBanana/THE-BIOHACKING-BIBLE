@@ -53,9 +53,24 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>DIY Lab</h2>
 
+
+<a href="https://makezine.com/2017/04/11/how-to-set-up-your-own-lab/">Biolab Setup</a>
+
+<a href="https://biodesign.cc/2013/12/25/diy-incubator/">Incubator</a>
+
+<a href="https://hackteria.org/wiki/DIY_Incubator">Incubator2</a>
+
 <a href="https://hackaday.io/project/3794/logs">Syringe Pump</a>
 
+
+
+
+
 <h2>Github Resources</h2>
+
+<a href="https://github.com/BioDesignRealWorld/Fermento/">Fermento</a>
+
+
 
 
 <h2>Micropropagation</h2>
