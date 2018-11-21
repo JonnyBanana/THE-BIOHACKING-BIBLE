@@ -40,7 +40,7 @@ List of useful resources for Biohacking studies and operations:
  
 <a href="https://www.carolina.com/">Carolina.com</a>
  
- <a href=" https://www.fishersci.com/us/en/home.html">Fisher Scientific</a>
+ <a href="https://www.fishersci.com">Fisher Scientific</a>
  
   <a href="http://www.the-odin.com">Odin</a>
  
