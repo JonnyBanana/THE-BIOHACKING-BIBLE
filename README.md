@@ -2,6 +2,10 @@
  
  </BR>
  
+ I created this repository more than anything else to rearrange the ideas in my fucking brain...
+ 
+ </BR>
+ 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
 
 </BR>
