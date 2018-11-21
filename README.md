@@ -40,15 +40,6 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.amazon.com/Biohacking-Manifesto-scientific-anti-aging-neuroscience-ebook/dp/B00X7CCNOY/ref=sr_1_6?s=books&ie=UTF8&qid=1542778035&sr=1-6&keywords=biohacking">The Biohacking Manifesto</a>
 
-
-
-
-
-
-
-
-
-
 <h2>CheatSheets</h2>
 
 
@@ -87,11 +78,48 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+
 <h2>Github Resources</h2>
 
-<a href="https://github.com/BioDesignRealWorld/Fermento/">Fermento</a>
+<a href="https://github.com/FourThievesVinegar/microlab">Apothecary MicroLab</a>
 
+<a href="https://github.com/BioHackAcademy/BioHackBoard">BioHack Board</a>
 
+<a href="https://github.com/cathalgarvey/biohacking-protocols">Biohacking Protocols</a>
+
+<a href="https://github.com/AlexVKO/Biohacking-tips">Biohacking Tips</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_Bioreactor">Bioreactor</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_Centrifuge">DIY Centrifuge</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_Microscope">DIY Microscope</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_GelBox">Gel Box</a>
+
+<a href="https://github.com/BioDesignRealWorld/Fermento/">Fermento</a
+ 
+ <a href="https://github.com/BioHackAcademy/BHA_Incubator">Incubator</a>
+ 
+ <a href="https://github.com/BioHackAcademy/BHA_Stirrer">Magnetic Stirrer</a>
+
+<a href="https://github.com/byjl/MindWave-EEG-Recorder">MindWawe EEG Recorder</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_PeristalticPump">Peristaltic Pump</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_Photobioreactor">PhotoBioReactor</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_Spectrophotometer">SpectroPhotometer</a>
+
+<a href="https://github.com/DIYbiosphere/sphere">Sphere</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_SterileHood">Sterile Hood</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_SyringePump">Syringe Pump</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_Thermocycler">Thermocycler</a>
+
+<a href="https://github.com/BioHackAcademy/BHA_Webcam_Microscope">WebCam Microscope</a>
 
 
 <h2>Micropropagation</h2>
