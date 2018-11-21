@@ -29,12 +29,20 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Books</h2>
 
+<a href="https://www.amazon.com/Biohackers-Journal-Nootropic-Monitoring-Biohacking-ebook/dp/B01HIZS52O/ref=sr_1_20?s=books&ie=UTF8&qid=1542778024&sr=1-20&keywords=biohacking">Biohackers Journal</a>
+
 <a href="https://www.amazon.com/Biopunk-Solving-Biotechs-Problems-Kitchens/dp/1617230073/ref=sr_1_17?s=books&ie=UTF8&qid=1542778024&sr=1-17&keywords=biohacking" target="blank">BioPunk</a>
 
 <a href="https://www.amazon.com/BioBuilder-Synthetic-Biology-Natalie-Kuldell/dp/1491904291/ref=sr_1_10?s=books&ie=UTF8&qid=1542778035&sr=1-10&keywords=biohacking">Bio Builders</a>
 
+<a href="https://www.amazon.com/dp/B01BA0E086/ref=sxbs_sxwds-stppvp_2?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=d45777d6-4c64-4117-8332-1659db52e64f&pd_rd_wg=YjRRH&pf_rd_r=PZMX798ZPJPFHF07911S&pf_rd_s=desktop-sx-bottom-slot&pf_rd_t=301&pd_rd_i=B01BA0E086&pd_rd_w=WWFT6&pf_rd_i=biohacking&pd_rd_r=ccd438fb-931c-4a35-94c6-1e82b60cfb70&ie=UTF8&qid=1542778096&sr=2">Nootropics and Smart Drugs</a>
+
 
 <a href="https://www.amazon.com/Biohacking-Manifesto-scientific-anti-aging-neuroscience-ebook/dp/B00X7CCNOY/ref=sr_1_6?s=books&ie=UTF8&qid=1542778035&sr=1-6&keywords=biohacking">The Biohacking Manifesto</a>
+
+
+
+
 
 
 
