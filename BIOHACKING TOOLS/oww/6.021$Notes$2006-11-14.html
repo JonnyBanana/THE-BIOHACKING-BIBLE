@@ -1,0 +1,46 @@
+==Electrodiffusion==
+'''Nernst-Planck Equation''': <math>J_n = -z_nFD_n\frac{\partial c_n}{\partial x}-u_nz_n^2F^2c_n\frac{\partial\psi}{\partial x}</math>
+
+'''Einstein's relation''': <math>D_n=u_nRT</math>
+
+'''Continuity''': <math>\frac{\partial J_n}{\partial x} = -z_nF\frac{\partial c_n}{\partial t}</math>
+
+'''Poisson's Equation''': <math>\frac{\partial^2 \psi}{\partial x^2} = -\frac{1}{\epsilon}\sum_n z_nFc_n(x,t)</math>
+
+===Membranes===
+<math>J_n = G_n (V_m-V_n)</math>
+
+<math>G_n = \frac{1}{\int_0^d{\frac{dx}{u_nz_n^2F^2c_n(x)}}}</math> (electrical conductivity)
+
+'''Nernst potential''': <math>V_n=\frac{RT}{z_nF}{\rm ln}\frac{c^o_n}{c^i_n} \approx \frac{60 {\rm mV}}{z_n}{\rm log}\frac{c^o_n}{c^i_n}</math>
+
+===Cells===
+<math>G_m=\sum_n G_n</math>
+
+'''Resting membrane potential''': <math>V_m^o = \sum_n \frac{G_n}{G_m}V_n</math>
+
+'''Resting potential with active pumps''': <math>V_m^o = \sum_n \frac{G_n}{G_m}V_n - \frac{1}{G_m}\sum_n J_n^a</math>
+
+==Core conductor model==
+<math>\frac{\partial I_i(z,x)}{\partial z}=-K_m(z,t)</math>
+
+<math>\frac{\partial I_o(z,x)}{\partial z}=K_m(z,t)-K_e(z,t)</math>
+
+<math>\frac{\partial V_i(z,t)}{\partial z}=-r_iI_i(z,t)</math>
+
+<math>\frac{\partial V_o(z,t)}{\partial z}=-r_oI_o(z,t)</math>
+
+'''THE core conductor equation''': <math>\frac{\partial^2 V_m(z,t)}{\partial z^2}=(r_o+r_i)K_m(z,t)-r_oK_e(z,t)</math>
+
+'''wave equation''': <math>\frac{\partial^2 V_m(z,t)}{\partial z^2}=\frac{1}{\nu^2}\frac{\partial^2 V_m(z,t)}{\partial t^2}</math>
+
+<math>\nu = \sqrt{\frac{C}{(r_o+r_i)2\pi a}}</math>, <math>\nu = \sqrt{\frac{Ca}{2\rho}} \propto \sqrt{a}</math>
+
+<math>v_o(z)=-\frac{r_o}{r_o+r_i}(v_m(z) - V_m^o)</math>
+
+==Hodgkin-Huxley==
+<math>G_{K}(V_m,t) = \overline{G_K} n^4(V_m,t)</math>, <math>G_{Na}(V_m,t) = \overline{G_{Na}} m^3(V_m,t)h(V_m,t)</math>
+
+<math>n(V_m,t) + \tau_n(V_m)\frac{dn(V_m,t)}{dt} = n_\infty(V_m)</math>, <math>m(V_m,t) + \tau_m(V_m)\frac{dm(V_m,t)}{dt} = m_\infty(V_m)</math>, <math>h(V_m,t) + \tau_h(V_m)\frac{dh(V_m,t)}{dt} = h_\infty(V_m)</math>
+
+<math>x_\infty=\frac{\alpha_x}{\alpha_x+\beta_x}, \tau_x=\frac{1}{\alpha_x+\beta_x}</math>

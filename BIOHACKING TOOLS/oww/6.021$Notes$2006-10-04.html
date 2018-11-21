@@ -1,0 +1,77 @@
+==Ion Transport==
+* Major constituents of cells
+* important functions
+* charge is substrate for neural communication
+* every charged particle (in principle) affects every other ion
+** more complicated than other mechanisms
+
+==Mechanisms==
+
+2 distinct mechanisms of diffusion and drift
+
+===Diffusion===
+Given by Fick's law
+<math>\phi_n = -D_n\frac{\partial c_n}{\partial x}</math>
+
+===Drift===
+* Effect of electrical forces on montion of charged particles.
+* Electric Field (vector field) <math>E(x,t)</math>
+* force on particle <math>f_p = QE(x,t) = z_neE(x,t)</math> where <math>z_n</math> is valence and <math>e\approx 1.6\cdot 10^{-19}</math> C.
+* Motions of small particles in water are viscosity dominated (Stokes 1855)
+
+{|
+|-
+| Forces
+| Size scale
+| Time scale
+|-
+| inertial (F=ma)
+| <math>radius^3</math>
+| acceleration
+|-
+| viscosity
+| <math>radius</math>
+| velocity
+|}
+
+<math>v\propto f_p = u_p f_p = u_n f</math> where <math>u_p</math> is mechanical mobility in units of velocity/force, <math>u_n</math> is the molar mechanical mobility and <math>f</math> becomes the force on a mole of particle.
+
+For charged particles:
+<math>v=u_nz_neN_AE(x,t)=u_nz_nFE(x,t)</math> (<math>F=eN_A</math> which is Faradya's number) = charge/mole about 96500 C/mol.
+
+<math>D_n=u_nRT</math>: Einstein's relation
+
+Flux due to drift:
+<math>\phi_n = \lim_{A\rightarrow 0 ; \Delta t\rightarrow 0}\frac{c_n(x,t)A\Delta x}{A\Delta t} = vc_n(x,t)</math>
+
+<math>\phi_n = c_n(x,t)u_nz_nFE(x,t) = -c_nu_nz_nF\frac{\partial\psi}{\partial x}</math> where <math>E=-\frac{\partial\psi}{\partial x}</math> (electric field depends on the potential gradient)
+
+The flux of ions is the current density given by <math>J_n = z_nF\phi_n</math> This is in units of current/area and is easier to measure than flux.
+
+===Combined transport===
+Combining diffusion and drift to get '''Nernst-Planck Equation''':
+
+<math>J_n = -z_nFD_n\frac{\partial c_n}{\partial x}-u_nz_n^2F^2c_n\frac{\partial\psi}{\partial x}</math>
+
+Note that this is really just a combination of Fick's and Ohm's Laws.
+
+'''Continuity:''' (needed to solve equations just like in other transport mechanisms)
+
+<math>\frac{\partial\phi_n}{\partial x} = -\frac{\partial c_n}{\partial t}</math> or equivalently
+
+<math>\frac{\partial J_n}{\partial x} = -z_nF\frac{\partial c_n}{\partial t}</math>
+
+Unlike diffusion, also need one more equation for <math>\psi</math> but this electric potential depends on all particles.
+
+From Gauss' law:
+<math>\frac{\partial E}{\partial x} = \frac{1}{\epsilon}\rho(x,t) = \frac{1}{\epsilon}\sum_n z_nFc_n(x,t)</math> where <math>\epsilon</math> is the permitivity and <math>\rho</math> is the charge density.
+
+This leads to '''Poisson's Equation'''
+<math>\frac{\partial^2 \psi}{\partial x^2} = -\frac{1}{\epsilon}\sum_n z_nFc_n(x,t)</math>
+
+==Electroneutrality==
+
+*In a solution with some charge, after some time, all charges go to the edges away from each other.
+* <math>\tau_r</math> is the relaxation time and is on the order of nanoseconds for physiological salines
+*Similarly, in space, a region around the charge is formed that negates the charge. This is known as the Debye layer and has a thickness of around a nanometer.
+*Thus for times much greater than the relaxation time and distances much greater than the Debye distance, we can assume electroneutrality of the solution.

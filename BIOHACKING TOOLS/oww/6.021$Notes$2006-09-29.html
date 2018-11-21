@@ -1,0 +1,25 @@
+==4 state model==
+* Simplify the model with assumptions
+** <math>\alpha_1=\alpha_3, \beta_1=\beta_3</math> (binding same on inside and outside)
+** <math>\alpha_2=\alpha_4, \beta_2=\beta_4</math> (ability for protein to translocate/flip is independent of solute)
+** Binding fast relative to translocation
+*** Only care about the dissociation constant as it will always be in steady state
+* Instead of concentrations (which is per volume), it is easier to think about <math>\mathfrak{N}_E</math> (per surface area) <math>\mathfrak{N}_E=c_E\cdot d</math> where <math>d</math> is the membrane thickness
+* This leads to the simple symmetric four state carrier model
+* The solution can be interpreted intuitively 
+** The enzyme is first partitioned into facing in or out depending on <math>\alpha, \beta</math>
+** Then it is partitioned into whether has substrate bound by <math>K</math> and <math>c_s</math>
+** The concentration difference between inside and outside is not important. All that matters is the concentration relative to K.
+
+
+Solution to simple symmetric 4-state carrier model: 
+
+<math>\mathfrak{N}^i_{ES}=\frac{\beta}{\alpha+\beta}\frac{c^i_s}{c^i_s+K}\mathfrak{N}_{ET}</math>
+
+<math>\mathfrak{N}^i_{E}=\frac{\beta}{\alpha+\beta}\frac{K}{c^i_s+K}\mathfrak{N}_{ET}</math>
+
+<math>\mathfrak{N}^o_{ES}=\frac{\alpha}{\alpha+\beta}\frac{c^o_s}{c^o_s+K}\mathfrak{N}_{ET}</math>
+
+<math>\mathfrak{N}^o_{E}=\frac{\alpha}{\alpha+\beta}\frac{K}{c^o_s+K}\mathfrak{N}_{ET}</math>
+
+<math>\phi_s=(\phi_s)_{max}(\frac{c^i_s}{c^i_s+K}-\frac{c^o_s}{c^o_s+K})</math>; <math>(\phi_s)_{max}=\frac{\alpha\beta}{\alpha+\beta}\mathfrak{N}_{ET}</math>

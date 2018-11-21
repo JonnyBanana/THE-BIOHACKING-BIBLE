@@ -1,0 +1,21 @@
+==Threshold in Hodgkin-Huxley model==
+* threshold is sharp
+* change in <math>10^{-8}-10^{-14}</math> can change AP to non-AP in model
+* determine threshold in model
+* asssume n & h are so slow that <math>n(V_m,t)=n_\infty(V_m^o)</math> and <math>h(V_m,t)=h_\infty(V_m^o)</math>
+* Also m is so fast that <math>m(V_m,t)=m_\infty(V_m)</math>
+* The potassium current is constant as the the potassium conductance doesn't change
+* Find that there are 2 stable equilibrium points and 1 unstable point
+* The unstable point is the threshold voltage
+* We can relax assumption that m is instant and instead obeys the standard HH model for m
+* Make phase plane showing m vs <math>V_m</math>
+* To be at equilibrium, must be on isoclines
+** <math>\frac{dm}{dt} = 0 \rightarrow m=m_\infty</math>
+** <math>\frac{V_m}{dt} = 0</math>
+** These two lines again cross 3 times, with one point being unstable
+* The separatrix curve in <math>m-V_m</math> space determines whether will go to rest or <math>V_{Na}</math>
+* So threshold depends on both m and <math>V_m</math>
+* If instead of fixing h to <math>h_\infty</math>, we set it to another value, as h decreases, the isoclines change such that thresholds increase until a point when the curves only intersect once at rest
+** This explains the relative and absolute refractory period
+** The relative refractory period is characterized by higher threshold
+** During the absolute refractory period it is impossible to reach threshold no matter the amount of stimulus

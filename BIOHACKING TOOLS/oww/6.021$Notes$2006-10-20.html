@@ -1,0 +1,29 @@
+==Core conductor model==
+* Look at impact of topology on electrical properties
+* <math>V_m(z,t)</math>: different potentials along the cell
+* Break into lumps/nodes
+* Treat as internal resistors, outer resistors, and unknown boxes connecting inside/outside (membrane potential)
+* Inner conductor: resistance <math>R_i = r_i dz</math>. <math>R_i</math> is in ohms and <math>r_i</math> is in ohms/m.
+* Outer conductor: resistance <math>R_o = r_o dz</math> (similar to inner conductor)
+* Current through membrane: <math>I_m = k_m dz</math> <math>I_m</math> is in amps and <math>k_m</math> is in A/m.
+* Assume topology, Ohm's law, but nothing about the membrane
+* Core conductor equations:
+*#<math>\frac{\partial I_i(z,x)}{\partial z}=-K_m(z,t)</math>
+*#<math>\frac{\partial I_o(z,x)}{\partial z}=K_m(z,t)-K_e(z,t)</math>
+*#*<math>K_e</math> is externally applied current
+*#<math>\frac{\partial V_i(z,t)}{\partial z}=-r_iI_i(z,t)</math>
+*#<math>\frac{\partial V_o(z,t)}{\partial z}=-r_oI_o(z,t)</math>
+** The first 2 equations are continuity of current, the second two are Ohm's law
+* Combining equations, we get THE core conductor equation:
+**<math>\frac{\partial^2 V_m(z,t)}{\partial z^2}=(r_o+r_i)K_m(z,t)-r_oK_e(z,t)</math>
+** We still have assumed nothing about the membrane
+* Suppose no external current. <math>K_e = 0 \rightarrow I_i+I_o=0</math> (otherwise charge would build up)
+* If we know <math>V_m</math> for all space and time:
+** <math>K_m = \frac{1}{r_o+r_i}\frac{\partial^2 V_m(z,t)}{\partial z^2}</math>
+** <math>\frac{\partial V_m(z,t)}{\partial z} = -r_iI_i + r_oI_o = -(r_o+r_i)I_i</math>
+* For action potential traveling at constant speed <math>\nu</math>
+** <math>V_m(z,t)=f(t-\frac{z}{\nu})</math>
+**<math>\frac{\partial^2 V_m(z,t)}{\partial z^2}=\frac{1}{\nu^2}\frac{\partial^2 V_m(z,t)}{\partial t^2}</math> (wave equation)
+* From this model alone, we find that the current at the peak of the action potential is predicted to be inwards!
+** For all standard electrical elements (resistor, capacitor, inductor), we would predict outward current
+** This model makes no assumption about the membrane, only that Ohm's law holds

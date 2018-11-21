@@ -1,0 +1,11 @@
+==Cable model==
+* experimental data from lobster: <math>\lambda_c \approx 1.3</math> mm
+* Thus, infinitesimal electrode means much smaller than 1 mm and remote electrode means much greater than 1 mm
+* The distance a signal can travel without Hodgkin-Huxley regenerative mechanism is quite small
+* Look at dynamics of stimulus pulse
+** Pulse in space and time
+** Solution of form: <math>v_m(z,t)=w(z,t) e^{-t/\tau_m}</math>
+** where <math>\frac{\partial w}{\partial t} = \frac{\lambda_c^2}{\tau_m} \frac{\partial^2 w}{\partial z^2}</math>
+*** This is the Diffusion Equation with <math>D=\frac{\lambda_c^2}{\tau_m}</math>
+** The effect of the stimulus diffuses down according to w but also dissipates equally across the membrane
+* In decrement free conduction (HH), space/time relationship follows wave equation whereas in decremental conduction in cable model, it's diffusion-like

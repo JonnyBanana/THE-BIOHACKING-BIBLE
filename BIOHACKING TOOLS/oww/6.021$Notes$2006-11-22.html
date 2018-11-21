@@ -1,0 +1,43 @@
+==Single ion channels==
+* Neher & Sakmann 1970s, Nobel 1991
+* Patch clamp
+** Seal pipette against membrane to measure currents (~2pA)
+* Distinctive properties
+** Discrete levels of conduction
+** rapid transitions
+** seemingly random
+* Nothing like the macroscopic behavior from Hodgkin-Huxley model
+* Model
+** Integral membrane protein
+** Selectivity filter to sort out ions
+** Aqueous pore
+** gate that opens/closes to let ion through
+* How selective?
+** Li can seemingly substitute for Na
+** Can quantify selectivity
+*** Set <math>c^o_{Na} = c^i_{Na} \rightarrow V_{Na}=0 \rightarrow V_m = 0 \rightarrow I=0</math>
+*** Then replace extracellular Na with same amount of Li
+*** If channels substitute Li perfectly for Na, no current will flow
+*** Find the amount of extracellular Li that makes the current zero
+*** <math>\frac{P_{Li}}{P_{Na}} = \frac{c^o_{Na}}{c^o_{Li}}</math>
+** Measuring relative permeability of channel to various ions
+*** Many different ions can flow through the sodium and potassium channels, some better than sodium and potassium!
+* Linear approximation for permeation
+** <math>I = \gamma (V_m-V_n)</math>
+** I is the open channel current, <math>\gamma</math> the open channel conductance, <math>V_n</math> is the reversal potential.
+** If screening of ion is perfect, then <math>V_n</math> is the Nernst potential
+** Otherwise <math>V_n</math> is weighted sum of ions that can permeate
+* Model for gate
+** <math>\tilde{s}(t)</math>: random variable of state of gate (open/closed), either 0 or 1
+*** average of <math>\tilde{s}(t) = x</math>
+** <math>\tilde{g}(t)</math>: random variable of conductance 0 or <math>\gamma</math>
+*** Based on <math>\tilde{s}(t)</math>, <math>E[\tilde{g}(t)]=\gamma x=g</math>
+** <math>\tilde{i}(t)</math>: random variable of single channel current, 0 or I
+*** <math>E[\tilde{i}(t)]=Ix=\gamma (V_m - V_n) x = g(V_m - V_n)</math>
+* Assume cells have N channels that are identical but statistically independent
+** If N is large, total conductance is about the mean = Ng
+** <math> G = \frac{N}{A} g</math> (specific conductance)
+** Same with current: <math>J = \frac{N}{A} g(V_m-V_n)</math>
+* Model for state of channel
+** First order reversible reaction for probability gate is open
+** <math>x(t) = x_\infty+(x(0)-x_\infty)e^{-t/\tau_x}, \tau_x=\frac{1}{\alpha+\beta}, x_\infty=\frac{\alpha}{\alpha+\beta}</math>

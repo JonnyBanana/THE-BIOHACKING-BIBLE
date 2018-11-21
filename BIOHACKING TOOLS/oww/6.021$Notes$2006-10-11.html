@@ -1,0 +1,21 @@
+'''Nernst-Planck Equation''': <math>J_n = -z_nFD_n\frac{\partial c_n}{\partial x}-u_nz_n^2F^2c_n\frac{\partial\psi}{\partial x}</math>
+
+'''Continuity''': <math>\frac{\partial J_n}{\partial x} = -z_nF\frac{\partial c_n}{\partial t}</math>
+
+'''Poisson's Equation''': <math>\frac{\partial^2 \psi}{\partial x^2} = -\frac{1}{\epsilon}\sum_n z_nFc_n(x,t)</math>
+
+==Flux through membranes==
+* Assume membrane in steady state as before
+* concentrations of charge charge can't change so current is constant
+* Four inputs: voltage on inside and outside, concentration on inside and outside
+* <math>J_n = G_n (V_m-V_n)</math>
+* <math>G_n = \frac{1}{\int_0^d{\frac{dx}{u_nz_n^2F^2c_n(x)}}}</math> (electrical conductivity)
+** always greater than zero, means transport will always go down electrochemical gradient (lose energy)
+** Not really constant (depends on concentration) but in real cells, will seldom see much change in concentrations so we will assume <math>G_n</math> is constant.
+* <math>V_m=\psi(0)-\psi(d)</math> (potential difference across membrane)
+* <math>V_n=\frac{RT}{z_nF}{\rm ln}\frac{c^o_n}{c^i_n}</math> ('''Nernst equilibrium potential''')
+** this constant is part of the model and not directly measurable (not physical)
+** is electrical representation of chemical phenomenon
+** But can indirectly measure this by changing <math>V_m</math>. The Nernst potential is the same potential that when applied externally to the membrane causes no current.
+** <math>\frac{RT}{F}\approx 26mV</math> at room temperature
+** <math>\frac{RT}{F}{\rm ln(10)}\approx 60mV</math>, so can use <math>V_n \approx \frac{60mV}{z_n}{\rm log}\frac{c^o_n}{c^i_n}</math>

@@ -1,0 +1,22 @@
+==Ion channels==
+* Gate model
+** &alpha;: rate of opening
+** &beta;: rate of closing
+* Theory of absolute reaction rates (Arrhenius)
+** potential energy of open (<math>E_O</math>), closed (<math>E_C</math>), and intermediate barrier state (<math>E_B</math>)
+** <math>\alpha=Ae^{(E_C-E_B)/kT}</math>
+** <math>\beta=Ae^{(E_O-E_B)/kT}</math>
+* If gate has some charge, the potential energy can be function membrane potential
+** If assume simple voltage dependence, get similar looking rates as parameters in Hodgkin-Huxley model
+** As gate moves, its charge moves, so have extra '''gating current'''
+** <math>q_g</math>: gating charge
+** <math>i_g = \frac{d}{dt}q_g</math>
+** <math>\tilde{i}_g = \frac{d}{dt}\tilde{q}_g</math>
+** <math>\tilde{q}_g</math> is 0 or Q
+** <math>\tilde{i}_g</math> is impulses of amplitude Q up and down
+** At steady state, average of <math>\tilde{i}_g = 0</math>
+** <math>q_g = Qx</math>
+** <math>i_g = E[\tilde{i}_g] = E[\frac{d}{dt}\tilde{q}_g] = \frac{d}{dt}E[\tilde{q}_g] = \frac{d}{dt}Qx = Q\frac{dx}{dt}</math>
+** To measure gating current, disable the ion channel (ionic current)
+*** Have to separate out capacitance current which is much larger
+*** Gating current is non-linear while capacitance current is linear so can sum response to equal step up and step down to cancel out capacitive current and leave gating current

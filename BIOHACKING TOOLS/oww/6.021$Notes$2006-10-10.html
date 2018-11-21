@@ -1,0 +1,44 @@
+==Diffusion==
+'''Fick's 1st law''': <math>\phi(x,t)=-D\frac{\partial c(x,t)}{\partial x}</math>
+
+'''Continuity''': <math>-\frac{\partial\phi}{\partial x} = \frac{\partial c}{\partial t}</math>
+
+'''Diffusion Equation''': <math>\frac{\partial c}{\partial t} = D\frac{\partial^2 c}{\partial x^2}</math>
+
+Solution of diffusion equation to impulse stimulus is Gaussian:
+<math>c(x,t)=\frac{n_0}{\sqrt{4\pi Dt}}e^{-x^2/(4Dt)}</math>
+
+Time for half the solute to diffuse <math>x_{1/2}</math>: <math>t_{1/2}\approx\frac{x_{1/2}^2}{D}</math>
+
+'''Fick's law for membranes''': <math>\phi_n(t)=P_n(c_n^i(t)-c_n^o(t))</math>; <math>P_n=\frac{D_nk_n}{d}</math>
+
+Membrane steady state time constant: <math>\tau_{ss}=\frac{d^2}{\pi^2 D}</math>
+
+Solution for dissolve and diffuse: <math>c_n^i(t)=c_n^i(\infty)+(c_n^i(0)-c_n^i(\infty))e^{-t/\tau_{eq}}</math>; <math>c_n^i(\infty) = \frac{N_n}{V_i+V_o}, \tau_{eq}=\frac{1}{AP(1/V_i+1/V_o)}</math>
+
+==Osmosis==
+'''Van't Hoff Law''': <math>\pi(x,t)= RTC_\Sigma(x,t)</math>
+
+'''Darcy's Law''': <math>\Phi_V(x,t)= -\kappa\frac{\partial p}{\partial x}</math>
+
+'''Continuity''': <math>-\rho_m\frac{\partial \Phi_V}{\partial x} = 0</math>
+
+Hydraulic conductivity: <math>L_V = \frac{\kappa}{d}</math>
+
+Flux: <math>\Phi_V = L_V((p^i-\pi^i)-(p^o-\pi^o))</math>
+
+Cells: <math>\frac{dV^i}{dt} = -A(t)\Phi_V</math> with solution <math>v_c(\infty) = v_c' + \frac{N^i_\Sigma}{C^o_\Sigma}</math>
+
+==Carrier Transport==
+
+Solution to simple symmetric 4-state carrier model: 
+
+<math>\mathfrak{N}^i_{ES}=\frac{\beta}{\alpha+\beta}\frac{c^i_s}{c^i_s+K}\mathfrak{N}_{ET}</math>
+
+<math>\mathfrak{N}^i_{E}=\frac{\beta}{\alpha+\beta}\frac{K}{c^i_s+K}\mathfrak{N}_{ET}</math>
+
+<math>\mathfrak{N}^o_{ES}=\frac{\alpha}{\alpha+\beta}\frac{c^o_s}{c^o_s+K}\mathfrak{N}_{ET}</math>
+
+<math>\mathfrak{N}^o_{E}=\frac{\alpha}{\alpha+\beta}\frac{K}{c^o_s+K}\mathfrak{N}_{ET}</math>
+
+<math>\phi_s=(\phi_s)_{max}(\frac{c^i_s}{c^i_s+K}-\frac{c^o_s}{c^o_s+K})</math>; <math>(\phi_s)_{max}=\frac{\alpha\beta}{\alpha+\beta}\mathfrak{N}_{ET}</math>

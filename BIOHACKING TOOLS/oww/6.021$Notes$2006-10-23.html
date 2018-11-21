@@ -1,0 +1,25 @@
+*The core-conductor equation: <math>\frac{\partial^2 V_m(z,t)}{\partial z^2}=(r_o+r_i)K_m(z,t)-r_oK_e(z,t)</math>
+* action potential in neurons
+** spatial extent
+*** positive membrane potential for about 1ms
+*** speed of propagation about 30 m/s
+*** over a space of about 30 mm (large)
+** transmembrane current is inward at action potential peak
+** transmembrane current is outward ahead of action potential peak
+*** outward current hels depolarize membrane and can help AP to propagate
+*** but same logic would have AP propagating in other direction also (if it weren't refractory)
+* dependence of speed on geometry
+** AP, <math>k_e=0</math>
+** <math>\frac{\partial^2 V_m(z,t)}{\partial z^2}=(r_o+r_i)K_m(z,t)</math>
+** <math>\frac{1}{\nu^2}\frac{\partial^2 V_m(z,t)}{\partial t^2}=(r_o+r_i)2\pi a J_m</math>
+*** we converted <math>K_m</math> (per length) to <math>J_m</math> (per area)
+** <math>\frac{\frac{\partial^2 V_m(z,t)}{\partial t^2}}{J_m}=\nu^2(r_o+r_i)2\pi a = C</math>
+*** this is a constitutive relationship
+*** right hand side is constant and independent of the network topology
+** <math>\nu = \sqrt{\frac{C}{(r_o+r_i)2\pi a}}</math>
+** we can determine how the speed of an action potential depends on <math>r_i, r_o, a</math>, e.g. increasing external resistance slows AP
+** a '''space clamp''' shorts the internal resistance with a wire so that <math>r_i=0</math>. As the external resistance is usually very small, the speed of the action potential becomes very large (thus changing the cell to be 1D)
+** Assume external resistance is small, <math>r_i = \frac{\rho}{A} = \frac{\rho}{\pi a^2}</math>, so <math>\nu = \sqrt{\frac{Ca}{2\rho}} \propto \sqrt{a}</math>
+*** this only holds true for unmyelinated neurons
+* can also infer transmembrane potential using the outside potential (which is easier to measure)
+** <math>v_o(z)=-\frac{r_o}{r_o+r_i}(v_m(z) - V_m^o)</math>

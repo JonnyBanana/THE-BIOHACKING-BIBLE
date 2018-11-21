@@ -1,0 +1,27 @@
+==Chemical Transport==
+* Glucose as example
+* Transport appears faster than expected from diffusion (Transport is ''facilitated'')
+** About <math>10^5</math> speedup
+* Structure specific
+** similar sugars transported very differently
+* Transport saturates
+* Can be inhibited by other solutes (not independent)
+* Drugs can completely block transport
+* hormonal control, highly regulated (e.g. insulin)
+
+==Model==
+* Transport by membrane protein
+* binds solute, flips, releases solute on other side
+* protein can flip with or without solute
+* cannot treat individual solute molecules independently as they are competing for the protein
+* flipping is treated as simple first order reversible reaction
+** <math>R\ \overrightarrow{\leftarrow}\ P</math> with a forward rate constant of <math>\alpha</math> and reverse rate constant of <math>\beta</math>
+** At equilibrium, the relatve concentrations of product P to reactant R will be the association constant <math>K_a = \frac{\alpha}{\beta}</math> 
+** the kinetics are exponential with a time constant <math>\tau = \frac{1}{\alpha+\beta}</math>
+* binding reaction
+** <math>S+E\ \overrightarrow{\leftarrow}\ ES</math>
+** law of mass action, rate depends on product of concentrations
+** Will usually use dissociation constant <math>K=\frac{1}{K_a}</math> (units concentration)
+** total enzyme <math>C_{ET}=C_E+C_{ES}</math> is constant
+** Michaelis-Menten (hyperbolic) kinetics of form <math>y=\frac{a}{a+x}</math>
+** when drawn on doubly reciprocal coordinates, get straight line

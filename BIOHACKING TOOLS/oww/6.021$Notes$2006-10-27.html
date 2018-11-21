@@ -1,0 +1,20 @@
+==Hodgkin-Huxley==
+* assumed conductances on depend on membrane potential and not concentrations
+** used this to determine contribution of Na and K currents by fixing membrane potential and changing concentrations which affect Nernst potentials only
+* persistent current primarily due to K
+* transient current due to Na
+* <math>J_{Na}(V_m,t) = G_{Na}(V_m,t) \cdot (V_m(t) - V_{Na})</math>
+* <math>G_{Na}(V_m,t) = \frac{J_{Na}(V_m,t)}{V_m(t) - V_{Na}}</math>
+* <math>G_{K}(V_m,t) = \frac{J_{K}(V_m,t)}{V_m(t) - V_{K}}</math>
+* <math>V_m(t) - V_{Na}</math> is constant for <math>t > 0</math> (step in potential). Same for K
+** Thus conductances are simply scaled versions of the current
+** Fit the current responses using following parameters
+* <math>G_{K}(V_m,t) = \overline{G_K} n^4(V_m,t)</math> where
+** <math>n(V_m,t) + \tau_n(V_m)\frac{dn(V_m,t)}{dt} = n_\infty(V_m)</math>
+* <math>G_{Na}(V_m,t) = \overline{G_{Na}} m^3(V_m,t)h(V_m,t)</math> where
+** <math>m(V_m,t) + \tau_m(V_m)\frac{dm(V_m,t)}{dt} = m_\infty(V_m)</math>
+** <math>h(V_m,t) + \tau_h(V_m)\frac{dh(V_m,t)}{dt} = h_\infty(V_m)</math>
+* <math>n_\infty</math> and <math>m_\infty</math> are activating functions
+** are about 0 at negative <math>V_m</math> and has asymptote 1
+* <math>h_\infty</math> is the reverse. =1 for low <math>V_m</math> and 0 for high <math>V_m</math>
+* <math>\tau_m</math> (time constant for activating Na) is much smaller than other time constants

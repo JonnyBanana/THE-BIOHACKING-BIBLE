@@ -1,0 +1,45 @@
+==Myelinated axons==
+* Potential is not just at nodes
+** Is greatly spread out
+** Reacts very slowly
+* Voltage clamp
+** 3 barriers to separate 3 nodes
+** Test one node by shorting out the 2 adjacent nodes with KCl in bath
+*** <math>V_K = 0 \rightarrow V_m = 0 \rightarrow G_K \uparrow</math>
+** Inject current in one, force zero voltage drop across other side via feedback to measure node in middle
+* Fitting data
+** Frog
+*** <math>I_{Na}=\overline{I_{Na}}(V_m)m^2h</math>
+*** <math>I_K=\overline{I_K}(V_m)n^2</math>
+*** <math>I_p=\overline{I_p}(V_m)p^2</math> (different sodium)
+** Rabbit
+*** <math>I_{Na}=\overline{I_{Na}}(V_m)m^2h</math>
+*** <math>I_K=</math>small
+* Model of myelinated fiber
+** Core conductor model with cable model at internodes and Hodgkin-Huxley like model at nodes
+* Internode parameters
+** inner diameter d, outer diameter with myelin D, length L
+** Experimentally find <math>d \propto D \propto L</math> in many different cells
+** Why does this scaling hold?
+** <math>L \approx 0.5 \lambda_c</math> tends to give the fastest conduction
+*** Internode is electrically small, ''but just barely''
+*** The entire internode is roughly isopotential
+** <math>v = \frac{L}{\tau_m}</math> and <math>\tau_m</math> is independent of shape
+* Fault tolerant: safety factor
+** Several nodes (amplifiers) can fail and still give an action potential (but takes longer -- more delay)
+* Myelinated fiber advantages
+{|
+|-
+|
+|myelinated
+|unmyelinated
+|-
+| speed
+| 100 m/s
+| 10 m/s
+|-
+| size
+| 10 <math>\mu</math>m
+| 500 <math>\mu</math>m
+|}
+* myelinated fibers also use less energy (only nodes use energy)

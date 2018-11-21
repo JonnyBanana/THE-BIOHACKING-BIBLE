@@ -1,0 +1,17 @@
+==Cable model==
+* The cable model is linear approximation of Hodgkin-Huxley model for small signals
+* If the change in membrane voltage is small, than the change in m, n, and h are all small so we can ignore
+* Thus all conductances are constant
+* <math>J_m = C_m\frac{dV_m}{dt}+G_m(V_m-V_m^o)</math>
+* Cable Equation: <math>v_m+\tau_m\frac{\partial v_m}{\partial t}-\lambda_c^2\frac{\partial^2v_m}{\partial z^2}=r_o\lambda_c^2K_e</math>
+** <math>\tau_m=\frac{c_m}{g_m}</math> (independent of cell size)
+** <math>\lambda_c = \frac{1}{\sqrt{g_m(r_o+r_i)}}</math>
+** <math>v_m = V_m - V_m^o</math>
+* Lord Kelvin (1855)
+** problem of putting cable under Atlantic for telegraphy
+** made with copper and tar surrounded by sea water
+** Same problem as axon + membrane
+* Assume infintesmal electrode to a remote electrode
+* Given a pulse of current stimulus, look at steady state response 
+** <math>v_m-\lambda_c^2\frac{\partial^2v_m}{\partial z^2}=r_o\lambda_c^2K_e</math>
+** solution: <math>v_m(z) = \frac{r_o\lambda_c}{2}I_e e^{-|z|/\lambda_c}</math>
