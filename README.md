@@ -12,27 +12,44 @@
 
 List of useful resources for Biohacking studies and operations:
 
+
 <h2>Associations & Community Projects</h2>
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/4ThievesVinegar.jpg)
 
 <a href="https://fourthievesvinegar.org/">Four Thieves Vinegar</a>
 
+<a href="https://www.personalgenomes.org/">The Personal Genome Project</a>
+
+
 <h2>Bacteria</h2>
 
 <a href="https://openwetware.org/wiki/E._coli_genotypes">E. Coli Genotypes</a>
 
+
 <h2>Books</h2>
+
 
 <h2>CheatSheets</h2>
 
+
 <h2>Cheapest and Helpful Stuff</h2>
+
 
 <h2>Converter & Tools</h2>
 
 <a href="https://www.addgene.org/">Addgene</a>
 
+<a href="https://www.ncbi.nlm.nih.gov/">National Center for Biotechnology Information</a>
+
+<a href="https://pubchem.ncbi.nlm.nih.gov/">Open Chemistry Database</a>
+
+
+
+
+
 <h2>CRISPR</h2>
+
 
 <h2>DIY Lab</h2>
 
@@ -40,9 +57,12 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Github Resources</h2>
 
+
 <h2>Micropropagation</h2>
 
+
 <h2>Nootropics</h2>
+
 
 <h2>Plasmids</h2>
 
