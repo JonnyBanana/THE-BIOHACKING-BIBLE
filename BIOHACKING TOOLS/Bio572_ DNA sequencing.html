@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+	<META NAME="GENERATOR" Content="Symantec Visual Page 1.0.1">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<TITLE>Bio572: DNA sequencing</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<FORM ACTION="default.cgi" METHOD="POST" ENCTYPE="application/x-www-form-urlencoded"
+name="testform">
+<P ALIGN="CENTER"><FONT SIZE="5" COLOR="#990033" face="Arial, Helvetica, sans-serif"><B>Lecture
+8</B></FONT></P>
+
+<P ALIGN="CENTER"><FONT SIZE="5" COLOR="#990033" face="Arial, Helvetica, sans-serif"><B>DNA
+Sequencing</B></FONT></P>
+<P><FONT SIZE="4"><BR>
+</FONT>
+<HR>
+</P>
+<P><BR>
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">&#160;</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P>In the old days, there were two competing methods of determining DNA sequence:</P>
+			<UL>
+				<LI>Maxam - Gilbert Method, in which a DNA sequence is end-labeled with [P-32] phosphate
+				and chemically cleaved to leave a signature pattern of bands.
+				<LI>Sanger Method, in which a DNA sequence is annealed to an oligonucleotide primer,
+				which is then extended by DNA polymerase using a mixture of dNTP and ddNTP (chain
+				terminating) substrates.
+			</UL>
+			<P>Since the Maxam - Gilbert method is not frequently used, it will not be described,
+			however one of its advantage is that it permits direct sequencing of small fragments.
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">
+			<DIV ALIGN="RIGHT">
+			<P><A NAME="Sanger"></A><FONT COLOR="#AA0000"><B>Sanger Method (Dideoxynucleotide
+			chain termination)</B></FONT>
+</DIV>
+		</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P>Here's an example of how one goes about sequencing by this method.<BR>
+			<BR>
+			First, anneal the primer to the DNA template (usually single stranded):</P>
+			<PRE>     5'-GAATGTCCTTTCTCTAAG
+3'-GGAGACTTACAGGAAAGAGATTCAGGATTCAGGAGGCCTACCATGAAGATCAAG-5'</PRE>
+			<P><BR>
+			Then split the sample into four aliquots, in tubes labeled &quot;G&quot;, &quot;A&quot;,
+			&quot;T&quot; and &quot;C&quot; and add the following substrates to the respective
+			tubes:<BR>
+			<BR>
+			&quot;G&quot; tube: All four dNTPs, including one that is labeled, <B>plus ddGTP<BR>
+			</B>&quot;A&quot; tube: All four dNTPs, including one that is labeled, <B>plus ddATP<BR>
+			</B>&quot;T&quot; tube: All four dNTPs, including one that is labeled, <B>plus ddTTP<BR>
+			</B>&quot;C&quot; tube: All four dNTPs, including one that is labeled, <B>plus ddCTP<BR>
+			<BR>
+			</B>When a polymerase (e.g. Klenow fragment) is added to the tubes, the synthetic
+			reaction proceeds until, by chance, a dideoxynucleotide is incorporated instead of
+			a deoxynucleotide. This is a &quot;chain termination&quot; event, because there is
+			a 3' H instead of a 3' OH group. Since the synthesized DNA contains some radiolabeled
+			(or chemically labeled) substrates, the products can be detected and distinguished
+			from the template.
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">&#160;</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P><B>Reminder: The difference between dATP and ddATP</B></P>
+			<CENTER>
+			<P><IMG SRC="images/seq4.gif" WIDTH="401" HEIGHT="328" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3">
+</CENTER>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">&#160;</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P><B>If, for example, we were to look only at the &quot;G&quot; reaction</B>, there
+			would be a mixture of the following products of synthesis:</P>
+			<PRE>     5'-GAATGTCCTTTCTCTAAGTCCTAA<FONT COLOR="#FF0000"><B>G</B></FONT><B>
+</B>3'-GGAGACTTACAGGAAAGAGATTCAGGATTCAGGAGGCCTACCATGAAGATCAAG-5'
+
+     5'-GAATGTCCTTTCTCTAAGTCCTAAGTCCTCC<FONT COLOR="#FF0000"><B>G</B></FONT><B>
+</B>3'-GGAGACTTACAGGAAAGAGATTCAGGATTCAGGAGGCCTACCATGAAGATCAAG-5'
+
+     5'-GAATGTCCTTTCTCTAAGTCCTAAGTCCTCCG<FONT COLOR="#FF0000"><B>G</B></FONT><B>
+</B>3'-GGAGACTTACAGGAAAGAGATTCAGGATTCAGGAGGCCTACCATGAAGATCAAG-5'
+
+     5'-GAATGTCCTTTCTCTAAGTCCTAAGTCCTCCGGAT<FONT COLOR="#FF0000"><B>G</B></FONT><B>
+</B>3'-GGAGACTTACAGGAAAGAGATTCAGGATTCAGGAGGCCTACCATGAAGATCAAG-5'
+
+     5'-GAATGTCCTTTCTCTAAGTCCTAAGTCCTCCGGATG<FONT COLOR="#FF0000"><B>G</B></FONT><B>
+</B>3'-GGAGACTTACAGGAAAGAGATTCAGGATTCAGGAGGCCTACCATGAAGATCAAG-5'
+
+     5'-GAATGTCCTTTCTCTAAGTCCTAAGTCCTCCGGATGGTACTTCTA<FONT COLOR="#FF0000"><B>G</B></FONT><B>
+</B>3'-GGAGACTTACAGGAAAGAGATTCAGGATTCAGGAGGCCTACCATGAAGATCAAG-5'</PRE>
+			<P><BR>
+			(and so on, if the DNA being sequenced continues to the right)
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">
+			<P ALIGN="RIGHT"><FONT COLOR="#AA0000"><I>The sequencing gel</I></FONT>
+		</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P>These products are denatured into single stranded DNA molecules and run on a polyacrylamide/urea
+			gel. The gel is dried onto chromatography paper (to reduce its thickness and keep
+			it from cracking) and exposed to X-ray film. Since the template strand is not radioactively
+			labeled, it does not generate a band on the X-ray film. Only the labeled top strands
+			generate bands, which would look like this:</P>
+			<CENTER>
+			<P><IMG SRC="images/seq1.gif" WIDTH="394" HEIGHT="202" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P>As you can see from this one reaction (the &quot;G&quot; reaction) the chain termination
+			events produce individual bands on a gel. The chain terminations closest to the primer
+			generate the smallest DNA molecules (which migrate further down the gel), and chain
+			terminations further from the primer generate larger DNA molecules (which are slower
+			on the gel and therefore remain nearer to the top).<BR>
+			<BR>
+			When similar chain termination reactions are run for each nucleotide, the four reactions
+			can be run next to each other, and the sequence of the DNA can be read off of the
+			&quot;ladder&quot; of bands, 5' to 3' sequence being read from bottom to top:</P>
+			<CENTER>
+			<P><IMG SRC="images/seq2.gif" WIDTH="343" HEIGHT="205" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P>That's the way &quot;manual&quot; sequencing is done. We'll have a bit more to
+			say about that before discussing &quot;automated&quot; sequencing methods.
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP"></TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P><B>The resolution of the gel electrophoresis</B> is very important in DNA sequencing.
+			Molecules that are 50, 100, or 200 bases in length must be separable from molecules
+			that are 51, 101, or 201 bases in length (respectively). There are several modifications
+			to improve the resolution:</P>
+			<UL>
+				<LI>The gels must be much large (notice the apparatus on the top of the shelf in
+				our classroom?) so that the molecules migrate further and are better resolved.
+				<LI>The gels must contain a high concentration of urea (7 to 8 molar) to prevent
+				folding of the molecules and formation of secondary structures by hydrogen bonding
+				that would alter the mobility of the molecule. Similarly, the samples are denatured
+				before they are loaded.
+				<LI>The gels are run at higher temperature (about 50 C), also to prevent H bond formation.
+			</UL>
+			<P>One thing I should confess is that this example has one bit of fiction - you can't
+			really obtain usable sequence information that close to the end of the primer, unless
+			your ddNTP/dNTP ratios are quite high. If you increased that ratio, you would make
+			it more difficult to read sequence 200 to 300 nucleotides further down, because most
+			of the synthetic products would have terminated before that point.
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">
+			<P ALIGN="RIGHT"><FONT COLOR="#AA0000"><I>Radioactive labels</I></FONT>
+		</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P><A NAME="radionucleides"></A><B>It is possible to obtain labeled products in one
+			of two ways:<BR>
+			</B><I>Internal labeling of products:<BR>
+			</I>In this case, one of the dNTP substrates is radiolabeled (or chemically labeled)
+			so that the synthetic products are marked internally, and possibly in many places
+			at once. The multiple sites of incorporation mean that the product will have a higher
+			specific activity.</P>
+			<CENTER>
+			<P><IMG SRC="images/seq7.gif" WIDTH="325" HEIGHT="145" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P>One disadvantage of this is that nonspecific side reactions (perhaps having nothing
+			to do with the oligonucleotide) will also be labeled.<BR>
+			<BR>
+			<I>End-labeling of products:<BR>
+			</I>This is used in the Maxim and Gilbert method, of course, but it can also be used
+			in Sanger sequencing methods. An oligonucleotide can be labeled with a P-32 phosphate
+			at its 5' end, for example, by the enzyme polynucleotide kinase and the substrate
+			<I>gamma-P-32 ATP</I>. If this radiolabeled oligonucleotide is annealed to a template
+			and extended with a polymerase, the products will be labeled only at their 5' end.</P>
+			<CENTER>
+			<P><IMG SRC="images/seq8.gif" WIDTH="328" HEIGHT="145" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P>An advantage of this is that only reactions involving the annealing of the oligonucleotide
+			will be labeled. A disadvantage is that at most one labeled atom is incorporated
+			into the synthetic product, so the specific activity is low.
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">&#160;</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P><B>The technology of DNA labeling has changed</B> in the last fifteen years, so
+			that there are many more options.<BR>
+			<BR>
+			<B><I>Radioactivity-based approaches:<BR>
+			</I>P-32 phosphate</B> labeling has many advantages and several disadvantages. The
+			half-life of P-32 is approximately 14 days, and so it is possible to label DNA to
+			a very high specific activity (meaning that a small number of moles of product generate
+			a large number of radioactive disintegrations per minute). One disadvantage of P-32
+			is that it produces a penetrating burst of beta particles (electrons) that generate
+			a &quot;wider&quot; signal on a piece of film. In the schematic diagram below, you
+			can see how this effect works:</P>
+			<CENTER>
+			<P><IMG SRC="images/seq5.gif" WIDTH="136" HEIGHT="194" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P>Because of this &quot;spreading out&quot; of the signal, you get bands that are
+			a bit &quot;foggy&quot; looking when you develop the film:</P>
+			<CENTER>
+			<P><IMG SRC="images/seq6.gif" WIDTH="210" HEIGHT="199" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P>Another disadvantage of P-32 is that radiolabeled substrates not have a long &quot;shelf-life&quot;
+			because the half life of the P-32 nucleus is short.</P>
+			<CENTER>
+			<P><IMG SRC="images/seq12.gif" WIDTH="156" HEIGHT="99" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P><B>P-33 phosphate</B> is now frequently used because it solves several of the
+			problems associated with P-32. The radioactive decay of P-33 is of lower energy,
+			so a sharper image can be generated on a piece of film. The half-life of P-33 is
+			about twice as long, so dNTP substrates labeled with it have a longer life as well.
+			An unfortunate consequence of a longer half-life however, is that the synthetic products
+			will have a slightly lower specific activity.<BR>
+			<BR>
+			<B>S-35 thiophosphate</B> is a second solution to the problems associated with P-32.
+			The radioactive sulfur takes the place of one of the oxygens in the phosphate, which
+			then becomes a &quot;thiophosphate.&quot; It has a longer half-life (87 days), meaning
+			that the substrate shelf-life is longer, and a less energetic decay, meaning that
+			the film results are sharper.
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">&#160;</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P><I>A word or two about radioactivity<BR>
+			<BR>
+			</I><B>We measure radioactivity using the &quot;Curie&quot; unit</B> (Ci), named
+			after the Nobel Laureates Marie and Pierre Curie. One Ci of a radioactive substance
+			is equal to approximately 2.2 x 10^12 disintegrations per minute. A micromole of
+			P-32 is approximately 6 Ci, while a micromole of S-35 is approximately 1 Ci. Why
+			the difference? Because while both the P-32 and S-35 are both bent upon self destruction,
+			the P-32 is disintegrating at a 6 times more rapid rate of decay, so more disintegrations
+			per minute will occur per mole of P-32 than per mole of S-35.<BR>
+			<BR>
+			<B>Radioactive decay is not a chemical reaction</B> - it is a nuclear reaction. That
+			means you cannot slow it down by putting it into the refrigerator.<BR>
+			<BR>
+			<B>Oh no! Here are some quantitative calculations to ponder:</B></P>
+			<UL>
+				<LI>The amount of P-32 that a laboratory worker would generally use to end label
+				an oligonucleotide is approximately 100 microcuries of gamma-phosphate labeled ATP
+				(an amount that would cost approximately $25). How many moles of ATP is that if the
+				specific activity is 6000 Ci/mmole?
+			</UL>
+			<P><I>Answer</I>: (1 x 10<SUP>-4</SUP> Ci)/(6000 Ci/mmole) = 1.6 x 10<SUP>-8</SUP>
+			mmole = 16 pmole.
+			<UL>
+				<LI>If this reaction is conducted in a reaction volume of 50 microliters, what is
+				the concentration of ATP that is available for use by the enzyme polynucleotide kinase?
+			</UL>
+			<P><I>Answer</I> : (1.6 x 10<SUP>-11</SUP> moles)/(5 x 10<SUP>-5</SUP> liters) =
+			3.1 x 10<SUP>-7</SUP> molar = 0.31 microM
+			<UL>
+				<LI>If the Km of the polynucleotide kinase is approximately 50 micromolar (for the
+				ATP substrate), is this going to be a happy enzyme?
+			</UL>
+			<P><I>Answer</I>: No, this enzyme is going to get very bored while waiting for substrate!<BR>
+			<BR>
+			Let's think ahead to what we might need if we were sequencing using an end-labeled
+			primer: Approximately 0.5 picomole of oligonucleotide primer must be used in a sequencing
+			reaction, to have a reasonable efficiency of annealing to a template.</P>
+			<UL>
+				<LI>If we label 1 pmole of oligonucleotide and the polynucleotide kinase uses approximately
+				half of the P-32 ATP in a 1 hour reaction, what will be the specific activity of
+				the product?
+			</UL>
+			<P><I>Answer:</I> (50 microCi incorporated/1 pmole oligo) = (5 x 10<SUP>-7</SUP>
+			Ci)/(1 x 10<SUP>-9</SUP> mmole)<BR>
+			= 500 Ci/mmole (since the theoretical maximum specific activity is 6000 Ci/mmole,
+			this means that approximately 1 out of every 12 oligonucleotides will have a radioactive
+			phosphate on it. The other 11 will be unlabeled.<BR>
+			<BR>
+			That doesn't sound too good!</P>
+			<UL>
+				<LI>Would it help to use more primer? What if we labeled 10 picomole of oligonucleotide
+				instead of 1 picomole?
+			</UL>
+			<P><I>Answer:</I> That wouldn't help at all! With the same amount of P-32 phosphate
+			applied, you would have 1 out of every 120 oligonucleotides labeled instead of the
+			1 out of 12 you had before. As a consequence, the synthetic products will be less
+			frequently labeled, and a given number of moles of product will have less radioactivity
+			associated with it (i.e. a lower specific activity).
+			<UL>
+				<LI>Would it help to use more P-32 in the reaction?
+			</UL>
+			<P><I>Answer:</I> Yes, any additional P-32 that you add will boost the specific activity
+			of your product, but the expense of the experiment will increase and your laboratory
+			safety officer may start to have heart palpatations when he or she sees how much
+			P-32 you're using!
+			<UL>
+				<LI>Let's stick with the original reaction (1 out of 12 labeled) and ask how many
+				disintegrations per minute would be present in each gel band, after annealing an
+				oligonucleotide to 0.1 pmole of plasmid, and extending it to produce 500 different
+				products? To simplify the calculation, we'll assume the 500 products of different
+				length are present in equal molar amounts (though in practice this is not so).
+			</UL>
+			<P><I>Answer:</I> If all 0.1 pmole of oligonucleotide are used up in this way, then
+			each band is 0.0002 pmole, or 0.2 fmole. Since the specific activity was 500 Ci/mmole
+			and 1 Ci is defined as 2.2 x 10<SUP>12</SUP> dpm, each band will generate <BR>
+			(2 x 10<SUP>-13</SUP> mmole)(500 Ci/mmole)(2.2 x 10<SUP>12</SUP> dpm/Ci)= 220 dpm.<BR>
+			This amount of radioactivity can be detected on X-ray film, after an overnight exposure.
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%">&#160;</TD>
+		<TD WIDTH="80%">
+			<P>Well! That was fun.</P>
+			<P><BR>
+			Here's a question for you! Suppose that you annealed an oligonucleotide to a single
+			stranded template (as shown below) and added the enzymes Klenow fragment, and only
+			the following substrates, 32P-dATP, dCTP, dTTP, and ddGTP (note: I said ddGTP, not
+			dGTP).</P>
+			<P>
+			<PRE>          GATACCATACCGAT
+  3'-AATCTCTATGGTATGGCTAGGTACTATTAGTCAA-5'</PRE>
+			<P>
+			<TABLE BORDER="0" WIDTH="87%">
+				<TR>
+					<TD WIDTH="5%" BGCOLOR="#FFFFCC">&#160;</TD>
+					<TD WIDTH="59%" BGCOLOR="#FFFFCC"><FONT COLOR="#000077"><B>How many radioactive phosphates would be incorporated through
+						this reaction?</B></FONT></TD>
+					<TD></TD>
+				</TR>
+				<TR>
+					<TD WIDTH="5%" VALIGN="MIDDLE" BGCOLOR="#FFFFCC"><INPUT TYPE="CHECKBOX" NAME="a" onClick="document.testform.a.checked=true;alert(document.testform.a1.value)"></TD>
+					<TD WIDTH="59%" VALIGN="MIDDLE" BGCOLOR="#FFFFCC"><FONT SIZE="4"><B>one</B></FONT></TD>
+					<TD><INPUT TYPE="HIDDEN" NAME="a1" SIZE="-1" VALUE="Yes - you are entirely correct!  Extension should stop after the incorporation of the first dideoxy"></TD>
+				</TR>
+				<TR>
+					<TD WIDTH="5%" VALIGN="MIDDLE" BGCOLOR="#FFFFCC"><INPUT TYPE="CHECKBOX" NAME="b" onClick="document.testform.b.checked=false;alert(document.testform.b1.value)"></TD>
+					<TD WIDTH="59%" VALIGN="MIDDLE" BGCOLOR="#FFFFCC"><FONT SIZE="4"><B>two</B></FONT></TD>
+					<TD><INPUT TYPE="HIDDEN" NAME="b1" SIZE="-1" VALUE="No - that's not right."></TD>
+				</TR>
+				<TR>
+					<TD WIDTH="5%" VALIGN="MIDDLE" BGCOLOR="#FFFFCC"><INPUT TYPE="CHECKBOX" NAME="c" onClick="document.testform.c.checked=false;alert(document.testform.c1.value)"></TD>
+					<TD WIDTH="59%" VALIGN="MIDDLE" BGCOLOR="#FFFFCC"><FONT SIZE="4"><B>five</B></FONT></TD>
+					<TD><INPUT TYPE="HIDDEN" NAME="c1" SIZE="-1" VALUE="No - I'm sorry but that is not right."></TD>
+				</TR>
+				<TR>
+					<TD WIDTH="5%" VALIGN="MIDDLE" BGCOLOR="#FFFFCC"><INPUT TYPE="CHECKBOX" NAME="d" onClick="document.testform.d.checked=false;alert(document.testform.d1.value)"></TD>
+					<TD WIDTH="59%" VALIGN="MIDDLE" BGCOLOR="#FFFFCC"><FONT SIZE="4"><B>none</B></FONT></TD>
+					<TD><INPUT TYPE="HIDDEN" NAME="d1" SIZE="-1" VALUE="No - that's not right."></TD>
+				</TR>
+			</TABLE>
+</P>
+			<P><BR>
+			Interesting! Do you think the answer would be different if this were the situation?</P>
+			<P>
+			<PRE>          GATACCATACCGAT
+  3'-AATCTCTATGGTATGGCTAGGCACTATTAGTCAA-5'</PRE>
+			<PRE></PRE>
+			<P>Can you see how this might be useful as a diagnostic test for two alleles?
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">
+			<P ALIGN="RIGHT"><FONT COLOR="#AA0000"><I><B>Approaches based on machine reading</B></I></FONT>
+		</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P>How can you avoid having to &quot;read the bases&quot; off of a gel or film yourself?
+			Train a machine to scan the gel with a laser as it is running, and use different
+			fluorescent dyes to indicate the bases. The gel is run using special (and expensive)
+			glass plates that are optically pure, and the laser scans back and forth across the
+			lanes while the DNA fragments migrate past the laser &quot;window.&quot;</P>
+			<CENTER>
+			<P><IMG SRC="images/sania.jpg" WIDTH="200" HEIGHT="150" ALIGN="BOTTOM" BORDER="0"></P>
+</CENTER>
+			<P><A HREF="http://home.appliedbiosystems.com/">Applied Biosystems</A> makes the
+			machine that we use. They have made a program called EditView, which <A HREF="http://www.appliedbiosystems.com/support/software/dnaseq/installs.cfm">you
+			can download from their site</A>, and which shows the types of chromatograms one
+			obtains from the laser readout.<BR>
+			<BR>
+			<B>Dye-labeled primers</B>. In this method, the oligonucleotide primers are end-labeled
+			with four different fluorescent dyes, and four separate synthetic reactions are conducted
+			in the presence of dNTPs and ddNTPs:</P>
+			<CENTER>
+			<P><IMG SRC="images/seq9.gif" WIDTH="432" HEIGHT="230" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P>Upon completion, these four reactions can be combined into one lane on a gel,
+			and run on a machine that can scan the lanes with a laser. The wavelength of fluorescence
+			can be interpreted by the machine as an indication of which reaction (ddG, ddA, ddT,
+			or ddC) the product came from.</P>
+			<CENTER>
+			<P><IMG SRC="images/seq10.gif" WIDTH="377" HEIGHT="269" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3"></P>
+</CENTER>
+			<P>The fluorescence output is stored in the form of chromatograms:</P>
+			<CENTER>
+			<P><IMG SRC="images/seq13.gif" WIDTH="204" HEIGHT="157" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3">
+</CENTER>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">&#160;</TD>
+		<TD WIDTH="80%" VALIGN="TOP">
+			<P><B>Dye-termination sequencing</B>. This is a much more versatile method of sequencing,
+			because it is not necessary to have a chemically modified oligonucleotide. The fluorescent
+			dyes are conjugated to dideoxynucleotides, so a chain termination event is marked
+			with a unique chemical group. Only one reaction needs to be run in this case, because
+			there is no longer a separation between the label and the terminating group.</P>
+			<CENTER>
+			<P><IMG SRC="images/seq11.gif" WIDTH="432" HEIGHT="230" ALIGN="BOTTOM" BORDER="0"
+			NATURALSIZEFLAG="3">
+</CENTER>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">&#160;</TD>
+		<TD WIDTH="80%" VALIGN="TOP">&#160;</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="20%" VALIGN="TOP">&#160;</TD>
+		<TD WIDTH="80%" VALIGN="TOP">&#160;</TD>
+	</TR>
+</TABLE>
+</P>
+<P>
+<HR>
+<FONT face="Arial, Helvetica, sans-serif"></P>
+<P><FONT SIZE="1" COLOR="#770000" face="Georgia, Times New Roman, Times, serif"><I>Stan
+Metzenberg<BR>
+Department of Biology<BR>
+California State University Northridge<BR>
+Northridge CA 91330-8303<BR>
+stan.metzenberg@csun.edu</I></FONT></P>
+
+<P><FONT SIZE="1" face="Arial, Helvetica, sans-serif">&#169; 1996, 1997, 1998, 1999,
+2000, 2001, 2002</FONT>
+
+
+</BODY>
+
+</HTML>

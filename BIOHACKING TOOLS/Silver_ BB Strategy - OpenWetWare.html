@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Silver: BB Strategy,BioBricks construction tutorial,Silver: Bacterial Transformation,Silver: Ligation,Silver: Oligonucleotide Inserts,Silver: Overlapping Oligonucleotide Inserts,Silver: PCR,Silver: Plasmid Verification,Silver: Restriction Digest" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="OpenWetWare (English)" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=Silver:_BB_Strategy&amp;action=creativecommons" rel="meta" />
+<link title="Dublin Core" type="application/rdf+xml" href="/index.php?title=Silver:_BB_Strategy&amp;action=dublincore" rel="alternate meta" />
+<link rel="copyright" href="/wiki/Copyright" />
+		<title>Silver: BB Strategy - OpenWetWare</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/wiki/$1";
+var wgScriptPath = "";
+var wgServer = "http://openwetware.org";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Silver:_BB_Strategy";
+var wgTitle = "Silver: BB Strategy";
+var wgArticleId = "2246";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "en";
+var wgContentLanguage = "en";
+var wgBreakFrames = false;
+var wgCurRevisionId = "179709";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins/common/ajax.js?42b"></script>
+<script type="text/javascript" src="/skins/common/ajaxsearch.js"></script>
+<script type="text/javascript">hookEvent("load", sajax_onload);</script>
+	</head>
+<body  class="mediawiki ns-0 ltr page-Silver_BB_Strategy">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Silver: BB Strategy</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From OpenWetWare</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<ul><li>Please note that although our protocols are very similar to that of <a href="/wiki/BioBricks_construction_tutorial" title="BioBricks construction tutorial">others</a>, our biobrick vectors, called biofusion vectors, are slightly different. Although the biobrick ends are identical to the vectors designed by Tom Knight, our biobrick vectors allow in frame fusion of two protein coding regions. Specifically, our protein coding biofusion parts:
+<ul><li>do not start with ATG
+</li><li>do not end with a stop codon
+</li><li>do not have a A or G nucleotide between the end of the XbaI and the beginning of the protein coding region or after the coding sequence and the start of the SpeI 
+</li></ul>
+</li><li>Refer to  <a href="https://dspace.mit.edu/bitstream/1721.1/32535/1/PhillipsSilverFusion.pdf#search=%22Ira%20Phillips%20fusion%22" class="external text" title="https://dspace.mit.edu/bitstream/1721.1/32535/1/PhillipsSilverFusion.pdf#search=%22Ira%20Phillips%20fusion%22" rel="nofollow">Ira Phillip's technical note</a> for more details. 
+</li></ul>
+<a name="Making_a_New_BioBrick_Part"></a><h2><span class="editsection">[<a href="/index.php?title=Silver:_BB_Strategy&amp;action=edit&amp;section=1" title="Edit section: Making a New BioBrick Part">edit</a>]</span> <span class="mw-headline"> Making a New BioBrick Part </span></h2>
+<ol><li> Create an insert containing the new part flanked by BioBrick ends.
+<ul><li> For parts that are smaller than ~85 bp, then the part can be make using an <a href="/wiki/Silver:_Oligonucleotide_Inserts" title="Silver: Oligonucleotide Inserts">oligonucleotide insert</a>.
+</li><li> For parts that are between ~ 85 - 150 bp, then the part can be make by using <a href="/wiki/Silver:_Overlapping_Oligonucleotide_Inserts" title="Silver: Overlapping Oligonucleotide Inserts">overlapping oligonucleotide inserts</a>. 
+</li><li> For parts that are larger than ~150 bp and are based on an existing DNA fragment, then use <a href="/wiki/Silver:_PCR" title="Silver: PCR">PCR amplification</a> of the existing DNA.
+</li></ul>
+</li><li> <a href="/wiki/Silver:_Restriction_Digest" title="Silver: Restriction Digest">Digest</a> the insert and the <a href="/images/5/5c/BBa_V0120.gb" class="internal" title="BBa V0120.gb">BioBrick vector</a>.
+</li><li> <a href="/wiki/Silver:_Ligation" title="Silver: Ligation">Ligate</a> the insert into the vector.
+</li><li> <a href="/wiki/Silver:_Plasmid_Verification" title="Silver: Plasmid Verification">Verify</a> the new part.
+</li></ol>
+<a name="Combining_Two_Parts"></a><h2><span class="editsection">[<a href="/index.php?title=Silver:_BB_Strategy&amp;action=edit&amp;section=2" title="Edit section: Combining Two Parts">edit</a>]</span> <span class="mw-headline"> Combining Two Parts </span></h2>
+<ul><li> The overall strategy of combining two parts is very similar to that of making a new part. Instead of placing your insert into an empty vector (making a new part), you cut out a part from one vector and ligate it into a second vector which already contains a second part.
+</li><li> If possible, use a suffix insertion (insertion of the added part behind the existing part), over a prefix insertion (insertion of the added part in front of the existing part).
+</li><li> Gel extraction of fragments less than 200 bp is rather difficult, so plan your strategy so that the insert part is larger than 200 bp.
+</li><li> Isolating one of two very similarly sized DNA fragments by gel extraction is difficult, so avoid doing a digest which produces an insert which is within ~700 bp of the size of the cut vector. If necessary, use a triple digest (typically ApaLI is the third restriction enzyme) to cut the vector in an additional location, while leaving your insert intact.
+</li></ul>
+<p><br />
+</p>
+<table border="1" align="center">
+<tr><td rowspan="2"></td><td colspan="2"><center><b>Prefix Insertion</b></center></td>
+<td colspan="2"><b><center>Suffix Insertion</center></b></td></tr>
+&lt;/td&gt;<td> prefix (insert) </td><td> suffix (vector) </td><td> prefix (vector) </td><td> suffix (insert) </td>&lt;/tr&gt;
+<tr><td> Enzyme 1 </td><td>EcoRI</td><td>EcoRI</td><td>SpeI</td><td>XbaI</td></tr>
+<tr><td> Enzyme 2 </td><td>SpeI</td><td>XbaI</td><td>PstI</td><td>PstI</td></tr>
+<tr><td> Buffer </td><td>2</td><td>EcoRI</td><td>2</td><td>3</td></tr></table>
+<p><br />
+</p>
+<ul><li>Prefix 5'-gaattcgcggccgcttctaga-(part)-actagtagcggccgctgcag-3' Postfix 
+</li></ul>
+<p><br />
+</p>
+<ol><li> In separate tubes, digest both vectors containing the parts to be combined using the scheme above. 
+<ul><li>Mix:	
+<ul><li>700 ng BioBrick vector 
+</li><li>1 µL 10x BSA
+</li><li>1 µL 10x NEB buffer x
+</li><li>0.1-0.2 µL Enzyme 1 (20 units/mL)
+</li><li>0.1-0.2 µL Enzyme 2 (20 units/mL)
+</li><li>distilled water to final volume of 10 µL
+</li></ul>
+</li></ul>
+</li><li> Incubate overnight at 37 °C.
+</li><li> To the vector digestion mix only, add 0.1 µL CIP next morning and incubate for 1 hr. at 37 °C.
+</li><li> Purification of vector and insert  
+<ul><li> Run an agarose gel of the insert (and optionally, the vector).
+</li><li> Cut the insert out of the agarose gel and extract it using Qiagen's Gel Extraction Kit (and optionally, the vector).
+</li><li> If the vector was not gel extracted, use Qiagen's PCR Purification Kit to remove the small, undesired DNA fragments.
+</li></ul>
+</li><li>  <a href="/wiki/Silver:_Ligation" title="Silver: Ligation">Ligate</a> the insert into the cut vector to combine the parts.
+</li><li>  <a href="/wiki/Silver:_Bacterial_Transformation" title="Silver: Bacterial Transformation">Transform</a> the new BioBrick vector into E. coli.
+</li><li>  <a href="/wiki/Silver:_Plasmid_Verification" title="Silver: Plasmid Verification">Verify</a> the new part.
+</li></ol>
+<a name="Making_a_Final_Part_and_Incorporating_it_into_a_Yeast_Shuttle_Vector"></a><h2><span class="editsection">[<a href="/index.php?title=Silver:_BB_Strategy&amp;action=edit&amp;section=3" title="Edit section: Making a Final Part and Incorporating it into a Yeast Shuttle Vector">edit</a>]</span> <span class="mw-headline"> Making a Final Part and Incorporating it into a Yeast Shuttle Vector</span></h2>
+<ul><li>Final parts can be simply incorporated into a Sikorski vector by isolating the part and ligating it into an appropriately cut Sikorski vector.
+</li><li>Perform preparative digests of the Sikorski vector, and the full part per the following.
+</li></ul>
+<table border="1" align="center">
+<tr><td> Sikorski vector </td><td> insert &amp; vector digest </td></tr>
+<tr><td> pRS303 (HIS3) </td><td>EcoRI, SpeI </td></tr>
+<tr><td> pRS304* (TRP1) </td><td>EcoRI, SpeI </td></tr>
+<tr><td> pRS305 (LEU2) </td><td>XbaI, PstI</td></tr>
+<tr><td> pRS306 (URA3) </td><td>EcoRI, SpeI </td></tr>
+</table>
+<ul><li>Alternatively, the final construction step of the BioBrick part can be combined with incorporation into a Sikorski vector (a vector which allows the part to be integrated into the yeast genome) by performing a triple ligation. 
+</li><li>Perform preparative digests of the Sikorski vector, the forward part, and the back part per the following.
+</li></ul>
+<table border="1" align="center">
+<tr><td> Sikorski vector </td><td> vector digest </td><td> forward part digest </td><td> back part digest </td></tr>
+<tr><td> pRS304* (TRP1) </td><td>EcoRI, Not I </td><td>EcoRI, SpeI</td><td>XbaI, NotI</td></tr>
+<tr><td> pRS305 (LEU2) </td><td>NotI, PstI</td><td>NotI,SpeI</td><td>XbaI, PstI</td></tr>
+<tr><td> pRS306 (URA3) </td><td>EcoRI, Not I </td><td>EcoRI, SpeI</td><td>XbaI, NotI</td></tr>
+</table>
+<ul><li>Ligate, transform, and verify the part. I (Caroline) have found that triple ligations work well, especially if the two inserts are present at approximately the same molar excess relative to the cut vector.
+</li><li>Note:
+<ul><li>If this is the only construct to be incorporated into the 580a strain, then the final BioBricks part should be incorporated into the URA3 Sikorski vector (pR306; Silver collection pPS750). 
+</li><li>If this is not the only construct that will be integrated into a single yeast strain, then you must decide which auxotrophic marker will be used for this particular construct.
+</li><li>The orientation of the BioBrick part should be opposite that of the auxotropic gene once incorporated into the Sikorski vector.
+</li></ul>
+</li></ul>
+<p><br />
+last modified by Caroline Ajo-Franklin 1 October 2006
+</p>
+<!-- Saved in parser cache with key owwdb:pcache:idhash:2246-0!1!0!!en!2 and timestamp 20080127215441 -->
+<div class="printfooter">
+Retrieved from "<a href="http://openwetware.org/wiki/Silver:_BB_Strategy">http://openwetware.org/wiki/Silver:_BB_Strategy</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/wiki/Silver:_BB_Strategy">Article</a></li>
+						 <li id="ca-talk"><a href="/wiki/Talk:Silver:_BB_Strategy">Talk</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=Silver:_BB_Strategy&amp;action=edit">Edit</a></li>
+						 <li id="ca-history"><a href="/index.php?title=Silver:_BB_Strategy&amp;action=history">History</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/wiki/User:70.113.54.112" class="new">70.113.54.112</a></li>
+				<li id="pt-anontalk"><a href="/wiki/User_talk:70.113.54.112" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="/index.php?title=Special:Userlogin&amp;returnto=Silver:_BB_Strategy">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/OWWEmblem.png);" href="/wiki/Main_Page" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page">Main Page</a></li>
+				<li id="n-recentchanges"><a href="/wiki/Special:Recentchanges">Recent changes</a></li>
+				<li id="n-help"><a href="/wiki/Help:Contents">Help</a></li>
+				<li id="n-Feedback"><a href="/wiki/Special:Contact">Feedback</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class='portlet' id='p-research'>
+		<h5>research</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Materials"><a href="/wiki/Materials">Materials</a></li>
+				<li id="n-Protocols"><a href="/wiki/Protocols">Protocols</a></li>
+				<li id="n-Resources"><a href="/wiki/Resources">Resources</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/Special:Whatlinkshere/Silver:_BB_Strategy">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/Silver:_BB_Strategy">Related changes</a></li>
+<li id="t-upload"><a href="/wiki/Special:Upload">Upload file</a></li>
+<li id="t-specialpages"><a href="/wiki/Special:Specialpages">Special pages</a></li>
+				<li id="t-print"><a href="/index.php?title=Silver:_BB_Strategy&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/index.php?title=Silver:_BB_Strategy&amp;oldid=179709">Permanent link</a></li><li id="t-cite"><a href="/index.php?title=Special:Cite&amp;page=Silver:_BB_Strategy&amp;id=179709">Cite this article</a></li>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2860391-2";
+urchinTracker();
+</script>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://creativecommons.org/licenses/by-sa/2.5/"><img src="http://creativecommons.org/images/public/somerights20.png" alt='GNU FDL or Creative Commons BY-SA' /></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 18:32, 17 January 2008.</li>
+				<li id="viewcount">This page has been accessed 4,470 times.</li>
+				<li id="copyright">Content is available under <a href="/wiki/Copyright" title="Copyright">GNU FDL or Creative Commons BY-SA</a>.</li>
+				<li id="privacy"><a href="/wiki/OpenWetWare:Privacy_policy" title="OpenWetWare:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="/wiki/OpenWetWare:About" title="OpenWetWare:About">About OpenWetWare</a></li>
+				<li id="disclaimer"><a href="/wiki/OpenWetWare:General_disclaimer" title="OpenWetWare:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by 133777-web1.openwetware.org in 0.316 secs. --></body></html>

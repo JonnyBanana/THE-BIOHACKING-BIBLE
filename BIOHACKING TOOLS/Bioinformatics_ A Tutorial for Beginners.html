@@ -1,0 +1,941 @@
+<HTML><!-- #BeginTemplate "/Templates/bioinformatics.dwt" --><!-- DW6 -->
+<HEAD>
+<!-- #BeginEditable "doctitle" --> 
+<title>Bioinformatics: A Tutorial for Beginners</title>
+<!-- #EndEditable --><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<!-- #BeginEditable "head" --><!-- #EndEditable -->
+<link href="../../../style.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY background="../../../images/BG.jpg" LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<!-- ImageReady Slices (second.psd) -->
+<TABLE WIDTH=892 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD COLSPAN=5 align="left" valign="top"><table width="892" border=" 0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="102" align="left" valign="top"><map name="MapMap">
+                <area shape="poly" coords="73,4,140,64,101,99,45,100,10,63,73,5" href="../../../index.html" alt="informatics institute logo">
+                <area shape="poly" coords="100,101" href="#">
+              </map>
+                <IMG SRC="../../../images/second_01.jpg" ALT="" WIDTH=148 HEIGHT=102 border="0" usemap="#MapMap"></td>
+            <td align="left" valign="top"><map name="Map2Map">
+                <area shape="rect" coords="3,40,465,84" href="../../../index.html" alt="Informatics Institute">
+                <area shape="poly" coords="314,64" href="http://www.umdnj.edu/iiweb/">
+              </map>
+                <IMG SRC="../../../images/second_02.jpg" ALT="" WIDTH=483 HEIGHT=102 border="0" usemap="#Map2Map"></td>
+            <td align="left" valign="top"><map name="Map4Map">
+                <area shape="rect" coords="94,31,241,79" href="http://www.umdnj.edu/" alt="UMDNJ logo">
+              </map>
+                <IMG SRC="../../../images/second_03.jpg" ALT="" WIDTH=261 HEIGHT=102 border="0" usemap="#Map4Map"></td>
+          </tr>
+        </table>									
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 align="left" valign="top">
+			<a href="../../../index.html"><IMG SRC="../../../images/second_04.jpg" ALT="" WIDTH=148 border="0" usemap="#Map4"></a></TD>
+		<TD COLSPAN=2 align="left" valign="bottom" class="title"><div align="center">Bioinformatics </div></TD>
+		<TD ROWSPAN=2 align="left" valign="top">&nbsp;			</TD>
+	</TR>
+	<TR>
+		<TD align="left" valign="top"><table width="103" border=" 0" cellspacing="0" cellpadding="5">
+		  <tr align="left" valign="top">
+		    <td align="center"><img src="../../../images/bio_icon.jpg"></td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td class="sidelinks"><p>&nbsp;</p>
+	        <p>&nbsp;</p></td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td class="sidelinks"><p><a href="../../concentration" class="sidelinks">Graduate
+		          Concentration</a><br>
+		          <br>
+	          </p>
+	        </td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td class="sidelinks"><p><a href="../../concentration/courses.htm" class="sidelinks">Courses
+		          in the Concentration</a><br>
+	          </p>
+	        </td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td><p>		    <a href="../../schedule/index.htm" class="sidelinks">Offerings,
+		          by Semester</a><span class="sidelinks"><br>
+	            </span></p>
+	        </td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td class="sidelinks"><p><a href="../../concentration/course_websites.htm" class="sidelinks">Course Websites</a><br>
+	        </p></td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td class="sidelinks">	        <a href="../../infrastructure/index.htm" class="sidelinks">Infrastructure</a></td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td><a href="../index.htm" class="sidelinks">Training</a></td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr align="center" valign="top">
+		    <td>&nbsp;</td>
+	      </tr>
+		  </table>
+</TD>
+		<TD COLSPAN=3 align="left" valign="top">			<table width="747" height="421" border=" 0" cellpadding="5" cellspacing="0">
+		  <tr>
+		    <td height="43" align="left" valign="top" class="title"><!-- #BeginEditable "title" -->Bioinformatics:
+	        A Tutorial for Beginners<!-- #EndEditable --></td>
+	      </tr>
+		  <tr>
+		    <td align="left" valign="top" class="body"><!-- #BeginEditable "main" -->
+Copyright 2003, <a href="http://www.usm.maine.edu/~rhodes/Goodies/Matics.html">Gale
+Rhodes</a>, adapted with permission of the author.
+<HR>
+<H1>Introduction</H1>
+
+<P>This tutorial allows you to explore opsins -- the proteins that
+catch light for our eyes -- and the genes that code for opsins. But
+the real subject of this exercise is <B>bioinformatics</B> -- the use
+of computers to search for, explore, and use information about genes,
+nucleic acids, and proteins. While learning about the human opsins,
+you will use some of today's most powerful bioinformatics tools. You
+can follow up this tutorial with a study of opsins from other
+organisms, or by exploring any class of biomolecules that interest
+you.</P>
+
+<P>I assume that you are conversant with biochemistry and molecular
+biology. If you see unfamiliar terms pertaining to the genes, mRNAs,
+and proteins used as examples here, break out your biochemistry text,
+head for the index, and review, review, review.</P>
+
+<P>For more information about each database or tool, go to its home
+page and read, read read.</P>
+<HR>
+
+<H1>Cast of Characters</H1>
+
+<H2>I. The Databases (and their acronyms!)</H2>
+
+<UL>
+   <LI><B><a href="http://www.ncbi.nlm.nih.gov/Genbank/index.html">Genbank</a></B>, operated by <B><a href="http://www.ncbi.nlm.nih.gov">NCBI</a></B> (National Center for
+   Biotechnology Information)<BR>
+   Contains all publicly available <B>sequences of DNA</B>, with
+   annotations<BR>
+   Same DNA sequence content as <B><a href="http://www.ebi.ac.uk/embl">EMBL</a></B> (<a href="http://www.embl-heidelberg.de">European
+   Molecular Biology Laboratory</a>) and <B><a href="http://www.ddbj.nig.ac.jp">DDBJ</a></B> (DNA Data Bank of Japan)</LI>
+   
+   <LI><B><a href="http://us.expasy.org/sprot">Swiss-Prot and TrEMBL</a></B>, operated by <B>SIB</B> (<a href="http://www.isb-sib.ch">Swiss
+   Institute of Bioinformatics</a>) and <B><a href="http://www.ebi.ac.uk">EBI</a></B> (European
+   Bioinformatics Institute)<BR>
+   Contains most of the publicly available <B>sequences of
+   proteins</B>, with annotations</LI>
+   
+   <LI><B><a href="http://www.pdb.org">Protein Data Bank</a></B><BR>
+   Contains all publicly availalble <B>experimentally determined
+   structural models of proteins</B> and nucleic acids (determined by
+   x-ray crystallography and NMR)</LI>
+   
+   <LI><B><a href="http://us.expasy.org/swissmod/SM_3DCrunch_Search.html">Swiss-Model Repository</a></B><BR>
+   Contains many <B>theoretical structural models of proteins</B>
+   (determined by automated homology modeling)</LI>
+   
+   <LI><B><a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=OMIM">Online Mendelian Inheritance in Man</a><BR>
+   </B>A catalog of human genes and genetic disorders, linked to gene
+   entries in GenBank<B><BR>
+   </B></LI>
+</UL>
+
+<H2>II. The Tools</H2>
+
+<UL>
+   <LI><B><a href="http://www.ncbi.nlm.nih.gov/mapview">NCBI Map Viewer</a></B><BR>
+   For finding genes and gene products (RNAs and proteins) that
+   interest you</LI>
+   
+   <LI><B><a href="http://www.ncbi.nlm.nih.gov/BLAST">BLAST</a></B><BR>
+   For finding genes or proteins with sequences similar to yours</LI>
+   
+   <LI><B><a href="http://www.ebi.ac.uk/clustalw">ClustalW</a></B><BR>
+   For comparing your sequence with others, and lots of sequences
+   with each other</LI>
+   
+   <LI><B><a href="http://evolution.genetics.washington.edu/phylip.html">Phylip</a></B><BR>
+   For making phylogenetic trees, which show how sequences are
+   related to each other.</LI>
+   
+   <LI><B>Treeprint</B><BR>
+   For printing phylogenetic trees</LI>
+   
+   <LI><B><a href="http://bioinf.cs.ucl.ac.uk/psipred">PSIPRED</a></B><BR>
+   For predicting the location of helices, pleated sheets, and
+   transmembrane elements of proteins of unknown structure</LI>
+   
+   <LI><B><a href="http://www.expasy.org/swissmod/SWISS-MODEL.html">Swiss-Model</a></B><BR>
+   For automated building theoretical structural models of your
+   sequence based on known structures (homology modeling)</LI>
+   
+   <LI><B><a href="http://us.expasy.org/spdbv">Deep View</a></B> (also knows as <B>Swiss-PdbViewer</B>)<BR>
+   For seeing and exploring macromolecular models in three
+   dimensions, and for manual and semiautomated homology
+   modeling</LI>
+   
+   <LI><B><a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed">PubMed</a></B><BR>
+   For searching ALL the literature of the life sciences</LI>
+   
+   <LI><B><a href="http://us.expasy.org">ExPASy</a></B> (Expert Protein Analysis System<BR>
+   Not so much a tool as a tool box -- a very complete set of protein
+   analysis tools<BR>
+   </LI>
+</UL>
+<HR>
+<H1>Here We Go</H1>
+
+<P>Our subject is human opsins, those proteins, found in the cells of
+your retina, that catch light and begin the process of vision. We
+will proceed by asking questions about opsins and opsin genes, and
+then using bioinformatics to answer them.</P>
+
+<P>When I provide a web address, I'll also make it a link -- just
+click it to go to the site. Then make it a bookmark so you can find
+it again.</P>
+
+<H2>Where are the opsin genes in the human genome?</H2>
+
+<P>Point your browser to <A href="http://www.ncbi.nlm.nih.gov/mapview/"><B>http://www.ncbi.nlm.nih.gov/mapview/</B></A>.</P>
+
+<P>Read the instructions. Note that you can look at a genome by
+clicking on the NAME of the species, not the <B>B</B> beside it. The
+species name takes you to a viewer for the genome of that organism.
+The B takes you to a BLAST search tool (later).</P>
+
+<P>Click <B>Homo sapiens (human)</B>.</P>
+
+<P>You see a diagram of the human chromosomes, and a search box at
+the top. Enter "opsin" in the box next to <B>Search for</B>.</P>
+
+<P>Click <B>Find</B>.</P>
+
+<P>You see the diagram again, with red marks at your "hits", the
+locations of genes whose entries contain "opsin" as a whole or
+partial word. Below the diagram is a list of the indicated genes.
+Among them are the rhodopsin gene (RHO), and three cone pigments,
+short-, medium-, and long-wavelength sensitive opsins (for blue,
+green, and red light detection). Four hits look like visual pigments,
+which probably does not surprise you. To the left of each entry is
+the chromosome number, allowing you to tell which red mark
+corresponds to each entry. Note that two opsins are on the X
+chromosome, one of the sex-determining chromosomes. You can pursue
+multiple hits on the same chromosome with the <B>all matches</B> link
+for that chromosome.</P>
+
+<P>Click <B>all matches</B> next to X.</P>
+
+<P>You see a very complicated display (don't sweat -- we're going to
+use only a part of this now). On the left is a diagram of the X
+chromosome, with red marks at the positions of the gene(s) you've
+followed to this page -- in our case, the two opsins, medium- and
+long-wave, which are located near the bottom tip of the X chromosome.
+To the right are various representations of the X chromosome, with
+listings of annotated areas. The two opsin genes are highlighted in
+pink. If you pass your cursor over this page without clicking, you
+will find that some symbols provide brief information, most about
+regions that are not yet characterized well enough to have a full
+entry.</P>
+
+<P>As you can see, there is a tremendous amount of information on
+this page, with links to much more. If you want full information
+about the meanings of abbreviations and symbols on this page, as well
+as the kinds of information linked to the page, you can use <B>Map
+Viewer Help</B> at the top of the page. You will find abundant
+information about the Map Viewer, explanations of all symbols and
+links, and even tutorials about how to ask and answer all kinds of
+questions about the genome.</P>
+
+<P>For now, note the information provided for the first of the two
+highlighted opsin genes, <B>OPN1LW</B> (this is called the gene
+symbol). You see that this is the long-wavelength-sensitive (red)
+opsin, and that it's a gene involved in color blindness (a sex-linked
+trait -- no surprise).</P>
+
+<H2>What do scientists know about the opsins?</H2>
+
+<P>Click <B>OPN1LW</B>.</P>
+
+<P>You have entered <B>LocusLink</B>, which is a sort of highway
+interchange with routing to all sorts of information about this gene.
+Scan down the page. Some of the information is very plain and
+understandable, while some is very cryptic. One of the most
+accessible links is to <B>OMIM</B> (for Online Mendeliam Inheritance
+in Man), a catalog of human genes and genetic disorders. Despite the
+name, the database includes genes of women, too.</P>
+
+<P>Click the little orange rectangle labeled <B>OMIM</B>, at the top
+of the page.</P>
+
+<P>This <B>OMIM</B> entry tells you about this gene and
+colorblindness, a genetic disorder associated with mutations in this
+gene. Read as much as your interest dictates. Follow links to other
+information. For more information about <B>OMIM</B> itself, click the
+<B>OMIM</B> logo at the top of the page. Once you've satisfied your
+appetite, return to the <B>LocusLink</B> page (use the <B>Back</B>
+button of your browser or your browser's history list -- if you're
+lost, click <A href="http://www.ncbi.nlm.nih.gov/LocusLink/LocRpt.cgi?l=5956">HERE</A>).</P>
+
+<P>Click the red <B>PUB</B> rectangle at the top of the page.</P>
+
+<P>You have entered <B>PubMed</B>, a free database of scientific
+literature, to a list of articles directly associated with this gene
+locus. By clicking on the authors of each article, you can see
+abstracts of the article. If you are on a university campus where
+there is online access to specific journals, you might also see links
+to full articles. <B>PubMed</B> is your entry point to a wide variety
+of scientfic literature in the life sciences. On the left side of any
+<B>PubMed</B> page, you will find links to a description of the
+database, help, and tutorials on searching. Read the abstract of the
+article by Nathans and co-workers before returning to
+<B>LocusLink</B>.</P>
+
+<P>NB to GR: Add some guided searches in PubMed.</P>
+
+<H2>What is the nucleotide sequence of this gene?</H2>
+
+<P>Remember that we are looking at the gene for the red-sensitive
+opsin in humna vision, and it's located near the bottom tip of the X
+chromosome. Scroll down to <B>NCBI Reference Sequences</B>
+(<B>RefSeq</B>). You see that mRNA (messenger RNA) and protein
+sequences are available, along with a <B>GenBank</B> sequence.</P>
+
+<P>Click the entry number beside <B>mRNA</B>.</P>
+
+<P>This is a typical <B>GenBank</B> <U>nucleotide</U> file, and a lot
+of it is hard to read, but a few things are clear. First note, under
+references, a citations to the publication of this sequence in the
+scientific literature. To see an abstract of the article in which
+this gene was described, click the <B>PubMed</B> link below the
+reference. As you see, you've been here before. There are many ways
+to move from one database to another, which is both a blessing and a
+curse. You have to keep your eyes open for useful links, and <B>when
+you find a path that you think you might use again, make a note of it
+and bookmark the web pages</B>. It is frustrating to know there's an
+easier way to do something, and not remember how you did it.</P>
+
+<P>NB to GR: point back to this <A href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=9910525&db=Nucleotide&dopt=GenBank">abstract</A>
+when you get the phylogenetic tree.</P>
+
+<P>Scroll to the bottom of this long page. The last thing is the
+sequence of this messenger RNA. You are seeing the actual list of As,
+Ts, Gs, and Cs that make up the message for synthesis of this opsin.
+But wait! You know that RNA contains no T. In most nucleotide
+databases, U from RNA is represented as T, to make for easy
+comparison of DNA and RNA sequences. This sequence information is
+<U>not</U> in the form that is most useful for searching in
+databases, say, searching for related genes. Let's display this entry
+in a form more useful for searching.</P>
+
+<P>At the top of the page, beside the <B>Display</B> button, pull
+down the menu that says <B>default</B> (we are looking at the default
+entry display), and select <B>FASTA</B> (note that several other
+display options are available). Then click the <B>Display</B> button.
+You see one descriptive or "comment" line that begins with "&gt;",
+followed by the nucleotide sequence. This little file is just what
+you need to search nucleotide databases for similar sequences. Let's
+keep it for future use.</P>
+
+<P>Click and drag on the web page to select everything from the
+"&gt;" through the last nucleotide. Be careful not to select anything
+else. From your browser's <B>Edit</B> menu, select <B>Copy</B> to
+make a copy of this information on your clipboard, for pasting
+elsewhere. Now start your favorite word processor, make a new
+document, and paste. The FASTA comment and sequence should appear.
+Select all of the text and change the font to Courier or Monaco --
+these "typewriter" fonts make it easy to align letters into columns,
+because all letter are the same width. Save this file, choosing
+<U>text</U> or <U>plain</U> <U>text</U> as the file type. Call it
+<B>mrnared.txt</B>. Save it to a convenient location for the files
+you'll be making later. Click your browser's <B>Back</B> button until
+you return to <B>LocusLink</B>.</P>
+
+<H2>What is the amino-acid sequence of this gene?</H2>
+
+<P>Click the entry number beside <B>Protein</B>.</P>
+
+<P>Things look a lot like before, but this is a <U>protein</U> entry,
+containing the amino-acid sequence in one-letter abbreviations. Just
+as with the mRNA entry, turn this into a FASTA display, and copy it
+into a new word-processor document. Save it in <U>text</U> format as
+<B>protred.txt</B>. Return to <B>LocusLink</B>.</P>
+
+<H2>What does the neighborhood of this gene look like?</H2>
+
+<P>Click the entry number beside <B>GenBank</B>.</P>
+
+<P>Display the entry in <B>default</B> format. This entry shows the
+sequence of the specific DNA clone that contains the opsin gene,
+along with information about how this clone was produced. This entry
+thus shows the gene in the slightly larger context of the cloned
+fragment in which this gene was found. This sequence would allow you
+to see flanking regions around the gene, and perhaps to design PCR
+primers for making useful quantities of the nucleotide sequence so
+you could express this gene in a cloning vector. From this page, you
+could also find neighboring sequences if you wanted to look farther
+afield. As before, display this entry in FASTA format, and save it as
+a word processor <U>text</U> document entitled <B>GBred.txt</B>.</P>
+
+<H2>What proteins in humans are similar to the red opsin?</H2>
+
+<P>Now return to the<B> </B><A href="http://www.ncbi.nlm.nih.gov/mapview/"><B>NCBI
+Map Viewer</B></A>. We're going to search the human genome for
+sequences similar to that of the red opsin.</P>
+
+<P>Click the <B>B</B> next to <B>Homo sapiens (human)</B>.</P>
+
+<P>This is the NCBI's BLAST search tool. BLAST is a widely used
+program for finding sequences similar to a "query" sequence that
+you're interest in. Pick these options from the various menus:</P>
+
+<UL>
+   <LI>Database: Protein (Search the database of proteins
+   sequences.)</LI>
+   
+   <LI>Program: blastp (Use the version of BLAST that compares
+   <U>protein</U> sequences, unlike blastn, which compares
+   <U>nucleotide</U> sequences.)</LI>
+   
+   <LI>Other Parameters, Expect: 10 (The higher the number, the less
+   stringent that matching, and the more hits you'll get)</LI>
+</UL>
+
+<P>Next, copy the FASTA data from your file <B>protred.txt</B> to
+your clipboard, and paste it into the BLAST search box, above which
+it says, "Enter an accession..." Check to be sure that the first
+character in the box is the "&gt;" at the beginning of the FASTA
+data. Then click<B> Begin Search</B>.</P>
+
+<P>The next page is for formatting your search results. Just click
+that enthusiastic <B>Format!</B> button. When your results are ready,
+the <B>results of BLAST</B> page appears. Look down the page to the
+graphical display, a box containing lots of colored lines. Each line
+represents a hit from your blast search. If you pass your mouse
+cursor over a red line, the narrow box just above the box gives a
+brief description of the hit. You'll find that the first hit is your
+red opsin. That's encouraging, because the best match should be to
+the query sequence itself, and you got this sequence from that gene
+entry. The second hit is the green opsin -- remember that the PubMed
+entry reported that the red and green pigments are the most similar.
+The third and fourth hits are the blue opsin and the rod-cell pigment
+rhodopsin. Other hits have lower numbers of matching residues, and
+are color coded according to a score of matches. If you click on any
+of the colored lines, you'll skip down to more information about that
+hit, and you can see how much similarity each one has to the red
+opsin, your original query sequence. As you go down the list, each
+succeeding sequence has less in common with red opsin. Each sequence
+is shown in comparison with red opsin in what is called a <B>pairwise
+sequence alignment</B>. Later, you'll make <B>multiple sequence
+alignments </B>from which you can discern relationships among
+genes.</P>
+
+<P>See what you can figure out about what the scores mean.
+<U>Identities</U> are residues that are identical in the hit and the
+query (red opsin), when the twoo are optimally aligned..
+<U>Positives</U> are residues that are very similar to each other
+(see residue number 1 in the blue opsin -- it's threonine in red
+opsin, and the very similar serine in the blue). <U>Gaps</U> are
+sometimes introduced into a hit to improve its alignment with the
+query. The more identities and positives, and the fewer gaps, the
+higher the score. Note that blue opsin and rhodopsin are only about
+45% identical to the red opsin. Other proteins, which are apparently
+not visual pigments, have even lower scores. Now let's take a look at
+where all these hits are in the human genome.</P>
+
+<H2>Where are all the genes for these other proteins?</H2>
+
+<P>Click the <B>Genome View</B> button near just below the
+introductory information at the top of this result page.</P>
+
+<P>You have come full circle. You are back that the human chromosome
+diagram, and all the hits of your search, in the colors that signify
+their BLAST scores, are located for you on the diagram. Notice that
+there are about 100 proteins (discovered so far, that is) that have
+40% or more positives in alignment with red opsin. The opsins are
+members of the very large family of <U>G</U>
+<U>protein</U>-<U>coupled</U> <U>receptors</U>, key players in signal
+transduction.</P>
+
+<H2>How are the opsin genes related to each other?</H2>
+
+<P>Answering this question requires making a <B>multiple sequence
+alignment</B> and then using it to make a <B>phylogenetic tree</B>.
+For these tasks, we move to another database where it's a little
+easier to gather a bunch of sequences into a single FASTA file.</P>
+
+<P>Point your browser to <A href="http://us.expasy.org"><B>http://us.expasy.org</B></A>.
+  ExPASY is mirrored at several locations including the following: <a href="http://www.expasy.org">http://www.expasy.org</a>,
+  <a href="http://ca.expasy.org">http://ca.expasy.org</a>. If one does not work
+  or responds slow, try a different one.</P>
+
+<P>You see the home page of <B>ExPASy</B>, the Expert Protein
+Analysis System. As I said earlier, ExPASy is a complete protein tool
+box. With ExPASy, you can do almost any imaginable analysis or
+comparison of protein sequences and structures.</P>
+
+<P>Click <B>Swiss-Prot and TrEMBL</B> under <B>Databases</B>.</P>
+
+<P>Read the introduction to these databases. They are high quality
+protein sequence databases with abundant annotation, minimal
+redundancy, and many connections to other databases.</P>
+
+<P>Click <B>Advanced search in Swiss-Prot and TrEMBL</B>.</P>
+
+<P>With advance searching, you can limit your search to specific
+genes and organisms, and you can search on descriptive information in
+the entries</P>
+
+<P>Set up a search for human opsins, as follows:</P>
+
+<UL>
+   <LI>Search <B>Swiss-Prot</B> only.</LI>
+   
+   <LI>Enter Description: opsin</LI>
+   
+   <LI>Organism: Choose "Human" from the pull-down menu</LI>
+   
+   <LI>Check "Append and prefix * to query terms. The * is a "wild
+   card". You are searching for all entries that contain "opsin" as a
+   whole or partial word.</LI>
+</UL>
+
+<P>Click <B>Submit</B>.</P>
+
+<P>The page <B>Swiss-Prot description</B> is your search result
+page.</P>
+
+<P>Look over the results. On 9/8/2003, this search gave 14 hits. The
+rod pigment rhodopsin (<B>OPSD</B>), along with the three cone
+pigments (<B>OPSB</B>, <B>OPSG</B>, <B>OPSR</B>). There is also a
+"visual pigment-like receptor peropsin", <B>OPSX</B>. Sound
+mysterious. Let's find out more about it, and in the process, see a
+typical Swiss-Prot entry.</P>
+
+<P>Click on the gene name, <B>OPSX</B>.</P>
+
+<P>You see the <B>NiceProt</B> View of Swiss-Prot: O14718. Persue
+this entry and try to find out just what this rhodopsin-like protein
+is thought to do. Under <B>Comments</B>, you'll learn that it's found
+in the retina (the RPE or retinal pigment epithelium), and that it
+may detect light, or perhaps monitors levels of retinoids, the
+general class of compounds that are the actual light absorbers in
+opsins. Also under <B>Comments - Similarity</B>, you see, as
+mentioned earlier, that this protein is a member of the large family
+of G protein-coupled receptors. If you click "G protein-coupled
+receptors" under the <strong>Keywords</strong>, you find a list of all purported 7-transmembrane
+receptor
+proteins in <B>SwissProt</B>. The human genome alone contains 350 of
+them! See if you can verify this statement, without counting. Now
+back up to the <B>NiceProt</B> view.</P>
+<P>Under <B>References</B> click the journal citation, "Proc. Natl.
+Acad. Sci. U.S.A. 94:9893-9898(1997). From the resulting page, you
+can read a full article in the <B>Journal of the National Academy of
+Sciences</B> (PNAS) about this protein. Like many journals, PNAS puts
+full articles online just 6 to 12 months after publication.</P>
+
+<P>Looking further down the page, you find cross-references to the
+protein or its gene in other databases, predicted structural features
+of the protein, and last, the sequence. Note also, at the bottom of
+the page, links to a number of <B>ExPASy</B> tools listed for further
+analysis of this sequence. Try some of them. For example, I just
+learned in about ten seconds from <B>Compute pI/MW </B>that the
+isoelectric pH (or pI) of this protein is 8.78. And I learned in no
+time at all from <B>ScanProSite</B> that the sequence contains
+signatures indicating that the protein is probably a G
+protein-coupled receptor (no surprise, but comforting) and that it
+has a retinal binding site. <B>ProSite</B> is a tool for finding
+signatures of function in new sequences.When you finish playing with
+these powerful tools, return to your <B>SwissProt</B> search results
+by use of the <B>back</B> button of your browser. If you're lost, go
+back to <B>ExPASy</B> and do the search again.</P>
+
+<P>Now let's compare the sequences with each other. We'll use the
+program <B>ClustalW</B> to make a multiple sequence alignment.</P>
+
+<P>Scroll down the result page and check the boxes at the left of
+these entries</P>
+
+<UL>
+   <LI><B>OPSB</B> (blue-sensitive opsin)</LI>
+   
+   <LI><B>OPSD</B> (rhodopsin)</LI>
+   
+   <LI><B>OPSG</B> (green-sensitive opsin)</LI>
+   
+   <LI><B>OPSR</B> (red-sensitive opsin)</LI>
+   
+   <LI><B>OPSX</B> (visual pigment-like receptor opsin)</LI>
+</UL>
+
+<P>At the top of the page, at <B>Send selected sequences to</B>,
+select <B>Clustal W (multiple alignment)</B> from the menu, and click
+<B>Submit</B>.</P>
+
+<P><B>ClustalW</B> has been implemented at many web sites. This one,
+at <A href="http://www.ch.embnet.org/software/ClustalW.html%0D"><B>EMBnet.org</B></A>,
+automatically receives the FASTA files from the selected entries,
+allows you to make some settings of the alignment criteria, and then
+does the alignment. We will just accept the default alignment
+settings. First, scroll in the <B>Input Sequences</B> box and verify
+that it contains five FASTA files, one right after the other. To make
+them easier to identify in subsequent outputs, edit the name of each
+FASTA comment line (begins with "&gt;") as follows:</P>
+
+<UL>
+   <LI>Change "sp|P03999|OPSB_HUMAN Blue-sensitive opsin (Blue cone
+   photoreceptor pigment) - Homo sapiens (Human)." to "Blue".</LI>
+   
+   <LI>Change "sp|P08100|OPSD_HUMAN Rhodopsin (Opsin 2) - Homo
+   sapiens (Human)." to "Rhodopsin".</LI>
+   
+   <LI>Change "sp|P04001|OPSG_HUMAN Green-sensitive opsin (Green cone
+   photoreceptor pigment) - Homo sapiens (Human)." to "Green".</LI>
+   
+   <LI>Change "sp|P04000|OPSR_HUMAN Red-sensitive opsin (Red cone
+   photoreceptor pigment) - Homo sapiens (Human)." to "Red".</LI>
+   
+   <LI>Change "sp|O14718|OPSX_HUMAN Visual pigment-like receptor
+   peropsin - Homo sapiens (Human)." to "Peropsin".</LI>
+</UL>
+
+<P>In all cases, be sure to leave the "&gt;" in the first line of
+each FASTA entry. To save some work in case something goes wrong,
+select the edited contents of the <B>Input Sequences</B> box, copy
+it, and paste it onto an empty word-processor page, and save the file
+in text format. Name it <B>Opsins.txt</B>.</P>
+
+<P>Click <B>Run ClustalW</B>.</P>
+
+<P>The resulting page is called <B>ClustalW query receipt</B>, and it
+contains links to several output files.</P>
+
+<P>Click <B>clustalw (aln)</B>.</P>
+
+<P>You see the typical <B>ClustalW</B> alignment file, showing our
+five protein sequences aligned to maximize identical and similar
+residues. Below each line of five sequences are symbols to show the
+extent of similarity among the sequences. An asterisk (*) means that
+the same residue is always (that is, for all of <U>these</U>
+sequences) found at that location; for example, the first asterisk
+marks a location where only N (asparagine) is found. Colon (:) means
+that all residues at this location are very similar; for example, the
+first colon is where only F (phenylaline), I (isoleucine), and L
+(leucine) -- residues with large, nonpolar sidechains -- occur.
+Period (.) means somewhat similar residues; for example, at the first
+period, serine, threonine, and glutamine occur -- all polar, but
+varied in size. If there is no mark then the residues at that
+location display no predominant common properties.</P>
+
+<P>Once more, as a safety measure, copy this alignment to your
+clipboard, and paste it onto an empty word-processor page. Then save
+the file in text format. Name it <B>OpsMSA.txt</B>. Remember that it
+is still on your clipboard, for pasting at our next stop. This
+multiple sequence alignment is one type of input you can use to make
+a phylogenetic tree.</P>
+
+<H2>What does the family tree of human opsins look like?</H2>
+
+<P>Point your browser to <A href="http://bioweb.pasteur.fr/seqanal/phylogeny/phylip-uk.html"><B>http://bioweb.pasteur.fr/seqanal/phylogeny/phylip-uk.html</B></A></P>
+
+<P>This is one home of the program Phylip, One of the most rigorous
+tools for constructing phylogentic trees from aligned sequences.</P>
+
+<P>Under Proteins, next to protdist, click "advanced form."</P>
+
+<P>You are about to run <B>protdist</B>, a program that computes the
+"distance" of sequences from each other. These so-called <B>distance
+matrices</B> will be used by <B>Phylip</B> to construct your
+tree.</P>
+
+<P>Enter your email into the top box.</P>
+
+<P>In the alignment file box, paste your mutiple sequence alignment
+from ClustalW.</P>
+
+<P>Click "Bootstrap Options" and make these settings:</P>
+
+<UL>
+   <LI>Check the box for "Perform a bootstrap before analysis"</LI>
+   
+   <LI>Enter an odd number for a seed</LI>
+   
+   <LI>Enter 100 replicates</LI>
+</UL>
+
+<P>At the top of the page, click "<B>Run</B> <B>protdist</B>".</P>
+
+<P><B>protdist</B> constructs distance matrices by a process called
+"bootstrapping". Bootstrapping is a bias-reducing procedure in which
+<B>protdist</B> builds an alignment of pseudosequences by picking
+residue positions at random and stringing the residues at those
+positions together until the sequence is the same length as the
+original ClustalW alignment. From this pseudosequence alignment,
+<B>protdist</B> determines the relative number of sequence difference
+among the five proteins, as determined from a random sampling of
+their sequences. The result of the process is a called distance
+matrix, and you will see it soon. This process is repeated, 100 times
+in our case, to make 100 distance matrices. The tree we will
+ultimately produce represents a consensus of the 100 matrices.</P>
+
+<P>There may be a delay of a few minutes before the result pagee
+appears. If the server is busy, you may be informed that results are
+being sent by email. If so, check you email in two or three minutes.
+You will receive five messages, the first one simply containing a
+link to your result page. Click the URL, or paste it into your
+browser and press &lt;return&gt; to open the page.</P>
+
+<P>On the <B>Phylip: protdist</B> page that results, click
+<B>outfile</B> to see the output from <B>protdist</B>. The file
+contains 100 matrices containing numbers that represent the relative
+number of differences among the five sequences. Each matrix has the
+sequence names in the first column, and you should imagine that these
+sequence names are also the headings for the remaining columns. The
+number at the intersection of the row Blue and the column with the
+imaginary heading Peropsin gives the relative magnitude of the
+sequence differences between the blue opsin and peropsin. The
+matrices have zeros on the diagonal because each pseudosequence is
+identical to itself.</P>
+
+<P>Click the <B>Back</B> button of your browser to return to the
+<B>Phylip: protdist</B> page.</P>
+
+<P>On the first pull-down menu of the <B>Phylip: protdist</B> page,
+pick "<B>neighbor</B>." Read the menu carefully: don't pick
+"<B>w</B>eighbor".</P>
+
+<P>Click "Run the selected program on outfile" to run Phylip with the
+output file of matrices you just examined. You are running a
+procedure called "neighbor joining" to construct an evolutionary
+tree.</P>
+
+<P>On the <B>Phylip: neighbor</B> page that appears next, beside
+"Distance method?" Make sure "Neighbor-joining" is selected.</P>
+
+<P>Click "Bootstrap options" and make these settings:</P>
+
+<UL>
+   <LI>Check "Analyze multiple data sets (M)"</LI>
+   
+   <LI>Enter 100 data sets (same as number of replicates from
+   <B>protdist</B>)</LI>
+   
+   <LI>Enter an odd number for a seed</LI>
+   
+   <LI>Check "Compute a consensus tree"</LI>
+</UL>
+
+<P>&nbsp;Scroll down to "Other options".</P>
+
+<P>This entry area gives you the optin of designating an
+<U>outgroup</U> for the root of your tree. An <U>outgroup</U> is the
+sequence you think is most distant from the others, possibly the
+commn ancestor of all. We don't know that in this case, so leave the
+default of 1.</P>
+
+<P>&nbsp;At the top of the page, click "Run neighbor".</P>
+
+<P>&nbsp;The resulting files are</P>
+
+<P><B>outfile.consense</B> -- your tree, in a text file, and
+<B>outtree.consense</B> -- your tree in a format used by
+tree-printing programs.</P>
+
+<P>Click on <B>outfile.consense</B> to see the tree.</P>
+
+<P>Scroll down to the bottom of this file to see the consensus tree.
+This tree is "unrooted", meaning that we do not know the ancestor of
+all these sequences. We learn from this tree which sequences are most
+alike and which are most different. We also learn how often the
+connections of this tree were made the same way in the 100 trees made
+from those 100 difference matrices. The numbers on the branches
+indicate the number of times that partition of the species into the
+two sets separated by that branch occurred among the 100 trees. For
+example, the separation of Red and Green from the other three,
+indicating that Red and Green are more similar to each other than to
+the other three, occurred in all 100 trees. The separation of Blue
+and Peropsin from the other three occurred in only 82 of the 100
+trees. In the other 18 trees, Rhodopsin and Peropsin were separated
+from the other three. (Can you extract this information from this
+file?) In the tree branching shown, the majority rules, and the
+results of 18 of the trees are discarded.</P>
+
+<P>You can save this file by selecting all and pasting it into a
+word-processor document. Call it <B>outfile_consense.txt</B>.</P>
+
+<P>Return to the <B>Phylip: neighbor</B> page and click on
+<B>outtree.consense</B>. This is your tree in Newick format, which is
+widely used by tree-printing programs like <B>Phylodendron</B>. Let's
+use this program to give us a tree in attractive graphics, rather
+than text.</P>
+
+<P>Point your browser to <A href="../../FBI/www.es.embnet.org/Doc/phylodendron/treeprint-form.html"><B>www.es.embnet.org/Doc/phylodendron/treeprint-form.html</B></A>.</P>
+
+<P>Paste the contents of your <B>outtree.consense</B> file into the
+Tree Data box. Select <B>Phenogram</B> from among the Tree Styles.
+From the menu at <B>Extra Options</B>, <B>Output</B>, select GIF
+format for your output file. Give your tree a title, such as "Human
+Visual Opsins and Opsin-Like Proteins". Finally, click
+<B>Submit</B>.</P>
+
+<P>Your GIF-format tree appears in your browser window. To keep it,
+chose <B>Save As ...</B> from the <B>File</B> menu. Call the file
+OpsinTree.gif. My tree looks like this:</P>
+
+<CENTER><IMG src="OpsinTree.gif" width=590 height=590 border="0" align=bottom x-claris-useimagewidth x-claris-useimageheight></CENTER>
+
+<H2>What is the structure of an opsin?</H2>
+
+<P>By now, I'm particularly curious about peropsin, but it's not
+likely that the structure of a recently discovered protein of unknown
+function has been determined. But it <U>is</U> likely that all opsins
+are similar in structure, so let's see is we can find an opsin in
+<U>the</U> database for macromolecular structures, the <B>Protein
+Data Bank</B> (<B>PDB</B>). It will give us an idea of what kind of
+thing an opsin is.</P>
+
+<P>In fact, the PDB does not contain molecular structures at all. It
+is better to say that it contains <U>models</U> of macromolecules.
+These models are interpretations of data from one of the two main
+methods of macromolecular structure determination: <B>x-ray
+crystallography</B> and <B>NMR
+spectroscopy</B>. When researchers determine the structure of a
+macromolecule, they deposit a file containing the three-dimensional
+coordinates of all the atoms in the model. This <B>coordinate
+file</B> -- along with an online molecular graphics tool (like **) or
+a computer graphics program like <B>Deep
+View</B> -- are all that you need to see and study the molecule
+on your computer. Next we will retrieve a model from the PDB and view
+it with an online graphics tool. We'll also visit the home of a
+topnotch computer graphics program that you can download FREE and use
+on your home computer.</P>
+
+<P>Point your browser to <A href="http://www.rcsb.org/pdb/"><B>http://www.rcsb.org/pdb/</B></A>.</P>
+
+<P>The PDB home page contains a simple search box under <B>Search the
+Archive</B>. You can search for models using simple keywords or PDB
+ID codes. An PDB code has four characters, like <B>1CYO</B>. How
+would you ever know a model by its code? When a new structure is
+published, the authors usually give the PDB code in the last
+reference of the bibiography. With that code, you can go straight to
+the model you want to see. But more often, your question, like ours
+is more general. For such cases, PDB also provides forms for more
+sophisticated searches. For now, let's just see if any opsin models
+are availalble. Type "opsin" into the search box and click <B>Find a
+structure</B>.</P>
+
+<P>As of 9/8/2003, this search returns 95 models (on 3/30/2003, it returned 88
+  models), and you can see
+from the first one that our search is too broad. Among other things,
+we're finding netropsin, an antitumor drug. There's also
+bacteriorhodopsin, and the last time I looked, bacteria had no eyes,
+so this is not likely to be a visual pigment. Looking over the first
+two pages of hits, I see one promising sign: some entries for bovine
+rhodopsin. Some of the hits appear to be fragments of this molecule.
+So let's use a more precise search tool to see if other bovine
+rhodopsin models are available. Return to PDB home.</P>
+
+<P>In the <B>Search the Archive</B> box, click
+<B>SearchFields</B>.</P>
+
+<P>We have gone from the simplest to the most sophisticated search
+tool. <B>SearchFields</B> is a customizable form that allows many
+search criteria. The criteria names are links to the definitions of
+the criteria, providing information on the contents of PDB files and
+the criteria that will look in specific parts of the files. At the
+bottom of the form are criteria you can add to the form. Then you can
+bookmark a form and always find it with the criteria you want. Now
+let's get serious and see if there are PDB models that are similar to
+human rhodopsin.</P>
+
+<P>Scroll down to the list of criteria you can add to the form. Check
+to add these criteria: <B>FASTA search</B>, <B>Ligand and prosthetic
+groups</B>, and <B>Source</B>. Click <B>New Form</B>. It looks like
+you have come back to the same page, but now the new search criteria
+are available. You can now search with a FASTA sequence, you can
+limit the search to models contains specific nonprotein ligands (like
+retinal, the prosthetic group of visual pigments), and you can
+specify the source organism from which the macromolecule is
+obtained.</P>
+
+<P>Find your FASTA sequence of human rhodopsin and paste it into the
+<B>FASTA Search</B> box. To limit your search to models containing
+the visual prosthetic group, type "retinal" into the <B>Ligand and
+Prosthetic groups</B> box. Click <B>Search</B>.</P>
+
+<P>This search may take a few minutes. The tool is looking for
+sequence homology among more than 20,000 entries in the PDB. On
+9/8/2003, I got only 5 hits for this search. The first one had PDB
+code <B>1LN6</B>, and was listed as a model of bovine rhodopsin. If
+your search produces other hits, find <B>1LN6</B> among them.</P>
+
+<P>Beside <B>FASTA result</B>, you see the number 8.8e-155. This is
+an alignment score meaning that the probability that this entry and
+the human rhodopsin sequence are similar just by chance is 8.8 x
+10<SUP>-155</SUP>; not bloody likely, in other words.</P>
+
+<P>Click <B>alignment</B><I>.</I> In a new browser window, you see
+the alignment between the human rhodopsin sequence and that of
+<B>1LN6</B>. After alignment, they are over 90% identical. If two
+proteins are more than about 40% identical, they are almost certain
+to be practically identical in structure. So this model will show us
+what human rhodopsin looks like. Close the alignment window to reveal
+again the search results.</P>
+
+<P>Things to come in the future:</P>
+<P>-- go the visualization page and use QuickPDB to see the
+  structure</P>
+<P>-- then download and examine with Deep View (link to tutorial),
+noting covalent link to retinal</P>
+
+<P>-- then examine peropsin: does it have a retinal binding site? use
+PROSITE within Deep View</P>
+
+<P>-- then then make a homology model of peropsin using
+SwissMODEL</P>
+
+<P>-- that should do it.</P>
+
+    <!-- #EndEditable --></td>
+          </tr>
+	    </table></TD>
+	</TR>
+	<TR>
+		<TD>
+			<IMG SRC="../../../sec/images/spacer.gif" WIDTH=107 HEIGHT=1 ALT=""></TD>
+		<TD>
+			<IMG SRC="../../../sec/images/spacer.gif" WIDTH=41 HEIGHT=1 ALT=""></TD>
+		<TD>
+			<IMG SRC="../../../sec/images/spacer.gif" WIDTH=483 HEIGHT=1 ALT=""></TD>
+		<TD>
+			<IMG SRC="../../../sec/images/spacer.gif" WIDTH=236 HEIGHT=1 ALT=""></TD>
+		<TD>
+			<IMG SRC="../../../sec/images/spacer.gif" WIDTH=25 HEIGHT=1 ALT=""></TD>
+	</TR>
+</TABLE>
+<!-- End ImageReady Slices -->
+<map name="Map">
+<area shape="rect" coords="92,29,243,76" href="http://www.umdnj.edu/" alt="UMDNJ logo">
+</map>
+<map name="Map3">
+<area shape="rect" coords="1,44,462,80" href="http://www.umdnj.edu/iiweb/" alt="Informatics Institute">
+</map>
+<map name="Map2">
+<area shape="poly" coords="77,3,139,64,99,103,72,127,9,62,76,4" href="http://www.umdnj.edu/iiweb/" alt="informatics institute logo">
+</map>
+<map name="Map4">
+<area shape="poly" coords="100,2,73,25,50,2,101,3" href="http://www.umdnj.edu/iiweb/" alt="informatics institute logo">
+</map>
+</BODY>
+<!-- #EndTemplate --></HTML>

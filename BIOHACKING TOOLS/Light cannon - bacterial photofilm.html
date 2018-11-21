@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="LightCannon" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="OpenWetWare (English)" />
+<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=LightCannon&amp;action=creativecommons" rel="meta" />
+<link title="Dublin Core" type="application/rdf+xml" href="/index.php?title=LightCannon&amp;action=dublincore" rel="alternate meta" />
+<link rel="copyright" href="/wiki/Copyright" />
+		<title>LightCannon - OpenWetWare</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins/monobook/main.css?42b"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/skins/common/commonPrint.css?42b" />
+		<link rel="stylesheet" type="text/css" media="handheld" href="/skins/monobook/handheld.css?42b" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins/monobook/IE50Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins/monobook/IE55Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins/monobook/IE60Fixes.css?42b";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins/monobook/IE70Fixes.css?42b";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?42b"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins";
+var wgArticlePath = "/wiki/$1";
+var wgScriptPath = "";
+var wgServer = "http://openwetware.org";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "LightCannon";
+var wgTitle = "LightCannon";
+var wgArticleId = "4017";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserLanguage = "en";
+var wgContentLanguage = "en";
+var wgBreakFrames = false;
+var wgCurRevisionId = "15749";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/skins/common/wikibits.js?42b"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins/common/ajax.js?42b"></script>
+<script type="text/javascript" src="/skins/common/ajaxsearch.js"></script>
+<script type="text/javascript">hookEvent("load", sajax_onload);</script>
+	</head>
+<body  class="mediawiki ns-0 ltr page-LightCannon">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">LightCannon</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From OpenWetWare</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>This page is a work-in-progress for how to build a "light cannon" for use in bacterial photography.  <br />
+<font color="green">Please help make it better!</font>
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Background"><span class="tocnumber">1</span> <span class="toctext">Background</span></a></li>
+<li class="toclevel-1"><a href="#Example_Coliroids"><span class="tocnumber">2</span> <span class="toctext">Example Coliroids</span></a></li>
+<li class="toclevel-1"><a href="#Overview_of_Light_Cannon"><span class="tocnumber">3</span> <span class="toctext">Overview of Light Cannon</span></a></li>
+<li class="toclevel-1"><a href="#Materials_List"><span class="tocnumber">4</span> <span class="toctext">Materials List</span></a></li>
+<li class="toclevel-1"><a href="#Instructions_for_Buildling"><span class="tocnumber">5</span> <span class="toctext">Instructions for Buildling</span></a></li>
+<li class="toclevel-1"><a href="#Debugging"><span class="tocnumber">6</span> <span class="toctext">Debugging</span></a></li>
+<li class="toclevel-1"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a href="#Scott_H._Biram"><span class="tocnumber">8</span> <span class="toctext">Scott H. Biram</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Background"></a><h3><span class="editsection">[<a href="/index.php?title=LightCannon&amp;action=edit&amp;section=1" title="Edit section: Background">edit</a>]</span> <span class="mw-headline">Background</span></h3>
+<p>As part of their research and the 2004 Synthetic Biology and 2005 iGEM competitions, the good folks from UT and UCSF made the world's first camera that uses bacteria to take photographs.  Let's call such photographs <b><font color="brown">coliroids</font></b> or <b><font color="brown">E.guerrotypes</font></b> for now.  Their early work was so cool that they published it as a <a href="http://www.nature.com/nature/journal/v438/n7067/abs/nature04405.html" class="external text" title="http://www.nature.com/nature/journal/v438/n7067/abs/nature04405.html" rel="nofollow">paper</a> in Nature.  In order to take your own <b><font color="brown">coliroids</font></b> you need two things.  First, the genetically engineered bacteria that respond to light.  Second, a camera that can expose your bacteria to light.  For unknown reasons, let's call the camera a <b><font color="red">Light Cannon</font></b>.  You can learn about how to make/get the bacteria (TBA).  <b> <i>This</i> </b> page is about how to build <b><font color="red">Light Cannons</font></b>!
+</p>
+<a name="Example_Coliroids"></a><h3><span class="editsection">[<a href="/index.php?title=LightCannon&amp;action=edit&amp;section=2" title="Edit section: Example Coliroids">edit</a>]</span> <span class="mw-headline">Example Coliroids</span></h3>
+<p>In case you want to see if all the trouble will be worth it, check out these here <b><font color="brown">coliroids</font></b>.  Build your own system and then add your pictures here!
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:202px;"><a href="/wiki/Image:ColiroidEllington.png" class="internal" title="This here is a coliroid portait of Andy Ellington.  You can compare it with the real Andy. Image courtesy of UT/UCSF."><img src="/images/thumb/d/d1/ColiroidEllington.png/200px-ColiroidEllington.png" alt="This here is a coliroid portait of Andy Ellington.  You can compare it with the real Andy. Image courtesy of UT/UCSF." width="200" height="263" longdesc="/wiki/Image:ColiroidEllington.png" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/wiki/Image:ColiroidEllington.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>This here is a <b><font color="brown">coliroid</font></b> portait of Andy Ellington.  You can compare it with the <a href="http://www.icmb.utexas.edu/images/faculty/ellington.jpg" class="external text" title="http://www.icmb.utexas.edu/images/faculty/ellington.jpg" rel="nofollow">real Andy</a>. Image courtesy of UT/UCSF.</div></div></div>
+<div class="thumb tleft"><div class="thumbinner" style="width:182px;"><a href="/wiki/Image:ColiroidFSM.jpg" class="internal" title="This here is a coliroid of the Flying Spaghetti Monster. Image courtesy of UT/UCSF.  P.S. This image is on venganza.org 3 times.  If we don't win $100 in Ramen I'm going to be mad.  we've already scoped out a hot tub to fill with noodles and beef flavoring -JT 11/24/05."><img src="/images/6/68/ColiroidFSM.jpg" alt="This here is a coliroid of the Flying Spaghetti Monster. Image courtesy of UT/UCSF.  P.S. This image is on venganza.org 3 times.  If we don't win $100 in Ramen I'm going to be mad.  we've already scoped out a hot tub to fill with noodles and beef flavoring -JT 11/24/05." width="180" height="159" longdesc="/wiki/Image:ColiroidFSM.jpg" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/wiki/Image:ColiroidFSM.jpg" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>This here is a <b><font color="brown">coliroid</font></b> of the <a href="http://venganza.org" class="external text" title="http://venganza.org" rel="nofollow">Flying Spaghetti Monster</a>. Image courtesy of UT/UCSF.  P.S. This image is on <a href="http://venganza.org" class="external text" title="http://venganza.org" rel="nofollow">venganza.org</a> 3 times.  If we don't win $100 in Ramen I'm going to be mad.  we've already scoped out a hot tub to fill with noodles and beef flavoring -JT 11/24/05.</div></div></div>
+<div class="thumb tleft"><div class="thumbinner" style="width:202px;"><a href="/wiki/Image:Hello_world.tif" class="internal" title="Hello world.  &quot;Hello World&quot; was the first image taken by the folks at UT-Austin/UCSF (though this is a later, more polished version).  Image courtesy of UT/UCSF"><img src="/images/thumb/f/f6/Hello_world.tif/200px-Hello_world.tif.png" alt="Hello world.  &quot;Hello World&quot; was the first image taken by the folks at UT-Austin/UCSF (though this is a later, more polished version).  Image courtesy of UT/UCSF" width="200" height="197" longdesc="/wiki/Image:Hello_world.tif" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/wiki/Image:Hello_world.tif" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Hello world.  "Hello World" was the first image taken by the folks at UT-Austin/UCSF (though this is a later, more polished version).  Image courtesy of UT/UCSF</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<a name="Overview_of_Light_Cannon"></a><h3><span class="editsection">[<a href="/index.php?title=LightCannon&amp;action=edit&amp;section=3" title="Edit section: Overview of Light Cannon">edit</a>]</span> <span class="mw-headline">Overview of Light Cannon</span></h3>
+<div class="thumb tleft"><div class="thumbinner" style="width:402px;"><a href="/wiki/Image:LightCannon2.png" class="internal" title="This here is a normal photograph of the Light Cannon 2.0 built by Aaron Chevalier of UT Austin. This image and a whole herd of information are available in the supplementary Word document from Aaron's Nature paper."><img src="/images/thumb/2/20/LightCannon2.png/400px-LightCannon2.png" alt="This here is a normal photograph of the Light Cannon 2.0 built by Aaron Chevalier of UT Austin. This image and a whole herd of information are available in the supplementary Word document from Aaron's Nature paper." width="400" height="281" longdesc="/wiki/Image:LightCannon2.png" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/wiki/Image:LightCannon2.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>This here is a normal photograph of the Light Cannon 2.0 built by <a href="http://www.utexas.edu/opa/news/2005/11/nat_sci23.html" class="external text" title="http://www.utexas.edu/opa/news/2005/11/nat_sci23.html" rel="nofollow">Aaron Chevalier</a> of UT Austin. This image and a whole herd of information are available in the <a href="http://www.nature.com/nature/journal/v438/n7067/extref/nature04405-s1.doc" class="external text" title="http://www.nature.com/nature/journal/v438/n7067/extref/nature04405-s1.doc" rel="nofollow">supplementary Word document</a> from Aaron's Nature paper.</div></div></div>
+<p><br style="clear:both;" />
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:182px;"><a href="/wiki/Image:Macintosh_HD-Users-nkuldell-Desktop-CannonLite_v0pt1.jpg" class="internal" title="BE.109bacterialcamerasetup. Even something as strange as this will work"><img src="/images/thumb/3/3f/Macintosh_HD-Users-nkuldell-Desktop-CannonLite_v0pt1.jpg/180px-Macintosh_HD-Users-nkuldell-Desktop-CannonLite_v0pt1.jpg" alt="BE.109bacterialcamerasetup. Even something as strange as this will work" width="180" height="240" longdesc="/wiki/Image:Macintosh_HD-Users-nkuldell-Desktop-CannonLite_v0pt1.jpg" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/wiki/Image:Macintosh_HD-Users-nkuldell-Desktop-CannonLite_v0pt1.jpg" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>BE.109bacterialcamerasetup. Even something as strange as this will work</div></div></div>.
+<div class="thumb tleft"><div class="thumbinner" style="width:182px;"><a href="/wiki/Image:Macintosh_HD-Users-nkuldell-Desktop-sunburst.jpeg" class="internal" title="sunburstcoliroid.  After covering the bottom of the incubator with black paper, the sun appeared:"><img src="/images/thumb/3/32/Macintosh_HD-Users-nkuldell-Desktop-sunburst.jpeg/180px-Macintosh_HD-Users-nkuldell-Desktop-sunburst.jpeg" alt="sunburstcoliroid.  After covering the bottom of the incubator with black paper, the sun appeared:" width="180" height="187" longdesc="/wiki/Image:Macintosh_HD-Users-nkuldell-Desktop-sunburst.jpeg" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="/wiki/Image:Macintosh_HD-Users-nkuldell-Desktop-sunburst.jpeg" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>sunburstcoliroid.  After covering the bottom of the incubator with black paper, the sun appeared:</div></div></div>
+<p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+</p><p><br />
+<b>The following description is for building a light cannon as the one seen in the figure.  However, light cannons exist in many forms and you should feel free to tweak, change, or abandon the following protocol.</b>
+</p>
+<a name="Materials_List"></a><h3><span class="editsection">[<a href="/index.php?title=LightCannon&amp;action=edit&amp;section=4" title="Edit section: Materials List">edit</a>]</span> <span class="mw-headline">Materials List</span></h3>
+<ul><li>100W mercury vapor lamp -or- 150W Sodium "grow" lamp
+</li><li>Red bandpass filter (if using mercury vapor lamp).  We get ours from Edmunds Optics.  Description: FILTER INT 632NM 50.8MM SQ.  Catalog number: NT43-185.  <a href="http://www.edmundoptics.com/onlinecatalog/DisplayProduct.cfm?productid=1903" class="external free" title="http://www.edmundoptics.com/onlinecatalog/DisplayProduct.cfm?productid=1903" rel="nofollow">http://www.edmundoptics.com/onlinecatalog/DisplayProduct.cfm?productid=1903</a>
+</li><li>35mm slide containing desired image (can be custom made at by a photo imaging company such as <a href="http://www.hollandphoto.com/" class="external text" title="http://www.hollandphoto.com/" rel="nofollow">Holland Photo</a>)
+</li><li>Height adjustable platform for 35mm slide
+</li><li>Focusing lens (optional).
+</li><li>37C incubator with black walls, adjustable shelves, and a thermometer hole on top through which the image can be shone.
+</li></ul>
+<a name="Instructions_for_Buildling"></a><h3><span class="editsection">[<a href="/index.php?title=LightCannon&amp;action=edit&amp;section=5" title="Edit section: Instructions for Buildling">edit</a>]</span> <span class="mw-headline">Instructions for Buildling</span></h3>
+<ul><li>Start by turning on Scott H. Biram's <a href="http://theconnextion.com/index.cfm?ArtistID=336&amp;NoFrame=Yes" class="external text" title="http://theconnextion.com/index.cfm?ArtistID=336&amp;NoFrame=Yes" rel="nofollow">Lo-Fi Mojo</a> at a slightly louder than reasonable volume.  
+</li><li>Continue by wallpapering the inside of a standard floor incubator with non glossy black construction paper.  We also black out the internal glass door of our incubator (seen not blacked out in the figure above).
+</li><li>Place a sheet of white paper on a rack ~1 foot from the top of the incubator directly below the thermometer hole.
+</li><li>Clear the thermometer hole atop your incubator such that light can pass through unobstructed.  
+</li><li>Immobilize the lens in or atop the thermometer hole.  This step is optional, but the use of a lens will obviously give you shaper images.
+</li><li>Black out all remaining light-penetrable areas around the thermometer hole and lens, we use aluminum foil.
+</li><li>Build some sort of device for holding the 35mm slide, such that the image on the slide is not obstructed.  We find that a <a href="http://en.wikipedia.org/wiki/Field_goal" class="external text" title="http://en.wikipedia.org/wiki/Field_goal" rel="nofollow">field goal post</a> shaped flat thin piece of metal upon which the slide can rest works well.
+</li><li>Connect the slide holding apparatus to some sort of height adjustable device.  A simple method is to clamp it down with a ring stand.  For greater control, we connect it to an actuator, which we hold in place with a ring stand.  Set this system up such that the slide sits on the vertical axis which passes through the lens/thermometer hole.  The height adjustability of the slide is critical as a focusing mechanism down the road.
+</li><li>Similarly immobilize the bandpass filter ~3cm above the position of the slide (only if using a mercury vapor lamp).  You can use the same ring stand for this.
+</li><li>Build a simple apparatus (ours is made of book ends in case you haven't noticed) to hold the lamp above the bandpass filter.  The light source on the lamp should end up being less than ~15cm from the bandpass filter (or slide in the case that you're using a sodium lamp).
+</li><li>Turn on the lamp, adjust the x,y and z positioning of your 35mm slide such that a clear image appears in your incubator (like the Andy image in the figure above).  If you need to adjust the focal length of your lens,  do that at this point.
+</li></ul>
+<a name="Debugging"></a><h3><span class="editsection">[<a href="/index.php?title=LightCannon&amp;action=edit&amp;section=6" title="Edit section: Debugging">edit</a>]</span> <span class="mw-headline">Debugging</span></h3>
+<a name="References"></a><h3><span class="editsection">[<a href="/index.php?title=LightCannon&amp;action=edit&amp;section=7" title="Edit section: References">edit</a>]</span> <span class="mw-headline">References</span></h3>
+<p><a href="http://www.nature.com/nature/journal/v438/n7067/full/nature04405.html" class="external text" title="http://www.nature.com/nature/journal/v438/n7067/full/nature04405.html" rel="nofollow"><b>Engineering Escherichia coli to see light</b></a><br />
+Anselm Levskaya, Aaron A. Chevalier, Jeffrey J. Tabor, Zachary Booth Simpson, Laura A. Lavery, Matthew Levy, Eric A. Davidson, Alexander Scouras, Andrew D. Ellington, Edward M. Marcotte and Christopher A. Voigt<br />
+<i>Nature</i> <b>438</b>, 441-442 (24 November 2005)<br />
+doi:10.1038/nature04405
+</p>
+<a name="Scott_H._Biram"></a><h3><span class="editsection">[<a href="/index.php?title=LightCannon&amp;action=edit&amp;section=8" title="Edit section: Scott H. Biram">edit</a>]</span> <span class="mw-headline">Scott H. Biram</span></h3>
+<p>Be sure to check out <a href="http://www.scottbiram.com/" class="external text" title="http://www.scottbiram.com/" rel="nofollow">Scott H. Biram</a> of Bloodshot Records.  This page might not exist had it not been for Mr. Biram.
+</p><p><br />
+</p>
+<ul><li><ul><li><ul><li><ul><li><ul><li><ul><li> End of Edited Content.  Temporary Working Materials Follow 
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+<p><br />
+</p>
+<hr />
+<p>Anselm-
+The details on the filter are:
+</p><p><br />
+From Edmunds Optics
+description: FILTER INT 632NM 50.8MM SQ
+Catalog number: NT43-185
+details on this website
+</p><p><a href="http://www.edmundoptics.com/onlinecatalog/DisplayProduct.cfm?productid=1903" class="external free" title="http://www.edmundoptics.com/onlinecatalog/DisplayProduct.cfm?productid=1903" rel="nofollow">http://www.edmundoptics.com/onlinecatalog/DisplayProduct.cfm?productid=1903</a>
+</p><p><br />
+</p><p>&gt; &gt;Hey Jeff,
+&gt; &gt;
+&gt; &gt;could you tell me the details about the bandpass filter you use?
+&gt; &gt;HWFM and CWL or related. (or even just supplier and #)
+&gt; &gt;Just want to make sure I'll hit the same optimum window with some that
+&gt; &gt;I'm buying.
+&gt; &gt;
+&gt; &gt;Thanks alot!
+&gt; &gt;
+&gt; &gt;-Anselm
+</p><p><br />
+</p>
+<hr />
+<p><br />
+our thermometer hole is ~1.5 inches.
+</p><p><br />
+At 03:53 PM 12/15/2005, you wrote:
+One last annoying question.  the hole in the top of the incubator, how
+big is it?
+I'm looking at a few different ones and can't decide if the standard
+thermometer port is
+large enough.
+</p><p>thanks for answering all these questions!
+</p><p>-anselm
+</p>
+<hr />
+<p><br />
+we've been using a 100W mercury vapor lamp, taken from a fluorescence microscope.  with this light source we use a red bandpass filter (see the attached figure), that allows 660nm light to pass to the exclusion of far red light.  we then place the image which is on a 35mm slide (the kind you would use for an old-style slide projector) below the filter, and focus the light through a double gauss lens.  the whole apparatus sits outside of a 37C incubator, and the light image passes in.
+</p><p>one really nice feature that we have is an actuator to which 35mm slide is connected, which allows us to have pretty fine control over the focus.
+</p><p>we've also succesfully been using sodium "grow" lamps, which we don't filter usually.
+</p><p>as far as the agar preparation, it's still just 2-4% seaplaque agarose in LB+S-gal and Ferric Ammonium Citrate.  We autoclave the media with everything in it before pouring, to get the solutes completely dissolved, then we keep it at 42 degrees, add the cells, mix and pour immediately.
+</p><p>we've actually thought about increasing signal to noise.  one idea we had was to put a repressor of LacZ under the OmpF promoter.  this will bring down total signal most likely but could also increase signal to noise.  i'm sure there are lots of other good ways to do it as well...including mutating Cph8 and screening.  good luck, let me know how it goes.
+</p><p>Jeff
+</p><p><br />
+At 09:11 PM 11/2/2005, you wrote:
+Chris said that you guys have been using a smaller setup to develop
+your bacterial photos, could you tell me what kind of light sources and filters
+you've been using?  I'd like to start taking some myself to see if I
+can improve
+the signal/noise ratio by modifying the construct.  Also, if you've changed the
+agar preparation at all, I'd love to hear what's been optimized.  All
+details are great
+as I'd like to just order the things needed.
+</p><p>By the by, I'll finally be starting some tests on a possible
+blue-light sensor soon.
+</p><p>thanks a lot!  kick ass regarding the paper!
+-Anselm
+</p>
+<!-- Saved in parser cache with key owwdb:pcache:idhash:4017-0!1!0!!en!2 and timestamp 20080128005118 -->
+<div class="printfooter">
+Retrieved from "<a href="http://openwetware.org/wiki/LightCannon">http://openwetware.org/wiki/LightCannon</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+						 <li id="ca-nstab-main" class="selected"><a href="/wiki/LightCannon">Article</a></li>
+						 <li id="ca-talk" class="new"><a href="/index.php?title=Talk:LightCannon&amp;action=edit">Talk</a></li>
+						 <li id="ca-edit"><a href="/index.php?title=LightCannon&amp;action=edit">Edit</a></li>
+						 <li id="ca-history"><a href="/index.php?title=LightCannon&amp;action=history">History</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/wiki/User:70.113.54.112" class="new">70.113.54.112</a></li>
+				<li id="pt-anontalk"><a href="/wiki/User_talk:70.113.54.112" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="/index.php?title=Special:Userlogin&amp;returnto=LightCannon">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/OWWEmblem.png);" href="/wiki/Main_Page" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page">Main Page</a></li>
+				<li id="n-recentchanges"><a href="/wiki/Special:Recentchanges">Recent changes</a></li>
+				<li id="n-help"><a href="/wiki/Help:Contents">Help</a></li>
+				<li id="n-Feedback"><a href="/wiki/Special:Contact">Feedback</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class='portlet' id='p-research'>
+		<h5>research</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Materials"><a href="/wiki/Materials">Materials</a></li>
+				<li id="n-Protocols"><a href="/wiki/Protocols">Protocols</a></li>
+				<li id="n-Resources"><a href="/wiki/Resources">Resources</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/Special:Whatlinkshere/LightCannon">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/LightCannon">Related changes</a></li>
+<li id="t-upload"><a href="/wiki/Special:Upload">Upload file</a></li>
+<li id="t-specialpages"><a href="/wiki/Special:Specialpages">Special pages</a></li>
+				<li id="t-print"><a href="/index.php?title=LightCannon&amp;printable=yes">Printable version</a></li>				<li id="t-permalink"><a href="/index.php?title=LightCannon&amp;oldid=15749">Permanent link</a></li><li id="t-cite"><a href="/index.php?title=Special:Cite&amp;page=LightCannon&amp;id=15749">Cite this article</a></li>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2860391-2";
+urchinTracker();
+</script>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://creativecommons.org/licenses/by-sa/2.5/"><img src="http://creativecommons.org/images/public/somerights20.png" alt='GNU FDL or Creative Commons BY-SA' /></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:19, 29 December 2005.</li>
+				<li id="viewcount">This page has been accessed 3,716 times.</li>
+				<li id="copyright">Content is available under <a href="/wiki/Copyright" title="Copyright">GNU FDL or Creative Commons BY-SA</a>.</li>
+				<li id="privacy"><a href="/wiki/OpenWetWare:Privacy_policy" title="OpenWetWare:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="/wiki/OpenWetWare:About" title="OpenWetWare:About">About OpenWetWare</a></li>
+				<li id="disclaimer"><a href="/wiki/OpenWetWare:General_disclaimer" title="OpenWetWare:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by 133777-web1.openwetware.org in 0.278 secs. --></body></html>

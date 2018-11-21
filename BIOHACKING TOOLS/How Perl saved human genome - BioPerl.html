@@ -1,0 +1,316 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				<meta name="keywords" content="How Perl saved human genome,ACEDB sequence format,Lincoln Stein" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="BioPerl (English)" />
+		<link title="Creative Commons" type="application/rdf+xml" href="/w/index.php?title=How_Perl_saved_human_genome&amp;action=creativecommons" rel="meta" />
+		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<title>How Perl saved human genome - BioPerl</title>
+		<style type="text/css" media="screen, projection">/*<![CDATA[*/
+			@import "/w/skins/common/shared.css?97";
+			@import "/w/skins/monobook/main.css?97";
+		/*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/w/skins/common/commonPrint.css?97" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/w/skins/monobook/IE50Fixes.css?97";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/w/skins/monobook/IE55Fixes.css?97";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/w/skins/monobook/IE60Fixes.css?97";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/w/skins/monobook/IE70Fixes.css?97";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/w/skins/common/IEFixes.js?97"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/w/skins";
+var wgArticlePath = "/wiki/$1";
+var wgScriptPath = "/w";
+var wgScript = "/w/index.php";
+var wgServer = "http://www.bioperl.org";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "How_Perl_saved_human_genome";
+var wgTitle = "How Perl saved human genome";
+var wgAction = "view";
+var wgRestrictionEdit = [];
+var wgRestrictionMove = [];
+var wgArticleId = "3216";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserGroups = null;
+var wgUserLanguage = "en";
+var wgContentLanguage = "en";
+var wgBreakFrames = false;
+var wgCurRevisionId = "7925";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/w/skins/common/wikibits.js?97"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/w/skins/common/ajax.js?97"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr page-How_Perl_saved_human_genome">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">How Perl saved human genome</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From BioPerl</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="How_Perl_Saved_the_Human_Genome_Project"></a><h2> <span class="mw-headline">How Perl Saved the Human Genome Project</span></h2>
+<p>by <a href="/wiki/Lincoln_Stein" title="Lincoln Stein">Lincoln Stein</a>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:216px;"><a href="/wiki/Image:TPJ_Helix.jpg" class="image" title="The helix graphic is reproduced from Dr. Lincoln Stein's article &quot;How Perl Saved the Human Genome Project&quot; as published in the September 1996 issue of The Perl Journal."><img alt="The helix graphic is reproduced from Dr. Lincoln Stein's article &quot;How Perl Saved the Human Genome Project&quot; as published in the September 1996 issue of The Perl Journal." src="/w/images/b/bd/TPJ_Helix.jpg" width="214" height="295" border="0" class="thumbimage" /></a>  <div class="thumbcaption">The helix graphic is reproduced from Dr. Lincoln Stein's article "How Perl Saved the Human Genome Project" as published in the September 1996 issue of <a href="http://www.tpj.com" class="external text" title="http://www.tpj.com" rel="nofollow">The Perl Journal</a>.</div></div></div>
+<dl><dd> Reprinted courtesy of the Perl Journal, <a href="http://www.tpj.com" class="external free" title="http://www.tpj.com" rel="nofollow">http://www.tpj.com</a> <a href="http://www.foo.be/docs/tpj/issues/vol1_2/tpj0102-0001.html" class="external text" title="http://www.foo.be/docs/tpj/issues/vol1_2/tpj0102-0001.html" rel="nofollow"><b>Archive</b></a>.
+</dd><dd> Lincoln Stein's website is <a href="http://stein.cshl.org" class="external free" title="http://stein.cshl.org" rel="nofollow">http://stein.cshl.org</a>
+</dd></dl>
+<p><b>DATE:</b> Early February, 1996
+</p><p><b>LOCATION:</b> <a href="http://en.wikipedia.org/wiki/Cambridge%2C_England" class="extiw" title="wp:Cambridge,_England">Cambridge, England</a>, in the conference room of the largest DNA sequencing center in Europe.
+</p><p><b>OCCASION:</b> A high level meeting between the computer scientists of this center and the largest DNA sequencing center in the United States.
+</p><p><b>THE PROBLEM:</b> Although the two centers use almost identical laboratory techniques, almost identical databases, and almost identical data analysis tools, they still can't interchange data or meaningfully compare results.
+</p><p><b>THE SOLUTION:</b> Perl.
+</p><p>The human genome project was inaugurated at the beginning of the decade as an ambitious international effort to determine the complete DNA sequence of human beings and several experimental animals. The justification for this undertaking is both scientific and medical. By understanding the genetic makeup of an organism in excruciating detail, it is hoped that we will be better able to understand how organisms develop from single eggs into complex multicellular beings, how food is metabolized and transformed into the constituents of the body, how the nervous system assembles itself into a smoothly functioning ensemble. From the medical point of view, the wealth of knowledge that will come from knowing the complete DNA sequence will greatly accelerate the process of finding the causes of (and potential cures for) human diseases.
+</p><p>Six years after its birth, the genome project is ahead of schedule. Detailed maps of the human and all the experimental animals have been completed (mapping out the DNA using a series of landmarks is an obligatory first step before determining the complete DNA sequence). The sequence of the smallest model organism, yeast, is nearly completed, and the sequence of the next smallest, a tiny soil-dwelling worm, isn't far behind. Large scale sequencing efforts for human DNA started at several centers a number of months ago and will be in full swing within the year.
+</p><p>The scale of the human DNA sequencing project is enough to send your average Unix system administrator running for cover. From the information-handling point of view, DNA is a very long string consisting of the four letters G, A, T and C (the letters are abbreviations for the four chemical units that form the "rungs" of the DNA double helix ladder). The goal of the project is to determine the order of letters in the string. The size of the string is impressive but not particularly mind-boggling: 3 x 10^9 letters long, or some 3 gigabytes of storage space if you use 1 byte to store each letter and don't use any compression techniques.
+</p><p>Three gigabytes is substantial but certainly manageable by today's standards. Unfortunately, this is just the storage space required to store the finished data. The storage requirements for the experimental data needed to determine this sequence is far more vast. The essential problem is that DNA sequencing technology is currently limited to reading stretches of at most 500 contiguous letters. In order to determine sequences longer than that, the DNA must be sequenced as small overlapping fragments called "reads" and the jigsaw puzzle reassembled by algorithms that look for areas where the sequences match. Because the DNA sequence is nonrandom (similar but not-entirely-identical motifs appear many times throughout the genome), and because DNA sequencing technology is noisy and error-prone, one ends up having to sequence each region of DNA five to 10 times in order to reliably assemble the reads into the true sequence. This increases the amount of data to manage by an order of magnitude. On top of this is all the associated information that goes along with laboratory work: who performed the experiment, when it was performed, the section of the genome was sequenced, the identity and version of the software used to assemble the sequence, any comments someone wants to attach to the experiment, and so forth. In addition, one generally wants to store the raw output from the machine that performs the sequencing itself. Each 500 letters of sequence generates a data file that's 20-30 kilobytes long!
+</p><p>That's not the whole of it. It's not enough just to determine the sequence of the DNA. Within the sequence are functional areas scattered among long stretches of nonfunctional areas. There are genes, control regions, structural regions, and even a few viruses that got entangled in human DNA long ago and persist as fossilized remnants. Because the genes and control regions are responsible for health and disease, one wants to identify and mark them as the DNA sequence is assembled. This type of annotation generates yet more data that needs to be tracked and stored.
+</p><p>Altogether, people estimate that some 1 to 10 terabytes of information will need to be stored in order to see the human genome project to its conclusion.
+</p><p>So what's Perl got to do with it? From the beginning researchers realized that informatics would have to play a large role in the genome project. An informatics core formed an integral part of every genome center that was created. The mission of these cores was two-fold: to provide computer support and databasing services for their affiliated laboratories, and to develop data analysis and management software for use by the genome community as a whole.
+</p><p>It's fair to say that the initial results of the informatics groups efforts were mixed. Things were slightly better on the laboratory management side of the coin. Some groups attempted to build large monolithic systems on top of complex relational databases; they were thwarted time and again by the highly dynamic nature of biological research. By the time a system that could deal with the ins and outs of a complex laboratory protocol had been designed, implemented and debugged, the protocol had been superseded by new technology and the software engineers had to go back to the drawing board.
+</p><p>Most groups, however, learned to build modular, loosely-coupled systems whose parts could be swapped in and out without retooling the whole system. In my group, for example, we discovered that many data analysis tasks involve a sequence of semi-independent steps. Consider the steps that one may want to perform on a bit of DNA that has just been sequenced (Figure 1). First there's a basic quality check on the sequence: is it long enough? Are the number of ambiguous letters below the maximum limit? Then there's the "vector check". For technical reasons, the human DNA must be passed through a bacterium before it can be sequenced (this is the process of "cloning"). Not infrequently, the human DNA gets lost somewhere in the process and the sequence that's read consists entirely of the bacterial vector. The vector check ensures that only human DNA gets into the database. Next there's a check for repetitive sequences. Human DNA is full of repetitive elements that make fitting the sequencing jigsaw puzzle together challenging. The repetitive sequence check tries to match the new sequence against a library of known repetitive elements. A penultimate step is to attempt to match the new sequence against other sequences in a large community database of DNA sequences. Often a match at this point will provide a clue to the function of the new DNA sequence. After performing all these checks, the sequence along with the information that's been gathered about it along the way is loaded into the local laboratory database.
+</p><p>The process of passing a DNA sequence through these independent analytic steps looks kind of like a pipeline, and it didn't take us long to realize that a Unix pipe could handle the job. We developed a simple Perl-based data exchange format called "boulderio" that allowed loosely coupled programs to add information to a pipe-based I/O stream. Boulderio is based on tag/value pairs. A Perl module makes it easy for programs to reach into the input stream, pull out only the tags they're interested in, do something with them, and drop new tags into output the stream. Any tags that the program isn't interested in are just passed through to standard output so that other programs in the pipeline can get to them.
+</p><p>Using this type of scheme, the process of analyzing a new DNA sequence looks something like this (this is not exactly the set of scripts that we use, but it's close enough):
+</p>
+<pre>name_sequence.pl &lt; new.dna |
+quality_check.pl |
+vector_check.pl |         
+find_repeats.pl |
+search_big_database.pl |
+load_lab_database.pl  
+</pre>
+<p>A file containing the new DNA sequence is processed by a perl script named "name_sequence.pl", whose only job is to give the sequence a new unique name and to put it into boulder format. Its output looks like this:
+</p>
+<pre>NAME=L26P93.2    
+SEQUENCE=GATTTCAGAGTCCCAGATTTCCCCCAGGGGGTTTCCAGAGAGCCC......  
+</pre>
+<p>The output from name_sequence.pl is next passed to the quality checking program, which looks for the SEQUENCE tag, runs the quality checking algorithm, and writes its conclusion to the data stream. The data stream now looks like this:
+</p>
+<pre>NAME=L26P93.2    
+SEQUENCE=GATTTCAGAGTCCCAGATTTCCCCCAGGGGGTTTCCAGAGAGCCC......    
+QUALITY_CHECK=OK  
+</pre>
+<p>Now the data stream enters the vector checker. It pulls the SEQUENCE tag out of the stream and runs the vector checking algorithm. The data stream now looks like this:
+</p>
+<pre>NAME=L26P93.2
+SEQUENCE=GATTTCAGAGTCCCAGATTTCCCCCAGGGGGTTTCCAGAGAGCCC......
+QUALITY_CHECK=OK
+VECTOR_CHECK=OK
+VECTOR_START=10
+VECTOR_LENGTH=300
+</pre>
+<p>This continues down the pipeline, until at last the "load_lab_database.pl" script collates all the data collected, makes some final conclusions about whether the sequence is suitable for further use, and enters all the results into the laboratory database.
+One of the nice features of the boulderio format is that multiple sequence records can be processed sequentially in the same Unix pipeline. An "=" sign marks the end of one record and the beginning of the next:
+</p><p><br />
+</p>
+<pre>NAME=L26P93.2
+SEQUENCE=GATTTCAGAGTCCCAGATTTCCCCCAGGGGGTTTCCAGAGAGCCC......
+=
+NAME=L26P93.3
+SEQUENCE=CCCCTAGAGAGAGAGAGCCGAGTTCAAAGTCAAAACCCATTCTCTCTCCTC...
+=  
+</pre>
+<p>There's also a way to create subrecords within records, allowing for structured data types.
+Here's an example of a script that processes boulderio format. It uses an object-oriented style, in which records are pulled out of the input stream, modified, and dropped back in:
+</p><p><br />
+</p>
+<pre>use Boulder::Stream;
+$stream = new Boulder::Stream; 	
+while ($record = $stream-&gt;read_record('NAME','SEQUENCE')) {
+    $name = $record-&gt;get('NAME'); 
+    $sequence = $record-&gt;get('SEQUENCE');
+     ...[continue processing]... 	  
+    $record-&gt;add(QUALITY_CHECK=&gt;"OK");
+    $stream-&gt;write_record($record);
+}  
+</pre>
+<p>(If you're interested, more information about the boulderio format  and the perl libraries to manipulate it can be found at <a href="http://stein.cshl.org/software/boulder/" class="external free" title="http://stein.cshl.org/software/boulder/" rel="nofollow">http://stein.cshl.org/software/boulder/</a> and <a href="http://search.cpan.org/perldoc?Boulder::Stream" class="external text" title="http://search.cpan.org/perldoc?Boulder::Stream" rel="nofollow">Boulder::Stream</a>.
+</p><p>The interesting thing is that multiple informatics groups independently converged on solutions that were similar to the boulderio idea. For example, several groups involved in the worm sequencing project began using a data exchange format called <a href="/wiki/ACEDB_sequence_format" title="ACEDB sequence format">ace</a>. Although this format was initially designed as the data dump and reload format for the ACE database (a database specialized for biological data), it happens to use a tag/value format that's very similar to boulderio. Soon *.ace files were being processed by Perl script pipelines and loaded into the ACE database at the very last step.
+</p><p>Perl found uses in other aspects of laboratory management. For example, many centers, including my own, use Web based interfaces for displaying the status of projects and allowing researchers to take actions. Perl scripts are the perfect engine for Web CGI scripts. Similarly, Perl scripts run e-mail database query servers, supervise cron jobs, prepare nightly reports summarizing laboratory activity, create instruction files to control robots, and handle almost every other information management task that a busy genome center needs.
+</p><p>So as far as laboratory management went, the informatics cores were reasonably successful. As far as development and distributing generally useful, however, things were not so rosy.
+</p><p>The problem will be familiar to anyone who has worked in a large, loosely organized software project. Despite best intentions, the project begins to drift. Programmers go off to work on ideas that interest them, modules that need to interface with one another are designed independently, and the same problems get solved several times in different, mutually incompatible ways. When the time comes to put all the parts together, nothing works.
+</p><p>This is what happened in the genome project. Despite the fact that everyone was working on the same problems, no two groups took exactly the same approach. Programs to solve a given problem were written and rewritten multiple times. While a given piece of software wasn't guaranteed to work better than its counterpart developed elsewhere, you could always count on it to sport its own idiosyncratic user interface and data format. A typical example is the central algorithm that assembles thousands of short DNA reads into an ordered set of overlaps. At last count there were at least six different programs in widespread use, and no two of them use the same data input or output formats.
+</p><p>This lack of interchangeability presents terrible dilemma for the genome centers. Without interchangeability, an informatics group is locked into using the software that it developed in-house. If another genome center has come up with a better software tool to attack the same problem, a tremendous effort is required by the first center to retool their system in order to use that tool.
+</p><p>The long range solution to this problem is to come up with uniform data interchange standards that genome software must adhere to. This would allow common modules to be swapped in and out easily. However, standards require time to agree on, and while the various groups are involved in discussion and negotiation, there is still an urgent need to adapt existing software to the immediate needs of the genome centers.
+</p><p>Here is where Perl again came to the rescue. The Cambridge summit meeting that introduced this article was called in part to deal with the data interchange problem. Despite the fact that the two groups involved were close collaborators and superficially seemed to be using the same tools to solve the same problems, on closer inspection nothing they were doing was exactly the same.
+</p><p>The main software components in a DNA sequencing projects are:
+</p>
+<ul><li> a trace editor to analyze, display and the short DNA read chromatograms from DNA sequencing machines.
+</li><li> a read assembler, to find overlaps between the reads and assemble them together into long contiguous sections.
+</li><li> an assembly editor, to view the assemblies and make changes in places where the assembler went wrong.
+</li><li> a database to keep track of it all.
+</li></ul>
+<p>Over the course of a few years, the two groups had developed suites of software that worked well in their hands. Following the familiar genome center model, some of the components were developed in-house while others were imported from outside. As shown in Figure 2, Perl was used for the glue to make these pieces of software fit together. Between each pair of interacting modules were one or more Perl scripts responsible for massaging the output of one module into the expected input for another.
+</p><p>When the time came to interchange data, however, the two groups hit a snag. Between them they were now using two trace editors, three assemblers, two assembly editors and (thankfully) one database. If two Perl scripts were required for each pair of components (one for each direction), one would need as many as 62 different scripts to handle all the possible interconversion tasks. Every time the input or ouput format of one of these modules changed, 14 scripts might need to be examined and fixed.
+</p><p>The solution that was worked out during this meeting is the obvious one shown in Figure 3. The two groups decided to adopt a common data exchange format known as CAF (an acronym whose exact meaning was forgotten during the course of the meeting). CAF would contain a superset of the data that each of the analysis and editing tools needed. For each module, two Perl scripts would be responsible for converting from CAF into whatever format Module A expects ("CAF2ModuleA") and converting Module A's output back into CAF ("ModuleA2CAF"). This simplified the programming and maintenance task considerably. Now there were only 16 Perl scripts to write; when one module changed, only two scripts would need to be examined.
+</p><p>This episode is not unique. Perl has been the solution of choice for genome centers whenever they need to exchange data, or to retrofit one center's software module to work with another center's system.
+</p><p>So Perl has become the software mainstay for computation within genome centers as well as the glue that binds them together. Although genome informatics groups are constantly tinkering with other "high level" languages such as Python, Tcl and recently Java, nothing comes close to Perl's popularity. How has Perl achieved this remarkable position?
+</p><p>I think several factors are responsible:
+</p>
+<ol><li> Perl is remarkably good for slicing, dicing, twisting, wringing, smoothing, summarizing and otherwise mangling text. Although the biological sciences do involve a good deal of numeric analysis now, most of the primary data is still text: clone names, annotations, comments, bibliographic references. Even DNA sequences are textlike. Interconverting incompatible data formats is a matter of text mangling combined with some creative guesswork. Perl's powerful regular expression matching and string manipulation operators simplify this job in a way that isn't equalled by any other modern language.
+</li><li> Perl is forgiving. Biological data is often incomplete, fields can be missing, or a field that is expected to be present once occurs several times (because, for example, an experiment was run in duplicate), or the data was entered by hand and doesn't quite fit the expected format. Perl doesn't particularly mind if a value is empty or contains odd characters. Regular expressions can be written to pick up and correct a variety of common errors in data entry. Of course this flexibility can be also be a curse. I talk more about the problems with Perl below.
+</li><li> Perl is component-oriented. Perl encourages people to write their software in small modules, either using Perl library modules or with the classic Unix tool-oriented approach. External programs can easily be incorporated into a Perl script using a pipe, system call or socket. The dynamic loader introduced with Perl5 allows people to extend the Perl language with C routines or to make entire compiled libraries available for the Perl interpreter. An effort is currently under way to gather all the world's collected wisdom about biological data into a set of modules called "bioPerl" (discussed at length in an article to be published later in the Perl Journal).
+</li><li> Perl is easy to write and fast to develop in. The interpreter doesn't require you to declare all your function prototypes and data types in advance, new variables spring into existence as needed, calls to undefined functions only cause an error when the function is needed. The debugger works well with Emacs and allows a comfortable interactive style of development.
+</li><li> Perl is a good prototyping language. Because Perl is quick and dirty, it often makes sense to prototype new algorithms in Perl before moving them to a fast compiled language. Sometimes it turns out that Perl is fast enough so that of the algorithm doesn't have to be ported; more frequently one can write a small core of the algorithm in C, compile it as a dynamically loaded module or external executable, and leave the rest of the application in Perl (for an example of a complex genome mapping application implemented in this way, see <a href="http://waldo.wi.mit.edu/ftp/distribution/software/rhmapper/" class="external free" title="http://waldo.wi.mit.edu/ftp/distribution/software/rhmapper/" rel="nofollow">http://waldo.wi.mit.edu/ftp/distribution/software/rhmapper/</a>).
+</li><li> Perl is a good language for Web CGI scripting, and is growing in importance as more labs turn to the Web for publishing their data.
+</li></ol>
+<p>My experience in using Perl in a genome center environment has been extremely favorable overall. However I find that Perl has its problems too. Its relaxed programming style leads to many errors that more uptight languages would catch. For example, Perl lets you use a variable before its been assigned to, a useful feature when that's what you intend but a disaster when you've simply mistyped a variable name. Similarly, it's easy to forget to declare make a variable used in a subroutine local, inadvertently modifying a global variable.
+</p><p>If one uses the -w switch religiously and turn on the "use strict vars" pragma, these Perl will catch these problems and others. However there are more subtle gotchas in the language that are not so easy to fix. A major one is Perl's lack of type checking. Strings, floats and integers all interchange easily. While this greatly speeds up development, it can cause major headaches. Consider a typical genome center Perl script that's responsible for recording the information of short named subsequences within a larger DNA sequence. When the script was written, the data format was expected to consist of tab-delimited fields: a string followed by two integers representing the name, starting position and length of a DNA subsequence within a larger sequence. An easy way to parse this would to split() into an list like this:
+</p>
+<pre>($name,$start_position,$length) = split("\t");  
+</pre>
+<p>Later on in this script some arithmetic is performed with the two integer values and the result written to a database or to standard output for further processing.
+Then one day the input file's format changes without warning. Someone bumps the field count up by one by sticking a comment field between the name and the first integer. Now the unknowing script assigns a string to a variable that's expected to be numeric and silently discards the last field on the line. Rather than crashing or returning an error code, the script merrily performs integer arithmetic on a string, assuming a value of zero for the string (unless it happens to start with a digit). Although the calculation is meaningless, the output may look perfectly good, and the error may not be caught until some point well downstream in the processing.
+</p><p>The final Perl deficiency has been a way to create graphical user interfaces. Although Unix True Believers know that anything worth doing can be done on the command line, most end-users don't agree. Windows, menus and bouncing icons have become de rigueur for programs intended for use by mere mortals.
+</p><p>Until recently, <a href="http://en.wikipedia.org/wiki/GUI" class="extiw" title="wp:GUI">GUI</a> development in Perl was awkward to impossible. However the work of Nick Ing-Simmons and associates on perlTK (pTK) has made Perl-driven <a href="http://en.wikipedia.org/wiki/GUI" class="extiw" title="wp:GUI">GUIs</a> possible on X-windows systems. My associates and I have written several pTK-based applications for internal use at the MIT genome center, and it's been a satisfying experience overall. Other genome centers make much more extensive use of pTK, and in some places its become a mainstay of production.
+</p><p>Unfortunately, I'm sad to confess that a few months ago when I needed to put a graphical front end on a <a href="http://en.wikipedia.org/wiki/C_plus_plus" class="extiw" title="wp:C_plus_plus">C++</a> image analysis program I'd written, I turned to the standard <a href="http://en.wikipedia.org/wiki/Tcl" class="extiw" title="wp:Tcl">Tcl</a>/<a href="http://en.wikipedia.org/wiki/Tk" class="extiw" title="wp:Tk">Tk</a> library rather than to pTK. I made this choice because I intended the application for widespread distribution. I find pTK still too unstable for export: new releases of pTK discover lurking bugs in Perl, and vice-versa. Further, I find that even seasoned system administrators run into glitches when compiling and installing Perl modules, and I worried that users would hit some sort of road block while installing either pTK or the modules needed to support my application, and owuld give up. In contrast, many systems have the <a href="http://en.wikipedia.org/wiki/Tcl" class="extiw" title="wp:Tcl">Tcl</a>/<a href="http://en.wikipedia.org/wiki/Tk" class="extiw" title="wp:Tk">Tk</a> libraries preinstalled; if they don't, installation is quick and painless.
+</p><p>In short, when the genome project was foundering in a sea of incompatible data formats, rapidly-changing techniques, and monolithic data analysis programs that were already antiquated on the day of their release, Perl saved the day. Although it's not perfect, Perl seems to fill the needs of the genome centers remarkably well, and is usually the first tool we turn to when we have a problem to solve.
+</p><p><i> <b>When he's not rushing to meet a deadline, Lincoln sometimes goes out for a coffee.</b> </i>
+</p>
+<!-- Saved in parser cache with key perlwikidb:pcache:idhash:3216-0!1!0!!en!2!edit=0 and timestamp 20080128023336 -->
+<div class="printfooter">
+Retrieved from "<a href="http://www.bioperl.org/wiki/How_Perl_saved_human_genome">http://www.bioperl.org/wiki/How_Perl_saved_human_genome</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+					 <li id="ca-nstab-main" class="selected"><a href="/wiki/How_Perl_saved_human_genome" title="View the content page [c]" accesskey="c">Article</a></li>
+					 <li id="ca-talk" class="new"><a href="/w/index.php?title=Talk:How_Perl_saved_human_genome&amp;action=edit" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+					 <li id="ca-viewsource"><a href="/w/index.php?title=How_Perl_saved_human_genome&amp;action=edit" title="This page is protected. You can view its source. [e]" accesskey="e">View source</a></li>
+					 <li id="ca-history"><a href="/w/index.php?title=How_Perl_saved_human_genome&amp;action=history" title="Past versions of this page. [h]" accesskey="h">History</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/w/index.php?title=Special:Userlogin&amp;returnto=How_Perl_saved_human_genome" title="You are encouraged to log in, it is not mandatory however. [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/w/images/6/62/BioPerlLogo.png);" href="/wiki/Main_Page" title="Visit the Main Page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Main Links</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page" title="Visit the Main Page [z]" accesskey="z">Main Page</a></li>
+				<li id="n-Getting-Started"><a href="/wiki/Getting_Started">Getting Started</a></li>
+				<li id="n-Downloads"><a href="/wiki/Getting_BioPerl">Downloads</a></li>
+				<li id="n-Installation"><a href="/wiki/Installing_BioPerl">Installation</a></li>
+				<li id="n-recentchanges"><a href="/wiki/Special:Recentchanges" title="The list of recent changes in the wiki. [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class='portlet' id='p-documentation'>
+		<h5>documentation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Quick-Start"><a href="/wiki/Quick_start">Quick Start</a></li>
+				<li id="n-FAQ"><a href="/wiki/FAQ">FAQ</a></li>
+				<li id="n-HOWTOs"><a href="/wiki/HOWTOs">HOWTOs</a></li>
+				<li id="n-BioPerl-Tutorial"><a href="/wiki/Bptutorial.pl">BioPerl Tutorial</a></li>
+				<li id="n-Tutorials"><a href="/wiki/Tutorials">Tutorials</a></li>
+				<li id="n-Deobfuscator"><a href="/wiki/Deobfuscator">Deobfuscator</a></li>
+				<li id="n-Browse-Modules"><a href="/wiki/Category:Modules">Browse Modules</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class='portlet' id='p-community'>
+		<h5>community</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-News"><a href="/wiki/News">News</a></li>
+				<li id="n-Mailing-lists"><a href="/wiki/Mailing_lists">Mailing lists</a></li>
+				<li id="n-sitesupport"><a href="/wiki/BioPerl:Site_support" title="Support us">Supporting BioPerl</a></li>
+				<li id="n-About-this-site"><a href="/wiki/About_site">About this site</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class='portlet' id='p-development'>
+		<h5>development</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Developer-Information"><a href="/wiki/Developer_Information">Developer Information</a></li>
+				<li id="n-Advanced-BioPerl"><a href="/wiki/Advanced_BioPerl">Advanced BioPerl</a></li>
+				<li id="n-Subversion"><a href="/wiki/Using_Subversion">Subversion</a></li>
+				<li id="n-API-Docs"><a href="/wiki/API_Docs">API Docs</a></li>
+				<li id="n-Bugs"><a href="/wiki/Bugs">Bugs</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" title="Search BioPerl [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/Special:Whatlinkshere/How_Perl_saved_human_genome" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/Special:Recentchangeslinked/How_Perl_saved_human_genome" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="/wiki/Special:Upload" title="Upload images or media files [u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a href="/wiki/Special:Specialpages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/w/index.php?title=How_Perl_saved_human_genome&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/w/index.php?title=How_Perl_saved_human_genome&amp;oldid=7925" title="Permanent link to this version of the page">Permanent link</a></li><li id="t-pdf"><a href="/w/index.php?title=Special:PdfPrint&amp;page=How_Perl_saved_human_genome">Print as PDF</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/w/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/w/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 23:26, 19 September 2006.</li>
+				<li id="viewcount">This page has been accessed 22,820 times.</li>
+				<li id="copyright">Content is available under <a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>.</li>
+				<li id="privacy"><a href="/wiki/BioPerl:Privacy_policy" title="BioPerl:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="/wiki/BioPerl:About" title="BioPerl:About">About BioPerl</a></li>
+				<li id="disclaimer"><a href="/wiki/BioPerl:General_disclaimer" title="BioPerl:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-358618-1";
+urchinTracker();
+</script>
+</div>
+<!-- Served in 0.545 secs. --></body></html>
