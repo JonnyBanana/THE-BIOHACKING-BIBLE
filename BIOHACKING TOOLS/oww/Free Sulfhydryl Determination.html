@@ -1,0 +1,58 @@
+Submitted by [[Sean Moore]]
+
+==Background==
+This is the protocol I used to determine the concentration of reduced cysteine in a purified protein.  It takes advantage of the redox potential of the sulhydryl group and a coliometric reagent that turns yellow upon reaction with the sulhydryl (DTNB + SH ---> 2-nitro-5-thiobenzoic acid (yellow)).
+A standard curve is generated using a reactive sulfhydryl compound of known concentrations (cysteine, DTT, 2-ME, etc.) and then the amount of free cysteine determined for a solution of protein is compared to the known protein concentration.  In doing so, one can determine the stochiometry of cysteine to cystine in a protein.
+
+
+==Reagents==
+
+===1 M Tris-Cl, pH 8.0===
+tris base to pH 8.0 with HCl
+
+===2 mM DTNB dissolved in 50 mM sodium acetate===
+===Stock of known thiol compound (I use 100 mM DTT)===
+DTT has 2 reactive thiols per molecule, this will be corrected for later
+===Protein of Interest (not in a thiol-containing buffer!)===
+Usually several proteins samples are compared: a stock solution, a reduced and buffer exchanged sample, a reduced sample that was reacted with a thiol-blocking compound (like iodoacetate)and buffer exchanged.  Make sure to remove  free thiol or thiol-reactive compounds from the protein solution before attempting to measure free cysteine concentration.
+
+
+==Protocol==
+
+Prepare a "<b>Working Solution</b>" by mixing:
+
+*8.4 mLs Water
+
+*1 mL 1M Tris-Cl pH 8.0
+
+*0.5 mL DTNB solution  
+
+Make serial dilutions of DTT (or whatever control you are using)with the highest concentration about 5 mM (or 10 mM for single thiol compound).
+
+Aliquot <b>Working Solution</b> into tubes (495 &mu;L is usually fine).
+
+Add 5 &mu;L of the DTT solutions to each and mix.
+
+Measure the absorbance of the solution at 412 nm (blank against a no DTT mixture).  If you have trouble with reproducibility of the same sample, try placing the cuvette with the solution in the spec., then blanking, and without removing the cuvette, adding the thiol, mixing and measuring.
+
+Multiply the measured 412 absorbance by 100 (you made a 1/100 dilution in the reaction).
+
+Divide the result by 2 if your compound had 2 reactive groups (like DTT).
+
+Divide the result by 13,600 (the extinction coefficient of the yellow guy at 412 nm)
+
+This is the molarity of the yellow reagent that arose from a reaction with the free thiols in the solution you tested.  You can plot this against the concentration of DTT you thought you used to make sure the values are close.
+
+In my hands, ther reaction is linear thoughout the linear range of the spec. (~0.01-1.0).
+
+==Comments==
+
+References
+
+1) Ellman, G. L. (1959) Arch. Biochem. Biophys. 82, 70-77. (Original determination)
+
+2) Bulaj, G.; Kortemme, T.; Goldenberg, D. P. (1998) Biochemistry 37, 8965-8972. (Recent usage)
+
+[[Category: Protocol]]
+[[Category: In vitro]]
+[[Category: Protein]]

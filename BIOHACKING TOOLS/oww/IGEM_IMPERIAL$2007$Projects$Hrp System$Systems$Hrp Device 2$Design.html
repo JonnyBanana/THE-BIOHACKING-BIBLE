@@ -1,0 +1,63 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"| Super Parts
+!colspan="2" | links to higher level parts if applicable 
+|- style="background:#FF9966"
+!height="25pt" width="80pt" height="50"|Actual Part
+!colspan="2" height="170pt"| [[image:IC2007 Hrp Dev2Top.png|center|400px|]]
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"|Sub Parts
+!'''RBS (Elowitz)''' [http://parts.mit.edu/registry/index.php/Part:BBa_B0034 BBa_B0034]
+!'''Double terminator (B0010-B0012)''' [http://parts.mit.edu/registry/index.php/Part:BBa_B0015 BBa_B0015]
+|}
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2|Specifications]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2/Implementation|Implementation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Registry==
+*insert part logo
+*insert link to the registry 
+
+==Design constructs==
+===Promoters===
+[[ Image:IC2007 Hrp PromoterConB.PNG|thumb|500px|right|Hrp PromB]] <br>
+To initiate expression of HrpV, the promoter used will be pBad which is induced upon addition of Arabinose. Since we cannot directly measure PoPS in, we will use a test contruct to measure the promoter activity in terms of fluorescence. The construct shown on the right ( ''Hrp PromB'' ) will output GFP once pBad is induced. By measuring the rate of GFP production we will know the rate at which acGFP is expressed at various Arabinose concentrations. From that we can extract the input characteristics of the promoter. <br clear="all">
+
+[[ Image:IC2007 Hrp PromoterConA.PNG|thumb|500px|right|Hrp PromA]] <br>
+The promoter used to initiate expression of HrpR and HrpS will be pLux which is induced by adding AHL. The same procedure is carried out with as above to determine the promoter properties. The assembly used is ''Hrp PromA'' and is shown on the right. Again fluorescence by acGFP expression is used as an output.<br clear="all">
+
+===Device constructs===
+Our final device will be made up of 2 parts (vectors). The first part will deal with HrpV expression and is dependent on the pBad promoter. The second part deals with the HrpR and HrpS expression and depends on the pLux. The pHrpL promoter is also added on the second vector.<br> <br>
+
+[[Image:IC2007 Hrp Device2Con1.PNG|frame|center|900px| ''Hrp Dev2_1'']] <br clear="all">
+
+[[Image:IC2007 Hrp Device2Con2.PNG|frame|center|900px| ''Hrp Dev2_2'']] <br clear="all">
+
+
+Since a direct way of measuring PoPS in and out of the system is not available at present, our final device will need to depend on the expression of fluorescence to have a measurable output. That is why acGFP was added after pHrpL. Therefore to have an output characteristic, all we have to do is measure the rate of fluorescenc production.
+An RFP nucleotide sequence (dsRFP) is also added after HrpV to enable us to identify when HrpV is expressed during our experiment. This will allow us to know '''when''' our output of GFP is actually inhibited. <br>
+
+
+{| border="1" width="100%"
+|- style="background:lightgreen"
+! INPUTS !! Biological component !! Comments
+|-
+| Arabinose (Inducer) concentration || pBad promoter  || Arabinose acts to induce pBad activity
+|-
+| AHL (Inducer) concentration || pLux promoter || AHL acts to induce pLux activity 
+|- style="background:orange"
+! OUTPUTS !! Biological component !! Comments
+|-
+| Fluorescence || acGFP  || The '''rate''' of GFP production will be our output
+|}
+
+==Open issues==
+*list known issues

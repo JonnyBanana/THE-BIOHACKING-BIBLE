@@ -1,0 +1,95 @@
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:Harvard/2006/DNA nanostructures|Project Overview]]</li>
+<li id = "current">[[IGEM:Harvard/2006/DNA_nanostructures/Designs|Designs]]</li>
+<li>[[IGEM:Harvard/2006/DNA_nanostructures/Notebook|Notebook]]</li>
+<li>[[IGEM:Harvard/2006/DNA_nanostructures/Protocols|Protocols]]</li>
+<li>[[IGEM:Harvard/2006/DNA_nanostructures/Presentations|Presentations]]</li>
+<li>[[IGEM:Harvard/2006/DNA_nanostructures/Literature|Literature]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+<div class = "tabs-blue">
+<ul>
+<li>[[IGEM:Harvard/2006/Container Design 1|Design 1]]</li>
+<li id = "current">[[IGEM:Harvard/2006/Container Design 2|Design 2]]</li>
+<li>[[IGEM:Harvard/2006/Container Design 3|Design 3]]</li>
+<li>[[IGEM:Harvard/2006/Container Design 4|Design 4]]</li>
+<li>[[IGEM:Harvard/2006/Container Design 5|Design 5]]</li>
+<li>[[IGEM:Harvard/2006/Container Design 6|Design 6]]</li>
+</ul>
+</div>
+<br style = "clear:both">
+
+==Container 2.0==
+
+==ascii==
+[[Media:lid_ascii1.txt|ascii]]
+
+== oligo path ==
+[[Media:lid1_oligo_path1.txt|oligo path]]
+
+
+===Design structure===
+[[Image:Smallcontainerdesign2.jpg |thumb|Double-ply lids, smaller hexagonal cylinder.]]
+* '''Barrel''': 30 helices @ 84bp each, each side 18.6nm long, widest point 29nm long
+* '''Lids''': double-ply, 26 helices @ 84bp each, 34.2nm long
+
+'''Notes about designs'''
+*'''Calculating coil length''': The distance between stacked base pairs is approximately (3.4 nm / turn) / (10.5 bp / turn) = 0.324 nm / bp.
+*'''Calculating sheet length''': The length of a "sheet" can be calculated using simple trigonometry, as demonstrated by the diagram below.
+*The effective diameter of a coil is 3 nm according to Dr. Shih, but I'm not 100% sure that this figure is correct, so I will call it ''d'' until we can verify it.
+
+
+
+
+
+
+
+
+
+
+
+===Design details===
+based on ''n'' = 0.324 nm, ''d'' = 3.0 nm
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Shape'''
+| align="center" style="background:#f0f0f0;"|'''Lid ply'''
+| align="center" style="background:#f0f0f0;"|'''Cylinder design'''
+| align="center" style="background:#f0f0f0;"|'''Lid design'''
+| align="center" style="background:#f0f0f0;"|'''Total scaffold length'''
+|-
+| honeycomb hexagon||double||30 tubes (29.0 nm dia) x (84+12)bp long (30.8 nm)||26 tubes (34.2 nm) x (84+12)bp long (30.8 nm)||7872
+|}
+
+===ASCII Files===
+*[[Media:container2barrel.txt]]
+**(The example hexagonal barrel that William had put up onscreen during the presentation, which is also the one we planned for this design.
+
+*[[Media:container2lid.txt]]
+**Double-ply lid, will need to be fed two different M13 sequence portions, bookending the main barrel's sequence, to be added.
+
+===Oligo Sequences (84bp-long helices)===
+
+'''NB:''' These oligos still seem to be wrong, despite the feeding of p7308 sequence chunks appropriately separated by 12bp linkers.
+
+
+* '''Lid 1''': [[Media: design2oligo_sequenceslid1.txt]]
+** Oligos for the first lid (program was fed the lid ASCII, 2*42bp per helix, and the first 84bp*26helices of the p7308 sequence)
+
+* '''Barrel''': [[Media: design2oligo_sequencesbarrel.txt]]
+** Oligos for the barrel (program was fed the barrel ASCII, 2*42bp per helix, and the second chunk of the p7308 sequence - ie. 84bp*30helices)
+
+* '''Lid 2''': [[Media: design2oligo_sequenceslid2.txt]]
+** Oligos for the second lid (program was fed the lid ASCII, 2*42bp per helix, and the third chunk of the p7308 sequence - ie. 84bp*26helices)
+
+
+* '''p7308 Sequence Chunk, Lid 1''': [[Media: first84bpx26h.txt]]
+** Sequence fed for the first lid.
+
+* '''p7308 Sequence Chunk, Barrel''': [[Media: second84bpx30h.txt]]
+** Sequence fed for the barrel.
+
+* '''p7308 Sequence Chunk, Lid 2''': [[Media: third84bpx26h.txt]]
+** Sequence fed for the second lid.

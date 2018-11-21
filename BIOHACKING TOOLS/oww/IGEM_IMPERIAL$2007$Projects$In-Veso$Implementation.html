@@ -1,0 +1,299 @@
+=In-Veso Gene Expression: Implementation=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/Modelling|Modelling]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/In-Veso/Implementation|Implementation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/TestingValidation|Testing/Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+
+__TOC__
+
+<br style="clear:both">
+=='''Phase 1. Vesicle Formation'''==
+<br>
+===1.1 Forming Vesicles===
+{| width= 30% border="2" style="background-color:#ABCDEF;" align="right"
+| colspan="2" align="center"  style="font-style:Bold; font-size:140%;" | Overall Status 
+|-
+| colspan="2" align="center" style="color:Green; font-style:Bold; font-size:140%;" | Results available
+|-
+|align="center"  style="font-size:100%;" | '''Construct'''
+|align="center"  style="font-size:100%;" | '''Status'''
+|-
+|style="font-style:Bold;" align="center" | DOPC / Mineral Oil
+|style="color:Green ; font-style:Bold; font-size:110%;" align="center" | [[IGEM:IMPERIAL/2007/Notebook/2007-8-14 | Prepped - 14/08/07]]
+|-
+|style="font-style:Bold;" align="center"| DOPC / Mineral Oil
+|style="color:Blue ; font-style:Bold; font-size:110%;" align="center" | [[IGEM:IMPERIAL/2007/Notebook/2007-8-15 | We have vesicles! - 15/08/07]] 
+|}
+<br>
+'''Constructs:''' 
+*DOPC (1,2-Oleoyl-sn-Glycero-3-phosphocholine) / Mineral Oil
+*POPC (1-Palmitoyl,2-oleoyl-sn-Glycero 3-phosphocholine) / Dodecane / Span 80
+
+Based on our specifications, we have decided to use the 'Mineral Oil' method to build our ''in-veso'' chassis. This will allow us greater flexibility with the size of vesicles formed, as with the number of vesicles we can produce. We have also decided on using different materials to construct our vesicles - one that is recommended by researchers at Imperial College, and the other that is most frequently used in literature.
+<br clear="all">
+{| border="0" align="right" style="font-style:Bold; font-size:140%; color:red;"
+| align="left" width="170px" | 
+| align="right"  style="font-style:Bold; font-size:110%;" | [[IGEM:IMPERIAL/2007/Projects/In-Veso/Implementation/Protocol1.1|'''Protocol''']] 
+|-
+| colspan=2 align="right"  style="font-style:Bold; font-size:110%;" | [[IGEM:IMPERIAL/2007/Projects/In-Veso/Implementation/Results1.1|'''Results''']] 
+|}
+'''Aims:'''
+*To form vesicles
+*Visualize them under light microscope and be able to differentiate them from air bubbles
+*Note the range of size of vesicles and lifespan
+<br>
+<span class="_toggler_toggle-item1-1-1">'''[+] Constant Conditions'''</span>
+<div class="toggle1-1 item1-1-1" style="display:none;">
+*125μl phospholipid added to mineral oil solvent
+*Strict adherence to protocol (except for interface (feeding) solution)
+</div>
+
+<span class="_toggler_toggle-item1-1-2">'''[+] Variables'''</span>
+<div class="toggle1-1 item1-1-2" style="display:none;">
+*Number of vesicles
+*Size of vesicles
+*Modification of protocol at interface stage
+*Life span of chassis
+</div>
+
+<span class="_toggler_toggle-item1-1-3">'''[+] Sampling'''</span>
+<div class="toggle1-1 item1-1-3" style="display:none;">
+*2 microscopic slides
+*100x light microscope
+</div>
+
+<div style="float:right; font-size: 150%;"><span class="_toggler_show-toggle1-1 _toggler-toggler1-1a _toggler-toggler1-1b toggler1-1a">Show All Details</span><span class="_toggler_hide-toggle1-1 _toggler-toggler1-1a _toggler-toggler1-1b toggler1-1b" style="display:none;">Hide All Details</span></div>
+
+<br clear="all">
+<br>
+<HR SIZE=2 WIDTH=90%><br>
+
+===1.2 Adding GFP into Vesicles===
+{| width= 30% border="2" style="background-color:#ABCDEF;" align="right"
+| colspan="2" align="center"  style="font-style:Bold; font-size:140%;" | Overall Status 
+|-
+| colspan="2" align="center" style="color:Green; colouasfasfar:#9933FF ; font-style:Bold; font-size:140%;" | Results Available
+|-
+|align="center"  style="font-size:100%;" | '''Construct'''
+|align="center"  style="font-size:100%;" | '''Status'''
+|-
+|style="font-style:Bold;" align="center" | DOPC / Mineral Oil
+|style="color:Green ; font-style:Bold; font-size:110%;" align="center" | [[IGEM:IMPERIAL/2007/Notebook/2007-8-15 | Prepped - 15/08/07]]
+|-
+|style="font-style:Bold;" align="center"| DOPC / Mineral Oil
+|style="color:Blue ; font-style:Bold; font-size:110%;" align="center" | [[IGEM:IMPERIAL/2007/Notebook/2007-8-16 | No fluorescence - 16/08/07]] 
+|-
+|style="font-style:Bold;" align="center"| DOPC / Mineral Oil
+|style="color:Blue ; font-style:Bold; font-size:110%;" align="center" | [[IGEM:IMPERIAL/2007/Notebook/2007-8-17 | Fluorescence at membrane - 17/08/07]] 
+|-
+|style="font-style:Bold;" align="center"| DOPC / Mineral Oil
+|style="color:Blue ; font-style:Bold; font-size:110%;" align="center" | [[IGEM:IMPERIAL/2007/Notebook/2007-8-20 | Inconclusive - 20/08/07]] 
+|-
+|style="font-style:Bold;" align="center"| DOPC / Mineral Oil
+|style="color:Blue ; font-style:Bold; font-size:110%;" align="center" | [[IGEM:IMPERIAL/2007/Notebook/2007-8-22 | Glowing vesicles, but still inconclusive - 22/08/07]]
+|-
+|style="font-style:Bold;" align="center"| POPC / Dodecane
+|style="color:Blue ; font-style:Bold; font-size:110%;" align="center" | [[IGEM:IMPERIAL/2007/Notebook/2007-8-24 | Glowing vesicles, but still inconclusive - 24/08/07]] 
+|-
+|style="font-style:Bold;" align="center"| DOPC / Dodecane (No overnight)
+|style="color:Black; font-style:Bold; font-size:110%;" align="center" | Vesicles oserved <br> [[IGEM:IMPERIAL/2007/Notebook/2007-9-3#Vesicles | 03/09/2007]]
+|-
+|style="font-style:Bold;" align="center"| POPC / Dodecane (No overnight)
+|style="color:Black; font-style:Bold; font-size:110%;" align="center" | Vesicles observed <br> [[IGEM:IMPERIAL/2007/Notebook/2007-9-3#Vesicles | 03/09/2007]]
+|}
+<br>
+'''Constructs:''' 
+*DOPC (1,2-Oleoyl-sn-Glycero-3-phosphocholine) / Mineral Oil
+*POPC (1-Palmitoyl,2-oleoyl-sn-Glycero 3-phosphocholine) / Dodecane / Span 80
+
+The next step in building our chassis is to ensure that we are able to control what we want inside our chassis. As a means of proof of feasibility, diluted GFP standard solution was added to the emulsion instead, and the results seen using fluorescence mircrosopy.
+
+
+'''Aims:'''
+*To compensate for osmolarity and form vesicles with GFP inside
+*Visualize them under fluorescence microscope
+*Note the range of size of vesicles and lifespan
+<br>
+<span class="_toggler_toggle-item1-2-1">'''[+] Constant Conditions'''</span>
+<div class="toggle1-2 item1-2-1" style="display:none;">
+*125μl phospholipid added to mineral oil solvent
+*Strict adherence to protocol (except for interface (feeding) solution)
+</div>
+
+<span class="_toggler_toggle-item1-2-2">'''[+] Variables'''</span>
+<div class="toggle1-2 item1-2-2" style="display:none;">
+*Number of vesicles
+*Size of vesicles
+*Modification of protocol at interface stage
+*Life span of chassis
+</div>
+
+<span class="_toggler_toggle-item1-2-3">'''[+] Sampling'''</span>
+<div class="toggle1-2 item1-2-3" style="display:none;">
+*2 microscopic slides
+*100x flurescence microscope
+</div>
+
+<span class="_toggler_toggle-item1-2-4">'''[+] Controls'''</span>
+<div class="toggle1-2 item1-2-4" style="display:none;">
+*100x GFP standard solution
+</div>
+<br clear="all">
+
+{| border="0" align="right" style="font-style:Bold; font-size:140%; color:red;"
+| align="left" width="170px" | 
+| align="right"  style="font-style:Bold; font-size:110%;" | [[IGEM:IMPERIAL/2007/Projects/In-Veso/Implementation/Protocol1.2|'''Protocol''']] 
+|-
+| colspan=2 align="right"  style="font-style:Bold; font-size:110%;" | [[IGEM:IMPERIAL/2007/Projects/In-Veso/Implementation/Results1.2|'''Results''']] 
+|}
+
+
+'''Main Conclusions:'''
+* GFP was successfully enclosed inside vesicles.
+* It is possible to make vesicles with GFP without the overnight incubation step.
+* It is possible to make vesicles with GFP with 10ml instead of 50ml of lipid-oil suspension.
+* Dodecane seems to work better than mineral oil with both DOPC and POPC.
+
+'''Outstanding Questions'''
+* It is still not clear whether the external GFP aggregates entered the solution encapsulated in vesicles or not. Hence, there is no distinction between encapsulation efficiency and stability. Control experiments should be carried out.
+* The emulsions produced are still not very stable - they tend to coalesce and precipitate fairly quickly. This is probably due to the low adsorption rate of phospholipids. There are two possible solutions - either adding Span-80, which has a higher adsorption rate and better stabilising properties, or stir the emulsion for a longer period at a slower rate (giving more time for phospholipid adsorption to occur).
+
+<div style="float:right; font-size: 150%;"><span class="_toggler_show-toggle1-2 _toggler-toggler1-2a _toggler-toggler1-2b toggler1-2a">Show All Details</span><span class="_toggler_hide-toggle1-2 _toggler-toggler1-2a _toggler-toggler1-2b toggler1-2b" style="display:none;">Hide All Details</span></div>
+
+<br clear="all">
+<br>
+<br>
+
+===1.3 Adding Cell Extract into Vesicles===
+{| width= 30% border="2" style="background-color:#ABCDEF;" align="right"
+| colspan="2" align="center"  style="font-style:Bold; font-size:140%;" | Overall Status 
+|-
+| colspan="2" align="center" style="color:Green; colouasfasfar:#9933FF ; font-style:Bold; font-size:140%;" | Results Available
+|-
+|align="center"  style="font-size:100%;" | '''Construct'''
+|align="center"  style="font-size:100%;" | '''Status'''
+|-
+| width= 50% style="font-style:Bold;" align="center" | POPC / Dodecane <br> Noireaux protocol
+|style="color:Black; font-style:Bold; font-size:110%;" align="center" | No vesicles found. <br> [[IGEM:IMPERIAL/2007/Notebook/2007-9-4#Vesicles |04/09/2007]]
+|-
+| width= 50% style="font-style:Bold;" align="center" | POPC / Dodecane <br> 50ml suspension
+|style="color:Black; font-style:Bold; font-size:110%;" align="center" | Vesicles produced. Very good results <br> [[IGEM:IMPERIAL/2007/Notebook/2007-9-4#Vesicles |04/09/2007]]
+|-
+| width= 50% style="font-style:Bold;" align="center" | DOPC / Dodecane <br> 10ml suspension
+|style="color:Black; font-style:Bold; font-size:110%;" align="center" | Vesicles only without interface prepared. <br> [[IGEM:IMPERIAL/2007/Notebook/2007-9-4#Vesicles |04/09/2007]]
+|-
+| width= 50% style="font-style:Bold;" align="center"| POPC / Dodecane <br> 10ml suspension
+|style="color:Black; font-style:Bold; font-size:110%;" align="center" | Vesicles both with and without interface. <br> [[IGEM:IMPERIAL/2007/Notebook/2007-9-4#Vesicles |04/09/2007]]
+|-
+| width= 50% style="font-style:Bold;" align="center"| POPC / Dodecane<br>10ml suspension<br>50&mu;l Promega S30<br>NO DNA
+|style="color:Black; font-style:Bold; font-size:110%;" align="center" | Vesicles found, but no fluorescence. Results as expected. <br> [[IGEM:IMPERIAL/2007/Notebook/2007-9-11#Vesicles |11/09/2007]]
+|-
+| width= 50% style="font-style:Bold;" align="center"| POPC / Dodecane<br>10ml suspension<br>50&mu;l Promega S30<br>P<sub>lux</sub> GFP Construct
+|style="color:Black; font-style:Bold; font-size:110%;" align="center" | GFP EXPRESSED inside only one vesicle. Results in other vesicles are inconclusive. <br> [[IGEM:IMPERIAL/2007/Notebook/2007-9-11#Vesicles |11/09/2007]]
+|-
+|}
+<br>
+'''Constructs:''' 
+*DOPC (1,2-Oleoyl-sn-Glycero-3-phosphocholine) / Dodecane
+*POPC (1-Palmitoyl,2-oleoyl-sn-Glycero 3-phosphocholine) / Dodecane
+*DOPC / Span80 / Dodecane
+*POPC / Span80 / Dodecane
+*POPC / DOPC / Span80 / Dodecane
+*POPC / DOPC / Dodecane
+
+
+'''Aims:'''
+*To compensate for osmolarity and form vesicles with Cell Extract inside
+*Visualize them under fluorescence microscope
+*Note the range of size of vesicles and lifespan
+<br>
+<span class="_toggler_toggle-item1-3-1">'''[+] Constant Conditions'''</span>
+<div class="toggle1-3 item1-3-1" style="display:none;">
+*0.05mg/ml phospholipid suspended oil.
+</div>
+
+<span class="_toggler_toggle-item1-3-2">'''[+] Variables'''</span>
+<div class="toggle1-3 item1-3-2" style="display:none;">
+*Number of vesicles
+*Size of vesicles
+*Modification of protocol at interface stage
+*Modification of protocol suspension volume
+*Modification of enclosed solution (using cell extract)
+*Modification of external solution (for compensation of osmotic pressure)
+*Life span of chassis
+</div>
+
+<span class="_toggler_toggle-item1-3-3">'''[+] Sampling'''</span>
+<div class="toggle1-3 item1-3-3" style="display:none;">
+*2 microscopic slides
+*100x flurescence microscope, with oil immersion and phase contrast
+</div>
+
+<span class="_toggler_toggle-item1-3-4">'''[+] Controls'''</span>
+<div class="toggle1-3 item1-3-4" style="display:none;">
+*S30 cell extract
+*100x diluted GFP solution
+*Comparison to previous results
+</div>
+
+
+<br clear="all">
+<br>
+{| border="0" align="right" style="font-style:Bold; font-size:140%; color:red;"
+| align="left" width="170px" | 
+| align="right"  style="font-style:Bold; font-size:110%;" | [[IGEM:IMPERIAL/2007/Projects/In-Veso/Implementation/Protocol1.3|'''Protocol''']] 
+|-
+| colspan=2 align="right"  style="font-style:Bold; font-size:110%;" | [[IGEM:IMPERIAL/2007/Projects/In-Veso/Implementation/Results1.3|'''Results''']] 
+|}
+
+
+'''Main Conclusions:'''
+*
+*
+*
+
+'''Outstanding Questions'''
+* Osmotic pressure is still an issue that has not been addressed properly. Calculations and hypotheses should be made and tested through experiment. Osmotic pressure affects the stability of vesicles, and therefore a better understanding of this aspect would help explain why components that are expected to be found inside vesicles are being found outside.
+* Gene expression inside vesicles has not yet been tested. Control experiments must be designed in order to properly verify the reaching of this milestone. 
+
+<div style="float:right; font-size: 150%;"><span class="_toggler_show-toggle1-3 _toggler-toggler1-3a _toggler-toggler1-3b toggler1-3a">Show All Details</span><span class="_toggler_hide-toggle1-3 _toggler-toggler1-3a _toggler-toggler1-3b toggler1-3b" style="display:none;">Hide All Details</span></div>
+
+<br clear="all">
+<br>
+<br>
+
+=='''Phase 2. Vesicle Permeabilisation'''==
+
+=='''Phase 3. Process Optimisation and Reproducibility'''==
+
+=='''Phase 4. Application Experiments'''==
+
+==Lab Notebook==
+
+*'''Week 5 (6 Aug):''' Pilot Experimentation of Vesicles<br>
+*'''Week 6 (13 Aug):''' Pilot Experimentation of Vesicles<br>
+*'''Week 7 (20 Aug):''' Pilot Experimentation of Vesicles<br>
+*'''Week 8 (27 Aug):''' Enclosing GFP inside Vesicles<br>
+*'''Week 9 (3 Sep):''' Enclosing cell extract inside Vesicles<br>
+*'''Week 10 (10 Sep):''' <br>
+
+
+<calendar>
+name=iGEM:IMPERIAL/2007/Notebook
+date=2007/09/15
+view=threemonths
+format=%name/%year-%month-%day
+weekstart=7
+</calendar>

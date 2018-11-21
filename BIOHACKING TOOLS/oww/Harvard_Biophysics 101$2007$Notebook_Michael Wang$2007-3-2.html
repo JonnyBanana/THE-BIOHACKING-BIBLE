@@ -1,0 +1,241 @@
+The basic functions now all work:  I just need to format the output and tidy it up.
+The object containment wasn't as tight as I originally hoped.  I think perhaps the most logical all-encompasing objct would have been a comparison between a reference sequence and a mutant.
+<pre>
+#find all orfs within the sequences
+import re
+from Bio import Transcribe
+transcriber = Transcribe.unambiguous_transcriber
+from Bio import Translate
+from Bio.Alphabet import IUPAC
+from Bio.Seq import Seq
+import os
+from Bio import Clustalw
+standard_translator = Translate.unambiguous_dna_by_id[1]
+
+class codon:
+    def  __init__(self, sequence=""):
+        self.sequence = sequence
+        self.mRNA = transcriber.transcribe(Seq(sequence, IUPAC.unambiguous_dna))
+        self.protein = standard_translator.translate(Seq(sequence, IUPAC.unambiguous_dna))[0]
+
+class raw_mutation:
+    def __init__(self,type="",ref_location=0,other_location=0, original="", mutant=""):
+        self.type = type
+        self.ref_location=ref_location
+        self.other_location = other_location
+        self.original = original
+        self.mutant = mutant
+
+class mutation:
+    def __init__(self,type="",ref_span=[0,0],other_span=[0,0],original="", mutant=""):
+        self.type = type
+        self.ref_span = ref_span
+        self.other_span = other_span
+        self.original = original
+        self.mutant = mutant
+    
+class orf:
+    #On initiation, the orf is stored as a list of codons.  If the orf has no stop, any excess bases will
+    #be ignored on the conversion to codons
+    def __init__(self, source="", source_span=[]):
+        self.source = source
+        self.codons = []
+        self.sequence = source[source_span[0]:source_span[1]]
+        self.source_span = source_span
+        for i in range(len(self.sequence)/3):
+            temp_codon = codon(self.sequence[i*3:3+(i*3)])  #this algorithm of seperating into codons ignores any excess bases
+            self.codons.append(temp_codon)
+        
+        
+    #orfs are indexed by codons
+    def __getitem__(self,index):
+        return self.codons[index]
+
+    
+        
+
+   
+def find_mutations(self,other):
+    refPos = 0
+    seqPos = 0
+    #print "Ref:",self
+    #print "Other:",other
+    all_mutations = []
+    for i in range(len(self)):
+        #print self[i], " ", other[i], ' ', refPos, ' ', seqPos
+        if self[i] != other[i]:
+            if self[i] == '-':
+                new_mutation = raw_mutation("insertion",refPos,seqPos)
+            elif other[i] == '-':
+                new_mutation = raw_mutation("deletion",refPos,seqPos)
+            else:
+                new_mutation = raw_mutation("point",refPos,seqPos, self[refPos],other[seqPos])
+            all_mutations.append(new_mutation)
+            #print "Mutation!"
+            print new_mutation.type," ",new_mutation.ref_location," ",new_mutation.other_location
+             
+        if self[i] != '-':
+            refPos += 1
+        if other[i] != '-':
+            seqPos += 1
+    return all_mutations
+            
+def consolidate_mutations(raw_mutations):
+    #I think this will have a bug for insertions before the first base of the refseq because
+    #in every other case, ref_loc will refer to the base before the insertion
+    consolidated_mutations =[]
+    i = 0
+    while i < len(raw_mutations):
+        #print "outer loop"
+        current_type = raw_mutations[i].type
+        if(current_type == "point"):
+            ref_loc = raw_mutations[i].ref_location
+            other_loc = raw_mutations[i].other_location
+            new_mutation = mutation("point",[ref_loc,ref_loc],[other_loc,other_loc],raw_mutations[i].original, raw_mutations[i].mutant)
+            consolidated_mutations.append(new_mutation)
+            i += 1
+        elif(current_type == "deletion") or (current_type == "insertion"):
+            
+            ref_start = raw_mutations[i].ref_location
+            other_start = raw_mutations[i].other_location
+            ref_end = raw_mutations[i].ref_location
+            other_end = raw_mutations[i].other_location 
+            i += 1
+            #It would have been nice to have a do while here...
+            while (i<=len(raw_mutations)): #and (raw_mutations[i].type == current_type):
+                #hopefully it exits after the first condition so it doesn't go past array length
+                if (i==len(raw_mutations)) or ((raw_mutations[i].ref_location!=ref_start) and (raw_mutations[i].other_location!=other_start)):
+                    new_mutation = mutation(current_type,[ref_start,ref_end],[other_start,other_end])
+                    consolidated_mutations.append(new_mutation)
+                    print current_type, "found at ", "ref", ref_start, ",",ref_end," seq ", other_start, ",", other_end
+                    break
+                elif (current_type == "insertion"): #and (raw_mutations[i].ref_location==ref_start):
+                    other_end += 1
+                    i += 1
+                    #print "extending insertion"
+                elif (current_type == "deletion"): #and (raw_mutations[i].ref_location==other_start):
+                    ref_end += 1
+                    i += 1
+                    #print "extending deletion"
+                else:
+                    print "I shouldn't be here!!!"
+                    break
+
+    return consolidated_mutations
+        
+                
+    
+        
+def findORFS(sequence, startpos=0):
+    print sequence
+    all_orfs = []
+    start = re.compile('ATG')
+    stop = re.compile('(TAA|TGA|TAG)')
+    all_starts = start.finditer(sequence)
+    all_stops = stop.finditer(sequence)
+    all_starts_list = []
+    for match in all_starts:
+        all_starts_list.append(match.span())
+    all_stops_list = []
+    for stops in all_stops:
+        all_stops_list.append(stops.span())
+        #print stops.span()
+    for start in all_starts_list:
+        found = 0
+        for stop in all_stops_list:
+            diff = (stop[0]-start[0])
+            if ((diff>0) and ((diff%3) == 0)):
+                print "orf at:", start[0]," ",stop[1]
+                temp_orf = orf(sequence,(start[0],stop[1]))
+                all_orfs.append(temp_orf)
+                #all_orfs.append((start[0],stop[1]))
+                found = 1
+                break
+        if found ==0:
+            print "open orf"
+            temp_orf = orf(sequence,(start[0],None))
+            all_orfs.append(temp_orf)
+            #all_orfs.append((start[0],None))
+        
+    return all_orfs
+
+def is_silent(mutation, ref_orfs):
+    mut_pos = mutation.ref_span[0] #ref_span[0] and [1] are the same
+    print "For ", mutation.type, "at position", mutation.ref_span[0], ':'
+    for i in ref_orfs:
+        if (mut_pos>=i.source_span[0] and mut_pos<=i.source_span[1]): #does the mutation affect the orf
+            print "Point affects ", i.sequence
+            ref_codon_position = (mut_pos - i.source_span[0])/3
+            
+            base_position = (mut_pos-i.source_span[0])%3
+            original_aa = i[ref_codon_position].protein
+            mut_codon = i[ref_codon_position].sequence
+            print "Original Codon:", mut_codon
+            mut_codon = list(mut_codon)
+            mut_codon[base_position] = mutation.mutant
+            mut_codon = "".join(mut_codon)
+            print "Mutant Codon",mut_codon
+            mutant_aa = standard_translator.translate(Seq(mut_codon, IUPAC.unambiguous_dna))[0]
+            if (mutant_aa == original_aa):
+                print "Silent"
+            else:
+                print "not silent"
+
+def is_frameshift(mutation, all_orfs):
+    if ((mutation.ref_span[1]-mutation.ref_span[0])%3 !=0) or ((mutation.other_span[1]-mutation.other_span[0])%3 !=0):
+        print mutation.type, "from", mutation.ref_span[0]," to", mutation.ref_span[1], "is a frameshift"
+    else:
+        print mutation.type, "from", mutation.ref_span[0]," to", mutation.ref_span[1], "is in frame"
+
+#Main Program starts here          
+teststring = "  A TGG GGG GGA ATG ATT AAC GTC GTT AAA GTA TGT TTT TT"
+teststring2= "CGA ATG GGG GCG ATG ATT AAC C GTT AAA GTA TGT TTT TTG TAG"
+print teststring
+teststring = re.sub("\s+", "", teststring)
+teststring2 = re.sub("\s+", "", teststring2)
+allorfs = findORFS(teststring)
+allorfs2 = findORFS(teststring2)
+#allorfs = []
+#allorfs2 = []
+#print "spans"
+#print allspans2
+#for i in allspans:
+#    x = i[0]  #I don't know why it won't let me use i[0] and i[1] directly as an int
+#   y = i[1]
+#    temp_orf = orf(teststring,i)
+#    allorfs.append(temp_orf)
+print "orfs2"
+for i in allorfs2:
+#    x = i[0]  #I don't know why it won't let me use i[0] and i[1] directly as an int
+#    y = i[1]
+#    temp_orf = orf(teststring2,i)
+#    allorfs2.append(temp_orf)
+    print i.sequence
+    
+
+temp_file = open(os.path.join(os.curdir, 'temp.txt'),"w")
+temp_file.write(">gi|23509994|ref|NC_004318.1| Plasmodium\n ")
+temp_file.write(teststring)
+temp_file.write("\n\n")
+temp_file.write(">gi|239809994|ref|NC_004318.1| Plasmodium\n ")
+temp_file.write(teststring2)
+temp_file.close()
+cline = Clustalw.MultipleAlignCL(os.path.join(os.curdir, 'temp.txt'))
+cline.set_output('test.aln')
+alignment = Clustalw.do_alignment(cline)
+all_records = alignment.get_all_seqs()
+print alignment
+mutations = find_mutations(all_records[0].seq,all_records[1].seq)
+#print mutations
+all_real = consolidate_mutations (mutations)
+for i in all_real:
+    print i.type, "at ref:", i.ref_span, " other ", i.other_span
+for i in all_real:
+    if (i.type == "point"):
+        is_silent(i, allorfs)
+    else:
+        is_frameshift(i,allorfs)
+        
+        
+
+</pre>

@@ -1,0 +1,170 @@
+==Assignment 1, due 2/6/07==
+
+===Code===
+Modified to
+* Process a different GenBank ID of your choosing
+* Tally stretches of poly-T instead of poly-A
+* Print the translated protein sequence (hint) and its length
+* Create a new NCBIDictionary without a parser and use that to print the a raw record
+
+<pre>
+#!/usr/bin/env python
+
+from Bio import GenBank, Seq
+from Bio.Seq import Seq,translate
+
+# We can create a GenBank object that will parse a raw record
+# This facilitates extracting specific information from the sequences
+record_parser = GenBank.FeatureParser()
+
+# NCBIDictionary is an interface to Genbank
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+
+# If you pass NCBIDictionary a GenBank id, it will download that record
+parsed_record = ncbi_dict['5000000']
+# Rattus norvegicus cDNA clone, mRNA sequence
+
+print "GenBank id:", parsed_record.id
+
+# Extract the sequence from the parsed_record
+s = parsed_record.seq.tostring()
+print "total sequence length:", len(s)
+
+max_repeat = 9
+
+# Tally stretches of poly T
+
+print "method 1"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\nmethod 2"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+
+# Translate Protein Sequence
+
+# Find start codon
+start = s.find('ATG')
+readingframe = ''
+position = start
+genelength = 0
+
+# Find open reading frame until stop codon or end 
+for i in range(len(s)-start-1):
+    readingframe = readingframe + s[position]
+    genelength = genelength + 1
+    if genelength%3 == 0 and position <= len(s)-start-4:
+        codon=s[position+1]+s[position+2]+s[position+3]
+        if codon=='TAG' or codon=='TGA' or codon=='TAA':
+            readingframe = readingframe + codon
+            break
+    position = position + 1
+
+protein = translate(readingframe)
+print "\nprotein sequence: ", protein
+print "protein length:   ", len(protein)
+
+# Create a new NCBIDictionary without a parser and print raw record
+
+newNCBIdict = GenBank.NCBIDictionary('nucleotide','genbank')
+rawrecord = newNCBIdict['5000000']
+print "\nraw record:       ", rawrecord
+</pre>
+
+===Output===
+<pre>
+GenBank id: AI710224.1
+total sequence length: 352
+method 1
+T 78
+TT 9
+TTT 0
+TTTT 0
+TTTTT 0
+TTTTTT 0
+TTTTTTT 0
+TTTTTTTT 0
+TTTTTTTTT 0
+
+method 2
+T 78
+TT 9
+TTT 0
+TTTT 0
+TTTTT 0
+TTTTTT 0
+TTTTTTT 0
+TTTTTTTT 0
+TTTTTTTTT 0
+
+protein sequence:  MSWRHRHKDLIVIF*
+protein length:    15
+
+raw record:        LOCUS       AI710224                 352 bp    mRNA    linear   EST 04-JUN-1999
+DEFINITION  UI-R-AF0-yd-f-08-0-UI.s1 UI-R-AF0 Rattus norvegicus cDNA clone
+            UI-R-AF0-yd-f-08-0-UI 3', mRNA sequence.
+ACCESSION   AI710224
+VERSION     AI710224.1  GI:5000000
+KEYWORDS    EST.
+SOURCE      Rattus norvegicus (Norway rat)
+  ORGANISM  Rattus norvegicus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Muridae; Murinae; Rattus.
+REFERENCE   1  (bases 1 to 352)
+  AUTHORS   Bonaldo,M.F., Lennon,G. and Soares,M.B.
+  TITLE     Normalization and subtraction: two approaches to facilitate gene
+            discovery
+  JOURNAL   Genome Res. 6 (9), 791-806 (1996)
+   PUBMED   8889548
+COMMENT     Contact: Soares, MB
+            Coordinated Laboratory for Computational Genomics
+            University of Iowa
+            375 Newton Road , 4156  MEBRF, Iowa City, IA 52242, USA
+            Tel: 319 335 8250
+            Fax: 319 335 9565
+            Email: bento-soares@uiowa.edu
+            Oligo-dT track not found, Not I site shown in beginning of sequence
+            is likely internal to the message. cDNA Library Preparation: M.B.
+            Soares Lab Clone distribution: clones will be available through
+            Research Genetics (www.resgen.com)
+            Seq primer: M13 Forward
+            POLYA=No.
+FEATURES             Location/Qualifiers
+     source          1..352
+                     /organism="Rattus norvegicus"
+                     /mol_type="mRNA"
+                     /strain="Sprague-Dawley"
+                     /db_xref="taxon:10116"
+                     /clone="UI-R-AF0-yd-f-08-0-UI"
+                     /dev_stage="adult"
+                     /lab_host="DH10B (Life Technologies)"
+                     /clone_lib="UI-R-AF0"
+                     /note="Vector: pT7T3D-PacI; Site_1: Not I; Site_2: Eco RI;
+                     The UI-R-AF0 library is a non-normalized library
+                     constructed from  15 dpc rat atrioventricular (AV) canal.
+                     The tag is a string of 5 nucleotides present  between the
+                     Not I site and the oligo-dT track.  The library was
+                     constructed as described by Bonaldo, Lennon and Soares,
+                     Genome Research 6: 791-806, 1996. Tissue provided by Jim
+                     Lin, Department of Biology, University of Iowa.
+                     TAG_TISSUE=ventricle at 15 dpc
+                     TAG_LIB=UI-R-AF0
+                     TAG_SEQ=GTGTC"
+ORIGIN      
+        1 cggccgcccc tcacttcnca tctggcagga ctgaagcaaa ccaccaaagg tcatagcaga
+       61 gtgtgggtct tctgctcctc aggtcagcct ctgtcgtggt cgccaggtgc tgctcaaggc
+      121 aactgatgag ctggagacac cggcacaaag acctcatcgt catcttctag cccttcctcg
+      181 attggcttca tcttgggaga ggctcgctgc tgcggggagg acatggggag agaagccgtg
+      241 ctggaggagc cccgcaggaa gtggtggagg ccgtcctcga tgtcgctgga gctattgatg
+      301 ctgttcctca tctccagcat ggagatctgt gtgctgaggc tcatctgggg ct
+//
+</pre>

@@ -1,0 +1,68 @@
+==To Do List==
+*Figure out the MATLAB memory leak
+**I suspect this is because I'm not closing the image files properly in the MATLAB script that runs, or it could be something more annoying.
+**Does the leak influence the timing of the events, by making the image processing take too long?  (e.g. why does the timing graph get noisy after awhile?)
+**Is it the MATLAB thread that blows up or the LabView? it's MATLAB.
+**[http://www.mathworks.com/support/tech-notes/1100/1106.html MATLAB help page here might be useful.]
+*output the direction of sorting to the output file
+*Clean up the Image Processing MATLAB scripts
+
+==Done==
+*Why do I see any variability in the timing? Timing between cleaning events is rock solid, the timing between sorts is influenced by the time it takes to process the image.
+*Change the code so that when flipping based on the CFP it is the moving average that is used, rather than a single image.
+*Make the list of experiments to evaluate the device performance limits.
+**Sorting at various dilution rates, followed by a sort to extinction.
+
+==Experiments==
+*[[Sortostat/Experiments/Two reactor chip]]
+*[[Sortostat/Troubleshooting]]
+===Future Experiments===
+'''replace bulb before these experiments'''
+*check on pH of the media if we are adding AHL, it needs to be <8 for AHL to be stable.
+*Zig-zag run where we vary from 0.4 to 0.6 so that we can get more sampling of the selective pressure.
+*Maintenance of a slower growing variant vs. a faster growing "mutant".
+**Could demonstrate this with a slower growing CFP vs YFP or via something like F2620.
+*Zig-zag experiment with different dilution rate (e.g. different total number of cells).
+*Get the exact size of sorting chamber by cell counting
+*F2620 is in MG1655 whose flagella might cause a problem
+**Need to co-transform with RFP expression plasmid anyway.
+*We already have the zig-zag automated, but should include a "pulse" as well (e.g. /-\_/-\) where it has regions with no selection.
+
+==Modeling==
+*[[Sortostat/Model]]
+*How much faster can we drive it given the timing?
+*Are there more or less cells in a sort vs a screen?
+**No, looked at this before last lab meeting, but should write it up.
+*Do fluctuations in the total cell count correlate with anything?
+*2/18/06 lab notebook page has some information about the appropriate sorting volume to use in the model, move this to the wiki
+
+===Output===
+*Sortostat mFiles doc - list of all the mfiles that matter (except the image processing).  These are all commented and cleaned up at this point. 
+*Sortostat Modeling Probability Distributions doc - description of the modeling of the probability distributions for the number of cells in the sorting chamber and how many are CFP or YFP.
+*Sortostat Modeling Stochastic Sim doc - description of the stochastic simulation of Sortostat performance.
+
+===Analytical model===
+*put the cleaning period / dilution rate formula derivations on the wiki.
+*write up the chemostat equations as they relate to the SS cell concentration (e.g. limiting substrate?  Should we reduce the concentration of glycerol?)
+*These come from the SortostatTiming.m matlab model:
+**12.5 min between cleaning (doubling time = 0.55)
+**13.6 min between cleaning (doubling time = 0.60)
+**14.8 min between cleaning (doubling time = 0.65)
+**15.9 min between cleaning (doubling time = 0.7)
+**17min between cleaning (doubling time = 0.75)
+**18.2min between cleaning (doubling time = 0.8)
+**19.3min between cleaning (doubling time = 0.85hr)
+**20.5min between cleaning (doubling time = 0.9hr)
+**21.6min between cleaning (doubling time = 0.95hr)
+**22.7min between cleaning (doubling time = 1hr)
+**23.9min between cleaning (doubling time = 1.5hr)
+
+==LabView==
+*why do we need to initialize the load paraemters array?
+
+==Methods==
+*[[Sortostat/Methods/Receiving chips]]
+
+
+==References==
+*[[Sortostat/Foundry report card]] - post notes on each chip fabricated so can document common failure points in fabrication to better avoid them.

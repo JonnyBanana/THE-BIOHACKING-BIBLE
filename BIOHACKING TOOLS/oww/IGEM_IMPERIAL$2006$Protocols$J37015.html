@@ -1,0 +1,148 @@
+==Part J37015: Prey Cell Positive Feedback Characterisation==
+
+===Motivation===
+
+The motivation behind this test construct is to assess the length and amplitude of the exponential phase. This is essential to comply with the Lokta-Volterra constraints.
+
+We need to characterise the positive feedback loop to work out the intrinsic growth rate of the prey
+[[User:JohnChattaway|JohnChattaway]] 05:19, 24 August 2006 (EDT)
+
+===Equipment & Materials===
+
+*Equipment
+**Wallac Victor 3 Multi-Well Fluorimeter
+**Eppendorf Tubes
+**Gilson Pippettes
+**37{{c}} Shaker
+**Microfuge
+
+*Materials
+**E.coli Growth Medium - LB w/Ampicillin
+**E.coli Culture Containing T9002
+**E.coli Culture Containing J37015
+**GFP Standard Solution
+
+===Protocol (final version)===
+
+
+''Culturing overnight (before the testing day):''
+*Inoculate all cultures you will be testing using 10{{ul}} of frozen stock of J37015 (in -80{{c}} freezer) by adding 2ml LB containing 50ug/ml Ampicilin. {{hide|1=
+:<font color=green>This is to get a good stock of cells for use in the experiment. After the overnight culture the cells will be in stationary phase</font>
+}}
+*Also inoculate a culture of T9002/J37016 from 10{{ul}} of stored T9002/J37016 into 2ml LB containing 50{{ug}}/ml Ampicillin. {{hide|1=
+:The T9002/J37016 cells will be used for the AHL assay
+}}
+*Incubate at 37{{c}} for overnight in a shaker.
+
+
+''Following day:''
+*Prewarm LB to 37{{c}} by placing in the 37{{c}} waterbath {{hide|1=
+:<font color=green>This is done now so that when you need to use the media later it'll be prewarmed</font>
+}}
+*Measure and record the OD600 for all cultures.
+*Take a 1mL sample of the J37015 culture 
+*Spin down the cells & extract supernatant into a labelled eppendorf 
+*Inoculate fresh 10ml cultures for J37015 and J37019 from the overnight culture to bring back the OD600s to 0.1, use prewarmed LB + Ampicilin. {{hide|1=
+:<font color=green>Using prewarmed LB prevents a temperature shock to the culture, which would increase lag time</font>
+}}
+:*Volume of Overnight Culture X = (0.1/OD600_1)*10ml
+:*Volume of LB Amp to add Y = 10mL - X (Overnight Culture)
+*Also dilute the overnight culture of T9002/J37016 into 16mL to an OD 0.1
+*Put this new culture back into the shaker for 2hrs
+*Return LB Amp to 37{{c}} incubator
+*Remove 1mL of the diluted culture into an eppendorf
+*Spin down the cells and extract supernatant into a new labelled eppendorf
+*Leave the both samples of the supernatant in the fridge for now {{hide|1=
+:<font color = green>The supernatant is to be tested for AHL concentration later (using the J37016 assay). This is to test whether there has been any leaky expression of AHL from overnight. Since half life of AHL is relatively slow, any AHL produced overnight should still be present the next day. </font>
+}}
+*Incubate new culture (8mL now left) at 37{{c}} for 2 hours in a shaker {{hide|1=
+:<font color = green>This returns cells to exponential phase from stationary phase</font>
+}}
+
+''After the 2 hours in the shaker:''
+*Measure and record the OD600_2 of the J37015 and J37019 culture
+*Take 3x 200{{ul}} samples of the J37015 culture and pipette into a 96 well plate
+*Take 2x 200{{ul}} samples of the J37019 culture and pipette into a 96 well plate
+*Transfer a 1mL sample of the J37015 from the culture into an eppendorf: 
+*Spin down the cells & transfer supernatant into a new labelled eppendorf {{hide|1=
+:<font color = green> To get inital AHL concentration </font color>
+}}
+*Dilute fresh 2 x 25ml cultures for J37015 and dilute a 25mL cuture of J37019 with LB Amp to bring back the OD600s to 0.1, use prewarmed LB + Ampicilin: 
+**Pipette the volume of J37015/J37019 needed such that it will be diluted to OD 0.1 in 25mL into a 50mL Falcon tube
+**Spin down the cells & discard supernatant
+**Add 25mL prewarmed LB Amp to the cells
+*Inoculate '''one''' of the 25mL J37015 cultures with 5{{ul}} of 5uM stock concentration of AHL (to get an initial  concentration of 1nM AHL) {{hide|1=
+:<font color=green>This is done to make sure that AHL levels start off in the detectable range of the J37016 assay. </font color>
+}}
+*Take all the tubes and the 96 well plate and go over to BCHM
+
+
+''In BCHM lab:''
+*Add 4x 200{{ul}} of 200x diluted GFP control to wells.
+*Add 4x 200{{ul}} of LB Amp to wells
+*Use the Victor3 to measure GFP output and absorbance {{hide|1=
+:<font color=green>This is to assess the state of the positive feedback loop which should be unactivated ???</font>
+}}
+*Start the clock
+*Place the three 25mL tubes in the 37{{c}} shaker
+*Repeat the following steps every 10 minutes for a period of 2hrs (you should end up with a series of about 8-10 measurement time points):
+**Take out the culture of the shaker after the 10min. and make a note of the time 
+**Pipette 3x 200µL samples of the J37015 (no AHL added) culture into a 96 well plate
+**Pipette 3x 200µL samples of the J37015 +AHL culture into a 96 well plate
+**Pipette 2x 200µL samples of the J37019 culture into a 96 well plate
+::(Pipette all these sample in one coloumn of the plate)
+:*Use Wallac Victor III to measure OD and fluorescence (Do 2 repeat scans)
+::*Always deselect all wells and then only select the row you want to scan
+:*Take a 1.5mL sample of the J37015 +AHL and J37015 -AHL culture each
+:*Spin down the cells & transfer supernatant into a new labelled eppendorf
+:*Place the culture in the shaker for 10 min. 
+
+
+''After having taken repeated measurements for 2hrs'': 
+*Dilute T9002/J37016 to an OD of 0.1 (using formula below) in a new culture of 30ml of a prewarmed LB + Ampicilin. {{hide|1=
+:<font color=green>This dilution gives a standard OD to which to inoculate the culture with AHL (in this case 0.1). Inoculating at different ODs is known to give different results, so it is important a standard OD is used</font>
+}}
+:*Volume of 2 hour Culture: X = (0.1/OD600_2)*15ml 
+:*Volume of fresh, prewarmed LB Amp to add: Y = 15 - X   (2 hour Culture)
+*Take 16 x 1ml samples of T9002/J37016 into eppendorfs (or more samples, depending on how many time points were measured + 1 for the morning culture)
+*Spin for 30 seconds
+*Discard the supernatant 
+*Resuspend T9002/J37016 cells in 1mL J37015 supernatant of the samples from various time points respectively
+*Take the 1mL sample from the morning culture of J37015 out of the fridge and resuspend T9002/J37026 cells in that supernatant as well (prewarm it if possible)
+*Vortex to resuspend pellet
+*Transfer the different samples into 5mL tubes (label!) {{hide|1=
+:<font color=green>The cells are transferred into 5mL tubes so that they will have enough oxygen available during the following 4hrs shake. There might not be enough in the eppendorfs, since it is nearly filled to the top.</font>
+}}
+*Incubate the 5mL tubes in shaker at 37{{c}}for 4 hours (for GFP to reach steady state)
+*At the same time, prepare J37016 cultures and inoculate with different concentrations of AHL following the [http://openwetware.org/wiki/IGEM:IMPERIAL/Protocols/T9002 J37016 testing protocol] {{hide|1=
+:<font color=green>This is for a control to check whether J37016 is giving the expected response to AHL concentrations.</font>
+}}
+:*Only set up half the volumes given in the table (i.e. a final volume of 1mL)
+*Incubate the 5mL tubes in shaker at 37{{c}}for 4 hours together with the J37015 samples from above
+
+
+''After 4hrs in the shaker:''
+*Take samples out of shaker
+*Pipette the samples into a 96 well plate: 
+**Pipette 3x 200&mu;L samples of J37015 (no AHL added) into a 96 well plate
+**Pipette 3x 200&mu;L samples of J37015 +AHL into a 96 well plate
+**Pipette 2x 200&mu;L samples of the J37016 culture into a 96 well plate
+::(Pipette all these sample in one coloumn of the plate)
+**Add pure LB (or LB Amp) and 200 x diluted GFP to 4 wells each as controls
+*Measure and record OD and flourescence using Wallac Victor III in BCHM
+
+''This should give you a series of GFP flourescence readings for each time point and each culture''
+
+===Potential Issues===
+
+*Cells have to spun down, which makes them a little unhappy
+*Unsure of what level of repression we'll get from the various control mechanisms
+*Unsure of the speed of the positive feedback loop
+
+===comments from Vincent===
+
+*Depending on the strengh of the positive feedback, it might be interesting to explore different dilutions to begin with.
+
+===To do list===
+
+Assess LuxI through out the experiment

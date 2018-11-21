@@ -1,0 +1,148 @@
+
+== The Project Thus Far ==
+Our project consists of a number of parts.  Its central feature takes a DNA sequence and uses BLAST/SNP to determine whether or not the sequence has any single nucleotide polymorphisms in it.  The next part of the project takes those results and does a PubMed search to find related literature on the disease.  We are currently working on a webapp to make this all much easier for the user. 
+
+== SNP lookup ==
+This is largely thanks to Xiaodi, and in fact this write-up is pulled from his page... 
+The script so far. Feel free to comment on discussion page.
+
+'''Input''' (example.fasta):
+<pre>
+>example1                                                                      
+CACCCTCGCCAGTTACGAGCTGCCGAGCCGCTTCCTAGGCTCTCTGCGAATACGGACACG                    
+CATGCCACCCACAACAACTTTTTAAAAGAATCAGACGTGTGAAGGATTCTATTCGAATTA                    
+CTTCTGCTCTCTGCTTTTATCACTTCACTGTGGGTCTGGGCGCGGGCTTTCTGCCAGCTC                    
+CGCGGACGCTGCCTTCGTCCAGCCGCAGAGGCCCCGCGGTCAGGGTCCCGCGTGCGGGGT                    
+ACCGGGGGCAGAACCAGCGCGTGACCGGGGTCCGCGGTGCCGCAACGCCCCGGGTCTGCG                    
+CAGAGGCCCCTGCAGTCCCTGCCCGGCCCAGTCCGAGCTTCCCGGGCGGGCCCCCAGTCC                    
+GGCGATTTGCAGGAACTTTCCCCGGCGCTCCCACGCGAAGC
+</pre>
+
+'''Output''' (to screen):
+<pre>
+Sequence received; please wait.
+2 single nucleotide polymorphism(s) found:
+rs11200638
+rs2672598
+----------------------------------------
+rs11200638 details:
+MACULAR DEGENERATION, AGE-RELATED, 7
+HTRA1, -512G-A
+{3:DeWan et al. (2006)} identified a SNP ({dbSNP rs11200638}) for which
+homozygosity for the AA genotype results in a 10-fold (confidence
+intervals 4.38 to 22.82) increased risk of wet age-related macular
+degeneration (see ARMD7, {610149}) in a Southeast Asian population
+identified in Hong Kong. {5:Yang et al. (2006)} independently identified
+this variant as conferring risk in a Caucasian cohort from Utah.
+----------------------------------------
+No information found for rs2672598
+</pre>
+
+'''Script''' (snp.py):
+<syntax type='python'>
+from Bio import SeqIO
+from Bio.Blast import NCBIWWW
+from Bio.EUtils import DBIdsClient
+import xml.dom.minidom
+from xml.dom.minidom import parse, parseString
+from threading import Thread
+import time, sys
+
+# C-style struct to pass parameters
+class AllelicVariant:
+	pass
+
+# basic function to open fasta file and get sequence
+def get_sequence_from_fasta(file):
+	file_handle = open(file)
+	records = SeqIO.parse(file_handle, format="fasta")
+	record = records.next()
+	return record.seq.data
+
+# lookup blast snp data
+def blast_snp_lookup(seq):
+	result_handle = NCBIWWW.qblast("blastn", "snp/human_9606/human_9606", seq)
+	return result_handle.read()
+
+# basic text extraction from XML; based on http://docs.python.org/lib/dom-example.html
+def get_text(node_list):
+    rc = ""
+    for node in node_list:
+        if node.nodeType == node.TEXT_NODE:
+            rc = rc + node.data
+    return rc
+
+# extracts snp data
+def extract_snp_data(str):
+	dom = parseString(str)
+	variants = dom.getElementsByTagName("Hit")
+	if len(variants) == 0:
+		return
+	parsed = []
+	for v in variants:
+		# now populate the struct
+		id = get_text(v.getElementsByTagName("Hit_accession")[0].childNodes)
+		score = get_text(v.getElementsByTagName("Hsp_score")[0].childNodes)
+		# only consider it a genuine snp if the hit score is above 100
+		if int(score) > 100:
+			parsed.append(id)
+	return parsed
+
+# queries the database and returns all info in an XML format
+def omim_snp_search(dnsnp_id):
+	client = DBIdsClient.DBIdsClient()
+	query = client.search(dnsnp_id, "omim")
+	records = [i.efetch(rettype="xml") for i in query]
+	return records
+
+# extracts allelic variant data, as the name implies, using the struct above
+def extract_allelic_variant_data(str):
+	dom = parseString(str)
+	variants = dom.getElementsByTagName("Mim-allelic-variant")
+	if len(variants) == 0:
+		return
+	parsed = []
+	for v in variants:
+		a = AllelicVariant() # create empty instance of struct
+		# now populate the struct
+		a.name = get_text(v.getElementsByTagName("Mim-allelic-variant_name")[0].childNodes)
+		a.mutation = get_text(v.getElementsByTagName("Mim-allelic-variant_mutation")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+		a.description = get_text(v.getElementsByTagName("Mim-allelic-variant_description")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+		parsed.append(a)
+	return parsed
+
+# BEGIN ACTUAL PROGRAM
+# read sequence from file
+sequence = get_sequence_from_fasta("example.fasta")
+print "Sequence received; please wait."
+
+# look up data
+b = blast_snp_lookup(sequence)
+# extract data
+e = extract_snp_data(b)
+print str(len(e)) + " single nucleotide polymorphism(s) found:"
+if len(e) > 0:
+	for snp_id in e:
+		print snp_id
+else:
+	print "[none]"
+	sys.exit() # nothing more to be done if no snp found
+print '-' * 40
+
+# do an omim search on each snp
+for snp_id in e:
+	o = omim_snp_search(snp_id)
+	if len(o) == 0:
+		print "No information found for " + snp_id
+		continue # nothing more to be done if no records can be found
+	# otherwise, find the allelic variant data
+	print snp_id + " details:"
+	for i in o:
+		v = extract_allelic_variant_data(i.read())
+		if v != None:
+			for a in v:
+				print a.name
+				print a.mutation
+				print a.description
+	print '-' * 40
+</syntax>

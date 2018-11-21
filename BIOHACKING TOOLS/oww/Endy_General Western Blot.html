@@ -1,0 +1,77 @@
+==Transfer and Incubations==
+*After running gel, cut away stacking gel, cut a corner to mark orientation, and soak in transfer buffer for 45 minutes.
+*Cut PVDF and 3mm Whatman blotting paper to correct size.
+*Cut corner on PVDF and wet with methanol, then soak 5 minutes in H20, followed by 10 minutes in transfer buffer.  Wet 4 pieces of blotting paper in transfer buffer.
+*Set up transfer bottom to top: 2 pieces blotting paper, gel, PVDF, two pieces blotting paper.  Be sure to preserve orientation of blot and avoid bubbles.
+*Transfer 2 mA/cm^2 until transfer is complete (i.e. rainbow marker is fully transferred to PVDF membrane).  For one 8.5 X 5 blot, this works out to 85 mA for about 2 hours.
+*Block membrane for 1 hr with 5% milk/TBS-Tween (0.1 %).  Use the lid of a pipette tip box and 15 mL fluid to cover blot. (for two blots, use a large tip box and 25 mL fluid for all incubations/washes) Place blot on shaker table for all incubations.
+*Incubate overnight with 1:10000 dilution of anti-GFP in 2% milk/TBS-Tween (0.1%)
+*Wash 3X in 15 mL TBS-Tween (0.1%) for 10 minutes.
+*Incubate 30 minutes with 1:10000 dilution of ECF secondary antibody in TBS-Tween (0.1%)
+*Wash 3X in 15 mL TBS-Tween (0.1%) for 10 minutes.
+
+==Analyzing Western==
+
+*Turn on Fluorimager 30 minutes before use.  Put in 570 filter.
+*Settings are  PVDF 488/570 df 30, PMT = 500.  Select area to scan.
+*Place 1 mL/gel of ECF substrate on a transparency.  ECF substrate in buffer is stored in 1 mL aliquots at –80C.
+*Using forceps, lay blot face down on top of substrate (no bubbles) for about one minute (less if bands become visible).  Transfer blot face down to fluorimager plate. 
+*Insert plate into machine.  Scan image.  Remove plate immediately.
+*Remove plate before shutting down scanner.  Leave software open if anyone is signed up within two hours.
+*Clean plate with dI and kim wipes, then with ethanol from the glass bottle.  
+
+==Quantification in ImageQuant==
+*Use rectangle tool to draw object around band.  Copy and paste object so that all objects have the same area.
+*It is not necessary to define a background in ImageQuant.  Do volume report without background correction, and set the negative control equal to 0 ng/lane for your standard curve. Alternatively, make a new object to define background and set background on all lanes equal to “object ave” for this object. (analyze>>”background correction” to set background correction, then analyze>>”volume report”) (“local average” sets background equal to the average pixel value of the object perimeter.  This will be problematic if bands are not well separated.)  
+volume = (average pixel value – background value) * object area
+*Double click report to make it an excel file.  Save images and excel volume report.
+*Use standard curve to estimate ng gfp/lane for samples and calculate gfp/cell.  The     molecular weight of GFP-SsrA is about 28.3 kDa.
+
+
+
+==2X Tricine Sample Buffer==
+*2 mL 4X Tris-Cl/SDS, pH 8.8
+*6 mL 40% glycerol (24% final)
+*0.8 g SDS (8% final)
+*0.31 g DTT (0.2 M final)
+*2 mg Coomassie blue G-250 (0.02% final) (used C. Blue G)
+*to 10 mL with MilliQ H2O and mix
+*aliquot 500 uL/tube and store at –20 C
+==4X Tris-Cl/SDS pH 8.8==
+*91 g Tris
+*dissolve in 300 mL H2O
+*pH to 8.8 with 1N HCl (about 120 mL)
+*to 500 mL with H2O
+*filter 0.45 um
+*add 2g SDS and store 4 C
+==Lysis Buffer  (12.5 mM Tris pH 6.8, 4% SDS==
+*1.25 mL 1M Tris (pH 8)
+*to 80 mL with st. H2O
+*pH if necessary 
+*to 100 mL with st. H2O
+*add 4g SDS
+==TBS-Tween (0.1%)==
+*100 mL 10X TBS
+*900 mL H2O
+*1 mL Tween (Polyoxyethylene sorbitan monolaurate)
+
+==10X TBS (500 mM Tris, 1.5 M NaCl)==
+*150 mL 5M NaCl
+*250 mL 1M Tris, pH 7.5
+*to 500 mL with H2O
+
+==1M Tris-Cl, pH 8 (or 7.5)==
+*121 g tris base
+*700 mL MilliQ H2O
+*to pH 8 with 6N HCl (about 100 mL)
+*to 1 L with MilliQ H2O
+*filter 0.45 um or autoclave (fluid, 20 psi, 250 F, 20 min)
+==Transfer Buffer (“Towbin Buffer”)==
+*3 g Tris
+*14.4 g glycine
+*800 mL dI
+*200 mL methanol
+
+note: anti-GFP is Assay Designs 915-059, rabbit (store one aliquot at 4 C to avoid freeze/thaw, rest at –20C)
+ECF Western Blotting kit is Amersham RPN5783 (rabbit)
+To connect to Bionet from fluorimager: \\18.79.1.147\endy    DNA-NET\username

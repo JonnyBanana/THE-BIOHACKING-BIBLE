@@ -1,0 +1,46 @@
+=Hrp Characterisation: Introduction=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Hrp System|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Parts|Parts]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Devices|Devices]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Testing|Testing]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Application|Application]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+__TOC__
+
+The Aim of this project is to contribute new characterised parts to the biobricks registry. The parts we plan to contribute are from the Hrp system. The Hrp system is composed of a promoter under the control of two positive regulating proteins and one negative regulating protein. The Hrp system can be manipulated in a number of ways to give various devices:
+* A new regulatory system
+* A two input AND gate
+*  A three input AND with one input inverted 
+Our aim is to carry out a detailed characterisation of the Hrp parts and the various devices. We feel that this is going to be an important contribution to the biobricks registry for the following reasons:
+* The Hrp system appears to have very interesting properties, being a highly regulated and responsive system, we feel that it will be a key addition to the registry and future iGEM projects.
+* Our aim is to characterise Hrp thoroughly, we wish to make our parts and devices as generic and easy to use as possible. We feel that thorough characterisation is of great importance to the registry and to synthetic biology.We hope to illustrate this importance and to inspire current and future parts to have this level of characterisation.
+We wish to characterise the Hrp system in generic units that allow modular design and experimental reproducibility. This is a key concept in synthetic biology, with the ideal unit being [[IGEM:IMPERIAL/2007/Projects/Hrp System/Notes/PoPS| Polymerase Per Second (PoPS)]], However, we cannot directly measure PoPS and so we haev to measure it indirectly. One approach is to measure rate of protein synthesis and relate this back to PoPS. We propose to measure our device in terms of protein synthesis, particularly '''GFP molecule synthesised cfu<sup>-1</sup> sec<sup>-1</sup>'''.
+This measurement we feel is still a valid generic unit:
+*It is a reproducible measurement because the unit is independent of the equipment used, such as fluorometers that can vary in calibrations. This independence is because we are measuring in terms of the rate of GFP synthesis as opposed to just fluorescence.
+*The unit also allows modular design, this is either when the other parts used have the same units or the rate of GFP synthesis is related to a more generic unit for protein synthesis or to PoPS. We will be measuring the input and output of our Hrp system in terms of GFP synthesis.
+
+
+== The Hrp System ==
+[[IMAGE:ICGEMS_dvc_HrpR&S+V+L.png‎|thumb|right|230px| The Hrp System]]
+In Pseudomonas syringae strains, the hrp-hrc pathogenicity island consists of an hrpL-dependent regulon that encodes a type III protein translocation complex and translocated effector proteins required for pathogenesis. 
+<br>
+HrpR and HrpS function as positive regulatory factors of the hrpL promoter, but their mechanism of action has not been established. HrpV is a negative regulatory factor of the hrpL promoter, its action will repress any activation by HrpR and HrpS.
+<br>
+=== Current Knowledge on the HRP system ===
+*HrpR and HrpS has optimal activation when both are expressed together in an operon. Transcription of this operon in a continuous polycistronic mRNA, that is then translated separately into HrpR and HrpS proteins.
+*The HrpV repressor protein binds to the HTH motif of HrpS. The HrpV binds to the central region of HrpS, however its mechanism of binding is unknown.
+*The DNA sequence within the HrpL promoter that HrpR and HrpS bind is unknown. What is known is that it is located somewhere upstream of the +1 position. Tests have shown that it must be within a 150bp range from the +1 site of transcription.
+*The Hrp System when in Pseudomonas has an optimum temperature of 28 <sup>o</sup>C. 
+*Three other chassie considerations is that Lon proteins have been shown to degrade HrpR, sigma 54 is required and Integration Host Factor is required.
+*HrpR and HrpS will can induce the promoter independent of each other. However, this is only about 2.5% activation compared to when both are present.
+*Repression by HrpV reduces the original activity of the HrpL promoter to 5-10%. For full repression of the activity, it has been shown that large amounts of HrpV should be expressed before expressing HrpR and HrpS.

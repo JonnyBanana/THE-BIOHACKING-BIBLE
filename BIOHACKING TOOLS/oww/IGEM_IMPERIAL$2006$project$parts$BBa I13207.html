@@ -1,0 +1,71 @@
+=Part BBa_I13207:  AiiA Test Construct=
+
+==Motivation==
+
+AiiA forms an integral part of the biological oscillator acting as our predator in the Lotka-Volterra Predator-Prey Model.  By testing and characterising this part individually, we can find the rate at which AiiA converts N-acyl homoserine lactone (AHL) into it's inactive form by cleaving the lactone ring (AHL-lactonase activity) at the ester bond.  
+
+Michaelis-menten kinetics would determine the activity of the enzyme, thus if we can characterise AiiA based upon it's Vmax and Km values, the AiiA construct (part I0460) can be placed anywhere and easily integrated into more complex systems given it's transfer function defined by the enzyme parameters.  
+
+==Design==
+
+The design of the part I13207 was created by Mr. Barry Canton of MIT for the 2004 SMUG competition.    This part was unfortunately not fully characterised due to time constrains in 2004 and was implemented in a different strain of bacteria to DH5a.  
+<br>
+[[Image:I13207.JPG]]
+<br style="clear:both;"/>
+As is seen, this part is a combination of several parts, mainly I13273 (quorum sensing receiver with yellow flourescent protein (YFP) production) and I3204 (arabinose controlled AiiA expression).  A constituitive promoter simulates the constant production of LuxR.  With AHL presence, the pLux promoter is activated to simulate production of YFP.  In the absence of arabinose, there is no AiiA production, thus YFP intensity should be maximised.  As we increase the concentration of arabinose, AiiA production will increase, dimming the maximum flourescence.  The intensity of the flourescence is directly proportional to the concentration of AHL remaining in the solution, so we can plot a graph of flourescence vs. time to obtain a michaelis-menten type graph.  This is further discussed in the modelling section below.  
+
+==Modelling==
+
+Some necessary assumptions were taken with our model to make it less complex.
+*AHL half-life is much greater than the length of the experiment, so we can neglect the autodegradation term on the AHL.  In other words, degradation of AHL is only dependent upon AiiA presence.  (Literature states a half-life of AHL of 24 hours, much greater than our 5 hour test time period)
+*EYFP production is directly proportional to the concentration of AHL
+*EYFP is under stead state control
+
+Let us first consider a simple model (shown below) where we have two parameters, arabinose and AHL which we can control.  The presence of arabinose will promote the production of AiiA which will then degrade the AHL.  
+[[Image:AiiAtestconstsimple.png|frame|left|AiiA Test Construct Simple Model using CellDesigner 3.2]]
+<br style="clear:both;"/>
+Features:
+*Degradation of AHL is an enzymatic reaction determined by michelis-menten kinetics
+*Arabinose activates the transcription of AiiA and can be modelled using michelis-menten kinetics
+*Degradation of AiiA is only dependent upon concentration of itself (first order degradation reaction)
+
+Parameters:
+*AiiA Vmax and Km values
+*Arabinose Vmax and Km values determining the transcription/translation rate
+*Degradation rate of AiiA
+
+Desired Output:
+*With an increase in arabinose, there will be an increase in AiiA concentration
+*AiiA concentration will reach steady state due to degradation of enzyme
+*AHL concentration will decline with increasing AiiA output (must tweak kinetic law for this to occur, since pure michalis-menten kinetics is not directly dependent upon the enzyme concentration, it is hidden within the Vmax value)
+
+We can continue to model our system by slowly increasing the complexity.  Above, we only considered the main essentials of the test construct, but now we would like to explore what happens when we include the YFP production coupled with the AHL concentration.  Below is the model used to include YFP production.
+[[Image:AiiAtestconst.png|frame|left|AiiA Test Construct Model using CellDesigner 3.2]]
+<br style="clear:both;"/>
+Added Features:
+*YFP production is under activation of AHL with michaelis-menten kinetics
+Added Parameters:
+*Vmax and Km linked to the activation of transcription of YFP gene
+Added Desired Output:
+*YFP will incrasingly be produced with higher AHL concentrations
+*YFP flourescence will peak after a certain time period
+*Flourescence will decrease due to degradation of YFP (first order kinetic law)
+
+The graph shown below of our model fulfills all of the desired output charcteristics defined above.
+[[Image:AiiAtestconstimage.jpg|thumb|left|300px|AiiA Test Construct Simulation graph using Cell Designer 3.2]]
+<br style="clear:both;"/>
+
+==Implementation==
+
+Our protocol for testing this part can be found on the link below.
+<br>
+[[IGEM:IMPERIAL/Protocols/I13207|I13207 AiiA Test Construct Protocol]].  
+<br>
+
+==Testing/Validation==
+
+The results of our experiment will produce a graph of flourescence versus time for each concentration of arabinose used.  The flourescence will be directly proportional to the concentration of AiiA, so if we only consider the graph to the maximum flourescence value and plot a graph of 1/flourescence vs. 1/concentration of arabinose, we should get a typical lineweaver-burk plot whose y-intercept is equivalent to Vmax and whose slope is equal to Km/Vmax.  By varying the concentration of arabinose, we can then create several of these graphs which will have different values of Vmax, but theoretically have the same value of Km.  We can average out the values of Km and use this to plug into our model to obtain realistic values.  Moreover, we can use this Km value to characterise a transfer function of the AiiA enzyme.
+
+[[Image:AiiAtestarabvary.jpg|thumb|600px|left|Varying levels of arabinose and monitoring flourescence (as determined by YFP concentration) from CellDesigner]]
+<br style="clear:both;"/>
+It is possible to control the enzyme kinetics of AiiA (ie slowing down the conversion rate), by either adding an inhibitor or adding a degradation tag to decrease the half-life of AiiA.  One possible inhibitor which could be used is HSL.  Moreover, point mutations on the AiiA enzyme can reduce it's action by up to 60% [http://www.pnas.org/cgi/content/abstract/102/49/17606].

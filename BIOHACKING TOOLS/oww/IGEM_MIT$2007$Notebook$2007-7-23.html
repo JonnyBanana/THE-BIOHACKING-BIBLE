@@ -1,0 +1,99 @@
+=Agenda=
+#Polystyrene Assay
+#*Morning: get correct OD
+#*Add AHL
+#*Afternoon: Test
+#Digest I13500
+#Ligate 3A with I13500 and Mer in pSB1AT3 (so that, if we combine with polystyrene-binding plasmid into a single cell, can test for presence of both plasmids)
+#*Run overnight
+#Dilute sequencing primers
+#*Sequence PHIE6P
+#*Sequence F2620+B0034+CPX
+#Order T7 antibody
+
+
+==Digestion of I13500==
+*Made two mixtures
+
+<pre>
+4.5 µl I13500 (Miniprep #1, 223.5 ng/µl)
+1 µl   XbaI
+1 µl   PstI
+0.5 µl BSA
+5 µl   NEB3 Buffer
+38 µl  H20
+-------------------------
+50 µl  Total
+</pre>
+* Placed in 37C @ 10:20am --> Take out @ 1:20pm
+
+==PCR Purification of Digested I13500 (JCH)==
+*Nanodrop: 23.3 ng/µL
+==3A Ligation of Mer promoter+Mer regulatory protein (pTO40) and RBS+GFP (I13500) into pSB1AT3 (SK, JH, BH)==
+<pre>
+Part          Length          Nanodrop
+pSB1AT3       3450 bp         125 ng/µl
+pT040         700             29.9
+I13500        740             23.3
+</pre>
+*Ligation Mixtures Calculations (see wiki Notebook 7/9)
+<pre>
+Backbone: (50 ng) / (125 ng/µl) = 0.4 µl of pSB1AT3
+Insert 1: 29.9x = (4)(700/3450)(50) --> x = 1.357 µl of Mer
+Insert 2: 23.3x = (4)(740/3450)(50) --> x = 1.841 µl of I13500 (cut with X and P)
+</pre>
+*Ligation Mixtures
+<pre>
+Positive Sample, "iGEM 7/23 Lig + mer+I13500 in 1AT3"
+
+0.4  µl pSB1AT3
+1.36 µl pT040 (Mer)
+1.84 µl I13500 (RBS+GFP)
+0.5  µl ligase (T4)
+2.0  µl ligase buffer 10x (T4)
+13.9 µl H2O
+----------
+20.0 µl total
+
+Negative Control (backbone only), "iGEM 7/23 Lig. - in 1AT3"
+0.4  µl pSB1AT3
+0.5  µl ligase (T4)
+2.0  µl ligase buffer 10x
+17.1 µl H2O
+-----------
+20.0 µl total
+
+</pre>
+*Two PCR tubes (+ and -) put in Thermocycler, Block A, OVERNIGHT -- started at 3 PM
+**Program name "16IGEM"
+**No heated lid
+**16 degrees Celsius, forever
+
+==Diluted BioBrick Sequencing Primers==
+You can find the stock eppendorfs in the unnamed -20C fridge (Jason+Barry's room).
+
+Diluted from 100 µM stock to 32.2 µM with total volume of 1.55 mL each.
+
+Made 1 VF2 and 1 VR for iGEM use.
+
+==Polystyrene Assay Protocol==
+
+* Cell Lines:
+** Controls: DH5-alpha (not transformed)
+** FHUA PHIE6 --> IPTG
+** CPX --> AHL
+*Media:
+**H20
+**PBS
+**PBS + Tween + BSA
+
+*Protocol
+#Add AHL/IPTG to Liquid Culture
+#Wait an hour for AHL induced expression
+#Incubate wells in wash media for 30 minutes on rocker at speed 5
+#Centrifuge cells out of Liquid Culture media
+#Resuspend in wash media
+#Add cells to appropriate well
+#Place on rocker for 1 hour at speed 5
+#Aspirate/Pipet out media in wells
+#Resuspend in 150 ul media and wash for 15 minutes on rocker (repeat 2-3 times)

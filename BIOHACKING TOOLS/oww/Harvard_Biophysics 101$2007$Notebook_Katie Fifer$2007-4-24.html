@@ -1,0 +1,16 @@
+* we're going to pull the genbank file down in its entirety and parse for relavant features using the code i wrote last time. (we gave up the battle to get just a piece of the genbank file for now... someday hopefully someone will come up with a better way of doing this but we're just trying to move forward for now.....)
+* NCBI gene, for each gene that we get back, has files about each gene containing literature sources and info about exons/introns etc... I'm going to work on parsing this for tomorrow and thursday.
+----- for example -----
+<pre>
+
+ CFTR	 Links
+Official Symbol: CFTR and Name: cystic fibrosis transmembrane conductance regulator (ATP-binding cassette sub-family C, member 7) [Homo sapiens]
+Other Aliases: tcag7.78, ABC35, ABCC7, CF, CFTR/MRP, MRP7, TNR-CFTR, dJ760C5.1
+Other Designations: cystic fibrosis transmembrane conductance regulator, ATP-binding cassette (sub-family C, member 7); cystic fibrosis transmembrane conductance regulator/ATP-binding cassette sub-family C member 7
+Chromosome: 7; Location: 7q31.2
+MIM: 602421
+GeneID: 1080
+
+</pre>
+
+is something we want to get back and then be able to parse through

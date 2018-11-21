@@ -1,0 +1,100 @@
+Cell Counting (in the metamorph era)
+[Cut]
+
+Staining
+
+
+
+Scan slide
+
+    1.place slide
+    clean a glass slide thoroughly with ethanol; let dry and then carefully place the grid on the slide (open wells facing down).
+    leave some PBS after the last wash on top of the grid, so that the seal is uniform and air is not trapped
+   
+    place glass slide on microscope
+    use fast transmission settings (TRANS fast - transmission light; 2ms exp time; live) to find a rough focus
+    make sure grid is slightly angled, so that the top-left corner of any given block is higher in the image than the top-right corner
+       -to move the grid around, take advantage of the thin liquid layer that should be left and tap lightly the grid to move it.
+
+    launch 'scan slide' application.
+    set binning to 1 and wavelengths to 1+#of wavelengths to scan for the setup process.
+     Transmission is used as the additional wavelength for calibration and alignment.
+
+    2.adjust alignment
+    move to right end top position and adjust focus  
+    use dapi for the actual focus as fluorescence and transmission plane may not be confocal
+       - use live DAPI mode to adjust focus: set z= 0 in the software; adjust z height on microscope, then if necessary fine tune it in the software;
+         set the z position in order to obtain the highest values in the image histogram
+    keep z position on microscope and software constant from now on.
+    move to right end bottom position and adjust the focus (always in DAPI live mode), this time using the corresponding alignment screw on the slide holder.
+    check alignment of the right end by scrolling up and down
+    move to left end, center of the slide, and adjust focus using the corresponding alignment screw
+
+    3.check illumination settings
+    move to a random position in the center of the grid
+    adjust illumination settings for all channels; take snaps and try minimizing the number of repetitive exposures
+    to reduce scan time: keep the exposure time to the minimum necessary in every channel
+    to improve image recognition: use exposure time that gives the best spread in the image histogram
+    usually there is a threshold exposure, above which the improvement in image quality is not worth the increase in overall time
+
+    4.Calibration
+   snap a transmission picture (to make sure calibration process will be performed using this wavelength)
+    start step by step calibration procedure following software instruction.
+    pick a corner of one of the blocks as feature, in order to easily individuate it. Don't use wells alone, as it may be confusing later on.
+
+    5. Set scan area
+    using transmission live mode, go to outermost corner of PDMS (not only the corner of the features, but further on)
+    make sure that you are really on outermost corner by scrolling a little around the edges both in the horiz and vert directions
+    set first corner position to current
+    repeat for the bottom right corner, paying attention to exagerate(!) the extent of your area. metamorph tends to scan a smaller area than the one inputted.
+
+    6.start scanning
+    set binning to 2, reduce wavelengths to #of wavelengths to scan
+    set description and directory for file save. every single scan attempt should be in a different directory.
+    cycle once more through all illumination settings to check focus and exp times.
+    press 'scan' button
+
+once done (usually ~3hrs), backup all files before proceeding
+
+
+Counting algorithm - step 1 - parse into blocks
+
+    in MM offline, open scan to be parsed.
+    then open journal for step 1, making sure all references to files are respected (sometimes copies on the local and network drives may conflict)
+    run journal
+    save temp file to directory where all parsed blocks should be saved
+    align grid to DAPI Fast Scan preview image (keeping the magenta feature on the bottom right corner)
+    click on 'run journal for every grid posn'
+    nb: metamorph usually crashes on the last journal loop; make sure all 52 blocks have been saved in the directory, then end program and restart.
+
+Counting algorithm - step 2 - align regions
+   
+    open directory where parsed blocks are saved
+    open journal for step 2
+    run journal  (make sure all journals are on a local drive, for best performance)
+    adjusting angle and size, align 40x40 grid with the features in the DAPI image
+    press 'run journal for each grid posn'
+    repeat for every block
+   
+backup region files before proceeding
+
+
+Counting algorithm - step 3 - counting and logging cells
+
+    using randomly selected files for all channels, calibrate settings for 'multiwavelength cell scoring' application
+    after repeating for several blocks, save settings
+    open journal for step 3
+    go to line of code where multiwavelength cell scoring is called;
+    edit settings for command: load settings you just calibrated
+    save journal
+    run journal
+
+Check
+
+    by checking the log numbers, the original tiffs for the blocks and comparing with the segmentation images in the directory control if results make sense and seem reliable
+    use journal for step 4 and input number of blocks for which count has to be repeated
+    recall to save in separate logs
+
+import data into MATLAB
+
+    open journal for step 3

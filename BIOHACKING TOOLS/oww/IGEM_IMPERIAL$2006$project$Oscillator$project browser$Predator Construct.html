@@ -1,0 +1,88 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"| Super Parts
+!colspan="2" | [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Full_System | Molecular Prey-Predator Oscillator]]
+|- 
+! style="background:#FF9966" height="50" width="80pt"|Actual Part
+!colspan="2"| [[Image:J37036 parts pic.PNG|300px]]
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"|Sub Parts
+! [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct| Test Sensing Predator Construct]] 
+! [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Killing_Predator_Construct| Test Killing Predator Construct]] 
+|}
+
+<div class="tabs-blue">
+<ul>
+<li id="current">[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct |Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct/Design|Design]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct/Modelling|Modelling]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct/Implementation|Implementation]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Motivations==
+*This part is driving the '''molecular''' events associated with the '''Predator''' in the '''[[IGEM:IMPERIAL/2006/project/Oscillator/Theoretical_Analyses/2D_Model1|Lotka-Volterra model]]'''. 
+*This part has to interface with the [[IGEM:IMPERIAL/2006/project/Oscillator/project_browser/Prey_Construct|'''Prey-construct''']].
+*To satify the Lotka-Volterra dynamic of the predator, this part has to fulfill 3 properties:
+**'''Promote the growth of the predator-molecule''' according to the prey and predator populations.
+**'''Kill the prey-molecule''' according to the population of preys and predators
+**Enable the natural '''death of the predator-molecule'''
+
+==Part interface==
+
+{| border="0" width="100% align="center"
+|-
+|
+{| border="1" cellpadding="15" width="100%"
+|- 
+! style="background:#66CC99"| INPUTS !!style="background:#FF3333"| OUTPUTS 
+|-
+| rowspan = "2" | Prey molecule || Prey molecule 
+|-
+| Predator  molecule
+|}
+||
+[[Image:iGEM_IMPERIAL_PreadatorConstructSystemIcon.png|right|350px]]
+|}
+
+The '''prey-molecules''' are an '''input''' of the device. They trigger the production of predator-molecules. As a consequence, the '''output''' of this device is a new level of '''prey-molecules''', due to killing, in association with a new level of '''predator-molecules''', due to the balance between growth and natural death.
+
+==Expected behavior and performances==
+
+{| border="1" width="100%"
+System level specifications
+|- 
+! style="background:lightgrey" width="100pt" |Properties !! colspan="2" | Specifications
+|-
+| Input Range(s)|| colspan="2" | Input range of the prey should at least match the dynamic range of the prey.
+|-
+| rowspan="2"| Output Range(s)|| colspan="2" | Output range of the prey should at least match the dynamic range of the prey.
+|-
+| colspan="2" | Output range of the predator to be defined.
+|-
+| Transfer function(s) || [[Image:IGEM_IMPERIAL_TransferFunctionPredator1.png|250px]] <br> Transfer function inspired by the pure Lotka-Volterra equations, growth predator = C*prey_population_*predator_population|| [[Image:IGEM_IMPERIAL_TransferFunctionPredator2.png|250px]] <br>Transfer function inspired by the pure Lotka-Volterra equations, prey killing = B*prey_population_*predator_population.
+|-
+| Robustness || colspan="2" | Device should work for at least 10 cycles of the oscillator to match system level oscillator specifications.
+|-
+| Variability  || colspan="2" | Variability at the device population level (day to day, device to device) should be as low as possible.
+|}
+
+==Open issues==
+*Getting linear relationship is going to be challenging in a biological system.
+*Saturation in the response may have to be taken into account (characterized and defined).
+
+<html>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1999441; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="18996820"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c19.statcounter.com/counter.php?sc_project=1999441&amp;java=0&amp;security=18996820&amp;invisible=1" alt="website statistics" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</html>

@@ -1,0 +1,80 @@
+==Assignment==
+# Go through the lab outlined below
+# Take good notes in your wiki lab notebook! Save often.  If your login expires, don't panic, you should be able to push "back" and get the data.
+#* Example of good lab notebook: [http://openwetware.org/index.php?title=Physics307L:People/Gibson/Notebook/070827&oldid=145541 Zane's notebook from Monday]
+# Write up the Lab Summary (as outlined at the end of this page)
+#* Example of good lab summary: [http://openwetware.org/index.php?title=Antonio_C._Rivera_Lab_book&oldid=145753 Antonio's summary]
+==Goals==
+# Become familiar with operation of digital oscilloscope
+#* By the end of the lab, if Koch or Hjelm come over and monkey with your oscilloscope settings and connections, you will be able to fix everything.
+#* Explain the difference between AC and DC coupling
+#* Explain how triggering works
+#* (This is now optional) Explain what FFT is and demonstrate use of oscilloscope FFT
+# Measure the time constant of the oscilloscope AC coupling
+#* Obtain a value for the fall time ''with error bars''
+# Become adept at using wiki lab notebook
+#* Koch or Hjelm should be able to read your lab notebook and figure out what you did during the lab period
+#* Raw data (for example fall time measurements) recorded in notebook
+# Practice for "real labs" in the future
+#* Orally defend summary of lab, you will receive a grade (that doesn't count in overall course grade)
+
+==Procedure==
+===Background reading===
+Read some of the [http://en.wikipedia.org/wiki/Oscilloscope Wikipedia article on oscilloscopes] Notes:
+* Section 1 is good background.
+* We are using digital oscilloscope (referred to as DSOs in the article)
+* You don't have to memorize this, but you can refer back to it when you have questions or are summarizing.
+Much more in-depth info available from [*[http://www.ztecinstruments.com/oscilloscope-measurement-fundamentals-part-1-of-3 ZTEC] (Link from Lorenzo Trujillo, our student who works at [http://www.ztecinstruments.com/ ZTEC].)
+
+===Basic waveform measurement===
+'''''Remember to record everything in your wiki lab notebook!'''''
+# Hook up the output of the function generator to the oscilloscope
+#* Set the function generator to output a sine wave.  Say 200 Hz maybe, or pick your frequency.
+#* Use BNC cables (why are they called [http://en.wikipedia.org/wiki/BNC_connector BNC cables]?)
+#* Should you use a T connector and a [http://en.wikipedia.org/wiki/Electrical_termination terminator]?
+# Fiddle with the oscilloscope settings so you can see the sine wave on the screen.
+# Measure characteristics of a sine wave
+#* Measure peak to peak voltage (thus amplitude) and measure the period (thus frequency)
+#*# First, use the grid on the oscilloscope screen ("divisions" are the dotted lines)
+#*# Next, use the cursors
+#*# Finally, use the "measure" functions.
+#* Repeat this for a few different waves: Very large amplitude; very low amplitdue; large DC offset
+#** Are there waveforms that the oscilloscope cannot measure properly?
+
+===Triggering===
+# Re-read Wikipedia section [http://en.wikipedia.org/wiki/Oscilloscope#Trigger about triggering]
+# Common way to trigger is on a rising edge (what does this mean?).  What happens to the signal when you use different triggers?  Be able to explain this orally.
+
+===AC Coupling===
+This is a tricky concept at first!
+# This [http://en.wikipedia.org/wiki/AC_Coupling Wikipedia article on capacitive coupling] isn't too helpful
+# Apply a large DC voltage to the oscilloscope input (we'll have to figure out how to do this).  Compare DC coupling with AC coupling.    You may need to adjust the triggering.  Which mode is better for viewing any "ripple" on the DC voltage?
+# [[Image:Oscilloscope_fall_time.jpg|right|thumb|Using rising part of square wave to measure fall time]]Measure the [http://en.wikipedia.org/wiki/Fall_time fall time] of the AC coupling
+#* Function generator: Square wave; zero DC offset; amplitude about 8.6 V
+#* Use cursors to measure fall time (peak to 10% value)
+#* Use "measure" function to measure fall time
+# What RC constant does this imply? (See [http://en.wikipedia.org/wiki/Rise_time#One_stage_low_pass_RC_network Wikipedia article on rise time])
+# How does this compare with the expected value for the oscilloscope? (Can you find the answer on Google?)
+
+===FFT (Optional for Wednesday people (Sorry Mondays!))===
+# Find the frequency of a sine wave using FFT "Math" function
+# Look at the harmonics in triangle and square wave
+# Compare with what you see on this applet: [http://www.falstad.com/fourier/ Fourier series applet]
+# Be able to explain what is going on with an FFT and when it may be useful
+
+===Other===
+# Play with XY mode to make some [http://en.wikipedia.org/wiki/Lissajous_curve fun patterns]
+# Build your own low or high pass filter using resistors, capacitors and breadboard.
+# Measure something else you find in the lab
+
+==Summary==
+On your lab page (e.g. [[Physics307L:People/YourName]]) create a new heading, <pre>==Oscilloscope Lab Summary==</pre>  Under that heading (or on a sub-page if you want), include the following information
+# Brief summary of what you did (linking to the lab manual page is OK)
+# Add links to all wiki pages that contain your notebook entries.  This is likely only one page.
+# Report your value for the fall time using AC coupling.
+#* Include error bars!
+#* Explain how you measured this (briefly)
+# What did you learn?
+#* It's OK if you didn't learn anything.  But include things you are still confusing.
+# What did you explore outside of the standard lab procedure?  Anything interesting?
+# What could make the lab better next year?

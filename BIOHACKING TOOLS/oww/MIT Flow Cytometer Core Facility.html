@@ -1,0 +1,83 @@
+<font size=1>< [[Flow cytometry]]</font>
+
+'''This information is largely gleaned from the official [http://web.mit.edu/flowcytometry/www/ Flow Facility Homepage].  As well as conversations with Glenn Paradis.'''
+
+*[[MIT Flow Cytometer Core Facility/Equipment]]
+
+==Flow Cytometers==
+===FACScan===
+
+FL1: 530/30
+
+FL2: 585/42 (this means 585 +/- 21)
+
+FL3: 650 longpass 
+
+Laser: 488nm
+
+====Using 2 Fluorescent Proteins in the FACScan cytometers====
+
+As of now it seems the best choice is [[GFP]]/[[dsRED]], however you will be exciting dsRED off the 488 line (30%).  So you need bright cells.  It is unlikely that [[GFP]]/[[mRFP1]] will work since the [[mRFP1]] spectrum is shifted (5% excitation at 488), though this is currently untested.  CFP/YFP will not work since there is not a line that effectively excites CFP.
+
+==High Speed Sorters==
+
+There are 4 cell sorters in the facility:
+
+Excitation Wavelengths
+#488,633
+#407,488,633
+#?
+#?
+
+There FACS-Aria machines (2 of the 4) have a system for creating the droplet which allows for smaller cells (i.e. bacteria) to be resolved.  The MOFLO machines are not as capable in this regard, however with some adjustment they can be made to sort bacterial cells.
+
+===Using 2 Fluorescent Proteins in the FACS machines===
+
+It seems that the only FP pair that will work with the current setup in the flow facility is dsRED/GFP (or mRFP1/GFP, although this has not been confirmed).  CFP/YFP will not work because they are getting poor excitation of CFP on the FACS-Aria.  It seems like this is a problem on their end since I can see strong expression on the scope.  The MOFLO has a (?) line which is appropriate for RFP expression and the 488 for GFP.
+
+==Signing up for machine time using TechTime==
+Signing up on [http://calendar.mit.edu/techtime/index.shtml TechTime] can be a little confusing.  You need to do a "resource search" for the name of the machine you want, some of the names are:
+#"Mo Flo 2"
+#"Mo Flo 3"
+#"FACScan Left"
+#"FACScan Middle"
+#"FACScan Right"
+
+Be sure and make any bookings on a machine public so that others can view them.
+
+==FAQ==
+
+'''Question'''
+
+I had a question about PMT settings.  I am using the FACScan left to measure fluorescence from YFP in E. coli cells.  I have been changing my growth conditions and whatnot and I noticed that my negative control cells are "more off" than they were before.  ie A lot of them are piling up in the first channel.  So I tried taking fluorescence measurements again using a high PMT setting (I went from Fl1 at 595 to FL1 at 690).  As expected fewer of the cells are piling up in the first channel but some still are.  At this new setting, distribution of cells is fairly well centered in the first quadrant between 10^0 and 10^1.  Is it worthwhile to turn up the PMT setting even more so that I decrease the number of cells in the first channel even more?  My positive control lands primarily in the third quadrant between 10^2 and 10^3 so I could arguable turn up the PMT settings and still not have cells pile up in the last channel.
+
+'''Glenn Paradis' answer'''
+
+No need for you to pull all the cells off the bottom of the axis unless you want to ratio the mean of the pos. vs.  the neg.  If you just want % pos compared to a neg control then  having some cells on the axis is no big deal unless of course there is a lot of cells off scale (i.e. more than 20%).
+
+'''Question'''
+
+Just to clarify, is there any reason not to increase the PMT setting even more assuming none of my cells accumulate in the last channel? In other words, the primary factor limiting your PMT setting is the danger of having cells accumulate in the last channel?
+
+'''Glenn Paradis' answer'''
+
+There is no reason to keep the PMT voltage low.  Crank away at 999 volts.
+
+'''Question'''
+How do you convert the signals recorded by the FASC machine that were logarithmically amplified electronically before digitization, and are now represented on a linear "channel numbers" scale into something more appropriate for data analysis?
+
+'''Answer'''
+http://www.cyto.purdue.edu/hmarchiv/1999/1521.htm
+
+==Prepatory procedures==
+''Copied from http://web.mit.edu/flowcytometry/www/procedures.html''
+* Cells must be brought in Falcon 12x75mm polystyrene test tubes (Falcon # 2054, VWR #60819-310) for the FACS machines, and in Falcon 12x75mm polypropylene test tubes (Falcon #2063, VWR 60819-728) for the Moflo high-speed sorters. These tubes can be purchased in the on-campus VWR stockroom.
+* Minimum sample volumes are 0.5 ml.
+* Bring positive and negative controls. A negative control is an unstained sample or a sample stained only with the secondary, if this is the system you are using. To make conclusions about your experiment, the proper controls are critical. If you have any questions as to what the appropriate controls are, do not hesitate to call Glenn or Mike at 253-6454.
+* If you have samples stained with more than one fluorochrome per test tube, bring in a sample stained with each fluorochrome individually. This is for compensation purposes.
+* If you are sorting, cells should be concentrated to 50-100 million cells/ml for the high speed sorters. Note that these concentrations are optimal; lower concentrations can be run on the machines at slower rates although the additional time needed is billed normally. Also, you should an appropriate media with you to sort the cells into.
+
+==Resources==
+See [[Flow cytometry]]
+
+[[Category:Flow cytometry]]

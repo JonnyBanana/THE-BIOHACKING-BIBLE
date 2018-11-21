@@ -1,0 +1,53 @@
+==Add to main==
+<pre>
+####
+# generate and print the oligo grid
+####
+
+# Initialize the grid with all periods
+num_strands = len(TPP_ra)
+num_subzones = len(TPP_ra[0])
+
+sub_token_visit_ra = ['.' for subzone_num in range(num_subzones)]
+grid_ra = [sub_token_visit_ra[:] for strand_num in range(num_strands)]
+        
+oligo_num = 0
+for oligo in OTP_ra:
+        grid_ra = generate_oligo_path(oligo, oligo_num, grid_ra)
+        oligo_num = oligo_num + 1
+print grid_ra
+        
+print_all_oligos(grid_ra, num_strands, num_subzones)
+
+</pre>
+
+==add this part to honeycomb_pointers_v1.py==
+<pre>
+# The idea here is to have a function that adds the numbers of one oligo path
+# to the appropriate places in the big grid array. Eventually this will be printed
+# in main. Also it needs to be initialized in main. Oligo_path is the path of
+# one oligo, while grid_ra is the grid that is constantly being updated until 
+# it is printed in main. oligo_num is number that will be inputed to the grid_ra.
+                        
+def generate_oligo_path(oligo_path, oligo_num, grid_ra):
+        num_path_tokens = len(oligo_path)
+                
+# Assign visits
+        for path_token_num in range(num_path_tokens):
+                token = oligo_path[path_token_num]
+                strand = token[0]
+                subzone = token[1]
+                grid_ra[strand][subzone] = oligo_num
+        
+        
+        return grid_ra
+
+def print_all_oligos(grid_ra, num_strands, num_subzones):
+        spacer = '   '
+        for strand_num in range(num_strands):
+                for subzone_num in range(num_subzones):
+                        visitor_string = str(grid_ra[strand_num][subzone_num])   
+                        sys.stdout.write(visitor_string)
+                        sys.stdout.write(spacer[:4 - len(visitor_string)])
+                sys.stdout.write('\n')   
+</pre>

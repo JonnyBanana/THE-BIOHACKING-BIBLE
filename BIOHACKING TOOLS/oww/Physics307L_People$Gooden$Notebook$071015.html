@@ -1,0 +1,126 @@
+'''POISSON STATISTICS'''
+
+=='''Objective'''==
+*Using seemingly random data, most likely of cosmic origin, we hope to show using the Multichannel Analyser (MCA) that the data best fits a Poisson distribution rather than the Binomial or Gaussian Distributions. We are taking data over various apertures of time; for instance, 256 bins of 100 milli-seconds each. The large amount of incidents being recorded over varying sized bins will give us a large variety of distributions.
+
+=='''Experiment'''==
+*'''Setup'''
+We have a setup that consists of a photomultiplier tube that is attached to a NaI scintillator, both are housed in a structure of lead bricks. The arrangement is wired to a high voltage power supply (1000 volts) and then run through some sort of bridge and to a data acquisition board on a computer. The computer is running a program called PCAIII, which handles the data acquisition process. The photomultiplier tube and scintillator were connected by way of coaxial cables to the power supply which we connected to the bridge, and from the bridge into the computer. There were some erroneous cables coming from the data acquisition board that we had no need to mess with. 
+
+*'''Procedure'''
+Once all the cables are secured and the power supply and bridge are warmed up, we were able to start taking data. Using PCAIII we simply configured how many bins of data we were taking and how much time each bin would get ("dwell time").You want to vary your bins, in both number and in dwell time. For example we chose 512 bins(for 800s, 2s, and 10s) and 4096 bins (for 10ms, 100ms, and 10s).
+
+=='''Theory'''==
+When collecting large amounts of data it is wise to look at the probability distributions for that data.The <b>binomial distribution</b> is the most true distribution and from it we can derive the Gaussian and Poisson distributions as limiting cases. In this experiment we are concerning ourselves with the Poisson Distribution and seeing how closely our random data fit to it.
+
+===The Binomial Distribution===
+
+When analyzing any randomly distributed situation a binomial distribution:
+
+
+<math>B(x)=\frac{N!}{x!(N-x)!}p^nq^{N-n}</math>
+
+with a standard deviation of
+
+<math>\sigma=\sqrt{pN(1-p)}</math>
+
+and a mean of
+
+<math>a=pN</math>
+
+is used.  With <math>N</math> = the number of counts, <math>p</math> = the probability of counts occurring, and <math>q</math> = the probability of counts not occurring.  In all instances <math>p+q=1</math>, since something either happens or it doesn't, <math>p</math> and <math>q</math> must sum to 1.  In context of our experiment, we have a very large <math>N</math> with a very small <math>p</math>.  Undergoing several manipulations we can approximate the binomial distribution to be the Poisson distribution.  More information can be found [http://en.wikipedia.org/wiki/Binomial_distribution here]
+
+
+===The Gaussian Distribution===
+When analyzing a situation in which there is a high probability of occurrence (large <math>p</math>) we use the Gaussian (or normal) distribution.  The Gaussian distribution is given by
+
+<math>G(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{\left(x-a\right)^2}{2\sigma^2}}</math>,
+
+with <math>a</math> = the mean, <math>\sigma</math> = the standard deviation.  
+The Gaussian distribution is often used to model probabilities and is useful because if the standard deviation and mean are optimal then the actual mean and standard deviation values will match those given theoretically.  A very good tool for understanding the Gaussian distribution can be found [http://hyperphysics.phy-astr.gsu.edu/hbase/math/gaufcn.html here]
+
+===The Poisson Distribution===
+
+The Poisson is a "discrete probability distribution" for the probability of a number of events occuring in a fixed period of time, such that the events occur at a known average rate. When analyzing a random situation in which there is a very low probability of occurrence (large <math>N</math> and small <math>p</math>)we use the Poisson distribution.  The standard form is given by:
+
+<math>P(x)=e^{-a}\frac{a^x}{x!}</math>
+
+with a standard deviation of
+
+<math>\sigma=\sqrt{a}</math>,
+
+with <math>a</math> = the mean.  The Poisson distribution appears only around zero and, unlike the Gaussian or binomial distributions, can only reflect positive integers.  You could think of a Gaussian distribution that has been normalized so it can only take on positive values with a mean greater than zero. A place to get comfortable with Poisson distributions can be accessed here [http://hyperphysics.phy-astr.gsu.edu/hbase/math/poifcn.html 1]
+
+=='''Data and Results'''==
+We took four sets of data corresponding to different combinations of bin number and time delay. The time delay represented for how long measurements/counts were taken from each bin. The number of bins represents basically how many mini experiments were done for each data set. Using the MCA we were able to repeat the experiment of making counts of background radiation many many times with relative ease. The four sets of data that we took can be broken down such that, for data set 1 we used 512 bins and a time delay of 800ms, data set 2 512 bins and 100ms, data set 3 256 bins and 10s, and finaly for data set four we used 4096 bins with a time delay of 40s which took approximately 45 hours to run.
+
+[[Image:Presentation19.jpg|left|thumb|'''Figure 1''':Plot of Counts vs Bin # for 512 Bins and 800ms time delay]]
+This is '''Data set 1''', where mentioned above we used 512 bins and a time delay of 800ms. For this data set we found a mean value of '''<math>a=10.53</math>''' and standard deviation of '''<math>\sigma=3.55</math>'''
+
+
+[[Image:Presentation12.jpg|left|thumb|'''Figure 2''':Plot of Counts vs Bin # for 512 Bins with 100ms time delay]]
+This is '''Data set 2''', where mentioned above we used 512 bins and a time delay of 100ms. For this data set we found a mean value of '''<math>a=1.36</math>''' and standard deviation of '''<math>\sigma=1.37</math>'''
+
+[[Image:Presentation21.jpg|left|thumb|'''Figure 3''':Plot of Counts vs Bin # for 256 Bins with 10s time delay]]
+This is '''Data set 3''', where mentioned above we used 256 bins and a time delay of 10s. For this data set we found a mean value of '''<math>a=135.72</math>''' and standard deviation of '''<math>\sigma=14.25</math>'''
+
+[[Image:40 MS.jpg|left|thumb|'''Figure 4''':Plot of Counts vs Bin # for 4096 Bins with a time delay of 40s]]
+This is '''Data set 4''', where mentioned above we used 4096 bins and a time delay of 40s. For this data set we found a mean value of '''<math>a=543.60</math>''' and standard deviation of '''<math>\sigma=34.63</math>'''
+
+
+
+
+
+
+
+
+[[Image:Lab6-800ms.jpg|left]]
+*'''Plot 1:'''This is a plot of the data, which was transformed into a probability by counting how many times it occured in the data set and dividing by the number of bins. This plot represents data set 1 for 800ms and plotted in green is the poisson, red is the data and in blue is the gaussian.
+[[Image:Lab6-100ms.jpg|left|]]
+'''Plot 2:'''This is a plot of the data, which was transformed into a probability by counting how many times it occured in the data set and dividing by the number of bins. This plot represents data set 2 for 100ms and plotted in green is the poisson, red is the data and in blue is the gaussian.
+[[Image:Lab6-10ms.jpg|left]]
+'''Plot 3:'''This is a plot of the data, which was transformed into a probability by counting how many times it occured in the data set and dividing by the number of bins. This plot represents data set 3 for 10s and plotted in green is the poisson, red is the data and in blue is the gaussian.
+[[Image:Lab6-40ms.jpg|left]]
+'''Plot 4:'''This is a plot of the data, which was transformed into a probability by counting how many times it occured in the data set and dividing by the number of bins. This plot represents data set 4 for 40s and plotted in green is the poisson, red is the data and in blue is the gaussian.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=='''Discussion'''==
+This experiment used a detector that picked up background radiation and by making counts of that background over selected periods of time many many times we produced the data given above. We were trying to compare the data taken, which in principle should be completely random, with the poisson distribution. As seen in plot 1 above,the data that we took fits well with the Poisson and also the Gaussian distribution. The poisson and gaussian do not differ by much with this data set. From plot 2 we can see that while most of the data that I plotted is not perfectly on the Poisson distrubtion is is much closer to fitting that distribution than the Gaussian. Plot 3 has the Poisson and Gaussian distributions being almost indistinguishable from eachother, while on the other hand the data for that set is very random and does not fit either distribution at all. I am not sure why there is so much error in that data set which is its difference from the expected probabilities. Then for plot 4, we can see that the data closely matches the plot of the Gaussian Distribution, however if you notice there is not plot of the Poisson. The reason for this is that because the counts were so large, ~600 or so, and because the Poisson uses of the counts and a factorial of them, Matlab was unable to compute the number and produced only infinities and NaN, which stands for Not a Number.
+{{SJK comment|l=01:18, 9 December 2007 (CST)|c=An even lower count event would have been good, to make a dramatic difference between Poisson and Gaussian.  It's also not obvious to me how you're fitting the Gaussian...}}

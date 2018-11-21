@@ -1,0 +1,21 @@
+=Minimisation of Metabolic Adjustment=
+MoMA is a flux-based analysis technique similar to [[FBA]] and based on the same stoichiometric constraints, but the optimal growth flux for mutants is relaxed. Instead, MoMA provides an approximate solution for a sub-optimal growth flux state, which is nearest in flux distribution to the unperturbed state. The mathematical formulation of this yields a quadratic programming problem:
+
+<math>
+\min\ ||\mathbf{v_w} - \mathbf{v_d}||^2 \qquad s. t.\quad \mathbf{S}\cdot\mathbf{v_d}=0
+</math>
+
+where <math>\mathbf{v_w}</math> represents the wild-type (or unperturbed state) flux distribution and <math>\mathbf{v_d}</math> represents the flux distribution on gene deletion that is to be solved for. This simplifies to:
+
+<math>
+\min\ \frac{1}{2}\,{\mathbf{v_d}}^T\,\mathbf{I}\,\mathbf{v_d} + (\mathbf{-v_w})\cdot\mathbf{v_d} \qquad s. t.\quad \mathbf{S}\cdot\mathbf{v_d}=0
+</math>
+
+where <math>\mathbf{I}</math> is an identity matrix of size <math>n \times n</math>, <math>n</math> being the length of the vector <math>\mathbf{v_d}</math>. An important feature of MoMA is that the wild-type flux distribution used need not be obtained by performing an FBA; an experimentally determined flux distribution could serve better. Thus, objective functions for optimisation, which may not reflect the physiological situation very accurately can be circumvented using MoMA. MoMA also does not assume optimality of growth or any other metabolic function.
+
+=References=
+*Segre D, Vitkup D, Church GM. Analysis of optimality in natural and perturbed metabolic networks. ''Proc Natl Acad Sci U S A'' 2002; '''99''':15112–15117.
+*Segre D, Zucker J, Katz J, et al. From annotated genomes to metabolic flux models and kinetic parameter fitting. ''OMICS'' 2003; '''7''':301–316.
+
+[[Category:Protocol]]
+[[Category:In silico]]

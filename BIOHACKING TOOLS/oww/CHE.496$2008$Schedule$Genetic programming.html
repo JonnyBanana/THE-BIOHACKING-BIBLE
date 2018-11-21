@@ -1,0 +1,41 @@
+__NOTOC__
+{{Template:CHE.496/2008}}
+
+<div style="padding: 10px; width: 750px; border: 5px solid #B3CD4E;">
+==Genetic programming==
+*'''Discussion leader: Dan
+<br />
+*'''Idempotent vector design for standard assembly of biobricks [http://web.mit.edu/synbio/release/docs/biobricks.pdf link]
+**Purpose: This paper formally lays out the concept of the BioBrick. It describes the rationale behind the idea and what it promises. The majority of the paper deals with presenting their proposed method for creating standardized biological parts.
+***Sequence: Gives us the nitty gritty. Lays out the order of [http://en.wikipedia.org/wiki/Restriction_sites restriction sites] in the BioBrick standard and why they were chosen. There are two restriction sites (EcoRI XbaI) upstream of the insert and two (SpeI and PstI) downstream of the insert. [[User:KPHershey|Kevin]] raises a good point about the specification design: one characteristic of the BioBrick format is that after an insert has been added to a BioBrick, it cannot be removed again as the restriction sites are lost.
+***Making a vector: A standard method of making a vector to insert desired DNA into an organism is detailed.
+***Other approaches: The NOMAD system is mentioned as an alternative which might be easier to use with respect to inserts, however the enzymes used [in NOMAD] are pointed out to be more difficult to work with than the ones proposed for the BioBrick format. 
+**Overall this is a technical document introducing a standard for biological parts. It promotes the hope that with the adoption of a standard, synthetic biology will be able to facilitate research and development efforts as well as reducing costs significantly.
+
+<br />
+*'''Genetic parts to program bacteria [http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6VRV-4KWTFBB-3&_user=10&_coverDate=10%2F31%2F2006&_rdoc=1&_fmt=&_orig=search&_sort=d&view=c&_acct=C000050221&_version=1&_urlVersion=0&_userid=10&md5=af25b842448fbeab46cb6869a684d7b4 link]
+**Purpose: This review article summarizes several subcategories of synbio parts and discusses their uses, their shortcomings, and what the future may hold in store for these categories. 
+***Sensors: 4 types are discussed in the article
+****Cytoplasmic regulators: A small molecule which is added to the media binds to a regulatory protein which then does something.
+****Two component systems: A sensor which can detect some physical event and then causes a small messenger molecule to be sent out (kind of like an intra-cellular cytoplasmic regulator)
+****Environment responsive promoters: Promoters (part of the DNA molecule) which are directly affected by changes in the environment such as change in: pH, temp, O2 conc, presence of UV radiation.
+****RNA [http://en.wikipedia.org/wiki/Aptamer aptamers]: Small RNA molecules that can bind to specific things, which essentially creates a sensor for those 'things' as the aptamers can then cause other events in the cell. A benefit of using RNA aptamers is that they are generally species-independent. 
+***Gene circuits: They can be used to process signals, make logical decisions, they can be used as memory and they can implement inter-cellular communication
+****switches: control gene expression
+*****inverter: high -> low , low -> high
+*****biphasic: have a specific activation range
+*****toggle: have 2 states
+****logic gates: NOT, AND, OR, NOR already implemented
+****dynamic circuits: not logic gates, oscillator etc
+****cell2cell communication: sender and receiver system, works with small species-specific [http://en.wikipedia.org/wiki/Quorum_sensing quorum] molecules which diffuse easily and are later detected
+***Actuators: The author states this is the least developed aspect of synbio. More work is needed to 'decouple' (see goals of synbio from the first few articles) the natural actions from the cell from the processes that control those actions. When that has happened synthetic gene circuits can be inserted to control those actions.
+**Debugging: The author states quite openly that in reality it isn't so easy to combine parts successfully to create new tools. Parts have characteristics such as 'dynamic range' and 'timing' (relating to chemical events associated with those parts) which need to have congruent values for them to interact. There are a few ways to go about getting these characteristics aligned:
+***Rational mutation: The "mutation" moniker is a bit misleading as really he means rational design. For example replacing a promoter with another one that's known to cause things to happen faster/slower, or whatnot.
+***Directed evolution: This method works on the basis of growing large numbers of organisms and selecting those which, after mutation, have the characteristics you want. The hard part here is that you need a way to physically implement this selection. Whether it's with a microfluidics array which can screen individual cells for expression of a fluorescent protein or simple anti-bacterial resistance, if you don't have a way of finding those cells which are evolving in the direction you want, you've accomplished nothing.
+***Computer Aided Design: Hopefully in the future computers will be able to aid in the design of biological systems/gene circuits. However we need a much better understanding of said systems to be able to model them properly.
+<br>
+(I figured I'd outline these categories for future reference).
+
+
+*'''Exercise
+Well now that we've read about BioBricks and read an article which tells us about a lot of categories of parts, we should practice using this kind of information practically. We need to be able to find parts mentioned in the literature - and information & characteristics associated with those parts - and find out how we can implement them in our own project. I suggest we pursue a few of the topics and parts mentioned/cited in this article. This means searching for them in the parts directory @  [http://parts.mit.edu. parts.mit.edu] or elsewhere and also find information associated with them. Knowing part characteristics will be important as mentioned in 'Debugging' above.

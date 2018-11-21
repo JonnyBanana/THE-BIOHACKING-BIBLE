@@ -1,0 +1,70 @@
+== '''A parallel algorithm for ''de novo'' peptide sequencing''' ==
+'''Authors:''' S. Brunetti, S. Campa, E. Lodi, and [[User:ElisaMori|E. Mori]]<br> 
+'''Affiliations:''' Universita' degli studi di Siena  <br>
+'''Contact:''' morie@unisi.it <br>
+'''Keywords:''' '' 'peptide sequencing', 'parallel algorithm'
+
+[[Category: peptide sequencing]] 
+[[Category: parallel algorithm]]
+
+==Introduction==
+
+Protein identification is a main problem in proteomics, the large-scale analysis of proteins. Tandem mass spectrometry (MS/MS) provides an important tool to handle protein identification problem. Indeed the spectrometer is capable of 
+
+* ionizing a mixture of peptides, essentially several copies of the same unknown peptide, 
+
+* dissociating every molecule into two fragments called complementary ions, and 
+
+* measuring the mass/charge ratios of the peptides and of their fragments. 
+
+These measures are visualized as mass peaks in a mass spectrum. 
+
+There are two fundamental approaches to interpret the spectra. The first approach is to search in a database to find the peptides that match the MS/MS spectra. This ''database search'' approach is effective for known proteins, but does not permit to detect novel proteins. This second task can be dealt with the ''de novo'' sequencing that computes the amino acid sequence of the peptides directly from their MS/MS spectra.
+
+ 
+In the de novo sequencing problem one knows the peptide mass <math> M_P\, </math>, and a subset of the masses of its ions <math> m_1, ... ,m_n \,</math>, and the task is to determine a sequence <math> Q \,</math> of masses of  residues such that subsets of its prefixes and suffixes give the masses in input. The solution is, in general, not unique.
+
+
+
+==Methods==
+We reformulate the problem in terms of searching paths in a graph.
+
+To this goal, let <math>M_P\,</math> denote the set of ion masses in input <math>m_i\,</math> increased with: their complementary masses <math>M_P-m_i+2\,</math>, the mass of the hydrogen, 1, and the its complementary mass <math>M_P-17\,</math>. By abuse of notation,
+
+<math>M_P=\{m_1,...,m_{n_{M_P}}\},\,</math> where <math>m_i < m_j\,</math> if <math>i<j\,</math>.
+
+We build a directed acyclic graph <math>G_P=(V,E)\,</math> as follows.  Let a node <math>v_i\,</math> associate to a member <math>m_i\,</math> of <math>M_P\,</math>, and an edge from <math>v_i\,</math> to <math>v_j\,</math> if <math>m_j-m_i\,</math> equals the sum of residue masses.
+ 
+
+The de novo sequencing problem consists in determining any path from <math>v_1\,</math> to <math>v_{n_{M_P}}\,</math> in the graph <math>G_P\,</math>. 
+ 
+
+Although there is a unique original protein, the de novo sequencing may have in general more solutions (or none). In order to choose one sequence among the possible solutions, researchers  have introduced any scoring function [1, 3, 5] depending on the masses of the fragments in the spectra.  Our algorithm can determine either the solution of maximum score according to any given function or that of maximum length.
+
+We use 3 algorithms:
+
+* the first algorithm consists in building the graph;
+
+* the second  algorithm permits to distinguish the feasible paths that start in <math>v_1\,</math> and terminate in <math>v_{n_{M_P}}\,</math> among the others; 
+
+* finally, in the third algorithm, the solution of maximum score is retrieved.
+
+==Results and Conclusion==
+The literature offers a wide range of sequential de novo sequencing algorithm, all taking <math>O(n \log (n))\,</math> time, at least [2, 6]
+
+Aiming at lowering such time barrier, we proposed a work-efficient CREW (concurrent-read exclusive write) PRAM [4] algorithm  for the de novo peptide sequencing that determines the maximum length sequence in <math>O(n_{M_P})\,</math> time by using <math>\log(n_{ M_P})\,</math> processors. Such theoretical result showed that our algorithm is clearly scalable and reaches the theoretical, ideal efficiency.
+
+The next step we are working on is the implementation of the proposed algorithm on a parallel machine able to confirm such theoretical results and scalability features.
+
+==References==
+1. V. Bafna and N. Edwards, ''On de novo interpretation of tandem mass spectra for peptide identification'', Proc. of ICCMB, ACM Press, 2003.
+
+2.  S. Brunetti, D. Dutta, S. Liberatori, E. Mori, D. Varrazzo, ''An efficient algorithm for de novo Peptide Sequencing'', Proc. of the ICANNGA, Springer Verlag, 2005.
+
+3. V. Dancik, T.A. Addona, K.R. Clauser, and J.E. Vath, ''De novo peptide sequencing via tandem mass spectrometry'', Journal of computational biology, vol. 6, Mary Ann Liebert Inc., 1999.
+
+4. J.Jàjà, ''An introduction to parallel algorithms'', Addison-Wesley, 1992.
+
+5. B. Ma, K. Zhang, C. Hendrie, C. Liang, M. Li, A. Doherty-Kirby, and G. Lajoie, ''PEAKS: powerful Software for Peptide De Novo Sequencing by MS/MS'', Rapid Communications in Mass Spectrometry, 2003.
+
+6. G. Pandurangan and H. Ramesh, ''The Restriction Mapping Problem Revisited'', Journal of Computer and System Sciences, 2002.

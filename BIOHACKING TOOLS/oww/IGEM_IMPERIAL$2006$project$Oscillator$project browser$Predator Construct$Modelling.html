@@ -1,0 +1,126 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|-
+!height="25pt" width="80pt"| Super Parts
+!colspan="2" | [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Full_System | Molecular Prey-Predator Oscillator]]
+|- 
+! style="background:#FF9966" height="50" width="80pt"|Actual Part
+!colspan="2"| [[Image:J37036 parts pic.PNG|300px]]
+|-
+!height="25pt" width="80pt"|Sub Parts
+! [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct| Test Sensing Predator Construct]] 
+! [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Killing_Predator_Construct| Test Killing Predator Construct]] 
+|}
+<div class="tabs-blue">
+<ul>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct |Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct/Design|Design]]</li>
+<li id="current">[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct/Modelling|Modelling]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct/Implementation|Implementation]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Model assumptions and relevance==
+*General assumptions on gene expression modelling:
+**Quasi-steady state hypothesis on mRNA expression.
+**Gene activation can be approximated by [http://en.wikipedia.org/wiki/Hill_equation Hill equations].
+
+*Assumptions linked to the quorum sensing:
+**As a first approximation, we assume that luxR and AHL molecules form a heterodimer (even if it has been found that the complex formed is more complicated).
+**The degradation rate of luxR and aiiA is mainly due to the growth dilution.
+
+<html>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1999441; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="18996820"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c19.statcounter.com/counter.php?sc_project=1999441&amp;java=0&amp;security=18996820&amp;invisible=1" alt="website statistics" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</html>
+
+==Model description of the growth of the predator==
+*mathematical description of the predator growth and death:
+**<math>\frac{d[luxR]}{dt} = \frac{c * [AHL] * [luxR]}{(c0 + [AHL] * [luxR])} - gd * [luxR]</math>
+**<math>\frac{d[aiiA]}{dt} = \frac{c * [AHL] * [luxR]}{(c0 + [AHL] * [luxR])} - gd * [aiiA]</math>
+
+*insert a graphical representation if possible (e.g. CellDesigner display)
+*link to SBML file or matlab.
+
+==Model variables and parameters for the growth of the predator==
+
+(list all the variables and parameters of the model in a table, specifying if their values are known, unknown, to be measured.)
+
+{| border="1" width="100%"
+| style="background:lightblue" colspan="5"| '''Variables'''
+|- style="background:lightgrey"
+!Name !! Description !! Initial Value !! Confidence !! Reference
+|-
+|width="100"| AHL || homoserine lactone acting as the prey-molecule || 0|| depends how good is the control of the prey positive feedback || links
+|-
+|width="100"| luxR || molecule acting as the sensing module for the predator || 0|| to be measured as we might have to deal with some leakage of the promoter || links
+|-
+|width="100"| aiiA || molecule acting as the killing module of the prey for the predator  || 0 || to be measured as we might have to deal with some leakage of the promoter || links
+|}
+
+{| border="1" width="100%" 
+| style="background:lightblue" colspan="5"| '''Parameters'''
+|- style="background:lightgrey"
+! Name !! Description !! Value !! Confidence !! Reference
+|-
+|width="100"| c || maximum synthesis rate of the pLux promoter || to be characterized || to be measured || links
+|-
+|width="100"| c0 || dissociation constant according to Hill eq || to be characterized|| to be measured || links
+|-
+|width="100"| gd || growth dilution  || to be characterized || to be measured || links
+|}
+
+==Model description of the killing of the prey molecule by the predator==
+*mathematical description of the killing of the prey:
+**<math>\frac{d[AHL]}{dt} = \frac{b * [aiiA] * [AHL]}{(b0 + [AHL])} - e * [AHL]</math>
+
+==Model variables and parameters for the killing of the prey molecule by the predator==
+
+{| border="1" width="100%"
+| style="background:lightblue" colspan="5"| '''Variables'''
+|- style="background:lightgrey"
+!Name !! Description !! Initial Value !! Confidence !! Reference
+|-
+|width="100"| AHL || homoserine lactone acting as the prey-molecule || 0 || depends how good is the control of the prey positive feedback || links
+|-
+|width="100"| aiiA || molecule acting as the killing module of the prey for the predator || 0 || to be measured as we might have to deal with some leakage of the promoter|| links
+|}
+
+{| border="1" width="100%" 
+| style="background:lightblue" colspan="5"| '''Parameters'''
+|- style="background:lightgrey"
+! Name !! Description !! Value !! Confidence !! Reference
+|-
+|width="100"| b || Maximum degradation rate catalyzed by aiiA || ... || to be measured || links
+|-
+|width="100"| b0 || Michaelis-Menten constant of enzyme reaction || ... || to be measured || links
+|-
+|width="100"| e || AHL wash-out  || variable || to be measured/can be varied by chemostat || links
+|}
+
+==Dynamical and sensitivity analysis==
+<showhide>
+*Template__HIDER__ 
+<hide>
+*analyze model in order to show how the part could fulfill its specifications
+*insert graph and charts
+</hide></showhide>
+<showhide>
+*We have decoupled the predator into sensing and killing parts
+*For detail modelling, please refer to the modelling section in subparts.
+**[http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/project_browser/Test_Sensing_Predator_Construct/Modelling Predator Sensing]
+**[http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/project_browser/Test_Killing_Predator_Construct/Modelling Predator Killing]
+
+==Characterization==
+*To characterize the part, we have to measure the production rate and aiiA enzyme activity seperately
+*For details characterization, please refer to subparts

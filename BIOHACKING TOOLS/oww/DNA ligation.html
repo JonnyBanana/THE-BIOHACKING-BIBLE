@@ -1,0 +1,109 @@
+==Curators==
+[[User:Jamesh008|James Hadfield]], CRUK Cambridge Research Institute, Robinson Way, Cambridge CB2 0RE.
+
+''Anyone should feel free to add themselves as a curator for this consensus protocol. You do not need to be a curator in order to contribute.  This is a new initiative on OWW, please provide your thoughts on the idea of consensus protocol curators [[OpenWetWare:Information management/Protocol curators|here]].''
+
+==Abstract==
+This is a [[Help:Consensus protocol|consensus protocol]]. See the bottom of this article for specific protocols. 
+
+DNA ligation is the process of joining together two DNA molecule ends (either from the same or different molecules).  Specifically, it involves creating a [[Wikipedia:phosphodiester bond|phosphodiester bond]] bond between the 3' hydroxyl of one nucleotide and the 5' phosphate of another. This reaction is usually catalyzed by a [[Wikipedia:DNA ligase|DNA ligase enzyme]]. This enzyme will ligate DNA fragments having blunt or overhanging, complementary, 'sticky' ends. Typically, it is easier to ligate molecules with complementary sticky ends than blunt ends.  [[T4 DNA ligase]] is the most commonly used [[Wikipedia:DNA ligase|DNA ligase]] for molecular biology techniques and can ligate 'sticky' or blunt ends.
+
+The two components of the DNA in the ligation reaction should be equimolar and around 100&mu;g/ml. Most commonly, one wants to ligate an insert DNA molecule into a plasmid, ready for [[Bacterial Transformation|bacterial transformation]].  Typically, DNA and plasmid vector are individually cut to yield complementary ends, then both are added to a ligation reaction to be circularised by DNA ligase.  If the plasmid backbone to insert DNA ratio is too high then excess 'empty' mono and polymeric plasmids will be generated. If the ratio is too low then the result may be an excess of linear and circular homo- and heteropolymers.
+
+==Materials==
+===Reagents===
+*[[T4 DNA ligase]]
+*10x T4 DNA Ligase Buffer
+*Deionized, sterile H<sub>2</sub>O
+*Purified, linearized vector (likely in H<sub>2</sub>O or EB)
+*Purified, linearized insert (likely in H<sub>2</sub>O or EB)
+
+===Equipment===
+Vortex
+
+==Procedure==
+===10&mu;L Ligation Mix===
+''Larger ligation mixes are also commonly used''
+*1.0 &mu;L 10X T4 ligase buffer
+*6:1 molar ratio of insert to vector (~10ng vector)
+*Add (8.5 - vector and insert volume)&mu;l ddH<sub>2</sub>O
+*0.5 &mu;L T4 Ligase
+===Calculating Insert Amount===
+<math>{\rm Insert\ Mass\ in\ ng} = 6\times\left[\frac{{\rm Insert\ Length\ in\ bp}}{{\rm Vector\ Length\ in\ bp}}\right]\times{\rm Vector\ Mass\ in\ ng} </math>
+
+'''The insert to vector molar ratio can have a significant effect on the outcome of a ligation and subsequent transformation step. Molar ratios can vary from a 1:1 insert to vector molar ratio to 10:1.  It may be necessary to try several ratios in parallel for best results.'''
+
+===Method===
+#Add appropriate amount of deionized H<sub>2</sub>O to sterile 0.6 mL tube
+#Add 1 &mu;L ligation buffer to the tube.  <br>Vortex buffer before pipetting to ensure that it is well-mixed. <br>Remember that the buffer contains ATP so repeated freeze, thaw cycles can degrade the ATP thereby decreasing the efficiency of ligation.
+#Add appropriate amount of insert to the tube.
+#Add appropriate amount of vector to the tube.
+#Add 0.5 &mu;L ligase. <br>Vortex ligase before pipetting to ensure that it is well-mixed.  <br>Also, the ligase, like most enzymes, is in some percentage of glycerol which tends to stick to the sides of your tip.  To ensure you add only 1 &mu;L, just touch your tip to the surface of the liquid when pipetting.
+#Let the 10 &mu;L solution sit at 22.5&deg;C for 30 mins
+#Denature the ligase at 65&deg;C for 10min
+#Dialyze for 20 minutes if electroporating
+#Use disks shiny side up
+#Store at -20&deg;C
+
+==Critical steps==
+
+==Troubleshooting==
+
+===Factors affecting efficiency===
+From [[Tom Ellis]]
+
+A protocol analysis experiment for a typical DNA ligation (7.2 kb vector + 0.6 kb insert, sticky ends) gave optimal ligation efficiency when 50 ng of vector was ligated overnight at 16&deg;C with a 2:1 insert:vector molar ratio and standard T4 ligase. Ligase was heat inactivated at 65&deg;C for 20 mins before 2 &mu;L (of 20 &mu;L) was used to transform commercial heat-shock competent cells.
+
+Ligation efficiency was '''marginally decreased''' by
+#Doing a 1 hr ligation at room temperature
+#Using 100 ng vector
+#Using insert:vector molar ratios of 5:1 and 1:1
+
+Ligation efficiency was '''noticably decreased''' (x100) by
+#Sticky end ligation with a larger insert (5.2 kb vector + 2.6 kb insert)
+#Blunt end ligation
+
+Ligation efficiency was '''severely decreased''' (x10000) by
+#Using DNA fragments that have been exposed to ethidium bromide and UV during the gel extraction procedure (''difficult to avoid but heartily recommended'')
+#Using the NEB Quick Ligation Kit (''possibly a bad batch'')
+
+For additional troublshooting, check out the NEB FAQ page for T4 ligation: [http://www.neb.com/nebecomm/products/faqproductM0202.asp#339]
+
+==Notes==
+#Make sure the buffer is completely melted and dissolved.  The white precipitate is BSA according to [http://www.neb.com/nebecomm/tech_reference/dna_rna/tips.asp NEB].  Make sure the buffer still smells strongly like "wet dog" (to check if the DTT is still good).
+#Because ligase buffer contains ATP, which is unstable and degraded by multiple freeze/thaw cycles, you may want to make 10-20ul aliquots from the original tube.  Ligase buffer may be [http://www.neb.com/nebecomm/tech_reference/dna_rna/tips.asp spiked] with additional ATP. 
+#If you are having trouble with your ligation, NEB offers FAQ's ([http://www.neb.com/nebecomm/products/faqproductM2200.asp Quick Ligation] [http://www.neb.com/nebecomm/products/faqproductM0202.asp T4 DNA ligase]) and [http://www.neb.com/nebecomm/tech_reference/dna_rna/tips.asp tips] to help.
+#Prior to the ligation, some heat their DNA slightly (maybe ~37&deg;C) to melt any sticky ends which may have annealed improperly at low temperatures.
+#[[Tom Knight]] has read that ligase can inhibit transformation.  By heat-inactivating the ligase, this inhibition can be avoided.  However, according to the NEB FAQ, heat-inactivation of PEG (which is present in the ligation reaction) also inhibits transformation, therefore a spin-column purification is recommended prior to transformation if you are having problems.
+#Treating PCR products with proteinase K prior to restriction digest dramatically improves the efficiency of subsequent ligation reactions. <cite>Crowe-NAR-1991</cite>
+#Using [http://probes.invitrogen.com/products/sybrsafe/ SYBR Safe DNA Gel Stain] is a safer, non-carcinogenic alternative to ethidium bromide.
+#T4 DNA Ligase is very sensitive to shear, so spinning your ligation mix or vortexing it to mix it can affect your yields.  Instead try mixing with the pipette tip or slowly resuspending the solution.
+
+==Acknowledgments==
+This protocol is primarily based on [[Endy:DNA ligation using T4 DNA ligase]].
+
+==References==
+<biblio>
+# Crowe-NAR-1991 pmid=2011503
+# Olivera-PNAS-1967 pmid=5341238
+// DNA ligation by ''Escherichia coli'' DNA ligase
+</biblio>
+
+==Specific protocols==
+[[Endy:DNA ligation using T4 DNA ligase]] -- Using T4 DNA Ligase
+
+[[Knight:DNA ligation using NEB Quick Ligation Kit]] -- 5min ligation.
+
+[[Knight:TOPO TA cloning]] -- For PCR products.
+
+[[Silver: Ligation|Silver:Ligation]] -- A protocol for sticky end ligations using the Roche Kit.
+
+[[BE.109:DNA engineering/DNA ligation and bacterial transformation|BE.109:DNA ligation]] -- A ligation protocol for classroom use in a laboratory class taught at MIT.  Uses T4 DNA ligase but has interesting tips and tricks.
+
+==Discussion==
+
+You can [[Talk:{{PAGENAME}}|discuss this protocol]]. 
+
+[[Category:Protocol]]
+[[Category:DNA]]
+[[Category:In vitro]]

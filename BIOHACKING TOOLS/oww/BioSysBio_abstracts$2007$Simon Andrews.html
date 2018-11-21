@@ -1,0 +1,42 @@
+* Add or delete the sections that you require.
+
+=ChIPMonk: Software for viewing and analysing ChIP-on-chip data=
+'''Author(s): '''[[Simon R Andrews]]<br> 
+'''Affiliations:''' The Babraham Institute  <br>
+'''Contact:'''[mailto:simon.andrews@bbsrc.ac.uk simon.andrews@bbsrc.ac.uk] <br>
+'''Keywords:''' 'chip-on-chip' 'visualisation' 'analysis' 'software' 
+
+[[Category:BioSysBio Keywords add_keyword_1]] 
+[[Category:BioSysBio Keywords add_keyword_2]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+==Background/Introduction==
+[[Image:chipmonk_logo.png|right|80px]]
+ChIP on chip is a powerful array-based technology which allows positional data to be collected for any event on genomic DNA which can be tagged by an antibody.  The most common applicaiton of this technique is the elucidation of protein binding sites in the genome, but in theory it can be applied to a much wider range of tasks.
+
+The data from a ChIP-on-chip experiment is produced by a conventional array scanner using conventional microarrays.  However the analysis of this data is often not well supported by traditional expression array analysis tools.  In particular, the positional nature of the measurements is not normally important in expression arrays but is critical in ChIP-on-chip.  Likewise ChIP-on-chip data is best  visualised in the context of an annotated genome, yet this sort of visualisation is not well supported in expression array analysis pacages.
+
+To address the specific requirements of ChIP-on-chip data we have therefore developed a software package called ChIPMonk.  This package is designed to be a complete solution for all aspects of ChIP-on-chip data analysis.
+
+==Features== 
+
+[[Image:chipmonk.png|thumb|160px|right|ChIPMonk Screenshot.]]
+
+===Data Import===
+Currently ChIPMonk offically supports only data from the [http://www.nimblegen.com Nimblegen] platform.  In house we have imported data from other array sources and future versions will support other array platforms.
+
+===Normalisation===
+ChIPMonk offers both per array and per probe normalisation.  For per array normalisation both a simple global normalisation and the more robust Lowess normalisation are supported.
+
+===QC===
+The quality of data and the efficacy of normalisation can be assessed using scatter and MA plots.
+
+===Filtering===
+ChIPMonk offers a number of different filters to allow you to identify probes of interest.  These range from simple value or position filters to more complex statistical analyses.  To accommodate positional data we have developed a set of windowed analysis tools which analyse groups of probes which are positioned next to each other on the genome as a set - providing a more powerful way of analysing ChIP-on-chip data.
+
+===Visualisation===
+ChIPMonk comes with a built in viewer for genome annotations and all array data is visualised in its genomic context.  The program is supplied with access to a range of genome assemblies for eurkaryotic model organisms.  The data for the genome annotation is taken directly from [http://www.ensembl.org Ensembl] so the addition of other genomes is very straightforward.
+
+==Availability==
+ChIPMonk is a java application and will run on any platform which supports a Java1.5 runtime environment.  ChIPMonk will shortly be available from the [http://www.bioinformatics.bbsrc.ac.uk Babraham Bioinformatics projects pages].  It will be released under the [http://www.gnu.org/copyleft/gpl.html GPL]

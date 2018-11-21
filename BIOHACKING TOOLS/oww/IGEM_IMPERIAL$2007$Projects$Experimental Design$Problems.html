@@ -1,0 +1,77 @@
+__NOTOC__
+
+==Problems==
+This is a summary of the problems we have encountered collecting data:
+====1. Staggering====
+Staggering at 20 &deg;C we miss the data where GFP reaches steady state.  In addition for the data for staggering experiments at varying temperature ranges the fluorescence behaves unpredictably overnight. This is true for the 37 &deg;C, where the fluorescence levels increase and decrease for the staggered experiments.
+For the Degradation of GFP, the results do not match up for day 1 staggered & day 2. The major concern is that 1st part of the data actually goes up
+We are looking into the possible causes of the problems, so far we have identified several;<br>
+=====Temperature=====
+*'''<font color=red> Problem </font>''' - The problem with our methodology is that frequent measuring will remove the samples from there incubating temperatures and in reality give variation for temperature that is meant to be set at a constant. This is a major concern for cell by date.
+*'''<font color=red> Relevance </font> -
+*<font color=green>'''Solution'''</font> - Minimise the amount of time the plates are outside the incubated temperature. 
+=====Chromoaphore Damage=====
+*<font color=red>'''Problem'''</font>- The problem is that the chromophore is temperature sensitive. There is no information about in vitro, however, for in vivo, the chromophore is stable at lower temperature ranges, for yeast at 15&deg;C it has 25% higher fluorescence than at 37&deg;C.
+*<font color=red>'''Relevance'''</font> - As we are varying the temperature this is very relevant, the problem we face is that if we change the % of fluorescence of GFP then we cannot relate the rate of protein synthesis to fluorescence as it is not a direct measure 
+*<font color=green>'''Solution'''</font> - Use a more stable fluorescent protein such as dsRED
+
+=====Photobleaching=====
+*'''<font color=red>Problem'''</font> - Photobleaching can cause a decrease of fluorescence for a duration of time. This may explain why fluorescence increases over night, when the samples are not being exposed to light.
+*'''<font color=red>Relevance'''</font> - From the literature [2] the wtGFP is quite stable at the wavelengths we are testing it at 450–490 nm light. However, we do take a lot of measurements and so we cannot rule out the affect of photobleaching. 
+*'''<font color=green>Solution'''</font> - Currently we are covering the samples when transporting and storing to try reduce photobleaching. However we can try to expose the samples to less measurements to try to avoid the photobleaching. Use dsRED, [2] claims that dsRED is more stable to photobleaching
+
+=====Quenching=====
+*'''<font color=red>Problem'''</font> - At high concentrations of GFP, quenching may give unrepresentative fluorescence measurements. Quenching occurs when the emitted light of fluorescence is absorbed by other molecules.
+
+
+=====Maturations of GFP=====
+*'''<font color=red>Problem'''</font> - The GFP takes 24 hours to mature and so the maturation time of GFP could mean that overnight there is an increase in fluorescence due to maturation of GFP.
+*'''<font color=red>Relevance'''</font> - This could explain the fluorescence increase with the staggered results and increase in fluorescence for deg. results
+*'''<font color=green>Solutions'''</font> - Use dsRED, however from [2] dsRED does not reach 90% fluorescence for 48 hours. However we are using dsRED express, which has a quoted  maturation time of only 8-10hours.
+
+=====Anaerobic Conditions=====
+*'''<font color=red>Problem'''</font> - chromophore formation is dependent on oxygen and so in anaerobic conditions the GFP will decrease in fluorescence
+*'''<font color=red>Relevance'''</font> - For this to be relevant the oxygen content that the samples are exposed to must be lower in the day than overnight (where the increase in fluorescence occurs), this does not seem likely as in the day when measuring the samples are exposed to oxygen. It is only at overnight that this may be a problem.
+
+===== GFP Dimerization=====
+*'''<font color=red>Problem</font>'''- At concentrations of 5mg/ml GFP can form dimers, resulting in a change in the fluorescence profile. High salt conditions can also have the same affect
+*'''<font color=red>Relevance'''</font> -The highest GFP concentration so far lower that 1mg/ml and so this is not likely to be a problem. The high salt conditions needs to be looked into, however, the in vitro chassis is very sensitive to salt and so high salt concentration would have given very low expression which has not been the case.
+
+=====Contamimation of plates=====
+*'''<font color=red>Problem</font>'''- The plates have to be re-used and are washed by ethonol after each experiment, so there might be bacteria contaminating the wells. As the earlier experiments were carried out in E-coli, the bacteria contaminating the wells would be fluorescent. As they feed on the nutrients with in the cell extract they produce more fluorescence and thus the fluorescence increases. But there is a decrease in the fluorescence as the cell extract runs out 
+*'''<font color=red>Relevance'''</font> -
+*'''<font color=green>Solution'''</font> - Get the plates steralised - find out if can be autoclaved?
+
+=====Variation of pH=====
+*'''<font color=red>Problem</font>'''- GFP is very sensitive to pH so fluorescence can be affected due to change in pH of the cell extract
+*'''<font color=red>Relevance'''</font> - The pH of the cell extract is not very likely to change, so it might not be a problem
+*'''<font color=green>Solution'''</font> -
+
+====2. Cell Extract Fluorescence====
+*<font color=red> Problem</font> - The cell extract fluorescence varies over the span of the experiments
+*<font color=green> Solution</font> - The increasing fluorescence could be due to either an intrinsic characteristic of the cell extract or due to the experimental procedure being carried out. We need to try to identify which of these it is. In terms of experimental procedure it is probably due to the evaporation from the long experiments carried out. We will test this and in parrellel test possible solutions to the problem, these include:
+*Use of mineral oil 
+*Increasing local humidity to decrease evaporation - Initially thought of adding water to wells near by to increase humidity and decrease evap.
+*Using a heated lid to from a PCR machine to decrease the evap over night/ over long periods of time - One possible problem is that this will serverly limit our sampling and in addition, trasfer of solutions to wells will disrupt reaction
+*Placing reactions in the center of the wells, it has been shown that in the center of a plate there is decreased evaporation.
+
+====3. pLux construct====
+*The expression of the construct seemed higher today (5th Sep) than that obtained through earlier experiments, even though the concentrations of AHL being tested were greater before. 
+*The cell extract being used is commercial, and can be assumed to be of consistant quality. Thus the DNA must have caused this difference - the DNA was mini-preped before and was maxi-preped this time. 
+*Protocols of both CBD and ID testing will be changed so maxi-preped DNA is used in all experiments
+
+====4. GFP====
+*[http://parts.mit.edu/registry/index.php/Part:BBa_E0040 BBa_E0040] (being used in all of the constructs) from the registry is not wild type GFP
+**It is actually mutant 3b of GFP - with different characteristics to wtGFP
+*Calibration and degradation curves for GFP were being formulated using wtGFP
+*As GFP-mut3b not available commercially, we have the following options:
+*#Ask in labs around Imperial and other unis to get GFP-mut3b so that calibration and degradation curves can be made
+*#Research literature and find the relation between the calibration and degradation curves of GFP and GFP-mut3b. These relations can be used to scale the already found calibration and degradation curves to suit the GFP being used.
+*#Change all the constructs to have wtGFP instead of the mutated one - will take a long time to clone and ligate new constructs and will also need to test them again
+<br>We will first try and find if GFP-mut3b can be obtained from a lab so only the calibration and degradation experiments need to be carried out again. Research will also be carried out in the mean while so the constants relating the two GFPs can be found. If both of these give no results then the constructs will need to be made again from scratch.<br>
+
+'''References'''
+<biblio>
+#1 pmid=10344251
+#2 pmid=11050229
+</biblio>

@@ -1,0 +1,24 @@
+#!/usr/bin/python 
+
+# a recursive solution to the calculation of the fibonacci sequence;
+# returns a list of the first k values in the sequence
+#
+# ldavid - 09.18.06
+
+def fib(k,first,second):
+
+    # stop conditions
+    if k < 1:
+        return []
+    if k == 1:
+        return [first]
+    if k == 2:
+        return [first,second]
+
+    # recursive step, where we get k-1 list and append to it its last
+    # 2 elements
+    k_list = fib(k-1,first,second)
+    k_list.append(k_list[-1] + k_list[-2])
+    return k_list
+
+print fib(8,1,2)

@@ -1,0 +1,54 @@
+==To Do==
+*Retransform and plate RBS tester w/ RFP
+*Sequence promoter tester w/ RFP
+*Get part numbers for both
+*design BB primers
+*PCR T9002 and I2055
+
+==Registry==
+*The RBS tester with RFP (that we used to call blue) is I2056
+*The promoter tester with RFP (used to call green) is I2057
+*Nishant sent I2057 for sequencing
+*To Recap: I2055 is the GFP RBS tester, E0240 is the GFP promoter tester, and T9002 is the output measurement tester (aka inverter, terminator, etc)
+
+==BioBrick Primers==
+*E0240 needs a BioBrick site b/t the plasmid and the RBS 
+**Forward Primer should match B0032 and have a Spe1 tail
+**Reverse Primers should have an EcoR1 tail and 1 should match 3K3 and the other 1AK3 
+*I2055 needs a BioBrick site between the promoter and GFP 
+**Fwd should match GFP (E0040) and have a Spe1 tail
+**Rev should match R0040 and have an EcoR1 tail
+*T9002 needs a BioBrick site between F2620 and B0032
+**Fwd should match B0032 and have Pst1 tail
+**Rev match Lux pR of F2620 and have EcoR1 tail
+
+To insert BB sites. Format: 8-mer.restriction site.primer
+
+    * E0240:
+          o F (incl E0240, PstI): CTTAGTAG.ACTAGT.TCACACAGGAAAGTACTAGATGCG (53.1)
+          o R (incl 3K3/1AK3, EcoRI): TCAGCGAT.GAATTC.CAGAAATCATCCTTAGCGAAAGC (54.2) 
+
+    * I2057:
+          o F (incl I2057, PstI): CTTAGTAG.ACTAGT.TCACACAGGAAAGTACTAGATGGC (52.1)
+          o R: same as E0240 
+
+    * I2055:
+          o F (incl GFP, SpeI): CTTAGTAG.ACTAGT.ATGCGTAAAGGAGAAGAACTTTTC (52.4)
+          o R (incl R0040, EcoRI): TCAGCGAT.GAATTC.GTGCTCAGTATCTCTATCACTGATAGG (52.0) 
+
+    * I2056:
+          o F (incl RFP, SpeI): CTTAGTAG.ACTAGT.ATGGCTTCCTCCGAAGACG (54.0)
+          o R: Same as I2055 
+
+    * For T9002:
+          o F (incl lux pR, PstI): TCAGCGAT.CTGCAG.TCACACAGGAAAGTACTAGATGCG (53.1)
+          o R (incl RBS, GFP,EcoRI) : CTTAGTAG.GAATTC.TTTATTCGACTATAACAAACCATTTTC (51.9)
+
+==PCR==
+*We did a 100ul preparatory PCR on T9002 at 54.5C
+*PCRed I2055 on a gradient 41-51
+*Diluted the new primers to 40uM
+** I2055 shorter F - 918 ul water 
+**I2055 shorter R - 801 ul 
+**I2055 longer R - 867.5 ul
+**T9002 R GFP - 801 ul

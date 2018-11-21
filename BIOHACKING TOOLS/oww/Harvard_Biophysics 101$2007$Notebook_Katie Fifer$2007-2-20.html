@@ -1,0 +1,109 @@
+== Sequence Analysis Part 1 ==
+
+
+<pre>
+# Katie Fifer
+# asst3 - sequence comparison
+
+#! /usr/bin/env python
+
+import os
+import re
+from Bio import Clustalw
+from Bio import Translate
+from Bio.Align import AlignInfo
+from Bio.Alphabet import IUPAC
+from sets import Set
+from sys import *
+
+cline = Clustalw.MultipleAlignCL(os.path.join(os.curdir, 'Apoe.fasta'))
+cline.set_output('test.aln')
+alignment = Clustalw.do_alignment(cline)
+
+# generate simple consensus sequence
+summary_align = AlignInfo.SummaryInfo(alignment)
+consensus = summary_align.dumb_consensus()
+print "Consensus: ", consensus.tostring()
+
+# Single nucleotide analysis
+for i in range(alignment.get_alignment_length()):
+    col = alignment.get_column(i)
+    s = Set() # creat a new set
+    for c in range(len(col)):
+	s.add(col[c]) # add each column element to the set
+    if len(s) > 1: # multiple elements in s indicate a mismatch
+	# print i, col
+	# determine the type of mutation
+	
+	# see if it's a deletion
+	p = re.compile("\w-+\w")
+	m = p.match(col)
+	if m:
+	    print 'Deletion at %d: %s' % (i, col)
+
+	# see if it's a point mutation
+
+	else:
+	    print 'Point Mutation at %d: %s' %(i, col)
+
+# Codon analysis: figure out what the codons are and compare
+# them. note any protein changes (not totally finished).
+
+# set up a list of lists of all the codons of each sequence.
+big_list = []
+for seq in alignment.get_all_seqs():
+    seq_codons = []
+    index = 0
+    num_codons = ((alignment.get_alignment_length()) / 3)
+    for j in range(num_codons):
+	new_codon = ''.join([seq.seq[index + i] for i in range(3)])
+	index = index + 3
+	seq_codons.append(new_codon)
+    big_list.append(seq_codons)
+
+# using the big list that was just generated, do codon comparison and
+# print out any that are different.
+for i in range(len(big_list[0])):
+    curr_codon = (big_list[0])[i]
+    curr_list = []
+    for j in range(len(big_list)):
+	# make the list of the codon's we're comparing at the
+	# moment. This may seem like wasted extra work for only
+	# comparing a few codons, but we'll see that with filter
+	# (below) we'll easily be able to pick out the mismatches from
+	# a variable number of sequence comparisons.
+	curr_list.append((big_list[j])[i])
+	new_list = filter(lambda x: x != curr_codon, curr_list)
+	# if the codons ended up being different, print out what the
+	# different proteins are
+	if(new_list):
+	    print "a mismatch! Should have been %s. Instead is %s" % (curr_codon, new_list)
+
+# Notes about implementation: 
+# 1. The next step will be to compine this
+# codon analysis with a protein library so that an analysis of wether
+# mutations are silent or not can be done.  (I had trouble with this library, and I'd love help).
+# 2. I'm not sure this is the
+# best implementation in that when the alignment did something like
+# place '-' as a placeholder to get the sequence to line up better, i
+# left that and didn't actually treat it like it could have caused a
+# frameshift.  it would be pretty straightforward to make it a
+# frameshift, though (just by not including it when making the codon
+# list) and the rest of the implementation can stay the same.
+</pre>
+
+== Output ==
+<pre>
+Consensus:  CGCAGCGGAGGTGAAGGACGTCCTTCCCCAGGAGCCGACTGGCCAATCACAGGCAGGAAGATGAAGGTTCTGTGGGCTGCGTTGCTGGTCACATTCCTGGCAGGATGCCAGGCCAAGGTGGAGCAAGCGGTGGAGACAGAGCCGGAGCCCGAGCTGCGCCAGCAGACCGAGTGGCAGAGCGGCCAGCGCTGGGAACTGGCACTGGGTCGCTTTTGGGATTACCTGCGCTGGGTGCAGACACTGTCTGAGCAGGTGCAGGAGGAGCTGCTCAGCTCCCAGGTCACCCAGGAACTGAGGGCGCTGATGGACGAGACCATGAAGGAGTTGAAGGCCTACAAATCGGAACTGGAGGAACAACTGACCCCGGTGGCGGAGGAGACGCGGGCACGGCTGTCCAAGGAGCTGCAGGCGGCGCAGGCCCGGCTGGGCGCGGACATGGAGGACGTGTGCGGCCGCCTGGTGCAGTACCGCGGCGAGGTGCAGGCCATGCTCGGCCAGAGCACCGAGGAGCTGCGGGTGCGCCTCGCCTCCCACCTGCGCAAGCTGCGTAAGCGGCTCCTCCGCGATGCCGATGACCTGCAGAAGCGCCTGGCAGTGTACCAGGCCGGGGCCCGCGAGGGCGCCGAGCGCGGCCTCAGCGCCATCCGCGAGCGCCTGGXGCCCCTGGTGGAACAGGGCCGCGTGCGGGCCGCCACTGTGGGCTCCCTGGCCGGCCAGCCGCTACAGGAGCGGGCCCAGGCCTGGGGCGAGCGGCTGCGCGCGCGGATGGAGGAGATGGGCAGCCGGACCCGCGACCGCCTGGXCGAGGTGAAGGAGCAGGTGGCGGAGGTGCGCGCCAAGCTGGAGGAGCAGGCCCAGCAGATACGCCTGCAGGCCGAGGCCTTCCAGGCCCGCCTCAAGAGCTGGTTCGAGCCCCTGGTGGAAGACATGCAGCGCCAGTGGGCCGGGCTGGTGGAGAAGGTGCAGGCTGCCGTGGGCACCAGCGCCGCCCCTGTGCCCAGCGACAATCACTGAACGCCGAAGCCTGCAGCCATGCGACCCCACGCCACCCCGTGCCTCCTGCCTCCGCGCAGCCTGCAGCGGGAGACCCTGTCCCCGCCCCAGCCGTCCTCCTGGGGTGGACCCTAGTTTAATAAAGATTCACCAAGTTTCACGC
+Point Mutation at 658: GGA
+Deletion at 802: A-C
+Deletion at 803: C-C
+Deletion at 804: G-G
+Deletion at 805: A-A
+Deletion at 806: G-G
+a mismatch! Should have been GGG. Instead is ['GAG']
+a mismatch! Should have been GAC. Instead is ['G--']
+a mismatch! Should have been GAC. Instead is ['G--', 'GCC']
+a mismatch! Should have been GAG. Instead is ['---']
+a mismatch! Should have been GAG. Instead is ['---']
+</pre>

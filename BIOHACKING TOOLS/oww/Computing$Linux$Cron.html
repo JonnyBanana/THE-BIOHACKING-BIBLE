@@ -1,0 +1,53 @@
+==General==
+*Cron searches <tt>/var/spool/cron</tt> for crontab files which are named after accounts in <tt>/etc/passwd</tt>; crontabs found are loaded into memory.
+*Cron also searches for <tt>/etc/crontab</tt> and the files in the <tt>/etc/cron.d/</tt> directory, which are in a different format
+
+*When executing commands, any output is mailed to the owner of the crontab (or to the user named  in the <tt>MAILTO</tt> environment variable in the crontab, if such exists).
+
+*Example cron file
+
+ # use /bin/sh to run commands, no matter what /etc/passwd says
+ SHELL=/bin/sh
+ # mail any output to `paul', no matter whose crontab this is
+ MAILTO=paul
+ #
+ # run five minutes after midnight, every day
+ 5 0 * * *       $HOME/bin/daily.job >> $HOME/tmp/out 2>&1
+ # run at 2:15pm on the first of every month -- output mailed to paul
+ 15 14 1 * *     $HOME/bin/monthly
+ # run at 10 pm on weekdays, annoy Joe
+ 0 22 * * 1-5   mail -s "It's 10pm" joe%Joe,%%Where are your kids?%
+ 23 0-23/2 * * * echo "run 23 minutes after midn, 2am, 4am ..., everyday"
+ 5 4 * * sun     echo "run at 5 after 4 every sunday"
+
+*<tt>/etc/crontab</tt> - quick reference
+
+==Syntax==
+
+ *     *     *     *     *  command to be executed
+ -     -     -     -     -
+ |     |     |     |     |
+ |     |     |     |     +----- day of week (1 - 7) (monday = 1)
+ |     |     |     +------- month (1 - 12)
+ |     |     +--------- day of month (1 - 31)
+ |     +----------- hour (0 - 23)
+ +------------- min (0 - 59)
+
+==Commands==
+
+<tt>export EDITOR=vi</tt> - to specify a editor to open crontab file
+
+*<tt>crontab -e</tt> - Edit your crontab file, or create one if it doesn't already exist.
+*<tt>crontab -l</tt> - Display your crontab file.
+*<tt>crontab -r</tt> - Remove your crontab file.
+*<tt>crontab -v</tt> - Display the last time you edited your crontab file. (This option is only available on a few systems.) 
+
+<tt>cron</tt> invokes the command from the user's HOME directory with the shell, (/usr/bin/sh).
+
+==Environment==
+
+cron supplies a default environment for every shell, defining:
+*HOME=user's-home-directory
+*LOGNAME=user's-login-id
+*PATH=/usr/bin:/usr/sbin:.
+*SHELL=/usr/bin/sh

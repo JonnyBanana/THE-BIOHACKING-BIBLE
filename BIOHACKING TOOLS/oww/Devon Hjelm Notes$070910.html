@@ -1,0 +1,57 @@
+===The Prisoner Dilemma==
+
+Following this [http://arxiv.org/PS_cache/quant-ph/pdf/9806/9806088v3.pdf paper] on the arxiv.
+
+The classical prisoner dilemma goes as follows: the prisoners have hatched a plan to escape (or some similar situation but this is the one i'll use).  Each prisoner has the option either to cooperate (C) or defect (D).  The plan only succeeds if both cooperate, but with <1 probability.  However, if one rats the other out they are freed while the other gets a greatly increased sentence.  If they both rat each other out, then they both receive slightly worse sentences.  An example payoff martix could be: <br>
+
+{| border="3"
+|+ Payoff matrix
+!  !! Bob:C !! Bob:D
+|-
+! Alice:C
+| (3,3) || (0,5)
+|-
+! Alice:D
+| (5,0)
+| (1,1)
+|}
+
+where the entries in the parenthesis are the payoffs to Alice and Bob respectively.<br>
+The dilemma goes as follows.  Say both Alice and Bob agree to cooperate with a payoff of 3 for each.  In reality, since either can defect the state of the system is some combination of both.  Each prisoner quickly figures out that whatever state the other prisoner is in, they're better off if they defect.  So the Nash equilibrium of the system is for each to defect with a payoff of 1 each.  However, the better situation (they both cooperate) is not equilibrium, therefore it is inefficient.<br>
+
+In the quantum equivalent, both players share an entangled pair of qubits.  Say the initial state of the system is <math> |\Psi_0 \rangle = |C \rangle |C \rangle </math>.  The states are then entangled by some operator <math>\mathcal{J}</math> over both qubits.  To make the game fair, <math>\mathcal{J}</math> should be symmetric over both players.  Each player is then allowed to do a unitary transformation on their qubit: <br>
+<math>
+\hat{U(\theta , \phi)} = 
+\left( \begin{array}{cc}
+e^{i \phi} cos(\theta / 2) & sin(\theta / 2) \\
+sin(\theta / 2) & e^{-i \phi} cos(\theta / 2) \\
+\end{array} 
+\right)
+</math>
+
+The state is then unentangled with a <math>\mathcal{J}^\dag </math> operation and then the qubits are measured with Stern-Gerlaker device:
+<math>|\Psi_f \rangle = \mathcal{J}^\dag \hat{U}_A \otimes \hat{U}_B \mathcal{J} |C \rangle |C \rangle </math>
+
+To ensure that the problem still corresponds to the classical case, the unitary operators should commute with the classical choices, that is <br>
+<math>
+\hat{C} = \hat{U(0 , 0)} = 
+\left( \begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array} 
+\right)
+
+</math>
+
+<math>
+\hat{D} = \hat{U(\pi , 0)} = 
+\left( \begin{array}{cc}
+0 & 1 \\
+-1 & 0 \\
+\end{array} 
+\right)
+</math>
+
+and <math> \left[ \mathcal{J}, \hat{D} \otimes \hat{D} \right] = \left[ \mathcal{J}, \hat{C} \otimes \hat{D} \right] = \left[ \mathcal{J}, \hat{D} \otimes \hat{C} \right] = 0 </math>
+
+Because quantum mechanics is probabilistic, the expected payoff for Alice is <math>$ = r P_{C C} + p P_{D D} + t P_{D C} + s P_{C D}</math> where r,p,t,and s are the payoffs 3,1,5,and 0 respectively.  This is Alice's strategy, and she needs to maximize her expected payoff in the problem.

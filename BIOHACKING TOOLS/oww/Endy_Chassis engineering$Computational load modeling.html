@@ -1,0 +1,45 @@
+==Introduction==
+Based on my thesis committee meeting and subsequent conversations with Drew, we decided that aspects of my project would benefit from some modeling work.  Firstly, we believe that modeling could better inform the design of feedback control for the dedicated systems of [[VM|VM2.0]].  Secondly, we currently lack a clear model of how the demands of an engineered system vary with the system parameters, such as DNA copy number, promoter PoPS, RBS RiPS etc.
+
+==Initial questions==
+#What goals should I set for the modeling work to get some benefit from it without devoting a long period of time to it?
+#What modeling approach should I adopt?
+#What species should I be considering in the model; what is the scope of the model?
+
+These questions are discussed below:
+
+===Modeling Objectives===
+*Build a simple model of gene expression that considers the finite resources of the cellular chassis and the fraction of those resources consumed by the gene expression process.
+*Construct the simple model of gene expresssion in a modular fashion such that it can be used to model a genetic network.
+*Use the model to examine the benefits of using dedicated systems.
+*Use the model to test the network dynamics of a number of possible feedback control configurations for [[VM|VM2.0]].
+
+While the third of these goals might be the most immediately important it might be worth proceeding in the order listed here to have a more powerful tool in the longer term.  The objectives I choose will partly determine the best modeling approach to use.
+
+===Modeling Approach===
+Based on the goals laid out above it makes sense to use a continuous, deterministic modeling approach.  Here are some reasons why - 
+
+*I have more experience with continuous models than discrete models.
+*Analytical solutions, which I can obtain only from a continuous model, give greater insight.
+*I can do this in Matlab quickly.
+*Computationally efficient - easier to get to steady state of the system which is probably the most interesting state.
+*I'm not necessarily interested in stochastic effects of small molecule numbers.
+
+===Model Scope===
+It seems to make sense with the smallest, simplest model I can imagine.  I can then build that out, adding species and reactions as appropriate until I get to a sensible stopping point.
+
+Initially, I'm going to build a model of the constitutive expression of a gene, incorporating a minimal list of species.  I may begin to fill that out somewhat or I may instead begin to add regulation so that I can start to build a model of a gene network, as I need to do for the design of [[Endy:Chassis engineering/VM2.0|VM2.0]].
+
+==Model Development==
+In keeping with the scope of the model, proposed above, I'm starting to fill out the list of species and reactions that I'm going to look at.
+*[[Endy:Computational modeling of demand/Species and reactions|Species and reactions]]
+*[[Endy:Computational modeling of demand/Parameterization|Model parameterization]]
+
+==Results==
+===3/22/06===
+[[Image:BCantonSimpleModel1.jpg|thumb|right|300px|Simple model of gene expression for E7103 in an ''E. coli'' cell.  Chassis file - BL21VM1.m.  System file - E7104.mat.]]
+Using the current version of the model I can model simple gene expression in a chassis with one synthesis channel and one reporter gene.  I can produce time courses for each species and rate of interest.  An example is shown on the right.  The model was parameterized to model the operation of [http://parts.mit.edu/r/parts/partsdb/view.cgi?part_id=5761 E7104] on a 100 copy plasmid in an ''E.coli'' cell containing 1800 T7 polymerases, 5000 ribosomes, with a doubling time of 30mins.
+<br style="clear:both" />
+
+==Literature==
+[[Endy:Computational modeling of demand/Literature]]

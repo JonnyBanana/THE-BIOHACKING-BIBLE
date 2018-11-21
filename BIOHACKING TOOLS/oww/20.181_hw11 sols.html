@@ -1,0 +1,39 @@
+'''Solutions to HW 11'''
+
+----
+
+Part 1:
+
+To complete the code shell provided, you had to insert something like the following code snippet:
+
+            tau_new = (a_i_old[rxn] / (a_i_new[rxn]+eps)) * (tau_i[rxn] - t_cur) + t_cur
+            tau_i[rxn] = tau_new
+            a_i_old[rxn] = a_i_new[rxn] 
+
+note that you can't update a_i until after you've calculated a new tau.
+
+----
+
+Part 2:
+
+An easy way to solve this question is with dimensional analysis.  If you've never heard of dimensional analysis before, it's essentially a fancy way of saying: manipulate the data to produce a value with the correct units; more often than not, this value will also be the correct quantity.
+
+For instance, we know that we're trying to calculate the probability per unit time that a particle collision causes a reaction.  Our solution should therefore be in units of [1/time] (probabilities are unitless!).
+
+There is only one way to combine the given data so as to produce our desired units:
+
+<math>\frac{1\times10^9}{M\cdot sec}\cdot \frac{1 \mbox{ } mole}{6.023\times10^{23}} \cdot \frac{1}{1 \times 10^{-15} \mbox{ } L} = 1.66 \mbox{ } sec^{-1}</math>
+
+-----
+
+Part 3:
+
+[[Image:Pa and pb vs time.jpg]]
+
+Observe above a "switching event," where pA and pB "switch" steady states.  Note that neither the original abundances of pA nor pB are steady state values - the proteins settle into their steady states towards the end of the simulation.
+
+----
+
+Part 4:
+
+See above :)

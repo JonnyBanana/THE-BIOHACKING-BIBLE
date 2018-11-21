@@ -1,0 +1,51 @@
+{{SJK comment|label=01:02, 20 October 2007 (CDT)|comment=Overall, very nice lab summary!  Take a look at my comments in Anne's summary as well, and if I have time, I will take another look at the excel file and post more comments on her page (or maybe an updated excel file)}}
+==Equipment==
+*1 HV power supply (~5 kV max)
+*1 low voltage supply (bias voltage ~2.5V)
+*banana plugs
+*multimeter to monitor current
+*electron diffraction tube
+*calipers (Digital...Nice!!)
+
+==Goals and General Procedure==
+{{SJK comment|label=00:36, 20 October 2007 (CDT)|comment=Excellent introduction!  I am still not quite clear on what the bias voltage does, so it's nice to read an explanation.}}
+The purpose of this lab was to display the particle-wave duality of the electron, while simultaneously verifying the DeBroglie Wavelength hypothesis (Wavelength=h/p).  We begin the experiment by gaining an understanding of the apparatus we are using.  Essentially we use an electron gun to fire a beam of electrons at a thin graphite 'film' creating a diffraction pattern on a photo-luminescent screen.  The electron gun is comprised of a thin filament heated to the point where it 'boils' off electrons (thank you Dr. Koch for that analogy).  We have a high Voltage power supply hooked up to the apparatus that creates a magnetic field in front of the filament at the anode to draw electrons away.  There is a tiny hole at the end of the cathode can filtering out electrons with velocities in different directions.  The result is a beam of electrons heading straight for the graphite coated nickel mesh. We add a bias voltage to filter out lower velocity electrons in an attempt to adjust the brightness and contrast of the resultant diffraction.  Up until this point the electron has been behaving as a particle, but here comes Mr. Hyde.  When the electrons interact with the graphite we find that a diffraction pattern is created, a pattern similar to general wave diffraction.  Electrons are usually invisible to the human eye, so we use a photo-luminescent screen to see the resultant pattern.  A diagram of the electron gun and screen aparatus can be found at the following site [http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf Lab Manual] Look for figures 3.2, 3.3.
+
+The pattern we see on the screen is two concentric circles.  This poses a mystery because the structure of the graphite is hexagonal, so we would expect to see a hexagonal diffraction pattern.  There is no guarantee on the orientation of the hexagonal pattern, and there are multiple diffractions due to the multi-molecular width of the graphite.  The superposition of many hexagonal diffractions at random orientations gives us the shape of a circle.  There are two separate circles because there are two fundamental lengths in the hexagonal structure of the graphite. See Figure 3.1 [http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf Lab Manual].
+
+==Data Collection==
+The data collection process involved using calipers to measure the diameters of the diffraction pattern.  Here is the data we collected: [http://openwetware.org/wiki/Physics307L:People/DePaula/Notebook/070926 Day 1] [http://openwetware.org/wiki/Physics307L:People/DePaula/Notebook/071003 Day 2]
+The Data we collected has some intrinsic error stemming from the Hight Voltage {HV} supply.  It, many times, would change the voltage to a different value than the one we originally set it on. We also used calipers to measure quite faint rings, so there is definitely some human error involved.  We attempted to correct for this slightly by taking the measurement of both the inside and outside diameter of both rings and averaging to find a near true value.{{SJK comment|label=00:45, 20 October 2007 (CDT)|comment=OK, you explain it here...so my comment on your data page is not as meaningful now.}}
+
+==Mathematics==
+{{SJK comment|label=00:59, 20 October 2007 (CDT)|comment=I fixed the math formula, but you would need to explain what all of the parameters mean in real life...i.e., what is D, L, etc.}}
+The following equations are used to determine the maxima of our diffraction grating:  (thank you Anne Ozaksut for the wiki formulas, and the following relationships)
+
+<math>{d_1}\cos\theta_1={m}\lambda</math>
+<math>{d_2}\cos\theta_1={m}\lambda</math>
+
+set <math>{m}=1</math>,
+use the deBroglie relationship to set <math>\lambda=\frac{h}{p}</math>,
+<math>{p}={mv}</math>,
+<math>{1/2}{m}{v}^2={e}{V_a}</math> solve for v and plug into the deBroglie equation,
+and use the relationship between theta and diameter of diffraction ring:
+<math>{D}={2L}\tan\theta</math>
+
+to get a final relationship between electron rest mass (known), accelerating voltage (known), diameter of diffraction (measured), and distance between diffracting "layers" (want to know)<br>
+
+<math>d=\frac{4 \pi L \hbar c}{D \sqrt{2eV_Amc^2}}</math><br>
+
+We can compare our d values with the accepted values of .123nm and .213nm.
+
+==Procedure==
+The first day we worked on collecting data we decided to measure the rings at .2kV incriments, but we noticed that it was almost too hard to see the rings below 3.3kV.  Eight data points with relativly low error was just not enough for us.  Anne and I decided that we would keep our data from day one, but take measurements in .1kV incriments on Day 2.  Because the diffraction pattern was often very dim and fading into the background, we made great use of the bias voltage.  By applying a voltage to the anode we can pull low energy electrons out of the beam, decreasing the brightness and increasing the contrast of the pattern.  The converse is also true, if we decrease the bias voltage the overall brightness increases, but the contrast decreases.  Only the most energetic electrons can bypass the bias voltage.
+
+==Data Analysis==
+All of the data has been entered in an Excel file, unfortunately I do not know how to upload that particular file.  We plotted the diameter of both the inner and outer circles with respect to the inverse square root of accelerating voltage {HV}.  What we see in that plot is a linear relationship which is what we'd expect from the formula given in our lab manual (formula 3.1).  We estimate the error involved in the Accelerating voltage to be +/- .2 kV because we cannot rely on the power supply to output a steady voltage.
+
+Here is a link to Anne's Page which has our and calculated values for the elemental distance d of the graphite structure. [http://openwetware.org/wiki/Physics307L:People/Ozaksut/Electron_Diffraction Anne's Page] {{SJK comment|label=01:00, 20 October 2007 (CDT)|comment=See Anne's page for my comments on the Excel sheet.}}
+
+There was 11% error between the values we calculated and the values that are provided in the lab manual.  This error comes from the uncertainty of the HV emitter.  Another major source of error is the human error in measuring diameters with calipers.  We attempted to reduce this error by using the average of two measurements, and it seemed to help.
+
+==Error==
+With an error of 11% it is important to find the major, fixable, errors that will lead to a more accurate experiment in the future.  The first major source of error was our ability to measure ring diameters with calipers and our eyes.  Often times the diameters would change so slightly that we would over measure or under measure due to the intrinsic width of the diffraction pattern.  By taking both inside and outside measurements of the same ring we feel that our 'average' values are quite accurate.  Our two calculated d values are .189nm +/-.0118nm and .108nm +/- .0034nm, and the accepted values are .213nm and .123nm, respectively.  It seems the error that we did have was quite consistent because both of our calculated values of d had an error of 11%.  I would say that most of our data is affected by systematic error because our data collection process was slightly primitive.

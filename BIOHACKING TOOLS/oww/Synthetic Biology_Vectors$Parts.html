@@ -1,0 +1,131 @@
+'''This is a list of BioBricks parts for use in construction of modular vectors.'''
+
+Some have just been designed while others have been constructed and tested.  See the associated registry page for details.
+
+To construct BioBrick vectors, use the BioBrick base vector <bbpart>BBa_I51020</bbpart>.  See [http://parts.mit.edu/registry/index.php/Help:Plasmids/Construction how to construct a BioBrick vector]
+
+==Replication origins==
+*<bbpart>BBa_I50000</bbpart>: F plasmid backbone with BioBricks restriction sites removed.
+*<bbpart>BBa_I50001</bbpart>: F plasmid backbone with BioBricks restriction sites removed, reverse orientation.
+*<bbpart>BBa_I50010</bbpart>: oriV origin which requires TrfA protein to be functional.
+*<bbpart>BBa_I50022</bbpart>: high copy origin of replication based on pUC19
+*<bbpart>BBa_I50030</bbpart>: a pBR322 origin.
+*<bbpart>BBa_I50032</bbpart>: a p15A origin.
+*<bbpart>BBa_I50042</bbpart>: a pSC101 origin.
+*<bbpart>BBa_I50050</bbpart>: a R6K gamma origin. See also [http://www.epibio.com/sequences/R6Kori_Kan2.asp EZ-Tn5™ <R6Kγori /KAN-2> Sequence] [http://www.frankwu.com/R6K.html general information]  (Note: this origin will only replicate in a ''pir<sup>+</sup>'' strain.)
+
+==Antibiotic resistance cassettes==
+*<bbpart>BBa_P1002</bbpart>: cassette providing ampicillin resistance.
+*<bbpart>BBa_P1003</bbpart>: cassette providing kanamycin resistance.
+*<bbpart>BBa_P1004</bbpart>: cassette providing chloramphenicol resistance.
+*<bbpart>BBa_P1005</bbpart>: cassette providing tetracycline resistance.
+
+==Terminators==
+*<bbpart>BBa_B0055</bbpart>: upstream flanking terminator
+*<bbpart>BBa_B0054</bbpart>: downstream flanking terminator
+*<bbpart>BBa_B0053</bbpart>: bidirectional terminator from ''E. coli'' his operon
+*<bbpart>BBa_B0052</bbpart>: forward terminator
+*<bbpart>BBa_B0062</bbpart>: reverse terminator of BBa_B0052.
+===Notes===
+It wasn't clear from the website if these were bi-directional?  Not sure that this is very important--[[User:Bcanton|BC]]
+:I don't know if the terminators are bidirectional.  These terminators are used as flanking terminators in [[Bacterial artificial chromosomes#pSMART VC Vectors | other vectors]] and are claimed to make the cloning of difficult pieces of DNA (like strong promoters) easier.  This is why I was planning on orienting the antibiotic resistance cassette in the opposite direction so that read through from upstream of the multiple cloning site is less of an issue.  --[[Reshma Shetty | RS]]
+
+==Primer binding sites==
+*<bbpart>BBa_G00100</bbpart>: VF2
+*<bbpart>BBa_G00102</bbpart>: VR
+
+==Others==
+*<bbpart>BBa_P1010</bbpart>: ccd operon in BioBricks format
+*<bbpart> BBa_P1016</bbpart>: ccdB cassette in BioBricks format (ccdA- has been removed)
+*<bbpart>BBa_B0042</bbpart>: translational stop sequence which provides a stop codon in all six frames (see [[Non-functional DNA sequences]])
+*<bbpart>BBa_B0043</bbpart>: forward Topoisomerase I cloning site (see [[Topoisomerase I mediated TA cloning]])
+*<bbpart>BBa_B0044</bbpart>: reverse Topoisomerase I cloning site (see [[Topoisomerase I mediated TA cloning]])
+*<bbpart>BBa_G00000</bbpart>: BioBricks prefix
+*<bbpart>BBa_G00001</bbpart>: BioBricks suffix
+*<bbpart>BBa_B0045</bbpart>: antibiotic cassette insertion site (see [[Synthetic Biology:Vectors/Modular construction scheme]])
+*<bbpart>BBa_B0046</bbpart>: replication origin insertion site (see [[Synthetic Biology:Vectors/Modular construction scheme]])
+
+==Removal of restriction sites==
+Given that the current plan is to synthesize the vectors, we can remove restriction sites, mostly at will from the vectors.  What restriction sites should be removed?
+
+===BioBrick enzymes sites===
+[[EcoRI]], [[SpeI]], [[XbaI]], [[PstI]], [[NotI]]
+
+===Enzymes sites that generate compatible cohesive ends to BioBrick sites===
+*[http://www.neb.com/nebecomm/EnzymeFinderSearchByEnd.asp?txtSequence=AATT&selDirection=2&radSearchType=0 '''EcoRI''']:  [http://www.neb.com/nebecomm/products/productR0566.asp ApoI], [http://www.neb.com/nebecomm/products/productR0589.asp Mfe I]
+*[http://www.neb.com/nebecomm/EnzymeFinderSearchByEnd.asp?txtSequence=CTAG&selDirection=2&radSearchType=0 '''SpeI/XbaI''']:  [http://www.neb.com/nebecomm/products/productR0174.asp AvrII], [http://www.neb.com/nebecomm/products/productR0131.asp NheI]
+*[http://www.neb.com/nebecomm/EnzymeFinderSearchByEnd.asp?txtSequence=TGCA&selDirection=1&radSearchType=0 '''PstI''']:  [http://www.neb.com/nebecomm/products/productR0127.asp NsiI], [http://www.neb.com/nebecomm/products/productR0642.asp SbfI]
+
+===Offset cutters===
+[http://www.fermentas.com/catalog/re/aari.htm AarI], [http://www.neb.com/nebecomm/products/productR0580.asp BsmBI], [http://www.neb.com/nebecomm/products/productR0535.asp BsaI], [http://www.neb.com/nebecomm/products/productR0539.asp BbsI], [http://www.neb.com/nebecomm/products/productR0502.asp BspMI], [http://www.neb.com/nebecomm/products/productR0703.asp BtgZI],
+[http://www.neb.com/nebecomm/products/productR0528.asp EarI], 
+
+* [http://www.neb.com/nebecomm/products/productR0641.asp AcuI] (medium priority)
+* [http://www.neb.com/nebecomm/products/productR0596.asp BciVI] (would be nice, medium priority)
+* [http://www.neb.com/nebecomm/products/productR0701.asp BfuAI] (high priority)
+* [http://www.neb.com/nebecomm/products/productR0600.asp BmrI] (high priority)
+* [http://www.neb.com/nebecomm/products/productR0559.asp BsgI] (medium priority)
+* [http://www.neb.com/nebecomm/products/productR0134.asp BsmI] (includes nicking enzyme, high priority)
+* [http://www.neb.com/nebecomm/products/productR0574.asp BsrDI] (includes nicking enzyme, high priority)
+* [http://www.neb.com/nebecomm/products/productR0109.asp FokI] (best effort)
+* [http://www.neb.com/nebecomm/products/productR0569.asp SapI] (high priority, should already be eliminated from EarI)
+* [http://www.neb.com/nebecomm/products/productR0582.asp TspRI] (probably difficult, best effort)
+* [http://www.neb.com/nebecomm/products/productR0646.asp EcoP15I] (high priority)
+
+===Consensus for all known homing endonucleases===
+These are easy to do so are high priority for elimination.
+* [http://www.neb.com/nebecomm/products/category1.asp?#3 NEB]: I-CeuI, I-SceI, PI-PspI, PI-SceI  
+* Also I-PpoI (TAACTATGACTCTCTTAAGGTAGCCAAAT)
+
+===Would like to be removed===
+
+* [http://www.neb.com/nebecomm/products/productR0552.asp AgeI]
+* [http://www.neb.com/nebecomm/products/productR0501.asp RsrII]
+* [http://www.neb.com/nebecomm/products/productR0603.asp SgrAI]
+* [http://www.neb.com/nebecomm/products/productR0194.asp XmnI]
+* [http://www.neb.com/nebecomm/products/productR0533.asp XcmI]
+* AscI
+* FseI
+
+===Nicking enzymes===
+[http://www.neb.com/nebecomm/products/productR0607.asp Nt.BstNBI], BbvCI
+
+*[http://www.neb.com/nebecomm/products/productR0627.asp Nt.AlwI] (best effort to at least remove sites near each other)
+
+===Other common enzymes===
+'''Arbitrary list, feel free to add more.'''
+
+HindIII, BamHI, XhoI, NcoI, SacI, NdeI,
+
+'''Additional''' (low priority)
+* KasI
+* MssI
+* NgoMIV
+* PacI
+* PmeI
+* SalI
+* SfiI
+* SgfI
+* SmiI
+* SrfI
+* SwaI
+* XmaI
+* ZraI
+
+Would be simplest to destroy all 6 bp palindromic sequences. This destroys a lot of the common 'normal' restriction sites.
+*Is there a tool that does this?  [http://slam.bs.jhmi.edu/gd/ GeneDesign] removes sites and optimizes the resulting codons for a particular species.  But it requires that you select which enzymes you want to remove from their list.
+* Don't know off the top of my head but you should ask Sri or Leon if there's a tool. They did that for their plasmid for the T7.1 rebuild so they could use more restriction enzymes. GeneDesign appears to actually list the enzyme sites that are in the sequence so assuming it has a good database of enzymes, the question is whether just removing everything it knows about is good enough. I could pretty easily write a program to find all 6 bp palidromes but fixing it with silent mutations would take more work.
+
+===GATC===
+Another idea I had was whether we want to remove all GATC (DpnI) sites from the plasmid. There are potential benefits and drawbacks to this. One potential downside is that some mutation protocols assume that you can chew up the plasmid by adding DpnI. However if our plasmid had no GATC, we could perhaps use this to our advantage in some way. For example, adding DpnI to cut up only the genomic DNA and not our plasmid (of course, this would only likely work with the base plasmids).
+
+*'''[[User:Rshetty|RS]] 11:55, 15 May 2006 (EDT)''': Tom actually requested that I specifically include GATC sites in the plasmid to ensure that digestion by DpnI works well.  For cloning purposes, I think that treatment of the destination plasmid digestion with antarctic phosphatase is generally sufficient for reducing the likelihood of cloning genomic DNA.  So I would favor that approach over removing DpnI sites (given that the presence of DpnI sites is useful for site-directed mutagenesis).
+
+GATC sites were included as per Drew's request.
+
+==Codon frequency==
+Rare codons were removed from the antibiotic resistance markers and ccdB.
+
+==Ordering information==
+
+*[[Synthetic Biology:Vectors/Parts/Synthesis order]]

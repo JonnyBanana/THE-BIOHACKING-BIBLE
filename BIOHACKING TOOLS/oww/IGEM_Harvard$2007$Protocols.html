@@ -1,0 +1,263 @@
+[[IGEM:Harvard/2007/Protocols/Transformation Protocol|Transformation Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/Plasmid MiniPrep Protocol|Plasmid MiniPrep Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/Plasmid Midi and Maxi Prep|Plasmid Midi and Maxi Prep]]
+
+[[IGEM:Harvard/2007/Protocols/HiSpeed Midi and Maxi Prep|HiSpeed Midi and Maxi Prep]]
+
+[[IGEM:Harvard/2007/Protocols/Vector Dephosphorylation Protocol|Vector Dephosphorylation Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/Nucleotide Removal Protocol|Nucleotide Removal Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/Gel Extraction Protocol|Gel Extraction Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/Ligation Protocol|Ligation Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/NanoDrop® ND-1000 Protocol|NanoDrop® ND-1000 Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/Indirect Magnetic Labeling Protocol|Indirect Magnetic Labeling Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/Magnetic Separation|Magnetic Separation]]
+
+[[IGEM:Harvard/2007/Protocols/Fluorescent Labeling Protocol|Fluorescent Labeling Protocol]]
+
+[[IGEM:Harvard/2007/Protocols/French press|Lysing cells with French press]]
+
+[[IGEM:Harvard/2007/Protocols/Protein purification|Protein purification]]
+
+---------------------------------------------------------------------------------------------------
+=Introduction=
+This is a detailed description I made (for the MCB100r project I CA'd in the spring) of nearly all the techniques used in BioBricks insert-vector assembly. You will of course have to adapt some of the protocols to the reagents you have or to the samples you're working with. For example, you might do a nucleotide removal instead of PCR purification if your PCR product is <100bp, or you might change annealing temperatures for a PCR incubation to eliminate hairpin loops in your specific primers. Make sure you understand the (dis)advantages of each technique in relation to your goals. [[User:Perry|Perry]]
+
+=General outline=
+To get your insert...
+*PCR...10min prep, 1.5-2h incubate (freeze/refrigerate)
+*PCR purification...20min (freeze)
+*(Optional: Topo clone/transform PCR product...1.5h, 12-16h incubation, refrigerate
+*Digest...10min prep, 2-12 hours incubate (freeze/refrigerate)
+*Gel electrophoresis...pouring: 20min (refrigerate) and running: 10min loading, 45-60min running, (refrigerate), 10min visualizing
+*Gel extraction...30min (freeze)
+
+To get your vector into which you're putting your insert...
+*(If not already done, transform plasmid into bacteria)
+*Liquid culture...5min prep, 12-16h incubation
+*Miniprep...30min (freeze)
+*Digest
+*Gel electrophoresis
+*Gel extraction
+
+To put them together...
+*Ligation...5min
+*Transformation...1.5h
+*Colony PCR and plate streak...10min prep, 2h incubation (freeze PCR, streak incubation during PCR or overnight and refrigerate later)
+*E-gel...5min prep, 30min run, 5min visualization
+*Liquid culture...5min prep, 12-16h incubation
+*Miniprep...30min (freeze)
+*Sequencing...20min prep and send-out
+*Glycerol stock/midiprep
+
+==PCR==
+PCR mixture
+*25ul PCR Supermix (2X)
+*1ul forward primer (10uM)
+*1ul reverse primer (10uM)
+*1ul template
+*22ul water
+**TOTAL: 50ul
+Incubate this mixture in a PCR machine with the following program.
+*95dC, 10min (initial denaturing)
+*30 cycles of...
+**95dC, 30sec (denature)
+**55dC, 30sec (anneal)
+**72dC, 30sec-1min (extend: Taq polymerase replicates DNA at ~1kb/min, so you should program enough time for your fragment size; overestimate to make sure.)
+*72dC, 10min (final extension)
+*4dC, hold
+
+Notes:
+
+- Note that the final concentrations of the each primer is 200nM (1:50 dilution of 10uM). This is a good working primer concentration for most PCRs. Adjust the amount of primer you add according to your stock primer concentration.
+
+==PCR purification==
+Follow the protocol outlined in the Qiaquick Spin Handbook, PCR purification, using a microcentrifuge. Remember to use purple tubes.
+
+You have a choice of eluting your DNA in water or EB, with 30ul or 50ul. EB is a salt that has ions to stabilize your DNA and prevent potential degradation, but the ion concentrations may interfere with later reactions, so this is better for long-term storage and for linear DNA. Water will not affect later reactions, and may cause DNA degradation over time, so it's better if you're planning to use the DNA soon for something else.
+
+Using 30ul or 50ul depends on what you are planning to do. According to the efficiency graph at the beginning of the handbook, 30ul will recover 80% of your DNA, 50ul will elute slightly more at 90%. But eluting with 30ul will produce a more concentrated sample. The choice depends on how much you need later and what kind of concentration you want. You can even use some number in between or more than 50ul, but don't use less than 30ul because recovery % decreases.
+
+Be careful when pipetting EB/water for elution. You want to pipette directly on top of the center of the filter, without puncturing the filter and without getting EB/water on the side of the column. Also, it helps the let the column stand for 3-5 minutes instead of just 1. Another possible trick is to heat up your EB/water before eluting.
+
+==Double digest==
+*x ul DNA (PCR purified or miniprepped)
+*5ul Buffer (10X)
+*0.5ul BSA (100X)
+*1ul Enzyme 1 (2%)
+*1ul Enzyme 2 (2%)
+*fill rest with water
+**TOTAL 50ul
+
+Incubate at 37dC for 2 hours minimum. If you're leaving it overnight, it can incubate for as much as 12-16 hours. Then incubate at 80dC for 20min to kill the restriction enzyme.
+
+==Pouring a gel==
+For a 1% agarose gel, you need 1g agarose per 100mL 1X TBE buffer (Tris-Borate-EDTA) or TAE buffer (Tris-Acetate-EDTA). Weigh out 1g agarose powder, and pour into a gel flask, then measure 100mL buffer and pour into gel flask. Swirl it around some, and screw the cap on loosely.
+
+Microwave for 30-second increments, swirling in between. When it starts fizzing (usually on the 3rd time), stop the heating.
+
+Cool the flask by letting it sit in cold tap water for 5-6minutes, until you can hold it comfortably in your hand. Don't let it sit too long because it will start to solidify inside the flask. 
+*This is only necessary if you will be adding ethidium bromide to your gel, which can vaporize or inactivate if your agarose solution is too hot.
+
+While it's cooling, assemble gel frame: put clear plastic frame on top of creme-colored frame, between red rubber walls; turn handle to tighten. Put circle-bubble thing on top, and twist knobs on upper left and right until the bubble is in the center.
+
+'''Put gloves on!!!''' Of course, unless you already have them on. Which you should. You should always be wearing gloves. 
+
+Add 5ul ethidium bromide to the mixture, and swirl to mix. Ethidium bromide is a dangerous carcinogen because it intercalates into DNA and causes mutations.
+*If you are planning to post-stain your gel with ethidium bromide or SYBR Gold, do not add ethidium bromide to your gel.
+
+Pour into gel frame, use comb (15- or 20-tooth) to sweep bubbles to the bottom, set comb. Let gel solidify for 10-15 minutes.
+
+==Running a gel electrophoresis==
+After the gel has solidified, take the clear plastic frame with the gel in it out of the white frame, and place into the gel box. 
+*Make sure the gel is straight, and the knob thing is in the groove thing.
+*DNA "runs to the red" so your DNA will be migrating down the gel towards the red side of the apparatus, which should thus be on the bottom end.
+
+Pour buffer (same as you used to make your gel) into the apparatus.
+*Don't pour directly onto the gel, as it will cause the gel to slide off. Just pour into each well. The buffer should be just covering the entire gel, until there's an even liquid surface above the wells.
+
+Add loading dye to your samples.
+*We use 10X loading dye, which is 50% glycerol in TBE, with bromophenol blue. The glycerol makes your samples heavier than the buffer, so they sink into the wells. The bromophenol blue allows you to see the samples as they run through the gel.
+*It's preferable to overestimate a little bit when adding loading dye, as you want to be sure that your sample won't float out of the well.
+
+Load 10ul of 1 kb plus ladder. Load your samples.
+*When pipetting, you want to stabilize your elbows on the bench and the pipettor with your other hand.
+*Point the pipette tip directly into the well (it helps to have a dark piece of tape or paper underneath so you can see the wells) but not too far into the well, as you don't want to puncture the well and you don't want to push your sample out of the well; rather you want to let it fall into the well.
+*Pipette slowly, and make sure that no bubbles come out of your tip, as the bubbles create a vacuum that will suck your sample out of the well. So if there's empty air at the end of your tip, push it out before loading, and after you've finish loading, don't let any empty air out of the tip before you lift your tip out of the well.
+
+Close the box, and turn on the apparatus. Run at 130V for 45min.
+*Black to black, red to red.
+*You'll see bubbles at both ends. That means it's working.
+*You want to run it for long enough that multiple bands are well-separated, but not too long that DNA runs off the gel. The bromophenol blue in the loading dye runs with the 300bp band; this blue band should travel approximately 3/4 of the way down the gel.
+*You may change the voltage depending on time constraints. For example, 100V for 80min, or 150V for 30min. Anything above 150V runs risk of melting the gel.
+
+After the gel has finished running, put on gloves and take out the gel in the clear plastic frame. Pour off buffer from the top back into the box or onto a napkin. Take it to the UV imager if you have ethidium bromide stain already in the gel. If you plan to post-stain, read the post-staining section.
+
+==Post-staining==
+If you do not have any stain already in your agarose gel, you need to perform a post-stain to visualize your DNA bands.
+
+Make a mixture of TBE and staining agent, enough to submerge your gel in a shallow tray. 100ml should be enough for a 100ml agarose gel. If you used a different buffer like TAE for your gel, use the same buffer as that.
+*5ul ethidium bromide for 100ml TBE.
+*1:10,000 dilution of SYBR Gold, so 10ul for 100ml TBS. SYBR Gold is kept at -20dC and is light-sensitive, so make/use aliquots in tubes covered with aluminum foil.
+Let the gel sit submerged in the stain, in a shallow tray, on a rocker, for 20-30min at room temperature.
+
+If you used ethidium bromide as a stain, take your gel to the UV imager. If you used SYBR Gold as a stain, take your gel to the blue-light Safe Imager.
+
+==Using the UV imager==
+Open "Quantity One" and under "File" click "Gel Doc EQ."
+
+Click "Live/Focus." Open the UV imager door, and place the gel inside, centering it and using the "Zoom +/-" button on the machine.
+
+Close the door. If the light by the "Trans UV" button is blinking, you haven't closed the door completely. Slam the door.
+
+Press the "Trans UV" button to turn on the UV light. Use the "Iris +/-" button to modify the exposure/light intensity for a cleaner picture. Click "Freeze" on the program, and press the "Trans UV" button again to turn it off.
+
+Click "Save" to save the gel image with your initials, the date, what it is, in the Project 3 folder. Under "File," click "export to JPEG..." and save it as a jpg image, which you can then email to yourself or upload to your wiki page.
+
+==Using the blue-light Safe Imager==
+Place your SYBR stained gel on the smooth surface of the Safe Imager. Please the square orange plastic cover over the gel, or put on the orange goggles. Turn on the blue light. Your DNA bands should be whitish-yellow against a light-green background.
+
+==Gel excision==
+If you need to cut a band at the UV imager, put gloves and a labcoat on. Open the drawer, install the plastic UV guard, turn off the lab lights, and turn on the Prep UV. Look vertically down at the gel, and with a scalpel, cut into the agar as close around the band as you can without cutting into the band.
+
+If you need to cut a band at the Safe Imager, put on the orange goggles before making your excision.
+
+Preweigh a 1.5ml tube, and record the mass on the tube. Use a scalpel, forceps, or pipette tip to take out the gel slice and push it into the tube.
+
+==Gel extraction==
+Weigh the tube plus gel slice, and subtract to determine the mass of the gel slice.
+
+Follow the protocol outlined in the Qiaquick spin handbook, Gel extraction, using a microcentrifuge.
+
+See notes under "PCR purification" about elution.
+
+==Ligation==
+Follow the protocol outlined in Roche Rapid DNA Ligation kit.
+
+You need insert DNA and vector DNA, both compatibly digested. You want more insert than vector, about a 3:1 molar ratio. You can either nanodrop each sample for DNA concentration, and do the math, or you can do a simple 7ul:3ul mixture. Then add 10ul ligation buffer and mix. Finally add 1ul Rapid DNA ligase and mix. Let sit on the bench for 5 minutes.
+
+You can either freeze the ligation mixture, or you can do it while your competent cells are thawing for transformation.
+
+==Transformation==
+Get Top10 chemically competent cells from the -80dC freezer, and let thaw on ice. 
+
+After the cells have thawed, divide and aliquot into as many tubes as transformations you're performing. There is 60ul in one tube; you can do as many as 6 transformations from one tube, 10ul competent cells each. Competent cells are expensive, and they lose competency when frozen/thawed a second time, so try to be economical.
+
+Add the DNA plasmid (from ligation, Topo cloning, or plasmid purification).
+
+Let the tubes sit on ice for 20 minutes. (Make sure the heat-block has water in the wells and is set to 42dC.)
+
+Heat shock the tubes at 42dC for 30 seconds.
+
+Cool the tubes on ice for 2 minutes.
+
+Add 200ul SOC media.
+
+Incubate the tubes in the incubator/shaker at 37dC for 1h. While they're incubating, label agar plates of the appropriate antibiotic, and pre-warm in the 37dC incubator cabinet.
+
+Under a flame, pipette the mixture onto the agar plate, and spread with a sterile plastic spreader.
+
+Leave the agar plates agar-side-up on the shelf in the 37dC incubator, and leave for 12-16 hours.
+
+==Colony PCR/plate streak==
+Label an agar plate of appropriate antibiotic, and make a numbered grid to mark off as many sections of the agar plate for how many colonies you intend on checking.
+
+Prepare 10ul of PCR mix for each colony: 8ul PCR Supermix + 1ul forward primer (2uM) + 1ul reverse primer (2uM).
+*This makes a final concentration of 200nM each primer. If you have different stock primer concentrations, change the volume accordingly.
+*It's easier to make a master mix (such as 80+10+10), and then aliquotting. When making a master mix, always make enough for one or two extra so that you don't run out.
+
+Under a flame, use a sterile inoculation needle or toothpick to touch a colony on the transformation plate, streak a line in the corresponding section on the new agar plate, and then dip it into the corresponding PCR tube.
+
+Run the PCR according to previous protocol.
+
+While the PCR is incubating, incubate the streaked agar plate at 37dC.
+
+When the PCR is done, load the PCRs onto an e-gel or agarose gel and analyze, and inoculate liquid cultures of the successful colonies by picking from the streaks (which should be sufficiently grown after 2 hours).
+
+==Liquid culture==
+Under a flame, pipette 3ml LB into a culture tube, and add 3ul of ampicillin (50mg/ml) or 1.8ul kanamycin (50mg/ml).
+*You can change your volume of LB according to your needs. You may want just 1ml to reseed a later culture, or 3ml for a good miniprep, or more if you're planning on multiple uses or larger preparations.
+
+Using a sterile inoculation needle or toothpick, pick from a colony, streak, or glycerol stock, and then dip into the LB.
+
+Leave culture tube in incubator/shaker at 37dC for 12-16 hours, with the cap on loosely, not snapped tightly.
+
+==Miniprep==
+Pipette your liquid culture into 1.5ml tubes, and pellet the bacteria by centrifuging, and discard the supernatant LB. You may need to centrifuge multiple times depending on the total volume of your culture.
+
+Follow the protocol outlined in the Qiaprep miniprep handbook, using a microcentrifuge. Read notes about elution under "PCR purification."
+
+==Sequencing==
+Determine how many sequencing reactions you will be sending out, and ask Alain for a purchase order number for Genewiz, a DNA sequencing service. You can ask him for either standard service (usually within two days) or same-day service (within one day).
+
+Take as many 8-tube strips as you need, and label them with "AV01, AV02, etc." Plan and record which sequencing reactions you'll put into which tubes.
+
+Into each tube, pipette 8ul of the DNA to be sequenced. If you're premixing your own primer, add 4ul primer (2uM).
+*Each sequencing reaction should contain only one primer. For each DNA sequence you want to be analyzed, you usually will have two sequencing reactions, one with forward primer and one with reverse primer. You may need only one reaction if you only care about one section, or more than two if the section is too long.
+*You may leave out primer if you are using a vector with annealing sites for universal primers. For example, the Topo vector has M13F and M13R primer annealing sites flanking the cloning site, and Genewiz can add those primers for you.
+
+Snap the tubes closed, wrap the strip in parafilm, and seal in a Ziplock bag.
+
+Log into www.genewiz.com with Alain's email aviel@fas, and obtain the password from Alain.
+
+Click "Place Order".
+
+Select "Standard" or "Same day" accordingly, "Premix", and "Online form" (unless you are planning to upload an excel file). Then enter "number of reaction" and click "To Generate."
+
+*For the corresponding samples (#1 for AV01, etc.), fill in the "DNA Name", the name of the sample you are sequencing. 
+*Select "DNA Type", PCR product or plasmid.
+*Fill in the "DNA length". This should be the length of your PCR product, or the entire length of your plasmid with the insert.
+*If you are adding your own primer, fill it in under "My Primer". If you want Genewiz to add a universal primer, select it under "GENEWIZ primer".
+*Click "Next Step."
+*Review your order, nad click "Submit."
+*Fill in the "PO Number".
+ 
+Print out two copies, one for Genewiz and one for yourself. Fold up the copy for Genewiz, and place into the Ziplock bag with the tubes. Drop off the bag in the dropbox at Conant 113 before 4pm Monday-Friday.
+*The entrance to Conant is in the walkway between Lowell Lecture Hall and Fairchild.

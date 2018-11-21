@@ -1,0 +1,101 @@
+__NOTOC__
+==Scope==
+*Define features of the future Registry of BioBrick Models:
+**Supported parts and associated models.
+**Supported user actions (edit, browse, search ...)
+*Specify interactions with the existing physical DNA Registry.
+*Detail choices in term of implementation.
+
+==Features==
+
+=== Supported parts ===
+{| style="width:90%; height:100px" border="1" align="center"
+|+ '''Generic Virtual BioBricks Architecture'''
+|-
+|[[Image:VBB_Environment_Icon.png|center|30px|Virtual BioBrick Environment]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/BioBrick Environment|Environment]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/BioBrick Plasmid|Plasmid]]
+|-
+|[[Image:VBB_Regulator_Icon.png|center|30px|Virutal BioBrick Regulator]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Constitutive_Promoter|Constitutive_Promoter]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Activated_Promoter|Activated_Promoter]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Repressed Promoter|Repressed_Promoter]]
+|-
+| |[[Image:VBB_Regulator_Icon.png| center |30px|Virutal BioBrick Regulator]][[Image:VBB_RBS_Icon.png| center |30px|PromoterRBS]] 
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Promoter_RBS_Coupled|Promoter_RBS_Coupled]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Activated_Promoter_RBS_Coupled|Activated_Promoter_RBS_Coupled]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Repressed_Promoter_RBS_Coupled|Repressed_Promoter_RBS_Coupled]]
+|-
+|[[Image:VBB_RBS_Icon.png|center|30px|RBS]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Ribosome_binding_site_(RBS)|RBS]]
+|-
+|[[Image:VBB_Riboswitch_Icon.png|center|30px|RBS]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Riboswitch|Riboswitch]]
+|-
+|[[Image:VBB_mRNA_Icon.png|center|30px|mRNA]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/mRNA|mRNA]]
+|-
+|[[Image:VBB_RBS_Icon.png|30px|RBS]][[Image:VBB_mRNA_Icon.png|30px|mRNA]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/RBS_mRNA|RBS_mRNA]]
+|-
+|[[Image:VBB_CodingProtein_Icon.png|center|30px|Coding Protein]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Protein|Protein]]
+|-
+|[[Image:VBB_Terminator_Icon.png|center|30px|Terminator]]
+!
+[[Registry of Standard Biological Models/Basic_Component_Models/Terminator|Terminator]]
+|}
+
+=== Supported user actions ===
+
+
+== Interactions with the DNA Registry ==
+
+===DNA Registry --> Model Registry===
+*Any supported part (see list above) on the parts registry should have a link to the corresponding page on the model registry.  The link will point to a generic 'Special Page' on the Model Registry with a set of information relating to the part described, such as:
+**Part type (Constitutive Promoter, Activated Promoter, RBS, Coding Region, Composite ...)
+**part ID number
+**if it is a composite part, the Registry should provide through the link the sequence of the atomic parts (or maybe the subparts???).
+*Models can be only added to the model registry if that category of parts exists in the parts registry.
+
+===Model Registry --> DNA Registry===
+*Could query DNA Registry with a given model to get all the existing DNA parts described by such a model.
+*A new assembly of models (from existing part models) could be used to register a new assembly (composite part) on the DNA Registry.
+*Part models should be used to constrain characterization of parts (maybe an other Registry dedicated to characterization).
+
+== Implementation ==
+*The registry of BioBrick models will be implemented as a new Registry (run on a different server than the DNA registry).
+**A proof of concept version could be demonstrated on OWW.
+*At first, full integration within the MediaWiki framework will be explored (i.e. no need for an additional database as used on the parts registry):
+**models will be curated as standard wiki pages.
+**possible need to implement Special Pages or Extensions.
+*interactions with the DNA Registry might require changes on the DNA Registry side.
+
+
+==To do list==
+'''Building a library of generic models:'''
+*List all type of BioBricks available on the DNA Registry. <font color=green> (work in progress)</font>
+*Define for each type its interface (inputs/outputs) + associated units. <font color=green> (work in progress)</font>
+*Create for each type a generic CellML description + provide detailed derivation/assumptions.<font color=red> (to be done)</font>
+*Define metadata needed for each type.<font color=red> (to be done)</font>
+
+'''Communication with the DNA Registry:'''
+*Define info needed from DNA registry <font color=green> (work in progress)</font>
+
+'''Using MediaWiki script to support a Registry:'''
+*Check how CellML info can be stored and accessed on a wiki page (to create new models and to assemble models). <font color=red> (to be done)</font>
+*Investigate the construction of a 'Special Page' to access models from Registry.<font color=red> (to be done)</font>
+*Investigate the construction of a 'Special Page' to build new models from existing models-import mechanism in CellML) .<font color=red> (to be done)</font>

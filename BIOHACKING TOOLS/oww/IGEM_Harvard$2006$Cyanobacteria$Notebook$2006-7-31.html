@@ -1,0 +1,137 @@
+{{IGEM:/Harvard/2006/Cyanobacteria}}
+
+<div class="tabs">
+<ul>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-28 | Previous Entry]]</li>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-31 | Current Entry]]</li>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-8-1 | Next Entry]]</li>
+</ul>
+</div>
+<br style="clear:both">
+<div class="tabcontent">
+
+==Monday meeting==
+We've decided to refocus our efforts on preparing for the ''E. coli'' experiments. Our synthesized constructs will arrive on August 8 and we want to hit the ground running.
+
+==Split-extraction PCR #1==
+This PCR will extract KaiA, KaiB, and KaiC individually from the cyanobacteria genome. This should save us a step compared to extracting KaiABC as one segment and splitting them later. Also, if this PCR succeeds and produces 850bp, 300bp, and 1550bp bands, we'll have very high confidence that we've actually obtained template.
+
+===Samples===
+We'll use 2 samples, prepared as follows:
+;LC3A: 
+*1 mL from PCC 7942 flask (2006-7-16, reinoculated from liquid culture of 2006-7-7)
+*Spin for 1 minute at 14k RPM
+*Discard supernatant, resuspend pellet in 150 µL H2O.
+*Lyse for 5 minutes at 95C.
+;LC3B :
+*same as LC3A, with one more centrifuge + resuspension cycle.
+
+===Reactions===
+All reactions will be 100 µL total volume. The mixture is as follows:
+*1 µL template
+*10 µL buffer
+*2 µL 10 mM dNTP
+*2 µL primer1
+*2 µL primer2
+*1 µL Vent polymerase
+*82 µL H2O
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Reaction #'''
+| align="center" style="background:#f0f0f0;"|'''Sample'''
+| align="center" style="background:#f0f0f0;"|'''Primers'''
+| align="center" style="background:#f0f0f0;"|'''PCR machine'''
+|-
+| 1||LC3A||exAF, exAR||PCR-3
+|-
+| 2||LC3A||exBCF, exBOR||PCR-3
+|-
+| 3||LC3A||exCOF, exBCR||PCR-1
+|-
+| 4||LC3B||exAF, exAR||PCR-3
+|-
+| 5||LC3B||exBCF, exBOR||PCR-3
+|-
+| 6||LC3B||exCOF, exBCR||PCR-1
+|-
+| 7||LC3A||none||PCR-1
+|-
+| 8||LC3B||none||PCR-1
+|-
+| 9||none||none||PCR-1
+|-
+| 
+|}
+===Schedule===
+For reactions with primers (exAF, exAR) and (exBCF, exBOR):
+#94C, 5'
+#94C, 30"
+#56C, 30"
+#72C, 3'30"
+#Cycle to step 2, 7x
+#94C, 30"
+#55C, 30"
+#72C, 1'30"
+#Cycle to step 6, 30x
+#72C, 5'
+#4C hold
+
+For reactions with primers (exCOF, exBCR) and reactions without primers:
+#94C, 5'
+#94C, 30"
+#56C, 30"
+#72C, 3'30"
+#Cycle to step 2, 7x
+#94C, 30"
+#55C, 30"
+#72C, 3'30"
+#Cycle to step 6, 30x
+#72C, 5'
+#4C hold
+
+==Analysis of sequencing==
+See peng for details, but HH1 = random insert, HH2-5= NOTHING in topo clone except missing an A, HH6 = inconclusive but not PCC7942. Don't use blunt...
+
+==Diagnostic PCR of LC1PUR1 and LC2PUR1 (mutagenesis #7)==
+LC1PUR1 and LC2PUR1 did not have enough DNA via the nanodrop! (Always nanodrop samples...) But either way, am doing a PCR reaction using the forward and back primers for the template along with the site-specific mutagenesis PCR. I DO NOT think using bare ends will be a problem given that my primer is 20+ bp long, which is long enough for the DNA polymerase to work with; and google doesn't say so =D. It will be a diagnostic, alas...
+
+
+'''Vials'''
+*3-10, 9-8, 6-7, 5-4, all, -t for each, cat gene as a positive control, master mix
+*23 total vials
+
+For cat gene, pbc_ks+, kt_b, kt_bb primers - expected size ~1.1kb
+
+'''Back to basics: HotStarTaq/Farren Protocol'''
+
+  5 µL 10x buffer (HotStar)
+  1.0 µL 10 mM dNTPs 
+  1.0 µL 20 µM forward primer 
+  1.0 µL 20 µM reverse primer 
+  1.0 µL plasmid DNA
+  0.5 µL HotStarTaq DNA polymerase 
+  41.5 uL dH20
+
+'''PCR Time for 3-9, 6-4, 10-7, cat gene, negative for each'''
+
+ #*95 °C for 15 min. (melt) 
+ #*95 °C for 0.5 min. (melt) 
+ #*57 °C for 0.5 min. (anneal) 
+ #*72 °C for 1.5 min. (extension)
+ #* Go to step 2 (30x)
+ #*72 °C for 10 min. (final extension)
+ #* Keep at 4 °C forever
+
+ Total time:  82 minutes +/- some = 90 min
+
+'''PCR Time for 6-7, cat gene, all, negative for each'''
+
+ #*95 °C for 15 min. (melt) 
+ #*95 °C for 0.5 min (melt) 
+ #*57 °C for 0.5 min. (anneal) 
+ #*72 °C for 2.5 min. (extension)
+ #* Go to step 2 (30x)
+ #*72 °C for 10 min. (final extension)
+ #* Keep at 4 °C forever
+
+ Total time: 111 minutes +/- some = 120min

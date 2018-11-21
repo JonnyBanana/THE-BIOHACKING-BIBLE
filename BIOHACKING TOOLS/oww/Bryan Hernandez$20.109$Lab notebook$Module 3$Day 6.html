@@ -1,0 +1,22 @@
+--[[User:Bryanh|Bryanh]] 16:17, 25 April 2007 (EDT)
+
+'''purpose:''' to reduce our microarray data to meaningful information with regards to gene expression.
+
+==protocols==
+
+#open txt file in xls (tab delimited)
+#delete top 9 rows
+#label a new worksheet for working with your data
+#copy columns for: GeneName, SystematicName, Description, gMeanSignal, rMeanSignal	gMedianSignal, rMedianSignal, gBGMeanSignal, rBGMeanSignal, gBGMedianSignal, rBGMedianSignal
+#format the numerical cells as numbers with no decimal place
+#we decided to consider the median variations and background.  median backgrounds were subtracted from the median signal.  
+#start new column with ratio of green signal/red signal. 
+#start new column called log2green/red and use data in green/red column as =LOG(cell#,base), for example =LOG(D3,2) and drag corner to apply formula to all 11K cells. Again format to whole numbers if this does not happen automatically. 
+#Select entire sheet by clicking on diamond in corner then sort by log2 (green/red).
+#Sort cells in decending order according to log2green/red
+
+==summary==
+
+*Of the SAGA subunits we only saw a 1-fold increase in expression of mutant over the parent FY2068.
+*we will consider negative ratios as simply 0 expression. but there werent many negative values.
+*there were a good number of duplicates that agreed with each other, however I cant say much without more careful data analysis.

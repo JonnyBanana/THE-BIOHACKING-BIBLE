@@ -1,0 +1,221 @@
+{| border="1" cellpadding="0" width="100%"
+|- 
+!style="background:#FF9966" height="25pt" width="80pt"|Actual Part
+!colspan="3"| [[Image:T9002.JPG|350px]]<br><font color=#FF9966> <big>[http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/project_browser/Test_Sensing_Prey_Construct/TestingValidation Link to Project Browser (Test Sensing Prey Construct)]</big></font color> 
+|}
+
+
+
+==<bbpart>T9002</bbpart>: Transfer Function Characterisation & <bbpart>J37016</bbpart>/<bbpart>J37020</bbpart> Predator Cell Test Construct==
+
+
+
+===Motivation===
+
+The motivation behind this <bbpart>T9002</bbpart> test construct is to characterise the transfer function linking AHL input to GFP output.
+
+This will allow us to construct a standard transfer function curve which will allow us to relate GFP output to an unknown AHL input, forming the basis of an AHL assay.
+
+We also would like to explore the AHL input to GFP output in our predator cell constructs <bbpart>J37016</bbpart> and <bbpart>J37020</bbpart> (as it will directly link to AiiA and LuxR production in the predator cell).
+
+===Materials & Equipment===
+
+*Equipment
+**Wallac Victor 3 Multi-Well Fluorimeter
+**Eppendorf Tubes
+**Small White Cap Tubes
+**Large White Cap Tubes
+**Gilson Pippettes
+**37°C Shaker
+**[[IGEM:IMPERIAL/Protocols/T9002_Report|T9002/J37016/J37020 Report Sheet]]
+
+*Materials
+**Dilution series of AHL [1000 {{uM}}, 100 {{uM}}, 10 {{uM}}, 5 {{uM}}, 1 {{uM}}, 500 nM, 100 nM, 50 nM, 10 nM, 1 nM] 
+**GFP Standard Solution
+**LB Medium with 40 {{ug}}/mL Ampicilin 
+**E.coli DH5a Culture Containing T9002/J37016/J37020
+
+===Protocol===
+<showhide>
+*Inoculate a culture from 10ul of stored T9002/J37016/J37020 in 2ml LB medium containing 50 {{ug}}/mL Ampicillin.
+*Incubate at 37°C for overnight in a shaker. __HIDER__ 
+<hide>
+:<font color=green>This is to get a good stock of cells for use in the experiment. After the overnight culture the cells will be in stationary phase</font>
+</hide>
+</showhide>
+*In the morning, prewarm 70 mL LB Amp medium in the 37°C water bath.
+*Measure and record OD600 
+<showhide>
+*Inoculate a 16ml fresh culture from the o/n to bring back the OD600 to 0.1, use the prewarmed LB + Ampicilin in waterbath. __HIDER__
+<hide>
+:<font color=green>Using prewarmed LB/M9 prevents a temperature shock to the culture, which would increase lag time</font>
+</hide>
+</showhide>
+<center><amsmath>
+\frac{0.1}{\mbox{OD of culture}} \times \mbox{16 mL}
+</amsmath></center>
+
+:OD of T9002/J37016/J37020 culture (1st Measurement):  _________
+
+:Amount to dilute of T9002/J37016/J37020 culture = ________ mL (amount of original culture to use)
+
+:Amount of prewarmed LB with Ampcilillin to use = ________ mL (16 mL - above result)
+
+*Return LB to 37°C waterbath
+<showhide>
+*Incubate new culture at 37°C for 2 hours in a shaker __HIDER__
+<hide>
+:<font color = green>This returns cells to exponential phase from stationary phase</font>
+</hide>
+</showhide>
+<br>
+''After 2hrs in the shaker'':
+
+*After the 2 hours measure and record the OD600 
+<showhide>
+*Dilute again for an OD of 0.1 in a new culture of 25ml of a prewarmed LB + Ampicilin. __HIDER__
+<hide>
+:<font color=green>This dilution gives a standard OD to which to innoculate the culture with AHL (in this case 0.1). Innoculating at different ODs is known to give different results, so it is important a standard OD is used</font>
+</hide>
+</showhide> 
+::::<amsmath>
+\frac{0.1}{\mbox{OD of culture}} \times \mbox{25 mL}
+</amsmath>
+
+:OD of T9002/J37016/J37020 culture (1st Measurement):  _________
+
+:Amount to dilute of T9002/J37016/J37020 culture = ________ mL (amount of original culture to use)
+
+:Amount of prewarmed LB with Ampcilillin to use = ________ mL (25 mL - above result)
+
+*Vortex new T9002/J37016/J37020 culture.
+
+*To start AHL incubation:
+**Label each tube with AHL concentration
+**Put 20ul of the AHL into 11 seperate 5ml white capped tubes
+**Add appropriate amount of T9002 samples as per the table below
+**Record time of inoculation in report sheet.
+**Vortex each tube
+<showhide>
+:*Incubate all 5mL tubes in a 37°C shaker for 4 hours so GFP expression can reach steady state __HIDER__
+<hide>
+::<font color=green>Do not pipette the samples into the 96 well plate yet - because if the 96 well plate is put in the shaker, cross-contamination between the well is very likely to happen. </font color>
+</hide></showhide>
+<br>
+{| border="1" cellpadding="1"
+|
+{| border="1" cellpadding="2"
+!<u>Sample (ul)</u> || <u>Stock Concentration</u> !! <u>AHL (ul)</u> !! <u>Final AHL Concentration</u>
+|-
+|1980
+|1000uM
+|20
+|10uM
+|-
+|1980
+|100uM
+|20
+|1uM
+|-
+|1980
+|10uM
+|20
+|100nM
+|-
+|1980
+|5uM
+|20
+|50nM
+|-
+|1980
+|1uM
+|20
+|10nM
+|-
+|1980
+|500nM
+|20
+|5nM
+|-
+|1980
+|100nM
+|20
+|1nM
+|-
+|1980
+|50nM
+|20
+|0.5nM
+|-
+|1980
+|10nM
+|20
+|0.1nM
+|-
+|1980
+|1nM
+|20
+|0.01nM
+|-
+|2000
+|N/A
+|0
+|0nM
+|}
+|
+[[Image:IGEM_IMPERIAL_T9002_96WellPlate.png|400px|T9002 96 well plate]]
+|}
+<br>
+
+''After 4hrs in the shaker'': 
+
+*Add a 200uL sample from each eppendorf tube to the 96 well plate.
+*Do this for 8 repeats following suggested patterning (see above)
+**NOTE: Since all repeats are made from the same culture, it is enuogh to do 4 repeats - thus one plate can be used for 2 different tests. (Pipetting errors will be ruled out since absorbance is measured later and can then be considered when processing the data.)
+*Add 4 x 200uL of growth medium to a well to act as a control.
+*Take the plate and eppendorfs to BCHEM
+<showhide>
+*Add 995ul of ultra pure water to the eppendorf, together with 5ul of undiluted GFP standard solution and mix __HIDER__
+<hide>
+:<font color=green>A 200 x dilution of GFP is made. <br>
+:The undiluted GFP is in the BCHM Level 6 Cold Room on our shelf. It is in a small grey plastic box. Pippettes, tips and ultrapure water are located on a shelf above the electroporation machine in the plate reader room.</font>
+</hide>
+</showhide>
+*Add 4 x 200uL of the 200x diluted GFP standard solution to the wells following the suggested patterning
+*Take a reading
+**Take the plate to the plate reader room
+<showhide>
+:*Use the Victor3 to measure flourescence and absorbance __HIDER__
+<hide>
+::<font color=green>Use the preprogrammed Assay under the 'Students' folder called GFP + Abs490</font>
+</hide>
+</showhide>
+<showhide>
+*Repeat the measurment a further two times straight after each other __HIDER__
+<hide>
+:<font color=green>This to assess the variability of the machine</font>
+</hide>
+</showhide>
+<showhide>
+*Save data file from computer. __HIDER__
+<hide>
+:<font color=green>You'll need a memory stick to save the information to. Unfortunatley the computer isn't networked</font>
+</hide>
+</showhide>
+*Copy and paste the data into a [http://openwetware.org/images/a/a2/T9002_Data_Spreadsheet.xls T9002/J37016/J37020 Data Spreadsheet]
+
+
+
+'''Last Updated:''' [[User:TomH|Tom]] 15:06, 18 August 2006 (BST) <br>
+'''Last Updated:''' [[User:Farah|Farah]] 04:09, 22 August 2006 (EDT)      ('''changes made:''' changed 30ml culture to 25ml and amended volume of sample concentration (it previously read 1880ul)). <br>
+'''Last Updated:''' [[User:Johnsy|Johnsy]] 05:59, 22 August 2006 (EDT) <br>
+'''Last Updated:''' [[User:Cys|Christin]] 13:24, 12 September 2006 (EDT) <br>
+
+
+Many thanks to Drew Endy and Barry Canton from MIT for providing the protocol on which this is based.
+
+===Potential Issues===
+
+*What is the GFP standard solution? Do we know its concentration? How stable is that? half life?
+*<font color=red>JS:  Please can you write a protocol that will decouple other experiments with this one in case we want to assay an unknown concentration of AHL.  Thanks. (i.e. take an unknown concentration of AHL of x amount into the T9002....measure flourescence...etc)</font>
+[[IGEM:IMPERIAL/Protocols/T9002_AHL_assay]]

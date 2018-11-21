@@ -1,0 +1,35 @@
+{{Rebuilding T7}}
+==Overview==
+The design of [[T7.1]] genome uses six sections, alpha through zêta.  Each section contains parts that are amalgamations of one or more functional genetic elements.  In our design, the modification of parts on the full T7.1 genome is a two-stage process.  First, we can manipulate parts to construct a section. Second, we can combine sections to assemble a full genome.  We improved upon the design of sections beta through zêta based on our experience constructing section alpha.  The designed sequence of T7.1 can be found [http://web.mit.edu/endy/www/ncbi/T7.1/T7.1.gb here].
+
+==Definitions==
+#<nowiki>#-Cutter</nowiki> – A restriction enzyme that cuts a particular DNA sequence # times
+#Functional Genetic Element – A promoter, protein coding domain, ribosome binding site, etc., defined during our re-annotation of the T7 genome.
+#Part – A piece of DNA that encodes one or more functional genetic elements and is bracketed by a pair of identical restriction sites.
+#Construct – Any amalgamation of functional genetic elements or parts.
+#Section – A segment of the T7.1 genome who boundaries are 1-cutters on the wild-type T7 genome.
+==[[T7.1]] Genome Sections==
+We used sections to limit the number of simultaneous changes to the wild-type T7 sequence and to make the construction process more manageable. Two practical considerations drove our choice of section boundaries.  First and foremost, the boundaries of the sections had to be compatible with the sparse distribution of 1-cutter sites across the wild-type genome. [The use of 1-cutter sites for section boundaries allows refactored sections to be easily combined with other sections or with wild-type DNA.]  Second, the number of parts per section was limited by the number of “useful” 0-cutters across the DNA sequence of each wild-type section.  Useful 0-cutters are specific, free or smaller recognition sites, dam/dcm insensitive, and leave sticky-end overhangs.  
+==From Functional Genetic Elements to [[T7.1]] Parts==
+Parts are made up of one or more functional genetic elements.  Parts were sometimes defined to have more than one element in order to maintain the natural proximity of elements known, or likely to be, physically or functionally coupled.  For example, we grouped most ribosome binding sites and downstream protein coding domains into two-element parts. Also, some functional genetic elements overlap so severely as to prevent efficient separation (e.g., the genes ''4A'', ''4B'', ''4.1'', and ''4.2'').  Finally, some functional genetic elements were very short (<150bp) such that variants containing deletions or separations of the individual elements could be easily constructed (e.g., the ''E. coli'' promoter C and RNaseIII site R1).  In total, we combined the elements that make up [[T7.1]] into 73 parts.  We numbered parts, one to seventy-three, starting from the genetic left end. 
+
+The arrangements of parts on the wild-type T7 DNA sequence sometimes resulted in the overlapping of the DNA sequence specifying parts.  To remove part-part overlap, we duplicated the DNA sequence of the overlap, providing both parts with an independent copy of the previously overlapping sequence.  If, as a result of sequence duplication, either of the parts encoded a function specific to an element in the other part, we mutated the sequence to eliminate the duplicate function.  All mutations to protein coding domains were silent and result in either no change in the tRNA or, when necessary, specify a higher abundance tRNA (Ikemura, 1981).  Parts separation is detailed in Figure S2.   
+
+We surrounded each part with a restriction site pair that is not contained elsewhere in that part’s section.  Typically, we added bracketing restriction sites to the DNA sequence of each part but, when appropriate, we integrated the sites into the natural DNA sequence.  Also, to help reduce the length of T7.1, where possible, we chose adjacent restriction sites to have overlapping sequence with one another.
+
+One of the most significant differences between the design of section alpha and the other sections was in our choice of bracketing restriction sites.  In section ''alpha'', we picked restriction enzymes that did not cut within section ''alpha'' only.  However, as the construction of ''alpha'' proceeded, and cloning directly into the phage became useful, we adjusted our design strategy to use restriction enzymes that did not cut within the entire genome wherever possible.
+
+==Design Features==
+===Deletion and Insertion===
+The design of the T7.1 genome allows for the simple deletions of parts.  Generally, we isolate the section containing the part by digesting with the bracketing restriction enzyme.  We ligate the fragments to reform the section minus the deleted part, and then join the section to the rest of the genome.  Insertion of a new part can be more involved.  Most simply, if there is a pre-existing restriction site due to a deletion operation, then we can insert a new part in its place.  If no such site exists, another method involves using two restriction enzymes, NgoMIV and BspEI, that are 0-cutters across both the wild-type T7 and all refactored sections.  NgoMIV and BspEI have different recognition sequences but produce the same overhang upon digestion.  This allows for ligation of a product into these sites, while simultaneously preventing the restriction sites from being reformed.  Thus, we can replace a part adjacent to the desired insertion site with the same part that has an NgoMIV site appended to it.  Then, we amplify the part to be inserted with bracketing BspEI sites and insert the part into the NgoMIV site.  Since neither restriction site is reformed upon insertion, this method is idempotent.  
+
+===Unstuffing Hooks===
+Since we did not know how a phage made of separated parts would function (e.g., would it form plaques?), we thought that it would be prudent to be able to easily revert to the wild-type T7 sequence for purposes of comparison and debugging.  Thus, we used silent mutations to add additional 1-cutter restriction sites to section alpha. These new restriction sites, labeled U1-4, are useful if we desired to replace refactored regions with wild-type sequence. In sections ''beta'' through ''zêta'', such extra sites were superfluous because we used 0-cutters to bracket parts; 0-cutters can also be used to revert refactored regions to wild-type sequence. 
+
+===Scaffolds===
+We used scaffolds to build sections ''alpha'' and ''beta''. A scaffold is essentially the sequence that remains when all parts are removed from the section.  As such, the scaffold contains all the restriction sites required to assemble the parts to form the section.  In addition, if a fully refactored phage was not viable, we could use the scaffold to incrementally revert the sequence back to wild type in an attempt to restore function.
+
+==Files and Figures==
+[[Media:T7-1_designs.pdf|T7.1 Section Designs]] <br>
+[[Media:T7-1_changes.pdf|Differences between wild-type T7 and T7.1]] <br>
+[http://web.mit.edu/endy/www/ncbi/T7.1/T7.1.gb GenBank file of T7.1 Designs]

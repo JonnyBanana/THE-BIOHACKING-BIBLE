@@ -1,0 +1,17 @@
+'''PSI-BLAST''' - Position-Specific Iterated BLAST. Variant of [[BLAST]] used for disovery of weak but relevant protein sequence matches. The algorithm is based on running consequitive BLAST searches using position weight matices:
+
+* query sequence -> 
+* first blast search ->
+* first iteration blast results -> 
+* sequence alignment of strong matches -> 
+* creating a profile #1 -> 
+* second iteration blast search with profile #1 as a query ->
+* second iteration blast results, etc.
+
+PSI-BLAST server at NCBI: [http://www.ncbi.nlm.nih.gov/BLAST/Blast.cgi?CMD=Web&LAYOUT=TwoWindows&AUTO_FORMAT=Semiauto&ALIGNMENTS=250&ALIGNMENT_VIEW=Pairwise&CLIENT=web&COMPOSITION_BASED_STATISTICS=on&DATABASE=nr&CDD_SEARCH=on&DESCRIPTIONS=500&ENTREZ_QUERY=%28none%29&EXPECT=10&FORMAT_OBJECT=Alignment&FORMAT_TYPE=HTML&I_THRESH=0.005&MATRIX_NAME=BLOSUM62&NCBI_GI=on&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on&SERVICE=plain&SET_DEFAULTS.x=36&SET_DEFAULTS.y=5&SHOW_OVERVIEW=on&END_OF_HTTPGET=Yes&SHOW_LINKOUT=yes&GET_SEQUENCE=yes&SEARCH_NAME=psi_bp link]
+
+==Tutorials==
+* [http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/psi1.html  @NCBI Part 1]
+* [http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/psi2a.html @NCBI Part 2]
+* [http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/psi3.html  @NCBI Part 3]
+* [http://gepard.bioinformatik.uni-saarland.de/html/SoftwarewerkzeugeWS0304-Dateien/Praktikum-BLAST-eng.doc @Uni-Saaraland (DOC)]]

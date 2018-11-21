@@ -1,0 +1,324 @@
+==Programming Assignment, due 2/6/07==
+
+Code:
+<pre>
+#!/usr/bin/env python
+
+from Bio import GenBank, Seq
+# We can create a GenBank object that will parse a raw record
+# This facilitates extracting specific information from the sequences
+
+record_parser = GenBank.FeatureParser()
+
+# NCBIDictionary is an interface to Genbank
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+
+##########
+# Task 1: Use different GenBank ID
+
+# If you pass NCBIDictionary a GenBank id, it will download that record
+parsed_record = ncbi_dict['116496648']
+
+print "GenBank id:", parsed_record.id
+
+# Extract the sequence from the parsed_record
+s = parsed_record.seq.tostring()
+print "total sequence length:", len(s)
+max_repeat = 9
+
+##########
+# Task 2: Count poly-T sequences
+
+print "method 1"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\nmethod 2"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i + 1)])
+    count = 0
+    pos = s.find(substr, 0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr, pos + 1)
+    print substr, count
+    
+    
+##########
+# Task 3: Translate to protein
+
+from Bio.Seq import translate
+
+my_protein = translate(s)
+my_protein_length = len(my_protein)
+
+print '\n', "Translation to protein: "
+
+count = 0
+while count <= my_protein_length:
+    print my_protein[count:min(count+50,my_protein_length)]
+    count+=50
+    
+print "Length: ", len(my_protein)
+
+
+##########
+# Task 4: Create raw record
+
+ncbi_dict_raw = GenBank.NCBIDictionary('nucleotide', 'genbank')
+raw_record = ncbi_dict_raw['116496648']
+print '\n', raw_record
+</pre>
+
+Output:
+<pre>
+GenBank id: BC126211.1
+total sequence length: 4032
+method 1
+T 1088
+TT 251
+TTT 71
+TTTT 30
+TTTTT 12
+TTTTTT 2
+TTTTTTT 1
+TTTTTTTT 1
+TTTTTTTTT 0
+
+method 2
+T 1088
+TT 333
+TTT 114
+TTTT 45
+TTTTT 16
+TTTTTT 4
+TTTTTTT 2
+TTTTTTTT 1
+TTTTTTTTT 0
+
+Translation to protein:  
+AREYQGDSGPCRPPSPSAPHSAQVRGRALIFWRGPSWRRSQIRLRRRKRR
+RGRTSRWW*DADHLIWQSGKLAPIQ**NVILYEKKLVYELEDWLTRAQGK
+HTLLIWCLEHLLNRLMFTEVLFVQFWMKLLWAIIALSLRMAKLALEKLLQ
+WKVKGHLMKSIPGKRIPWLV*FHVPFIKFLRNLLIMVLNFQSKCLCWRSI
+MKSFLIFLIHHLMFLRDYRCLMIPVTREE**LKV*KKLQYTTRMKSIKF*
+KRGQQKGQLQLL**MHTLVVPTQFSLLQYI*KKLRLMEKSLLKSES*TWL
+ILQEVKTLAVLELLIRELGKLEI*INPC*LWEGSLLPL*KEHLMFLIENL
+N*LESSRILLEGVQEHL*LQQFLLHLSILRKL*VHWNMLIEQRTY*ISLK
+*IRNSPKKLLLRSIRRR*NV*NEILLQPVRKMECIFLKKILES*VEN*LF
+KKSRL*N*LKKLVLLRRS*IGLQSCLWIIKMNLTSVNLTCKIKHKNLKPL
+KNICKKLNYNLLKKNISHQLWKVLRRNFMMLPASCLTQLKKLQKMYLVSI
+PNWIVRRQLTNTMQKLRIFLAKT*IVCLIIWKN*LRMAAQSKRPC*KYIR
+PYLVICCLPVSLH*IPLLQ*HLDLSHLFQKMCLLMFLRFLI*Y*KNNH*Q
+QKVKLYYRN*LMYSRLIF*VHWK*FYPQLWCLY*KSIVN*SIFSRLH*QW
+PIR*KIKKRN*MAFSVYCVTIYMNYKKIPFVPWLSHKSNVET*LKT*RQ*
+SRPIPRNFAS**IFGQRDSVLWRKSVKIYRNHLVVSRKIYSRNLRI*STK
+*LFTVKNFVLILMASHRNSEILTKKVQNWLKNL*NTLINSMATWKKYLKR
+LNRDVNL*TQEQFIFLNSGYLP*MKGNRNFTTYWRL*ANVVRLQVQTSLR
+NQMDVRQLMRNSITFFLIR*LLMKIN**HKI*NLMKP*KLV*LSLIAFWN
+RI*NWISQQVRHHRGKVIYTHQHW*ELNHVNISLIS*KGNSLSC**C*TV
+QKTTKKRQFRMWM*KRQFWGSILKNL*VKSHL*MLVWIVHQLAGFHFSSI
+KNHMEKTKKTEALTHWRGLKWKKLQSTWLQRADYLCEPRSTFNSLGGWQF
+YF*RKLKNKT*NPRT*ALCIDFKRIYISAGRGGSCL*SQHFGRLRRVDCL
+SPGV*DQPGQRGKTSSLLKISRAWWHTPVIPATGEAEARESLEPRKRGCS
+EPKVHHYTPAWATEQDSVSKTKFKKDIRQYCKFS*ILISTHFSVIPIVHF
+VLNWVSFGICNVNTYF*FSYKVVLL*QMKSIFLVYY*VMNI*ELYSSQLE
+LT*VNITNICP*KGPSHVFFLAMTCVFSCLLPRLPYFAFSSAHF
+Length:  1344
+
+LOCUS       BC126211                4032 bp    mRNA    linear   PRI 23-OCT-2006
+DEFINITION  Homo sapiens kinesin family member 11, mRNA (cDNA clone MGC:161489
+            IMAGE:8991927), complete cds.
+ACCESSION   BC126211
+VERSION     BC126211.1  GI:116496648
+KEYWORDS    MGC.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 4032)
+  AUTHORS   Strausberg,R.L., Feingold,E.A., Grouse,L.H., Derge,J.G.,
+            Klausner,R.D., Collins,F.S., Wagner,L., Shenmen,C.M., Schuler,G.D.,
+            Altschul,S.F., Zeeberg,B., Buetow,K.H., Schaefer,C.F., Bhat,N.K.,
+            Hopkins,R.F., Jordan,H., Moore,T., Max,S.I., Wang,J., Hsieh,F.,
+            Diatchenko,L., Marusina,K., Farmer,A.A., Rubin,G.M., Hong,L.,
+            Stapleton,M., Soares,M.B., Bonaldo,M.F., Casavant,T.L.,
+            Scheetz,T.E., Brownstein,M.J., Usdin,T.B., Toshiyuki,S.,
+            Carninci,P., Prange,C., Raha,S.S., Loquellano,N.A., Peters,G.J.,
+            Abramson,R.D., Mullahy,S.J., Bosak,S.A., McEwan,P.J.,
+            McKernan,K.J., Malek,J.A., Gunaratne,P.H., Richards,S.,
+            Worley,K.C., Hale,S., Garcia,A.M., Gay,L.J., Hulyk,S.W.,
+            Villalon,D.K., Muzny,D.M., Sodergren,E.J., Lu,X., Gibbs,R.A.,
+            Fahey,J., Helton,E., Ketteman,M., Madan,A., Rodrigues,S.,
+            Sanchez,A., Whiting,M., Madan,A., Young,A.C., Shevchenko,Y.,
+            Bouffard,G.G., Blakesley,R.W., Touchman,J.W., Green,E.D.,
+            Dickson,M.C., Rodriguez,A.C., Grimwood,J., Schmutz,J., Myers,R.M.,
+            Butterfield,Y.S., Krzywinski,M.I., Skalska,U., Smailus,D.E.,
+            Schnerch,A., Schein,J.E., Jones,S.J. and Marra,M.A.
+  CONSRTM   Mammalian Gene Collection Program Team
+  TITLE     Generation and initial analysis of more than 15,000 full-length
+            human and mouse cDNA sequences
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 99 (26), 16899-16903 (2002)
+   PUBMED   12477932
+REFERENCE   2  (bases 1 to 4032)
+  CONSRTM   NIH MGC Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-OCT-2006) National Institutes of Health, Mammalian
+            Gene Collection (MGC), Bethesda, MD 20892-2590, USA
+  REMARK    NIH-MGC Project URL: http://mgc.nci.nih.gov
+COMMENT     Contact: MGC help desk
+            Email: cgapbs-r@mail.nih.gov
+            Tissue Procurement: Mike Brownstein, NIMH
+            cDNA Library Preparation: British Columbia Cancer Research Center
+            cDNA Library Arrayed by: The I.M.A.G.E. Consortium (LLNL)
+            DNA Sequencing by: Genome Sequence Centre,
+            BC Cancer Agency, Vancouver, BC, Canada
+            info@bcgsc.bc.ca
+            Martin Hirst, Thomas Zeng, Ryan Morin, Michelle Moksa, Johnson
+            Pang, Diana Mah, Jing Wang, Kieth Fichter, Eric Chuah, Allen
+            Delaney, Rob Kirkpatrick, Agnes Baross, Sarah Barber, Mabel
+            Brown-John, Steve S. Chand, William Chow, Ryan Babakaiff, Dave
+            Wong, Corey Matsuo, Jaclyn Beland, Susan Gibson, Luis delRio, Ruth
+            Featherstone, Malachi Griffith, Obi Griffith, Ran Guin, Nancy Liao,
+            Kim MacDonald,  Mike R. Mayo, Josh Moran, Diana Palmquist, JR
+            Santos, Duane Smailus, Jeff Stott, Miranda Tsai, George Yang,
+            Jacquie Schein, Asim Siddiqui,Steven Jones, Rob Holt, Marco Marra.
+            
+            Clone distribution: MGC clone distribution information can be found
+            through the I.M.A.G.E. Consortium/LLNL at: http://image.llnl.gov
+            Series: IRCB Plate: 7 Row: E Column: 13.
+            
+            Differences found between this sequence and the human reference
+            genome (build 36) are described in misc_difference features below
+            and these differences were also compared to chimpanzee genome
+            (build 2).
+FEATURES             Location/Qualifiers
+     source          1..4032
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /clone="MGC:161489 IMAGE:8991927"
+                     /tissue_type="Lung, PCR rescued clones"
+                     /clone_lib="NIH_MGC_300"
+                     /note="Vector: pCR-XL-TOPO; Clone identification sequence
+                     tag: CTCCCGCT"
+     gene            1..4032
+                     /gene="KIF11"
+                     /note="synonyms: EG5, HKSP, TRIP5"
+                     /db_xref="GeneID:3832"
+                     /db_xref="HGNC:6388"
+                     /db_xref="MIM:148760"
+     misc_difference 10
+                     /gene="KIF11"
+                     /note="'T' in cDNA is 'G' in the human genome.  The
+                     chimpanzee genome agrees with the human genomic sequence
+                     and not the cDNA."
+     misc_difference 10^11
+                     /gene="KIF11"
+                     /note="1 base in the human genome, G, is not found in
+                     cDNA.  The chimpanzee genome agrees with the human genomic
+                     sequence and not the cDNA."
+     CDS             108..3278
+                     /gene="KIF11"
+                     /codon_start=1
+                     /product="kinesin family member 11"
+                     /protein_id="AAI26212.1"
+                     /db_xref="GI:116496649"
+                     /db_xref="GeneID:3832"
+                     /db_xref="HGNC:6388"
+                     /db_xref="MIM:148760"
+                     /translation="MASQPNSSAKKKEEKGKNIQVVVRCRPFNLAERKASAHSIVECD
+                     PVRKEVSVRTGGLADKSSRKTYTFDMVFGASTKQIDVYRSVVCPILDEVIMGYNCTIF
+                     AYGQTGTGKTFTMEGERSPNEEYTWEEDPLAGIIPRTLHQIFEKLTDNGTEFSVKVSL
+                     LEIYNEELFDLLNPSSDVSERLQMFDDPRNKRGVIIKGLEEITVHNKDEVYQILEKGA
+                     AKRTTAATLMNAYSSRSHSVFSVTIHMKETTIDGEELVKIGKLNLVDLAGSENIGRSG
+                     AVDKRAREAGNINQSLLTLGRVITALVERTPHVPYRESKLTRILQDSLGGRTRTSIIA
+                     TISPASLNLEETLSTLEYAHRAKNILNKPEVNQKLTKKALIKEYTEEIERLKRDLAAA
+                     REKNGVYISEENFRVMSGKLTVQEEQIVELIEKIGAVEEELNRVTELFMDNKNELDQC
+                     KSDLQNKTQELETTQKHLQETKLQLVKEEYITSALESTEEKLHDAASKLLNTVEETTK
+                     DVSGLHSKLDRKKAVDQHNAEAQDIFGKNLNSLFNNMEELIKDGSSKQKAMLEVHKTL
+                     FGNLLSSSVSALDTITTVALGSLTSIPENVSTHVSQIFNMILKEQSLAAESKTVLQEL
+                     INVLKTDLLSSLEMILSPTVVSILKINSQLKHIFKTSLTVADKIEDQKKELDGFLSIL
+                     CNNLHELQENTICSLVESQKQCGNLTEDLKTIKQTHSQELCKLMNLWTERFCALEEKC
+                     ENIQKPLSSVQENIQQKSKDIVNKMTFHSQKFCADSDGFSQELRNFNQEGTKLVEESV
+                     KHSDKLNGNLEKISQETEQRCESLNTRTVYFSEQWVSSLNEREQELHNLLEVVSQCCE
+                     ASSSDITEKSDGRKAAHEKQHNIFLDQMTIDEDKLIAQNLELNETIKIGLTKLNCFLE
+                     QDLKLDIPTGTTPQRKSYLYPSTLVRTEPREHLLDQLKRKQPELLMMLNCSENNKEET
+                     IPDVDVEEAVLGQYTEEPLSQEPSVDAGVDCSSIGGVPFFQHKKSHGKDKENRGINTL
+                     ERSKVEETTEHLVTKSRLPLRAQINL"
+     misc_difference 3988
+                     /gene="KIF11"
+                     /note="'C' in cDNA is 'A' in the human genome."
+ORIGIN      
+        1 gcccgagagt accagggaga ctccggcccc tgtcggccgc caagcccctc cgcccctcac
+       61 agcgcccagg tccgcggccg ggccttgatt ttttggcggg gaccgtcatg gcgtcgcagc
+      121 caaattcgtc tgcgaagaag aaagaggaga aggggaagaa catccaggtg gtggtgagat
+      181 gcagaccatt taatttggca gagcggaaag ctagcgccca ttcaatagta gaatgtgatc
+      241 ctgtacgaaa agaagttagt gtacgaactg gaggattggc tgacaagagc tcaaggaaaa
+      301 catacacttt tgatatggtg tttggagcat ctactaaaca gattgatgtt taccgaagtg
+      361 ttgtttgtcc aattctggat gaagttatta tgggctataa ttgcactatc tttgcgtatg
+      421 gccaaactgg cactggaaaa acttttacaa tggaaggtga aaggtcacct aatgaagagt
+      481 atacctggga agaggatccc ttggctggta taattccacg tacccttcat caaatttttg
+      541 agaaacttac tgataatggt actgaatttt cagtcaaagt gtctctgttg gagatctata
+      601 atgaagagct ttttgatctt cttaatccat catctgatgt ttctgagaga ctacagatgt
+      661 ttgatgatcc ccgtaacaag agaggagtga taattaaagg tttagaagaa attacagtac
+      721 acaacaagga tgaagtctat caaattttag aaaagggggc agcaaaaagg acaactgcag
+      781 ctactctgat gaatgcatac tctagtcgtt cccactcagt tttctctgtt acaatacata
+      841 tgaaagaaac tacgattgat ggagaagagc ttgttaaaat cggaaagttg aacttggttg
+      901 atcttgcagg aagtgaaaac attggccgtt ctggagctgt tgataagaga gctcgggaag
+      961 ctggaaatat aaatcaatcc ctgttgactt tgggaagggt cattactgcc cttgtagaaa
+     1021 gaacacctca tgttccttat cgagaatcta aactaactag aatcctccag gattctcttg
+     1081 gagggcgtac aagaacatct ataattgcaa caatttctcc tgcatctctc aatcttgagg
+     1141 aaactctgag tacattggaa tatgctcata gagcaaagaa catattgaat aagcctgaag
+     1201 tgaatcagaa actcaccaaa aaagctctta ttaaggagta tacggaggag atagaacgtt
+     1261 taaaacgaga tcttgctgca gcccgtgaga aaaatggagt gtatatttct gaagaaaatt
+     1321 ttagagtcat gagtggaaaa ttaactgttc aagaagagca gattgtagaa ttgattgaaa
+     1381 aaattggtgc tgttgaggag gagctgaata gggttacaga gttgtttatg gataataaaa
+     1441 atgaacttga ccagtgtaaa tctgacctgc aaaataaaac acaagaactt gaaaccactc
+     1501 aaaaacattt gcaagaaact aaattacaac ttgttaaaga agaatatatc acatcagctt
+     1561 tggaaagtac tgaggagaaa cttcatgatg ctgccagcaa gctgcttaac acagttgaag
+     1621 aaactacaaa agatgtatct ggtctccatt ccaaactgga tcgtaagaag gcagttgacc
+     1681 aacacaatgc agaagctcag gatatttttg gcaaaaacct gaatagtctg tttaataata
+     1741 tggaagaatt aattaaggat ggcagctcaa agcaaaaggc catgctagaa gtacataaga
+     1801 ccttatttgg taatctgctg tcttccagtg tctctgcatt agataccatt actacagtag
+     1861 cacttggatc tctcacatct attccagaaa atgtgtctac tcatgtttct cagattttta
+     1921 atatgatact aaaagaacaa tcattagcag cagaaagtaa aactgtacta caggaattga
+     1981 ttaatgtact caagactgat cttctaagtt cactggaaat gattttatcc ccaactgtgg
+     2041 tgtctatact gaaaatcaat agtcaactaa agcatatttt caagacttca ttgacagtgg
+     2101 ccgataagat agaagatcaa aaaaaggaac tagatggctt tctcagtata ctgtgtaaca
+     2161 atctacatga actacaagaa aataccattt gttccttggt tgagtcacaa aagcaatgtg
+     2221 gaaacctaac tgaagacctg aagacaataa agcagaccca ttcccaggaa ctttgcaagt
+     2281 taatgaatct ttggacagag agattctgtg ctttggagga aaagtgtgaa aatatacaga
+     2341 aaccacttag tagtgtccag gaaaatatac agcagaaatc taaggatata gtcaacaaaa
+     2401 tgacttttca cagtcaaaaa ttttgtgctg attctgatgg cttctcacag gaactcagaa
+     2461 attttaacca agaaggtaca aaattggttg aagaatctgt gaaacactct gataaactca
+     2521 atggcaacct ggaaaaaata tctcaagaga ctgaacagag atgtgaatct ctgaacacaa
+     2581 gaacagttta tttttctgaa cagtgggtat cttccttaaa tgaaagggaa caggaacttc
+     2641 acaacttatt ggaggttgta agccaatgtt gtgaggcttc aagttcagac atcactgaga
+     2701 aatcagatgg acgtaaggca gctcatgaga aacagcataa catttttctt gatcagatga
+     2761 ctattgatga agataaattg atagcacaaa atctagaact taatgaaacc ataaaaattg
+     2821 gtttgactaa gcttaattgc tttctggaac aggatctgaa actggatatc ccaacaggta
+     2881 cgacaccaca gaggaaaagt tatttatacc catcaacact ggtaagaact gaaccacgtg
+     2941 aacatctcct tgatcagctg aaaaggaaac agcctgagct gttaatgatg ctaaactgtt
+     3001 cagaaaacaa caaagaagag acaattccgg atgtggatgt agaagaggca gttctggggc
+     3061 agtatactga agaacctcta agtcaagagc catctgtaga tgctggtgtg gattgttcat
+     3121 caattggcgg ggttccattt ttccagcata aaaaatcaca tggaaaagac aaagaaaaca
+     3181 gaggcattaa cacactggag aggtctaaag tggaagaaac tacagagcac ttggttacaa
+     3241 agagcagatt acctctgcga gcccagatca acctttaatt cacttggggg ttggcaattt
+     3301 tatttttaaa gaaaacttaa aaataaaacc tgaaacccca gaacttgagc cttgtgtata
+     3361 gattttaaaa gaatatatat atcagccggg cgcggtggct catgcctgta atcccagcac
+     3421 tttgggaggc tgaggcgggt ggattgcttg agcccaggag tttgagacca gcctggccaa
+     3481 cgtggcaaaa cctcgtctct gttaaaaatt agccgggcgt ggtggcacac tcctgtaatc
+     3541 ccagctactg gggaggctga ggcacgagaa tcacttgaac ccaggaagcg gggttgcagt
+     3601 gagccaaagg tacaccacta cactccagcc tgggcaacag agcaagactc ggtctcaaaa
+     3661 acaaaattta aaaaagatat aaggcagtac tgtaaattca gttgaatttt gatatctacc
+     3721 catttttctg tcatccctat agttcacttt gtattaaatt gggtttcatt tgggatttgc
+     3781 aatgtaaata cgtatttcta gttttcatat aaagtagttc ttttataaca aatgaaaagt
+     3841 atttttcttg tatattatta agtaatgaat atataagaac tgtactcttc tcagcttgag
+     3901 cttacatagg taaatatcac caacatctgt ccttagaaag gaccatctca tgtttttttt
+     3961 cttgctatga cttgtgtatt ttcttgcctc ctccctagac ttccctattt cgctttctcc
+     4021 tcggctcact tt
+//
+</pre>

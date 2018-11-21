@@ -1,0 +1,212 @@
+Protein mass spectrometry can be divided into:
+* identification of proteins/peptides
+* quantification
+
+A good introductory tutorial from  USC Computational Biology group is [http://msms.cmb.usc.edu/tutorial.html here].
+
+=Protein/peptide identification=
+==Peptide Mass Fingerprinting (PMF) or (MS)==
+Old method, superseded by MS/MS
+* algorithms:
+
+** [http://www.matrixscience.com/home.html Mascot] (gives probabilistic score)
+** [http://www.expasy.org/tools/aldente/ Aldente]
+** [http://prowl.rockefeller.edu/prowl-cgi/profound.exe ProFound ProFound]
+
+* caveats
+** no sequence information
+** journals started to require that at least one peptide of a protein identified by PMF should be confirmed by MS/MS
+
+==Peptide fragment fingerprinting (PFF) or (MS/MS)==
+* algorithms (most commonly used):
+** [http://fields.scripps.edu/sequest/index.html Sequest] $$$
+** [http://www.matrixscience.com/home.html Mascot] $$$, free but limited [http://www.matrixscience.com/cgi/search_form.pl?FORMVER=2&SEARCH=MIS web server form]
+** [http://pubchem.ncbi.nlm.nih.gov/omssa/ OMSSA] Open Mass Spectrometry Search Algorithm, open source
+** [http://thegpm.org/ XTandem] open source effort from Canada
+
+* algorithms (other/new/experimental):
+** [http://www.chem.agilent.com/scripts/pds.asp?lpage=7771 Spectrum Mill] $$$
+** [http://compbio.ornl.gov/MASPIC/distribution/ MASPIC ]
+*** this paper claims 5-15% more confident hits than Sequest: [http://pubs.acs.org/cgi-bin/article.cgi/ancham/2005/77/i23/html/ac0501745.html]
+** [http://peptide.ucsd.edu/Software/Inspect.html  InsPecT] A new variable mods search from Pevzner & Tanner @UCSD (free?)
+
+* filtering bad quality spectra
+** [http://www.bioinfo.no/software/spectrumquality SpectrumQuality] see  [http://dx.doi.org/10.1002/pmic.200500309 Fikka et al. 2006] 
+** [http://proteomics.ucd.ie/msmseval/ msmsEval]
+** 
+
+* filtering of the results
+** Trans Proteomic Pipeline [http://tools.proteomecenter.org/TPP.php] (free?)
+*** download from  [http://sourceforge.net/project/showfiles.php?group_id=69281 Sourceforge] (TPP Cygwin Setup for Windows or 'Trans-Proteomic Pipeline' for Linux)
+*** commercial offshot  [http://www.insilicos.com/IPP.html IPP]
+*** wiki devoted to TPP [http://tools.proteomecenter.org/wiki/index.php?title=Main_Page TPP_Wiki] 
+*** dynamic newsgroup: [http://groups.google.com/group/spctools-discuss spctools-discuss]
+
+** [http://fields.scripps.edu/DTASelect/index.html DTASelect] it seems to be in a semi-frozen state (free for nonprofit but requires signed MTA)
+
+==Databases==
+===Protein databases===
+Use (if possible):
+* [http://www.ebi.ac.uk/IPI/IPIhelp.html IPI] International Protein Index
+* always use target-decoy database (i.e. concatenated: human_IPI + reversed_human_IPI)
+* decoy databases creation methods:
+** protein reversal (simple to perform. does not scramble fortunately quite rare palindromic sequences) 
+*** MEGGAYGAGKAGGAFDPYTL -=> LTYPDFAGGAKGAGYAGGEM
+** peptide pseudo-reversal (used in Sorcerer by Sage-N Research)
+*** MEGGAYGAGKAGGAFDPYTL => (trypsin digest, used [http://169.230.19.26:8080/prospector/4.27.1/cgi-bin/msform.cgi?form=msdigest Ms-Digest]) MEGGAYGAGK	AGGAFDPYTL => GAGYAGGEMK-ALTYPDFAGG (each peptide reversed, but trypsin digestion site preserved -> guessed from the Elias 2007 paper)  
+** shuffled 
+*** MEGGAYGAGKAGGAFDPYTL => FYAGADEAGMGTYKGGAGLP (used [http://host9.bioinfo3.ifom-ieo-campus.it/sms2/shuffle_protein.html SMS],  results differ each time) -> recommended by EBI ppl
+** random (i.e. creating database of random proteins based on frequency of AA in source fasta file)
+* to create decoy database use [http://genesis.ugent.be/dbtoolkit/ DBToolkit] free java standalone
+
+===Modification databases===
+* [http://www.unimod.org/ Unimod] (> 500 natural + labels)
+* [http://abrf.org/index.cfm/dm.home Delta Mass] A Database of Protein Post Translational Modifications (in vivo)
+* [http://www.ebi.ac.uk/RESID/ RESID] detailed descriptions of > 400 modifications
+
+
+==Peptide Tag Searching==
+"Designed to characterize peptides with mutations or unexpected post-translational modifications." (from Popitam page)
+
+* [http://fields.scripps.edu/GutenTag/index.html GutenTag] free for non-profit, MTA required. Assigns fewer peptides than Sequest but with fewer false positives. Occupies a middle ground between mainstream search algorithms and de novo sequencing.
+
+* [http://www.expasy.org/tools/popitam/ Popitam]
+
+==de novo sequence determination algorithms==
+For comparison see: Performance Evaluation of Existing De Novo Sequencing Algorithms by Pevtsov et al. (2006) [http://pubs.acs.org/cgi-bin/article.cgi/jprobs/2006/5/i11/pdf/pr060222h.pdf PDF] 
+===Comonly used===
+* Peaks [http://www.bioinformatics.uwaterloo.ca/papers/03peaks.pdf (PDF)]
+* PepNovo: [http://darwin.informatics.indiana.edu/col/meeting/2005_10/PepNovo.pdf (PDF)]
+* Lutefisk [http://www.hairyfatguy.com/Lutefisk/ web]
+* Sherenga [http://www.liebertonline.com/doi/pdfplus/10.1089/106652799318300 (PDF)]
+
+===Novel===
+These (according to authors) are better than any of the four listed above
+* [http://people.inf.ethz.ch/befische/proteomics/ NovoHMM]  for non-commercial use only, Windows binary. Model file for ThermoFinnigan LCQ mass spectrometer.
+According to Pevtsov NovoHMM has the best sensitivity, and its performance is the best in the entire range of spectrum quality. But the overall performance of NovoHMM is not significantly different from the performance of PEAKS and PepNovo.
+
+* NovoHMM++
+
+==Spectral matching ==
+The idea is that if one can match spectrum of an unknown peptide to  a very similar MS/MS spectrum in a database with a determined sequence/annotation then one can annotate unknown peptide in a process similar to orthologue annotation in protein sequence databases.
+Caveat: bad annotations will also get propagated.
+
+* [http://p3.thegpm.org/tandem/ppp.html P3 (server)] from Global Proteomics Machine (free)
+** [http://www.thegpm.org/PPP/index.html description]
+* [http://www.peptideatlas.org/spectrast/ SpectraST] from ISB, Seattle (not as many species/options as P3). Ca 500x faster than Sequest on the same set.
+[http://www.proteomecenter.org/course/spectraST.11.07.pdf lecture notes] by Henry Lam from ISB 
+
+* [http://proteome.gs.washington.edu/software/bibliospec/documentation/index.html BiblioSpec] from MacCoss lab. (free for non-profit, online licence)
+** command line only
+
+Spectral libraries available [http://www.peptideatlas.org/speclib/ here@PeptideAtlas]
+
+=Protein quantification=
+* approaches
+** isotopic labeling (ICAT, ITRAQ, SILAC, 18O- or 15N-labeling) 
+**label-free methods
+** [http://www.proteomics.be/proteomics/cofradic/index.html COFRADIC] 
+
+* software
+** [http://tools.proteomecenter.org/wiki/index.php?title=Software:ASAPRatio ASAPRatio] from Trans Proteomics Pipeline:<br>"calculates the relative abundances of proteins and the corresponding confidence intervals from ICAT-type ESI-LC/MS data"
+**  [http://msquant.sourceforge.net/ MSQuant] Parser for Mascot results for quantitation (Windows only)
+**  [http://arep.med.harvard.edu/mapquant-suite.html MapQuant Suite]
+=Frameworks/pipelines=
+* [http://tools.proteomecenter.org/TPP.php Trans Proteomic Pipeline ] (TPP) most popular, included in Sorcerer from Sage-N Research. Windows/Cygwin/Perl or Linux based.
+* [http://open-ms.sourceforge.net/index.php Open-MS] German, C++ based
+* [http://www.sagenresearch.com/products.html Sorcerer] $$$ FPGA-based fast hardware solution for SEQUEST & Tandem searches with TPP on top of it.
+
+=File formats=
+* '''.bdx''' from Bruker Daltonics
+* '''.dta''' SEQUEST/Thermoelectron. Two versions: 
+** single pectra
+** multiple spectra concateneted in one file
+* '''.mgf''' multiple spectra, Mascot (Matrix science)
+* '''mzXML''' (used by Trans Proteomics Pipeline)
+* '''mzData''' (standard set by HUPO Proteomics Standard Initiative) 
+
+=Spectrum datasets=
+Good for testing programs:
+* [http://www.peptideatlas.org/ PeptideAtlas@ Seattle Proteome Center]  
+
+* Open Proteomics Database [http://bioinformatics.icmb.utexas.edu/OPD/ OPD]
+* [http://www.ebi.ac.uk/pride/ppp_links.do HUPO Plasma Proteome Project files] PRIDE@EBI
+ 
+=Web sites=
+* [http://peptide.ucsd.edu/Software.html UCSD (Pevzner)]
+* [http://proteome.gs.washington.edu/ U. of Washington (MacCoss)]
+* [http://www.proteomecommons.org/tools.jsp Proteome Commons] collection of tools & links
+* [http://www.broad.mit.edu/cancer/software/genepattern/desc/proteomics.html GenePattern] proteomics modules from Broad Inst.
+* [http://msms.cmb.usc.edu/ USC in LA] several programs: PepHMM, Sub-DeNovo, SuffixTree-MS. 
+=Reviews=
+For a good review of programs and aspects of protein identification by mass spectrometry
+see:
+* [http://www3.interscience.wiley.com/cgi-bin/fulltext/112139941/HTMLSTART Hernandez et al. 2006 (HTML)]
+
+* [http://www3.interscience.wiley.com/cgi-bin/fulltext/113344091/PDFSTART Palagi et al. 2006 (PDF)]
+
+* [http://www3.interscience.wiley.com/cgi-bin/fulltext/112098427/PDFSTART Shadforth et al. 2005 (PDF)]
+
+
+
+=Tutorials=
+*  [http://www3.interscience.wiley.com/cgi-bin/abstract/113390666/ABSTRACT Frédérique Lisacek's @Proteomics] Web-based MS/MS Data Analysis on the web: Mascot, Phenyx and X!Tandem
+
+=Other tools to be sorted out=
+==Ortholog searches using sequence tags/ambigous sequence==
+* [http://dove.embl-heidelberg.de/Blast2/msblast.html MS-BLAST] 
+
+== $$$ programs ==
+* [http://www.waters.com/WatersDivision/contentd.asp?watersit=RHEY-5LHBSW ProteinLynx Global SERVER] $$$, from Waters Waters Corporation
+* [http://phenyx.vital-it.ch/pwi/ Phenyx] from GeneBio (online web server) 
+
+==Other==
+Needs to be sorted out. 
+
+* [http://www.bioinfo.no/software/massSorter massSorter ]
+* [http://prospector.ucsf.edu/ ProteinProspector]
+===Experimental===
+* [http://bioinformatics.genomicsolutions.com/service/prowl/sonar.html Sonar ]
+
+* DeNovoID [http://proteomics.mcw.edu/denovoid web]
+* SPIDER [http://ieeexplore.ieee.org/iel5/9262/29416/01332434.pdf?tp=&isnumber=&arnumber=1332434 (PDF)] de novo + homology search in other species based on a set of tags
+* OpenSea [http://pubs.acs.org/cgi-bin/article.cgi/jprobs/2005/4/i02/html/pr049781j.html (HTML)] Java program available from authors
+
+ ModifiComb [http://www.mcponline.org/cgi/content/full/5/5/935 (HTML)] (available from authors?)
+* [http://prix.uos.ac.kr/modi/ MODi] web server for PTMs discovery
+* [http://llama.med.harvard.edu/cgi/SILVER/silver.cgi?id=916487 SILVER] view your spectra with LOD scores
+
+
+
+<!--
+CHOMPER
+POPITAM
+VEMS 3.0
+MassSorter Eidhammer
+
+
+{{stub}}-->
+
+=Biblio=
+
+#Brun, Virginie, Alain Dupuis, Annie Adrait, Marlene Marcellin, Damien Thomas, Magali Court, et al. “Isotope-labeled Protein Standards: Toward Absolute Quantitative Proteomics.” Mol Cell Proteomics 6, no. 12 (December 1, 2007): 2139-2149.
+#Carr, Steven, Ruedi Aebersold, Michael Baldwin, Al Burlingame, Karl Clauser, and Alexey Nesvizhskii. “The Need for Guidelines in Publication of Peptide and Protein Identification Data: Working Group On Publication Guidelines For Peptide And Protein Identification Data.” Mol Cell Proteomics 3, no. 6 (June 1, 2004): 531-533.
+#Craig, Robertson, and Ronald C. Beavis. “TANDEM: matching proteins with tandem mass spectra.” Bioinformatics 20, no. 9 (June 12, 2004): 1466-1467.
+#Domon, Bruno, and Ruedi Aebersold. “Mass Spectrometry and Protein Analysis.” Science 312, no. 5771 (April 14, 2006): 212-217.
+#Elias, Joshua E, and Steven P Gygi. “Target-decoy search strategy for increased confidence in large-scale protein identifications by mass spectrometry.” Nat Meth 4, no. 3 (March 2007): 207-214.
+#Elias, Joshua E, Wilhelm Haas, Brendan K Faherty, and Steven P Gygi. “Comparative evaluation of mass spectrometry platforms used in large-scale proteomics investigations.” Nat Meth 2, no. 9 (2005): 667-675.
+#Eng, Jimmy K., Ashley L. McCormack, and John R. Yates. “An approach to correlate tandem mass spectral data of peptides with amino acid sequences in a protein database.” Journal of the American Society for Mass Spectrometry 5, no. 11 (November 1994): 976-989.
+#Kersey, Paul J., Jorge Duarte, Allyson Williams, Youla Karavidopoulou, Ewan Birney, and Rolf Apweiler. “The International Protein Index: An integrated database for proteomics experiments.” PROTEOMICS 4, no. 7 (2004): 1985-1988.
+#Kim, Sangtae, Seungjin Na, Ji Woong Sim, Heejin Park, Jaeho Jeong, Hokeun Kim, et al. “MODi : a powerful and convenient web server for identifying multiple post-translational peptide modifications from tandem mass spectra.” Nucl. Acids Res. 34, no. suppl_2 (July 1, 2006): W258-263.
+#Martens, Lennart, Sandra Orchard, Rolf Apweiler, and Henning Hermjakob. “Human Proteome Organization Proteomics Standards Initiative: Data Standardization, a View on Developments and Policy.” Mol Cell Proteomics 6, no. 9 (September 1, 2007): 1666-1667.
+#Perkins, David N., Darryl J. C. Pappin, David M. Creasy, and John S. Cottrell. “Probability-based protein identification by searching sequence databases using mass spectrometry data.” Electrophoresis 20, no. 18 (1999): 3551-3567.
+#Roos, Franz F., Riko Jacob, Jonas Grossmann, Bernd Fischer, Joachim M. Buhmann, Wilhelm Gruissem, et al. “PepSplice: cache-efficient search algorithms for comprehensive identification of tandem mass spectra.” Bioinformatics 23, no. 22 (November 15, 2007): 3016-3023.
+#Webb-Robertson, Bobbie-Jo M., and William R. Cannon. “Current trends in computational inference from mass spectrometry-based proteomics.” Brief Bioinform 8, no. 5 (September 1, 2007): 304-317.
+
+
+=Credits=
+
+{{credits}}
+
+* [[User:Darked|Darek Kedra]] wrote this tutorial
+<!-- other contributors, put yourself here -->

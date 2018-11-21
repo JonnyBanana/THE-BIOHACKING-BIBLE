@@ -1,0 +1,79 @@
+__NOTOC__
+<h1>VM2.0 regulation design considerations</h1>{{hide|1=
+[[Image:BC-VM20Regulation.png|thumb|right|500px|Regulation scheme for VM2.0]]
+#Stability
+#*Noise
+#**analytical stability analysis on very simple model or Routh-Hurwitz analysis for full model
+#**parameter sensitivity analysis
+#*Response time
+#**Better to have this fast or slow (slow response time averages out short time scale fluctuations)
+#Self-booting/controlled
+#*Ability to turn on or off
+#*Portability
+#Tunable
+#*Pros and cons of DNA copy number, promoter strength, repressor affinities etc.
+#Efficient
+#*Minimizing levels of repressor needed
+#*Minimizing consumption of small molecules
+
+What are the metrics for each of the design considerations?
+}}
+<br style="clear:both" />
+
+==Reduced Model==
+[[Image:BC-VM20RegulationReduced Model.jpg|thumb|400px|right|Reduced network for VM2.0]]
+*Two species, RNAP (activator) and repressor
+*Continuous differential equations
+*MATLAB
+*Dimensionless variables, lumped parameters.
+*Parameterized for T7 RNAP, "typical" repressor
+<br>
+<math>
+\dot{[u]} = \frac{a_{0}+a_{1}[u]}{1+[u]+[v]^{n}}-[u]\qquad(1)
+</math>
+<br>
+<math>
+\dot{[v]} = \frac{b_{0}+b_{1}[u]}{1+[u]+[v]^{n}}-[v]\qquad(2)
+</math>
+<br>
+
+<math>\displaystyle [u]</math> = dimensionless concentration of T7 RNAP
+<br>
+
+<math>\displaystyle [v]</math> = dimensionless concentration of repressor
+<br>
+<br style="clear:both" />
+
+If I assume that the two species are expressed in a constant ratio (i.e polycistronic expression or under promoters of proportional strength and have similar degradation rates) then the two equations can be reduced to one - 
+
+<math>
+\dot{[u]} = \frac{a_{0}+a_{1}[u]}{1+[u]+r[u]^{n}}-[u]\qquad(3)
+</math>
+
+
+
+===Big questions to answer===
+#What are the steady state levels of RNAP/Repressor as a function of parameters?
+#*Setting the LHS of Equation 3 to 0 and solving for the steady state level, <math>\displaystyle u_{ss}</math> with <math>\scriptstyle n=2</math> and ignoring small terms, the (single) fixed point, is <math>u_{ss} = \frac{\sqrt{a_{1}}}{r}</math>
+#What is the material usage like?
+#What happens when RNAP level drops suddenly (e.g. when another T7 reporter in the cell is derepressed.)
+===Reduced model results===
+[[Image:BC-VM20TimeCourse.jpg|thumb|300px|left|Time Course for RNAP and repressor species in reduced model]]
+[[Image:BC-VM20FixedPoint.jpg|thumb|300px|right|Nullclines and fixed point for plausible parameter values]]
+<br style="clear:both" />
+<h2>Species</h2>{{hide|1=
+#T7 RNAP
+#Repressor
+#Ribosomes<font color="green">
+#Repressible T7 promoter
+#T7RNAP-promoter complex
+#Repressor-promoter complex</font><font color="red">
+#T7 RNAP mRNA
+#Repressor mRNA
+#Elongating T7 RNAP
+#Elongating Ribosomes
+#etc.</font>
+
+===Model analysis notes===
+*A cooperative autogene network can exhibit bistability or monostability depending on parameter values ([http://web.mit.edu/biophysics/sbio/ 7.81]).  Does this apply if there is no cooperativity?
+}}

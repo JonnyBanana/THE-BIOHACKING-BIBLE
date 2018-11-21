@@ -1,0 +1,49 @@
+{{Sauer lab sidebar}}
+
+
+'''Principle.'''  We use a system that couples ADP formation (from an ATPase of interest) with classical metabolic reactions to quantify ATP hydrolysis rates, as referenced in Norby, JG (1988) ''Meth enzy'', '''156''', 116-9.  The basic principle can be summarized below:
+
+
+(1)  ATP &hArr; ADP + P<sub>''i''</sub>
+
+(2)  ADP + phosphoenolpyruvate &hArr; ATP + pyruvate
+
+(3)  pyruvate + NADH + H<sup>+</sup> &hArr; lactate + NAD<sup>+</sup>
+
+
+
+where reaction (1) is catalyzed by your ATPase, reaction (2) by pyruvate kinase, and reaction (3) by lactate dehydrogenase.  Loss of NADH (as monitored by absorbance at 340 nm) is quantifiably proportional to ATP hydrolysis rates because this set of reactions begins with equilibria strongly favoring the forward direction and neither reactions (2) or (3) are rate-determining.
+
+
+
+'''Calculating the ATPase Rate.'''
+
+
+<math>T\!otal\mbox{ }AT\!P\!ase\mbox{ }rate = \frac {rate\mbox{ }of\mbox{ }A_{340nm}\mbox{ }signal\mbox{ }loss} {pathlength * 6.23 mM^{-1}cm^{-1}}</math>
+
+
+
+By applying the above formula, you'll get some rate expressed in ''mM per unit time''.  For the molar activity (i.e., rate per mole of enzyme) simply divide this rate by the enzyme concentration you used in the assay.  This will give you a hydrolysis rate in units of ''per unit time per enzyme''.
+
+
+'''Procedure.''' In our lab, we use a 96-well plate reader that measures A<sub>340 nm</sub> over time in a 50 &mu;L reaction volume.  Stocks of 20X concentrate are pre-prepared and can be frozen at -80&deg;C until use.
+
+*Prepare the stock solutions below and aliquot the appropriate volumes of each to make the 20X ATPase reaction buffer, which is stored in 100 &mu;L  aliquots:
+{|border="1"
+|10 &mu;L || 3750 U/mL pyruvate kinase 
+|-
+|10 &mu;L || 4290 U/mL lactacte dehydrogenase
+|-
+|8 &mu;L || 250 mM NADH
+|-
+|15 &mu;L || 1 M phosphoenolpyruvate
+|-
+|25 &mu;L || 200 mM ATP
+|-
+|32 &mu;L || dH<sub>2</sub>O
+|}
+
+* Add your enzyme to a 1X aliquot of the ATPase reaction buffer in a 50 &mu;L total volume; mix thoroughly.
+* Monitor A<sub>340 nm </sub> and calcuate the ATPase rate using the above formula.
+
+(''Note: It's easier to thoroughly mix your reaction if you use equi-volumes of enzyme and buffer; you may want to start with a dilution to 2X ATPase reaction buffer.'')

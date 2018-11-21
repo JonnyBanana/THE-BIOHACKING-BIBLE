@@ -1,0 +1,63 @@
+Back to [[Silver Lab]]
+
+== Accessing the databases ==
+
+*We use two FileMaker Pro databases to keep track of orders. Open them:
+**In FileMaker Pro, select File -> Open Remote
+**Select "Local Hosts" in the bottom.  
+***If you do not see a list of Silver Lab databases, select "Specify Host..." and enter the IP (155.52.50.37)
+**From the list of Silver Lab databases, select "Silver General Stores database" and click "open"
+**Repeat, but open the "Silver Ordering database"
+**You should now have the two databases open in two windows.  
+***Once you have opened a remote database, FileMaker Pro remembers it and you can easily access it in the future at the bottom of the "File" menu.
+*'''Always close the databases''' when you are not using them.  The number of users that can connect simultaneously is very small.
+
+
+== Ordering Common Items == 
+*Common items will usually be found in the General Stores database.  
+*The way to order something common is to search for a previous order for the same item, and duplicate it.
+*#Select View -> Find Mode or enter the appropriate keyboard shortcut (command-F on macs)
+*#In the "Item Description" field, enter a search term (for example, "scotch tape"), and push return.
+*#*The results will appear in the same window.  
+*#*You can scroll through different database entries using the icons in the top left. 
+*#*If you get no results, try searching again with a different search term, or skip down to "Ordering Less Common Items." 
+*#Once you have found an order for exactly what you want, duplicate it by selecting Records -> Duplicate Record.
+*#You will be presented with a new record with today's "Order Date."  
+*#*Change the following fields: 
+*#**Received Date: erase the date.  This will now remain empty until your shipment arrives, so we know what has been received.
+*#**Quantity (if you want to order a different amount)
+*#**Ordered By (add your name to the list at the bottom if necessary -- alphabetically, please)
+*#**Order Number: erase whatever number was there.  This will let the technician know that your order has not been placed yet.
+*#Your inputs are saved as you go along.  
+*#*You can '''close the database''' now if you are done, or search for another entry to duplicate.
+*#*You can click on "Show all records" to return to the view of the entire database.
+
+== Ordering Less Common Items ==
+*All orders not placed through the General Stores database will go through the Ordering database.
+*The general mechanism here is similar: search for an old record, and duplicate it.
+**Change the following fields in your new record, if you have duplicated it from an old one:
+***Received Date: erase the date.  This will now remain empty until your shipment arrives, so we know what has been received.
+***Quantity (if you want to order a different amount)
+***Ordered By (add your name to the list at the bottom if necessary -- alphabetically, please)
+***Order Number: erase whatever number was there.  This will let the technician know that your order has not been placed yet.
+***PO Number: erase whatever number was there.
+***'''Do not change''' the "DFCI Item ID Number" if there is one.  If there is none, totally don't even worry about it.  
+**The inputs are saved as you go along, so just '''close the database''' when you are done.
+
+*If you can't find what you want among old orders, this is the proper database in which to place a '''new order''':
+*#Find all the information about what you want in the vendor's catalog or website.
+*#In FileMaker Pro, select Record -> New Record to create a new database entry from scratch
+*#Enter information in the following fields:
+*#*Order Date: should be automatically entered.
+*#*Quantity
+*#*Unit
+*#*Unit Price (Total Price will be automatically calculated through the miracle of multiplication)
+*#*Ordered by (add your name to the list by clicking "edit" at the bottom -- alphabetically, please)
+*#*Item Description
+*#**If you have a particular price quote or any other information relevant to this particular order, add that to the Item Description field just as a note to the technician. 
+*#*Catalog Number (from the Vendor's catalog)
+*#*Vendor (choose from the dropdown list)
+*#**If your vendor is not in the list, enter it manually by clicking "other" at the bottom.  Or click "edit" at the bottom to permanently add it to the list (alphabetically), if you think you will be ordering from them again.
+*#**When adding a new vendor, please add the Vendor's contact info (address, phone, fax, e-mail, contact person, or whatever is available) to the Item Description field so the technician can put your order through to the Purchasing Dept.  
+*#*Leave blank the fields for Order Number, PO Number, and DFCI Item Number
+*#Once you have entered everything properly and you are done, remember to '''close the database'''.  Inputs are saved as you go along.

@@ -1,0 +1,104 @@
+<br><br>
+<font size="6"><center>'''Model 4:Bounded Predator and Prey Growth with Regulated killing of Preys'''</center></font size="6">
+<br><br><br>
+
+= '''Introduction''' =
+<font size="4">'''Generalities''' </font size="4">
+:*After proving that bounding both growth and enzymatic degradation of the preys grants the system the capacity to oscillate
+::- we now reintroduce the bounded predator growth
+::- and check that is does not disturb the balance to the extent that oscillations are impossible again.
+:*The '''Dynamical System of Interest''' in this section is:
+[[Image:LV4.png|center]]
+
+<font size="4">'''Physical interpretation of the equations'''</font size="4">
+:*From a physical point of view the equations are those of the molecular predation system in the absence of chemostat (or equivalently with zero washout).
+<br><br>
+<font size="4">'''Dimensionless Model'''</font size="4">
+:*Since we now have 7 variables , we normalise the system by rescaling the X,Y axes and changing the time scale as we did with model 3, which leaves us with 4 variables only.
+:*We will use this dimension-less version of the Dynamic System for the rest of the study.
+[[Image:LV4norm.png|center]]
+
+= '''Basic Results on the Steady Points''' =
+
+<font size="4">'''Number of Steady Points'''</font size="4">
+:* The '''origin (0,0)''' remains a steady point
+:* The '''other steady points''' of the system are '''associated to a quadratic equation'''
+:* If BC/D<1 the equation yields '''two admissible steady points'''
+:* Else the equation yields only '''one admissible steady point'''
+<br>
+
+<font size="4">'''Nature of the Steady Points'''</font size="4">
+:* The '''origin (0,0)''' remains a '''saddle point'''
+:* If BC/D<1 (two admissible steady points)
+::- One of them is a '''saddle point'''
+::- The '''nature''' of the other point '''can be adjusted''' (from stable to unstable via centre)
+:* If BC/D is larger or equal to 1 (one steady point)
+::- The '''nature''' of this point '''can be adjusted''' (from stable to unstable via centre)
+<br><br>
+
+= '''Behaviour at Infinity''' =
+
+<font size="4">'''A New Explosive Mode'''</font size="4">
+:* We could not prove simply that the trajectories remained bounded as time goes to infinity. 
+:* Simulations quickly showed this was a hopeless effort
+:* '''For a combination of parameters trajectories are not bounded'''!!!
+<br>
+<font size="4">'''Case 1: When BC/D < 1 (the system has 3 steady points)'''</font size="4">
+:* trajectories are not bounded
+:* the predator population converges to a steady value D/C
+:* this predator population is too low to repress the prey population
+:* the prey population '''diverges to infinity'''
+<br>
+<font size="4">'''Case 2: When BC/D>=1 (the system has 2 steady points)'''</font size="4">
+:* trajectories remain bounded and spin around the second steady point
+:* we can apply Poincare-Bendixson
+:* consequently
+::- when the point is stable, the system stabilises itself at the steady point
+::- else we have oscillations around the steady point
+<br>
+
+<font size="4">'''Summary of the Results'''</font size="4">
+:It follows from the results stated above that the system has '''three different modes'''
+:* '''Prey Explosion''' 
+:* '''Stability'''
+:* '''Oscillations'''
+<br><br>
+
+='''Typical Simulations''' =
+<br>
+<font size="4">'''First Mode: Prey Explosion'''</font size="4">
+<br><br>
+[[Image:2d model 4a1.PNG|thumb|380px|left|Phase Diagram]]
+[[Image:2d model 4a2.PNG|thumb|380px|right|Time Diagram]]
+<br style="clear:both;"/>
+
+<font size="4">'''Second Mode: Oscillations''' </font size="4">
+<br style="clear:both;"/>
+[[Image:2d model 4a3.PNG|thumb|380px|left|Phase Diagram]]
+[[Image:2d model 4a4.PNG|thumb|380px|right|Time Diagram]]
+<br style="clear:both;"/>
+
+<font size="4">'''Last Mode: Stability'''</font size="4">
+<br style="clear:both;"/>
+[[Image:2d model 4a5.PNG|thumb|380px|left|Phase Diagram]]
+[[Image:2d model 4a6.PNG|thumb|380px|right|Time Diagram]]
+<br style="clear:both;"/>
+
+* '''Note on the Simulations:''' 
+:*Simulations using different initial conditions are assigned different colors (the open-end of the trajectories is the starting point). 
+:*In the phase diagrams , red dots symbolise a steady points.
+<br><br>
+
+='''Conclusion'''=
+
+:*Bounding the predator growth has not removed the '''capacity''' of the system '''to oscillate on a unique limit-cycle'''. 
+:*However, it has introduced a '''new''' dangerous (and highly unrealistic) '''mode''' where the prey population explodes. 
+:*Fortunately a final modification still needs introducing: the use of a chemostat in our final construct. The chemostat is used to keep the ratio of cells constant primarily, but also to get rid of any excess in the system. It is hoped that this regularising behaviour will help stabilise the system enough to eliminate the 'explosion' mode.
+
+='''Appendices'''=
+
+:A more '''detailed analysis''' of the system was made by Matthieu. Please consult it if you have any questions on the results on this page.
+:*[[http://www.openwetware.org/images/a/ab/2D_Model_-_1_Intro.pdf Intro]]
+:*[[http://www.openwetware.org/images/e/e1/2D_Model_-_2_Physical_Interpretation.pdf Physical Interpretation]]
+:*[[http://www.openwetware.org/images/2/29/2D_Model_-_3_Steady_Points.pdf Steady Points]]
+:*[[http://www.openwetware.org/images/5/5c/2D_Model_-_5_Dynamic_Analysis.pdf Stability Analysis]]

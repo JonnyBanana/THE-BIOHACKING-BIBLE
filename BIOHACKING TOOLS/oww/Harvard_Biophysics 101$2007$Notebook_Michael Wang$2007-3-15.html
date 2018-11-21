@@ -1,0 +1,81 @@
+''' Step 1 '''
+The first thing I did was identify the orfs in the sequence.  I could use my orf function from the last assignment, but I did it manually and found a start codon at position 62 and a stop position at position 73 for a 7 Aa orf.  Pretty short.  
+<pre>
+>example1 <BR>                                                                     
+CACCCTCGCCAGTTACGAGCTGCCGAGCCGCTTCCTAGGCTCTCTGCGAATACGGACACG                  
+C(ATGCCACCCACAACAACTTTTTAA)AAGAATCAGACGTGTGAAGGATTCTATTCGAATTA                   
+CTTCTGCTCTCTGCTTTTATCACTTCACTGTGGGTCTGGGCGCGGGCTTTCTGCCAGCTC                  
+CGCGGACGCTGCCTTCGTCCAGCCGCAGAGGCCCCGCGGTCAGGGTCCCGCGTGCGGGGT                   
+ACCGGGGGCAGAACCAGCGCGTGACCGGGGTCCGCGGTGCCGCAACGCCCCGGGTCTGCG                   
+CAGAGGCCCCTGCAGTCCCTGCCCGGCCCAGTCCGAGCTTCCCGGGCGGGCCCCCAGTCC                  
+GGCGATTTGCAGGAACTTTCCCCGGCGCTCCCACGCGAAGC
+</pre>
+
+''' Step 2 '''
+
+This is useless without some comparison so I blasted it and it matched to a sequence on human chromosome 10 with one SNP at position 202.
+
+<pre>
+>ref|NT_030059.12|Hs10_30314 Download subject sequence spanning the HSP Homo sapiens chromosome 10 genomic contig, reference assembly
+Length=44617998
+
+ Features flanking this part of subject sequence:
+   3895 bp at 5' side: hypothetical protein
+   425 bp at 3' side: HtrA serine peptidase 1
+
+ Score =  787 bits (397),  Expect = 0.0
+ Identities = 400/401 (99%), Gaps = 0/401 (0%)
+ Strand=Plus/Plus
+
+Query  1         CACCCTCGCCAGTTACGAGCTGCCGAGCCGCTTCCTAGGCTCTCTGCGAATACGGACACG  60
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42968870  CACCCTCGCCAGTTACGAGCTGCCGAGCCGCTTCCTAGGCTCTCTGCGAATACGGACACG  42968929
+
+Query  61        CATGCCACCCACAACAACTTTTTAAAAGAATCAGACGTGTGAAGGATTCTATTCGAATTA  120
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42968930  CATGCCACCCACAACAACTTTTTAAAAGAATCAGACGTGTGAAGGATTCTATTCGAATTA  42968989
+
+Query  121       CTTCTGCTCTCTGCTTTTATCACTTCACTGTGGGTCTGGGCGCGGGCTTTCTGCCAGCTC  180
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42968990  CTTCTGCTCTCTGCTTTTATCACTTCACTGTGGGTCTGGGCGCGGGCTTTCTGCCAGCTC  42969049
+
+Query  181       CGCGGACGCTGCCTTCGTCCAGCCGCAGAGGCCCCGCGGTCAGGGTCCCGCGTGCGGGGT  240
+                 |||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||
+Sbjct  42969050  CGCGGACGCTGCCTTCGTCCGGCCGCAGAGGCCCCGCGGTCAGGGTCCCGCGTGCGGGGT  42969109
+
+Query  241       ACCGGGGGCAGAACCAGCGCGTGACCGGGGTCCGCGGTGCCGCAACGCCCCGGGTCTGCG  300
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42969110  ACCGGGGGCAGAACCAGCGCGTGACCGGGGTCCGCGGTGCCGCAACGCCCCGGGTCTGCG  42969169
+
+Query  301       CAGAGGCCCCTGCAGTCCCTGCCCGGCCCAGTCCGAGCTTCCCGGGCGGGCCCCCAGTCC  360
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42969170  CAGAGGCCCCTGCAGTCCCTGCCCGGCCCAGTCCGAGCTTCCCGGGCGGGCCCCCAGTCC  42969229
+
+Query  361       GGCGATTTGCAGGAACTTTCCCCGGCGCTCCCACGCGAAGC  401
+                 |||||||||||||||||||||||||||||||||||||||||
+Sbjct  42969230  GGCGATTTGCAGGAACTTTCCCCGGCGCTCCCACGCGAAGC  42969270
+</pre>
+
+''' Step 3 '''
+
+This SNP does not fall within the contained ORF so there does not immediately appear to be anything to be worried about.  However, it might be worth it to check it against OMIM.  Searching for HtrA serine peptidase 1 on Chromosone 10 gives one SNP:
+
+http://www.ncbi.nlm.nih.gov/SNP/snp_ss.cgi?subsnp_id=16082056
+
+This SNP matches up to the one we have from the blast comparison.  Apparently it increases the risk of age-related macular degeneration, which has been verified in both a Hong Kong and Utah based population.  If I were a physician, I would recommend that the patient seek the opinion of an optometrist and have genetic testing done on relatives to see if they are also at risk.
+
+A python implementation would basically follow these same steps, starting with the ORF identifier from the previous assignment, then automating a blast search and a subsequent OMIM query of any features identified by blast.  To allow batch comparisons, the program should be able to suck up multiple sequences from various files (implemented in previous programs).
+
+Here's my test sequence:
+<pre>
+>ExampleM
+ CGTGGGCTGC TTCTTTCCCC AGGCGAAGCT CAACTTCCTC CCATTGTTCT GAACCTCTGT
+ GTGGACATCT TCTTTCTTCA AACGCACCAC GGTAAAATTC TCGCCTGCCT CGAAACCCCG
+ CCTACCTCTG AGATCTGAGG ACGGATACTA AACGCTGGAC TTAAGGCAAT GTACACATGT
+ AAGCAGGCTC TGTAGGCACT CACTCCGCCC AGGTGCGCGC GTGGCGGAGG GGGAACAGAG
+ AAGCAGGACA GCTCTCCATC CTTCCCGTGT TCAGTCGTGG GAGACAACAA GAGAGGTCAC
+ AGCCTGGCGA CCAAAAAGTG CGGCTAACTT CCCTGCCCAA GCTGACTTTC TCTGCAGGGT
+ TCAAGGTTAA TTGTGAGGAT TTACATTCGC ATGGCACACC CGCATCCCCC TCTACGTGGA
+ AATATGTCTT AACTTTCATA ACTGCCTTGC CAGCAGGGTA TTTTTCGCTA GGGGCGAAGC
+ GTCCTTCGCA AGCCACCCAG CTGACCGGCA G
+</pre>

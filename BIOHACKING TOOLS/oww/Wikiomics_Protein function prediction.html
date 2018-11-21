@@ -1,0 +1,121 @@
+There are now plenty of proteins which have a totally unknown function. Automated function prediction is an active research field, with a growing community of bioinformaticians as observed at the [http://biofunctionprediction.org AFP-SIG] that took place at the [http://www.iscb.org/ismb2005/ ISMB 2005 conference], and at University of California San Diego in  2006.
+
+Most often, only the sequence of the protein is known, but there are also hundreds of protein structures of unknown function which are provided by the [http://en.wikipedia.org/wiki/Structural_genomics structural genomics] centers. Sometimes the proteins come from prokaryotes where the operons make it possible to infer the function of a protein from its genomic context, but this is more complicated in eukaryotes. And more generally, it is easier to guess right when a given protein has well-described homologs than when it belongs to a family of unknown biological role.
+
+Of course, the notion of ''protein function'' is pretty broad and cannot easily be encoded without relying on a complex vocabulary. For that matter, the [http://www.geneontology.org/ Gene Ontology] aka GO provides hierarchical set of keywords called GO terms which describe different aspects of protein function with different levels of precision. GO is currently imposing itself as a standard for proteome annotation and function prediction of proteins.
+
+Among the current software tools that exist today, several main strategies can be distinguished:
+* homology search and transfer of annotations:
+** sequence alignment
+** structure alignment
+* function inference by genomic context
+* phylogenomic approaches
+* prediction from structure using similarities that are not homology-based:
+** local sequence patterns
+** physico-chemical sequence features
+** 3D local sites
+** 3D physico-chemical features
+
+== Servers which competed at the AFP-SIG 2005 ==
+
+See also the short summaries by the authors themselves at [http://ffas.burnham.org/AFP/Challenge/servers/ the official site of AFP-SIG 2005].
+
+These servers are based on transfer of function based on homology:
+* [http://www.salilab.org/~marcius/beta_dbali/?page=tools&action=f_chain_all DBAli Annolite] <cite>dbali</cite> 
+* [http://dragon.bio.purdue.edu/pfp/pfp.html PFP]<cite> pfp </cite>
+* [http://www.cs.ualberta.ca/~bioinfo/PA/ ProteomeAnalyst] <cite>pa pa-gosub</cite>
+* [http://genius.embnet.dkfz-heidelberg.de/menu/biounit/open-husar GOPET] <cite>gopet</cite>
+
+And the other servers are:
+* [http://www.ebi.ac.uk/interpro/internal-tools/squid-internal/squid-srv/aaSpearmintTools.do SpearMint] and [http://www.ebi.ac.uk/interpro/internal-tools/squid-internal/squid-srv/aaRulebaseTools.do RuleBase] (not public yet) <cite>wieser2004</cite> 
+* [http://igs-server.cnrs-mrs.fr/phydbac/indexPS.html PhydBac] <cite>enault2003 phydbac phydbac2 fusiondb phydbac2005</cite> analyzes bacterial proteins using genomic context.
+* [http://www.doe-mbi.ucla.edu/Services/ProKnow/ ProKnow] <cite>proknow</cite> searches for known 3D folds, sequences, motifs, and functional linkages
+
+== Basic tools ==
+
+* [[Wikiomics:BLAST]] and [[Wikiomics:PSI-BLAST]] <cite>blast psiblast</cite> are commonly used to search for homologous protein sequences by sequence alignment.
+* [http://www.expasy.org/prosite/ Prosite] <cite>prosite_first prosite_last</cite> is a searchable database of sequence patterns that are associated with some biological functions.
+
+== Other protein function prediction servers ==
+
+[http://jafa.burnham.org/ JAFA] is a meta-server for function prediction of proteins: it produces a prediction based on an aggregate from other servers. You might want to start with [http://jafa.burnham.org/ JAFA] since it queries [http://jafa.burnham.org/learnMore.html 5 servers] (GOFigure,
+GOblet,
+InterproScan,
+GOtcha,
+PhydBac) and shows you where their results agree and differ.
+
+Miscellaneous servers:
+* [http://wolf.bms.umist.ac.uk/~mjfikpd2/predict/enon.html Protein Function Prediction Server] - Protein function predictions from PDB structures <cite>dobson-doig</cite>. An enzyme/non-enzyme predictor, and an enzyme class predictor are available.
+* [http://udgenome.ags.udel.edu/gofigure/ GoFigure] <cite>gofigure</cite> predicts the function of a gene or protein
+* [http://www.ebi.ac.uk/thornton-srv/databases/profunc/ ProFunc] <cite>profunc_a profunc_b</cite> performs predictions from a protein structure
+
+See also [[Wikiomics:Searching for 3D functional sites in a protein structure]].
+
+Methods using non-sequential sequence features:
+* [http://www.cbs.dtu.dk/services/ProtFun/ ProtFun] <cite>protfun2002 protfun2003</cite>
+* [http://abcis.cbs.cnrs.fr/propsearch/propsearch.html PropSearch] <cite>propsearch</cite>
+
+These methods are based on function transfer after homology searches:
+* [http://www.blast2go.de Blast2GO] <cite>blast2go</cite>
+* [http://functionalgenomics.de/ontogate/ OntoBlast] <cite>ontoblast</cite>
+* [http://goblet.molgen.mpg.de/ GOblet] <cite>goblet2003 goblet2004</cite>
+* [http://www.compbio.dundee.ac.uk/gotcha/gotcha.php GOtcha] <cite>gotcha</cite>
+* Phunctioner <cite>phunctioner</cite> is a method based on the association of GO terms with conserved residues in 3D structural alignments
+
+Phylogenomic approaches:
+* [http://orthostrapper.cgb.ki.se/ Orthostrapper] <cite>orthostrapper</cite>
+* [http://www.rio.wustl.edu/ RIO] <cite>rio</cite>
+* SIFTER <cite>sifter</cite>
+* [http://www.up.univ-mrs.fr/evol/figenix/ FIGENIX] <cite>figenix</cite>
+
+== See also ==
+
+* [[Wikiomics:Automated function prediction of genes and proteins]], our local community pages
+
+* [http://bib.oxfordjournals.org/cgi/content/full/7/3/225?ijkey=n3AzMhAJ4nZjzAy&keytype=ref Automated Function Prediction -- the Genomic Challenge] <cite>afpreview</cite>
+
+== References ==
+<biblio>
+#wieser2004 pmid=15262818
+#dbali pmid=11524379
+#enault2003 pmid=12855445
+#phydbac pmid=12824402
+#phydbac2 pmid=15215406
+#phydbac2005 pmid=16221304
+#fusiondb pmid=14681411
+#proknow pmid=15642267
+#pa pmid=15215412
+#pa-gosub pmid=15608166
+#gopet pmid=15333146
+#dobson-doig pmid=12850146
+#protfun2002 pmid=12079362
+#protfun2003 pmid=12651722
+#gofigure pmid=14668239
+#profunc_a pmid=15980588
+#profunc_b pmid=16019027
+#ontoblast pmid=12824422
+#goblet2003 pmid=12824400
+#goblet2004 pmid=15215401
+#gotcha pmid=15550167
+#orthostrapper pmid=11836216
+#rio pmid=12028595
+#sifter pmid=16217548
+#blast pmid=2231712
+#psiblast pmid=9254694
+#prosite_first pmid=7584418
+#prosite_last pmid=14681377
+#phunctioner pmid=15456910
+#propsearch pmid=7650738
+#figenix pmid=16083500
+#blast2go pmid=16081474
+#afpreview pmid=16772267
+#pfp pmid=16672240
+</biblio>
+
+== Credits ==
+{{credits}}
+
+* [[User:Martin Jambon|Martin Jambon]]: introduction plus the initial list of tools and papers, put together after the AFP-SIG 2005 conference (at ISMB 2005)
+* other Wikiomics authors
+
+[[Category:Protein]]

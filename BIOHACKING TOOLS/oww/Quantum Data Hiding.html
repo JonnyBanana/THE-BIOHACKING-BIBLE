@@ -1,0 +1,143 @@
+Quantum data hiding refers to multiparty distributed encoding schemes of data, either classical or quantum, into quantum states, where unauthorized subsets of the party cannot reconstruct the hidden state using only [http://en.wikipedia.org/wiki/LOCC LOCC] operations.  These differ from [http://www.perimeterinstitute.ca/personal/dgottesman/QSS.html quantum secret sharing] (QSS) in this respect, being that in QSS unauthorized subsets can reconstruct the secrect using LOCCs.  Like classical data hiding schemes, quantum data hiding relies on sharing of data between participants so as to limit limit information to unauthorized subsets of participants while allowing information to be revealed to authorized subsets.  Security cannot in general be parameterized one-dimensionally, as with threshold schemes, but rather by the revealing and hiding strength over authorized and unauthorized sets respectively.  A quantum hiding data hiding scheme is called <math>\epsilon</math> secure if for any unauthorized set and analyzing operator <math>A</math>, 
+
+<math>Tr(\rho_i A) - Tr(\rho_j A) \leq \epsilon</math> 
+
+for all <math>i,j</math> and <math>\delta</math> revealing or correct if for any authorized set and at least one analyzing operator <math>A</math>, 
+
+<math>Tr(\rho_i A) - i \leq \delta </math> 
+
+for all <math> i </math>.
+
+==Two-Party Hiding==
+===Hiding in Bell States===
+Quantum data hiding schemes can be implemented utilizing quantum entanglement.  In the case of two party entanglement, the [http://en.wikipedia.org/wiki/Bell_state Bell states]: 
+
+<math>|\Phi^+\rangle = \frac{1}{\sqrt{2}} (|0 ~ 0\rangle + |1 ~ 1\rangle)</math>
+
+<math>|\Phi^-\rangle = \frac{1}{\sqrt{2}} (|0 ~ 0\rangle - |1 ~ 1\rangle)</math>
+
+<math>|\Psi^+\rangle = \frac{1}{\sqrt{2}} (|0 ~ 1\rangle + |1 ~ 0\rangle)</math>
+
+<math>|\Psi^-\rangle = \frac{1}{\sqrt{2}} (|0 ~ 1\rangle - |1 ~ 0\rangle)</math>
+
+can be used.  One hiding scheme utilizing these states harness the permutation symmetry of these states<ref name="hidingbell">{{cite journal |last=Terhal |first= |coauthors=DiVincenzo, Leung |year= 2001 |month= |title= Hiding Bits in Bell States|journal=arxiv:quant-ph/0011042v3 |volume= |issue= |pages= |id= |url= |accessdate= 2007-12-06 |quote= }}</ref>.  Define a permutation operator on two qubits as
+
+<math> V_{1 2} = \displaystyle\sum_{i,j}{|i j \rangle \langle j i |}. </math>
+
+
+This operator has +1 eigenvalue with all the Bell states except for <math> |\Psi^-\rangle </math>, with which it has eigenvalue -1.  The parity of a Bell state, therefore, hides one bit between two parties with with some degree of security because the permutation symmetry cannot be directly measured without allowing state exchange.  A hider only need to distribute a triplet among the parties if she wants to hide "0" and the singlet for "1".  This scheme lacks perfect security however, because the parties can use LOCCs to measure the state with some certainty.
+
+====Security of a Generalized Scheme====
+
+Suppose the "hider" wishes to to hide a classical bit <math> b </math> in a two party quantum state.  The hider can pick at random <math> d </math> Bell states to distribute to Alice and Bob, except that the hider ensures that the number of singlets is odd or even for hiding the classical bit <math> b = 1,0 </math> respectively.  Alice and Bob need only open up a quantum channel between then and measure the parity of the state to reveal the hidden bit.  
+
+Because of the locality requirement of measurements, it can be shown that the parties are restricted to a set of quantum measurements satisfying a [http://en.wikipedia.org/wiki/Peres-Horodecki_criterion positive partial transpose] (PPT) or separability.  It can be shown that their measurements using only LOCCs is bounded by:
+
+<math> - \delta \le p_{1 | 1} + p_{0 | 0} + 1 \le \delta </math>
+
+where <math> p_{i | i } </math> is the probability of measuring <math> i </math> given <math> i </math> and <math> \delta = 1 / 2^{d - 1} </math>.  So as <math> d \to \infty </math> the value of the bit can be hidden with certainty.
+
+It should be noted that given a certain amount of prior entanglement, the parties can determine information about the hidden bit.  However, this information is on the order of the amount of information needed to establish [http://en.wikipedia.org/wiki/Quantum_teleportation quantum teleportation].
+
+====Construction in the Labratory====
+
+This scheme is realizable in the laboratory, Bell states being constructible via optical down-conversion.  Photons can then be sent through optical fibers to Alice and Bob.  To reveal the secret, Alice can send her photons to Bob via a quantum channel and Bob can measure the number of singlets.  These measurements can be preformed in modern labs, as complete Bell measurements are unnecessary and technically unfeasible. <ref name="hidingbell"/>
+
+===Hiding in Werner States===
+It can be shown that hiding schemes are realizable without quantum entanglement.  The basis of this is shown by () where it can be shown that LOCC measurements cannot distinguish between three non-entangled non-orthogonal states as well as with quantum communication.  In this case, Werner states can be used, which are mixtures of Bell states:
+
+<math>\rho_0^{(d)} = I+ 2^d H</math>
+
+<math>\rho_1^{(d)} = I- 2^d H</math>
+
+where 
+
+<math>H = (1 \otimes T)^{\otimes d} \left[ | \Psi^+ \rangle \langle \Psi^+|^{\otimes d} \right] </math>
+
+where <math>T</math> is the partial transpose operator over Bob's qubits.  Bipartite [http://www.quantiki.org/wiki/index.php/Werner_states Werner states] are quantum states with <math>U^{(d)} \otimes U^{(d)} </math> symmetry.  In this scheme, <math>\rho_0^{(d)}</math> is unentangled, while <math>\rho_1^{(d)}</math> is entangled.  These states have permutation symmetry over two n-bit so hiding and revealing can be obtained using that symmetry.  The quantum resources needed to prepare these states are on the order of one ebit which is much less than the bell state scheme (<math>d^2</math> ebits).
+
+===Hiding Multiple Bits===
+It is easy to see that these schemes extend to hiding multiple bits.  The preparer only need to apply the scheme to each bit to be hidden and designate each bit to different block of Bell or Werner states.  However, it cannot be guaranteed that information cannot be obtained from LOCC measurements across the bit partitions unless <math>n</math> scales appropriately<ref name="hidingbell"/>.
+
+==Multi-Party Data Hiding==
+Multi-party schemes are useful in allowing hiding and revealing to more complicated partitions.  For example, a president of a bank may want a hiding scheme between four managers such that three of them can reveal a bank code by two of them cannot.  In this case, with participants A, B, C, and D the hiding partitions are ({A},{B},{C},{D}), ({A},{B},{C,D}), and ({A,B},{C,D}) and the revealing partitions are ({A,B,C},{D}) and its permutations and ({A,B,C,D}).  In general, these schemes cannot be parameterized one-dimensionally as in a scheme which ({A,B},{C,D}) is authorized and ({A,B,C},{D}) is unauthorized.  
+
+===Cat States===
+Bells states generalize to multipartite d-bits (d dimensional qubits) as [http://en.wikipedia.org/wiki/Cat_state cat states], which are maximally entangled and possess similar symmetries.  However, these are difficult to produce in the laboratory since the amount of entanglement needed goes like <math>d^n</math> for n parties.
+
+===Multipartite Werner States===
+From the case with a bipartite system, [http://www.quantiki.org/wiki/index.php/Werner_states Werner states] can be generalized over a multipartite system.  Also, the Werner states are easier to produce in the laboratory since the amount of entanglement needed goes like (need to find this).  These have the same type of symmetries as the bipartite case, but over all multipartite permutations,
+
+<math> V_\pi = \displaystyle\sum_{i j k l}{\pi |i j k l\rangle \langle i j k l |}. </math>
+
+where <math>\pi</math> is a permutation over a subset.  For insance,
+
+<math> V_{123} = \displaystyle\sum_{i j k l}{|j k i l\rangle \langle i j k l |}. </math>
+
+Using this symmetry, it is possible to hide the bits in the vector<ref name="multihiding">{{cite journal |last=Eggeling |first= |coauthors=Werner |year= 2002 |month= |title= Hiding Classical Data in Multi-Partite Quantum States|journal=arxiv:quant-ph/0203004v2 |volume= |issue= |pages= |id= |url= |accessdate= 2007-12-06 |quote= }}</ref>,
+
+<math> \rho_i = (r_2, r_{2 2}, r_3, r_4) </math>
+
+where the coefficients are the expectation values:
+
+<math> r_2 = tr \left(\rho_i V_{12} \right) </math>,
+<math> r_{2 2} = tr \left(\rho_i V_{(12)(34)} \right) </math>,
+<math> r_3 = tr \left(\rho_i V_{123} \right) </math>,
+<math> r_4 = tr \left(\rho_i V_{1234} \right) </math>.
+
+====Security====
+
+Because of the requirement of [http://en.wikipedia.org/wiki/Peres-Horodecki_criterion positive partial transpose] (PPT) or separability, it can be shown that for a partition <math>\mathcal{P}</math> and a analyzing operator 
+
+<math> A = \displaystyle\sum_{\pi} a_\pi V_\pi </math>
+
+the coefficients <math>a_\pi</math> for a permutation <math>\pi</math> not adapted to <math>\mathcal{P}</math> (i.e., takes elements of subsets of the partition into other subsets) are on the order <math>\frac{1}{d}</math> or zero as the dimension is large<ref name="multihiding"/>.  Therefore security can be obtained by hiding the bit in states <math>\rho_1</math> and <math>\rho_0</math> such that <math>Tr(\rho_1 A) = Tr(\rho_0 A)</math> for any A adapted to unauthorized sets so that <math>Tr(\rho_1 A) - Tr(\rho_0 A) = \mathcal{O}\left(\frac{1}{d}\right)</math>.  From this, the scheme is said to be <math>\epsilon</math> hiding depending on the remaining <math>\mathcal{O}\left(\frac{1}{d}\right)</math> factors.
+
+====Revealing Properties====
+In addition, in order to reveal to authorized sets, for those same hiding states it must be ensured that <math>Tr(\rho_1 V_\pi) \not= Tr(\rho_0 V_\pi)</math> for at least one permutation adapted to all the authorized set.  From the <math>\mathcal{O}\left(\frac{1}{d}\right)</math> terms as discussed above, this scheme is <math>\delta</math> revealing.
+
+====Tailoring States====
+These states are given in the Eggeling and Werner paper<ref name="multihiding"/> for the Werner states scheme above.
+=====Hiding Against the Finest Partition=====
+The finest partition is the one without any quantum communication between parties: ({A},{B},{C},{D}).  A classical bit can be hidden in:
+
+<math>\rho_0 = (1,1,1,1)</math>
+
+<math>\rho_1 = (-1,1,1,-1)</math>
+
+An authorized set can reconstruct the state by the analyzing operator: <math>A = \frac{I + V_{12}}{2}</math>
+
+=====Hiding Against Single Pairs=====
+A classical bit can be hidden from a single pair partitions of the form ({A,B},{C},{D}) with:
+
+<math>\rho_0 = \frac{1}{3}(-1,-1,0,1)</math>
+
+<math>\rho_1 = \frac{1}{3}(-1,3,0,-1)</math>
+
+=====Hiding Against Two Pairs=====
+For partitions of the form: ({A,B},{C,D}), hiding can be done with states:
+
+<math>\rho_0 = (0,1,1,0)</math>
+
+<math>\rho_1 = (0,1,- \frac{1}{2},0)</math>
+
+A three party partition can analyze the states perfectly with <math>A = \frac{1}{3}\left(I + V_{123} + V_{321} \right)</math>
+
+=====Hiding Against Triplets=====
+For partitions of the form: ({A,B,C},{D}), hiding can be done with states:
+
+<math>\rho_0 = \frac{1}{3}(3,1,0,3)</math>
+
+<math>\rho_1 = \frac{1}{3}(1,-1,0,-1)</math>
+
+=====Perfect Hiding=====
+Hiding against all partitions except the maximum one, ({A,B,C,D}) can be obtained with states:
+
+<math>\rho_0 = \frac{1}{4}(0,0,1,2)</math>
+
+<math>\rho_1 = \frac{1}{4}(0,0,1,-2)</math>
+
+Which can be analyzed perfectly with quantum communication between all parties.
+
+==References==
+<references/>

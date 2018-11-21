@@ -1,0 +1,285 @@
+[[Harvard:Biophysics_101/2007/02/01|Assigned on Feb 1, 2007]]
+
+Script:
+
+<pre>
+#!/usr/bin/env python
+
+ # Hetmann Hsieh
+ # Assignment 1 
+ # 2/6/07 
+
+from Bio import GenBank, Seq
+
+# We can create a GenBank object that will parse a raw record
+# This facilitates extracting specific information from the sequences
+
+record_parser = GenBank.FeatureParser()
+
+# NCBIDictionary is an interface to Genbank
+
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+
+# If you pass NCBIDictionary a GenBank id, it will download that record
+
+parsed_record = ncbi_dict['116496644']
+
+print "GenBank id:", parsed_record.id
+
+# Extract the sequence from the parsed_record
+
+s = parsed_record.seq.tostring()
+print "total sequence length:", len(s)
+
+max_repeat = 9
+
+print "method 1"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\nmethod 2"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+
+# Other parts of the assignment are as follows
+# Print the translated protein sequence and length
+
+from Bio.Seq import translate
+print "protein translation:"
+protein = translate(s)
+print protein
+print "protein length:", len(protein)
+ 
+# New NCBIDictionary without a parser, printing of raw record
+
+ncbi_dict2 = GenBank.NCBIDictionary('nucleotide', 'genbank')
+
+raw_record = ncbi_dict2['116496644']
+print raw_record
+</pre>
+
+Output:
+
+<pre>
+GenBank id: BC126205.1
+total sequence length: 3773
+method 1
+T 805
+TT 115
+TTT 28
+TTTT 3
+TTTTT 0
+TTTTTT 0
+TTTTTTT 0
+TTTTTTTT 0
+TTTTTTTTT 0
+
+method 2
+T 805
+TT 143
+TTT 31
+TTTT 3
+TTTTT 0
+TTTTTT 0
+TTTTTTT 0
+TTTTTTTT 0
+TTTTTTTTT 0
+protein translation:
+EGERLKEAMRSPRTRGRSGRPLSLLLALLCALRAKVCGASGQFELEILSMQNVNGELQNGNCCGGARNPGDRKCTRDECDTYFKVCLKEYQSRVTAGGPCSFGSGSTPVIGGNTFNLKASRGNDRNRIVLPFSFAWPRSYTLLVEAWDSSNDTVQPDSIIEKASHSGMINPSRQWQTLKQNTGVAHFEYQIRVTCDDYYYGFGCNKFCRPRDDFFGHYACDQNGNKTCMEGWMGPECNRAICRQGCSPKHGSCKLPGDCRCQYGWQGLYCDKCIPHPGCVHGICNEPWQCLCETNWGGQLCDKDLNYCGTHQPCLNGGTCSNTGPDKYQCSCPEGYSGPNCEIAEHACLSDPCHNRGSCKETSLGFECECSPGWTGPTCSTNIDDCSPNNCSHGGTCQDLVNGFKCVCPPQWTGKTCQLDANECEAKPCVNAKSCKNLIASYYCDCLPGWMGQNCDININDCLGQCQNDASCRDLVNGYRCICPPGYAGDHCERDIDECASNPCLNGGHCQNEINRFQCLCPTGFSGNLCQLDIDYCEPNPCQNGAQCYNRASDYFCKCPEDYEGKNCSHLKDHCRTTPCEVIDSCTVAMASNDTPEGVRYISSNVCGPHGKCKSQSGGKFTCDCNKGFTGTYCHENINDCESNPCRNGGTCIDGVNSYKCICSDGWEGAYCETNINDCSQNPCHNGGTCRDLVNDFYCDCKNGWKGKTCHSRDSQCDEATCNNGGTCYDEGDAFKCMCPGGWEGTTCNIARNSSCLPNPCHNGGTCVVNGESFTCVCKEGWEGPICAQNTNDCSPHPCYNSGTCVDGDNWYRCECAPGFAGPDCRININECQSSPCAFGATCVDEINGYRCVCPPGHSGAKCQEVSGRPCITMGSVIPDGAKWDDDCNTCQCLNGRIACSKVWCGPRPCLLHKGHSECPSGQSCIPILDDQCFVHPCTGVGECRSSSLQPVKTKCTSDSYYQDNCANITFTFNKEMMSPGLTTEHICSELRNLNILKNVSAEYSIYIACEPSPSANNEIHVAISAEDIRDDGNPIKEITDKIIDLVSKRDGNSSLIAAVAEVRVQRRPLKNRTDFLVPLLSSVLTVAWICCLVTAFYWCLRKRRKPGSHTHSASEDNTTNNVREQLNQIKNPIEKHGANTVPIKDYENKNSKMSKIRTHNSEVEEDDMDKHQQKARFAKQPAYTLVDREEKPPNGTPTKHPNWTNKQDNRDLESAQSLNRMEYIV*QTAGTAAAR*SLRACSSLNCRVILESEAVA
+protein length: 1257
+LOCUS       BC126205                3773 bp    mRNA    linear   PRI 23-OCT-2006
+DEFINITION  Homo sapiens jagged 1 (Alagille syndrome), mRNA (cDNA clone
+            MGC:161483 IMAGE:8991921), complete cds.
+ACCESSION   BC126205
+VERSION     BC126205.1  GI:116496644
+KEYWORDS    MGC.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 3773)
+  AUTHORS   Strausberg,R.L., Feingold,E.A., Grouse,L.H., Derge,J.G.,
+            Klausner,R.D., Collins,F.S., Wagner,L., Shenmen,C.M., Schuler,G.D.,
+            Altschul,S.F., Zeeberg,B., Buetow,K.H., Schaefer,C.F., Bhat,N.K.,
+            Hopkins,R.F., Jordan,H., Moore,T., Max,S.I., Wang,J., Hsieh,F.,
+            Diatchenko,L., Marusina,K., Farmer,A.A., Rubin,G.M., Hong,L.,
+            Stapleton,M., Soares,M.B., Bonaldo,M.F., Casavant,T.L.,
+            Scheetz,T.E., Brownstein,M.J., Usdin,T.B., Toshiyuki,S.,
+            Carninci,P., Prange,C., Raha,S.S., Loquellano,N.A., Peters,G.J.,
+            Abramson,R.D., Mullahy,S.J., Bosak,S.A., McEwan,P.J.,
+            McKernan,K.J., Malek,J.A., Gunaratne,P.H., Richards,S.,
+            Worley,K.C., Hale,S., Garcia,A.M., Gay,L.J., Hulyk,S.W.,
+            Villalon,D.K., Muzny,D.M., Sodergren,E.J., Lu,X., Gibbs,R.A.,
+            Fahey,J., Helton,E., Ketteman,M., Madan,A., Rodrigues,S.,
+            Sanchez,A., Whiting,M., Madan,A., Young,A.C., Shevchenko,Y.,
+            Bouffard,G.G., Blakesley,R.W., Touchman,J.W., Green,E.D.,
+            Dickson,M.C., Rodriguez,A.C., Grimwood,J., Schmutz,J., Myers,R.M.,
+            Butterfield,Y.S., Krzywinski,M.I., Skalska,U., Smailus,D.E.,
+            Schnerch,A., Schein,J.E., Jones,S.J. and Marra,M.A.
+  CONSRTM   Mammalian Gene Collection Program Team
+  TITLE     Generation and initial analysis of more than 15,000 full-length
+            human and mouse cDNA sequences
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 99 (26), 16899-16903 (2002)
+   PUBMED   12477932
+REFERENCE   2  (bases 1 to 3773)
+  CONSRTM   NIH MGC Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (22-OCT-2006) National Institutes of Health, Mammalian
+            Gene Collection (MGC), Bethesda, MD 20892-2590, USA
+  REMARK    NIH-MGC Project URL: http://mgc.nci.nih.gov
+COMMENT     Contact: MGC help desk
+            Email: cgapbs-r@mail.nih.gov
+            Tissue Procurement: Mike Brownstein, NIMH
+            cDNA Library Preparation: British Columbia Cancer Research Center
+            cDNA Library Arrayed by: The I.M.A.G.E. Consortium (LLNL)
+            DNA Sequencing by: Genome Sequence Centre,
+            BC Cancer Agency, Vancouver, BC, Canada
+            info@bcgsc.bc.ca
+            Martin Hirst, Thomas Zeng, Ryan Morin, Michelle Moksa, Johnson
+            Pang, Diana Mah, Jing Wang, Kieth Fichter, Eric Chuah, Allen
+            Delaney, Rob Kirkpatrick, Agnes Baross, Sarah Barber, Mabel
+            Brown-John, Steve S. Chand, William Chow, Ryan Babakaiff, Dave
+            Wong, Corey Matsuo, Jaclyn Beland, Susan Gibson, Luis delRio, Ruth
+            Featherstone, Malachi Griffith, Obi Griffith, Ran Guin, Nancy Liao,
+            Kim MacDonald,  Mike R. Mayo, Josh Moran, Diana Palmquist, JR
+            Santos, Duane Smailus, Jeff Stott, Miranda Tsai, George Yang,
+            Jacquie Schein, Asim Siddiqui,Steven Jones, Rob Holt, Marco Marra.
+            
+            Clone distribution: MGC clone distribution information can be found
+            through the I.M.A.G.E. Consortium/LLNL at: http://image.llnl.gov
+            Series: IRCB Plate: 7 Row: E Column: 7.
+            
+            Differences found between this sequence and the human reference
+            genome (build 36) are described in misc_difference features below
+            and these differences were also compared to chimpanzee genome
+            (build 2).
+FEATURES             Location/Qualifiers
+     source          1..3773
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /clone="MGC:161483 IMAGE:8991921"
+                     /tissue_type="Brain, cerebellum, PCR rescued clones"
+                     /clone_lib="NIH_MGC_313"
+                     /note="Vector: pCR-XL-TOPO with reversed insert; Clone
+                     identification sequence tag: GACACATT"
+     gene            1..3773
+                     /gene="JAG1"
+                     /note="synonyms: AWS, HJ1, AHD, CD339"
+                     /db_xref="GeneID:182"
+                     /db_xref="HGNC:6188"
+                     /db_xref="MIM:601920"
+     CDS             25..3681
+                     /gene="JAG1"
+                     /codon_start=1
+                     /product="jagged 1 (Alagille syndrome)"
+                     /protein_id="AAI26206.1"
+                     /db_xref="GI:116496645"
+                     /db_xref="GeneID:182"
+                     /db_xref="HGNC:6188"
+                     /db_xref="MIM:601920"
+                     /translation="MRSPRTRGRSGRPLSLLLALLCALRAKVCGASGQFELEILSMQN
+                     VNGELQNGNCCGGARNPGDRKCTRDECDTYFKVCLKEYQSRVTAGGPCSFGSGSTPVI
+                     GGNTFNLKASRGNDRNRIVLPFSFAWPRSYTLLVEAWDSSNDTVQPDSIIEKASHSGM
+                     INPSRQWQTLKQNTGVAHFEYQIRVTCDDYYYGFGCNKFCRPRDDFFGHYACDQNGNK
+                     TCMEGWMGPECNRAICRQGCSPKHGSCKLPGDCRCQYGWQGLYCDKCIPHPGCVHGIC
+                     NEPWQCLCETNWGGQLCDKDLNYCGTHQPCLNGGTCSNTGPDKYQCSCPEGYSGPNCE
+                     IAEHACLSDPCHNRGSCKETSLGFECECSPGWTGPTCSTNIDDCSPNNCSHGGTCQDL
+                     VNGFKCVCPPQWTGKTCQLDANECEAKPCVNAKSCKNLIASYYCDCLPGWMGQNCDIN
+                     INDCLGQCQNDASCRDLVNGYRCICPPGYAGDHCERDIDECASNPCLNGGHCQNEINR
+                     FQCLCPTGFSGNLCQLDIDYCEPNPCQNGAQCYNRASDYFCKCPEDYEGKNCSHLKDH
+                     CRTTPCEVIDSCTVAMASNDTPEGVRYISSNVCGPHGKCKSQSGGKFTCDCNKGFTGT
+                     YCHENINDCESNPCRNGGTCIDGVNSYKCICSDGWEGAYCETNINDCSQNPCHNGGTC
+                     RDLVNDFYCDCKNGWKGKTCHSRDSQCDEATCNNGGTCYDEGDAFKCMCPGGWEGTTC
+                     NIARNSSCLPNPCHNGGTCVVNGESFTCVCKEGWEGPICAQNTNDCSPHPCYNSGTCV
+                     DGDNWYRCECAPGFAGPDCRININECQSSPCAFGATCVDEINGYRCVCPPGHSGAKCQ
+                     EVSGRPCITMGSVIPDGAKWDDDCNTCQCLNGRIACSKVWCGPRPCLLHKGHSECPSG
+                     QSCIPILDDQCFVHPCTGVGECRSSSLQPVKTKCTSDSYYQDNCANITFTFNKEMMSP
+                     GLTTEHICSELRNLNILKNVSAEYSIYIACEPSPSANNEIHVAISAEDIRDDGNPIKE
+                     ITDKIIDLVSKRDGNSSLIAAVAEVRVQRRPLKNRTDFLVPLLSSVLTVAWICCLVTA
+                     FYWCLRKRRKPGSHTHSASEDNTTNNVREQLNQIKNPIEKHGANTVPIKDYENKNSKM
+                     SKIRTHNSEVEEDDMDKHQQKARFAKQPAYTLVDREEKPPNGTPTKHPNWTNKQDNRD
+                     LESAQSLNRMEYIV"
+     misc_difference 789
+                     /gene="JAG1"
+                     /note="'T' in cDNA is 'C' in the human genome; no amino
+                     acid change.  The chimpanzee genome agrees with the human
+                     genomic sequence and not the cDNA."
+     misc_difference 3441
+                     /gene="JAG1"
+                     /note="'C' in cDNA is 'T' in the human genome; no amino
+                     acid change."
+ORIGIN      
+        1 gagggggagc gtctcaaaga agcgatgcgt tccccacgga cgcgcggccg gtccgggcgc
+       61 cccctaagcc tcctgctcgc cctgctctgt gccctgcgag ccaaggtgtg tggggcctcg
+      121 ggtcagttcg agttggagat cctgtccatg cagaacgtga acggggagct gcagaacggg
+      181 aactgctgcg gcggcgcccg gaacccggga gaccgcaagt gcacccgcga cgagtgtgac
+      241 acatacttca aagtgtgcct caaggagtat cagtcccgcg tcacggccgg ggggccctgc
+      301 agcttcggct cagggtccac gcctgtcatc gggggcaaca ccttcaacct caaggccagc
+      361 cgcggcaacg accgcaaccg catcgtgctg cctttcagtt tcgcctggcc gaggtcctat
+      421 acgttgcttg tggaggcgtg ggattccagt aatgacaccg ttcaacctga cagtattatt
+      481 gaaaaggctt ctcactcggg catgatcaac cccagccggc agtggcagac gctgaagcag
+      541 aacacgggcg ttgcccactt tgagtatcag atccgcgtga cctgtgatga ctactactat
+      601 ggctttggct gcaataagtt ctgccgcccc agagatgact tctttggaca ctatgcctgt
+      661 gaccagaatg gcaacaaaac ttgcatggaa ggctggatgg gccccgaatg taacagagct
+      721 atttgccgac aaggctgcag tcctaagcat gggtcttgca aactcccagg tgactgcagg
+      781 tgccagtatg gctggcaagg cctgtactgt gataagtgca tcccacaccc gggatgcgtc
+      841 cacggcatct gtaatgagcc ctggcagtgc ctctgtgaga ccaactgggg cggccagctc
+      901 tgtgacaaag atctcaatta ctgtgggact catcagccgt gtctcaacgg gggaacttgt
+      961 agcaacacag gccctgacaa atatcagtgt tcctgccctg aggggtattc aggacccaac
+     1021 tgtgaaattg ctgagcacgc ctgcctctct gatccctgtc acaacagagg cagctgtaag
+     1081 gagacctccc tgggctttga gtgtgagtgt tccccaggct ggaccggccc cacatgctct
+     1141 acaaacattg atgactgttc tcctaataac tgttcccacg ggggcacctg ccaggacctg
+     1201 gttaacggat ttaagtgtgt gtgcccccca cagtggactg ggaaaacgtg ccagttagat
+     1261 gcaaatgaat gtgaggccaa accttgtgta aacgccaaat cctgtaagaa tctcattgcc
+     1321 agctactact gcgactgtct tcccggctgg atgggtcaga attgtgacat aaatattaat
+     1381 gactgccttg gccagtgtca gaatgacgcc tcctgtcggg atttggttaa tggttatcgc
+     1441 tgtatctgtc cacctggcta tgcaggcgat cactgtgaga gagacatcga tgaatgtgcc
+     1501 agcaacccct gtttgaatgg gggtcactgt cagaatgaaa tcaacagatt ccagtgtctg
+     1561 tgtcccactg gtttctctgg aaacctctgt cagctggaca tcgattattg tgagcctaat
+     1621 ccctgccaga acggtgccca gtgctacaac cgtgccagtg actatttctg caagtgcccc
+     1681 gaggactatg agggcaagaa ctgctcacac ctgaaagacc actgccgcac gaccccctgt
+     1741 gaagtgattg acagctgcac agtggccatg gcttccaacg acacacctga aggggtgcgg
+     1801 tatatttcct ccaacgtctg tggtcctcac gggaagtgca agagtcagtc gggaggcaaa
+     1861 ttcacctgtg actgtaacaa aggcttcacg ggaacatact gccatgaaaa tattaatgac
+     1921 tgtgagagca acccttgtag aaacggtggc acttgcatcg atggtgtcaa ctcctacaag
+     1981 tgcatctgta gtgacggctg ggagggggcc tactgtgaaa ccaatattaa tgactgcagc
+     2041 cagaacccct gccacaatgg gggcacgtgt cgcgacctgg tcaatgactt ctactgtgac
+     2101 tgtaaaaatg ggtggaaagg aaagacctgc cactcacgtg acagtcagtg tgatgaggcc
+     2161 acgtgcaaca acggtggcac ctgctatgat gagggggatg cttttaagtg catgtgtcct
+     2221 ggcggctggg aaggaacaac ctgtaacata gcccgaaaca gtagctgcct gcccaacccc
+     2281 tgccataatg ggggcacatg tgtggtcaac ggcgagtcct ttacgtgcgt ctgcaaggaa
+     2341 ggctgggagg ggcccatctg tgctcagaat accaatgact gcagccctca tccctgttac
+     2401 aacagcggca cctgtgtgga tggagacaac tggtaccggt gcgaatgtgc cccgggtttt
+     2461 gctgggcccg actgcagaat aaacatcaat gaatgccagt cttcaccttg tgcctttgga
+     2521 gcgacctgtg tggatgagat caatggctac cggtgtgtct gccctccagg gcacagtggt
+     2581 gccaagtgcc aggaagtttc agggagacct tgcatcacca tggggagtgt gataccagat
+     2641 ggggccaaat gggatgatga ctgtaatacc tgccagtgcc tgaatggacg gatcgcctgc
+     2701 tcaaaggtct ggtgtggccc tcgaccttgc ctgctccaca aagggcacag cgagtgcccc
+     2761 agcgggcaga gctgcatccc catcctggac gaccagtgct tcgtccaccc ctgcactggt
+     2821 gtgggcgagt gtcggtcttc cagtctccag ccggtgaaga caaagtgcac ctctgactcc
+     2881 tattaccagg ataactgtgc gaacatcaca tttaccttta acaaggagat gatgtcacca
+     2941 ggtcttacta cggagcacat ttgcagtgaa ttgaggaatt tgaatatttt gaagaatgtt
+     3001 tccgctgaat attcaatcta catcgcttgc gagccttccc cttcagcgaa caatgaaata
+     3061 catgtggcca tttctgctga agatatacgg gatgatggga acccgatcaa ggaaatcact
+     3121 gacaaaataa tcgatcttgt tagtaaacgt gatggaaaca gctcgctgat tgctgccgtt
+     3181 gcagaagtaa gagttcagag gcggcctctg aagaacagaa cagatttcct tgttcccttg
+     3241 ctgagctctg tcttaactgt ggcttggatc tgttgcttgg tgacggcctt ctactggtgc
+     3301 ctgcggaagc ggcggaagcc gggcagccac acacactcag cctctgagga caacaccacc
+     3361 aacaacgtgc gggagcagct gaaccagatc aaaaacccca ttgagaaaca tggggccaac
+     3421 acggtcccca tcaaggatta cgagaacaag aactccaaaa tgtctaaaat aaggacacac
+     3481 aattctgaag tagaagagga cgacatggac aaacaccagc agaaagcccg gtttgccaag
+     3541 cagccggcgt acacgctggt agacagagaa gagaagcccc ccaacggcac gccgacaaaa
+     3601 cacccaaact ggacaaacaa acaggacaac agagacttgg aaagtgccca gagcttaaac
+     3661 cgaatggagt acatcgtata gcagaccgcg ggcactgccg ccgctaggta gagtctgagg
+     3721 gcttgtagtt ctttaaactg tcgtgtcata ctcgagtctg aggccgttgc tga
+
+</pre>

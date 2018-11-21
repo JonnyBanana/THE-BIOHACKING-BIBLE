@@ -1,0 +1,46 @@
+__NOTOC__
+{{Template:ImperialCollege Spring2008 SyntheticBiologyCourse ComputerModellingPractical‎}}
+<div style="padding: 10px; width: 720px; border: 5px solid #B3CD4E;">
+<div class="tabs">
+<ul>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial |Overview]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/GUI |GUI]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Compounds |Compounds]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Reactions |Reactions]]</li>
+<li id="current">[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Kinetic Simulation |Kinetic Model]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Simulation Panel |Simulation Panel]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Example |Example]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+=Set-up a Kinetic Simulation=
+
+===Overview===
+{|
+|-
+|valign=top|
+* this section deals with preparing your model to '''kinetic simulations''' (time evolving simulations).
+* CellDesigner offers a link to an '''ODE Solver'''.
+|
+[[Image:CellDesigner-Simulation-1.png|400px|CellDesigner ODE Solver]]
+|}
+===Minimum requirements for a simulation===
+* '''Compounds''': 'initialAmount' might need to be changed for some compounds (zero by default)
+* '''Reactions''' : define a kineticLaw for all reactions defined, write a formula with appropriate parameters.
+
+===Defining a kinetic law for your reaction===
+* Double click on an item in the reaction list to display the “Reaction” dialog.
+* You can also display “Reaction” dialog” by clicking on the reaction on canvas with right mouse button, then select “Edit Reaction” menu.
+* Click “KineticLaw” Edit button to display “KineticLaw” dialog
+* Enter “math” formulae and edit parameters by clicking in the “listofParameters” section
+* '''Note''': In “math” formulae, Species ID, not Species Name, should be specified
+* To enter Species ID, you can click the target Species on canvas, and press [copy] button below the “math” field. The ID will  be automatically input to the field.
+
+===Defining a parameter used in the kinetic law===
+* '''Local parameter''': To set a local parameter for the kinetic law formula, click [New] button in the above KineticLaw dialog window to specify the parameter id, name, value and units.
+* '''Global parameter''': From the "Parameters" tab in the list window, select [NEW] to create a new global parameter.
+
+
+===References===
+* [http://www.systems-biology.org/cd/simulation.html CellDesigner Simulation tutorial]

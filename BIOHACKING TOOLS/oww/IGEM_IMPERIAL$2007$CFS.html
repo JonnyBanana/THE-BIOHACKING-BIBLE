@@ -1,0 +1,111 @@
+= Cell-Free Systems =
+
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li id="current">[[IGEM:IMPERIAL/2007/CFS|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/CFS/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/CFS/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/CFS/Fabrication|Fabrication]]</li>
+<li>[[IGEM:IMPERIAL/2007/CFS/Testing|Testing]]</li>
+<li>[[IGEM:IMPERIAL/2007/CFS/Validation|Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/CFS/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/CFS/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+__TOC__
+
+==Introduction==
+An important aspect of our project is to investigate the use of '''cell-free systems''' (CFS) to realise new potentials for simple constructs. To date, work on synthetic biology has been done using the chassis of bacterial cells. However the use of living, replicating engineered bacteria poses a huge limitation for applications in the '''food and medicine industries''' for reasons of public safety. In line with the specifications of our two genetically engeineered machines - Cell by Date and Infector Detector, our team decided to introduce cell-free expression systems as a new chassis to the field of synthetic biology.
+
+
+===In-Vitro vs. In-Vivo Expression Systems===
+{| border="1"
+|-
+||<center>'''In-Vitro Expression Systems'''</center>||<center>'''In-Vivo Expression Systems'''</center>
+|-
+|style="background:#eeffee"|'''Non-infectious''' because of non-proliferative nature
+|style="background:#ffeeee"|Some strains may be pathogenic
+|-
+|style="background:#eeffee"|'''Process is quick and simple''' requiring only preparation of cell extract and feeding solution and subsequent addition of DNA template
+|style="background:#ffeeee"|Process is laborious involving DNA cloning and transformation and protein expression
+|-
+|style="background:#eeffee"|'''Good control''' can be achieved easily using modified reaction conditions such as addition of accessory elements or inhibitory factors
+|style="background:#ffeeee"|Less controllability because of the presence of endogenous substances and because cells do not survive extreme conditions
+|-
+|style="background:#eeffee"|'''Both plasmid and linear DNAs''' and can be used as templates for expression
+|style="background:#ffeeee"|Plasmid DNAs are usually used. Linear DNAs are easily degraded by endogenous nucleases 
+|-
+|style="background:#eeffee"|'''Protein degradation''' is minimized by adding protease inhibitors
+|style="background:#ffeeee"|Synthesized proteins may be degraded by endogenous proteases
+|-
+|style="background:#eeffee"|'''Toxic proteins''' can be synthesized in large quantities
+|style="background:#ffeeee"|Synthesis of toxic proteins may kill the cells
+|-
+|style="background:#eeffee"|'''Proteins containing unnatural amino acids''' can be achieved
+|style="background:#ffeeee"|Difficult to produce proteins containing unnatural amino acids
+|-
+|style="background:#ffeeee"|Shorter lifespan since system cannot replicate
+|style="background:#eeffee"|'''Longer lifespan''' since system can replicate
+|-
+|style="background:#ffeeee"|More expensive because of the constant need for nutrient and energy supply
+|style="background:#eeffee"|'''Less expensive''' because of the ability of the system to generate energy from relatively cheap nutrient source
+|-
+|style="background:#ffeeee"|Less characterized, less experience of use in the laboratories
+|style="background:#eeffee"|'''Better characterized''', more experience of use in the laboratories
+|}
+
+===Types of Cell Extracts===
+In-vitro synthesis of proteins using cell-free extracts consists of two main processes - '''transcription''' of DNA into messenger RNA (mRNA) and '''translation''' of mRNA into polypeptides. Coupled transcription-translation systems usually combine a bacteriophage RNA polymerase and promoter (T7, T3, or SP6) with eukaryotic or prokaryotic extracts. In addition, the [http://www.nature.com/nbt/journal/v19/n8/full/nbt0801_732.html PURE] system is a reconstituted CFS for synthesizing proteins using recombinant elements.
+
+'''Comparison between different types of cell extracts'''
+{| border="1"
+|-
+|style="background:#ffffcc"|<center>Properties</center>||<center>'''Rabbit Reticulocyte Lysate'''</center>||<center>'''Wheat Germ Extract'''</center>||<center>'''''E. coli'' Extract'''</center>||<center>'''Reconstituted Extract'''</center>
+|-
+|style="background:#ffffcc"|<center>Types</center>||<center>Eukaryotic</center>||<center>Eukaryotic</center>||<center>Prokaryotic</center>||<center>Artificial</center>
+|-
+|style="background:#ffffcc"|<center>Uses</center>||<center>Widely used for in-vitro translation</center>||<center>Mostly used for in-vitro translation</center>||<center>Mostly used for coupled transcription-translation</center>||<center>Used for in-vitro translation</center>
+|-
+|style="background:#ffffcc"|<center>Templates</center>||
+*mRNAs from viruses or eukaryotes
+*Capped or un-capped mRNAs
+||
+*mRNAs from viruses or eukaryotes
+*Capped mRNAs
+||
+*Viral mRNAs with stable secondary structures
+*Un-capped mRNAs
+*Plasmid or linear DNAs
+||
+*Capped or uncapped mRNAs
+|-
+|style="background:#ffffcc"|<center>Post-translational modifications</center>||<center>Yes</center>||<center>Yes</center>||<center>No</center>||<center>Yes</center>
+|}
+
+
+===Types of Compartmentalization===
+Previous research has been done to optimize cell extracts for in vitro protein synthesis. Their endogenous genetic content is removed so that exogenous DNAs or mRNAs can be expressed. Nuclease activity has been reduced and degradation of certain amino acids has been identified. ATP regenerating systems have also been added to improve the energy supply. Different strategies of compartmentalization have been explored to prolong the lifespan of CFS.
+
+#'''Batch-mode CFS'''
+#*Transcription-translation reaction is carried out in bulk solution. Expression is usually limited by nutrient (nucleotides and amino acids) and energy supplies.
+#'''Continuous-exchange CFS'''
+#*Transcription-translation reaction is separated from feeding solution by a dialysis membrane. Expression is sustained by diffusion of nutrients from the feeding soltuion to the reaction. Wastes generated by the reaction is diluted in the feeding solution.
+#'''Vesicle-encapsulated CFS'''
+#*The reaction is separated from feeding solution by a phospholipid bilayer. Expression is maintained for a longer time period than batch-mode CFS because of exchange of materials between the reaction and the feeding solution across the membrane. More reliable exchange of materials is established by inserting a non-specific pore protein with a suitable channel size into the phospholipid bilayer.
+
+==Achievements==
+'''In-Vitro Expression'''
+*Attempted to make S30 ''E. coli'' cell extract and feeding solution
+*Successfully used commercial S30 ''E. coli'' cell extract and feeding solution from Promega for expression of GFP
+*Successfully used homemade S30 ''E. coli'' cell extract with commercial feeding solution for expression of GFP
+*Attempting to characterize the temperature range and timespan of expression of our reporter DNA constructs using commercial S30 ''E. coli'' cell extract and feeding solution
+
+'''Vesicle Formation'''
+*Successfully formed empty vesicles, as well as vesicles encapsulating GFP, in Tris-Cl buffer
+*Successfully formed vesicles encapsulating GFP in homemade S30 ''E. coli'' cell extract
+*Attempting to enclose cell extract in vesicles to attain expression of reporter DNA constructs
+*Attempting to find suitable pore proteins to prolong vesicle and expression lifespan

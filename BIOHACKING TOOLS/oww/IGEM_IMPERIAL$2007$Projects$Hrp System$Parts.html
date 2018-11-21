@@ -1,0 +1,88 @@
+=Hrp Characterisation: Parts=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Specifications|Specifications]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Hrp System/Parts|Parts]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Devices|Devices]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Testing|Testing]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Application|Application]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+__TOC__
+
+This is the list of required parts that can be obtained from the registry and are needed for the project.
+
+===Promoters===
+In order to carry out the characterisations of the four devices we require 3 inducible promoters. These promoters need the following characteristics
+*We would like to have non leaky promoters
+*Promoters of similar activation time and levels
+*Inducible by addition of controlled external factor i.e. we need to be able to control levels and timing of induction.
+*An inducer that when added at intermediate level to a population of cells will cause appromixately homogenous induction.
+There are only a limited number of inducible promoters in the registry, below is a summary of the potential promoters in the registry:
+====1. pBAD Promoter====
+[[IMAGE:Ara.JPG|frame|right| pBAD induction after 5 hours]]
+
+*The pBAD promoter is from the araBAD promoters found in E.coli. This promoter is negatively regulated by araC protein and positively regulated by arabinose.
+*Our interest is to use arabinose to induce pBAD expression. From reading literature the following information on the pBAD has been found:
+**A suitable range of arabinose inducer concentration is shown to the right. In previous studies ranges of 200uM to 500uM and 1.33mM to 133mM have been used. 
+**Under various inducer concentrations for the reporter synthesis to reach steady state typically took 5 hours.
+**Estimated range of activation is 300 fold.
+**Within a population of cells there can be different levels of induction, this appears to be because of diffusional and active transport of inducer, giving a heterogeneous population of cells.
+** Need to use a strain that will not metabolise arabinose such as MC1061.
+** At the low levels of inducer the overall reporter synthesis is more of an average of a heterogeneous population, that is to say, that it is an average of induced cells and non induced cells. This is an inherent problem with plac and araBAD because of a '''positive feedback loop'''.
+<br>
+*'''Positive Feedback Loop''' - In E.coli arabinose transporters (araE and araEGF) must be expressed to allow uptake of arabinose. These are under the control of pBAD and so will be induced once there is arabinose within the cell. The idea is that, cells will randomly express transporters, giving a fraction of cells the equipment to transport arabinose for a short time until it is lost due to cell growth or degradation. If arabinose is present at any time then the fraction of cells with the transporters can uptake arabinose and will have high concentrations of inducer within them. This intiates a feed forward mechanism within the cells and further induction of pBAD promoter. The idea is that cells will reach a threshold of transporter proteins, and so overtime all cells will have leaky expression of transporters and become fully induced.
+
+====2. Lac promoter====
+[[IMAGE:DelLacYInduction.PNG|right|frame| IPTG induction in LacY Knock Out]]
+
+The pLac has two key regulators LacR and CAP.
+*LacI encodes LacR repressor protein - Under low lactose conditions the LacR protein will bind to the pLac and will cause repression of the expression downstream of pLac. Addition of lactose analogues such as IPTG has the same affect as the presence of lactose, however IPTG is not metabolized.
+*CAP(catabolite activator protein)- This is an activator protein that is activated by binding of cAMP (cyclicAMP). cAMP levels correlate with the levels of glucose in the cell, so that when glucose is present cAMP is present. This means that when glucose levels are high the CAP activation is high and expression of pLac is high.
+Both LacR and CAP are present in wild type E.coli. The way in which we can manipulate the Lac operon is  to control repression rather than activation. If we maintain CAP activity by giving constant glucose levels and instead try to control the repression by LacR, then by addition of no IPTG we can repress the pLac and upon addition of IPTG the repression removed and activation by CAP is allowed. This relies upon the LacR has an over riding affect over CAP, this is because the CAP increase the binding of RNA polymerase to pLac, whereas LacR inhibitory affect works downstream of the RNA polymerase binding site.<br>
+<br>
+Information about the characteristics of Lac:
+*Suitable IPTG range seems to be 0 to 100 or 1000uM (depending on literature)
+*The time of full induction seems to tak in the region of 100 mintues.[4]
+*Highly regulated system, although there is some leakiness. 
+
+'''Positive Feedback'''- Lac operon has the same positive feedback mechanism that is found in pBAD. However, in the lac system it has been shown that uninduced cells have certain growth advantages over induced cells, being able to outreplicate induced cells. Thus, the rate at which uninduced cells outreplicate induced cells eventually balances out the rate of induction.  This allows a more homogeneous cell population.
+*Experiments have shown that by using IPTG and lacY<sup>-</sup> strains the population of induced cells can be made more homogeneous, diagram from the right taken from one of these studies.
+
+Two registry parts are:<br>
+[http://parts.mit.edu/registry/index.php/Part:BBa_R0010| BBa_R0010 pLac ]<br>
+[http://parts.mit.edu/registry/index.php/Part:BBa_R0011| BBa_R0011 pLac/pL hybrid]
+
+===Ribosome Binding Sites===
+
+*'''RBS (Elowitz)'''
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_B0034 BBa_B0034]
+
+Short description: This is the most efficient RBS in the registry, and sets the 1.0 efficiency standard. It is based on the Elowitz repressilator.
+
+===Terminators===
+
+*'''Double terminator (B0010-B0012)'''
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_B0015 BBa_B0015]
+
+Short description: Double terminator consisting of BBa_B0010 and BBa_B0012. This is the most commonly used terminator. It seems to be reliable.
+forward_efficiency: 0.984  
+reverse_efficiency: 0.295
+
+===References===
+
+<biblio>
+#Novick-PNAS-1957 pmid=16590055
+#Khlebnikov-BiotechnolProg-2002 pmid=12052093
+#Jensen-EurJBiochem-1993 pmid=8425528 
+#http://rrresearch.blogspot.com/2007/05/time-course-and-iptg-dependence.html
+</biblio>

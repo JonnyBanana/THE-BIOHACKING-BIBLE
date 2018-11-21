@@ -1,0 +1,49 @@
+==Refactoring Steps==
+#Define section A as being the roughly 2200 w.t. bp existing between 1-cutter sites: HpaI and BamHI
+#List all w.t. genetic elements (promoters, RBS, cds) known to exist in section A
+#*conveniently listed [http://openwetware.org/wiki/20.109%28S07%29:_Western_analysis#Part_3:_M13.1 Here]
+#Find a list of all M13K07 0-cutters so that we know the maximum number of parts possible
+#*list of all 0-cutters [http://tools.neb.com/NEBcutter2/listbycuts.php?name=8848374d-M13KO7&numcuts=0 Here]. Note, however, that only 29 out of this list of 64 0-cutters generate overhangs/are specific enough for our purposes. This means that we should not plan to exceed (by a large margin) 29 parts in our M13.1 design. This should not be a problem.
+#Create Basic Parts (Enter dna sequence data) in the Registry for each known w.t. genetic element
+#*conveniently all M13 parts are specified at the [http://parts.mit.edu/registry/index.php/Main_Page Registry of Standard Biological Parts]
+#Create Composite Part [http://parts.mit.edu/registry/index.php/Part:BBa_M30110 M30110] in the Registry for Section A of refactored M13.1 genome
+#Re-organize/Re-order M13 parts as see fit in design of Composite Part [http://parts.mit.edu/registry/index.php/Part:BBa_M30110 M30110] '''= first draft of unstuffed genome'''
+#Create new Basic M13.1 Parts in Registry (if neccesary) to remove all secondary functions of M13 parts
+#*Do not change amino acid sequence, codon optimize changes for an E. coli host
+#*Annotate and record all changes made from w.t. sequence in Hard Information and in Part Design
+#*Also, state how you decided on each change and what you hope to have accomplished with each change
+#**How to effectively disrupt Promoter function?
+#***Bacterial promoters have two important sequence regions that interact with the RNA polymerase sigma subunit. These sequence regions are called the -10 and the -35 elements because they are centered close to -10 and -35 from the first nucleotide of the transcript. The consensus -35 element reads is TTGACA and the consensus -10 is TATAAT. Need to modify one/both.
+#**How to effectively disrupt RBS function?
+#***Anatomy of the E. Coli RBS [http://www.lecb.ncifcrf.gov/~toms/paper/flexrbs/ Here]. Need to modify the Shine-Dalgarno (SD) sequence  [TAAGGAGGT]. Also see Pubmed [http://www.ncbi.nlm.nih.gov/entrez/query.fcgicmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=7528374 Article] for more information on SD sequence.
+#Codon Reshuffle downstream sequence repeats
+#*specifically applicable to repeated copies of gene 10 and gene 11 which we don't want to loop/delete
+#*reshuffling of repeated promoter/rbs sequence seems unecessary to me as I plan in future to replace M13's uncharacterized promoters and RBS with a standardized set.
+#Update the Part Specification of [http://parts.mit.edu/registry/index.php/Part:BBa_M30110 M30110] to include '''new M13.1 parts'''
+#Add base pairs to insert unique restriction sites between all M13.1 parts in [http://parts.mit.edu/registry/index.php/Part:BBa_M30110 M30110]
+#*Bracketing seems unecessary to me
+#Annotate w.t. 1-cutter restriction sites in [http://parts.mit.edu/registry/index.php/Part:BBa_M30110 M30110]
+
+==Principles of Design==
+#Does each part encode 1 and only 1 function?
+#Is each part insulated and independently manipulable?
+#Will the M13.1 phage be viable? - Is this worth being paranoid about if the other 2 are true?
+
+==Useful Resources in Design==
+#Interactive E. coli [http://www.kazusa.or.jp/java/codon_table_java/ Codon Usage Table]
+#How to find reading frame in middle of a coding sequence:
+#*Is <index of bp - 1> a multiple of 3??
+#**ex: 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118, 121, 124, 127, 130, 133, 136, 139, 142, 145, 148, 151, 154, 157, 160, 163, 166, 169, 172, 175, 178, 181, 184, 187, 190, 193, 196, 199, 202, 205, 208, 211, 214, 217, 220, 223, 226, 229, 232, 235, 238, 241, 244, 247, 250, 253, 256, 259, 262, 265, 268, 271, 274, 277, 280, 283, 286, 289, 292, 295, 298, 301, 304, 307, 310, 313, 316, 319, 322, 325, 328, 331, 334, 337, 340, 343, 346, 349, 352, 355, 358, 361, 364, 367, 370, 373, 376, 379, 382, 385, 388, 391, 394, 397, 400, 403, 406, 409, 412, 415, 418, 421, 424, 427, 430, 433, 436, 439, 442, 445, 448, 451, 454, 457, 460, 463, 466, 469, 472, 475, 478, 481, 484, 487, 490, 493, 496, 499, 502, 505, 508, 511, 514, 517, 520, 523, 526, 529, 532, 535, 538, 541, 544, 547, 550, 553, 556, 559, 562, 565, 568, 571, 574, 577, 580, 583, 586, 589, 592, 595, 598, 601, 604, 607, 610, 613, 616, 619, 622, 625, 628, 631, 634, 637, 640, 643, 646, 649, 652, 655, 658, 661, 664, 667, 670, 673, 676, 679, 682, 685, 688, 691, 694, 697, 700, 703, 706, 709, 712, 715, 718, 721, 724, 727, 730, 733, 736, 739, 742, 745, 748, 751, 754, 757, 760, 763, 766, 769, 772, 775, 778, 781, 784, 787, 790, 793, 796, 799, 802, 805, 808, 811, 814, 817, 820, 823, 826, 829, 832, 835, 838, 841, 844, 847, 850, 853, 856, 859, 862, 865, 868, 871, 874, 877, 880, 883, 886, 889, 892, 895, 898, 901, 904, 907, 910, 913, 916, 919, 922, 925, 928, 931, 934, 937, 940, 943, 946, 949, 952, 955, 958, 961, 964, 967, 970, 973, 976, 979, 982, 985, 988, 991, 994, 997, 1000
+#**(Don't worry, I wrote a program)
+
+==New Parts==
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M30110 M30110] = Composite Part for section A of refactored M13.1 genome
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31502 M31502] = Incomplete (HpaI site through Term) version of g2 (retrieved from BBa_M13002). Also modified to remove g10 promoter
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31510 M31510] = g10 (retrieved from BBa_M13010) modified to remove g5 promoter
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31507 M31507] = g7 (retrieved from BBa_M13007) modified to remove overlap with g9 downstream
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31509 M31509] = g9 (retrieved from BBa_M13009) modified to remove overlap with g8 downstream
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31503 M31503] = Truncated (GTG through BamHI site) version of g3 (retrieved from BBa_M13003)
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31503 M31551]
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31503 M31552]
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31503 M31553]
+#[http://parts.mit.edu/registry/index.php/Part:BBa_M31503 M31554]

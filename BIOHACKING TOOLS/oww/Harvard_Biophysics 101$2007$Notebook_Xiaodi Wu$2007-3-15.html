@@ -1,0 +1,92 @@
+Input sequence:
+<pre>
+>example1                                                                      
+CACCCTCGCCAGTTACGAGCTGCCGAGCCGCTTCCTAGGCTCTCTGCGAATACGGACACG                    
+CATGCCACCCACAACAACTTTTTAAAAGAATCAGACGTGTGAAGGATTCTATTCGAATTA                    
+CTTCTGCTCTCTGCTTTTATCACTTCACTGTGGGTCTGGGCGCGGGCTTTCTGCCAGCTC                    
+CGCGGACGCTGCCTTCGTCCAGCCGCAGAGGCCCCGCGGTCAGGGTCCCGCGTGCGGGGT                    
+ACCGGGGGCAGAACCAGCGCGTGACCGGGGTCCGCGGTGCCGCAACGCCCCGGGTCTGCG                    
+CAGAGGCCCCTGCAGTCCCTGCCCGGCCCAGTCCGAGCTTCCCGGGCGGGCCCCCAGTCC                    
+GGCGATTTGCAGGAACTTTCCCCGGCGCTCCCACGCGAAGC
+</pre>
+
+'''First step:'''
+Align this sequence on NCBI Blast to get info on where the sequence is or might be. The single result is shown below.
+<pre>
+>ref|NT_030059.12|Hs10_30314 Homo sapiens chromosome 10 genomic contig, reference assembly
+Length=44617998
+
+ Features flanking this part of subject sequence:
+   3895 bp at 5' side: hypothetical protein
+   425 bp at 3' side: HtrA serine peptidase 1
+
+
+ Score =  736 bits (398),  Expect = 0.0
+ Identities = 400/401 (99%), Gaps = 0/401 (0%)
+ Strand=Plus/Plus
+
+Query  1         CACCCTCGCCAGTTACGAGCTGCCGAGCCGCTTCCTAGGCTCTCTGCGAATACGGACACG  60
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42968870  CACCCTCGCCAGTTACGAGCTGCCGAGCCGCTTCCTAGGCTCTCTGCGAATACGGACACG  42968929
+
+Query  61        CATGCCACCCACAACAACTTTTTAAAAGAATCAGACGTGTGAAGGATTCTATTCGAATTA  120
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42968930  CATGCCACCCACAACAACTTTTTAAAAGAATCAGACGTGTGAAGGATTCTATTCGAATTA  42968989
+
+Query  121       CTTCTGCTCTCTGCTTTTATCACTTCACTGTGGGTCTGGGCGCGGGCTTTCTGCCAGCTC  180
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42968990  CTTCTGCTCTCTGCTTTTATCACTTCACTGTGGGTCTGGGCGCGGGCTTTCTGCCAGCTC  42969049
+
+Query  181       CGCGGACGCTGCCTTCGTCCAGCCGCAGAGGCCCCGCGGTCAGGGTCCCGCGTGCGGGGT  240
+                 |||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||
+Sbjct  42969050  CGCGGACGCTGCCTTCGTCCGGCCGCAGAGGCCCCGCGGTCAGGGTCCCGCGTGCGGGGT  42969109
+
+Query  241       ACCGGGGGCAGAACCAGCGCGTGACCGGGGTCCGCGGTGCCGCAACGCCCCGGGTCTGCG  300
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42969110  ACCGGGGGCAGAACCAGCGCGTGACCGGGGTCCGCGGTGCCGCAACGCCCCGGGTCTGCG  42969169
+
+Query  301       CAGAGGCCCCTGCAGTCCCTGCCCGGCCCAGTCCGAGCTTCCCGGGCGGGCCCCCAGTCC  360
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  42969170  CAGAGGCCCCTGCAGTCCCTGCCCGGCCCAGTCCGAGCTTCCCGGGCGGGCCCCCAGTCC  42969229
+
+Query  361       GGCGATTTGCAGGAACTTTCCCCGGCGCTCCCACGCGAAGC  401
+                 |||||||||||||||||||||||||||||||||||||||||
+Sbjct  42969230  GGCGATTTGCAGGAACTTTCCCCGGCGCTCCCACGCGAAGC  42969270
+</pre>
+Conclusion -- this sequence we have obtained is on chromosome 10, and there is one SNP apparent.
+
+'''Second step:'''
+Examine the genome browser to find where exactly this is to help formulate the query in the next step. Result: 10q25, bases 124210300 to 124210800.
+
+'''Third step:'''
+Look up SNPs at Entrez SNP based on genome browser information, to find the relevant SNPs and compare to the sequence we currently have (query: "10[CHR] AND 124210300:124210800[CHRPOS]")
+Two exist:
+<pre>
+1: rs11200638 [Homo sapiens]
+    AGCTCCGCGGACGCTGCCTTCGTCC[A/G]GCCGCAGAGGCCCCGCGGTCAGGGT
+
+2: rs2672598 [Homo sapiens]
+    CGCCGGACTGGGGGCCCGCCCGGGA[A/G]GCTCGGACTGGGCCGGGCAGGGACT
+</pre>
+
+'''Fourth step:'''
+For the first SNP, we have A where the reference sequence has G. For the second SNP (which is on the minus strand), we have T as the complement, in agreement with the reference. Search OMIM to find out more about these loci and the implications of having these alleles (queries: "rs11200638" and "rs2672598")
+
+Conclusions --
+Homozygosity for the A allele in the case of the first SNP results in a tenfold increased risk of wet (neovascular) age-related macular degeneration.
+No information is available for the other locus.
+
+'''Last step and physician's advice:'''
+From OMIM, it can be found that age-related macular degeneration is a disorder that arises due to many factors, genetics being only one. If this individual is heterozygous for the allele, then the risk to him or her of this disease is not appreciable, but having children homozygous for the allele would obviously be the remaining concern. If the individual is homozygous, then this higher genetic risk suggests that environmental risk factors should be avoided if possible; these include avoiding smoking, and monitoring diet and cholesterol levels.
+
+
+== Part II ==
+(Mystery sequence)
+<pre>
+>Example by Xiaodi
+ACCTGGACCCCTGTGCCTTGTATGCATCTGAAGAGGAGATCGGGCAGTTGGTGAAGCAGATGCTGGATGA
+CTTTGGACCACATCGCTACATTGCCAACCTGGGCCATGGGCTTTATCCTGACATGGACCCAGAACATGTG
+GGCGCCTTTGTGGATGCTGTGCATAAACACTCACGTCTGCTTCGACAGAACTGAGTGTATACCTTTACCC
+TCAAGTACCACTAACACAGATGATTGATCGTTTCCAGGACAATAAAAGTTTCGGAGTTGAACTATTGTGT
+AGTTTTGTTTGTGAAAGATTGTGCCCATATCCTCAGTTCTTCTTAGCCTCTGCTCCTTCCCTGGGAACCC
+</pre>

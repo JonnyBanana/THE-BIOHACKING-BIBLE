@@ -1,0 +1,85 @@
+see also:
+[[Berglund:alternative method|<h3><font color=#000000>alternative method</font></h3>]]
+
+==Materials==
+
+single stranded DNA oligomers<br>
+Taq polymerase<br>
+dNTP (10mM)<br>
+10xPCR buffer<br>
+
+==Method==
+
+The goal of a PCR like this is to make a totally artificial construct without ever going to the genomic DNA/mRNA sequence.  The method is to take ~100bp oligos (about the maxium that can currently be made at IDT (http://idtdna.com)) and link them together.  Currently I can take 5 of these oligos and make a construct.  I'm not sure how long you can make it, although, conceivably it could be infinite if you can get the protocol right.  By doing this, I have total control over what the sequence is and a very easy way to manipulate changes within the sequence.  <br><br>
+
+Here is how it is done:<br>
+Let's say that you want to make a part of the pre-mRNA from the human protein DEK (http://www.ensembl.org/). You want exon3, the intervening intron 3, and exon4.  You plan on using this for splicing.  You want to manipulate certain elements within this RNA, such as changing the branchpoint sequence or changing the PY tract or changing the 5'ss.<br><br>
+
+Exon 3 (102bp)<br>
+AAAAGAGTCTCATCGTGGAAGGCAAGAGGGAAAAGAAAAAAGTAGAGAGGTTGACAATGCAAGTCTCTTCCTTACA
+GAGAGAGCCATTTACAATTGCACAAG<br>
+Intron3 (241bp)<br>
+gtaagtttattctagcttcctttcattttgtggtgaaagtgcctaaatttgtgaaaatgatggtttgtagcttagtatcagcaaggtagtgttttatacttttggtataatttta
+tttaatttgctctgtaagagcagagttacatgtaaattatgctgtgaaaataattctcattaaattaactttgtaaatgtattagtaagccataggtatttaattgtgatttttttttttccccag<br>
+Exon4 (110bp)<br>
+GAAAGGGGCAGAAACTTTGTGAAATTGAGAGGATACATTTTTTTCTAAGTAAGAAGAAAACCGATGAACTTAGAAATCTACA
+CAAACTGCTTTACAACAGGCCAGGCACT<br><br>
+<br>
+This becomes:<br>
+[[Image:DEK.jpg|450px|]]
+
+The primers are all shown as forward, in order to illustrate the overlapping areas.  The ones that need to be reversed are marked.  All primers must overlap the 5' and 3' ends in order for the pcr to work.
+
+Here is an illustration of how the PCR will work:
+
+[[Image:DEKexample.jpg|450px|]]
+
+Essentially, the PCR product "grows" with each additional oligo addition.  The sense strand of the PCR product acts itself as a primer each time a reverse primer is added.  There are problems that can occur in a system like this.  Mispriming, errors from mutation (although, if the PCR is done properly, you shouldn't have mutations because you are linking oligo to oligo using Taq), multiple bands from aborted PCR's can occur.
+
+If you plan on making the PCR product into RNA, a T7 promoter site can be linked using an oligo to the 5' side of the PCR product.  Cut sites can be put onto the ends if you want to clone.  You can do anything you want to, pretty much.  Mutations are easy, just order an oligo that mutates whatever you want.  You can mutate where there are overlaps, but two oligos will have to be ordered, otherwise the overlaps won't match.
+
+A sample PCR Protocol that might work with this construct:<br>
+<br>
+7.7µl water<br>
+0.2µl dNTP<br>
+1µl 10xtaq buffer	<br>
+0.3µl primer 1	<br>
+0.3µl primer 2	<br>
+0.3µl primer 3	(add after 5 cycles with just primer 1 and primer 2)<br>
+0.2µl taq	<br>
+10µl total volume	<br> 
+<br>
+95°C 5 min<br>
+95° 30 sec, 55° 30 sec, 72° 40 sec (10 cycles total)<br>
+72° 5 min<br>
+4° infinity<br>
+<br>
+8µl water<br>
+0.2µl dNTP<br>
+1µl 10xtaq buffer	<br>
+0.3µl primer 4	<br>
+0.3µl primer 5	(add after 5 rounds with primers 1, 2, 3, 4)<br>
+0.2µl taq	<br>
+10µl total volume	<br>
+<br>
+Add this to the first reaction for a total volume of 20µl<br>
+<br>
+95°C 5 min<br>
+95° 30 sec, 55° 30 sec, 72° 40 sec (10 cycles total)<br>
+72° 5 min<br>
+4° infinity<br>
+<br>
+Final set of PCR (finishing or polishing step)<br>
+64µl water<br>
+1.6µl dNTP<br>
+8µl 10xtaq buffer	<br>
+2.4µl primer 1	<br>
+2.4µl primer 6	<br>
+1.6µl taq	<br>
+80µl total volume<br>
+<br>
+Add to the previous PCR reaction (final volume = 100µl)<br>
+95°C 5 min<br>
+95° 30 sec, 55° 30 sec, 72° 40 sec (20 cycles total)<br>
+72° 5 min<br>
+4° infinity<br>

@@ -1,0 +1,71 @@
+* Cut all assembly parts with XbaI and PstI, 37°C / 20 minutes
+* Heat kill XbaI, PstI, 80°C / 20 minutes
+* Cut vector backbone with EcoRI and SpeI
+* Heat kill EcoRI, SpeI 65°C / 20 minutes
+
+
+* Bind EcoRI -- XbaI end fragment to biotin support (or cut at XbaI on the support)
+
+
+* Loop for all parts (Loop is 2+ hours)(finish is 1 hour to elution)
+** ligate new part to the support (form initial XbaI cut site, or form mixed site)
+** part + ligase + ATP, 25°C / 20 minutes
+** Heat kill ligase 65°C / 20 minutes
+** Klenow + dNTPs to remove 3' PstI cut ends and blunt unreacted XbaI sites 25°C / 15 minutes
+** Add EDTA; Heat kill Klenow 75°C / 20 minutes
+** Cut SpeI 37°C / 20 minutes (release SpeI -- PstI fragment)
+** Heat kill SpeI 65 °C / 20 minutes
+* ligate SpeI / EcoRI cut backbone
+* Heat kill ligase 65°C / 20 minutes
+* Cut EcoRI 37°C / 20 minutes
+* Heat kill EcoRI 65°C / 20 minutes
+* Elute from biotin support with 10 &mu;l ligation buffer
+* Ligate to circularize: ligase + ATP 25°C / 20 minutes
+* Transform
+
+
+* Fragment assembly:
+* Cut with XbaI 65°C / 20 minutes
+* Elute from the support
+* Fall into a second assembly using this as a part
+
+
+* Biotin oligos:
+* RSA-F: 5' biotin GTT TCT TCG AAT TCG CGG CCG CTT CTA GAG GTT TCT  3'
+* RSA-R: 3'        AGA AAC CTC TAG AAG CGG CCG CGA ATT CGA AGA AAC  5'
+* GAATTC and TCTAGA sites
+
+
+* side reactions:
+** bound oligos reacting with each other  -- very bad, will be recut and become active **
+** insert + vector religating  -- reduce efficiency
+** insert + insert ligating  -- reduce efficiency **
+** bound oligos ligating with vector  -- reduce efficiency **
+** bound oligos reacting with insert (desirable)
+* high concentrations of vector + insert wrt bound oligos is desirable --> 50% yield
+** ** side reactions eliminated with non-palindromic overlaps
+
+
+
+To do:
+* PCR of backbone plasmid with biotin primers, cut with E/S, heat kill
+** purify out uncut/small fragments with strep beads
+* Locate DNA for test assemblies
+** cut with X/P, heat kill
+* Anneal and bind RSA-F and RSA-R oligos to biotin beads, cut with XbaI, heat kill
+
+
+Assembly test:
+R0040 B0032 E0040 B0011
+
+
+* 1 Jan
+** PCR of pSB1AC3 backbone
+** pick R0040,  B0032, E0040, B0011 onto single colonies
+* 2 Jan plan
+** Cut and prep pSB1AC3 backbone with E/S
+** Pick single colonies from part plates, grow o/n
+** Anneal RSA-F, RSA-R
+** Cut RSA fragment with XbaI
+** Bind RSA fragment to biotin beads, aliquot
+** Check repairs, Sigma, Pierce orders

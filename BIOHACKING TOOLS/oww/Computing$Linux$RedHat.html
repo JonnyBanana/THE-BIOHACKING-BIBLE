@@ -1,0 +1,86 @@
+==General info==
+*[http://itinfo.mit.edu/product.php?name=redhatlnx The Red Hat Linux at MIT page] - info from IS&T about the currently supported version
+*[http://itinfo.mit.edu/answer.php?id=4463 List of RHEL support articles at MIT]
+*[http://web.mit.edu/swrt/releases/rhe/ RedHat Enterprise Linux release notebook] - info about the next version to be supported by MIT
+*[https://web.mit.edu/rhlinux/ RedHat Enterprise Linux ISO images] (requires [http://web.mit.edu/ist/topics/certificates/ MIT personal certificate])
+*[https://web.mit.edu/ist/products/vsls/mitlinux/ VSLS: Red Hat Enterprise Linux Site License] - ordering of a physical copy of the Red Hat Enterprise Linux CD set
+*[http://stuff.mit.edu/afs/athena/system/rhlinux/ SIPB page] - RPMs and other software
+*[http://web.mit.edu/ist/admin/feeds/linux.xml MIT IS&T News - Linux] RSS feed
+*[http://web.mit.edu/rhel-doc/ Red Hat Enterprise Linux Documentation] for RHEL3/4/5 hosted at MIT
+
+==RHEL5==
+*[http://itinfo.mit.edu/product?vid=753 Red Hat Enterprise 5 at MIT]
+**[http://itinfo.mit.edu/article?id=8504 Red Hat Enterprise Linux 5.0: Known Issues]
+**[http://web.mit.edu/rhel-doc/5/RHEL-5-manual/index.html Red Hat Enterprise Linux 5 Documentation] hosted at MIT
+*[http://www.redhat.com/docs/manuals/enterprise/RHEL-5-manual/index.html Red Hat Enterprise Linux 5 Documentation] hosted at RedHat
+*[http://www.redhat.com/rhel/resource_center/ RHEL5 Resource Center]
+**[http://www.redhat.com/rhel/server/ Red Hat Enterprise Linux 5 server]
+**[http://www.redhat.com/rhel/desktop/ Red Hat Enterprise Linux 5 Desktop]
+*[http://www.redhat.com/rhel/compare/ Compare RHEL5 Server, Client and Advanced platform with RHEL4 and 3]
+**[http://www.redhat.com/rhel/server/compare/ Compare servers]
+**[http://www.redhat.com/rhel/desktop/compare/ Compare desktops]
+*:Red Hat Enterprise Linux Desktop with Workstation option.  Includes the full suite of Red Hat Enterprise Linux server applications for use in workgroup environments.  Supports up to 2 CPU sockets and unlimited amount of RAM.  Equivalent to earlier WS products.
+*[http://linuxlookup.com/2006/sep/07/red_hat_enterprise_linux_5_beta_1 Red Hat Enterprise Linux 5 Beta 1 Released]
+*:Beyond the core distribution, these media kits contain a number of optional directories that provide additional functionality:
+**Red Hat Enterprise Linux Server
+***Cluster - Fail-Over clustering and Web load balancing
+***ClusterStorage - Parallel storage access via clustered volume manager and GFS cluster file system
+***Virtualization - Xen virtualization environment
+**Red Hat Enterprise Linux Client
+***Desktop - Desktop applications including Evolution and OpenOffice (not available on the Server)
+***Workstation - Full Engineering Workstation and Developer package set
+***Virtualization - Xen virtualization environment
+
+===Notes===
+*To perform a network install need to specify <tt>boot alternative</tt> at the initial installation screen
+*To restart GDM: <tt>killall gdm-binary</tt>
+
+====Yum====
+*<tt>/etc/yum.conf</tt> - general config file
+*<tt>/etc/yum.repos.d</tt> - directory containing files with description of repositories (if not included into <tt>yum.conf</tt> directly)
+*<tt>/etc/yum</tt> -
+
+==RHEL4==
+*[http://itinfo.mit.edu/product.php?vid=671 Red Hat Enterprise Linux 4.0 for Linux] - IS&T support page
+*[http://itinfo.mit.edu/article.php?id=7761 Red Hat Enterprise Linux 4.0: Installation Instructions]
+*[http://itinfo.mit.edu/article?id=7763 Red Hat Enterprise Linux 4.0: Known Issues]
+*[http://itinfo.mit.edu/article?id=7792 Red Hat Enterprise Linux 4.0: Upgrade Instructions from Red Hat Enterprise Linux 3]
+*[http://stuff.mit.edu/afs/athena/system/rhlinux/rhel-4/RELEASE-NOTES-en.html Red Hat Enterprise Linux AS 4 Release Notes]
+*[http://web.mit.edu/rhel-doc/4 Red Hat Enterprise Linux Documentation DVD]
+
+===Notes===
+*When you migrate from RHEL 3 to RHEL 4, you will need to update your MIT apps because new binaries are needed for RHEL 4.  You may also need to refresh your Kerberos configuration because the Red Hat Kerberos update may overwrite the MIT configs.
+*[http://itinfo.mit.edu/answer.php?id=7435 When I connect to Athena, why am I prompted for my password when I have already have Kerberos tickets?] (GSSAPI Kerberos Ticket forwarding in OpenSSH)
+*[http://itinfo.mit.edu/answer.php?id=7436 How do I set up ticket forwarding (passing) for OpenSSH in RHEL3?]
+*e2fsprogs
+:The ext2online utility has been added for online growing of existing ext3 file systems.
+:Note:
+:It is important to keep in mind that ext2online does not grow the underlying block device itself — there must be sufficient unused space already present on the device. The easiest way to ensure this is to use LVM volumes and to run lvresize or lvextend to extend the device.
+:In addition, file systems must be specially prepared in order to be resized past a certain point. The preparation involves reserving a small amount of space into which on-disk tables can grow. For newly-created file systems, mke2fs reserves such space automatically; the space reserved is sufficient to grow the file system by a factor of 1000. The creation of this reserved space can be disabled by the following command: <tt>mke2fs -O ^resize_inode</tt>
+:Future releases of Red Hat Enterprise Linux will allow the creation of this reserved space on existing file systems.
+*httpd
+:For example, a Boolean can be set to give specific permission to httpd to read objects in ~/public_html/ as long as they are labeled with the security context httpd_sys_content_t. The Apache daemon cannot access objects (files, applications, devices, and other processes) that have a security context not specifically granted access by SELinux to httpd.
+:Examples of relabeling include the following commands (one for recursively relabeling the contents of a directory, and one for relabeling a single file):
+:<tt>chcon -R -h -t httpd_sys_content_t public_html</tt>
+:<tt>chcon -t httpd_sys_content_t public_html/index.html</tt>
+:You can configure Boolean values or selectively disable targeted policy coverage for just Apache (or any of the covered daemons) using system-config-securitylevel.
+*PHP
+:The package now uses the "apache2handler" SAPI for integration with Apache httpd 2.0 rather than the "apache2filter" SAPI. If upgrading from previous releases, the SetOutputFilter directives should be removed from the /etc/httpd/conf.d/php.conf file.
+*X Windows
+*:At the present time, there are two font subsystems, each with different characteristics:
+**The original (15+ year old) subsystem is referred to as the "core X font subsystem". Fonts rendered by this subsystem are not anti-aliased, are handled by the X server, and have names like:
+*:<tt>-misc-fixed-medium-r-normal--10-100-75-75-c-60-iso8859-1</tt>
+**The newer font subsystem is known as "fontconfig", and allows applications direct access to the font files. Fontconfig is often used along with the "Xft" library, which allows applications to render fontconfig fonts to the screen with antialiasing. Fontconfig uses more human-friendly names like:
+*:<tt>Luxi Sans-10</tt>
+**Over time, fontconfig/Xft will replace the core X font subsystem. At the present time, applications using the Qt 3 or GTK 2 toolkits (which would include KDE and GNOME applications) use the fontconfig and Xft font subsystem; most everything else uses the core X fonts.
+*udev
+**Red Hat Enterprise Linux 4 has switched from a static /dev/ directory to one that is dynamically managed via udev. This allows device nodes to be created on demand as drivers are loaded.
+**Additional rules for udev should be placed in a separate file in the /etc/udev/rules.d/  directory.
+**Additional permission rules for udev should be placed in a separate file in the /etc/udev/permissions.d/ directory.
+
+==RedHat Network==
+*[https://rhnsat.mit.edu/rhn Satellite service] at MIT
+*[http://web.mit.edu/ist/topics/linux/rhn.html Update Services: Red Hat Network (RHN)]
+*config files:
+**<tt>/usr/share/rhn</tt>
+**<tt>/etc/sysconfig/rhn</tt>

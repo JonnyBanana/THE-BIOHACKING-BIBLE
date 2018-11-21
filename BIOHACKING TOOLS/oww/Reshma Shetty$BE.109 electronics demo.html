@@ -1,0 +1,113 @@
+===Part #: Biological versus electrical devices===
+
+====Safety information====
+In this exercise, you'll be working with circuits connected to power supplies.  Practice good habits by never touching the circuit without first turning the power supply off (and verifying that it is off!).
+
+====Overview====
+When constructing devices, there are several common issues that engineers must take into account irrespective of whether one is constructing devices from biological parts or electronic parts.  Here is a few issues that device engineers frequently encounter.
+
+[[Image:Signalmatching.jpg|thumb|left|500px|'''When the signals between devices are not matched, signals are erroneously propagated.''']]
+*'''Signal matching''': When connecting two devices together the output signal of the first device must be able to drive the signal of the second device.  If the two signals are not matched the two devices won't work properly in combination. 
+*'''Power supply''': Systems composed from multiple devices have a certain power demand that must be met in order to operate properly.  If the power supply doesn't meet system demands, then device performance can be adversely affected.
+*'''Noise''': System operation can be vulnerable to noise in either the power supply or the signals themselves.  As engineers, we must design the devices to tolerate a certain amount of noise.  
+<br style="clear:both" />
+
+In this exercise, we'll explore one of these issues in the context of an electrical circuit.  As you work through this exercise, consider how the lessons learned from experimenting with circuit would map to the engineering of biological systems.  Along the way, you'll be asked questions about the circuit, answer them in your lab notebook.
+
+====System description====
+The focus of Module 3 is on a bacterial photography system.  This system is constructed from two devices.  
+#Sensor: a device which, in response to dark, produced a PoPS output signal.  (See the [[Adventures | Adventures in synthetic biology comic]] for a refresher about PoPS.)
+#Actuator: a device which takes an input signal in PoPS and produces beta-galactosidase activity.
+
+We can construct an analogous system from electrical components.  A photodiode is a light sensor and an LED is responds to an input by emitting colored light.  Hence, it is an actuator.  We can thus use these two devices to build a circuit that will operate similarly to our bacterial photography system: it will sense light and produce a corresponding color.
+
+====System design====
+[[Image:Be109circuit.png|thumb|left|400px|'''A diagram of the electrical circuit that is analogous to the bacterial photography system.''' Circuit designed by Tom Knight.]]
+
+This system is fairly simple one since it only consists of a few components.  In contrast to the bacterial photography system in which the signal is encoded in PoPS, here signals are propagated as either voltage or current.  As you can see in the schematic, it contains the following parts.
+
+#Photodiode: light sensor whose resistance decreases in the presence of light such that more current flows through it.
+#LED: device which responds to a voltage drop across its terminals by emitting colored light.
+#Resistor: component which resists current flow by producing a voltage drop across it.
+#Inverter: a logic device which inverts its input signal.
+
+For more information on these parts, consult the parts datasheets linked below.
+
+The purpose of the photodiode is to serve as a light sensor (like Cph8 and the phycobilins) and the LED as a readout (like lacZ).  The 150&Omega; resistor is there to ensure that the voltage drop across the LED isn't too high (which can cause the LED to breakdown).  The inverter provides a convenient way of connecting the photodiode to the LED.  The other resistor R<sub>L</sub> is there to ensure that the signal between the photodiode and inverter are ''matched''.  When light shines on the photodiode, its resistance is decreased and current flows through it.  Thus, point '''''a''''' in the circuit diagram is at high voltage (near +5V) and the input signal to the inverter is high.  The low output signal (point '''''b''''') from the inverter creates a voltage drop across the LED causing it to turn on and emit light.  In the absence of light, the photodiode has high resistance such that little current flows.  Point '''''a''''' in the diagram is at low voltage (near 0V) and the inverter produces high output at point '''''b'''''.  The resulting lack of voltage drop across the LED means that the LED is turned off.  Much of this exercise will focus on R<sub>L</sub> and ensuring that the signal between the photodiode and inverter are matched for proper circuit operation.
+<br style="clear:both" />
+
+====System operation====
+[[Image:Be109circuitphotolabelled.jpg|thumb|left|760px|'''The constructed circuit with components of interest labelled.''']]
+
+Most of this circuit has been implemented for you.  To help you understand the system, there is a picture of your wired up circuit with the different components of interest labelled.  Comparison of the photo with the circuit diagram above should show that the circuit is wired up as shown in the diagram.
+<br style="clear:both" />
+
+[[Image:Be109breadboard.jpg|thumb|left|300px|'''Breadboard''': The lines show how the breadboard holes are connected.  Typically the top and bottom two horizontal rows are used for power and ground.]]
+
+The circuit has been constructed using a breadboard which is a convenient way to construct electrical circuits.  The breadboard holes are connected as shown in the photo.  Take note of these connections because they'll affect how you will connect up resistors in this exercise.
+
+=====Examining the extremes of system behavior=====
+Now let's familiarize ourselves with the system.  To begin, you'll examine the two extreme cases for the value of the R<sub>L</sub> resistor: 0&Omega; and &#8734;&Omega;.  Connect the binding posts on the breadboard to the power supply making sure you don't mix up the +5V and the ground.  Now turn on the power supply and verify that it is set to +5V.  (The display should read 5.00 and the CV light should be on indicating that the power supply is producing constant voltage.)
+
+*What happened?  Is the LED light on or off?
+
+Notice that in fact your circuit differs slightly from the one in the photo.  There is no R<sub>L</sub> resistor connecting the photodiode (point '''''a''''') and ground.  Thus, it is as if your circuit has infinite resistance between point '''''a''''' and ground (absolutely no current can flow).  
+
+*Explain why you observe the behavior you do given that there is infinite resistance between the photodiode and ground.
+
+Examine the other extreme case.  Connect a wire between ground and the photodiode.  Sample connection points are indicated in the circuit photo with purple circles.  Wires tend to have very little resistance so this is almost putting a resistor of 0&Omega; between the two points.
+
+*What happened?  Is the LED light on or off?  Explain why you observe the behavior you do given that there is almost no resistance between the photodiode and ground.
+
+This is a general technique that engineers to use to understand a system: they look at the simple, extreme cases and try to reason out the behavior of the circuit.
+<br style="clear:both" />
+
+=====Construct a functioning circuit=====
+[[Image:F2620.de2-ania.jpg|thumb|200px|'''Sample datasheet for BBa_F2620.''' By Ania Labno, Barry Canton and Drew Endy.]]
+
+Now that you've explored the two extremes, let's try to actually build a functioning circuit.  If you think back to physics, Ohm's law define the relationship between voltage, current and resistance.
+
+<math>V=IR</math>
+
+We can use this formula to calculate loose bounds on R<sub>L</sub> that will yield a working circuit.
+
+<math>\frac{V_{IH}}{Light Current} < R_L < \frac{V_{IL}}{Dark Current}</math>  
+*V<sub>IL</sub>: Highest voltage at point '''''a''''' that is a low input signal for the inverter.
+*V<sub>IH</sub>: Lowest voltage at point '''''a''''' that is a high input signal for the inverter.
+*Light Current: Current that flows through the photodiode when light is shone on it.
+*Dark Current: Current that flows through the photodiode when it is in the dark.
+
+Conveniently, inverters and photodiodes have been characterized so well that their performance is very well-documented.  (Contrast this to parts in the [http://parts.mit.edu Registry of Standard Biological Parts] in which very few parts have any characterization data at all.  We have a long way to go!)  You should be able to obtain values for V<sub>IL</sub> and V<sub>IH</sub> from the inverter datasheet linked below and values for the light and dark current from the photodiode datasheet.  These datasheets have far more detail than the sample datasheet for BBa_F2620 shown.
+
+*Determine values (with units!) for the four variables from the datasheet and explain from where on the datasheet you retrieved them.  Then calculate the bounds on R<sub>L</sub> to help narrow your search for a resistor or resistors that will lead to a working circuit.  
+These bounds will not be exact because the performance of real components deviates some from the model predicted by the equation.  Nonetheless, this calculation should give you a place to start for finding an R<sub>L</sub> that gives a working circuit.
+<br style="clear:both" />
+
+Now, via trial and error, try to find a resistor or series of resistors (resistors connected end to end) for R<sub>L</sub> that lead to proper circuit operation: in the light, the LED is on and in the dark, the LED is off.  Make sure that one resistor end is connected to the photodiode and the other to ground (as shown by the purple circles in the circuit photo).  You will need to verify that you are wiring up the resistors properly given the layout of connections on the breadboard!  Use the resistor color code table linked below to check that you are using resistors of the resistance you want.
+
+*What resistance value for R<sub>L</sub> gives a working circuit?
+
+Notice how much easier it is to assemble electrical circuits as compared to biological circuits.  It takes seconds to swap in a new resistor into your circuit but a few days to assemble two BioBricks together!
+
+=====Sensitivity of system function to R<sub>L</sub>=====
+Next, let's determine how sensitive system performance is to the value of R<sub>L</sub>.
+
+*How large can R<sub>L</sub> be and yet have the circuit still work?  How small?
+You don't need to determine the exact range for R<sub>L</sub> but getting approximate, experimentally-determined limits gives you an idea of how robust the circuit is to R<sub>L</sub>.  This is analogous to determining how sensitive an engineered biological system is to RBS strength or protein-DNA binding affinity.  But again, it is much easier to do this experiment with an electrical circuit.
+
+=====Comparing resolutions=====
+In fact, the bacterial system does have one important advantage over this electrical circuit.  It is much easier to generate lots of copies of a bacteria than lots of copies of your electrical circuit.  
+*Compare the resolution of a bacterial photograph with that of a photodiode array assembled from many MRD500 photodiodes.  What about a typical digital camera on the market these days?  Which one has the best resolution?  The worst?
+
+=====Optional=====
+Notice that in fact this electrical circuit behaves opposite the bacterial photography system.  The LED readout is on when light shines on the photodiode.  In contrast, in the bacterial system, the lacZ readout only occurs for cells in the dark.  
+*To impress your TA and lab instructor, propose a redesign of this circuit that will yield the same behavior as the bacterial photography system.
+
+====Parts datasheets & other useful information====
+*[http://openwetware.org/images/1/11/MRD500.pdf MRD500: Photodiode]
+*[http://openwetware.org/images/8/84/Be109MM74HC04.pdf MM74HC04: Hex Inverter]
+*[http://openwetware.org/images/a/a9/Be109MV5452greenled.pdf Green LED]
+*[http://www.breakup.de/resources/resistor.html Resistor color code]
+
+====Acknowledgements====
+Many thanks to [[Tom Knight]] and [[Barry Canton]] for invaluable contributions to this exercise.

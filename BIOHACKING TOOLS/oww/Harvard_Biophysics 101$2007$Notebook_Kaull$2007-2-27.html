@@ -1,0 +1,643 @@
+==Program==
+<pre>
+#Due 2/27/07
+#By Katherine Aull
+
+##################################################
+## Feature Set:
+##  Determination of reading frame
+##  Nucleic acid point mutations
+##   - silent vs. non-silent
+##   - corresponding amino acid change
+##  Nucleic acid insertions
+##   - frameshift vs. non-frameshift
+##   - amino acid position where change occurred
+##  Detailed reporting of significant amino acid changes
+
+#header collection
+#!/usr/bin/env python
+import sys
+from Bio import Clustalw, GenBank, Translate
+from Bio.Alphabet import IUPAC
+from Bio.Seq import Seq
+
+#helper function collection
+
+geneticCode = {'GGG':'G', 'GGA':'G', 'GGC':'G', 'GGT':'G',
+               'GAG':'E', 'GAA':'E', 'GAC':'D', 'GAT':'D',
+               'GCG':'A', 'GCA':'A', 'GCC':'A', 'GCT':'A',
+               'GTG':'V', 'GTA':'V', 'GTC':'V', 'GTT':'V',
+               'AGG':'R', 'AGA':'R', 'AGC':'S', 'AGT':'S',
+               'AAG':'K', 'AAA':'K', 'AAC':'N', 'AAT':'N',
+               'ACG':'T', 'ACA':'T', 'ACC':'T', 'ACT':'T',
+               'ATG':'M', 'ATA':'I', 'ATC':'I', 'ATT':'I',
+               'CGG':'R', 'CGA':'R', 'CGC':'R', 'CGT':'R',
+               'CAG':'Q', 'CAA':'Q', 'CAC':'H', 'CAT':'H',
+               'CCG':'P', 'CCA':'P', 'CCC':'P', 'CCT':'P',
+               'CTG':'L', 'CTA':'L', 'CTC':'L', 'CTT':'L',
+               'TGG':'W', 'TGA':'*', 'TGC':'C', 'TGT':'C',
+               'TAG':'*', 'TAA':'*', 'TAC':'Y', 'TAT':'Y',
+               'TCG':'S', 'TCA':'S', 'TCC':'S', 'TCT':'S',
+               'TTG':'L', 'TTA':'L', 'TTC':'F', 'TTT':'F'}
+
+# this helper function populates the amino acid data tables
+def build_aa_data():
+    aadata = {}
+    aadata['A'] = {'name' : 'Ala', 'type' : 'nonpolar'}
+    aadata['C'] = {'name' : 'Cys', 'type' : 'cysteine'}
+    aadata['D'] = {'name' : 'Asp', 'type' : 'acidic'}
+    aadata['E'] = {'name' : 'Glu', 'type' : 'acidic'}
+    aadata['F'] = {'name' : 'Phe', 'type' : 'nonpolar'}
+    aadata['G'] = {'name' : 'Gly', 'type' : 'nonpolar'}
+    aadata['H'] = {'name' : 'His', 'type' : 'basic'}
+    aadata['I'] = {'name' : 'Ile', 'type' : 'nonpolar'}
+    aadata['K'] = {'name' : 'Lys', 'type' : 'basic'}
+    aadata['L'] = {'name' : 'Leu', 'type' : 'nonpolar'}
+    aadata['M'] = {'name' : 'Met', 'type' : 'nonpolar'}
+    aadata['N'] = {'name' : 'Asn', 'type' : 'polar'}
+    aadata['P'] = {'name' : 'Pro', 'type' : 'nonpolar'}
+    aadata['Q'] = {'name' : 'Gln', 'type' : 'polar'}
+    aadata['R'] = {'name' : 'Arg', 'type' : 'basic'}
+    aadata['S'] = {'name' : 'Ser', 'type' : 'polar'}
+    aadata['T'] = {'name' : 'Thr', 'type' : 'polar'}
+    aadata['V'] = {'name' : 'Val', 'type' : 'nonpolar'}
+    aadata['W'] = {'name' : 'Trp', 'type' : 'nonpolar'}
+    aadata['Y'] = {'name' : 'Tyr', 'type' : 'polar'}
+    aadata['*'] = {'name' : '***', 'type' : 'stop codon'}
+    return aadata
+
+aadata = build_aa_data()
+
+# this helper function takes in command line input, reads files, returns data
+def gb_reader(inputs):
+    db = {}
+    for filename in inputs:
+        handle = open(filename, 'r')
+        parser = GenBank.FeatureParser()
+        iterator = GenBank.Iterator(handle, parser)
+    
+        rawdata = iterator.next()
+
+        name = filename[0:filename.find('.')]
+        db[name] = {'rawseq': rawdata.seq}
+        db[name]['revseq'] = db[name]['rawseq'].reverse_complement()
+
+    return db
+    
+
+# this helper function takes Seq object and frame, finds starts/stops
+def find_orf_bounds(sequence, frame):
+    bounds = {'starts':[], 'stops':[], 'maxorf':0}
+    
+    for x in range(frame-1,len(sequence)-2,3):
+        codon = sequence[x:x+3].tostring()
+        if codon == 'ATG':
+            bounds['starts'].append(x+1)
+        if codon == 'TGA':
+            bounds['stops'].append(x+1)
+        if codon == 'TAA':
+            bounds['stops'].append(x+1)
+        if codon == 'TAG':
+            bounds['stops'].append(x+1)
+
+        for start in bounds['starts']:
+            for stop in bounds['stops']:
+                if (stop - start) > bounds['maxorf']:
+                    bounds['maxend'] = stop
+                    bounds['minstart'] = start
+                    bounds['maxorf'] = stop - start
+
+    return bounds
+
+
+# this helper function prints reading frame data correctly
+def format_frame(strand, frame, bounds):
+    output = strand + ' frame '
+    output += str(frame)
+    output += ': start codon position: ' + format_frame_list(bounds['starts'])
+    output += ' stop codon position: ' + format_frame_list(bounds['stops'])
+    output += ' Transcript length: ' + str(bounds['maxorf'])
+    return output
+
+# this helper function takes list, prints in reading frame output format
+def format_frame_list(plainlist):
+    if plainlist == []:
+        return 'NA.'
+    else:
+        prettystring = ''
+        for x in range(len(plainlist)-1):
+            prettystring += (str(plainlist[x]) + ', ')
+        prettystring += (str(plainlist[len(plainlist)-1]) + '.')
+        return prettystring
+
+###################################
+## Main program
+
+#command line input: expecting 2 to n .gb files
+inputs = sys.argv[1:len(sys.argv)]
+
+# list names of "master" sequence and the comparison sequence(s)
+master = inputs[0].split('.')[0]
+clones = [n.split('.')[0] for n in inputs[1:len(inputs)]]
+
+#import raw datafiles in GenBank format
+seqsDB = gb_reader(inputs)
+
+#Determination of reading frame    
+print "Master sequence ID is: ", master
+
+output = []
+maxorf = 0
+maxbounds = None
+maxstrand = None
+maxoutput = None
+maxframe = ''
+
+curr_seq = seqsDB[master]['rawseq']
+for shift in range(3):
+    bounds = find_orf_bounds(curr_seq, shift+1)
+    output.append(format_frame("5'->3'", shift+1, bounds))
+    if bounds['maxorf'] > maxorf:
+        maxorf = bounds['maxorf']
+        maxoutput = shift
+        maxbounds = bounds
+        maxstrand = 'rawseq'
+        maxframe = "(5'->3' frame " + str(shift+1) + ")"
+
+curr_seq = seqsDB[master]['revseq']
+for shift in range(3):
+    bounds = find_orf_bounds(curr_seq, shift+1)
+    output.append(format_frame("3'->5'", shift+1, bounds))
+    if bounds['maxorf'] > maxorf:
+        maxorf = bounds['maxorf']
+        maxoutput = shift+3
+        maxbounds = bounds
+        maxstrand = 'revseq'
+        maxframe = "(3'->5' frame " + str(shift+1) + ")"
+
+if maxorf > 0:
+    output[maxoutput] += '.  (**using this one**)'
+else: print "Warning: No ORF detected in sequence."
+
+for datastring in output:
+    print datastring
+print '\n'
+
+
+#create FASTA file for alignment
+FASTAfile = open('227.fasta', 'w')
+
+orf = seqsDB[master][maxstrand][maxbounds['minstart']-1:maxbounds['maxend']]
+FASTAfile.write('>' + master + '\n' + orf.tostring() + '\n')
+
+for dbkey in clones:
+    wholeseq = seqsDB[dbkey][maxstrand]
+    FASTAfile.write('>' + dbkey + '\n' + wholeseq.tostring() + '\n')
+
+FASTAfile.close()
+
+#run Clustalw in Python
+cline = Clustalw.MultipleAlignCL('227.fasta')
+cline.set_output('227.aln')
+alignment = Clustalw.do_alignment(cline)
+
+#format alignment for use
+alnDB = {}
+for x in alignment.get_all_seqs():
+    name = x.description
+    alnDB[name] = x.seq
+
+start = 0
+while alnDB[master][start] == '-':
+    start += 1
+
+orfDB = {}
+for dbkey in alnDB.keys():
+    orfDB[dbkey] = alnDB[dbkey].tostring()
+
+    stop = start
+    while stop < len(orfDB[dbkey])-2:
+        codon = orfDB[dbkey][stop:stop+3]
+        stop += 3
+        
+        if (codon=='TAA') or (codon=='TGA') or (codon=='TAG'):
+            break
+
+    orfDB[dbkey] = orfDB[dbkey][start:stop]
+    
+
+#cycle through list of comparison sequences
+for clone in clones:
+    print "*** Comparing", clone, "sequence to", master, " ***"
+
+    mutDB = {'point':[], 'insertion':[], 'deletion':[]}
+    warnings = {}
+
+    alnsize = min(len(orfDB[master]),len(orfDB[clone]))
+    for pos in range(alnsize):
+        if orfDB[master][pos] != orfDB[clone][pos]:
+            if orfDB[master][pos] == '-':
+                mutDB['insertion'].append(pos)
+            elif orfDB[clone][pos] == '-':
+                mutDB['deletion'].append(pos)
+            else:
+                mutDB['point'].append(pos)
+
+
+    #N-terminal additions
+    if orfDB[clone][0:3] != 'ATG':
+        print "N-terminal alterations detected."
+    
+    #Nucleic acid point mutations
+    # - silent vs. non-silent
+    # - corresponding amino acid change
+
+    for pos in mutDB['point']:
+        codon_start = pos - pos%3
+        mcodon = orfDB[master][codon_start:codon_start+3]
+        ccodon = orfDB[clone][codon_start:codon_start+3]
+
+        if geneticCode.has_key(mcodon) and geneticCode.has_key(ccodon):
+            m_aa = geneticCode[mcodon]
+            c_aa = geneticCode[ccodon]
+            aa_pos = pos/3
+            
+            if m_aa == c_aa:
+                output = 'Silent'
+            else:
+                output = 'Non-silent'
+                if (aadata[m_aa]['type'] != aadata[c_aa]['type']):
+                    if not warnings.has_key(aa_pos):
+                        warning = 'Warning: non-silent mutation at '
+                        warning += 'amino acid position ' + str(aa_pos) + ': '
+                        warning += aadata[m_aa]['type'] + ' residue '
+                        warning += '(' + m_aa + ') replaced with '
+                        warning += aadata[c_aa]['type'] + ' residue '
+                        warning += '(' + c_aa + ')'
+                        warnings[aa_pos] = warning
+
+            mutbase = orfDB[master][pos] + str(pos) + orfDB[clone][pos]
+            output += ' point mutation found: ' + mutbase + ' '
+                    
+            mutaa = aadata[m_aa]['name'] + str(aa_pos) + aadata[c_aa]['name']
+            output += 'Amino acid result: ' + mutaa
+
+            print output
+
+    #Nucleic acid insertions
+    # - frameshift vs. non-frameshift
+    # - amino acid position where change occurred
+    for category in ['insertion', 'deletion']:
+        poslist = mutDB[category]
+
+        startlist = []
+        if poslist != []:
+            startlist.append(poslist[0])
+        for x in range(1,len(poslist),1):
+            if poslist[x-1] != poslist[x]-1:
+                startlist.append(poslist[x])
+
+        stoplist = []
+        for x in range(len(poslist)-1):
+            if poslist[x] != poslist[x+1]-1:
+                stoplist.append(poslist[x])
+        if poslist != []:
+            stoplist.append(poslist[len(poslist)-1])
+
+        for x in range(len(startlist)):
+            start = startlist[x]
+            stop = stoplist[x]
+            size = (stop-start)+1
+
+            if size%3 == 0:
+                output = 'Frame shift '
+            else:
+                output = 'Non-frame shift '
+
+            output += category + ' found: ' + str(size) + ' base '
+            output += category +', position '
+            output += str(start) + ' to ' + str(stop) + '.'
+
+            print output
+
+            DNAref = 'DNA Reference:    '
+            Protref = 'Prot Reference:   '
+            DNAresult = 'DNA Result:       '
+            Protresult = 'Prot Result:      '
+
+            begin_print = start-6
+            if begin_print%3 != 0:
+                begin_print += (3 - begin_print%3)
+            begin_print = max(begin_print, 0)
+
+            end_print = stop+6
+            if end_print%3 != 0:
+                end_print -= (3 - end_print%3)
+            end_print = min(end_print, alnsize)
+
+            mcodon = ''
+            ccodon = ''
+            for x in range(begin_print, end_print, 1):
+                mcodon += orfDB[master][x]
+                ccodon += orfDB[clone][x]
+
+                if len(ccodon) == 3:
+                    DNAresult += ccodon + ' '
+                    Protresult += ' ' + geneticCode.get(ccodon, ' ') + '  '
+                    ccodon = ''
+                    
+                if len(mcodon) == 3:
+                    DNAref += mcodon + ' '
+                    Protref += ' ' + geneticCode.get(mcodon, ' ') + '  '
+                    mcodon = ''
+
+            Protref += '   ' + maxframe
+            Protresult += '   ' + maxframe + '\n'
+
+            print DNAref
+            print Protref
+            print DNAresult
+            print Protresult
+
+    #C-terminal additions
+    if len(orfDB[master]) != len(orfDB[clone]):
+        output = 'C-terminal alterations detected.\n'
+        output += 'Stop codon moved to amino acid position '
+        output += str(len(orfDB[clone])/3) + ' (was'
+        output += str(len(orfDB[master]/3)) + ').'
+        print output
+    
+    #Detailed reporting of significant amino acid changes
+    dbkeys = warnings.keys()
+    dbkeys.sort()
+    for dbkey in dbkeys:
+        print warnings[dbkey]
+
+    print '\n'
+</pre>
+
+==Output==
+Here is a sample run.  The homo sapiens ApoE gene from refseq is the standard, and is compared with chimp and dog equivalents.
+<pre>
+soda-wlan-90:~/Documents/HST.510 kaull$ python 2-27.py hsapiens.gb ptroglodytes.gb cfamiliaris.gb
+Master sequence ID is:  hsapiens
+5'->3' frame 1: start codon position: 589, 595. stop codon position: 85, 316, 325, 340, 349, 382, 832. Transcript length: 243
+5'->3' frame 2: start codon position: 128. stop codon position: 35, 269, 572, 596, 1154, 1157. Transcript length: 1029
+5'->3' frame 3: start codon position: 84, 327, 339, 459, 510, 789, 798, 951, 1056. stop codon position: 9, 1035, 1149. Transcript length: 1065.  (**using this one**)
+3'->5' frame 1: start codon position: NA. stop codon position: 58, 478, 1207. Transcript length: 0
+3'->5' frame 2: start codon position: 167, 272, 557, 713, 764, 884. stop codon position: 74, 191, 866, 980. Transcript length: 813
+3'->5' frame 3: start codon position: 1107. stop codon position: 48, 69, 303, 564, 918, 930, 1110, 1152, 1203. Transcript length: 96
+
+
+*** Comparing ptroglodytes sequence to hsapiens  ***
+Non-silent point mutation found: C67T Amino acid result: Ala22Val
+Silent point mutation found: A158G Amino acid result: Ala52Ala
+Non-silent point mutation found: G166A Amino acid result: Arg55His
+Non-silent point mutation found: G253C Amino acid result: Arg84Thr
+Silent point mutation found: A344C Amino acid result: Ala114Ala
+Non-silent point mutation found: T405C Amino acid result: Cys135Arg
+Non-silent point mutation found: T475C Amino acid result: Val158Ala
+Silent point mutation found: T506C Amino acid result: Arg168Arg
+Silent point mutation found: C515G Amino acid result: Leu171Leu
+Non-silent point mutation found: C591G Amino acid result: Leu197Val
+Silent point mutation found: A680G Amino acid result: Leu226Leu
+Silent point mutation found: C687A Amino acid result: Arg229Arg
+Non-silent point mutation found: G930A Amino acid result: Val310Met
+
+
+Warning: non-silent mutation at amino acid position 84: basic residue (R) replaced with polar residue (T)
+Warning: non-silent mutation at amino acid position 135: cysteine residue (C) replaced with basic residue (R)
+
+
+*** Comparing cfamiliaris sequence to hsapiens  ***
+Silent point mutation found: T21C Amino acid result: Leu7Leu
+Non-silent point mutation found: C24G Amino acid result: Leu8Val
+Silent point mutation found: A32G Amino acid result: Thr10Thr
+Non-silent point mutation found: T33C Amino acid result: Phe11Leu
+Non-silent point mutation found: C48T Amino acid result: Gln16Trp
+Non-silent point mutation found: A49G Amino acid result: Gln16Trp
+Non-silent point mutation found: A54G Amino acid result: Lys18Asp
+Non-silent point mutation found: G56T Amino acid result: Lys18Asp
+Non-silent point mutation found: G60C Amino acid result: Glu20Gln
+Non-silent point mutation found: A64C Amino acid result: Gln21Pro
+Non-silent point mutation found: A65G Amino acid result: Gln21Pro
+Non-silent point mutation found: C67A Amino acid result: Ala22Glu
+Non-silent point mutation found: G69C Amino acid result: Val23Pro
+Non-silent point mutation found: T70C Amino acid result: Val23Pro
+Non-silent point mutation found: A75C Amino acid result: Thr25Leu
+Non-silent point mutation found: C76T Amino acid result: Thr25Leu
+Non-silent point mutation found: A77G Amino acid result: Thr25Leu
+Non-silent point mutation found: C82G Amino acid result: Pro27Arg
+Non-silent point mutation found: G83C Amino acid result: Pro27Arg
+Non-silent point mutation found: C88T Amino acid result: Pro29Leu
+Non-silent point mutation found: C89G Amino acid result: Pro29Leu
+Non-silent point mutation found: T94C Amino acid result: Leu31Pro
+Non-silent point mutation found: A127G Amino acid result: Glu42Gly
+Non-silent point mutation found: G136C Amino acid result: Ser45Thr
+Non-silent point mutation found: C137T Amino acid result: Ser45Thr
+Non-silent point mutation found: G145C Amino acid result: Arg48Pro
+Silent point mutation found: A152G Amino acid result: Glu50Glu
+Non-silent point mutation found: C153G Amino acid result: Leu51Ala
+Non-silent point mutation found: T154C Amino acid result: Leu51Ala
+Silent point mutation found: A158G Amino acid result: Ala52Ala
+Non-silent point mutation found: G163C Amino acid result: Gly54Ala
+Non-silent point mutation found: T164C Amino acid result: Gly54Ala
+Silent point mutation found: T170C Amino acid result: Phe56Phe
+Silent point mutation found: A197G Amino acid result: Thr65Thr
+Non-silent point mutation found: G206C Amino acid result: Glu68Asp
+Silent point mutation found: G215A Amino acid result: Gln71Gln
+Non-silent point mutation found: A220G Amino acid result: Glu73Gly
+Non-silent point mutation found: G221C Amino acid result: Glu73Gly
+Non-silent point mutation found: C222G Amino acid result: Leu74Val
+Non-silent point mutation found: G229A Amino acid result: Ser76Asn
+Non-silent point mutation found: T231A Amino acid result: Ser77Thr
+Non-silent point mutation found: G253C Amino acid result: Arg84Thr
+Silent point mutation found: C266T Amino acid result: Asp88Asp
+Non-silent point mutation found: T282G Amino acid result: Leu94Val
+Silent point mutation found: A296G Amino acid result: Lys98Lys
+Non-silent point mutation found: T297G Amino acid result: Ser99Ala
+Silent point mutation found: A302G Amino acid result: Glu100Glu
+Non-silent point mutation found: G308C Amino acid result: Glu102Asp
+Silent point mutation found: A311G Amino acid result: Glu103Glu
+Silent point mutation found: A314G Amino acid result: Gln104Gln
+Non-silent point mutation found: A318G Amino acid result: Thr106Gly
+Non-silent point mutation found: C319G Amino acid result: Thr106Gly
+Silent point mutation found: G323C Amino acid result: Pro107Pro
+Non-silent point mutation found: G324A Amino acid result: Val108Met
+Non-silent point mutation found: G327A Amino acid result: Ala109Thr
+Non-silent point mutation found: G329C Amino acid result: Ala109Thr
+Non-silent point mutation found: G330T Amino acid result: Glu110Ser
+Non-silent point mutation found: A331C Amino acid result: Glu110Ser
+Non-silent point mutation found: G340A Amino acid result: Arg113Gln
+Silent point mutation found: A344C Amino acid result: Ala114Ala
+Silent point mutation found: G347C Amino acid result: Arg115Arg
+Non-silent point mutation found: C348G Amino acid result: Leu116Val
+Non-silent point mutation found: T351G Amino acid result: Ser117Ala
+Non-silent point mutation found: G384C Amino acid result: Gly128Arg
+Non-silent point mutation found: G387T Amino acid result: Ala129Ser
+Non-silent point mutation found: T405C Amino acid result: Cys135Arg
+Non-silent point mutation found: G408A Amino acid result: Gly136Asn
+Non-silent point mutation found: G409A Amino acid result: Gly136Asn
+Non-silent point mutation found: G417A Amino acid result: Val139Thr
+Non-silent point mutation found: T418C Amino acid result: Val139Thr
+Non-silent point mutation found: G435C Amino acid result: Val145Leu
+Silent point mutation found: C449G Amino acid result: Leu149Leu
+Non-silent point mutation found: C460G Amino acid result: Thr153Ser
+Non-silent point mutation found: T475C Amino acid result: Val158Ala
+Non-silent point mutation found: C480T Amino acid result: Leu160Phe
+Non-silent point mutation found: C492A Amino acid result: Leu164Met
+Silent point mutation found: T506C Amino acid result: Arg168Arg
+Non-silent point mutation found: C513G Amino acid result: Leu171Val
+Non-silent point mutation found: C515G Amino acid result: Leu171Val
+Silent point mutation found: C518G Amino acid result: Leu172Leu
+Silent point mutation found: C521G Amino acid result: Arg173Arg
+Silent point mutation found: T524C Amino acid result: Asp174Asp
+Non-silent point mutation found: T530G Amino acid result: Asp176Glu
+Non-silent point mutation found: A541G Amino acid result: Lys180Arg
+Silent point mutation found: A551C Amino acid result: Ala183Ala
+Silent point mutation found: G554C Amino acid result: Val184Val
+Non-silent point mutation found: C558A Amino acid result: Gln186Lys
+Silent point mutation found: G566C Amino acid result: Gly188Gly
+Non-silent point mutation found: C568T Amino acid result: Ala189Val
+Non-silent point mutation found: C569G Amino acid result: Ala189Val
+Silent point mutation found: C578T Amino acid result: Gly192Gly
+Non-silent point mutation found: G588A Amino acid result: Gly196Ser
+Non-silent point mutation found: C591G Amino acid result: Leu197Val
+Non-silent point mutation found: C593G Amino acid result: Leu197Val
+Non-silent point mutation found: G597A Amino acid result: Ala199Ser
+Non-silent point mutation found: C598G Amino acid result: Ala199Ser
+Silent point mutation found: G614C Amino acid result: Leu204Leu
+Non-silent point mutation found: G615T Amino acid result: Gly205Trp
+Silent point mutation found: C620G Amino acid result: Pro206Pro
+Non-silent point mutation found: G624C Amino acid result: Val208Leu
+Silent point mutation found: A629G Amino acid result: Glu209Glu
+Non-silent point mutation found: G634C Amino acid result: Gly211Ala
+Non-silent point mutation found: T640A Amino acid result: Val213Glu
+Silent point mutation found: G644C Amino acid result: Arg214Arg
+Non-silent point mutation found: G645A Amino acid result: Ala215Asn
+Non-silent point mutation found: C646A Amino acid result: Ala215Asn
+Non-silent point mutation found: C652A Amino acid result: Thr217Lys
+Non-silent point mutation found: T653G Amino acid result: Thr217Lys
+Non-silent point mutation found: T660G Amino acid result: Ser220Ala
+Non-silent point mutation found: G669A Amino acid result: Gly223Thr
+Non-silent point mutation found: G670C Amino acid result: Gly223Thr
+Non-silent point mutation found: C671G Amino acid result: Gly223Thr
+Silent point mutation found: A680G Amino acid result: Leu226Leu
+Non-silent point mutation found: A682T Amino acid result: Gln227Leu
+Non-silent point mutation found: G683C Amino acid result: Gln227Leu
+Non-silent point mutation found: C693G Amino acid result: Gln231Asp
+Non-silent point mutation found: G695C Amino acid result: Gln231Asp
+Non-silent point mutation found: T699C Amino acid result: Trp233Leu
+Non-silent point mutation found: G700T Amino acid result: Trp233Leu
+Non-silent point mutation found: G705C Amino acid result: Glu235Gln
+Non-silent point mutation found: G709A Amino acid result: Arg236Gln
+Non-silent point mutation found: C718G Amino acid result: Ala239Gly
+Non-silent point mutation found: G721A Amino acid result: Arg240Gln
+Non-silent point mutation found: A723C Amino acid result: Met241Leu
+Non-silent point mutation found: G735A Amino acid result: Gly245Ser
+Non-silent point mutation found: A744G Amino acid result: Thr248Ala
+Non-silent point mutation found: A751G Amino acid result: Asp250Gly
+Non-silent point mutation found: G754A Amino acid result: Arg251His
+Non-silent point mutation found: C761G Amino acid result: Asp253Glu
+Non-silent point mutation found: G765A Amino acid result: Val255Met
+Non-silent point mutation found: A768C Amino acid result: Lys256Arg
+Non-silent point mutation found: A769G Amino acid result: Lys256Arg
+Non-silent point mutation found: G770C Amino acid result: Lys256Arg
+Non-silent point mutation found: G777A Amino acid result: Val259Ile
+Non-silent point mutation found: G779A Amino acid result: Val259Ile
+Non-silent point mutation found: G780C Amino acid result: Ala260Gln
+Non-silent point mutation found: C781A Amino acid result: Ala260Gln
+Silent point mutation found: C791G Amino acid result: Arg263Arg
+Non-silent point mutation found: C793T Amino acid result: Ala264Val
+Non-silent point mutation found: C794G Amino acid result: Ala264Val
+Non-silent point mutation found: C798A Amino acid result: Leu266Met
+Non-silent point mutation found: C813G Amino acid result: Gln271Asp
+Non-silent point mutation found: G815C Amino acid result: Gln271Asp
+Non-silent point mutation found: T826A Amino acid result: Leu275Gln
+Non-silent point mutation found: G827A Amino acid result: Leu275Gln
+Non-silent point mutation found: C828A Amino acid result: Gln276Lys
+Silent point mutation found: C848G Amino acid result: Ala282Ala
+Non-silent point mutation found: G876C Amino acid result: Val292Leu
+Non-silent point mutation found: C901A Amino acid result: Ala300Asp
+Silent point mutation found: T926G Amino acid result: Ala308Ala
+Non-silent point mutation found: G934C Amino acid result: Gly311Ala
+Non-silent point mutation found: G940T Amino acid result: Ser313Ile
+Non-silent point mutation found: G942C Amino acid result: Ala314Pro
+Non-silent point mutation found: G945A Amino acid result: Ala315Thr
+Non-silent point mutation found: C948T Amino acid result: Pro316Ser
+Non-silent point mutation found: G951A Amino acid result: Val317Lys
+Non-silent point mutation found: T952A Amino acid result: Val317Lys
+Silent point mutation found: C956T Amino acid result: Pro318Pro
+Non-silent point mutation found: A957G Amino acid result: Ser319Val
+Non-silent point mutation found: G958T Amino acid result: Ser319Val
+Non-silent point mutation found: C959G Amino acid result: Ser319Val
+Non-silent point mutation found: C962G Amino acid result: Asp320Glu
+Non-silent point mutation found: A963G Amino acid result: Asn321Glu
+Non-silent point mutation found: T965A Amino acid result: Asn321Glu
+Non-silent point mutation found: A967C Amino acid result: His322Pro
+Non-silent point mutation found: C968A Amino acid result: His322Pro
+
+
+Frame shift insertion found: 3 base insertion, position 98 to 100.
+DNA Reference:    CTG CG- --C 
+Prot Reference:    L             (5'->3' frame 3)
+DNA Result:       CCG AAG GTC 
+Prot Result:       P   K   V     (5'->3' frame 3)
+
+Frame shift insertion found: 15 base insertion, position 109 to 123.
+DNA Reference:    CAG A-- --- --- --- --- -CC GAG 
+Prot Reference:    Q                           E     (5'->3' frame 3)
+DNA Result:       CAG GAG CTG GAG CCA GAG GCC GGG 
+Prot Result:       Q   E   L   E   P   E   A   G     (5'->3' frame 3)
+
+Warning: non-silent mutation at amino acid position 16: polar residue (Q) replaced with nonpolar residue (W)
+Warning: non-silent mutation at amino acid position 18: basic residue (K) replaced with acidic residue (D)
+Warning: non-silent mutation at amino acid position 20: acidic residue (E) replaced with polar residue (Q)
+Warning: non-silent mutation at amino acid position 21: polar residue (Q) replaced with nonpolar residue (P)
+Warning: non-silent mutation at amino acid position 22: nonpolar residue (A) replaced with acidic residue (E)
+Warning: non-silent mutation at amino acid position 25: polar residue (T) replaced with nonpolar residue (L)
+Warning: non-silent mutation at amino acid position 27: nonpolar residue (P) replaced with basic residue (R)
+Warning: non-silent mutation at amino acid position 42: acidic residue (E) replaced with nonpolar residue (G)
+Warning: non-silent mutation at amino acid position 48: basic residue (R) replaced with nonpolar residue (P)
+Warning: non-silent mutation at amino acid position 73: acidic residue (E) replaced with nonpolar residue (G)
+Warning: non-silent mutation at amino acid position 84: basic residue (R) replaced with polar residue (T)
+Warning: non-silent mutation at amino acid position 99: polar residue (S) replaced with nonpolar residue (A)
+Warning: non-silent mutation at amino acid position 106: polar residue (T) replaced with nonpolar residue (G)
+Warning: non-silent mutation at amino acid position 109: nonpolar residue (A) replaced with polar residue (T)
+Warning: non-silent mutation at amino acid position 110: acidic residue (E) replaced with polar residue (S)
+Warning: non-silent mutation at amino acid position 113: basic residue (R) replaced with polar residue (Q)
+Warning: non-silent mutation at amino acid position 117: polar residue (S) replaced with nonpolar residue (A)
+Warning: non-silent mutation at amino acid position 128: nonpolar residue (G) replaced with basic residue (R)
+Warning: non-silent mutation at amino acid position 129: nonpolar residue (A) replaced with polar residue (S)
+Warning: non-silent mutation at amino acid position 135: cysteine residue (C) replaced with basic residue (R)
+Warning: non-silent mutation at amino acid position 136: nonpolar residue (G) replaced with polar residue (N)
+Warning: non-silent mutation at amino acid position 139: nonpolar residue (V) replaced with polar residue (T)
+Warning: non-silent mutation at amino acid position 186: polar residue (Q) replaced with basic residue (K)
+Warning: non-silent mutation at amino acid position 196: nonpolar residue (G) replaced with polar residue (S)
+Warning: non-silent mutation at amino acid position 199: nonpolar residue (A) replaced with polar residue (S)
+Warning: non-silent mutation at amino acid position 213: nonpolar residue (V) replaced with acidic residue (E)
+Warning: non-silent mutation at amino acid position 215: nonpolar residue (A) replaced with polar residue (N)
+Warning: non-silent mutation at amino acid position 217: polar residue (T) replaced with basic residue (K)
+Warning: non-silent mutation at amino acid position 220: polar residue (S) replaced with nonpolar residue (A)
+Warning: non-silent mutation at amino acid position 223: nonpolar residue (G) replaced with polar residue (T)
+Warning: non-silent mutation at amino acid position 227: polar residue (Q) replaced with nonpolar residue (L)
+Warning: non-silent mutation at amino acid position 231: polar residue (Q) replaced with acidic residue (D)
+Warning: non-silent mutation at amino acid position 235: acidic residue (E) replaced with polar residue (Q)
+Warning: non-silent mutation at amino acid position 236: basic residue (R) replaced with polar residue (Q)
+Warning: non-silent mutation at amino acid position 240: basic residue (R) replaced with polar residue (Q)
+Warning: non-silent mutation at amino acid position 245: nonpolar residue (G) replaced with polar residue (S)
+Warning: non-silent mutation at amino acid position 248: polar residue (T) replaced with nonpolar residue (A)
+Warning: non-silent mutation at amino acid position 250: acidic residue (D) replaced with nonpolar residue (G)
+Warning: non-silent mutation at amino acid position 260: nonpolar residue (A) replaced with polar residue (Q)
+Warning: non-silent mutation at amino acid position 271: polar residue (Q) replaced with acidic residue (D)
+Warning: non-silent mutation at amino acid position 275: nonpolar residue (L) replaced with polar residue (Q)
+Warning: non-silent mutation at amino acid position 276: polar residue (Q) replaced with basic residue (K)
+Warning: non-silent mutation at amino acid position 300: nonpolar residue (A) replaced with acidic residue (D)
+Warning: non-silent mutation at amino acid position 313: polar residue (S) replaced with nonpolar residue (I)
+Warning: non-silent mutation at amino acid position 315: nonpolar residue (A) replaced with polar residue (T)
+Warning: non-silent mutation at amino acid position 316: nonpolar residue (P) replaced with polar residue (S)
+Warning: non-silent mutation at amino acid position 317: nonpolar residue (V) replaced with basic residue (K)
+Warning: non-silent mutation at amino acid position 319: polar residue (S) replaced with nonpolar residue (V)
+Warning: non-silent mutation at amino acid position 321: polar residue (N) replaced with acidic residue (E)
+Warning: non-silent mutation at amino acid position 322: basic residue (H) replaced with nonpolar residue (P)
+</pre>

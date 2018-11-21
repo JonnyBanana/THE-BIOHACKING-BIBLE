@@ -1,0 +1,39 @@
+==ID: Ring Oscillator ==
+
+*'''Description''': Ring Oscillator based on 3 inverters (original idea M.Elowitz)
+*'''Hypothesis''': 
+**all hypothesis applicable to sub-parts
+*'''Inputs''':
+**nb-gene-copies
+*'''Outputs''':
+**Protein1
+**Protein2
+**Protein3
+*'''Internal parameters''':
+** ???
+
+==CellML structure (CellML 1.1 spec)==
+*'''Component''': Inverter
+*'''Units''': 
+**TBD
+*'''Imports''':
+**Components:
+***inverter1
+***inverter2
+***inverter3
+
+*'''Variables''':
+**time (public interface = in)
+**nbGeneCopies (public interface = in)
+**protein1 (public interface = out / init value = 0.)
+**protein2 (public interface = out / init value = 0.)
+**protein3 (public interface = out / init value = 0.)
+
+*'''MathML'''
+**none
+
+==Comments==
+*Don't know how to import 3 instances of the same component ???
+*No too sure how to connect the components together following the import
+*Do I have to declare all the variables I need to use from the imported components ?
+*How do I 'trigger' the dynamic behaviour of the sub-components ?

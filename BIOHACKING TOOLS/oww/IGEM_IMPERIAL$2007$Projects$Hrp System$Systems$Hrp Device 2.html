@@ -1,0 +1,88 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"| Super Parts
+!colspan="2" | links to higher level parts if applicable 
+|- style="background:#FF9966"
+!height="25pt" width="80pt" height="50"|Actual Part
+!colspan="2" height="170pt"| [[image:IC2007 Hrp Dev2Top.png|center|400px|]]
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"|Sub Parts
+!'''RBS (Elowitz)''' [http://parts.mit.edu/registry/index.php/Part:BBa_B0034 BBa_B0034]
+!'''Double terminator (B0010-B0012)''' [http://parts.mit.edu/registry/index.php/Part:BBa_B0015 BBa_B0015]
+|}
+
+<div class="tabs-blue">
+<ul>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2/Implementation|Implementation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 2/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Motivations==
+*Device simulates a basic AND gate with one inverted input. 
+*HrpR and HrpS are controlled by a single promoter serving as the excitatory input to HrpL.
+*HrpV expression is dependent on a different promoter and serves as an inhibitory input. 
+
+==Part interface==
+
+{| border="0" width="100% align="center"
+|-
+|
+{| border="1" cellpadding="15" width="100%"
+|- 
+! style="background:#66CC99"| INPUTS !!style="background:#FF3333"| OUTPUTS 
+|-
+| align="center" | PoPS (HrpV strand) ||align="center" rowspan = "2" |  PoPS (pHrpL)
+|-
+| align="center" | PoPS (HrpR & HrpS) 
+|}
+|| || |||| || |||| || ||
+[[Image:IC2007 Hrp Dev2BB.PNG|right|350px]]
+|}
+
+==Expected behavior and performances==
+
+(try to write your specifications in tables. Here are just 2 examples)
+{| border="1" width="100%"
+Interface specifiactions 
+|- 
+! style="background:lightgrey"|Characteristics !! Input 1 !! Input 2 !! Input 3 !! Output 1 !! Output 2 
+|-
+| Range || [X1,Y1] || [X2,Y2] || [X3,Y3] || [X4,Y4] || [X5,Y5]
+|-
+| Tolerance || T1 ||T2 || T3 || T4|| T5
+|-
+| Transfer function ||   n/a   ||  n/a    ||   n/a   ||   insert image     || insert image
+|-
+| Latency||      ||      ||      ||        ||
+|}
+
+
+{| border="1" width="100%"
+System level specifications
+|- 
+! style="background:lightgrey" width="100pt" |Properties !! Comments
+|-
+| Range||
+|-
+| Transfer function ||
+|-
+| Latency ||
+|-
+| Robustness ||  
+|-
+| Variability  ||  
+|-
+| properties 3 ||  
+|-
+| properties 4 ||  
+  
+|}
+
+==Open issues==
+*list known issues

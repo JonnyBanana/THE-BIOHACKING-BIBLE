@@ -1,0 +1,43 @@
+==Plan for today==
+#Digest constructs
+#Ligate components
+#Transform
+
+==Double Digest==
+*See [[Knight:Restriction Digest|protocol]]
+*Used buffer 3 as suggested by NEB for the XbaI/PstI digests
+*Used 2uL stock R0040 instead of prepped
+*22.12 uL of B0032
+*8.84 uL of I13401
+*4.68 uL of J04650
+*Incubated at 37 for 5 hrs
+
+==Design discussion==
+*Inserting a standard BioBrick site (...EcoRI-XbaI-[ccdB]-SpeI-PstI...) for the placement of an RBS would leave too big a gap between the RBS and translation initiator (http://parts.mit.edu/registry/index.php/Assembly:RBS-CDS_issues)
+See proposed solution at [[Registry/Measurement_kit/Notebook/Design]]
+*It was suggested that we use the LacZ reporter gene instead of an FP, but all that appears to be in the registry is an N-terminus fragment of the LacZ gene. In the near future, we plan to standardize and enter the LacZ gene into the registry.
+
+==PCR purification==
+*buffer transfer of cut DNA
+*protocol is in booklet with the kit
+*note: labeling system for digests:
+#R0040
+#B0032
+#I13401
+#J04650
+
+==Ligation==
+[[Endy:DNA_ligation_using_T4_DNA_ligase]]
+*Used modified version of above protocol. Will post on OWW soon.
+
+Labels:
+A: RFP promoter tester
+*B0032 + J04650
+B: GFP RBS tester
+*R0040 + I13401
+C: RFP RBS tester
+*R0040 + J0465
+
+==Transformation of devices==
+*Attempting to transform the ligated devices.
+*Strain - MG1655

@@ -1,0 +1,82 @@
+== Rebuilding the Pheromone Response Pathway ==
+Build a reduced version of the pheromone response pathway ie of the signal cascade and gene expression program activated in response to pheromone. The reduced version will have custom transcriptional control; specifically, it will:
+* get rid of transcriptional feedback loops [to the extent possible]
+* get rid of cell-cycle regulation of [some] genes
+* be made up of distinct "modules" [eg receptor, mating factor production and export, G-protein, MAPK cascade etc] that can be activated independently and that work together to produce mating
+Maybe, it will: 
+* have a custom version of Ste12 transcriptional regulator -- Ste12'
+* have Ste12'-responsive reduced set of WT Ste12-induced genes needed for successful mating
+
+The goal, at least in the first go-around, is not a minimal pathway, but at least a smaller, less complicated one than the WT pathway.
+
+== Why is this interesting ? ==
+'''Engineering reasons''':
+* To see whether it can be done
+* Engineering lessons in:
+** Designing large, modular pathways out of independent pieces [and getting those pieces to work with each other]
+** How to build a debuggable pathway
+** Tuning basal and induced expression levels
+** Designing promoter regions that avoid crosstalk
+** Designing long stretches of DNA to avoid disruptive recombination events
+** Plasmid engineering 
+* Ability to study a bunch of perturbations in a larger pathway than has been studied so far:
+** Several different gene expression programs are triggered by pheromone: shmooing, cell-cycle arrest, cell fusion etc. By building our own version, we can explore each of these programs separately, hook them together in different ways or even hook up pheromone response to totally different pathways eg to be galactose-inducible, or switch around the filamentation response and mating response.
+** Could investigate effect of setting up gene expression program such that different subprograms [cell-cycle arrest, shmooing etc] are activated in a different order, or with different timing/kinetics 
+** Could investigate impact of alternative architectures eg using several TFs instead of just Ste12, or a feedforward loop etc.
+** Could alter the response characteristics of the transcription profile by changing the DBD and transcriptional activation domains eg could require higher levels of our Ste12 replacement before switching on.
+* Facilitates experiments: if we put all the genes in the pathway in one spot, we can more easily manipulate the pathway "in bulk"
+
+'''Scientific reasons''':
+* Useful as a simpler model system, both experimentally and computationally, to investigate the operation of the pathway
+* Validation of the existing state of knowledge about transcriptional regulation of the pathway
+* Geting rid of [some of] the transcriptional feedback loops that are present in the WT pathway will allow us to assess whether they're essential
+* Blue-sky idea: could be moved to an organism that doesn't mate and make it amenable to experimental approaches based on mating eg complementation.
+
+
+== Presentations, writeups etc ==
+* [[Media:Jan06 Alpha Project Retreat.ppt|Jan '06 Alpha Project retreat presentation]]
+*[[Media:AMallet_SB2.0_Poster.ppt|SB 2.0 poster]]
+
+== Feedback etc == 
+=== 29 January 2006 Alpha Project Retreat Brainstorm ===
+'''Design Ideas'''
+*Simplify gene expression architecture
+*Erase sites of post-translation modification
+**PO4
+**Ubiquitin
+*Simplify post translational architecture
+
+'''Improve measurement'''
+*affinity tags
+*fluorescence
+
+'''Improve tinkering'''
+*Clean out cross talk with other pathways and/or reduce pheromone response
+*Simpler pathway Ste5:Ste11/7 fusion
+
+'''Chassis'''
+*Go into ''Xenopus'' oocytes
+**in vitro RNA injected into eggs
+**extract RNA from shmooing cells, inject into oocytes
+
+'''Construction & Implementation Plans'''
+*Genes to futz with
+**Ste18, Gpa1, Ste4 (order matters... too much Ste4 will activate pathway)
+**Fus3
+**Far1
+**Ste2
+*Question -- what sort of inducible range can you get with regulated promoters in yeast?
+**Available promoters: tet, cup1, estradiol/gal, met, glucocorticoid
+***Tet is simple
+**Make strains with every gene under constitutive promoter, strains with a single gene under control, strains with every gene under control
+
+*Chromosome versus YAC versus plasmid?
+**issue of direct repeat and homologous recombination
+
+'''Performance Requirements''' [i.e., how to know that the pathway is still the "pathway"]
+*Mating / mating efficiency
+*pRM1-lacZ reporter and B-gal assay
+*flow cytometric assay
+*microscopy (arrest and shmoo)
+
+*Dedicated Ste12 to measure activity of the pathway + separate, dedicated Ste12 that maintains basal activity

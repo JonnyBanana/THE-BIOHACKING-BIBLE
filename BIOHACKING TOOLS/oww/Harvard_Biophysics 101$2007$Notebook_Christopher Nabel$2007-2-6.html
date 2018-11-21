@@ -1,0 +1,62 @@
+== Homework Due February 6 ==
+Here is my revision of the [http://openwetware.org/wiki/Harvard:Biophysics_101/2007/02/01 code] assigned on February 1:
+
+<pre>
+   #!/usr/bin/env python
+
+  from Bio import GenBank, Seq
+
+  # We need to import the Translation module from Bio.seq
+
+  from Bio.Seq import Seq,translate
+
+  # We can create a GenBank object that will parse a raw record
+  # This facilitates extracting specific information from the sequences
+  record_parser = GenBank.FeatureParser()
+
+  # NCBIDictionary is an interface to Genbank
+  ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+
+  # If you pass NCBIDictionary a GenBank id, it will download that record
+  parsed_record = ncbi_dict['42740729']
+
+  print "GenBank id:", parsed_record.id
+
+  # Extract the sequence from the parsed_record
+  s = parsed_record.seq.tostring()
+  print "total sequence length:", len(s)
+
+  max_repeat = 9
+
+  print "method 1"
+  for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)]) #note A changed to T
+    print substr, s.count(substr)
+
+  print "\nmethod 2"
+  for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)]) # again, A changed to T
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+
+  # Translate the DNA to a protein sequence and give the length
+
+  gp = translate(s)
+
+ 
+  print "The translated sequence for Ebola Zaire is %s" % gp
+  print "disclaimer: this translation starts before the open reading frame"
+  print "The length for this sequence is", len (gp)
+
+  # Print the raw record without parsing the subsets of data
+
+  ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank')
+  unparsed_record = ncbi_dict['42740729']
+  print "Raw Record:"
+  print unparsed_record
+</pre>
+[http://openwetware.org/wiki/User:ChristopherNabel back to my page]

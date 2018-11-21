@@ -1,0 +1,27 @@
+It seems that there are two ways to go about performing parameter estimation using existing matlab tools.  Both routines are part of the optimization toolbox.  The first way is to do Nonlinear Curve Fitting.  This algorithm minimizes a given cost function for differences between the calulated values and the data.  The other function that we can use is Constrained Minimization.  This algorithm just minimizes the value for a user defined function, allowing the user to implement their own cost function.
+
+
+Nonlinear Curve Fitting
+*The algorithm attempts to minimize <math>|f(k,t,expt)-ydata(t,expt)|^2</math> (over all time points from all experiments) by varying parameters k (k is a vector).  The user can also specify limits on the values of the parameters.
+
+
+Contrained Minimization
+*In this case we could define the cost function to be the same as for the nonlinear curve fitting, or some other function of our choice.
+
+
+My initial thinking was to go with the constrained minimization, becase it is more general (we can change our cost function).  Initial work with the constrained minimization seems to indicate that it is very slow (well, at least it's slow when every evaluation of the cost function requires a simulation, which takes 2-3s).  I generated an (experimental) 'data' set using one set of parameters.  I then tried to see if it could recover the correct parameter value after giving it an initial guess that was identical to the parameters used to generate the 'data' except one of the parameters was altered by a factor of 10.  It was attempting to fit to the 'data' (recover the parameters initially used) by changing all parameters (ie it didn't know that I only changed one parameter value).  After several hours of computation, the algorithm aborted prematurely and failed to find the correct parameter set.  Even when only asking the program to estimate one variable, and then giving it the same parameter value that was used to generate the 'data' as the initial estimate, the algorithm failed to determine the correct parameter value.  The behavior of the algorithm is supposed to be much more robust when the gradient of the cost function with respect to each parameter is given <math> \left ( \frac{\partial f}{\partial k_i} \right ) </math>.  
+
+
+I'm trying to work out exactly how to calculate the partial derivative.  I think that the below analysis is correct, though I will try to verify this with someone before I implement it...
+
+The cost function is <math>f = \sum_{t} [simdata(expt,t) - data(expt,t)]^2</math>
+
+So  <math>\frac{\partial f}{\partial k_i}=\sum_{expt} \sum_{t} 2[simdata(expt,t) - data(expt,t)]\frac{\partial simdata(expt,t)}{\partial k_i}</math>
+
+This means that the only new quantity that we need to calculate is <math>\frac{\partial simdata(expt,t)}{\partial k_i}</math>.
+Computing this quantity actually turns out to be very difficult.  Each ODE is of the form <math>\frac{dc_i}{dt}=h(c,k,t)</math>, and all terms contain at least one <math>k_j</math> and one <math>c_k</math>.  This makes the derivative with respect to <math>k_l</math> impossible to automatically compute from the ODEs.
+
+
+Since constrained minimization doesn't appear to be working, I'm going to try nonlinear curve fitting.  This function also is said to be much more stable when you give it the gradient (or in this case the Jacobian) wrt the parameters.  Unfortunately, for the same reasons as above I am unable to produce the Jacobian.  
+
+Using the nonlinear curve fitting (the function is called lsqcurvefit), I am able to get the function to select the correct parameter when the correct parameter is given as the initial guess.  However, when another value is given as the initial guess, the algorithm says that it finds a solution (ie settles into a local minima), but it's 'guess' at the parameter value tends to be the guess that it was given...  Hmm, not very good...

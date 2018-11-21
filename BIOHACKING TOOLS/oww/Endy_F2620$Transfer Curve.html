@@ -1,0 +1,16 @@
+==Description==
+The most important characteristic about a device is its transfer curve.  The transfer curve of a device specifies how its output varies with its input.
+
+==Protocols & Data==
+*[[Endy:F2620/Transfer Curve/Protocols]]
+*[[Endy:F2620/Transfer Curve/Data]]
+
+==Issues==
+*What is the time lag between adding AHL to the wells and bringing the plate to the plate reader? ''I would guess 10min, but I can do a pipeting exercise and let you know more precisely''
+*Why does this surface show less time-varying behavior than the specificity 3-d surfaces we have looked at before. ''Possibly because each of the single curves for each colony looks much smoother, they are posted online, you can have a look''
+*Can we look at the variability in the flow data and use that to predict the difference in means that we would expect for the variability cultures?
+**I think it is good idea but I also think that that would be easiest done using flowjo and just looking at the /sigma or FWHM for the distributions. Could you show me how to do that?
+***Matlab might be the best.  I can send you mfiles that will let you import the flow data into matlab.
+''Sure, could you do that?''
+*Are you sure that your highest concentration of AHL enables to saturate the pLux promoter (according to your data)? Have you tried higher concentrations ? [[User:Vincent|Vincent]] 11:31, 25 November 2006 (EST)
+**'''[[User:Bcanton|BC]] 11:50, 14 December 2006 (EST):''' Yes, we've gone one order of magnitude higher in concentration (to 1E-4M AHL) and not seen an increase in output.  Sometimes we even see a decrease in output at that high an input level.

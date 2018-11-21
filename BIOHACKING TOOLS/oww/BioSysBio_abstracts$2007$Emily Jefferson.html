@@ -1,0 +1,41 @@
+* Add or delete the sections that you require.
+
+=The relationship between domain-domain interaction orientation and sequence similarity=
+'''Author(s): ''' Emily R. Jefferson and Geoffrey J. Barton <br> 
+'''Affiliations:''' University of Dundee  <br>
+'''Contact:''' email: emily@compbio.dundee.ac.uk <br>
+'''Keywords:''' 'domain-domain interactions' 'three dimensional structure' 'sequence identity' 'interaction orientation' 
+
+[[Category:BioSysBio Keywords add_keyword_1]] 
+[[Category:BioSysBio Keywords add_keyword_2]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+==Background/Introduction==
+In general proteins of similar sequence have a similar structure. We investigate whether a similar correlation exists between sequence identity and domain-domain interaction similarity. Understanding this relationship is important to the study of many aspects of protein-protein interactions, for example, the prediction of interaction information based on homology to complexes observed in structural data. Here the relationship between sequence identity and interaction similarity is investigated with the inclusion of all interactions within a structure and with redundancy filtering based upon normalisation by the pairwise SCOP <cite>SCOP</cite> family classification of the interacting domains.
+
+==Results==
+
+The probability that a pair of interactions were observed at the same orientation was determined and plotted against their % sequence identity. The results were normalised by the frequency of the pairwise SCOP <cite>SCOP</cite> family classification. There is a positive correlation between the probability of the same orientation between a pair of interactions and their % sequence identity (Fig 1). 
+
+[[Image:Fig5|1024 px|Fig 1]]
+
+'''Fig 1:''' ''The probability that a pair of interactions are interacting at the same orientation against % sequence identity.''.
+
+==Materials/Methods==
+
+Domain-domain interactions were employed rather than protein-protein interactions as domains can be considered to be the fundamental functional and structural unit of proteins. SCOP <cite>SCOP</cite>  was chosen as the domain classification system. The domain-domain interactions where again obtained from SNAPPI-DB (Structures, iNterfaces and Alignments of Protein-Protein Interactions – DataBase) [5]. The problem of interactions due to crystal packing artefacts was reduced by use of biological units, as predicted by PQS <cite>PQS</cite>. 
+Domain-domain interaction orientation was determined using an implementation of the iRMSD method described in Aloy et al <cite>Aloy</cite>. The sequence identity is the lowest sequence identity between each of the pairs of domains. For example, if comparing an domain-domain interaction A-B and with an interaction A'-B' then if the sequence identity was 100% between A and A' and the sequence identity was 30% between B and B' then the overall sequence identity for the pair of interactions would be 30%. The sequence identity between two domains was obtained from the STAMP <cite>STAMP</cite> alignment output.
+
+==Conclusion==
+Even at high sequence identities domain-domain interactions have appox. 20% probability of interacting at a different orientation.
+
+==References==
+
+ <biblio>
+ #Aloy pmid=14499603 
+ #SCOP pmid=7723011 
+ #PQS pmid=9787643
+ #STAMP pmid=1409577
+ </biblio>
+5. E. R. Jefferson, T. P. Walsh and G. J. Barton.  SNAPPI-DB: A Database and API of Structures, iNterfaces and Alignments for Protein-Protein Interactions. NAR Database Issue, Accepted for publication, 2007

@@ -1,0 +1,46 @@
+Back to [[Ty Thomson|Ty Thomson's user page]]
+
+== Thesis Topic ==
+
+The main objectives of my work is to develop the tools to perform time-dependent stimulation and analysis of signaling pathways, and show that this is more powerful than traditional time-independent or step response analysis.  I am using a computational model of the prototype system, the yeast pheromone response pathway, to generate hypotheses about the pathway.  In order to test these hypotheses, time-dependent stimuli will be delivered to cells via a microfluidic device, and in vivo fluorescent reporters will be used to observe the system state.  In addition to showing the strengths of this new approach to studying biological systems, I would like to use it to further our understanding of the pheromone response pathway.  
+
+== Research Goals ==
+
+My research can be broken down into 4 main goals that follow (for the most part) chronologically.
+
+=== Build a model of the pheromone response pathway ===
+
+Develop a model of the pheromone response pathway that can be used in conjunction with time-dependent stimulation and analysis of the pathway to propose and test hypotheses.  Once completed, this model can be used as a predictive tool for pathway response.
+*This model is largely already built (with instances in Matlab and [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=15637632&query_hl=1 Moleculizer]).  Also, using [http://cellsignaling.lanl.gov/bionetgen/ BioNetGen2] I have generated an SBML version of my model, which can be read as input by [http://www.numericatech.com/jacobian.htm Jacobian], [http://sloppycell.sourceforge.net/ SloppyCell], and the [http://www.mathworks.com/products/simbiology/ SimBio] toolbox in Matlab.
+*The model needs to be further refined using data from the literature, and data that I will generate myself.
+
+=== Build a microfluidic device for time-dependent stimulation of cells ===
+
+Design, build and characterize a device to allow for rapid variation of extracellular conditions for cells fixed in a microfluidic channel.
+*This chip has been designed using the technology out of the Quake Lab at Stanford (formerly Caltech).  See [[Protocols#Microfluidics| protocols]] for more info on chip design.  Early versions of the chip (called the [[Stimulator]]) have shown great promise.  Preliminary tests have shown that I can vary the extracellular environment (with NO cells in the channel) on a sub 100ms timescale.  I've also successfully adhered cells to the bottom of the channel, and had them resist detachment under fluid flow, though this needs further characterization.  I made a movie ([[Image:Cells_in_stimulator.avi]]) with the most recent version showing that I can change the fluid environment of cells in the channel (video in real time, with food dye used to color one of the fluids).  Please see the [[Stimulator]] page for the latest information.
+
+=== Investigate the pathway with time-dependent stimulation ===
+
+Show that using time-varying stimuli increases parameter sensitivity, and that this leads to an improvement in parameter estimation.  This is really just a specific instance of hypothesis testing (where the hypothesis is the particular parameter values).
+
+=== Identify and apply techniques for non-linear system identification ===
+
+Identify and apply tools developed for other fields to the analysis of signaling pathways, particularly with respect to time-dependent stimulation.  This can be divided into into two thrusts, parameter estimation and other analysis tools.
+#Parameter Estimation
+#*My first instinct was to try to do parameter estimation using Matlab.  This turned out to not be sufficient for my purposes.  See my notes on [[Parameter Estimation in Matlab]].
+#*I settled on using [http://www.numericatech.com/jacobian.htm Jacobian] for parameter estimation.  The newest version that I have is working well.
+#Model analysis tools
+#*One basic analysis of a model is parameter sensitivity.  Some people think that models should be robust to changes in parameters (reference to be filled in, since it's not cool to just state things and reference it blankly to 'some people').  I'm not so sure that is true, but either way the parameter sensitivity can in the very least tell you to what parameters your model's behavior is sensitive (critically depends on), and to what parameters it is insensitive (does not depend on).
+
+==Other==
+
+''' Relevant questions '''
+
+Q. What will determine if using time-varying stimuli is a success?<br>
+A. I think that it would be sufficient for me to show that you can get better parameter estimates using time varying stimuli than you can with step increase.  When I say better estimate, I mean that we can decrease the error bounds on parameters.  This hinges on some intelligent way to put bounds or confidence limits on parameters.  This is probably linked to the independence/coupling of paramters topic listed below under Signal Design.  
+
+Q. I say that a time varying stimulus can drive a system to a state that it won't normally attain in response to a step increase stimulus.  For what types of systems is this true?<br>
+A. I think that I can concoct systems that this is true for, but I should try to show that this is indeed true for the pheromone response pathway.
+
+
+[[Parameter Sensitivity and Estimation]]

@@ -1,0 +1,54 @@
+There are several classes of characterization that one might want to do.  Here's an attempt to described some/most of them.  The paradigm is that parts should be characterized by measuring the levels of the DNA, RNA and protein assoicated with a part either at a population or a single-cell level.
+
+==Population average measurements==
+When is measuring the aggregate behavior or population average behavior sufficient?
+*We only care about the behavior of the majority of cells?
+*single population
+*can offer time dependent behavior (via the plate reader)
+
+===DNA===
+*Plasmid copy number measurements (Caitlin and Jen)
+
+===RNA===
+*Northerns (Caitlin)
+*RT-PCR (Heather)
+
+===Proteins===
+*Quantitative westerns (Jen)
+*Plate reader (Barry)
+
+==Population distributions==
+When do you care about the population distributions of a large number of cells?
+*multiple populations
+*want to examine 1000s of cells rather than 10s or 100s
+*only need static behavior (you can do a time course, but it is somewhat painful)
+
+===DNA===
+*Can you stain DNA with DAPI or something else and characterize DNA content in living ''E. coli'' cells?  Plasmid copy number?
+
+===RNA===
+''both of these methods require intensive method development''
+*merge reporters from single cells measurements with flow cytometry
+*develop a high throughput microscopy version of one of the single cell techniques below
+
+===Proteins===
+*[[MIT Flow Cytometer Core Facility | Flow Cytometry]] using a fluorescent protein
+
+==Single cell measurements==
+When do we want to know the behavior in a single cell?
+*stochastic effects are important
+*single molecule resolution
+*dynamic behavior (want time resolved behavior of each cell lineage)
+
+===DNA===
+*how do you measure the plasmid copy number in a single cell?
+**Perhaps you could use FCS with a DNA binding protein specific to your plasmid, conjugated to GFP. This would require a lot of work on the method...
+
+===RNA===
+*[[Endy: Journal Club: Le et al 2005]]
+*[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=15277674&query_hl=3 Ido Golding approach]
+Both of these approaches rely on the same kind of RNA-MS2 protein binding.  Le et al. then use FCS to measure the levels of protein bound to RNA while Golding et al. attempt to track the individual mRNA via fluorescence microscopy.  Both are highly sensitive but both are also likely to perturb the system being measured.
+
+===Protein===
+*[http://www.biophysics.org/education/schwille.pdf Fluorescence correlation spectroscopy]
+*[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=15790856&query_hl=1 Michael Elowitz approach]

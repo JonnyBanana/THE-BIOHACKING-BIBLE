@@ -1,0 +1,8 @@
+{{KeatingLabToolbar}}
+* '''DONE:''' Allow the parent process in specdesign to be able to run an arbitrary command (specified in the control spec file) that re-evaluates the energy of the solution. Some ideas:
+** popen() is a useful function in C.
+** the specified command (most conveniently a script) must expect exactly one input string on the command line (the solution/backbone string) and output only one number is to stdout - the new energy.
+
+* Get to the bottom of the apparent MPI slowdown between parent and children processes - a better timing study.
+
+* Implement exclusion list capability (in PDB.pm probably) and allow the possibility of moving self calculations outside of CHARMM. Start by moving vdW such that arbitrary modifications can be easily applied.

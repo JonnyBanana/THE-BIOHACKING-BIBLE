@@ -1,0 +1,152 @@
+Notes:
+I've decided to make an orf class that indexes to a list of codon classes.
+The mutation detection will be built into comparators for the class.  It's taking me a bit to figure out exactly how these things all work... now all thats left is the mutation detecting comparator
+
+Update:
+I think I'm going to be ditching the attempt to compare orfs as 1) theyre too short to align and 2) it will be hard to match up "equivalent orfs".  Instead I'm going to do one by one alignment of each mutant vs the reference, detect mutants and then reference back to the affected orfs to determine what kind of mutation it is.
+
+<pre>
+#find all orfs within the sequences
+import re
+from Bio import Transcribe
+transcriber = Transcribe.unambiguous_transcriber
+from Bio import Translate
+from Bio.Alphabet import IUPAC
+from Bio.Seq import Seq
+import os
+from Bio import Clustalw
+standard_translator = Translate.unambiguous_dna_by_id[1]
+
+class codon:
+    def  __init__(self, sequence=""):
+        self.sequence = sequence
+        self.mRNA = transcriber.transcribe(Seq(sequence, IUPAC.unambiguous_dna))
+        self.protein = standard_translator.translate(Seq(sequence, IUPAC.unambiguous_dna))[0]
+
+class mutation:
+    def __init__(self,type="",start=0,stop=0):
+        self.type = type
+        self.span=(start,stop)
+    
+class orf:
+    #On initiation, the orf is stored as a list of codons.  If the orf has no stop, any excess bases will
+    #be ignored on the conversion to codons
+    def __init__(self, sequence=""):
+        self.codons = []
+        for i in range(len(sequence)/3):
+            #print i
+            temp_codon = codon(sequence[i*3:3+(i*3)])  #this algorithm of seperating into codons ignores any excess bases
+            self.codons.append(temp_codon)
+            #print self.codons[i].sequence
+        self.sequence = sequence
+        
+    #orfs are indexed by codons
+    def __getitem__(self,index):
+        return self.codons[index]
+
+    #comparing two orfs (defined by an aligned start codon) and returns a list of mutations         
+    def compare(self,other):
+        #write the two orfs to a file
+        temp_file = open(os.path.join(os.curdir, 'temp.txt'),"w")
+        temp_file.write(">gi|23509994|ref|NC_004318.1| Plasmodium\n ")
+        temp_file.write(self.sequence)
+        temp_file.write("\n\n")
+        temp_file.write(">gi|239809994|ref|NC_004318.1| Plasmodium\n ")
+        temp_file.write(other.sequence)
+        temp_file.close()
+        cline = Clustalw.MultipleAlignCL(os.path.join(os.curdir, 'temp.txt'))
+        cline.set_output('test.aln')
+        alignment = Clustalw.do_alignment(cline)
+        all_records = alignment.get_all_seqs()
+        print alignment
+
+
+def findORFS(sequence, startpos=0):
+    all_orfs = []
+    start = re.compile('ATG')
+    stop = re.compile('(TAA|TGA|TAG)')
+    all_starts = start.finditer(sequence)
+    all_stops = stop.finditer(sequence)
+    #print "Infunction: ",sequence
+    #print "starts:"
+    all_starts_list = []
+    for match in all_starts:
+        all_starts_list.append(match.span())
+        #print match.span()
+    #print "stops:"
+    all_stops_list = []
+    for stops in all_stops:
+        all_stops_list.append(stops.span())
+        #print stops.span()
+    for start in all_starts_list:
+        found = 0
+        for stop in all_stops_list:
+            #print "checking", start[0], "and", stop[0]
+            diff = (stop[0]-start[0])
+            if ((diff>0) and ((diff%3) == 0)):
+                print "orf at:", start[0]," ",stop[1]
+                all_orfs.append((start[0],stop[1]))
+                found = 1
+                break
+        if found ==0:
+            all_orfs.append((start[0],-1))
+        
+    return all_orfs
+
+#Main Program starts here          
+teststring = "ATG GGG GGG AAT GAT TAA CGT CGT TAA AGT ATG TTT TTT GTA G"
+teststring2= "ATG GGG GCG AT GAT TAA CGT CGT TAA AGT ATG TTT TTT GTA G"
+print teststring
+teststring = re.sub("\s+", "", teststring)
+teststring2 = re.sub("\s+", "", teststring2)
+allspans = findORFS(teststring)
+allspans2 = findORFS(teststring2)
+allorfs = []
+allorfs2 = []
+print "spans"
+print allspans
+for i in allspans:
+    x = i[0]  #I don't know why it won't let me use i[0] and i[1] directly as an int
+    y = i[1]
+    temp_orf = orf(teststring[x:y])
+    allorfs.append(temp_orf)
+for i in allspans2:
+    x = i[0]  #I don't know why it won't let me use i[0] and i[1] directly as an int
+    y = i[1]
+    temp_orf = orf(teststring2[x:y])
+    allorfs2.append(temp_orf)
+#print allorfs
+#looks like I'll need to map the alignment indecies to the reference seq and 'other' seq in a pariwise comparison...
+#then I can map those back to the orfs..
+    
+    
+mutations = allorfs[0].compare(allorfs2[0])
+for i in allorfs:
+    print "orfseq1:",i.sequence
+    #for j in i:
+     #   print j.sequence
+      #  print j.protein
+for i in allorfs2:
+    print "orgseq2:",i.sequence
+    
+
+#AUG GGG GGG AAU GAU UAA CGT CGT UAA AGT AUG TTT TTU GUA G
+#Find the position of all the start codons
+
+
+#OK.  I quickly learned that iterators don't reset once you get to the end of them    
+#all_starts = first_all_starts
+#all_stops = first_all_stops
+#Well...apparently you can't copy iterators... Great
+#This is wasteful, but I'm going to shove all the objects into a tuple
+#Ideally I could instead shove all codons into an orf object, but I don't know how to do that in python...
+    
+
+#Sequentially go through each start codon and look for stop codons in fram, otherwise store then entire sequen
+
+#now that I have the span for all starts, and all stops if I want, I can match up normalized distances from the first start
+#and pair them up without even looking at the strings again.  But i need to make sure its in a triplet search
+#orf = re.compile( 'AUG[ATUCG]+?(UAA|UGA|UAG)')
+#te = orf.finditer(teststring)
+
+</pre>

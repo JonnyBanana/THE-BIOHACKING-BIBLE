@@ -1,0 +1,104 @@
+==What is this project?==
+The purpose of this project to use the resources of the internet, trust based social networking, filtering, and advertising to simulate the services provided by peer review journals.  The intent is to use these tools to provide all those benefits without a central hierarchal control, but rather horizontal methods.
+
+==What is the purpose of this wiki?==
+This wiki is intended to be a place where people in the community, i.e., scientists, coders, and other interested parties, can discuss and learn about this project.  Participation in this project is intended to be as open as possible, from actual implementation to comments and criticism.  This is to be a community effort intended to provide a service to the community.  This wiki is a work and progress.
+
+==Project Details==
+
+This project is an attempt to simulate all the services provided to the community by journals using [http://en.wikipedia.org/wiki/Horizontalism horizontal methods] in the absence of centralized control.
+
+The [http://arxiv.org/ arxiv] is an excellent place to publish papers.  Distribution is also taken care of and its freely available to all.  The only problem is its hard to distinguish what papers are worth reading since they haven't been reviewed or filtered out, by a central authority for example.  This can be taken care of in part by the community, by allowing members to make comments or ratings.  
+
+However, there's a lot of problems with this [http://slashdot.org/ slashdot] style commenting scheme.  Manual filtering make it a pain to read comments.  Comments are tedious for the reader since the reader must manually filter through comments to determine which ones are worth reading.  Rating systems have their own problems, including those involving gaming.  In addition, single parameter filtering has the high potential of misrepresenting the needs of readers.  Scientists are picky in this regard: the want their information quick, easy, and prefiltered.
+
+===Simulation===
+
+What journals provide what these schemes do not it an understanding of who is worth using as a referee and a good knowledge of the subjects invloved.  Editors know experts in the field of a papers subject.  However, this is not secret knowledge.  Experts of a field are well known to the community.  So what we need to do is use the communities knowledge of experts to filter content for us.  This is the scheme I had in mind:
+
+# '''Give users tools for creating social networks'''
+#* Allow users to set up user bios and user pages
+#* Allow users to form groups
+#* Allow groups to maintain membership, manage rules, maintain a group page, bios
+# '''Allow users (and groups) to make pages for their papers'''
+#* This would basically be a dedicated page for the paper which would contain a link to the [http://arxiv.org/ arxiv] in addition to comments on the paper by other users.
+# '''Allow users to make comments on the paper'''
+#* Here we allow *any* person to make comments.  You can break these comments into several sections: general comments, errors, criticisms, general discussion, etc.  Anonymity is an option for all posters, even anonymity to all but a select group, but the system would recognize the commenter.
+# '''Allow users to assign trust to persons and groups'''
+#* Here, the user can depend on their social network to make these assignments, or they can be manual by the user.  Basically you allow the user to pick who in the network they listen to.  This could be as closed as the people in their groups or as open as anybody.  In addition you can give them additional tools to alter the sphere of trust: trust everyone your group members trust, trust by a connectivity measure, trust by some other algorithms or ratings, etc.  Our job would be to provide them with the most effective tools for doing so.
+# '''Allow users (and groups) to promote papers and comments'''
+#* Here you would basically let users give shoutouts to papers they think are important.  People can filter what paper advertisements they see, and trust groups are one way they could filter it.  They can apply other parameters and several independent filters if they wish (tools).  In addition to shoutouts, you can broadcast your "top 10 papers", "headline nominees", etc.  Also I think you should be able to shout out people you think others should trust and let receivers manually add those people into your trust network (if not present already).  Comments also should be promotable, whether they be your own or others.
+# '''Allow users to set up customizable filters on their user page'''
+#* This is the real power in the system.  Ever user can advertise content, and each user has complete control of what content comes to them ie on their user page.  They can set up customizable filters depending on what content they want, whether its papers from their in-group that are under 5 days old, comments from particular people, etc.
+
+===Summary===
+
+I believe that all these would effectively simulate many of the benefits derived from journals.  In addition, extra services would be provided to the community that journals do not provide: information becomes fast, easy, free, and highly customizable. In addition potential connectivity and cooperation increase manyfold. 
+
+Filters essentially filter out "noise" that is a big problem in horizontal systems.  The job of journal editors is to do filtering, but I believe that the community doesn't need a separate entity to choose the filters for them.
+
+Filters are the central theme here, but you can also play with methods of advertising comments, for instance yours or other peoples.  Think of it as idea endorsement.  This will only be seen by people who have their filters set to do so, by trust or other means.  You could even have it so that people can comment locally (from their user page) depending on their filters.  This is all up to experimentation.  I think our job is to give people the tools to have easy access and distribution of content that they want.  I think that's an optimal way to connect people and that participation will follow from that.
+
+There will certainly be a lot of resistance to adopting this model.  But having it up is better than the current situation.  At the moment scientists have no choice but to adopt the old model because of a lack of options.  Our job is to do as good of a job or better than the journals to give people at least the option to transition over (or use both).  If we do a better job, which i feel like we can do, then overall migration will be positive.  We are providing a service to the community, and if we can't do what the journals do then so be it, but we'll be doing things they dont do.
+
+I would also note that the scheme could be portable, i.e., functions could be ported to a remote web page that had access to the system.
+
+===Progress===
+Currently we are attempting to generate interest and get the community involved.  If you are interested in helping with project, please contact us or post comments here.
+
+We are looking for people to do the following tasks:
+* Promotion: aids in promoting the project to the community to garner support and resources.
+* Writers: writes documentation regarding the project, either geared toward public consumption or for development purposes.
+* Philosophers
+* Programmers, data structures
+* Programmers, web design
+* Programmers, other
+
+Multiple jobs are completely acceptable and encouraged. 
+
+If you have any comments or would like to do work on this project, please contact me at
+devon@phys.unm.edu
+or just post them here:
+
+==Comments==
+
+[[User:Julius B. Lucks|Julius B. Lucks]] 08:28, 8 November 2007 (CST): You may consider contacting the people that run [http://pronetos.com/ Pronetos].  From what I understand, it is a new social networking service for scientists that is in some part inspired by the arXiv.  They seem to be amenable to collaboration, and you might be able to try out some ideas with their platform rather than create your own from scratch.
+
+*[[User:R Devon Hjelm |Devon Hjelm]] 17:43, 13 November 2007 (MST): Thank you for the recommendation.  However, I have thoughts about why this approach is problematic.  First, I feel there is a philosophical difference between the approach here and the one of traditional social network sites.  The social network aspect of this project is a tool to aid in filtering in order to receive and give information in addition to facilitate communication.  There is a tendency for social networking sites to approach filtering simply as a feature, which I think is very limiting.  Next, I think that the system supporting the social networks needs to be built around the filter system for practical purposes.  For one, the resources necessary to organize the data necessary for the filters is potentially huge.  Also, the tools in social networking need to be created with broadcasting, receiving, and sharing data in mind.  For instance, there must be an easy way to get and give data from your user/group page.  I think these are difficult enough problems to necessitate starting from scratch.  These are only off the top of my head, and I haven't been able to work with anyone with the details, but this is my first reaction.  Finally I think this project would benefit from a bona fide community effort, not centralized by a small group of people.
+
+===Valuable comments I feel I need to post (mostly from email)=== 
+(Steve Koch):
+Hey Devon – I think you have a great idea.  The thing that really struck me the first time I read it was the “groups” idea – most of the network-y things I am part of don’t really have that added level of grouping, and it may add a very valuable effect.  It would give users both a motivation to post comments (hey look, I’m reading papers!) as well as a motivation to be careful and intelligent (oh man, I don’t want to embarrass myself in front of people who actually know me).  It would also provide an outlet for local journal clubs, which often are a huge amount of thinking that goes un-recorded with no follow up.  So your idea could end up being a really valuable outlet for those sessions.
+ 
+Also it occurred to me that as a peer reviewer, I’d be likely to want an outlet for my criticisms when the paper is accepted and I still have some remaining questions or criticisms.  Of course, this would give up my anonymity…
+
+*[[User:R Devon Hjelm |Devon Hjelm]]: This is an astute observation.  This is totally in the spirit of the project.
+
+(Dave Bacon):
+One of the current problems in peer review is, I believe, that it
+is basically a low reward activity.  I mean from my blog I did a
+survey and found that basically a few people carry a very heavy load
+for reviewing, yet they are not rewarded in any manner (no one knows I
+kept that silly paper out of Physical Review Letters :) )  Can you
+think of a way in which PRSP would help alleviate this?
+
+*[[User:R Devon Hjelm |Devon Hjelm]]: As far as the load, there isn't any pressure to review any further than a comment on a section, pointing out an error, general discussion, etc.  It's up to the individual the amount of work they want to do.  
+
+*[[User:R Devon Hjelm |Devon Hjelm]]: As far as rewards, that's a bit harder to detail since it depends on the social network.  For instance, more comments translated into more connection with others in the community, whether it be having your name seen (which the peer reviews don't do) but also having the system recognize the connection which is beneficial for filtering etc.  Also, making many comments can translate into social currency in the form of points.  I want to stress though here that it's up to the social network to honor that currency, and we should go no further than providing that tool to them.
+
+(Dave Bacon): Lots of research groups now run group blogs.  I suspect the PRSP
+might also be a great replacement for this setup in some form.
+
+*[[User:R Devon Hjelm |Devon Hjelm]]: I'm not sure I want to replace blogs, but that's up in the air.  This is where I mentioned transportability of the system: the ability for groups to say add filters (like widgets) that have access to the system onto their page with some html code.  There's a lot to talk about implementing this, but I'd say its a later stage because its *very* hard compared to getting a social networking site up.
+
+*[[User:R Devon Hjelm |Devon Hjelm]]: The reason I'm thinking transportability is that I want this is as horizontal as possible, depending on central control only when absolutely proven to be necessary.  In a sense I want people to be able to view the system as a resource available to them without requiring them to localize.  However, since this is a very hard problem, we can leave this to the far future.
+
+==Links==
+[[User:Steven J. Koch|Steve Koch]] 00:14, 30 October 2007 (CDT):Hey Devon, Here are some links to relevant discussion on OWW: 
+*[[Science 2.0/Brainstorming]]
+*[[Journal_Club]]
+
+[[User:R Devon Hjelm|Devon Hjelm]]: Here is also another project I've started in same spirit with music (and potentially any information): [http://www.evil-wire.org/~ampere/localwiki/index.php?n=Main.InternetMusicTaskForce Internet Music Task Force]
+
+==[[Peer Review Simulation Project Collaborators | Collaborator List]]==
+Please sign above if you want it known that you are collaborating on or endorse this project.

@@ -1,0 +1,97 @@
+=Cell by Date: Specifications=
+
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Cell By Date|Introduction]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Cell by date/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Cell by date/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Cell by date/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Cell by date/Implementation|Implementation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Cell by date/TestingValidation|Testing/Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Cell by date/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Cell by date/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+__TOC__
+
+===Problem===
+Printed sell-by date is based on predictive challenge testing.
+
+Challenge testing consists of the measurement of CFU g<sup>-1</sup> of initial contamination. A sell-by date is then predicted and printed onto meat products that we now see in supermarkets. While the level of initial contamination can be controlled to desirable low levels, it is not reflective of product exposure to environment once the packaged meat leaves the factory in the chill transportation chain. Sell-by dates are therefore unreliable, and consumer information is compromised.
+
+
+===Solution===
+Monitor level of thermal exposure and report it.
+
+The solution is manifested with the concept of a bioindicator - a biological solution to a biological problem. This device must be indicative of the reliablity of predicted sell-by dates, and must warn the consumer when meat is not fit for consumption.
+
+
+==Specifications==
+The bioindicator must meet the following:
+
+1. Report when food is 'off'
+*To do this it needs to report cumulative temperature exposure of food
+
+
+2. It must be easy to use
+*This can be achieved with the use of a visual reporter.
+*Visual signal should have an index unit.
+
+
+3. Improve accuracy of other attempts by meat industry
+* Many current methods in place
+** Stimuli sensitive material - packaging that detects when temp has passed a certain level
+** Intelligent cooling - reports if temperature goes above and regulates temperature
+** Antimicrobial agents - placed inside meat or packaging to reduce microbial growth
+* These are however only threshold devices, and are not able to measure the cumulative effect of temperature during the chill chain.
+* "Cell by date" must provide this cumulative function
+* It is also more cost-effective than the alternative solution to install electronic circuits on all packaged meat. 
+
+
+4. System must be stable for length of shelf-life
+* "Cell by date" is redundant if it expires before the meat does
+* It must also be able to function in different locations, e.g. if food item is in a fridge, or in the boot of the car for 2 hours
+
+
+5. No contact with food
+*"Cell by date" must be safe for consumers
+*It should comply with HSA standards:  microorganisms should not maintained together with consumptives
+
+
+==Considerations/Problems of Specs==
+1. To report the cumulative temperature exposure of food, a memory processor is required to have the integrator function.
+
+
+2. There is also a need for a visible reporter
+*Minimization of degradative time of reporter proteins
+*Increased stability of reporter proteins
+
+
+3. Improve accuracy
+*Limited cross-talk within chassis
+*Easily tuneable threshold
+
+
+4. Stable for length of shelf-life
+
+
+5. "Cell by date" must not contaminate food
+*Keep to HSA standards
+
+
+==Solutions==
+1. Cell free system (CFS)
+*Stable for up to 4 days
+*Agrees with HSA standards
+*Increases stability due to lack of degrading enzymes
+*Improved accuracy with more easily tuneable thresholds (as compared to the previous design of using cell density and quorum sensing)
+
+
+2. Use of DsRed-Express (DsTed.T4) reporter gene
+* Very long half-life
+* Extremely stable as it is a tetramer
+* Visible to the naked eye

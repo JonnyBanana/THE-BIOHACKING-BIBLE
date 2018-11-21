@@ -1,0 +1,70 @@
+==Contact==
+*[[Ania Labno]]
+*[[Barry Canton]]
+==Introduction==
+It would be desirable to be able to relate the relative fluorescent measurements that we obtain from the plate reader to actual molecule numbers per cell.  This would facilitate comparison of results from the plate reader with measurements from other machines.  You can read more about standardizing GFP measurements [[Standardized GFP quantification|here]].  This page describes the process to calibrate GFP counts using the GFP-separated label on the [[Endy:Victor3 plate reader|Endy lab plate reader]] to GFP concentration.  This calibration was undertaken as part of the project to characterize [[Endy:F2620|F2620]].
+
+==Approach==
+We chose to calibrate the GFP counts from experimental samples to a concentration of purified GFP in the well of a 96-well plate.  It is not possible to do this calibration directly, as the quantum efficiency of purified GFP in solution may be different from GFP ''in vivo''.  The approach we took was to first calibrate GFP from experimental samples to the GFP counts of lysed samples from the same original culture.  Next, we measured a standard curve relating the concentration of purified GFP in non-fluorescent cell lysate to GFP counts.  These two sets of calibration data can then be combined to produce a calibration from GFP counts for experimental samples to GFP concentration.
+
+==Materials & Methods==
+===Purified GFP===
+As a gold standard, we obtained a purified sample of GFP from [[Jennifer Braff]] and the [[Sauer Lab]] (all of which should be folded due to the purification process).  The concentration of GFP in the sample had been measured using a [[nanodrop]] and was ~120&mu;M.  [[Jennifer Braff]] had diluted the GFP into pH 5 H<sub>2</sub>O water.  Since we needed the GFP to be correctly folded we needed to dilute the concentrated stock into a neutral pH buffer.  I believe we used TE('''check''').
+
+===Experimental Samples===
+*F2620-pSB3k3 in MG1655 grown in [[Knight:M9 supplemented media|supplemented M9 media]] overnight and diluted back 1/500. Once the cell reach an OD of around 0.7 we induce 5ml of the culture by adding AHL to a concentration of 100nM.  Every 10 mins for the next hour we induce another 5ml of the culture.  This produces a set of cultures with different amounts of GFP per cell.  The ODs of all the cultures were similar after the 60 mins.  For each culture, add 3 replicates of 200&mu;l to wells on a 96 well plate.  Record the GFP counts and the absorbances of the culture.  1ml of each of the cultures was then lysed according to the method below.  Cells not expressing GFP that were grown and lysed in an identical manner to the receiver cells were used to dilute the purified GFP.
+
+===Lysis Method 1.0===
+We looked into a few different ways of lysing the cells without denaturing too much of the GFP.  On the recommendation of [[Sean Moore]], we settled on [[B-Per II]] sold by Pierce as it seemed to be a quick and easy protocol that was sufficiently gentle to not denature the protein overly.  [[Sean Moore]] had good experience with [[B-Per II]] and gave us a modified protocol based on the manufacturers protocol.  We made some small modifications to that protocol to get reproducible results in our hands.
+
+#We started with ''E. coli'' grown in [[Knight:M9 supplemented media|supplemented M9 media]] to an OD of 0.86.
+#Incubate samples on ice for 10mins.
+#Centrifuge all samples at room temp. for 6mins at 9000rpm using a tabletop centrifuge.
+#Remove supernatant.
+#Resuspend the sample pellet in Tris (10mM, 100mM NaCl, pH 8).
+#Repeat steps 3 and 4.
+#Resuspend cells in 50&mu;l [[B-Per II]].
+#Add 1 unit Benzonase per 1ml of culture.
+#Incubate at room temperature for 30mins.
+
+This should lead to >90% lysis according to earlier plating experiments.
+
+===Lysis Method 1.1===
+One drawback of the above method is that the cells are at room temperature for quite a long time (~1hr).  During this time they can accumulate more GFP.  This means that the amount of GFP in the unlysed and lysed measurements are different.  This effect could be minimized by keeping the cells at 4C wherever possible and making the lysis procedure as quick as possible. <font color=red>Changes shown in red.</font color=red> 
+
+#We started with ''E. coli'' grown in [[Knight:M9 supplemented media|supplemented M9 media]] to an OD of 0.86.
+#<font color=red>Put Tris buffer at 4C.</font color=red>
+#Incubate samples on ice for 10mins.
+#<font color=red>Pipet 3 1ml replicates into 1.7ml eppendorf tubes.</font color=red>
+#Centrifuge all samples at <font color=red>4C</font color=red>. for <font color=red>4mins at 13000rpm</font color=red> using a tabletop centrifuge.
+#Remove supernatant.
+#Resuspend the sample pellet <font color=red>in 500&mu;l of chilled</font color=red>Tris (10mM, 100mM NaCl, pH 8).
+#Repeat steps 5 and 6.
+#Resuspend cells in 50&mu;l [[B-Per II]].
+#Add 1 unit Benzonase per 1ml of culture.
+#Incubate at room temperature for 30mins.
+
+This should lead to >90% lysis according to earlier plating experiments.
+
+===Plate Reader===
+*600&mu;l of M9 media is added to all lysed cell samples.  This allows the standard 200&mu;l to be added to the plate reader wells for three replicates and also allows us to avoid using the bubbly part of the lysed cell sample which was shown to give large errors in the plate reader.
+*[[Endy:Victor3 plate reader|Endy lab plate reader]]
+
+==Results==
+*[[:Image:Calibration_(version_1).xls|Calibration experiment by Ania (.xls)]]
+*[[:Image:Calibration-BC.xls|Calibration experiment by Barry (.xls)]]
+*[[:Image:BC-Calibration-2.xls|2nd Calibration experiment by Barry (not fully processed) (.xls)]]
+*[[:Image:BC-Calibration-3.xls|3rd Calibration experiment by Barry (.xls)]]
+
+Although the results are quoted in different units, both of these experiments seems to give good agreement.  This is good since the experimenter was different and the source of purified GFP was also different.
+
+The experiment could still be done a little bit better.  It would appear that the amount of GFP increases over the course of the incubation and ice and the other steps of the lysis protocol.  This can most clearly be seen in the "ice control" graph of the 3rd calibration experiment.  The cells where the receiver has been turned on show a step increase in GFP counts after sitting on ice for ~1.5hrs compared to the cells that either do not have a GFP reporter device or that have an uninduced receiver device.
+
+Here are the options - 
+*Use the data as it is now and try to subtract the newly-synthesized GFP from the lysed counts.
+*Redo the experiment with some or all of the following improvements - 
+**Try to only do one wash.  This would require me to redo the plating to make sure I am still getting efficient lysis.
+**Induce some of the receivers immediately before putting them on ice.  I can look at their GFP level just prior to the lysis with BPer to calculate how much GFP is made during the wash steps.
+**Work out some other ways to do the lysis quicker.
+*[[:Image:BC-Calibration-4.xls|4th Calibration experiment by Barry (.xls)]]<br>
+*[[:Image:BC-Calibration-4-2.xls|4th Calibration experiment by Barry with improved data processing (.xls)]]<br>

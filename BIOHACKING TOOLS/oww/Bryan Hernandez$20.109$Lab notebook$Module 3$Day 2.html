@@ -1,0 +1,108 @@
+==Yeast Transformation==
+--[[User:Bryanh|Bryanh]] 13:29, 6 April 2007 (EDT)
+Module 3, Day 2
+
+
+==Introduction==
+Two toddlers, a can of white paint and a new flat screen TV...<i>"what could possibly go wrong?"</i> Microsoft Windows operating systems for web-enabled ATMs...<i>"what could possibly go wrong?"</i> There is no question that optimism is a fundamentally important element of every experiment we do. We work to design solutions; we plan for success not failure. Even difficult projects should be tackled with the idea that they can, should and will work. Attitude alone, however, does not overcome pitfalls and there is much to be gained in applying some of that optimistic energy to answering: <i>"what if...?"</i>. And oddly, spending some time being negative before you jump in is likely to improve your chances of a successful outcome since some of the pitfalls we encounter are avoidable if they can be anticipated. [[Image:Macintosh HD-Users-nkuldell-Desktop-whatcouldgowrong.png|thumb]]
+
+In the laboratory, "controls" help answer the "what if" questions. They are equally or perhaps more important than your experimental samples and often more numerous. If the controls in an experiment haven't worked there is very little point in considering the data you have collected. Even experienced researchers often wish they had included a better or a different control for an experiment since data often leads to more questions, some of which might have been anticipated. 
+
+Your experiment today is straightforward: transform your yeast cells with your PCR product and look for cells that can grow on media lacking uracil. What if you return to lab next time and saw no yeast colonies growing on any of your petri dishes? What if you return to find yeast covering the plates completely? How can you be sure these are even yeast and not bacterial colonies? You've transformed and transfected cells before...what controls were used for these experiments and can they be applied here? 
+
+The <b>negative control</b> helps confirm that any positive experimental data is arising from the experimental sample and not some random event. For example, leaving the DNA out of a transformation reaction is a negative control. No colonies should grow from that sample. If colonies do grow with the negative control then perhaps the petri plates are contaminated, or perhaps the plates are the wrong kind, or perhaps the yeast are already able to grow on those plates without your experimental DNA. The negative control can't distinguish these possible explanations but it can tell you that something needs to be re-worked. 
+
+The <b>positive control</b> helps eliminate trivial explanations for failed experiments (these are experiments after all, so you don't really know what the outcome should be....). Transforming plasmid DNA into competent cells is a positive control. If no colonies grow, then something is wrong with the cells or the plates. If cells only grow on your positive control and not on your experimental sample, then the experiment should be refined and repeated. 
+
+Even "perfect" results can be misleading and need to be carefully considered. Beyond the negative and positive controls, a good researcher thinks through the experimental sample itself to see if "perfect" data could be explained in more than one way. Today, for example, you will remove an aliquot of your PCR product and transform that DNA into competent yeast. What if you returned to lab next time to find these results:
+{| border="1"  
+! Sample  
+! number of colonies growing on SC-ura 
+|-     
+| No DNA
+| 0
+|-    
+| Plasmid DNA with URA3 marker
+| 1000 
+|-    
+| PCR product  
+| 1000  
+|}
+
+It seems like this experiment "worked," really really well, but in fact the number of colonies on the experimental sample is too "good." The PCR product isn't expected to give rise to ura+ cells as often as plasmid DNA can. After all we're relying on recombination of the 40 bases flanking the product to integrate the <i> URA3</i> gene. And if the SAGA-subunit deletion makes the cells even a little bit sicker than wild type, the correct product will be even harder to get. So how can this "too perfect" data be explained? 
+
+Remember what is in that PCR sample: 
+*product (hopefully....in a "real" lab setting you'd check to see that the reactions actually worked before transforming!)
+*leftover primers....those should be degraded by the cell
+*leftover dNTPs....also transparent to the cell once inside
+*leftover Taq...not a problem
+*template DNA...hmmm...
+What is to stop the <i>URA3</i> template DNA, just another plasmid after all, from giving rise to cells that grow on SC-ura? To solve this problem the PCR product (expected to be around 900 base pairs) could be purified from the template (around 4 or 5 Kb) using an agarose gel and a Qiagen kit as you did before. A more elegant solution though, is what you will use since the template you were given last time has no yeast origin of replication. Thus the yeast will not be able to copy the plasmid and it will be diluted then lost from your transformed samples. This "trick" has saved some time in the lab but did require some anticipation. Hopefully you can see the value.
+
+==Protocols==
+A culture of FY2068 (genotype: MAT(alpha) <i>ura3-52 his3D200 leu2D1 lys2-128delta</i>) is growing in a flask. Before you prepare these cells for transformation, you should familiarize yourself with some basic yeast techniques, namely counting and plating these cells. 
+===Part 1: Getting to know yeast===
+You will compare the density and viability of an overnight culture of FY2068 to the log-phase culture you will use for transformation. Begin with a 1 ml aliquot of each.
+====Counting yeast using the spectrophotometer====
+# Since yeast can’t swim, the cells may have settled to the bottom of the tube. Vortex the culture tubes to fully resuspend the yeast. 
+# Label two eppendorf tubes “ON” (which stands for "overnight") or “log.” 
+# Using your P200, remove 100 ul of each culture to the appropriate eppendorf tube.
+# Using your P1000, add 900 ul of water to each eppendorf tube. 
+# Invert the tubes several times to mix the contents. Holding the eppendorf tube upside-down, you should flick the bottom of the tube to mix-in the last drop of liquid.  
+# Dilute your cultures to a final dilution of 1:100 by making another 1:10 dilution of your 1:10 dilutions.
+# Pour each dilution into a cuvette and fill a fifth cuvette with water. 
+# Read the optical density of each sample at 600 nm (OD600), using the cuvette of water to blank the spectrophotometer. The cells will scatter the incoming light from the spectrophotometer, rather than absorb it. More cells will scatter more light and give a higher “optical density” reading. 
+# Consider your OD600 values that are within the reliable range of the spectrophotometer (generally considered to be from 0.1 to 1.0). Determine the concentration of your undiluted yeast cultures using the relationship of 1 OD600 = 1 x 10^7 cells/ml. Don’t forget to account for the dilutions you made.
+
+
+==cell dilutions and OD==
+{| border="1" cellpadding="2"
+!width="10"|concentration
+!width="10"|OD
+!width="10"|cells
+|-
+|1/10 o/n||.4404||2.3E6 cells||
+|-
+|1/10 log||.0616||3.08E5cells||
+|-
+|1/100 o/n||.0483||9.5E3cells||
+|-
+|1/100 log||.0038||1.9E4cells||
+|}
+
+====Counting viable yeast by plating====
+The spectrophotometer can tell you how many cells exist but gives you no information about their ability to grow (their “viability”). To know how many viable cells exist in your culture, you will grow some on Petri dishes, allowing each viable cell to give rise to a colony. By counting the number of colonies, you will know the number of viable cells that existed at the time of plating. For example, if you determined that there are 100 cells/ml but you found only 70 colonies could form from that ml, then you would know the culture had 70% viable cells. 
+
+You will perform a serial dilution of the overnight and log phase cultures using sterile technique. 
+# Shake 8 eppendorf tubes onto the benchtop then close the caps and put them in your rack. Label them ON/10^-1, /10^-2, /10^-3, /10^-4, /10^-5, and log/10^-1, /10^-2, /10^-3.
+#Use your P1000 to add 900 ul of sterile water to each. You can use the same tip to pipet all the water if you do not let the water splash the pipet barrel (the pipet tips are sterile but the barrel is not). 
+#Vortex your undiluted cultures then use your P200 to remove 100 ul and add it to the appropriate “10^-1” eppendorf. Close the cap and invert to mix, flicking in the last drops when the eppendorf is upside-down. 
+#Use the 10^-1 dilutions to make your 10^-2 dilutions and repeat until you have serially diluted to 10^-5 of the original concentration. 
+#Plate 100 ul of your ON/10^-5 dilution onto one YPD, one –trp, one –ura.
+#Plate 100 ul of your log/10^-3 dilution onto another YPD, another -trp, another -ura. 
+#Wrap your plates with your colored labeling tape and incubate them, media-side up in the 30° incubator, until next time.
+
+===Part 2: Competent cells===
+<i>S. cerevisiae</i> does not naturally uptake new DNA from its environment but can be made competent by chemical treatment (with Lithium Acetate for example), by enzymatic treatment (with zymolyase for example), with an electrical pulse (called "electroporation"), or biolistically (by using a gun to fire DNA-coated metal particles at the cells). Today you will use a kit sold by Q-biogene to prepare competent FY2068. The contents of the kit are proprietary but the protocol seems most like ones for [http://www.genomics.princeton.edu/dunham/yeasttransformation.htm chemically competent cells] (this link leads to just one of many similar protocols). 
+#Begin by harvesting 10 ml of log phase FY2068 in a 15 ml conical tube. Spin these cells (with a balance) at 3000 rpm for 5 minutes in the clinical centrifuge. 
+#Remove the supernatant by aspirating. You do not have to remove every drop.
+#Wash the cells with "wash solution" (most likely just sterile water!). You can resuspend the cells in the 15 ml conical in 3 ml of wash solution and then split this volume between three eppendorf tubes. 
+#Harvest the cells in a microfuge (be sure to balance your tubes), spinning 1 minute at full speed. 
+#Aspirate the supernatant. 
+#Resuspend each pellet in 50 ul of "competent solution" (most likely lithium acetate and DTT which permeabilizes the yeast through an unknown mechanism). Unlike chemically competent bacteria, competent yeast are not "fragile" in this state and can remain at room temperature.
+
+===Part 3: Transformation===  
+#Add 5 ul of your "no template" PCR reaction to one eppendorf and label the top appropriately. This should serve as your "no DNA," negative control. Flick the tube to mix the contents. 
+#Add 5 ul of pRS416 DNA (50 ng) to another eppendorf and label appropriately. This plasmid bears a yeast origin of replication and a URA3 gene and will serve as a positive control for transformation. 
+#Add 5 ul of your "plus template" PCR product from last time. This is your experimental sample. You can give the remainder of your PCR products to the teaching faculty who may run them on an agarose gel, depending on the outcome of these transformations. 
+#To each tube add 500 ul "transformation solution" to your cells. This material, most likely polyethylene glycol ("PEG" aka antifreeze) is thick and goopy and is included in transformation protocols to help deliver the DNA into the yeast. Use your P1000 to pipet the yeast and the "transformation solution" and vortex the tube to make an even suspension. 
+#Incubate the tubes at 30° for approximately one hour, along with 4 SC-ura petri dishes, with their lids ajar if there is moisture on their surface. During this hour we will work on the Materials and Methods section of your upcoming lab report. If you  can periodically "flick" your tubes to mix the contents, this will help keep the cells from settling to the bottom. 
+#After at least an hour (longer is OK too), flick the tubes to mix the contents and then spread 250 ul of each mixture on your SC-ura dishes, plating the experimental transformation twice. 
+#Wrap your plates with your colored labeling tape and incubate them, media-side up in the 30° incubator until next time.
+DONE!
+
+
+==summary and interpretation==
+
+we cant really say much here because we dont know the results of our transformation or our dilution platings.
+roger

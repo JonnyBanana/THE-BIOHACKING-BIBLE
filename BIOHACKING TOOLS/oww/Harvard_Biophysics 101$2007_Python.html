@@ -1,0 +1,59 @@
+{{Template:Harvard_Biophysics_101:2007}}
+
+<div style="padding: 10px; width: 720px; border: 5px solid #DDDDFF;">
+
+==Python==
+'''Installation'''
+*[http://python.org/download/ Main download page]
+**[http://python.org/ftp/python/2.5/python-2.5.msi direct link to Windows installer]
+**[http://www.python.org/ftp/python/2.5/python-2.5-macosx.dmg direct link to MacOS X dmg]
+*[http://diveintopython.org/installing_python/index.html alternative instructions]
+
+'''Reading Material'''
+*[http://docs.python.org/tut/tut.html Python Tutorial]
+*[http://www.python.org/dev/peps/pep-0008/ Python Style Guide]
+*[http://www.python.org/doc/essays/comparisons/ Comparing Python to other languages]
+*[http://wiki.python.org/moin/PerlPhrasebook Perl-to-Python]
+*[http://diveintopython.org/toc/index.html Dive Into Python] (for experienced programmers)
+*[http://wiki.python.org/moin/BeginnersGuide Beginner's Guide] (includes instructions for non-programmers)
+*[http://proquest.safaribooksonline.com.ezp1.harvard.edu/0596002815 Learning Python] (Online textbook for beginners)
+*[http://www.amk.ca/python/howto/regex/ Py Reg Ex] (regular expressions)
+*[http://www.python.org/doc/2.4.1/lib/lib.html Python Lib Ref]
+*[http://tinyurl.com/2mvzs7 Charming Python] (advanced topics)
+
+==BioPython==
+'''Documentation'''
+*[http://biopython.org/wiki/Documentation BioPython documentation]
+*[http://www.bioinformatics.org/bradstuff/bp/tut/index.html Tutorial & Cookbook]
+
+'''Pre-installation dependencies'''
+*Python (see above)
+*[http://www.egenix.com/files/python/mxTextTools.html mxTextTools] ([http://www.egenix.com/files/python/egenix-mx-base-2.0.6.win32-py2.5.exe direct link to Windows installer])
+*[http://numpy.scipy.org/#older_array Numeric 24.2] ([http://biopython.org/DIST/Numeric-24.2.win32-py2.5.exe direct link to Windows installer])
+
+'''Windows Installation'''
+*[http://biopython.org/wiki/Download Download & Install BioPython]
+**[http://biopython.org/DIST/biopython-1.42.win32-py2.5.exe direct link to BioPython Windows installer]
+
+'''OS X Installation'''
+*Install xcode tools (either download ~1GB from the [http://developer.apple.com/tools/download/ developer site]) or install from the OS X installation DVD.
+*Download the three dependencies and extract them (double click on the file, or use "tar -xzf filename.tar.gz" for tar.gz files, or "tar -xf filename.tar")
+**http://www.egenix.com/files/python/egenix-mx-base-2.0.6.tar.gz
+**http://downloads.sourceforge.net/numpy/Numeric-24.2.tar.gz                                          
+**http://www.reportlab.org/ftp/ReportLab_2_0.tgz
+*For each of the three packages, use a terminal window (/Applications/Utilities/Terminal) to enter the package directory (created when you extracted the files) and run the following commands:
+<pre>
+python setup.py build
+python setup.py install
+</pre>
+*Download and extract [http://biopython.org/wiki/Download BioPython] source file (latest tar.gz file)
+*From the extracted directory, run the following commands:
+<pre>
+python setup.py build
+python setup.py test
+python setup.py install
+</pre>
+
+'''Linux'''
+*[[Harvard:Biophysics_101/2007/Notebook:Denizkural/2007-2-2|Ubuntu]] instructions from [[User:Denizkural|Deniz]]
+</div>

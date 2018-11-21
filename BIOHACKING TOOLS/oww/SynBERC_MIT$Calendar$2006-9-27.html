@@ -1,0 +1,89 @@
+Anyone in the synthetic biology community is welcome to attend.
+
+Wednesday at 1pm
+'''32-D463''', MIT  ***'''NOTE ROOM CHANGE'''***
+
+==Topic of discussion==
+
+Tom Knight will be giving an introduction to different electronics device families and their specifications.  This introduction should help to frame future lunch discussions regarding specification of biological device families.
+
+==Attending==
+Please list your name below if you are attending so that we order enough food.  (To add your name to the list, type <code><nowiki>#~~~~</nowiki></code>.)
+
+#[[User:Rshetty|Reshma]] 14:29, 20 September 2006 (EDT)
+#[[User:BrunoAfonso|bruno]] 18:32, 22 September 2006 (EDT).
+#[[User:Ilya|Ilya]] 18:46, 22 September 2006 (EDT)
+#[[User:David Miguez|David]] 23:56, 22 September 2006 (EDT)
+#[[User:Austin|Austin Che]] 13:38, 23 September 2006 (EDT)
+#[[User:CarolineAjo-Franklin|Caroline]]10:26, 25 September 2006 (EDT)
+#[[User:Tk|tk]] 13:09, 25 September 2006 (EDT)
+#[[User:Endy|Endy]] 13:26, 25 September 2006 (EDT)
+#[[User:Hkeller|hkeller]] 13:42, 25 September 2006 (EDT)
+#[[User:Jbuck|Jbuck]] 13:50, 25 September 2006 (EDT)
+# [[User:Cconboy|cmc]] 14:01, 25 September 2006 (EDT)
+#[[User:Bcanton|BC]] 15:29, 25 September 2006 (EDT)
+#[[User:Timp0|Timp0]] 17:03, 25 September 2006 (EDT)
+#[[User:ssutton|Samantha]] 19:47, 25 September 2006 (EDT)
+#[[Jason Kelly]]
+#[[Julie Norville]]
+#[[User:PatrickBoyle|PatrickBoyle]] 11:09, 26 September 2006 (EDT)
+#[[User:JeremyZucker|JeremyZucker]] 19:16, 26 September 2006 (EDT)
+#Ken Oye
+# Jake Beal
+
+==Notes==
+(by Reshma Shetty, feel free to modify)
+
+Logic devices
+#Performs logical operation
+#Power gain and signal restoration
+
+These two functions are often combined but don't necessarily need to be.
+
+===History of logic device families===
+
+====RTL (resistor transistor logic) family====
+*First integrated transistor family built on a single piece of silicon.
+*Resistor = logical operation
+*Transistor = signal restoration
+*didn't have perfect signal restoration
+*very slow
+*Tom drew a parts level diagram of a logic device.  Depending on which resistor parts you chose, the device could either implement a NOR or NAND logic operation
+*very cheap which is why it took off
+
+====DTL (diode transistor logic) family====
+*uses diodes instead
+*more robust control over voltage
+*also very slow
+*Motorola
+
+====TTL (transistor transistor logic) family====
+*faster
+*push-pull
+*has standard power supply voltages and interfaces.  Therefore, you could transition from one series to another.  The series differed in speed and power dissipation.  
+*Texas Instruments
+
+====CMOS transistors====
+*made from P-MOS and N-MOS transistors
+*P-MOS transistors are naturally inverting
+*logic swings go from ground to positive power supply unlike previous logic families ... bigger swing.
+*RCA
+
+==Device families==
+Transitions from one family to another were driven by performance requirements and the technology.  Transitions between device families were accompanied by transitions in related technologies like the power supply.
+
+How do you cope with poor signal restoration?
+*vary power supply voltage to change noise margins
+*it was hard to do good designs in RTL devices
+
+Fanout (~10 max)
+*Determined by the physical limitations of the device.  It is not driven by the applications.
+Fanin (~8 max)
+*Determined by how many inputs the device is designed to take in.
+Wire-OR: a type of logic that may be important in biology
+*can do two stages of logic out of a single gate
+*have open collector gates
+*similar to letting a protein be expressed in either of two different ways
+
+Also see relevant papers on noise margins.
+How do you design reliable logic circuits?  Gotten a lot of attention over the years.  A lot of this complexity is hidden from the users.

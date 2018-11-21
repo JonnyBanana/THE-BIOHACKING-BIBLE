@@ -1,0 +1,70 @@
+[[Media:millikan lab manual.pdf]]
+
+==Goal==
+Our goal is to measure the charge of an electron by comparing the gravitational force on a freely falling charged drop of oil with the electrical force needed to pull the oil drop back up, using the droplet's velocity in either case as tool to eventually calculate the fundamental unit of charge of an electron.
+
+==Equipment==
+PASCO Millikan Oil Drop Experiment apparatus
+
+500 V power supply to provide the potential difference in the plates  
+
+12 V power supply to light the oil drops in the chamber
+
+Banana cables to connect the system
+
+Squibb #5597 oil 
+
+Multimeter to measure the plate voltage and the thermistor resistance (chamber temperature) 
+
+Stopwatch
+
+==Setup==
+We first level the apparatus using a level mounted on the apparatus to make sure our recorded velocities are accurate (we measure the fall and rise times, but we want the drop to travel .5mm between grid lines in the viewing chamber, not more).  Then, we disassemble the droplet viewing chamber to remove and measure the thickness of the plastic plate separator.  The plate separator sits between the plates we apply a voltage across, and so it determines the electric field strength for our electrons.  Then, we focus the viewing scope by inserting a thin wire into the chamber where the drops will be and change the focus of the reticle until the wire appears as sharp as possible.  We connect the 500V high voltage power supply to the charging plates, and control the direction and presence of the electric field with three switches (top plate +, top plate -, or plates grounded).
+
+We connect the multimeter to the thermistor connectors to measure the thermistor's resistance throughout the experiment.  The resistance changes with the temperature of the lower plate, which heats in the presence of the halogen light we use to view the drops, and a conversion chart mounted on the apparatus allows us to quickly determine the temperature of the chamber (which we will use to determine our viscosity term in the equation for q).
+
+==Procedure==
+We spray a shower of oil drops from the atomizer into the chamber, and try to clear the chamber of the droplets that will be difficult to follow by turning on the voltage in the plates.  The droplets that quickly fall out of view in the presence of an electric field are those with the most excess charge (positive or negative).{{SJK comment|l=00:56, 4 December 2007 (CST)|c=That's a good idea!}}  We will record more accurate velocities for slower moving drops, so the remaining drops will be good candidates.  The mineral oil we are using is neutral, but because it is a conductor, electrons are free to move around in the substance, and the oil drops that leave the atomizer will have some distribution of positive, negative, and neutral charges, depending on the distribution of electrons in the torn-apart blob of oil.
+
+Once we have a medium-weight droplet without too much charge in control, we start taking measurements of its fall velocity (under only the influence of gravity), and its rise velocity (still under the influence of gravity, but also under the influence of the electric field we control).  Since we want to take multiple measurements of the same droplet, we control its rise by turning on the electric field in one direction and seeing if its fall speeds up, or if it starts to rise.  If it's fall speeds up, we can still use the droplet by just reversing the direction of the electric field.  The droplet will then rise instead of speed up in it fall.
+
+We use the .5mm spaced gridlines at the front of the viewing chamber as "start" and "stop" points on our watch each time our droplet passes a gridline.  Because this distance travelled is fixed, we only need to measure the time between passage in order to determine the rise and fall velocity of the droplet.
+
+After we take 10-20 fall- and rise-time measurements of a droplet, we attempt to change the charge on the drop by exposing the drops in the chamber to alpha particles emitted by thorium-232, which we control using an ionization switch on the apparatus.  Alpha particles are twice ionized Helium nuclei, and are able to pull loosely bound electrons from other atoms they encounter.  Exposing our oil droplet to thorium-232 would make its charge more positive (either lessening the net negative charge, or increasing the net positive charge).  We try to ionize the droplet we have been watching because we already have data on it's mass and former charge.  Decreasing the mass by one or two electrons wouldn't have an appreciable affect on the fall velocity, but it would have a noticable affect on the rise velocity.{{SJK comment|l=00:59, 4 December 2007 (CST)|c=I'm still not sure what the alpha particle effect will be.  I think maybe it can create lots of different charged species that can then recombine with each other...well...}}
+
+==Results==
+Results were worked out on this excel spreadsheet: [[Media:Annie Matt Millikan Data.xlsx]], using data collected in the lab notebook [http://openwetware.org/wiki/Physics307L:People/Ozaksut/Notebook/071114].{{SJK comment|l=01:07, 4 December 2007 (CST)|c=It looks like you got some good data.  However, it was really tough to follow your Excel sheet, and your primary lab notebook, so that it is unclear how you turned the 6 trials into four trials, and what ever happened with alpha particle trials?}}
+
+I calculated four values for the charge of each drop:
+
+A 8.27827E-10
+
+B 9.76101E-10
+
+C 1.25709E-09
+
+D 1.76178E-09
+
+To determine the fundamental charge, I divided each of the larger values by the smallest.  The ratios were
+
+B/A=1.17
+
+C/A=1.51
+
+D/A=2.13
+
+I thought the error might be in my smallest value, so because B/A was nearest to 1, I took the average of the two values and used that in the denominator:
+
+C/(average A,B)=1.393730167
+
+D/(average A,B)=1.953268125
+
+
+To try to get a reportable value of q, I used Kyle's method[[http://openwetware.org/wiki/Physics307L:People/Martin/Notebook/071024]]{{SJK Comment|l=01:03, 4 December 2007 (CST)|c=Kyle is getting famous!  I think you didn't quite implement his method correctly, and if you did, you would have gotten better numbers! (He does not allow for fractional charge.)  Also, above you need units on numbers, especially since you aren't using Coulombs}}:
+[[Image:anniemattmillikan.jpg]]
+
+My value, normalized to A (A=2q), is 4.14E-10 e.s.u.  The accepted value is 4.83E-10 e.s.u.  My relative error is 13.75%
+
+==Improvements==
+
+Next time, to try to get more accurate results, I would take the temperature of the chamber more frequently and actually calculate different values for viscosity.  I would also try to take data on more drops, so that I could get multiple readings per excess electron (ie, get data for a few different drops with the same charge so that I could have stronger data points, because at least two of my four data points had large freak relative error which would be reduced by taking the average of many calculations).

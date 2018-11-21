@@ -1,0 +1,54 @@
+<pre>
+#!/usr/bin/env python
+
+from Bio import GenBank, Seq
+from Bio.Seq import translate
+
+# We can create a GenBank object that will parse a raw record
+# This facilitates extracting specific information from the sequences
+record_parser = GenBank.FeatureParser()
+
+# NCBIDictionary is an interface to Genbank
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+
+# If you pass NCBIDictionary a GenBank id, it will download that record
+parsed_record = ncbi_dict['U94340']
+
+print "GenBank id:", parsed_record.id
+
+# Extract the sequence from the parsed_record
+s = parsed_record.seq.tostring()
+print "total sequence length:", len(s)
+
+max_repeat = 9
+
+print "method 1"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\nmethod 2"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+
+# Protein Translation
+my_protein = translate(s)
+print "protein translation:"
+print my_protein
+print "its length is:", len(my_protein)
+
+# Raw record
+print "\nraw record (hold tight while we find it...)"
+ncbi_dict_raw = GenBank.NCBIDictionary('nucleotide', 'genbank')
+raw_record = ncbi_dict_raw['U94340']
+print raw_record
+
+print '*' * 50
+print 'Shawn Liu.  Biophysics 101.  7 February 2007.\n'
+</pre>

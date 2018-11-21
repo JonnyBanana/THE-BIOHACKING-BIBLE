@@ -1,0 +1,66 @@
+[[Harvard:Biophysics_101/2007/02/06|Assigned on Feb 6, 2007]]
+
+Script in progress:
+
+<pre>
+ #!/usr/bin/env python
+ 
+ # Hetmann Hsieh
+ # Assignment 2 
+ # 2/8/07 
+ 
+import random
+
+# make a list of values for each 
+tally = [0 for i in range(11)]
+
+# Generate the random 10-mer of H's and T's
+
+for i in range(10000):
+    coinflip = ''.join([random.choice(['H','T']) for n in range (10)])
+    
+    # Use this loop to tally up instances of each k-mer (from 2 to 10)
+    for k in range(2,11):
+        # store a k-mer of H's
+        H = ''.join(['H' for n in range(k)])
+        Hcount = 0
+        pos = coinflip.find(H,0)
+        while not pos == -1:
+            Hcount = Hcount + 1
+            pos = coinflip.find(H,pos+1)
+
+        # Update the tally for this k-mer
+        tally[k] = tally[k] + Hcount
+
+    # Use this loop to tally up instances of each k-mer (from 2 to 10)
+    for k in range(2,11):
+        # store a k-mer of T's
+        Tcount = 0
+        T = ''.join(['T' for n in range(k)])
+        pos = coinflip.find(T,0)
+        while not pos == -1:
+            Tcount = Tcount + 1
+            pos = coinflip.find(T,pos+1)
+
+        # Update the tally for this k-mer
+        tally[k] = tally[k] + Hcount
+
+# print out the results
+for i in range(2,11):
+    print i, tally[i]
+
+</pre>
+
+Output:
+
+<pre>
+2 22791
+3 10172
+4 4412
+5 1860
+6 792
+7 336
+8 147
+9 66
+10 28
+</pre>

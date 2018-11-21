@@ -1,0 +1,185 @@
+See also [[Knight:TOPO TA cloning | TOPO TA cloning]].
+
+==Topoisomerase site==
+
+===Topoisomerase===
+    
+    Topoisomerase recognition site
+    ---------
+       Topoisomerase nick site
+             |
+             V
+ 5' C C C T T N N N N N N
+ 3' G G G A A N N N N N N
+           ^
+           |
+    Restriction enzyme must nick here
+
+===Offset nicking enzyme===
+
+*[http://www.neb.com/nebecomm/products/productR0607.asp Nt.BstNB I]: offset nicking enzyme from NEB.
+
+    Nt.BstNB I recognition site 
+    ---------
+              Nt.BstNB I nick site
+                     |
+                     V
+ 5' G A G T C N N N N N 3'
+ 3' C T C A G N N N N N 5'
+
+===Site for topoisomerase-mediated cloning===
+
+====Upstream of the BioBricks prefix====
+
+    Topoisomerase recognition site
+    ---------
+             |
+             V
+ 5' C C C T T N N N G A C T C 3'
+ 3' G G G A A N N N C T G A G 5'
+           ^
+           |
+                    ---------
+                    Nt.BstNB I recognition site
+
+====Downstream of BioBricks suffix====
+
+    Nt.BstNB I recognition site
+    ---------
+                     |
+                     V
+ 5' G A G T C N N N A A G G G 3'
+ 3' C T C A G N N N T T C C C 5'
+                   ^
+                   |
+                    ---------
+                    Topoisomerase recognition site
+
+==Possible enzymes to generate 3' T overhang==
+
+'''None of these enzymes will work because it appears as if the topoisomerase enzyme needs some duplex DNA in order to function.'''
+
+Each can accommodate the topoisomerase site CCCTT
+*[http://www.neb.com/nebecomm/products/productR0600.asp BmrI]
+**offset cutter that leaves 3' single base overhang
+**two sites in sopC (incD) repeat region of BBa_I50000
+**no sites in BBa_I50020
+**no sites in BBa_P1010, BBa_P1000, BBa_B0055, BBa_B0054
+**pretty high activity in all 4 NEB buffers
+*[http://www.neb.com/nebecomm/products/productR0596.asp BciVI]
+**offset cutter that leaves 3' single base overhang
+**no sites in BBa_I50000
+**one site in BBa_I50020
+**no sites in BBa_P1010, BBa_P1000, BBa_B0055, BBa_B0054
+**Austin says this is a very bad enzyme.
+*[http://www.neb.com/nebecomm/products/productR0533.asp XcmI]
+**long recognition sequence with internal N<sub>9</sub> that leaves 3' single base overhang
+**no sites in BBa_I50000
+**no sites in BBa_I50020
+**no sites in BBa_P1010, BBa_P1000, BBa_B0055, BBa_B0054
+**100% activity only in NEBBuffer 2
+
+Topoisomerase sites internal to vector components are not important because topoisomerase only operates near double stranded breaks.
+
+Based on the preexistence of sites in the designed parts, XcmI looks like a good bet but it is not as robust to buffer conditions as BmrI.
+
+==Topoisomerase I==
+
+Most of the papers reference Topoisomerase I from vaccinia.  It seems to be available commercially at Epicentre. [http://www.epibio.com/item.asp?ID=274&CatID=112 html] [http://www.epibio.com/pdftechlit/108pl092.pdf protocol]
+
+*[[Anselm Levskaya]] - I've gotten Vaccinia WR strain isolate and am presently cloning the topoisomerase IB gene out.  Classically this is purified by using a phosphocellulose column but I'm going to just try a His-Tagged approach since it's a small protein.
+
+==Vector preparation==
+'''Reference'''<br>
+<biblio>
+#Heyman-GenomeRes-1999 pmid=10207160
+</biblio>
+
+*Vectors pcDNA3.1/GS and pYES2/GS
+
+                v
+               HindIII site
+               -----------
+ 5' N N N N N  A A G C T T  N N N N N 3'
+ 3' N N N N N  T T C G A A  N N N N N 5'
+               -----------
+               HindIII site
+                        ^
+
+*Cut with HindIII
+
+ 5' C C C T T  A 
+ 3' G G G A A  T T C G A
+ 
+              A G C T T  A A G G G 3'
+                      A  T T C C C 5'
+
+*Ligate on oligos (TOPO-H and TOPO-4)
+**TOPO-H destroys the HindIII site
+**TOPO-4 provides recessed end
+**In the drawings below, " | " refers to a break in the backbone on that strand.
+
+                   TOPO-H oligo
+                   -----------------------------------------------
+ 5' N N N N N  A   A G C T   C G C C C T T A T T C C G A T A G T G
+ 3' N N N N N  T   T C G A   G C G G G A
+                   -------   -----------
+          HindIII overhang   TOPO-4 oligo
+ 
+ 
+                         TOPO-4 oligo   HindIII overhang
+                         ------------   -------
+                         A G G G C  G   A G C T T   N N N N N 3'
+ G T G A T A C C T T A T T C C C G  C   T C G A A   N N N N N 5'
+ ------------------------------------------------
+ TOPO-H oligo
+
+*Purify and cut again with HindIII to remove circular vector.
+*Add TOPO-5 oligo and topoisomerase.  
+**''Vaccinia'' topoisomerase I cleaves after and remains covalently attached to second T in CCCTT sequence.
+
+                                            Topoisomerase nick
+                                            v
+                   TOPO-H oligo
+                   -------------------------------------------------
+ 5' N N N N N  A   A G C T   C G C C C T   T A T T C C G A T A G T G        3'
+ 3' N N N N N  T   T C G A   G C G G G A | A T A A G G C T A T C A C A A C  5'
+                   -------   -----------   -------------------------------
+          HindIII overhang   TOPO-4 oligo  TOPO-5 oligo
+ 
+ 
+ TOPO-5 oligo                      TOPO-4 oligo   HindIII overhang
+ -------------------------------   ------------   -------
+ C A A C A C T A T C G G A A T A | A G G G C  G   A G C T   T  N N N N N  3'
+         G T G A T A C C T T A T   T C C C G  C   T C G A   A  N N N N N  5'
+         ------------------------------------------------
+         TOPO-H oligo
+                              ^
+                              Topoisomerase nick
+
+*Add TOPO-10X stop buffer
+*Purify away free oligonucleotides and unbound topoisomerase I
+
+==Questions==
+#The authors add a primer TOPO-5 into the mix when they add the isomerase.  It seems like this primer should not be necessary.  Does the topoisomerase I "need" some duplex DNA extending out from where it will nick in order to cleave the backbone?  Austin thinks most enzymes do need duplex DNA.
+#How much of a performance hit will we take if we don't do all the purification steps they do ... it kind of seems like a lot of work (even though you only have to prep the vector once for multiple reactions).
+#Can a restriction enzyme and topoisomerase I cleave simultaneously or will they occlude one another?
+#Does TOPO TA cloning have a better success rate than TA cloning or is it just simpler?
+
+==Notes==
+<font color=red>'''This approach to topoisomerase I mediated cloning has NOT been tested.  This project is still a work in progress.</font>
+
+==Additional references==
+
+===Topoisomerase I===
+<biblio>
+#Shuman-PNAS-1987 pmid=2823264
+#Shuman-JBC-1990 pmid=2170398
+#Shuman-JBC-1991 pmid=1314832
+#Shuman-PNAS-1991 pmid=1658796
+#Shuman-JBC-1992 pmid=1324909
+#Shuman-JBC-1992b pmid=1314832
+#Shuman-JBC-1994 pmid=7798275
+</biblio>
+
+[[Category:In vitro]] [[Category:DNA]]

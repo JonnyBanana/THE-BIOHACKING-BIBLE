@@ -1,0 +1,86 @@
+We identify the location of the transposon insertion event by cutting the genomic DNA with a frequent cutter,
+religating, and using outward directed primers from the transposon insertion to amplify across the religation junction.
+Sequencing the resulting fragment identifies the insertion location.
+
+
+==Choice of Enzyme==
+
+* Hutchison used DraI as a cutter, but this is a blunt cutter, making religation difficult
+* MboI cuts at GATC sites, and is insensitive to 5-me dCTP methylation (sensitive to methylation of A)
+* MboI cutting frequency calculation: p(cut) = (.13)(.37)(.37)(.13) = .00231
+* Expected fragment length = 1/ .00231 = 432 bp + length from primer site to end of transposon
+* Expected PCR fragment length is twice this length, or about 1Kbp
+
+==Materials==
+* Genomic DNA from single colony transposon insertion event
+* MboI
+* NEB buffer 3  10x
+* T4 DNA ligase buffer 10x
+* T4 DNA ligase
+* PCR supermix
+* M13forward(-47) primer
+* T7 universal primer
+* ME primer
+* E-Gel 0.8%
+
+==Restriction digest of 500 ng of genomic DNA with MboI==
+* Mix 0.5 &mu;l (approx) genomic DNA in TE
+* 5 &mu;l NEB buffer 3
+* 1 &mu;l MboI
+* 43.5 &mu;l water
+* incubate at 37&deg; for 30 minutes
+* heat kill at 65&deg; for 20 minutes
+
+==Ligation of cut ends at 5 ng/&mu;l concentration (Hutchison99)==
+* 5 &mu;l digested DNA
+* 1 &mu;l T4 DNA ligase buffer
+* 0.2 &mu;l T4 DNA ligase
+* 3.8 &mu;l water
+* incubate 10 minutes at room temperature
+
+==Transposon detection PCR reaction 10 &mu;l test volume==
+* 0.5 &mu;l ligated DNA
+* 0.3 &mu;l ME primer
+9.2 &mu;l PCR supermix High Fidelity
+
+==Inverse PCR for transposon location identification==
+* 0.5 &mu;l ligated DNA
+* 0.15 &mu;l M13forward(-47) primer
+* 0.15 &mu;l T7 universal primer
+* 9.2 &mu;l PCR supermix high fidelity
+
+* Cycle 5 minutes at 95&deg; initial denturation
+* 40 cycles of
+** 94&deg; 30 seconds
+** 55&deg; 30 seconds
+** 64&deg; 3 minutes
+* 10 minutes 64&deg; final extension
+
+Detect with E-Gel 0.8%
+
+==Inverse PCR for sequencing transposon location==
+* 5 &mu;l ligated DNA
+* 1.5 &mu;l M13forward(-47) primer
+* 1.5 &mu;l T7 universal primer
+* 92 &mu;l PCR supermix high fidelity
+* Cycle as above
+* Prepare 1% agarose prep gel
+* add 20 &mu;l of loading dye
+* Run gel
+* Cut the band
+* Prepare DNA the gel with Qiaex II kit
+* Quantitate DNA
+* Sequence with both M13forward(-47) primer and T7 universal primer
+
+==Sequence analysis==
+* locate the MboI cut site (GATC) in the sequencing results
+* locate the end of the transposon sequence (ME end, reverse complemented here, agatgtgtataagagacag)
+* Identify the duplicated 9bp insertion site surrounding the insertion event
+* Locate the sequence from the ME end to the GATC cut site on the ''Mesoplasma florum'' genome
+* The sequence from the M13F(-47) and T7 Universal primers should be adjacent, and oriented in opposite directions on the genome
+
+==References==
+Hutchison, CA et. al, Global transposon mutagenesis and a minimal Mycoplasma genome. PMID 10591650
+
+
+[[category:Mesoplasma florum]][[category:protocol]]

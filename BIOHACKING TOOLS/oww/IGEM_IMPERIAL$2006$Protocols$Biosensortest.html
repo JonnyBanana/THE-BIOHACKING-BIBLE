@@ -1,0 +1,245 @@
+{{IGEM:IMPERIAL/2006/Biosensor}}
+
+==Biosensor: Calibration & Characterization of the Sensitivity of the Sensor==
+
+===Motivation===
+
+In order to use the biosensor for later experiments, a calibration curve has to be established first. With this testing protocol, the relation between pH and AHL concentration should be extracted. Thus, the sensitivity of the sensor can be determined and characterized.
+
+*<font color=red>JS: is it possible that we can get a continuous readout of the pH, so we can assess the variability in the pH meter over time?  Depending upon if it hits a spot of a higher concentration of AHL, it might increase the pH level (or decrease) if it is not stirred properly.  </font>
+*<font color=green>CS: Yes, the pH will be read in real-time to get an idea of the activity of the enzyme (that is why everything is prepared on ice first). During digest in the 25{{c}}waterbath, the pH should be observed for any changes in time until it reaches a steady value. The whole solution should have been well-mixed before. </font>
+
+===Equipment and Materials===
+
+''Equipment:''
+*pH meter
+*Eppendorf Tubes
+*Small White Cap Tubes
+*Gilson Pippettes
+
+''Materials:''
+*Enzyme Acylase from Porcine Kidney [http://www.sigmaaldrich.com/catalog/search/ProductDetail/SIGMA/A3010 (more info: sigmaaldrich)], stored as powder in freezer
+*AHL (N-(β-Ketocaproyl)-DL-homoserine lactone) [http://www.sigmaaldrich.com/catalog/search/ProductDetail?ProdNo=K3255&Brand=SIGMA (more info & catalogue no: sigmaaldrich)], comes as powder to be stored in -20{{c}} freezer 
+: - has been diluted into different stock concentrations (the solutions are stored in the -20{{c}} freezer)
+*(Potassium Phosphate (KPO<sub>4</sub>) buffer)
+*MiliQ
+*LB Medium
+*T9002 assay being cultured up following the [http://openwetware.org/wiki/IGEM:IMPERIAL/Protocols/T9002 T9002 testing protocol]
+
+===Protocol===
+
+*'''Dissolving the enzyme:''' (only need to do this the very first time, or if you run out of enzyme mix)
+ Soln 1: Dissolve 1mg enzyme in 1mL KPO<sub>4</sub> buffer (-> concentration of 2000units/mL)
+ Soln 2: Take 0.5mL of Soln 1 and dilute in 0.5mL MiliQ (-> concentration of 1000units/mL)
+ Soln 3: Take 0.1mL of Soln 1 and dilute in 0.9mL MiliQ (-> concentration of 200units/mL)
+ Soln 4: Take 0.1mL of Soln 2 and dilute in 0.9mL MiliQ (-> concentration of 100units/mL)
+ Soln 5: Take 0.1mL of Soln 3 and dilute in 0.9mL MiliQ (-> concentration of 20units/mL)
+ Soln 6: Take 0.1mL of Soln 5 and dilute in 0.9mL MiliQ (-> concentration of 2units/mL)
+ Soln 7: Take 0.1mL of Soln 6 and dilute in 0.9mL MiliQ (-> concentration of 0.2units/mL)
+ Soln 8: Take 0.1mL of Soln 7 and dilute in 0.9mL MiliQ (-> concentration of 0.02units/mL)
+ Soln 9: Take '''0.15mL''' of Soln 8 and dilute in '''1.35mL''' MiliQ (-> concentration of 0.002units/mL)
+ Soln 10: Take '''0.5mL''' of Soln 9 and dilute in '''0.5mL''' MiliQ (-> concentration of 0.001units/mL)
+ Soln 11: Take 0.1mL of Soln 10 and dilute in 0.9mL MiliQ (-> concentration of 0.0002units/mL)
+ Soln 12: Take 0.1mL of Soln '''10''' and dilute in 0.9mL MiliQ (-> concentration of 0.0001units/mL)
+ Soln 13: Take 0.1mL of Soln '''11''' and dilute in 0.9mL MiliQ (-> concentration of 0.00002units/mL) 
+ Soln 14: Take 0.1mL of Soln 13 and dilute in 0.9mL MiliQ (-> concentration of 0.000002units/mL) 
+
+
+*Before starting, set up a 25{{c}} waterbath
+1.)  Prepare the solutions as outlined in the table by adding Columns 1,3 and 6 on ice. Add the enzyme at last. 
+::NOTE: For an initial test, only test rows D, F, G
+2.)  Again, prepare the solutions as outlined in the table. However, instead of using LB in Coloumn 1, use MiliQ. Add Columns 1 (MiliQ),3 and 6 on ice; add the enzyme at last. 
+
+
+*REMARK: Because of the size of the pH glass electrode, the volumes used (see table below) had to be at least 1.5mL. If a smaller pH electrode is used, smaller volumes can be used to be tested. 
+
+{| border="3" cellpadding="3"
+!<u>Label</u>||(1)<br><u>LB medium ({{uL}})</u>||(2)<br><u>Available Stock Concentr<br>of AHL</u> !! (3)<br><u>Volume of AHL to add ({{uL}})</u> !! (4)<br><u>Final AHL Concentration</u> !!(5)<br><u>Amount of AHL present <br>in solution</u>!!(6)<br><u>Volume of Enzyme to add</u>
+|-
+!A
+|0
+|1000uM
+|200
+|1000uM
+|1um
+|4uL of Soln 1 (=8units)
+|-
+!B
+|100
+|1000uM
+|100
+|500uM
+|500nm
+|4uL of Soln 2 (=4units)
+|-
+!C
+|0
+|100uM
+|200
+|100uM
+|100nm
+|4uL of Soln 3 (=0.8units)
+|-
+!D
+|1800
+|1000uM
+|200
+|100uM
+|400nm
+|16uL of Soln 3 (=0.8units)
+|-
+!Control for D
+|1800
+|1000uM
+|200
+|100uM
+|400nm
+|N/A
+|-
+!E
+|100
+|100uM
+|100
+|50uM
+|50nm
+|4uL of Soln 4 (=0.4units)
+|-
+!F
+|1980
+|1000uM
+|20
+|10uM
+|20nm
+|8uL of Soln 5 (=0.08units)
+|-
+!Control for F
+|1980
+|1000uM
+|20
+|10uM
+|20nm
+|N/A
+|-
+!G
+|1980
+|100uM
+|20
+|1uM
+|2nm
+|8uL of Soln 6 (=0.008units)
+|-
+!Control for G
+|1980
+|100uM
+|20
+|1uM
+|2nm
+|N/A
+|-
+!H
+|1980
+|10uM
+|20
+|100nM
+|0.2nm
+|8uL of Soln 7 (=8E-4units)
+|-
+!I
+|1980
+|5uM
+|20
+|50nM
+|0.2nm
+|8uL of Soln 8 (=8E-5units)
+|-
+!J
+|1980
+|1uM
+|20
+|10nM
+|0.02nm
+|8uL of Soln 9 (=8E-6units)
+|-
+!K
+|1980
+|500nM
+|20
+|5nM
+|0.01nm
+|8uL of Soln 10 (=4E-6units)
+|-
+!L
+|1980
+|100nM
+|20
+|1nM
+|0.002nm
+|8uL of Soln 11 (=8E-7units)
+|-
+!M
+|1980
+|50nM
+|20
+|0.5nM
+|0.001nm
+|8uL of Soln 12 (=4E-7units)
+|-
+!N
+|1980
+|10nM
+|20
+|0.1nM
+|0.0001nm
+|8uL of Soln 13 (=8E-8units)
+|-
+!O
+|1980
+|1nM
+|20
+|0.01nM
+|0.00002nm
+|8uL of Soln 14 (=8E-9units)
+|-
+!Control LB
+|2000
+|N/A
+|N/A
+|N/A
+|N/A
+|N/A
+|-
+!Control Enzyme
+|2000
+|N/A
+|N/A
+|N/A
+|N/A
+|16uL of Soln 3 (=0.8units)
+|}
+(Note: The seemingly arbitrary numbers in row A-E were chosen because of the limited stock and concentrations of AHL available)
+
+*Add the enzyme just before putting the mixtures into 25{{c}} waterbath
+*Vortex solutions shortly to mix the content
+*Measure and write down the pH of all solutions before taking them off ice
+*Make a note of the time and take the solutions off the ice into a 25{{c}} waterbath (make sure the contents is well-mixed before)
+*Immediately after putting the solutions into the waterbath - stick in the pH electrode to get a real-time reading
+**Note down the initial pH of all solutions
+**Observe and write down all changes in pH over the next 10min. (take a reading every minute)
+**After 10min. the pH should have reached a steady value, if not, leave until it does not change any more
+**Write down the final pH
+<br>
+If activity of the enzyme has to be checked: 
+*Follow the [http://openwetware.org/wiki/IGEM:IMPERIAL/2006/Protocols/BiosensorEnzymeAct Biosensor Testing: Enzyme Activity protocol] afterwards
+
+<html>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1999441; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="18996820"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c19.statcounter.com/counter.php?sc_project=1999441&amp;java=0&amp;security=18996820&amp;invisible=1" alt="website statistics" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</html>

@@ -1,0 +1,49 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"| Super Parts
+!colspan="2" | links to higher level parts if applicable 
+|- style="background:#FF9966"
+!height="25pt" width="80pt" height="50"|Actual Part
+!colspan="2" height="110"| [[ Image:IC2007 Hrp Dev1Top.png|400px|]]
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"|Sub Parts
+!'''RBS (Elowitz)''' [http://parts.mit.edu/registry/index.php/Part:BBa_B0034 BBa_B0034]
+!'''Double terminator (B0010-B0012)''' [http://parts.mit.edu/registry/index.php/Part:BBa_B0015 BBa_B0015]
+|}
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 1|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 1/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 1/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 1/Implementation|Implementation]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Systems/Hrp_Device 1/TestingValidation|Testing/Validation]]</li></ul>
+</div>
+<br style="clear:both">
+
+
+
+==Method==
+*Test varying concentrations of inducer '''PoPS Input''' and see the '''PoPS Output.'''
+===Test Construct Promoter===
+*Test varying concentrations of inducer and measure '''PoPS Input'''.
+*A GFP reporter gene will be used to measure inputand the fluorescence  converted into generic units of rate of GFP synthesis per cell.
+
+===Test Construct Device 1===
+*Test varying concentrations of inducer and measure '''PoPS output'''
+*A GFP reporter gene will be used to measure input and the fluorescence converted into generic units of rate of GFP synthesis per cell.
+
+==Protocol==
+[[IGEM:IMPERIAL/2007/Projects/Hrp System/Systems/Hrp Device 1/TestingValidation/Device1protocol | Device Test Construct Protocol]]
+
+==Data Analysis==
+*The data collected for each test construct will be absorbance (O.D.600) and fluorescence at time intervals for each concentration of inducer used.
+*This raw data is converted into rate of GFP synthesis per cell for the '''inputs''' and '''outputs'''
+[[IGEM:IMPERIAL/2007/Projects/Hrp_System/Data_analysis| Data Analysis]]
+
+==Results==
+*Transfer function: Take one time point on the combined 3D graph, so end up with input vs outputs, and measure relationship between the two.
+*Response time: Can be given by going back to raw data and measuring how long it takes for input t0 result in output, so how long from addition of inducer does it take to get a specific level of output.
+* Define threshold levels: Minimum and maximum can be seen on 3D graph.
+* Noise-Signal fluctuation: Can be derived by studying the data and comparison of repeats
+* Leakiness of device: This can be given by looking at control where there is no inducer present.

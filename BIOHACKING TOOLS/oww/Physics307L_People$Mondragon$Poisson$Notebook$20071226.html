@@ -1,0 +1,19 @@
+''[y,x]=hist(data,bincenters)'' is a function that sets up bins whose values are centered 
+at the values given by the vector ''bincenter'' and counts the number of times the values in 
+''data'' fall into each of the bins. ''y'' contains the frequency counts and ''x'' contains the 
+corresponding bin index. ''bar(x,y)'' will plot the histogram of data. In general, ''x=bincenters'',
+so one can shorten ''[y,x]=hist(data,bincenters)'' to ''y=hist(data,bincenters)'' and use 
+''bar(bincenters,y)'' to plot the same thing.
+
+For ''bincenters'' I will use ''bincenters = 0:max(max(sample))''
+ # number of trials = numtrails
+ # parameter lambda = lambda
+ 
+ sample=poisson_rnd(lambda,50,numtrials);
+ maxbin = max(max(sample));
+ minbin = min(min(sample));
+ fudge = minbin;
+ bins=0:maxbins+fudge;
+ for i=1:50
+     histsample(i,:) = hist(sample(i,:),bins);
+ end

@@ -1,0 +1,57 @@
+The distance between two points <math>\textbf{x}=(x_1,x_2,\dots,x_n)</math> and <math>\textbf{y}=(y_1,y_2,\dots,y_n)</math> in the classical Euclidean sense is 
+
+:<math>\| x - y \| = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \dots + (x_n - y_n)^2}</math>
+
+However, other measures are possible.  On a grid (say, the distance to get from place to place in New York City), the distance is the lateral distance, since you can't go on diagonals: 
+
+:<math>\| x - y \| = |x_1 - y_1| + \dots + |x_n - y_n|</math>
+
+We can dream up scenarios in which we take the cube of each term, and the cube root overall, or any other power that we care to choose.  We'll generalize, and define the <math>p</math>-norm of a vector <math>\mathbf{x}</math> to be
+
+:<math>\|x\|_p = (|x_1|^p + \dots + |x_n|^p)^{\frac{1}{p}}</math>
+
+After you play with this for a while, you might ask, "what does the unit circle look like for some <math>p</math>"?  We'll explore this in two dimensions where it's easy to see.  Nothing new happens in higher dimensions.
+
+<math>p=2</math> is our usual norm, and the unit circle is our usual circle.  If we go to <math>p=1</math>, our grid norm above, then we are plotting the equation <math>|x_1| + |x_2| = 1</math> which is just four line segments connecting the points (1,0), (0,1), (-1,0), and (0,-1).  Here is a plot of the unit circles for <math>p=1,2,3,4</math>:
+
+[[Image:unit_circle-circles.jpg]]
+
+To see the more general behavior, note that we can take the norm of a fixed vector <math>x</math> as a function of <math>p</math>.  If we fix <math>x=(1,0)</math>, or any of the other points on the axes, then the norm doesn't vary with <math>p</math>.  It's always 1.  If we go at forty five degrees between the axes (<math>x=(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}})</math>), then we have
+
+:<math>
+\begin{matrix}
+\|x\|_p & = & (\frac{1}{\sqrt{2}^p} + \frac{1}{\sqrt{2}^p})^{\frac{1}{p}} \\
+& = & (2\frac{1}{2^{\frac{p}{2}}})^{\frac{1}{p}} \\
+& = & (2^{1-\frac{p}{2}})^{\frac{1}{p}} \\
+& = & 2^{(\frac{1}{p}-\frac{1}{2})}
+\end{matrix}
+</math>
+
+Here is a plot of the function:
+
+[[Image:unit_circle_plot.jpg]]
+
+Remember, we have here a fixed vector: its value goes down, so in order to get a length of 1, we have to put in a longer vector.  The unit circle thus heads steadily towards a square.
+
+The limiting case is the <math>\infty</math>-norm, which is simply defined as <math>\|\mathbf{x}\|_\infty = \stackrel{max}{i=1,\dots,n} |x_i|</math>, the largest component of the vector.  A few moments thought show that the unit circle is simply the square centered at the origin with side length two, and all sides parallel to the axes.
+
+Given these insights into the unit circle, we can actually use this to get another characteristic of a vector.  How much does it lie on the axes?  Are only two of its components in this basis important?  Three?
+
+To measure this, consider our vector <math>\mathbf{x}</math>.  Take 
+
+:<math>-\frac{d\|\mathbf{x}\|_p}{dp}|_{p=1}</math>
+
+What is this horrible object?  Consider a simple case, where <math>\mathbf{x}</math> has <math>k</math> components which are 1 and <math>n-k</math> components which are 0.  Then
+
+:<math>
+\begin{matrix}
+ - \frac{d\|\mathbf{x}\|_p}{dp} & = & -\frac{d}{dp} k^{\frac{1}{p}} \\
+& = & \frac{1}{p} k^{\frac{1}{p}} \log k^{\frac{1}{p}}
+\end{matrix}
+</math>
+
+When we evaluate this at <math>p=1</math>, we get <math>-\frac{d\|\mathbf{x}\|_p}{dp}|_{p=1} = k\log k</math>, which is at least monotonic in <math>k</math>, and gives us an estimate of the number of components.
+
+I was led to this weirdness by looking simple and suitable random variables to use in the [[LocklessRanganathanFormalism|Lockless-Ranganathan Formalism]], to whit, how do you measure the amount of variation in a given nucleotide?
+
+\end{document}

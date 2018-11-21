@@ -1,0 +1,183 @@
+=Poisson Statistics=
+experimentalists: me (princess bradley) and Nikipoo
+
+word of the week: DATUM
+
+==Goal==
+By measuring random events that occur very rarely, I hope to analyze how well a Poisson and a Gaussian can fit the data.  I believe the random events we are measuring to be cosmic radiation, but I am not sure.  We are measuring whatever radiation can make its way through a "house" of lead bricks and then activate a NaI scintillator in the physics building at UNM.
+
+==Theory==
+The binomial, Poisson, and Gaussian distributions are probability distributions.  I will assume you know what probability distributions are.
+
+===Binomial Distribution===
+Whatever radiation we are measuring is randomly occurring, which is why the binomial distribution is important.  The binomial distribution concerns counting random events, and is given by
+
+<math>B(x)=\frac{N!}{x!(N-x)!}p^nq^{N-n}</math>,
+
+where <math>N</math> is the number of possible counts, <math>p</math> is the probability of one of the counts occurring, and <math>q</math> is the probability of one of those counts not occurring.  Notice that <math>p+q=1</math>.  In the case of the radiation we are detecting, N is huge since there are many sources of radiation all over the universe, and p is tiny since the chances of that radiation being detected by our equipment is very small.  The standard deviation of the binomial distribution is
+
+<math>\sigma=\sqrt{p N (1-p)}</math>,
+
+and the mean is
+
+<math>a=pN\,</math>.
+
+===Poisson Distribution===
+When counting random events, the Poisson distribution (or "Poisson" for short) is often used when the random events have a low probability of occurring, that is, when <math>a=pN</math> is very small.  The Poisson distribution is an approximation to the binomial distribution given that <math>a=pN</math> is small.{{SJK comment|label=22:07, 22 October 2007 (CDT)|comment=I think you are wording this incorrectly.  See the "Law of rare events" on [http://en.wikipedia.org/w/index.php?title=Poisson_distribution&oldid=164769979 this wikipedia article]. pN does not have to be very small, but rather N has to be very large (and if p is very small, then a can be any finite number.}}  It is given by
+
+<math>P(x)=e^{-a}\frac{a^x}{x!}</math>,
+
+where <math>a</math> is the mean, and <math>e^{-a}</math> is the normalization coefficient so that the sum of P(x) for every non-negative integer x is 1.  Notice that the Poisson distribution is only defined for non-negative integers, so it is not continuous, just like the binomial distribution.  The standard deviation of the Poisson is
+
+<math>\sigma=\sqrt{a}</math>,
+
+which clearly approximates the standard deviation of the binomial distribution.
+
+According the the method of finding maximum likelihood, the best fit of a Poisson to data is to take the mean of the data to be <math>a</math>.  That is, the mean of the Poisson distribution that is the best fit is also the mean of the data.
+{{SJK comment|label=23:30, 22 October 2007 (CDT)|comment=Also, like we talked about in class, I think the Poisson is the exact expected distribution for the type of measurements we are observing, and can be derived via integrating the probability.  Take a look at [http://qwiki.caltech.edu/wiki/Poisson_Derivation_3 this page], although you may not be down with Laplace transforms.  I need to dig up my notes from 10 years ago.}}
+<br style="clear:both;">
+
+===Gaussian Distribution===
+When counting random events, the Gaussian distribution is often used when there is a high probability of a random event occurring (ie, when <math>a=pN</math> is substantial).  The Gaussian can be derived from the binomial distribution and is an approximation to it.  It is given by
+
+<math>G(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{\left(x-a\right)^2}{2\sigma^2}}</math>,
+
+where <math>a</math> is the mean, <math>\sigma</math> is the standard deviation, and 1/√(<math>2\pi\sigma^2</math>) is the normalization coefficient so that the integral over all <math>x</math> (<math>-\infty</math> to <math>\infty</math>) is 1.  The Gaussian distribution is continuous, so it is called a "probability density function" (pdf).
+
+According the the method of finding maximum likelihood, the best fit of a Gaussian to data is to take the mean of the data to be <math>a</math> and the standard deviation of the data to be <math>\sigma</math>.  That is, the mean and standard deviation of the Gaussian distribution that is the best fit is also the mean and standard deviation of the data.
+
+The Poisson initially approaches the Gaussian as the mean gets bigger, but since the Gaussian can have a <math>\sigma \ne</math>√(<math>a</math>), the Gaussian is a better fit than the Poisson for very large a=pN (remember that <math>\sigma=</math>√(<math>pN(1-p)</math>) for the binomial distribution, which is what the Poisson approximates).{{SJK comment|label=22:20, 22 October 2007 (CDT)|comment=I would again take issue with your wording here.  As "a" gets bigger, the normal or gaussian distribution  is an increasingly better approximation of the poisson distribution.  Search for "normal distribution" on [http://en.wikipedia.org/w/index.php?title=Poisson_distribution&oldid=164769979 the wikipedia article].}}  However, in this experiment, N is so huge and p is so small that the standard deviation of the Gaussian should still be √(<math>a</math>), so I would expect to see that the Poisson always does better than the Gaussian.  The purpose of this experiment is to see how well the Gaussian will do for small <math>a=pN</math> and compare it to how well the Poisson will do.  The binomial distribution will be ignored since <math>N</math>, <math>q</math>, and <math>p</math> are unknown, and since the factorials involved in the binomial distribution are ridiculously difficult to compute.
+
+The Gaussian distribution's continuity and lack of computationally-difficult factorials makes it nice.
+<br style="clear:both;">
+
+==Equipment==
+*photomultiplier tube (PMT) with NaI scintillator
+*coaxial cables with BNC connectors
+*about 40 lead bricks (needed to built a house for the PMT)
+*high voltage power supply for the PMT (1000 V should do the trick)
+*a means of acquiring data from the PMT so that frequency can be measured accurately (this is the trickiest part!)
+
+I have just given a somewhat-general equipment-needed list since the specific equipment I am using will not affect the result of counting the signals from the PMT.
+
+As for how *I* acquired data from the PMT, we used an amplifier to amplify the signal, which we connected to some chip in a computer, which works with really shitty software to, after changing many settings, measure frequency.
+
+==Our setup==
+*We plugged in the high voltage power supply to the power outlet and then, using coaxial cables, to the PMT.
+*Without using any radioactive source, we built a lead house around the PMT using the bricks (I think we did this to prevent local radioactive sources from altering the data, but I'm not sure).
+*We then used a really weird contraption that connected the power supply to many things including our amplifier so that our amplifier had power.{{{SJK comment|label=22:25, 22 October 2007 (CDT)|comment=that would be a [http://en.wikipedia.org/wiki/NIM NIM bin]}}
+*We connected the amplifier, with coaxial cables, to the PMT and the computer chip.
+*We then changed just about every setting that exists on the software (the shitty graphical interface made this difficult) to allow it to measure frequency (counts during a predetermined unit of time) and to allow it to put this frequency DATUM into a "bin."  The program will automatically fill many of these bins over a long period of time before stopping.
+
+==Procedure==
+The procedure was wonderfully easy since it is automated by software, but it took some time.
+
+The data software has what is called a "dwell time," which is the predetermined unit of time that is associated with one bin.  For smaller dwell times, the frequency data in the bins should become smaller making the Poisson a better choice.  To study how well the Poisson and Gaussian could fit the data depending on dwell time, we used a wide range of dwell times: 10ms, 100ms, 1s, 10s, and 100s.
+
+For dwell times 10ms, 100ms, and 100s, we had 4096 bins.  For dwell times 1s and 10s, we only had 256 bins since more bins would have taken more time than we had (we could do 4096 bins for the 100s dwell time since we let the experiment run over the weekend).
+
+More bins is better since more bins will "smooth out the bumps" on the probability distribution from the data according the the law of large numbers (the formula for standard error of the mean also reveals that more bins gives smaller error).
+
+==Data and Results==
+In this section, I will give raw data plots and the calculations of mean and standard deviation of that data.
+
+To denote the uncertainty of my mean, I will write the mean this way:
+
+<math>a=a\pm SE</math>
+
+where
+
+<math>SE=standard\ error\ of\ the\ mean=\frac{\sigma}{\sqrt{number\ of\ bins}}</math>.
+
+Actually, reporting uncertainty is not very necessary since this experiment is not measuring some value with the mean, but I am giving it anyways since it gives me a clue on how well the data should fit its correct parent distribution (which is the binomial distribution) assuming systematic error is not huge.  Also, since a Poisson is not a symmetric distribution with uneven error bars, the SE is not the best way to measure uncertainty, but it does the trick.
+
+Notice that the means become ten times larger for each dwell time that is ten times larger, which is to be expected.  There are some minor fluctuations due to random error of course, and some of these are due to systematic error or taking measurements on different days.
+
+===10ms===
+*<math>a=0.07666\pm0.00527\,</math>
+*<math>\sigma=0.3373\,</math>
+[[Image:Data10ms.jpg|left|none|600px]]
+
+===100ms===
+*<math>a=0.6775\pm0.0157\,</math>
+*<math>\sigma=1.006\,</math>
+[[Image:Data100ms.jpg|left|none|600px]]
+
+===1s===
+*<math>a=6.766\pm0.191\,</math>
+*<math>\sigma=3.063\,</math>
+[[Image:Data1s.jpg|left|none|400px]]
+
+===10s===
+*<math>a=69.23\pm0.69\,</math>
+*<math>\sigma=11.07\,</math>
+[[Image:Data10s.jpg|left|none|400px]]
+
+===100s===
+*<math>a=729.9\pm0.6\,</math>
+*<math>\sigma=39.10\,</math>
+[[Image:Data100s.jpg|left|none|400px]]
+I am throwing out this data and using the following for 100s instead for obvious reasons.  Notice how much the standard deviation decreases when I use only a subset of the 100s data.
+
+===100s subset (bins 501 to 2000)===
+*<math>a=720.9\pm0.8\,</math>
+*<math>\sigma=32.65\,</math>
+[[Image:Data100sSubset.jpg|left|none|400px]]
+
+==Error==
+
+===Systematic Error===
+Obviously, there is some large systematic error with the 100s run.  Maybe a solar flare or random equipment performance due to fluctuations of temperature in the room caused some anomalies.  However, I have chosen a section of the data that has small systematic error (I did this by selecting an interval between the two major anomalies).
+
+The least squares linear fit to the 10s data provides a slope of -0.035.  That is, each next frequency DATUM of the 256 data is expected to be -0.035 less than the previous on average, which means that there is a -8.96 decrease over all 256 data points.  I speculate that since either the earth could turn significantly or clouds could move in the 42.7 minutes that it took to obtain the 10s data, there must be some cosmic radiation that is being detected and that this radiation has decreased.  This -8.96 decrease is significant compared to the increase of the 1s data:  0.336.  However, the decrease of the 100s data (1500 bins) is bigger: -11.9.
+
+I would expect that this error would make the Poisson distribution a poorer fit since it has a fixed standard deviation, whereas the Gaussian distribution can change both its mean and standard deviation.{{SJK comment|label=23:13, 22 October 2007 (CDT)|comment=Yeah, I agree that the drift is a big problem for the Poisson analysis.  And, I can see how the Gaussian could seem to fit better because it has two adjustable parameters, compared to one for Poisson.  Even in that case, though, I don't know that straight Gaussian is the best.  The best solution would be to figure out why it is drifting, and then either fix that problem, or add that to the model (if you could).}}
+
+===Random Error===
+Random error is the focus of this entire experiment.  Without random error, there would be no distributions; we would always achieve the mean instead.  However, the probability gods thought that the universe would be boring without random error, so they implemented it, and now I am studying it.
+
+An ''unwanted'' source of random error is that I cannot use infinite bins since this would make the experiment too long, so I will never be able to perfectly know how well the Poisson or Gaussian distributions fit data.  Using too many bins is also a bad idea because then systematic error becomes too large.
+
+==Fitting Gaussian and Poisson distributions to the data==
+In this section, I will plot the probability distributions of the data, from the Poisson, and from the Gaussian.  To find the distribution of the data, I simply look at the data and count the number of times a specific frequency occurs and then normalize these counts by the number of bins in the original data.  To fit the Poisson and Gaussian, I simply use the mean and standard deviation of the data and plug them into the distributions, which provides the best fit according the the method of maximum likelihood.
+
+Since I am using MATLAB which cannot handle the extremely large numbers that result from large factorials, calculating the Poisson for the 100s data involved taking the ln(P(x)) and then using Sterling's approximation of ln(x!) when x is large.  I of course then had to take the exponential of this result.  The 100s also gave me problems when Sterling's approximation wanted the ln(0) for my x=0, but fancy coding can smooth over any bump.
+
+For each dwell time, I will calculate "Difference," which measures the amount of difference between my data's distribution and the Poisson or Gaussian.  Basically, it measures the quality of the fit.
+
+<math>Difference=\sqrt{\sum_{x=0}^N\left(Distribution(x)-DataDistribution(x)\right)^2}</math>,
+
+where "Distribution(x)" is either the Poisson or Gaussian, and <math>N</math> is the max frequency of the data (the last <math>x</math> with a <math>y</math> value in the following graphs).  I made up this method of calculating difference because it makes sense.  However, it only makes sense when comparing the Poisson difference with the Gaussian difference for a specific dwell time because this difference might change depending on dwell time since I am not sure that it is an absolute measure of difference.{{SJK comment|label=23:16, 22 October 2007 (CDT)|comment=You may notice that this is starting to look like the "chi-squared" from today, it is just missing the weighting factor in the denominator.  In this case, though, I think the weighting factor should change for each x, as opposed to remaining fixed as it did today in lecture.}}
+
+===10ms===
+{{SJK comment|label=23:17, 22 October 2007 (CDT)|comment=Great job on the graphs!  I like them, and they are easy to read, plus you even highlight the discrete versus continuous of Poisson versus Gaussian.}}
+*<math>Difference_{Poisson}=0.0418\,</math>
+*<math>Difference_{Gaussian}=0.2097\,</math>
+[[Image:Dist10ms.jpg|left|none|500px]]
+
+===100ms===
+*<math>Difference_{Poisson}=0.1739\,</math>
+*<math>Difference_{Gaussian}=0.3354\,</math>
+[[Image:Dist100ms.jpg|left|none|500px]]
+
+===1s===
+*<math>Difference_{Poisson}=0.0736\,</math>
+*<math>Difference_{Gaussian}=0.0513\,</math>
+[[Image:Dist1s.jpg|left|none|500px]]
+
+===10s===
+*<math>Difference_{Poisson}=0.0789\,</math>
+*<math>Difference_{Gaussian}=0.0687\,</math>
+[[Image:Dist10s.jpg|left|none|500px]]
+
+===100ms subset===
+*<math>Difference_{Poisson}=0.0279\,</math>
+*<math>Difference_{Gaussian}=0.0223\,</math>
+[[Image:Dist100s.jpg|left|none|500px]]
+{{SJK comment|label=23:24, 22 October 2007 (CDT)|comment=You can definitely see the effects of the slow drift on these distributions.  It's as if you took a Gaussian and slid it a little bit, so the top gets flattened, and the tails of the distribution are too high.  So the drift artificially inflates the [http://en.wikipedia.org/wiki/Kurtosis kurtosis] (maybe that can be the next word of the day).  Even with the drift, though, it's pretty cool to see the distributions tending to Gaussian.}}
+
+==Conclusions==
+#Systematic error makes Gaussian better for long dwell times.  However, without error, the Poisson should always be better, as can be known from the theory that the Poisson (usually) approaches the Gaussian (see "theory" for the details of this).
+#Poisson is obviously better than the Gaussian for small frequencies since its "distance" is smaller and because of how it was derived.
+#I wish I could think of a great way to measure the uncertainty of my "distance," but I am guessing that it is proportional to 1/(# of bins).  The more bins used, the more accurate my distance calculation should become.  Since I used many bins, I don't think that uncertainty is a very large issue, especially since my results seem very explainable without large uncertainty.  Anyways, I conclude that uncertainty is not a big deal, and that the distances I calculated can be used to determine which fit is better.
+#I am not convinced that the Poisson is a spectacular fit since when I compare the Poisson's mean=√(standard deviation) to the mean of the data, the Poisson's is almost always about 15% less than the data's.  The could be due to systematic error increasing the standard deviation so that the Poisson is a spectacular fit, but I cannot know.{{SJK comment|label=23:28, 22 October 2007 (CDT)|comment=I definitely think the systematic error (drift) is what is causing the standard deviation to be too high.  I wonder if it would be a quick fix to subtract off the drift...a problem, I guess would be that you'd then have non-integer counts, which is non-sensical.  Maybe a straight up maximum likelihood where you allow <math>\ a</math> (the expected counts) to vary for each bin would be the way to go?  In any case, I think the Poisson is a pretty good fit, particularly for low expected counts.  I think you may be able to see this better if your were to plot the data on a log-linear plot.}}

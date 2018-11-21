@@ -1,0 +1,108 @@
+=Expression Engineering, Day 4, 4/13/07=
+
+==Agarose gel of PCR products==
+;Purpose: To make sure our strains are what we think they are
+
+'''Protocol'''
+#Move 10 ul of each PCR sample to a labeled eppendorf tube. 
+#Add 2 ul of loading dye to each of the eppendorf tubes.
+#Load these aliquots onto a 1% Agarose Gel (1xTAE)
+
+'''Wells'''
+{|border=1
+!Well
+| 1 || 2 || 4 || 4
+|-
+!Sample
+|Parent||A||B||C
+|}
+
+'''Results'''
+[[Image:Gel mod3day4 transform check 2.jpg|thumb|left|W/F section, teams yellow/green, yeast transformation results!]]
+Our samples are on the left.  No product is seen.
+
+==Spot Test for Phenotype==
+;Purpose: To see the effects of our genotype change on the yeast's phenotype.
+
+'''Experiment Choices'''
+*Optimal Conditions
+**30 C, YPD
+*Rapamycin
+**30 C, YPD + rap
+*Low pH (measured at pH = 5.5, YPD pH > 6)
+**30 C,YPD + 
+*Lysine
+**30 C, SC-lys
+*Galactose
+**30 C, YP galactose
+
+'''Protocol'''
+#Spread 25 &mu;L HCL on YPD plate.
+#Vortex the strains that you innoculated last time: FY2068, candidate A, candidate B, and candidate C. 
+#Next move 100 ul to the first well of a 96 well dish: FY2068 to position A1, candidate A to B1, candidate B to C1 and candidate C to D1. 
+#Add 90 ul of sterile water to the wells A2-A6, B2-B6, C2-C6 and D2-D6. 
+#Using the multiwell pipette set to 10 ul, pipet the yeast in well A1 up and down to mix them then move 10 ul of the yeast into the water that is in A2. Repeat, moving 10 ul of the dilution from A2 to A3 then 10 ul from A3 to A4. 
+#Lay your labeled petri dishes open on the bench top with black paper underneath. 
+#Place 4 pipet tips on the multichanel pipetman and spot 3 ul from column 1 onto the leftmost side of each petri dish. You can use the same pipet tips for all your plates but be sure that the tips are properly filling each time. Sometimes liquid can accumulate in them to give errors in measurement. 
+#Change pipet tips and then spot 3 ul from column 2 next to the spots you just placed from column 1. Spot all the petri dishes in this same way.
+#Repeat for columns 3-6. 
+#Carefully replace the covers on the petri dishes but do not move them from your bench until all the spots have dried. 
+#Wrap them in your colored tape and place them in the incubators.
+
+==Collecting RNA==
+;Purpose: To harvest RNA from our yeast to be used later in microarray analysis.
+
+'''Protocol'''<br>
+'''Measure Cell #s'''
+#Make a 1:10 dilution (100 &mu;l into 900 &mu;l water) of each culture.
+#Use 0.5 ml to measure the optical density at 600 nm for each dilution, using water to blank the spectrophotometer.
+
+{|border=1
+! !! OD600nm !! Cells/ml
+|-
+!FY2068 (A)
+|0.4929 || 9.858 * 10^8
+|-
+!NY389
+|0.6662 || 1.3 * 10^3
+|}
+
+'''Spheroplast'''
+#Collect 2 x 10^7 cells of each strain in eppendorf tubes.
+##200 &mu;L FY2068
+##150 &mu;L Mutant
+#Harvest by spinning the tubes in a microfuge, full speed, 1 minute. 
+#Aspirate to remove all the supernatant. 
+#Add 1 ml of supplemented Y1, resuspend the pellet, and incubate at 30° taped to the roller drum rolling at speed 4 for 15 minutes.
+#Microfuge your samples at 1,8oo rpm for 5 minutes.
+#Aspirate to remove all the supernatant from each sample. You can spin 1 minute more at 1.8 rpm to spin the last bits of liquid off the walls of the tubes and then aspirate or use a pipetman to remove.
+
+'''RNA Preparation'''
+#Add 350 ul RLT+BME to each pellet. Pipet up and down to resuspend then vortex on minute to lyse spheroplasts. You can spin the samples at this point for 2 minutes if there is any insoluble material. 
+#Add one volume of 70% EtOH. Pipet up and down immediately upon addition and apply sample to the spin column and collection tube. 
+#Microfuge 30 seconds at full speed.  
+#Discard the flow-through into the sink or a conical tube that you set up on your bench for collecting waste. Save and re-use the collection tube for the next step.    
+#Wash the column with 700 ul RW1. Microfuge 30 seconds at full speed.
+#Discard the flow-through and the collection tube. Get a new collection tube from the teaching faculty. ''We did not get a new collection tube at this point.''
+#Wash the column with 500 ul RPE. Microfuge 30 seconds at full speed. 
+#Discard the flow-through but re-use the collection tube. ''We got the new collection column here.''
+#Microfuge the column for 1 minute full speed to dry it. 
+#Move the column to an RNase-free eppendorf tube with the cap cut off. 
+#Elute the RNA from the column by adding 30 ul of RNase-free water directly to the membrane. 
+#Allow the water to remain on the membrane for one minute, then microfuge, full speed for 1 minute. 
+#Repeat with a second 30 ul aliquot of water, so each sample will yield approximately 60 ul of RNA. 
+
+'''Measure RNA concentration'''
+# Dilute the concentration of your RNA sample by adding 5 &mu;l to 495 &mu;l sterile water in eppendorf tubes.
+#Transfer the dilution to a quartz cuvette and measure the absorbance at 260 nm. Water in one of the optically paired cuvettes is used to blank the spectrophotometer.
+
+{|border=1
+!RNA Sample !! A260 !! Conc of dilute RNA !! Conc of undilute RNA
+|-
+|FY2068 || 0.0066 || 0.264 &mu;g/mL || 26.4 &mu;g/mL
+|-
+|NY389 || 0.0171 || 0.684 &mu;g/mL || 68.4 &mu;g/ml
+|}
+
+==Summary==
+Our PCR confirmation came back negative.  This can be caused by incorrect primers or NY389 not being what we expected.  We are going to move on with it's analysis and see if the microarray can tell us if it is indeed the genetic knockout we expect.  Also, our reading for the FY2068 RNA concentration is very low, so we will be using another group's RNA to analyze.

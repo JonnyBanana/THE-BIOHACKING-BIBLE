@@ -1,0 +1,167 @@
+[[IGEM:Melbourne/2008|Return to Melbourne Homepage]]
+
+==[[/Allergens|Detection of allergens in food]]==
+*the presence of certain alergen promote the expression of GFP.
+*must be fast reaction. ie. detection on the spot.
+*cell-free medium and can be stored in bottles under normal condition.
+
+== Biological Circuits ==
+*variable resistors, capaceitors, a catalog of resistors ... 
+*setup a basic ALU(arithmetic logic unit), from pre-designed gates
+*biological clock; counts up in seconds or minutes (not countdown like peking07-hopcount), something similar but not elegant enough has been done by [http://parts2.mit.edu/wiki/index.php/Harvard_2006#A_Circadian_Oscillator_for_E.coli Harvard2006]
+*Circuit from Cellular Autonoma: one bacterial cell could produce simple circuit or fancy pattern.
+
+==Biological Manufacturing==
+*Bacterial cells to assist in production of things like  biofuels/fertilisers/etc.
+*Cheap and easy production of pharmaceuticals.
+
+== Biological Control ==
+*[http://en.wikipedia.org/wiki/PID_controller PID control] similar but more elaborate to [http://parts.mit.edu/igem07/index.php/Valencia/Controller Valencia2007]
+
+== [[In vivo sensors, processors and actuators]] ==
+Bacteria have remarkable abilities to sense, process and actuate. These attributes of bacteria are potentially useful in designing and fabricating them for therapeutic purposes. One good example is here. [http://www.technologyreview.com/TR35/Profile.aspx?Cand=T&TRID=601]
+'''[[/more|(more...)]]'''
+
+== cell-cell interaction ==
+* something similar to peking 2007 one..
+* group A bacteria undergo conjugation certain number of times before expressing a promotor
+* the promotor promotes the expression in group B bacteria of some other protein.
+* after undergoing conjugation certain number of times, group B bacteria express a repressor which inhibites the expresion of promotor from group A bacteria thus negative feedback.
+* a system with timing and quatity control
+
+== Radiation-proof E.coli ==
+*Express the DNA repair system (enzymes) of radiodurans in e.coli ?
+
+== Gold mining bacteria ==
+*Bacteria that uptake gold particles in solution possibly using transporters from alfalfa or other plants used in phytomining. For the purpose of making money.
+
+==[[/Desal|Bacterial desalination]]==
+Bacteria that uptake salt from water for the purpose of a more cost effective method of desalination. Investigations into archaea probably needed.
+
+== HIV rapid diagnostic test ==
+A rapid diagnostic test for HIV using bacteria that express CD4 and CCR5 coupled with an amplification signal (such as used in Brown university 2007).
+
+== HIV sink ==
+Bacteria that express CD4 and CCR5 to act as a sink within the body thus lowering the viral load of HIV. Immunogenicity must be removed as was done with Bactoblood (UC Berkeley 2007).
+
+== Remote controlled locomotive micromachine ==
+A remote control locomotive micro machine using bacterial flagella as the driver. The bacteria with flagella could possibly adhere to the micro machine using adhesins.
+
+== Bacterial kettle ==
+Hyperthermophilic bacteria or archaea treated with uncouplers e.g. DNP, used to boil water for power generation.
+
+== Bacterial TV ==
+A television screen composed of bacteria that release the different colors of fluorescent proteins to form an image.
+
+== Bacterial Bioremediation ==
+Bacteria that fix or modify harmful contaminants in soil (i.e. cyanide, petrochemicals) after a spill/industrial activity.
+
+==[[/BiologicalClock|A Feasible implementation of Bacteria Counter using a '''Binary Counting Approach]]'''== 
+
+
+I know we are at the stage of brainstorming. I just thought about a feasible way of implementating a "bacteria counter", just to put it here in case I forgot, not intending to confuse or distract anyone. If not feeling like to read it now, just skip it or come back later. The "bacteria counter" not only can be used for "biological clock" but also could be used for related topics which we might come up later. Just as a proposed idea.
+
+We could use the strategy of '''binary counting''' in biological counting systems. Before I start, I shall give a very brief idea (and that's all we need to know) on binary counting (I'm sure some people already knew this via mathematics, computer science, physics, engineering etc):
+
+
+Binary counting (based on 2) is done in the same a way as decimal counting (based on 10, as we do everyday). For example,
+
+if we want to represent number 3 in binary numbers (bits), <math>3 = 1\times 2 + 1\times 1 = 1\times 2^1 + 1\times2^0 = 11~(base ~2) </math>
+
+to represent number 4 in binary, <math>4 = 1\times2^2 + 0\times2^1 + 0\times2^0 = 100~(base ~2)</math>
+
+to represent number 5 in binary, <math>5 = 1\times4 + 0\times2^1 + 1\times1 = 1\times2^2 + 1\times2^0 = 101~(base~ 2)</math>
+
+Binary numbers can represent arbitarily large numbers just as digital numbers, e.g. if we have a binary number 1011011,
+
+
+{|
+|-
+!<math>2^6</math>
+!<math>2^5</math>
+!<math>2^4</math>
+!<math>2^3</math>
+!<math>2^2</math>
+!<math>2^1</math>
+!<math>2^0</math>
+|-
+|1
+|0
+|1
+|1
+|0
+|1
+|1
+|} = <math>1\times2^6 + 0\times2^5 + 1\times2^4 + 1\times2^3 + 0\times2^2 + 1\times2^1 + 1\times2^0 
+= 64 + 0 + 16 + 8 + 0 + 2 + 1 = 91~(base~10)</math>
+ 
+===Implementing Binary expression on "bacteria counter"===
+Ok, so how can we implement this in bacteria systems? Say we have 3 bacteria: B2 B1 B0, each with its own characteristic colour (or other traits) when its expression is turned on, e.g. B2=<font color = "red">red</font>
+B1=<font color = "green">green</font>, B0=<font color = "blue">blue</font>. Also, each B(n) needs the expression outcome only from B(n-1) plus a toggle control to express its own gene. Then we can read off the current number just by
+reading the color combinations (or other characteristic traits). For example,
+{|
+|-
+!B2
+!B1
+!B0
+!Binary
+!Decimal(time)
+|-
+|clear   
+|clear   
+|clear   
+|000
+|0
+|-
+|clear
+|clear
+|<font color = "blue">blue</font>
+|001
+|1
+|-
+|clear
+|<font color="green">green</font>
+|clear
+|010
+|2
+|-
+|clear
+|<font color="green">green</font>
+|	<font color="blue">blue</font>
+|011
+|3
+|-
+|<font color="red">red</font>
+|clear
+|clear
+|100
+|'''4'''
+|-
+|<font color="red">red</font>
+|clear
+|<font color="blue">blue</font>
+|101
+|5
+|-
+|<font color="red">red</font>
+|<font color="green">green</font>
+|clear
+|110
+|6
+|-
+|<font color="red">red</font>
+|<font color="green">green</font>
+|<font color="blue">blue</font>
+|111
+|'''7'''
+|}
+
+So for instance if our colour combination is <font color="red">red</font>, <font color="green">green</font>, <font color="blue">blue</font>, then we know our current time is '''7''', if colour combination is just <font color="red">red</font>, we know it's time '''4'''. Every expression of B(n) depends only on input from B(n-1) plus another toggle control. So the only bacteria determining counting speed is B0 (just like in a stop watch where the counting speed is entirely dependent on the last digit). Maybe we can race the real clock by adjusting the expression rates!
+
+As we know ALU (Arithmetic Logical Unit) is also based on binary number operation. This idea could be extended to be implemented on binary addition, substitution, multiplication.
+
+
+This is just 1 out of the many thoughts we've put. We have the whole bucket of great ideas from other brilliant brainstormers!
+
+
+I just thought about a practical problem we would have which is that if we have many copies of B2B1B0 and the different copies express asynchronously, e.g. one set is expressing 100 while another set is expressing 011 just 1 time behind, then this will cause us problems reading the outcomes. how could we resolve this? If we implement this idea in ALU (binary addition, etc) will this problem still occur?

@@ -1,0 +1,286 @@
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/chassis|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/chassis/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/chassis/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/chassis/Testing|Testing]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/chassis/Notes|Notes]]</li>
+</ul>
+</div>
+<br style="clear:both">
+=Common Protocols:Comparison of Home-Made and Commercial Cell Extract=
+Commercial cell extracts are expensive, and since we are going to make a much larger quantity of cell extract, it would be sensible to use our home-made cell extracts for experimentations for both our applications.
+
+Construct: pTet - GFP
+
+'''Constant Conditions:'''
+<br>
+{{hide|
+*50μl of commercial cell extract
+*Xμl of home-made cell extract
+*Amount of DNA for each type of extract 
+**Commercial E.coli Polymerase ≤2µg
+**Commercial T7 Polymerase ≤4µg
+**Home-made cell extract ???
+}}
+'''Variables:'''
+<br>
+{{hide|
+*Inherent variables of the systems
+}}
+'''Sampling:'''
+<br>
+{{hide|
+*Every 5 minutes.
+Repetition:
+*3 repeats
+}}
+'''Controls:'''
+<br>
+{{hide|
+*Negative Control: No DNA is added to the cell extracts
+(CHECK)
+}}
+<br>
+
+=Common Protocols:GFP=
+==''1)Calibration Curve''==
+Test to determine the relationship between fluorescence and in vitro concentration of GFP. To test this purified samples of known [GFP] are added to in vitro chassis and the fluorescence measured. From this a calibration curve of [GFP] vs Fluorescence can be made. This can be used for data analysis to convert fluorescence into a [GFP].<br>
+'''Aims:'''
+*To determine [GFP] vs Fluorescence 
+'''Constant Conditions:'''<br>
+{{hide|
+*50μl in vitro chassis
+*DNA added 2μg
+**Do we need DNA, as it may absorb some of the fluorescence
+*25<sup>o</sup>C
+}}
+'''Variables:'''
+<br>
+{{hide|
+*Independent variables :
+**[GFP] added
+*Dependent variables:
+**Fluorescence
+}}
+'''Sampling:'''
+<br>
+{{hide|
+*Measure after addition of GFP to minimize degradation of GFP
+Repetition:
+*3 repeats
+}}
+'''Controls:'''
+<br>
+{{hide|
+*Negative Control: 
+**No GFP is added to an in vitro chassis
+}}
+<br>
+
+==''2)Degradation Time''==
+Test the half life of GFP protein in an in vitro chassis. To test this a purified sample of known [GFP] are added to an in vitro chassis, then fluorescence will be measured at regular time intervals. The fluorescence will be converted into GFP molecules using the calibration curve. This will give; degradation of GFP as a function of time, from this the half life of GFP can be obtained. In addition, temperature may affect the half life of GFP and so the half life will be measured for an appropriate temperature range.<br>
+'''Aims:'''
+*To determine the half life of GFP for a range of temperatures 
+'''Constant Conditions:'''
+<br>
+{{hide|
+*50μl in vitro chassis
+*GFP added....
+}}
+'''Variables:'''
+<br>
+{{hide|
+*Independent variables :
+**Temperature range:4<sup>o</sup>C, 15<sup>o</sup>C, 25<sup>o</sup>C, 30<sup>o</sup>C, 37<sup>o</sup>C, 50<sup>o</sup>
+**Range may change based upon the initial testing; will only test ranges that in vitro is stable at. 
+*Dependent variables:
+**Degradation of GFP
+}}
+'''Sampling:'''
+<br>
+{{hide|
+*Every 5 minutes.
+Repetition:
+*3 repeats
+}}
+'''Controls:'''
+<br>
+{{hide|
+*Negative Control: No GFP is added to an in vitro chassis
+*Positive Control: In vitro chassis with high concentration of purified GFP added at high temperature
+(CHECK)
+}}
+<br>
+
+=Protocol:Infector Detector=
+
+==''Infecter Detector''==
+===1)Initial testing===
+'''Construct:''' pTet - LuxR - pLux - GFP <br>
+Test to see if construct will express in vitro. Experiments carried out under room temperature 25<sup>o</sup>C and under inducer concentration that was shown to give a high induction in vivo.<br>
+'''Aims:'''
+*To determine if construct expresses in vitro
+*To get approximations of: life span, response time and rate of GFP
+*To determine whether the constructs or the in vitro need to be optimised.
+'''Constant Conditions:'''
+<br>
+{{hide|
+*25 <sup>o</sup>C
+*50μl in vitro chassis
+*DNA added 2μg
+*AHL concentration 1000nM
+}}
+'''Variables:'''
+<br>
+{{hide|
+*Independent variables :
+*Dependent variables:
+**Rate of GFP synthesis
+**Life span of chassis
+**Response time
+}}
+'''Sampling:'''
+<br>
+{{hide|
+*Every 5 minutes.
+Repetition:
+*3 repeats
+}}
+'''Controls:'''
+<br>
+{{hide|
+*Negative Control: In vitro system with no AHL added
+*Positive Control: In vitro system with purified GFP added
+}}
+<br>
+
+==''Phase 2''==
+===1)Test for Steady State of LuxR Protein Expression===
+'''Construct:''' pTet - LuxR <br>
+To determine the appropriate time for addition of AHL into the system for induction of pLux, we need to confirm that the amount of LuxR in the system is at a steady state. This is to ensure that the amount of LuxR does not affect the rate of production of reporter protein when the concentration of AHL is varied.
+
+'''Constant Conditions:'''
+<br>
+{{hide|
+*25 <sup>o</sup>C
+*50μl in vitro chassis
+*DNA added 2μg
+}}
+
+===2)Preliminary AHL Sensitivity Testing===
+'''Construct:''' pTet - LuxR - pLux - GFP <br>
+To determine the sensitivity of the construct to AHL concentration. To do this, we induce in vitro chassis containing the construct, with known concentrations of AHL. We then record the change in GFP, such that we can calculate the rate of GFP production relative to concentration of AHL in solution. This preliminary experiment is to show an approximate range of concentrations that the construct is sensitive to. With the data from this test, AHL concentrations, sampling times and length of experiments can be optimised for more detailed characterisation. <br>
+'''Aims:'''
+*To determine approximations of the threshold of response, time of response, life span and rate of GFP produced
+'''Constant Conditions:'''
+<br>
+{{hide|
+*25 <sup>o</sup>C
+*50μl in vitro chassis
+*DNA concentration .......
+}}
+'''Variables:'''
+<br>
+{{hide|
+*Independent variables :
+*[AHL] concentration 
+**0.1nM, 1nM, 10nM, 100nM, 1000nM 
+*Dependent variables:
+**Rate of GFP produced and total GFP produced
+**Life span of chassis
+**Response time
+}}
+'''Sampling:'''
+<br>
+{{hide|
+*Every 5minutes.
+Repetition:
+*3 repeats
+}}
+'''Controls:'''
+<br>
+{{hide|
+*Negative Control: In vitro system with no AHL added
+*Positive Control: In vitro system with purified GFP added
+}}
+<br>
+
+===3)Test for AHL Sensitivity===
+'''Construct:''' pTet - LuxR - pLux - GFP <br>
+Based upon previous preliminary AHL sensitivity tests, now define a new [AHL] to test and in addition optimise the sampling time and length of testing.<br>
+'''Aims:'''
+For each AHL concentration:
+*To determine the transfer function of rate of GFP produced
+*To determine the maximum rate of GFP produced
+*To determine the lifespan of the chassis at varying AHL concentrations
+*To determine the lowest threshold of AHL detection
+*To determine the response time of the system to AHL detection
+'''Constant Conditions:'''
+<br>
+{{hide|
+*25 <sup>o</sup>C
+*50μl in vitro chassis
+*DNA added 2μg
+}}
+'''Variables:'''
+<br>
+{{hide|
+*Independent variables :
+*[AHL] concentration 
+**Define after initial test
+*Dependent variables:
+**Rate of GFP produced and total GFP produced
+**Life span of chassis
+**Response time
+}}
+'''Sampling:'''
+<br>
+{{hide|
+*Define after initial test
+Repetition:
+*3 repeats
+}}
+'''Controls:'''
+<br>
+{{hide|
+*Negative Control: In vitro system with no AHL added
+*Positive Control: In vitro system with purified GFP added
+}}
+
+===4)Temperature sensitivity===
+'''Construct:''' pTet - LuxR - pLux - GFP <br>
+To test the affect of temperature on the construct. Measure the sum of the temperature dependent variables by GFP output. Temperature dependent variables include degradation rates, diffusion rates and expression rates. Need to measure a suitable range of temperatures that cover the operating range.<br>
+'''Aims:'''
+For each AHL concentration:
+*Find how temperature will change the output.
+<br>
+'''Constant Conditions:'''<br>
+{{hide|
+*50μl in vitro chassis
+*DNA added 2μg
+}}
+'''Variables:'''
+<br>
+{{hide|
+*Independent variables :
+*[AHL] concentration 
+**Define after initial test
+*Temperature
+**30<sup>o</sup>C and 37<sup>o</sup<C
+*Dependent variables:
+**Rate of GFP produced and total GFP produced
+}}
+'''Sampling:'''
+<br>
+{{hide|
+*Define after initial test
+Repetition:
+*3 repeats
+}}
+'''Controls:'''
+<br>
+{{hide|
+*Negative Control: In vitro system with no AHL added
+*Positive Control: In vitro system with a construct gaurenteed to work
+}}

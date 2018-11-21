@@ -1,0 +1,68 @@
+=Measuring PoPS=
+
+The ideal unit of synthetic biology is Polymerase Per Second (PoPS). This unit allows the idea of abstraction and modular design. However currently we cannot directly measure PoPS, the only way is to measure it indirectly. One approach is to measure rate of protein synthesis and relate this back to PoPS. We propose to measure our device in terms of protein synthesis, we are particularly inspired by the technique used for the characterisaion of the BBa_F2620 promoter and have chosen to use the same units of GFP molecule synthesised CFU<sup>-1</sup> sec<sup>-1</sup>. This measurement we feel is still a valid generic unit: 
+*It is a reproducible measurement because the unit is independent of the equipment used, such as fluorometers that can vary in calibrations. This independence is because we are measuring in terms of the rate of GFP synthesis as opposed to just fluorescence. 
+*The unit also allows modular design, this is either when the other parts used have the same units or the rate of GFP synthesis is related to a more generic unit for protein synthesis or to PoPS. We will be measuring the input and output of our Hrp system in terms of GFP synthesis
+For the devices we wish to characterise we need to know the relationship between the input of PoPS and output of PoPS, or in our case input of protein synthesis and output of protein synthesis.
+
+===PoPS of promoter ===
+We need to measure PoPS for the see [[IGEM:IMPERIAL/2007/Projects/Hrp System/Specifications#Parts and Devices| specified parts]] and [[IGEM:IMPERIAL/2007/Projects/Hrp System/List_of_Required_Parts | promoters]]. However, measuring PoPS [[IGEM:IMPERIAL/2007/Projects/Hrp System/Notes#The problem with PoPS | is tricky]]. In order to measure PoPS for '''input''' promoters, it is proposed to attach a fluorescent protein to the same operon containing the promoter of interest and input coding sequences. An input '''GFP synthesis CFU<sup>-1</sup> sec <sup>-1</sup> measurement can then be obtained. The image to the right shows how a plot showing the relationship between PoPS in and PoPS out can be constructed using this technique.
+
+Note, however, that this value needs to be corrected for the expression difference arising from the distance between the coding sequence and the promoter. One method proposed is to perform the experiment with two plasmids, with the following sequences: Promoter-GFP-Protein and Promoter-Protein-GFP. This allows for the correction in PoPS in and PoPS out, and would give a more realistic measurement of PoPS for the system.
+
+=== PoPS of Device ===
+We need to measure the '''Output''' of PoPS from our device so that features like the transfer function can be characterised. Again to the measure the PoPS a fluorescent protein can be used. This fluorescent protein must be different to the one used to measure the input so that they can be separately measured, for example use of red fluorescent protein(RFP). The output can then be measured in terms of RFP synthesis per CFU per second.     
+
+
+Note: Standard RBS meeds to be cloned in<br>
+Pilot experiment done before full experiment
+<br clear="all">
+
+
+=== The problem with PoPS ===
+
+'''PoPS''' - '''Po'''lymerase '''P'''er '''S'''econd:
+* PoPS is the number of transcription initiations per second. Note that PoPs is not just the number of Polymerase bindings to DNA per second, as this does not always initiate gene expression. PoPs can be analogous to the "electrical current" of gene expression.
+* PoPS is used as the standard unit for biobrick inputs and outputs.
+* PoPS is very difficult to measure directly, but can be inferred through the use of fluorescent reporters. As such, most characterisations using PoPS report results in terms of GFP synthesis per CFU per second instead.
+* PoPS depends on:
+** Physical conditions such as temperature and pH
+** Promoters, inducers, repressors, enhancer length, and other regulators
+** Energy available
+
+=== PoPs Measurement ===
+
+*Link to the techniques used for the [[IGEM:IMPERIAL/2007/Projects/Hrp System/Characterisation_BBa_F2620|characterisation of the BBa_F2620]]
+*There are several screening vectors available that can be used when measuring PoPS. An example are the [[#BBa_13450_to_13458_screening_vectors|BBa_13450 to 13458]]
+
+===Protocols for Measuring Gene Expression===
+&Beta;-galactosidase was the reporter used  within the Hrp research at imperial. When this was considered for our applications two clear problems were flagged:
+#First with this method it is difficult to measure the variability within cell populations.
+#Secondly it is difficult to measure gene expression over time. This is because we would need to harvest the cells in our sample at each time point in a time series.
+
+====Fluorescence techniques====
+* Paper of interest - [http://www.fasebj.org/cgi/reprint/04-3180fjev1] this paper claims that GFP is a good measure of gene expression.
+
+This is based on two key observations:
+#That GFP fluorescence increases directly with the copy no. of GFP.
+#GFP fluorescence increases directly proportionally to the GFP mRNA in a cell.
+
+In respect to the problems that were flagged by &beta;-galactosidase assay,;
+#Cells can be individually studied using a flow cytometry - need to check if we have access.
+
+From the literature so far looked at , GFP measurements do not seem to be a problem in ''E. coli''. In eukaryotic cells there seems to be more complications.
+
+====Flow Cytometry====
+The principle is that cells can be separated and pass through a 'flow cell' one cell at a time. This flow cell is exposed to a light source which causes excitation of the specific fluorescence molecule of interest. The side scatter from this is then measured.
+
+====Screening Vectors====
+There are several screening vectors that we could use for testing out construct or could aim to keep a standard one.
+
+=====BBa_13450 to 13458 screening vectors=====
+*This series of screening vectors are under the measurement section of the registry.
+*The basic principle is to have a promoter followed by an RFP (red fluorescent protein), the gene of interest, and GFP(green fluorescent protein). 
+*This set up allows the  input PoPS into the system to be measured via RFP and then the output PoPS to be measured using the GFP.
+*These plasmids have been tested in ''E. coli'' CW2553 strain, a derivative of K12, we need to consider whether this will affect our protocol drastically.
+
+=== '''Useful Links''' ===
+[[Media:ICSB_2005_final_draft.ppt|Link to a ppt about principles of measuring PoPS]]

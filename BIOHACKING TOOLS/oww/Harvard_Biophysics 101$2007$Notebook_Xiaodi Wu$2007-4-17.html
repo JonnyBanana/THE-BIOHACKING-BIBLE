@@ -1,0 +1,10 @@
+== Personal plan ==
+
+I'll be working with Katie on the web interface portion of the project. For next Tuesday (17 April), we expect to have a working prototype up and running with the basic query interface and OMIM responses. If there is additional time, I hope to look into some more info on looking up quirkier sequences, say through BLAT or BLAST. By 19 April, I expect to have contributed some notable refinements to the working web prototype, and may also pitch in where other help is needed.
+
+== Progress thus far ==
+Kate and I have met to discuss how to implement the web interface. We settled on using the Python-based [http://www.djangoproject.com/ Django] framework as the underpinning. To run the included scripts, download Django (see previous link); also install [http://www.mysql.com/ MySQL] and the required Python-MySQL bridge module called [http://sourceforge.net/projects/mysql-python MySQLdb].
+
+You will need to create a database with write permissions called "biophysics", and set the requisite parameters (username, password, etc. in the settings.py file in the code that's enclosed below). There are also several settings referring to disk locations where you are storing the scripts; you will need to change those to reflect where you have saved the data files. Then, on the command line, you will need to execute the manage.py script to start the webserver (see the Djano documentation for more info).
+
+In any case, here is the file archive: [http://people.fas.harvard.edu/~xwu/biophysics.zip clicky].

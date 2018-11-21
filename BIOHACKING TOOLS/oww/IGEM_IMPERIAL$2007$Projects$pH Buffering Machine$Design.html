@@ -1,0 +1,42 @@
+=pH Buffering Machine: Design=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/pH Buffering Machine|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/pH Buffering Machine/Specifications|Specifications]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/pH Buffering Machine/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/pH Buffering Machine/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/pH Buffering Machine/Implementation|Implementation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/pH Buffering Machine/TestingValidation|Testing/Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/pH Buffering Machine/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/pH Buffering Machine/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+__TOC__
+
+===List of Parts Required===
+* From the registry
+** [http://parts.mit.edu/registry/index.php/Part:BBa_J23100 BBa_J23100]: Constitutive promoter
+** [http://parts.mit.edu/registry/index.php/Part:BBa_C0012 BBa_C0012]: Coding region for LacI
+** [http://parts.mit.edu/registry/index.php/Part:BBa_R0010 BBa_R0010]: pLac promoter – activated by IPTG
+** [http://parts.mit.edu/registry/index.php/Part:BBa_E0040 BBa_E0040]: Coding region for GFP
+** [http://parts.mit.edu/registry/index.php/Part:BBa_J06504 BBa_J06504]: Coding region for RFP
+** [http://parts.mit.edu/registry/index.php/Part:BBa_R0080 BBa_R0080]: pAra promoter – activated by AraC
+** [http://parts.mit.edu/registry/index.php/Part:BBa_C0040 BBa_C0040]: Coding region for TetR
+** [http://parts.mit.edu/registry/index.php/Part:BBa_R0040 BBa_R0040]: pTet promoter
+** [http://parts.mit.edu/registry/index.php/Part:BBa_B0034 BBa_B0034]: RBS
+** [http://parts.mit.edu/registry/index.php/Part:BBa_B0015 BBa_B0015]: Double terminator
+* Not yet in the registry
+** [http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=NC_000913.2&from=4358419&to=4359957&strand=2&dopt=fasta NC_000913]: Coding region for CadC
+** [http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nuccore&id=145451 M67452]: pCad promoter
+** Coding region for HrpR
+** Coding region for HrpS
+** PhrpL promoter
+** [http://www.ncbi.nlm.nih.gov/sites/entrez NC_002655]: Coding region for urease
+** [http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=NC_007946.1&from=4533539&to=4534750&dopt=fasta NC_007946]: Coding region for lactate dehydrogenase
+
+===Chassis Selection===
+* E.coli K12 (strain K-12; substrain MG1655]

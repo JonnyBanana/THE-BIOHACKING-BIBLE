@@ -1,0 +1,33 @@
+=Optimum Counting Time for the 'Twinkle' Fluorometer=
+<br>
+__NOTOC__
+==Aims==
+To determine the optimum counting time for the fluorometer while avoid fluorescent bleaching.
+
+The counting time is the time the fluorometer detector stays on top of each well. The fluorometer we are using is a [http://www.bertholdtech.com/ww/en/pub/bioanalytik/produkte/lb970.cfm '''Twinkle LB970'''] from [http://www.bertholdtech.com/ww/en/pub/zentral/firma.cfm '''Berthold Technologies''']. 
+
+A small window time will only account for very discrete levels of fluorescence. These might include sudden spikes of radiation since fluorescence is not a uniform process. Hence we will get variation between samples of equal expression rates. A larger counting time results in a larger window size and hence a more average reading is taken from each sample smoothing out the variation due to the randomness of fluorescence emission. 
+
+Care must be taken however because larger counting times will lead to faster fluorescence bleaching. A compromise between the two must therefore be found. 
+
+
+==Materials and Methods==
+Refer to protocols page.
+
+
+==Results==
+[[ Image:IC2007 Experimental Design Phase1 Protocol31Window-experiment.PNG|thumb|800px|left|Fig.1: Variability of Fluorescence Measurement Using Different Counting Times]]
+
+From Fig.1, the most optimum window length to be used is found to be the 0.60 seconds counting time. The 0.15 secs counting time is, as expected, very random but as the counting times are increased by 0.15 secs at a time, the variability between the repeats decreased. When 0.75 secs counting time was reached, this variability starts to rise again, indicating that the window length had surpassed optimum amount.
+
+
+==Discussion==
+It was noticed that by changing the counting time(window) for which the detector remains on top of each well, the variation between repeated measurements varied. It is thus ideal to have as little variation as possible between repeats while maintaining a relatively low counting time to prevent excessive bleaching of the samples. Therefore a range of the smallest counting times possible (0.15 - 0.75 sec) was examined only.
+
+For each time point examined, different samples of the same stock solution where measured repeatedly(4 times) at different windows(counting time). The percentage(%) variability between the repeated measurements(4) of the same sample was then calculated for each window. Ideally, since the same sample is measured repeatedly, it is expected that the variability between the repeats to be zero(0). This however does not take into consideration the inherent randomness within fluorescence. 
+
+From the results, a 0.60 window would allow the least variability across measurements over a 90 minute period while minimizing photobleaching of fluorescent proteins. 
+
+
+==Conclusion==
+* A counting time of 0.60sec would provide the least variability across measurements while minimizing photobleaching of the fluorescent proteins expressed.

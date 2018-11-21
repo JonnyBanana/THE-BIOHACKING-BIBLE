@@ -1,0 +1,230 @@
+--[[User:Linh N Le|Linh N Le]] 22:57, 28 October 2007 (CDT)
+Note: I was not present for the lab last Monday (Oct 22) so I'm using the data my partner Cary collected.
+
+===Purpose===
+To find the Ryhdberg Constant by measuring emission spectra from hydrogen and deuterium gas.
+We will use the Balmer Series of the known spectrum of Mercury for comparison.
+
+===Equipment===
+*"constant deviation" Spectrometer
+*Spectrum Tube Power Supply
+*Spectrum Tubes filled with various gasses
+===Procedure===
+Using the spectrometer, we set up the tubes at the receiving end. We place a mercury vapor tube to calibrate the apparatus (since the Balmer Series of mercury is known), and observe the lines of color. There is a dial that you can turn to move the colored lines around in the eyepiece. After lining up the color with the cross hairs, we then can read off the wavelength off the dial.
+
+Since the gears on the dial aren't perfect, measuring the lines turning only counter clockwise, then clockwise and try to use the average of the 2 measurements. Also, you can control the amount of light that enters the apparatus from the spectrum source. The more light you let in, the greater the intensity, but the worse the resolution of the lines.
+
+Here are some useful links: 
+
+[http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf Last Year's Manual] see p27-30
+
+[http://en.wikipedia.org/wiki/Balmer_series Wikipedia]
+
+===Data===
+
+====Hydrogen====
+
+Turned screw ccw
+
+{|
+|-
+!Color
+!n
+!Wavelength (nm)
+!
+|-
+|Red
+|3
+|653
+|655
+|-
+|Blue/Green
+|4
+|484.7
+|485
+|-
+|Violet
+|5
+|433.5
+|433.4
+|-
+|Violet(faint)
+|6
+|409.6
+|409.8
+|}
+
+Turned screw cw 
+
+{|
+|-
+!Color
+!n
+!Wavelength (nm)
+|-
+|Red
+|3
+|655
+|651
+|-
+|Blue/Green
+|4
+|485.9
+|483.9
+|-
+|Violet
+|5
+|433.8
+|433
+|-
+|Violet (faint)
+|6
+|409.8
+|410
+|}
+
+====Deuterium====
+
+Turned screw ccw 
+{|
+|-
+!Color
+!n
+!Wavelength (nm)
+|Wavelegth
+!(nm)
+|-
+|Red
+|3
+|651.6
+|655
+|
+|-
+|Blue-Green
+|4
+|484.3
+|485.3
+|
+|-
+|Violet
+|5
+|432.8
+|435.3
+|
+|-
+|Violet(faint)
+|6
+|409.9
+|412.7
+|
+|}
+
+Turned screw cw 
+
+{|
+|-
+!Color
+!n
+!Wavelength
+!(nm)
+|-
+|Red
+|2
+|654.8
+|651
+|-
+|Blue-Green
+|3
+|484.8
+|484.2
+|-
+|Violet
+|4
+|433.9
+|436.9
+|-
+|Violet(faint)
+|5
+|409.4
+|412.4
+|}
+
+===Data Analysis===
+Using Balmer's Formula and our data, we can find the Rhydberg Constant:
+
+<math>\frac{1}{\lambda} = R_\mathrm{H}\left(\frac{1}{2^2} - \frac{1}{n^2}\right), n=3,4,5,...</math>
+
+Going into MATLAB and plugging in all our values, I had it compute the Rhyberg Constant for each of our wavelengths.
+
+Rh (measured in inverse meters)= 
+
+http://openwetware.org/images/a/a5/Balmer.JPG
+
+Then I had it take the average of all this data.
+
+===Error Analysis===
+I went ahead and had MATLAB go and calculate the:
+
+Standard Error :<math>
+s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}
+</math>
+
+Standard Error of the Mean:<math>SE = \frac{s}{\sqrt{N}}
+</math>
+
+Std_err = 
+
+     redhyd: 3.2324e+004
+    bluehyd: 1.8738e+004
+     viohyd: 8.3767e+003
+    viofhyd: 4.3758e+003
+     reddet: 3.5358e+004
+    bluedet: 1.1499e+004
+     viodet: 4.4428e+004
+    viofdet: 4.4146e+004
+        set: 3.7064e+004
+
+Std_err_of_mean = 
+
+     redhyd: 1.6162e+004
+    bluehyd: 9.3691e+003
+     viohyd: 4.1883e+003
+    viofhyd: 2.1879e+003
+     reddet: 1.7679e+004
+    bluedet: 5.7495e+003
+     viodet: 2.2214e+004
+    viofdet: 2.2073e+004
+        set: 6.5520e+003
+
+The accepted value for R is <math>1.0967758x10^{7} m^{-1}</math>
+
+to get a qualatative feeling of our number, let us look at the %error:
+
+<math>%error= \frac{|Actual-Experimental|}{|Actual|}x100</math>
+
+percent_err = 
+
+     redhyd: [0.5313 0.2244 0.2244 0.8402]
+    bluehyd: [0.3247 0.2626 0.0769 0.4906]
+     viohyd: [0.1553 0.1784 0.0860 0.2709]
+    viofhyd: [0.1693 0.1204 0.1204 0.0716]
+     reddet: [0.7473 0.2244 0.2550 0.8402]
+    bluedet: [0.4076 0.2007 0.3040 0.4283]
+     viodet: [0.3172 0.2360 0.0629 0.6242]
+    viofdet: [0.0960 0.5831 0.1938 0.5108]
+     of_avg: 0.1960
+
+====Sources of Error====
+*As stated in the procedure, the dial used to measure the wavelengths is not perfect
+*When looking at the spectrum lines, the more light you let in, the "larger" the band will be. There is a balance that you need to strike to get good measurements. The less light you let in, the better the focus, but the harder it is to see. 
+*The prizm used to refract the light may not be perfect, or aligned precisely
+*The gasses that we use to get our lines may not be 100% pure
+*There is ambient background light that enters the apparatus and may skew results.
+
+===Conclusion===
+
+The lab went very smoothly, and by the data we took, very accurately.
+
+For my final estimate of the Rhdberg Constant, I would say it lies within 1 standard deviation of our data
+
+<math>Rh=1.0989 x 10^{7} +/- 6.5520x 10^3 m^{-1}</math>

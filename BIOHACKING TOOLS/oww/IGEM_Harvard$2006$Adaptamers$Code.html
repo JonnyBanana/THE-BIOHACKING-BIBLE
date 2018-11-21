@@ -1,0 +1,14 @@
+==Avoid==
+
+===v.1===
+
+This program allows one to create linker sequences between aptamer sequences that do not anneal to themselves, the aptamers, or the complementary sequence in the wrong place. I'm pretty sure this is the version used to generate the v.2 adaptamers. The syntax is a little complicated: DNA sequences need to be converted to number sequences in this version. The algorithm minimizes 4-mers that fit one of the above criteria. It goes to neighbors by either mutating the most troublesome 4-mer or mutating a random 4-mer with less probability. Additionally, the algorithm makes sure that there are no 3 consecutive G's or C's. The v.2 sequences were one of the top choices found running multleast, which ran the algorithm 100 times. There are many improvements that could be made including:
+
+Efficiency: Avoiding redundant checking of 4-mers during each round of updates.
+Not caring about going to worse solutions in order to avoid local minima.
+Improving what inputs are acceptable
+Making the input avoid creating links to multiple sequences instead of just one.
+
+I've begun making the changes, but this first version got what we needed, so ...
+
+[[IGEM:Harvard/2006/Adaptamers/Code/avoidv1| v.1]]

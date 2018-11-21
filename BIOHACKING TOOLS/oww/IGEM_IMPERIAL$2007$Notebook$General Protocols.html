@@ -1,0 +1,378 @@
+{{show hide all}}
+
+
+
+==Preparation of Media==
+Summary: preparing nutrient broths where bacteria grow
+===LB Medium===
+{{hide|
+To make 1 L of LB (Luria-Bertani) medium:
+*1 L distilled water
+*10 g tryptone
+*5 g yeast extract
+*5 g NaCl
+*1 ml 1 M NaOH
+#Autoclave for 25 minutes and store at room temperature
+[Note: Please minimize contamination to the medium during preparation and after use. If LB us suspected to be contaminated, make a new one.]
+}}
+
+===LB Plates===
+{{hide|
+To make 1 L of LB medium for 25-30 plates:
+*10 g tryptone
+*5 g yeast extract
+*5 g NaCl
+*1 ml 1 M NaOH
+*15 g agar or agarose
+#Autoclave for 25 minutes and wait until hand-hot (50&deg;C)<br>[Note: Make sure the agar does not cool too much and solidify]
+#Add:
+#*Ampicillin to 50 µg/ml 
+#*Kanamycin to 30 µg/ml 
+#*Xgal to 20 µg/ml 
+#*IPTG to 0.1 mM 
+#Pour in 25-30 plates
+#Cool at room temperature for 2-3 days or with lids open for 30 min in 37&deg;C incubator with laminar flow hood
+#Wrap and store at 4&deg;C<br>[Note: Please label the plates with the correct colour of antibiotics]
+}}
+
+===SB Medium===
+{{hide|
+To make 1 L of SB (super broth) medium:
+*32 g tryptone
+*20 g yeast extract
+*5 g NaCl
+*5 ml 1 M NaOH
+}}
+
+===2x YT Medium===
+{{hide|
+To make 1 L of 2x YT (TY, trypton-yeast) medium:
+*16 g tryptone
+*10 g yeast extract
+*5 g NaCl
+}}
+
+===M9 Medium===
+{{hide|
+[[IGEM:IMPERIAL/2007/Projects/Cell_by_date/Implementation/Calibrating_Fluorescence#Solutions|Detail protocols of M9 Medium can be found in Cell By Date protocols]]
+}}
+
+===Antibiotic Stocks===
+{{hide|
+*50 mg/ml Ampicillin
+*30 mg/ml Kanamycin
+}}
+
+==Transformation==
+Summary: inserting plasmids into bacterial cells
+
+===Preparation of Competent Cells===
+{{hide|
+#Transfer 25ml of fresh overnight culture to 1 litre of LB
+#Grow cells with vigorous aeration (at least 225 rpm) to OD600 of 0.5-0.6 (1.6-1.9 x 10^8 cells/ml)
+#Transfer culture to sterile 500 ml centrifuge bottles
+#Allow to cool on ice for several minutes
+#Pellet cells for 15 min at 4000 x g
+#Resuspend cells in 1 litre of ice cold ddH20
+#Repellet cells immediately
+#Repeat steps 6 and 7
+#Set up 0.5 ml eppendorf tubes in rack on dry ice bath to chill
+#Resuspend cells in 20 ml 10% glycerol
+#Transfer to 50 ml centrifuge tube
+#Pellet cells for 15 min at 4000 x g
+#Resuspend cells in 2 ml of 10% glycerol
+#Prepare 50 μl aliquots
+#Freeze on dry ice
+#Store at -70°C
+#Plate dilutions of the final preparation
+}}
+
+===Electroporation===
+
+{{hide|
+#Take out ''E. coli'' from -80°C and thaw on ice
+#Place cuvettes on ice
+#Switch on the electroporation machine. Set to voltage to 1.67
+#Take 1μL of DNA and add it into the 50μL of competant ''E. coli'', mix carefully and transfer to cuvette<br>
+#Set up the cuvette on the electroporation machine and zap!<br>[Note: If you hear a pop (the read is not around ~4.30), then repeat the experiment for that plasmid]
+#Remove the zapped cells from the cuvette and add 0.5 ml LB
+#Transfer back to the eppendorf and grow for 1 hour in a shaking incubator at 37°C
+#Pellet down the cells and concentrate to approximately 50 μl 
+#Plate the 5 μl and 50 μl onto the correct resistance plate
+#Incubate in 37°C overnight
+}}
+
+==Induction of T7 polymerase with IPTG==
+Summary: inducing the production of T7 polymerase in BL21 cells with IPTG
+
+{{hide|
+#Grow BL21 cells in LB with antibiotics at 37°C overnight.
+#Dilute BL21 cells and grow them until A<sub>600</sub> is 0.6<br>[The cells are most concentrated and healthy at this concentration. Triggering IPTG at this stage will result in the largest production of T7 polymerase]
+#Add IPTG to a final concentration of 1mM
+#Incubate for several hours or until protein expression ends.<br>[Optional: a negative control with no IPTG can be kept.]
+}}
+
+==Plasmid Preparation==
+Summary: extracting plasmid DNA from bacterial cells
+
+===Miniprep===
+{{hide|
+#Transfer 1.5 ml of bacterial cells to an eppendorf
+#Pellet cells by centrifuging for 30 seconds at maximum speed
+#Resuspend pelleted bacterial cells in 250 μl Buffer P1 and transfer to an eppendorf
+#Add 250 μl Buffer P2 and mix thoroughly by inverting the tube 4–6 times
+#Add 350 μl Buffer N3 and mix immediately and thoroughly by inverting the tube 4–6 times
+#Centrifuge for 10 min at maximum speed
+#Pipette the supernatant into the QIAprep spin column on top of the eppendorf
+#Centrifuge for 1 min and discard the flow-through.
+#Wash with 0.5 ml Buffer PB, centrifuge for 1 min, and discard the flow-through<br>[Note: This step is unnecessary for cells without nucleases (DH5α, XL1-Blue]
+#Wash with 0.75 ml Buffer PE
+#Centrifuging for 1 min and discard the flow-through
+#Centrifuge for an additional 1 min to remove residual wash buffer
+#Place the QIAprep column in a clean 1.5 ml microcentrifuge tube
+#To elute DNA, add 50 μl Buffer EB (10 mM Tris·Cl, pH 8.5) or water to the center of each QIAprep spin column, let stand for 1 min, and centrifuge for 1 min
+
+Details can be obtained from the [http://www1.qiagen.com/Products/Plasmid/QIAprepMiniprepSystem/QIAprepSpinMiniprepKit.aspx QIAGEN website]
+}}
+
+===Midiprep===
+{{hide|
+#Pick a single colony from a freshly streaked selective plate and inoculate a starter culture of 2-5ml LB medium containing the appropriate selective antibiotic. Incubate for approx. 8h at 37&deg;C with vigorous shaking (~300 rpm)
+#Dilute the starter culture 1/500 to 1/1000 into selective LB medium. For high-copy plasmids inoculate 50ml medium. For low-copy plasmids, inoculate 150ml medium. Grow at 37&deg;C for 12-16h with vigorous shaking (~300 rpm)
+#Harvest the bacterial cells by centrifugation at 60000 x g for 15 min at 4&deg;C
+#Resuspend the bacterial pellet in 6ml buffer P1
+#Add 6ml buffer P2, mix thoroghly by vigorously inverting the sealed tube 4-6 times, and incubate at room temperature (15-25&deg;C)for 5 min
+#Add 6ml chilled buffer P3 to the lysate, and mix immediately and thoroughly by vigorously inverting 4-6 times. Do not incubate the lysate on ice
+#Pour the lysate into the barrel of the QIAfilter Catridge. Incubate at room temperature for 10 min. Do not insert the plunger
+#Equilibrate a HiSpeed Midi Tip by applying 4ml buffer QBT and alow the column to empty by gravity flow
+#Remove the cap from the QIAfilter outlet nozzle. Gently insert the plunger into the QIAfilter Midi catridge and filter the cell lysate into the previously equilibrated HiSpeed Tip
+#Allow the cleared lysate to enter the resin by gravity flow
+#Wash the HiSpeed Midi Tip with 20ml buffer QC
+#Elute DNA with 5ml buffer QF
+#Precipitate DNA by adding 3.5ml room temperature isopropanol to the eluted DNA. Mix and incubate at room temperature for 5 min
+#During the incubation remove the plunger from a 20ml syringe and attach the QIAprecipitator Midi Module onto the outlet nozzle. Do not use excessive force, bending, or twisting to attach the QIAprecipitator
+# Place the QIAprecipitator over a waste bottle, transfer the elute/isopropanol mixture into the 20ml syringe, and insert the plunger. Filter the elute/isopropanol mixture through the QIAprecipitator using constant pressure
+#Remove the QIAprecipitator from the 30ml syringe and pull out the plunger. Re-attach the QIAprecipitator and add 2ml 70% ethanol to the syringe. Wash the DNA by inserting the plunger and pressing the ethanol through QIAprecipitator using constant pressure
+#Remove the QIAprecipitator from the 20ml syringe and pull out the plunger. Attach the QIAprecipitator to the 20ml syringe again, insert the plunger, and dry the membrane by pressing air through the QIAprecipitator quickly and forcefully. Repeat this step
+#Dry the outlet nozzle of the QIAprecipitator with absorbent paper to prevent ethanol carryover
+#Remove the plunger from a new 5ml syringe and attach the QIAprecipitator onto the outlet nozzle. Hold the outlet of the QIAprecipitator over a 1.5ml collection tube. Add 1ml of buffer TE to the 5ml syringe. Insert the plunger and elute the DNA into the collection tube using constant pressure
+#Remove the QIAprecipitator from the 5ml syringe, pull out the plunger and reattach the QIAprecipitator to the 5ml syringe
+#Transfer the elute from step 19 to the 5ml syringe and elute for a second time into the same 1.5ml tube
+
+Details can be obtained from the [http://www1.qiagen.com/Products/Plasmid/QIAGENPlasmidPurificationSystem/HiSpeedPlasmidMidiKit.aspx QIAGEN website]
+}}
+
+===Maxiprep===
+{{hide|1=
+Protocols will be uploaded soon! Sorry ~
+
+Details can be obtained from the [http://www1.qiagen.com/Products/Plasmid/QIAGENPlasmidPurificationSystem/QIAfilterPlasmidMaxiKit.aspx QIAGEN website]
+}}
+
+===Solutions Required===
+{{hide|1=
+====Tris-Acetate====
+To make 1 L of 50x Tris-acetate solution:
+*242 g Tris base
+*57.1 ml glacial acetic acid
+#Add H20 to 1 L
+
+====Glucose/Tris/EDTA Solution====
+*50 mM glucose
+*25 mM Tris·Cl, pH 8.0
+*10 mM EDTA
+#Autoclave and store at 4°C
+
+====NaOH/SDS Solution====
+[Note: Prepare NaOH/SDS solution immediately before use]
+*0.2 M NaOH
+*1% (wt/vol) sodium dodecyl sulfate (SDS)
+
+====Potassium Acetate Solution====
+5 M potassium acetate solution, pH 4.8
+*29.5 ml glacial acetic acid
+#Add KOH pellets until solution reaches pH 4.8
+#Add H<sub>2</sub>O to 100 ml
+#Store at room temperature (do not autoclave)
+}}
+
+==Restriction Digest==
+Summary: using enzymes to cut DNA on specific sites - this is used to cut at the suffix or prefix of the biobrick plasmids
+
+{{hide|1=
+In biobricks: EcoRI and XBaI are in the prefix and SpeI and PstI are in the postfix.<br>[EcoRI - XBaI - GENE - SpeI - PstI]<br>
+In host plasmid (the plasmid you keep):
+*Insert at prefix: EcoRI, XBaI (Buffer 2)
+*Insert at postfix: SpeI, PstI (Buffer 2)
+In donor plasmid (the plasmid you don't want):
+*Insert to prefix: EcoRI, SpeI (Buffer 2)
+*Insert to postfix: XBaI, PstI (Buffer 3)
+
+For a 20 μl double restriction enzyme digest
+*4 μl DNA (~1 μg DNA)
+*2 μl 10x restriction buffer 
+*0.2 μl 100x BSA
+*1 μl of restriction endonuclease/s [1 μl of enzyme digests 1 μg of DNA per hour]
+*12.8 μl ddH<sub>2</sub>O<br>[Or - add up ddH<sub>2</sub>O to a total volumne of 20 μl]
+#Incubate the reaction mixture for 1 hr at 37°C
+#Stop the reaction - incubating 20 min at 80°C (65°C for digests without PstI)
+#Run digestion on gel to check for band sizes or completeness of digestion
+}}
+
+===Solutions Required===
+{{hide|1=
+=====Tris/EDTA Buffer=====
+*10 mM [[#Tris×Cl|Tris×Cl]]
+*1 mM EDTA, pH 8.0
+
+=====Tris×Cl=====
+*Tris×Cl [tris(hydroxymethyl)aminomethane], 1 M
+#Dissolve 121 g Tris base in 800 ml H<sub>2</sub>O
+#Adjust to desired pH with concentrated HCl
+#Mix and add H<sub>2</sub>O to 1 liter
+}}
+
+==Ligation==
+Summary: sticking the DNA together
+
+{{hide|
+Generally, you should have an insert:vector ratio of 3:1.  Estimate the ratio by checking the band intensity on the gel. [Remember that larger fragments have higher intensity too!]
+
+Set up the following ligation reaction:
+*10 μl insert DNA
+*2 μl vector (plasmid) DNA
+*2 μl 10x ligase buffer
+*1 μl T4 DNA ligase
+*5 μl ddH<sub>2</sub>O<br>[Or - add up ddH<sub>2</sub>O to a total volumne of 20 μl]
+
+#Incubate for 1 hr at 15°C, or incubate for 2 hr at room temperature.
+}}
+
+==Agarose Electrophoresis==
+Summary: using an electric field to seperate DNA of different sizes in a gel
+
+===Preparing the gel===
+{{hide|1=
+#Seal the gel casting platform with tape and insert the gel comb
+#Measure out ~ 1.2% agarose (1.2 g of agarose for every 100 ml of [[#Tris-Borate-EDTA|TBE]])
+#Mix with appropriate amount of diluted TBE suitable for the gel platform
+#Melt the agarose a microwave oven (1-2 min) and swirl to ensure even mixing
+#Melted agarose must be cooled to 55°C before pouring onto the gel platform
+#Add the dye to visualise DNA
+#Pour in the melted agarose<br>[Note: Make sure there are no air bubbles on the gel, remove any with a pipette tip]
+#Allow 30-60 minutes for the gel to set
+}}
+
+===Loading and running the gel===
+{{hide|1=
+#Remove the tape from the open ends of the gel platform and withdraw the gel comb
+#Place the gel casting platform containing the set gel in the electrophoresis tank
+#Add sufficient TBE to cover the gel, until the tops of the wells are submerged<br>[Note: Make sure no air pockets are trapped within the wells]
+#Load the DNA into the wells, with a suitable weight marker (make sure DNA is mixed with loading buffers)
+#Set the voltage to the desired level (120-240 V)<br>The progress of the separation can be monitored by the migration of the dyes in the loading buffer
+#Turn off the power supply when the dye just before the dye reaches the end of the gel
+#Take a picture of the gel
+}}
+
+===Solutions Required===
+{{hide|1=
+=====Tris-Borate-EDTA=====
+To make 10x TBE:
+*108g Tris 
+*55g boric acid 
+*7.44g di-sodium EDTA
+*Make up to 1 litre with ddH<sub>2</sub>O
+}}
+
+==DNA Extraction/Purification==
+Summary: extracting and purifying the DNA from the gel or reaction mixture
+
+===Gel Extraction===
+{{hide|
+#Add 3 volumes of Buffer QG to 1 volume of gel (assuming 100 mg ~ 100 μl)
+#Vortex slightly and incubate at 50&deg;C for 10 min or until gel completely dissolves
+#Add 1 gel volume of isopropanol and mix
+#Apply mixture into QIAquick column (on top of collection tube) and centrifuge at maximum speed for 1 min<br>[Note: Load up to 800 μl of sample only, if sample exceeds that, load twice]
+#Optional: Add 0.5 ml of Buffer QG to remove agarose and centrifuge for 1 min(for ''in vitro'' use only)
+#Add 0.75 ml buffer PE and centrifuge for 1 min
+#Discard all flowthrough and centrifuge for 1 min
+#Place QIAquick column on top on an eppendorf
+#Add 30 μl of water to the column and let it stand for 1 min
+#Centrifuge at 1 min and store purifed DNA
+
+Details can be obtained from the [http://www1.qiagen.com/Products/DnaCleanup/GelPcrSiCleanupSystems/QIAquickGelExtractionKit.aspx QIAGEN website]
+}}
+
+===DNA Purification===
+{{hide|1=
+#Add 3 volumes of Buffer PBI to 1 volume of mixture
+#Apply mixture into QIAquick column (on top of collection tube) and centrifuge at maximum speed for 1 min
+#Add 0.75 ml buffer PE and centrifuge for 1 min
+#Discard all flowthrough and centrifuge for 1 min
+#Place QIAquick column on top on an eppendorf
+#Add 30 μl of water to the column and let it stand for 1 min
+#Centrifuge at 1 min and store purifed DNA
+
+Details can be obtained from the [http://www1.qiagen.com/Products/DnaCleanup/GelPcrSiCleanupSystems/QIAquickGelExtractionKit.aspx QIAGEN website]
+}}
+
+==S30/S12 Cell Extract==
+===Preparing S30 cell extract===
+{{hide|1=
+#Prepare cell extracts from E. coli strain BL21 (DE3)
+#Grow cells at 37 °C in 3 L of 2xYT medium with vigorous agitation and aeration till O.D.600 = 0.600
+#Add IPTG (1mM) to cell culture to express T7 RNA polymerase
+#Harvest cells in the mid-log phase (O.D.600 = 4.5)
+#Wash three times by suspending them in 20 ml of buffer A per gram of wet cells
+#Centrifuge and weigh the wet cell pellets
+#Store the pellets at -80 °C
+#Suspend thawed cells (10g) in 12.7 ml of buffer B
+#Disrupt cells in a French press cell at a constant pressure of 20 000 psi
+#Centrifuge the lysate at 30 000 RCF for 30 min at 4 °C
+#Carefully remove the top layer of the supernatant (lipid layer) and pellet, and centrifuge them again
+#Shake the final supernatant at 100 rpm
+#Gradually add 3 ml of the pre-incubation solution to 10 ml of the supernatant
+#Incubate supernatant with gentle shaking at 37 °C for 80 min.
+#Dialyze the pre-incubated sample for 45 min each at 4 °C against 50 volumes of buffer B using a dialysis tubing with a molecular weight cut off of 10 000
+#Repeat dialysis step 3 times
+#Centrifuge the retained extract at 4000 RCF for 10 min at 4 °C to obtain the supernatant
+}}
+
+===Preparing Reaction Mixture===
+{{hide|1=
+#Cell-free protein synthesis reactions are carried out in a 1.5 mL microtube placed in a water bath set at 37 °C
+#*57 mM Hepes–KOH (pH 8.2)
+#*1.2 mM ATP
+#*0.85 mM each of CTP, GTP and UTP
+#*2 mM DTT
+#*0.17 mg/mL E. coli total tRNA mixture (from strain MRE600)
+#*0.64 mM cAMP
+#*90 mM potassium glutamate
+#*80 mM ammonium acetate
+#*12 mM magnesium acetate
+#*34 μg/mL l-5-formyl-5,6,7,8-tetrahydrofolic acid (folinic acid)
+#*1.5 mM each of 20 amino acids
+#*2% PEG (8000)
+#*110 mM phosphoenolpyruvate
+#*15 U/ml pyruvate kinase
+#*6.7 μg/mL DNA
+#*27% (v/v) of cell extract
+}}
+
+==Commercial cell extract==
+===Preparing complete amino acid mixture===
+{{hide|
+#Remove the [[IGEM:IMPERIAL/2007/Projects/chassis/Testing/L1020|L1020 kit]] from storage.
+#Add the same volume of two amino acid minus mixtures
+}}
+===Preparing in vitro expression system===
+{{hide|
+#Take a 1.5ml tube and add 5µl of the complete amino acid mixture
+#Add 20µl of S30 Premix Without Amino Acid
+#Add 15µl of S30 Extract Circular
+#Add nuclease-Free Water so final volume is 50µl, taking into account the volume of DNA that is going to be added
+#To start the reaction add the purified DNA sample at a range upto 4µg
+#Vortex the cells gently and centrifuge 5 seconds to bring the reaction down to the bottom of the tube
+#Carry out the reaction in the specific conditions for the protocol. Standard is 37<sup>o</sup>C for 1-2 hours
+#Expected yield 150-200ng per 50µl reaction
+}}

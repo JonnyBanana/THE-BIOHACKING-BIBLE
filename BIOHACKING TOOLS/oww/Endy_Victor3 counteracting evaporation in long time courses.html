@@ -1,0 +1,27 @@
+Also see: [[Endy:Victor3 plate reader|Victor3 plate reader]]
+
+==Source==
+*Rosenfeld et al. J. Mol. Biol. (2002) 323, 5, pp785-93.
+
+==Protocol==
+*Add an injection step into the Victor protocol to inject 12ul of DI water into each well every 25mins if doing an experiment.  Or add water at any time interval that leads to a rate of .48ul/min.  
+*I believe this is a slightly faster rate of addition than used in the article above.
+**Note: Check the water reservoir before beginning the protocol to ensure that there is sufficient water for the length of your protocol. 96 wells, measured over 24 hours, will require slightly more than 50 mL.
+
+==Notes==
+*This can keep well volume constant over a 10 hour protocol at 37&deg;C.
+
+*There may be some variability depending on machine model so it is best to check or experiment with this rate of water addition.
+
+*I have not used the method at temperatures other than 37&deg;C.  
+**'''[[User:Reshma P. Shetty|Reshma]] 21:09, 7 June 2007 (EDT)''': I measured the average evaporation rate at 30&deg;C to be similar (~0.5&mu;L/min for H<sub>2</sub>O).  However, there appears to be a fair bit of well to well variation in evaporation with different wells varying by as much as 15 &mu;L after 4 hours at 30&deg;C.
+
+*The software will not allow you to dispense less than 5&mu;l per step, so the minimal interval for adding water is ~10mins.
+**Note that taking measurements (particularly several measurements over many wells) can take a significant amount of time, on the order of ~5mins. Adjust the shaking time or dispenser volume as needed.
+
+*The software will ''try'' to prevent you from dispensing more than 250&mu;l per well per experiment.  This is because it thinks that any more will cause the wells on the plates we use to overflow.  You can get around this by not selecting any wells to be measured when you save the protocol.  This prevents the software from checking how much water you are going to dispense over the course of the experiment.  So only choose the wells to be measured using the protocol wizard before starting your run
+
+==Calculating time between dispensing steps==
+*To calculate the delay time between dispensing steps, it helps to know the time periods of other common steps during the run.
+**To read the absorbance and fluorescence of all 96 wells, it takes 2 mins.
+**To dispense 5&mu;L in each of the 96 wells, it takes 4 mins.

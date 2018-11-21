@@ -1,0 +1,148 @@
+<nonwikionly>Visit the [http://openwetware.org/index.php?title=SynBERC:MIT/Calendar/2007-7-25 wiki version of this page].</nonwikionly>
+
+Anyone in the synthetic biology community is welcome to attend.
+
+Wednesday July 25, 2007 at 12:30pm EST
+
+32-D463, MIT
+
+'''Anyone with questions re BioBricks or BioBricks assembly can email <code>biobricks AT openwetware DOT org</code>.'''
+
+==Topic of discussion==
+'''BioBrick&trade; standard biological parts "how-to" session'''
+
+This session won't assume any prior knowledge regarding synthetic biology and will cover
+
+# What is a BioBrick?
+# How do I clone and assemble BioBricks?
+# Should I use BioBrick cloning in my lab?  Pro's and Cons
+# How do I start/convert to BioBricks cloning and assembly?
+
+If there's time, we'll have an open discussion about how to make BioBricks more generally useful to academic research labs (as opposed to just synthetic biology labs).
+
+==Outline==
+===How do I clone and assemble BioBricks?===
+*A BioBrick is a fragment of DNA with particular restriction sites upstream and downstream
+*Key enzymes and how assembly works
+
+====BioBrick Prefix====
+The standard BioBrick prefix depends on the part that follows it (<FONT COLOR="#BABABA">YOUR CONNECTING PART SEQUENCE IN GREY UPPERCASE</FONT>, <FONT COLOR="#CC00FF">EcoRI</FONT>, NotI,<FONT COLOR="#FF5333"> XbaI</FONT>, '''rest of the BioBrick sequence''').  
+{|width='85%' style='border:1px solid gray; margin-left:2em'
+|width='45%'|
+If the following part is a coding sequence or any other part that starts "ATG", the BioBrick prefix is:
+|width='55%' valign='top'|
+'''<span style='font-family:monospace;font-size:175%;padding-left:1em;'><FONT COLOR="#CC00FF">gaattc</FONT>gcggccgct<FONT COLOR="#FF5333">tctag</FONT><FONT COLOR="#BABABA">ATG...</FONT></span>'''
+|-
+|width='45%'|
+Otherwise, the BioBrick prefix is:
+|width='55%'|
+'''<span style='font-family:monospace;font-size:175%;padding-left:1em'><FONT COLOR="#CC00FF">gaattc</FONT>gcggccgct<FONT COLOR="#FF5333">tctaga</FONT>g<FONT COLOR="#BABABA">CA...</FONT></span>'''
+|}
+
+====BioBrick Suffix====
+Similarly, the standard BioBrick suffix depends on the part that preceeds it.  Whenever possible, the transcriptional start site of a promoter part should lie 2bp upstream of the SpeI site. (<FONT COLOR="#BABABA">part in grey</FONT>, <FONT COLOR="#CC00FF">PstI</FONT>, NotI,<FONT COLOR="#FF5333"> SpeI</FONT>).    YOUR SEQUENCE as it should be entered into the database is in uppercase letters.  For help locating the transcription initiation site in your promoter part, try [http://www.fruitfly.org/seq_tools/promoter.html promoter prediction.]
+{|width='85%' style='border:1px solid gray; margin-left:2em'
+|width='45%'|
+The standard BioBrick suffix for most parts:
+|width='55% 'valign='top'|
+'''<span style='font-family:monospace;font-size:175%;padding-left:1em'><FONT COLOR="#BABABA">...AC</FONT>t<FONT COLOR="#FF5333">actagt</FONT>agcggccg<FONT COLOR="#CC00FF">ctgcag</FONT></span>'''
+|}
+
+====Scars====
+{|width='80%' style='border:1px solid gray; margin-left:2em'
+|width='50%'|
+If the second part is a CDS starting with "ATG", the scar is:
+|width='50%' valign='top'|
+<div style='font-family:monospace;font-size:175%;padding-left:1em;'>tactag</div>
+|-
+|width='50%'|
+Otherwise, the scar is:
+|width='50%'|
+<div style='font-family:monospace;font-size:175%;padding-left:1em'>tactagag</div>
+|}
+
+====Protein fusions====
+To assemble protein fusions with BioBricks, reduce the size of the scar site to 6bp for in frame protein fusions.
+*However, you must be careful not to inadvertently insert methylation sites that may decrease cutting efficiency.
+
+{|width='80%' style='border:1px solid gray; margin-left:2em'
+|width='50%'|
+The "normal scar is:
+|width='50%'|
+<div style='font-family:monospace;font-size:175%;padding-left:1em'>tactagag</div>
+|-
+|width='50%'|
+In a protein fusion the scar is:
+|width='50%'|
+<div style='font-family:monospace;font-size:175%;padding-left:1em'>act aga</div>
+<div style='font-family:monospace;font-size:175%;padding-left:1em'>Thr Arg</div>
+|}
+
+If you use this standard, protein fusion parts cannot begin with a <code>TC</code> to avoid constructing a <code>GATC</code> methylation site that will inhibit digesting by XbaI.
+
+Using a different frame, you may also construction fusion proteins in which the linker is <code>Leu Asp/Glu</code>.
+
+===Should I use BioBrick cloning?===
+====Pros====
+#Simple, reliable (and potentially automatable) construction process
+#*Restriction enzymes were chosen because they are very robust (to reaction buffers) and efficient.
+#*The same reaction conditions are used every time: easier to parallelize your construction, less likely to make errors (we'll routinely be building 5-10 constructs at once).
+#*'''Goal is to stop construction from being an experiment in itself'''
+#*Can be used to make a construct with arbitrarily large number of components (e.g. it scales)
+#Makes all the DNA components in your lab compatible and easily assembled.
+#*No need to plan ahead ... if everything is in BioBricks form, you can easily combine components between different projects in the lab.
+#Can track and archive parts in the Registry (if you want)
+#*As long as you're happy to share the sequence and the physical DNA with others, you can get a physical backup of the DNA and archive the sequence and other information in an online database.
+#*Your constructs are more reusable by others and your work can have a bigger impact.
+#Preexisting, shared components and community of users
+#*1500 available parts including constitutive promoters, fluorescent proteins, terminators, repressors, enzymes, inducible promoters etc.
+#*There is an active community sharing and documenting BioBricks (iGEM and others) that can help in debugging, recommending parts, etc (esp. here at MIT).
+#*By re-using the same components across multiple groups, errors can be quickly identified and experimental caveats can be made made more obvious to new part users.  In general, shared parts are more likely to be reliable than something that has only been shown to work once by one group.  Making a part in an easily re-usable, sharable format immediately increases it's utility/value to the community.
+
+====Cons====
+#Leaves a mixed XbaI/SpeI sequence between any two components you assemble.  The mixed sequence cannot be cut by either enzyme.
+#*The added sequence can be a problem for RNA design and other sequence-specific applications
+#You can't easily pull components out from assembled construct (except by PCR)
+#You can't easily switch components.
+#*Need to design your assembly scheme to minimize the extra assemblies necessary to change components
+#For full compatibility, your sequence must not contain any EcoRI, XbaI, SpeI, PstI, or NotI sites.
+#*You may be able to get around this in some cases
+#*Why can't it have NotI sites?  We don't use NotI for anything.
+#In constructing fusion proteins, you will construct a two residues linker sequence that is either <code>Thr Arg</code> or <code>Leu Asp/Glu</code>.
+
+===Converting to BioBricks===
+*Available existing BioBrick plasmids
+**Low copy and high copy, even inducible copy
+**Different antibiotic resistance markers (Amp, Tet, Cm, Kan)
+*BioBrick-compatible plasmids that you may use already
+**List existing available plasmids that can be easily made BioBricks compatible: pUC19
+*Making parts in BioBrick form
+**PCR with oligo's and tails
+*What happens if my gene has a BioBrick site in it?
+**Mutate the site via site-directed mutagenesis
+**Direct synthesis of part without site
+**You may be able to leave the sites in and still use the part
+
+===Case study===
+*The MIT 2006 team put together a system of ~20 components involving two pathways and some regulation.
+**[http://parts.mit.edu/wiki/images/c/c0/IGEM2006-MIT-Powerpoint.pdf MIT 2006 presentation]
+**[http://parts.mit.edu/registry/index.php/Part:BBa_J45600 J45600]
+**[http://parts.mit.edu/registry/index.php/Part:BBa_J45800 J45800]
+
+===Future===
+*There is work to automate this assembly process ... so if and when this comes online, you could take advantage of it.
+
+==References==
+*[http://hdl.handle.net/1721.1/21168 Idempotent Vector Design for Standard Assembly of BioBricks] by [[Tom Knight]]
+*[http://hdl.handle.net/1721.1/32535 A New Biobrick Assembly Strategy Designed for Facile Protein Engineering] by [[Ira Phillips]] and [[Pam Silver]]
+*[http://parts.mit.edu Registry of Standard Biological Parts]
+
+==Follow up==
+Here are some of the resources mentioned at today's lunch.
+
+*'''Anyone with questions re BioBricks or BioBricks assembly can email <code>biobricks AT openwetware DOT org</code>.''' <-- BioBricks welcoming committee
+*The exact sequences needed for making individual BioBrick parts is available at [[Synthetic Biology:BioBricks/Part fabrication]].
+*The 3 way ligation procedure referred to by [[User:Reshma P. Shetty|Reshma Shetty]] is described at [[Synthetic Biology:BioBricks/3A assembly]].
+**The purification procedure used by [[User:Reshma P. Shetty|Reshma Shetty]] for small DNA fragments during 3 way ligation is described at [[Knight:Micropure EZ and Microcon purification]].  However, note that the Registry does not purify any of its fragments prior to ligation.
+*The competent cell preparation protocol recommended by [[User:Tk|Tom Knight]] is [[TOP10 chemically competent cells]].
+*To request a physical copy of the Registry of Standard Biological Parts, contact [[User:Meaganl|Meagan Lizarazo]].

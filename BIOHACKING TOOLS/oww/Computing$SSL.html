@@ -1,0 +1,41 @@
+Using wget to download files from certificate-protected sites at MIT:
+
+*Download [http://ca.mit.edu/mitca.crt MIT CA]
+*Convert the extracted MIT CA from DER to PEM format:
+ openssl x509 -out mitca.pem -outform pem -in mitca.crt -inform der 
+*Install [http://ca.mit.edu/ personal MIT certificate] into web browser
+*Extract private and public keys from the .p12 certificate (converting from pkcs12 to PEM).  The first step extracts the private key and the second one extracts the public key:
+ openssl pkcs12 -nocerts -in usercert.p12 -out ~user/userkey.pem
+ chmod 400 ~user/userkey.pem
+ openssl pkcs12 -clcerts -nokeys -in usercert.p12 -out ~user/usercert.pem
+*Use the certificates to download files:
+ wget --private-key=/home/user/mitkey.pem \
+ --certificate=/home/user/mitcert.pem \
+ --ca-certificate=/home/user/mitca.pem \
+ https://web.mit.edu/rhlinux/rhel-5.0/5.0-client-i386/rhel-5-client-i386-disc4.iso
+
+==Notes==
+You won't need the --ca-certificate flag if the server SSL cert is signed up a CA recognized in the wget default CA bundle. Now, more importantly, if you remove the --certificate and --private-key parts, that wget should FAIL, giving you an error something like this:
+OpenSSL: error:14094410:SSL routines:SSL3_READ_BYTES:sslv3 alert
+
+==References==
+*[http://goc.eu-eela.org/operations/certification-authority-and-virtual-organisation-operations/certificate-manipulation/ Certificate manipulation]
+*https://biowiki.mit.edu/wiki/index.php/Setting_Up_SSL_on_Web_Servers
+*http://web.mit.edu/apache-ssl/
+*http://mark.foster.cc/kb/openssl-keytool.html
+*http://mark.foster.cc/kb/cacert-keystore-extraction.html
+*http://www.ender.com/2005/11/installing_your_own_ca_authori.html
+*From the openssl man page:
+       --certificate=file
+           Use the client certificate stored in file.  This is needed for
+           servers that are configured to require certificates from the
+           clients that connect to them.  Normally a certificate is not
+           required and this switch is optional.
+       --private-key=file
+           Read the private key from file.  This allows you to provide the
+           private key in a file separate from the certificate.
+       --ca-certificate=file
+           Use file as the file with the bundle of certificate authorities
+           (‘‘CA’’) to verify the peers.  The certificates must be in PEM format.
+       --no-check-certificate
+           Don’t check the server certificate against the available certificate authorities.

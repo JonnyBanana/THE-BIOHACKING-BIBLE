@@ -1,0 +1,106 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"| Super Parts
+!colspan="4" | [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct | Predator Construct]]
+|- style="background:#FF9966"
+!height="25pt" width="80pt" height="50"|Actual Part
+!colspan="4" height="50"| AiiA Testing Construct <bbpart>J37022</bbpart>[[Image:J37022a.png]] 
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"|Sub Parts
+! <bbpart>R0010</bbpart>
+! <bbpart>B0034</bbpart> 
+! <bbpart>J37023</bbpart>
+! <bbpart>B0015</bbpart>
+|}
+<div class="tabs-blue">
+<ul>
+<li id="current">[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Killing_Predator_Construct |Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Killing_Predator_Construct/Design|Design]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Killing_Predator_Construct/Modelling|Modelling]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Killing_Predator_Construct/Implementation|Implementation]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Killing_Predator_Construct/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+Use content from: [[IGEM:IMPERIAL/2006/project/parts/BBa_J37022]]
+
+==Motivation==
+AiiA forms an integral part of the biological oscillator acting as our predator in the Lotka-Volterra Predator-Prey Model. By testing and characterising this part individually, we can find the rate at which AiiA converts N-acyl homoserine lactone (AHL) into it's inactive form by cleaving the lactone ring (AHL-lactonase activity) at the ester bond.
+
+Parameters to explore:
+*Activity of AiiA
+*Half-life of AiiA
+
+Michaelis-menten kinetics would determine the activity of the enzyme, thus if we can characterise AiiA based upon it's activity (turnover rate) and half-life, the AiiA construct (part J37025) can be placed anywhere and easily integrated into more complex systems given it's transfer function defined by the enzyme parameters.
+
+==Part Interface==
+
+Testing of this construct involves two stages.  
+
+Stage 1: To produce AiiA by inducing transcription by adding IPTG.  
+
+Stage 2: The second stage is to degrade AHL with AiiA to measure the actual enzyme activity.
+
+By characterising stage one (getting a transfer function for a input of IPTG and output of AiiA), we will be able to decouple the two stages so we will not need to measure the AiiA concentration in between the two stages.  We can get a calibration curve knowing that for a given amount of IPTG we use to induce transcription, we will be obtaining some concentration of AiiA, within a given range.
+
+{| border="0" width="100% align="center"
+|-
+|
+{| border="1" cellpadding="15" width="100%"
+|- 
+! style="background:#66CC99"| INPUTS !!style="background:#FF3333"| OUTPUTS 
+|-
+| IPTG || AiiA 
+
+|}
+||
+[[Image:J37022s1.png]]
+|}
+
+Our second stage can be summarised as follows:
+
+{| border="0" width="100% align="center"
+|-
+|
+{| border="1" cellpadding="15" width="100%"
+|- 
+! style="background:#66CC99"| INPUTS !!style="background:#FF3333"| OUTPUTS 
+|-
+| AiiA || <math>\frac{d[AHL]}{dt}</math>
+
+|}
+||
+[[Image:J37022s2.png]]
+|}
+
+==Expected behavior and performances==
+
+===Stage 1 Intefrace Specifications (IPTG to AiiA)===
+{| border="1" width="100%"
+|- 
+! style="background:lightgrey"|Characteristics !! IPTG !! AiiA
+|-
+| Range || [0 mM, 10 mM] || Unknown 
+|-
+| Tolerance || Unknown ||Unknown 
+|-
+| Transfer function ||   n/a   ||   <math>[AiiA] = \frac{V_{max}}{\delta_{deg}} \times \frac{[IPTG]}{K_m + [IPTG]}</math>     
+|-
+| Latency||      ||      
+|}
+
+===Stage 2 Intefrace Specifications (AiiA to d[AHL])===
+{| border="1" width="100%"
+|- 
+! style="background:lightgrey"|Characteristics !! AiiA !! d[AHL]
+|-
+| Range || Unknown || Unknown
+|-
+| Tolerance || Unknown ||Unknown 
+|-
+| Transfer function ||   n/a   ||   <math>v = \frac{k_2[AiiA][AHL]}{K_m + [AHL]}</math>     
+|-
+| Latency||      ||      
+|}

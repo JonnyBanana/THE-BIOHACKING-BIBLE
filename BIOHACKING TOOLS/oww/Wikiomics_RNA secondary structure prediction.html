@@ -1,0 +1,130 @@
+==Single sequence structure prediction==
+
+A common problem for researchers working with RNA is to determine the three-dimensional structure of the molecule. However, in the case of RNA much of the final structure is determined by the [http://en.wikipedia.org/wiki/Secondary_structure secondary structure] or intra-molecular base-pairing interactions of the molecule. This is shown by the high conservation of base-pair across diverse species. 
+
+One of the first attempts to predict RNA secondary structure was made by Ruth Nussinov and co-workers who used dynamic programming method for maximising the number of base-pairs <cite>NUSS78</cite>. However, there are several issues with this approach, most importantly the solution is not unique. Nussinov et al published an adaptation of their approach to use a simple nearest-neighbour energy model in 1980 <cite>NUSS80</cite>. 
+Michael Zuker and Patrick Stiegler in 1981 proposed using a slightly refined dynamic programming approach that models nearest neighbour energy interactions that directly incorporates stacking into the prediction <cite>ZUKE81</cite>. The energies that are minimized by the recursion are derived from empirical calorimetric experiments, the most up-to-date parameters were published in 1999 <cite>MATH99</cite>. There has been recent progress in estimating "energy" parameters directly from known structures<cite>DO06</cite>.
+Another approach researchers are using is to sample structures from the Boltzmann ensemble <cite>MCCA90 DING03</cite>.
+
+One of the issues when predicting RNA secondary structure is that the standard recursions (eg. Nussinov/Zuker-Stiegler) exclude [http://en.wikipedia.org/wiki/Pseudoknot pseudoknots]. Elena Rivas and Sean Eddy published a dynamic programming algorithm that could handle pseudoknots <cite>RIVA99</cite>. However, the time and memory requirements of the method are prohibitive. This has prompted several researches to implement versions of the algorithm that restrict the classes of pseudoknots, resulting in gains in performance.
+
+[[Image:yeast.png|thumb|S. cerevisiae tRNA-PHE structure space: the energies and structures were calculated using RNAsubopt and the structure distances computed using RNAdistance.]]
+
+==== References ====
+<biblio>
+#NUSS78 Nussinov R, Piecznik G, Grigg JR and Kleitman DJ (1978) ''Algorithms for loop matchings''. SIAM Journal on Applied Mathematics.
+#NUSS80 pmid=6161375
+#ZUKE81 pmid=6163133
+#MATH99 pmid=10329189
+#DO06 pmid=16873527
+#MCCA90 pmid=1695107
+#DING03 pmid=14654704
+#RIVA99 pmid=9925784
+</biblio>
+
+
+====External links to RNA folding software====
+
+* [ftp://ftp.ncbi.nlm.nih.gov/pub/ogurtsov/Afold/ Afold] Analysis of internal loops within the RNA secondary structure in almost quadratic time
+* [http://compbio.cs.sfu.ca/taverna/ alteRNA:] RNA Density Fold. Minimizes a linear combination of energy density and the total free energy for a given RNA sequence.
+* [http://contra.stanford.edu/contrafold/ CONTRAfold] a secondary structure prediction method based on conditional log-linear models (CLLMs), a flexible class of probabilistic models which generalize upon SCFGs by using discriminative training and feature-rich scoring.
+* [http://www.tbi.univie.ac.at/~xtof/RNA/Kinfold/ Kinfold] Simulates the stochastic folding kinetics of RNA sequences into secondary structures. The algorithm operates on the basis of the formation, dissociation, and the shifting of individual base pairs.
+* [http://www.bioinfo.rpi.edu/applications/mfold/ Mfold] MFE RNA structure prediction algorithm.
+* [http://rna.cbi.pku.edu.cn/ RDfolder] RNA folding by energy weighted Monte Carlo simulation.
+* [http://www.tbi.univie.ac.at/~ivo/RNA/ RNAfold] MFE RNA structure prediction algorithm.
+* [http://www.ig-msk.ru/RNA/kinetics/ RNA Kinetics] models the dynamics of RNA secondary structure by the means of kinetic analysis of folding transitions of a growing RNA molecule. The result of the modeling is a kinetic ensemble, i.e. a collection of RNA structures that are endowed with probabilities, which depend on time. This approach gives comprehensive probabilistic description of RNA folding pathways, revealing important kinetic details that are not captured by the traditional structure prediction methods.
+* [http://rna.urmc.rochester.edu/rnastructure.html RNAstructure] A Windows implementation of the Zuker algorithm for RNA secondary structure prediction based on free energy minimization. Includes a sequence editor, an integrated drawing tool, the OligoWalk program, OligoScreen, Dynalign, and can compute the partition function.
+* [http://www.cs.sfu.ca/~hhtsang/personal/ SARNA-Predict] A heuristic algorithm based on Simulated Annealing for RNA secondary structure prediction. 
+* [http://www.bioinfo.rpi.edu/applications/sfold/srna.pl Sfold] Statistical sampling of all possible structures. The sampling is weighted by partition function probabilities.
+* [http://www.rna.it-chiba.ac.jp/~vsfold/vsfold4/ Vsfold4] folds single RNA sequences using an extended energy model.
+
+====with pseudoknots====
+* [http://www.cs.ubc.ca/labs/beta/Software/HotKnots/ HotKnots] A heuristic algorithm for the prediction of RNA secondary structures including pseudoknots.
+* [http://bioalgorithm.life.nctu.edu.tw/HPKNOTTER/ HPknotter] A Heuristic Approach for Detecting RNA H-type Pseudoknots.
+* [http://kinefold.u-strasbg.fr/ KineFold] Folding kinetics of RNA sequences including pseudoknots.
+* [http://www.informatik.uni-frankfurt.de/~metzler/McQFold/ McQFold] MCMC-sampling secondary structures with pseudoknots for a given RNA sequence.
+* [http://www.acm.caltech.edu/~niles/software.html NUPACK] A dynamic programming algorithm based on the partition function for the prediction of a restricted class of RNA pseudoknots. Uses less resources than Pknots-SE.
+* [http://bibiserv.techfak.uni-bielefeld.de/pknotsrg/ Pknots-RG] A dynamic programming algorithm for the prediction of a restricted class of RNA pseudoknots. Uses the least resources to date, conversely infers the most restrictive class of knotted structures.
+* [http://www.genetics.wustl.edu/eddy/software/#pk Pknots-SE] A dynamic programming algorithm for optimal RNA pseudoknot prediction using the nearest neighbour energy model.
+* [http://bioinformatics.ist.unomaha.edu:8080/x/PLMM_DPSS.html PLMM-DPSS] High sensitivity RNA pseudoknot prediction using "Pseudoknot Local Motif Model and Dynamic Partner Sequence Stacking".
+* [http://www.cs.sfu.ca/~hhtsang/personal/ SARNA-Predict-pk] A heuristic algorithm based on Simulated Annealing for RNA secondary structure prediction including pseudoknots.
+
+====with suboptimal predictions====
+* [http://www.tbi.univie.ac.at/~ivo/RNA/ RNAsubopt] Reads RNA sequences from stdin and calculates all suboptimal secondary structures within a user defined energy range above the minimum free energy (mfe).
+* [http://www.tbi.univie.ac.at/~ivo/RNA/Barriers/ Barriers] Reads an energy sorted list of conformations of a landscape, and computes local minima and energy barriers of the landscape. For RNA secondary structures, suitable input is produced by RNAsubopt For each local minimum found it prints to stdout, the conformation of the minimum, its energy, the number of the "parent"-minimum it merges with, and the height of the energy barrier.
+* [http://binkley.ncifcrf.gov/~bshapiro/mpgaFold/mpgaFold.html MPGAfold] A massively parallel genetic algorithm for predicting RNA secondary structures with pseudoknots.
+* [http://bibiserv.techfak.uni-bielefeld.de/rnashapes/submission.html RNAshapes] Unique suboptimal structures (shapes) are selected based on an abstract representation of RNA secondary structure which is inspired by the dot bracket representation known from the Vienna RNA package. The user can choose from 5 different types of shape resolution corresponding to different abstraction levels.
+* [http://clavius.bc.edu/clotelab/RNALOSS/ RNALOSS] locally optimal secondary structure computation. RNALOSS computes the number of k-locally optimal secondary structures for the input RNA, along with relative density of states and minimum free energy of a sample k-locally optimal secondary structure.
+
+==Comparative structure prediction==
+
+Frequently researchers have more than one RNA sequence which they suspect are [http://en.wikipedia.org/wiki/Homology_%28biology%29 homologous] (or [http://en.wikipedia.org/wiki/Analogy_%28biology%29 analogous]) and therefore may share a common structure. There are three main approaches to this problem: 1. alignment folding. 2. simultaneous alignment and folding. 3. aligning secondary structures.
+
+For the alignment folding approach the [http://en.wikipedia.org/wiki/Mutual_information mutual information content] is frequently used <cite>CHIU91</cite>. Generally the alignment is inferred using one of the standard [http://en.wikipedia.org/wiki/Multiple_Sequence_Alignment multiple alignment] tools (eg. [ClustalW,] [MAFFT,] [MUSCLE]). Recently some SCFG based alignment folding algorihms have been developed, such as [http://www.daimi.au.dk/~compbio/rnafold/ PFold] <cite>KNUD03</cite>. Alternatively, a sum of energy and covariation terms can be used, such as [http://www.tbi.univie.ac.at/~ivo/RNA/ RNAalifold] <cite>HOFA02</cite>.
+
+==== References ====
+<biblio>
+#CHIU91 pmid=1913217
+#KNUD03 pmid=12824339
+#HOFA02 pmid=12079347
+</biblio>
+
+===Structures from alignments===
+* [http://jaynes.colorado.edu/Bayes/ BayesFold] Finds, ranks, and draws the likeliest structures for a sequence alignment. Foldings are based on the predictions of the Bayesian statistical method. Your browser must be Internet Explorer 5+ for Windows with the Adobe Scalable Vector Graphics Viewer plugin installed.
+* [http://www.biophys.uni-duesseldorf.de/construct3 ConStruct] A tool for thermodynamic controlled prediction of conserved secondary structure. Also allows iterative manual alignment refinement (new version).
+* [http://wwwmgs.bionet.nsc.ru/mgs/programs/2dstructrna/ GArna] Prediction of secondary structures of RNAs by genetic algorithm.
+* [http://bioinfo.cis.nctu.edu.tw/service/gprm/ GPRM] finding common secondary structure elements, not a global alignment, in a sufficiently large family (e.g. more than 15 members) of unaligned RNA sequences.
+* [http://www.genebee.msu.su/services/rna2_reduced.html Genebee] RNA alignment folding using a combination of free-energy and mutual information.
+* [http://www.daimi.au.dk/~compbio/rnafold/ Pfold] Folds alignments using a SCFG trained on rRNA alignments. The alignment length limit is 500.
+* [http://www.tbi.univie.ac.at/~ivo/RNA/ RNAalifold] Folds alignments using a combination of free-energy and a covariation measure. Ships with the Vienna package. Also a [http://rna.tbi.univie.ac.at/cgi-bin/alifold.cgi web-server].
+* [http://rna.cyanolab.de/ RNAlishapes] is a tool for RNA structure analysis based on aligned RNAs. 
+* [http://www.ebi.ac.uk/~meyer/rnadecoder/ RNA-Decoder] and [http://www.ebi.ac.uk/~meyer/CORSmodel/ CORSmodel] Programmes for comparative predictions of RNA secondary structure in regions which are also protein coding.
+* [http://bioweb.pasteur.fr/seqanal/interfaces/rnaga.html RNAGA] Prediction of common secondary structures of RNAs by genetic algorithm.
+* [http://www.binf.ku.dk/~pgardner/bralibase/x2s.tar.gz X2s] An X windows program for analyzing and editing an alignment of RNA sequences and for predicting RNA secondary structure. The original [http://tyrant.ucsc.edu/X2s/ server] appears to be dead. Files provided c/o A. Wilm.
+
+====with pseudoknots====
+* [http://taxonomy.zoology.gla.ac.uk/rod/circles/ Circles] Circles is an experimental Windows 95/98/NT program for inferring RNA secondary structure using the comparative method. It provides a user-friendly interface to Jack Tabaska's maximum weight matching programs. The user can read in an alignment in FASTA, Clustal, or NEXUS format, compute a maximum weight matching, and export one or more secondary structures in standard formats.
+* [http://www.tbi.univie.ac.at/papers/SUPPLEMENTS/HXMATCH/ HXMATCH] Hxmatch computes the consensus structure including pseudoknots based on an alignment of a few RNA sequences. The algorithm combines thermodynamic and covariation information to assign scores to all possible base pairs, the base pairs are chosen with the help of the maximum weighted matching algorithm.
+* [http://www.cs.wustl.edu/~zhang/projects/rna/ilm/ ILM] Iterated Loop Matching. Evaluates stems in an alignment using a combination of free-energy and mutual information. Iteratively selects high scoring stems.
+* [http://knetfold.abcc.ncifcrf.gov/ KNetFold] Computes a consensus RNA secondary structure from an RNA sequence alignment based on machine learning.
+* [http://www.lcb.uu.se/~evaf/MIfold/ MIfold] Matlab package for investigating mutual information content of RNA alignments.
+
+===Simultaneous alignment and structure prediction (Sankoff-like methods)===
+* [http://bioinfo.lifl.fr/RNA/carnac/ caRNAc] Comparative analysis combined with MFE folding. 
+* [http://selab.wustl.edu/people/robin/consan/ Consan] Pairwise RNA structural alignment, both unconstrained and constrained on alignment pins. Consans uses a constrained version of a pairSCFG structural alignment algorithm which assumes knowledge of a few confidently aligned positions (pins). Pins are selected based on the posterior probabilities of a probabilistic pairwise sequence alignment.
+* [http://bio.cs.washington.edu/yzizhen/CMfinder/ CMfinder] An RNA motif prediction tool. It is an expectation maximization algorithm using covariance models for motif description, carefully crafted heuristics for effective motif search, and a novel Bayesian framework for structure prediction combining folding energy and sequence covariation. This tool performs well on unaligned sequences with long extraneous flanking regions, and in cases when the motif is only present in a subset of sequences. CMfinder also integrates directly with genome-scale homology search, and can be used for automatic refinement and expansion of RNA families.
+* [http://www.genetics.wustl.edu/eddy/software/#cove COVE] COVE is an implementation of stochastic context free grammar methods for RNA sequence/structure analysis.
+* [http://rna.urmc.rochester.edu/dynalign.html Dynalign] Uses a "full energy model" and comparative information to align and fold 2 sequences. Restricts the 'span' of base-pairs to improve CPU time.
+* [http://rna.tbi.univie.ac.at/cgi-bin/pmcgi.pl PMmatch] A variant of the Sankoff algorithm from the Vienna group.
+* [http://www.bioinf.au.dk/FOLDALIGN/ Foldalign1] Predicts conserved local sequence and hair-pin structures using CONSENSUS and CLUSTAL-like heuristics. Primarily used to infer cis-regulatory elements.
+* [http://foldalign.kvl.dk/ Foldalign2] Structurally align two sequences using a light weight energy model in combination with RIBOSUM like score matrices.
+* [http://bibiserv.techfak.uni-bielefeld.de/rnacast/ RNAcast] RNA consensus abstract shapes technique: an alternative to the Sankoff algorithm for multiple RNA folding.
+* [http://www.ncrna.org/RNAMINE/ RNAmine] is a software tool to extract the structural motifs from a set of RNA sequences. The potential secondary structures of the RNA sequences are represented by directed graphs, and the common secondary structures are extracted by using graph mining technique.
+* [http://www.scarna.org/ scaRNA] Stem Candidate Aligner for RNA: aligns two RNA sequences and calculates similarities, based upon estimated common secondary structures. Scarna is a fast, convenient tool for clustering RNA sequences and for similarity search in long sequences. It works even for pseudoknotted secondary structures. Currently www.scarna.org Only works with Internet Explorer.
+* [http://bio.site.uottawa.ca/software/seed/ SEED] Suffix arrays are used enumerate complementary regions, possibly containing interior loops, as well for matching RNA secondary structure expressions.
+* [http://www.bioinf.au.dk/slash/ Slash] A combination of [http://www.genetics.wustl.edu/eddy/software/#cove COVE] and [http://www.bioinf.au.dk/FOLDALIGN/ Foldalign1].
+* [http://dart.sourceforge.net/ Stemloc] Comparative RNA structure-finder using accelerated pairwise stochastic context-free grammars. Ships with the 'dart' package by Ian Holmes.
+* [http://www.planet-lisa.net/ T-LARA] Produce a global fold and alignment of ncRNA families using integer linear programming and Lagrangian relaxation.
+
+====with pseudoknots====
+* [http://ural.wustl.edu/~yji/comRNA/ comRNA] comRNA predicts common RNA secondary structure motifs in a group of related sequences.
+
+===Aligning RNA structures===
+* [http://www.comp.nus.edu.sg/~bioinfo/LGSFAligner/ LGSFAligner] Local Gapped Subforest Aligner, aligns two RNA secondary structures locally.
+* [http://biwww2.informatik.uni-freiburg.de/Software/MARNA/index.html MARNA] MARNA considers both primary sequence and the secondary structure to align RNAs. Based on pairwise comparisons using costs of edit operations. The edit operations can be divided into edit operations on arcs and edit operations on bases.
+* [http://www-igm.univ-mlv.fr/~allali/migal/index.php MiGaL] Compare RNA secondary structures and build phylogenetic trees.
+* [http://www.csd.uwo.ca/faculty/bma/rna_align/ RNA_align] Aligns two RNA structures using an edit distance model.
+* [http://www.tbi.univie.ac.at/~ivo/RNA/ RNAdistance]  reads RNA secondary structures from stdin and calculates one or more measures for their dissimilarity, based on tree or string editing (alignment). In addition it calculates a "base pair distance" given by the number  of  base  pairs  present  in  one structure, but not the other.
+* [http://bibiserv.techfak.uni-bielefeld.de/rnaforester/ RNAforester] Compare and align RNA secondary structures via a "forest alignment" approach.
+* [http://bibiserv.techfak.uni-bielefeld.de/rnashapes/submission.html RNAshapes] the "consensus shapes" method independently enumerates the near-optimal abstract shape space, and predicts as the consensus an abstract shape common to all sequences. 
+* [http://exon.umdnj.edu/software/RSmatch/ RSmatch] provides a light-weight approach to compare RNA structures, thereby uncovering functional structure elements. Compared with other tools for RNA structure comparison, RSmatch is fast, requiring quadratic time determined by the sizes of two given structures. 
+====with pseudoknots====
+* [http://phmmts.dna.bio.keio.ac.jp/pstag/ PSTAG] Pair stochastic tree adjoining grammars (PSTAGs) for aligning and predicting RNA secondary structures including a simple type of pseudoknots which can represent most of known pseudoknot structures.
+
+===Miscellaneous===
+* [http://www.biophys.uni-duesseldorf.de/stral/about.php StrAl] is an alignment tool designed to provide multiple alignments of non-coding RNAs following a fast progressive strategy. It combines the thermodynamic base pairing information derived from RNAfold calculations in the form of base pairing probability vectors with the information of the primary sequence. 
+
+[[Category:RNA]]
+[[Category:Structure]]
+
+{{Paul P. Gardner}}

@@ -1,0 +1,238 @@
+==Start-up Expression Engineerirng==
+--[[User:Bryanh|Bryanh]] 14:05, 4 April 2007 (EDT)
+Purpose:  design primers that will knock out the a part of the SAGA complex and knock in the URA3 gene.
+
+
+
+==Introduction==
+From your work so far this term, you have a good understanding of (at least) two fundamental concepts. From our first experimental module it should be clear that the genetic program for running a cell is readable (through sequencing), writable (through molecular biological techniques and synthesis) and somewhat, though not perfectly understandable. Recall how a genetic part can be as small as 13 base pairs, BBa_B0032 for example, to help carry out the work of protein production by enabling a huge protein/RNA complex, the ribosome, to bind an RNA molecule. From our second experimental module, it should be clear that a cell's programming doesn't end at protein production but rather that proteins are dynamic (chemically and spatially). They react to changes in the environment with great speed and sensitivity. We saw that proteins could be considered "digital" information, either present or absent, but are perhaps better thought of as "tunable" analog data since, as far as the cell is concerned, proteins are relevant only when functional, and function can be governed by regulating protein stability, localization and modifications. Thus, from the work we've done so far this term, you may have the idea that gene expression is powered by the central dogma (DNA making RNA making protein) and then modulated by varying the properties of proteins once they are made. This strategy minimizes reaction times but is, energetically speaking, quite wasteful. Why make a protein if it's not useful? In this experimental module we'll see how nature has refined the genetic programming language so a cell's proteins are not all constitutively expressed but rather are finely regulated at the level of transcription initiation. This turns out to be only one of many points for regulation but it's an important one.  
+
+[[Image:Macintosh HD-Users-nkuldell-Desktop-30nmchromatinfiber PNAS06.png|thumb|30 nm chromatin fiber, from Robinson et al PNAS 2006]]
+
+In the upcoming experiment we'll also see how nature has overcome another design issue, namely space constraints. A cell's dimensions do not increase linearly with DNA content. Instead, eukaryotic cells remain compartmentalized and compact the DNA by wrapping it around assemblies of histone proteins called nucleosomes. Nucleosomes wrap around eachother to form chromatin. This solves the space issue, allowing a meter or so of DNA to be crammed into a space perhaps 10 um across, but creates a new problem. Wrapped DNA is less accessible to the transcription and replication machinery. Gene expression becomes newly and intimately related to chromatin dynamics. This new problem is overcome by other multiprotein complexes that interact with the DNA-wrapping proteins. Nucleosomes are redistributed around genes that are "active" though it remains unclear if this redistribution is a cause or a consequence of the activity. We'll study one chromatin-remodeling complex called SAGA in this experimental module.
+
+[[Image:Info from P Schultz-mode of action.jpg|thumb| a model for SAGA's interaction with transcription factors and nucleosome-bound DNA, image courtesy of P. Schultz]]
+
+
+The name "SAGA" is an acronym for "Spt-Ada-Gcn5-acetyltransferase." Before describing each of these components, it's important to note that biochemically similar complexes are found in many (all?) of the eukaryotic cells that have been studied. Even more remarkable, these SAGA complexes have similar (identical?) numbers of protein subunits and the proteins have noteable sequence homologies, suggesting conserved functions even in cells with diverse life-styles like yeast and human cells. Natural processes like development and division and disease states like cancer can be understood at the level of transcription (mis)regulation. Chromatin remodeling is required for appropriate gene expression which is, in turn, required for healthy cell behaviors. Thus, there is good reason to believe that an understanding of how SAGA works in yeast can give us insight into its role in cells more medically relevant, like human. 
+
+
+A combination of biochemical and genetic data initially suggested that an enzymatic activity, namely a histone-acetyl transferase, encoded by the <i>GCN5</i> gene in S. cerevisiae existed as a large protein complex that the authors named "SAGA" [[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=AbstractPlus&list_uids=9224714&query_hl=10&itool=pubmed_docsum Grant et al 1997]]. Nineteen proteins, including GCN5, associate to form SAGA, though surprisingly not all the proteins are absolutely required for the cell to live. Delete a nonessential subunit and the cell can still grow and divide, although sometimes with impaired functions. A table of all 19 SAGA subunits, including information about their essential or non-essential nature, is included as part of today's protocol. A recent structure for the complex was elucidated through electron microscopy [[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=AbstractPlus&list_uids=15260971&query_hl=12&itool=pubmed_docsum Wu et al 2004]]. The SAGA structure, as shown above, can be imagined to "dock" with the DNA and associated proteins, allowing us to propose some very elegant models for how chromatin-modifications might be performed and regulated. Many terrific and exciting experiments can be designed to test these models. Your experiment will be a systematic examination of the non-essential SAGA subunits and their role in gene expression. Today you will design some primers to delete from the yeast genome a nonessential subunit of your choosing. Later in this experimental module, you will examine your mutated strain for changes in gene expression, looking for new phenotypes associated with the SAGA-subunit deletion as well as looking by DNA microarray for genes whose expression is affected by the loss of this subunit. 
+
+==Protocols==
+===Part 1: Choosing a SAGA subunit===
+You should begin by learning a little about the different classes of SAGA subunits. What does "Spt" stand for (and how do you pronounce that?!)? What is a TAF? Why is Ada5 also called Spt20? <br>
+
+The nomenclature for <i>S. cerevisiae </i> is precise and helpful. Wild type genes are normally given an italicized, three letter acronym based on the phenotype of a mutation in that gene. So a <i> HIS</i> gene is unable to make histidine if the gene is defective (of course, dead cells all have only one phenotype so this presumes loss of the gene product doesn't kill the cell...). Since there exist several genes that can give rise to similar phenotypes, related genes are given a number as well, e.g. <i> HIS3, HIS4,</i> etc. To describe recessive mutant alleles, lower case letters are used. So a strain that is <i> his3 </i> has a mutation that affects the function of the <i> HIS3</i> gene. Since there can be several different mutations described for any given gene, a second number gets associated with the mutant, e.g. <i> his3-1 </i> or <i>his3delta200</i>. Proteins are distinguished from DNA by capitalizing only the first letter of the gene product: the <i> HIS3 </i> gene makes the His3 protein. Naturally there are exceptions to these rules, but in general you can pretty confidently follow them. 
+
+Begin acquainting yourself with the SAGA subunits by copying the following tables to your wiki userpage, then finding relevant information in the [http://www.yeastgenome.org/ Saccharomyces Genome Database] for the subunits. You can also search [http://www.google.com/search?hl=en&q=pubmed Pubmed] to find out a little more about the role of the subunits in gene expression. Do not shortchange yourself on this part of the experiment, since you will be working with the subunit you choose today for the rest of the module.  
+====SAGA subunits, <i> S. cerevisiae </i>====
+
+{| border="1"  
+! Ada subunits  
+! size,chromosome,null p-type
+! notes 
+|-     
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=ADA1 Ada1] (aka HFI1, SUP110, SRM12, GAN1) 
+| 1.467 kb/489 aa, Chr. XVI, <br>viable
+|  
+|-    
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=ADA2 Ada2] (aka SWI8)  
+| 1.305 kb/434aa, Chr. IV, <br>viable 
+| 
+|-    
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=ADA3 Ada3](aka NGG1, SWI7)   
+| 2.109 kb/702aa, Chr. IV, <br>viable  
+| 
+|-   
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=GCN5 Gcn5] (aka ADA4, SWI9)   
+| 1.32 kb/439aa, Chr. VII, <br>viable
+| 
+|-   
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=Ada5 Ada5] (aka SPT20) 
+| 1.815 kb/604aa, Chr. XV, <br>viable
+| 
+|}
+{| border="1"   
+! Spt subunits 
+! size, chromosome, null p-type
+! notes  
+|-
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=spt3 Spt3]  
+| 1.014 kb/337aa, Chr. IV, <br> viable
+|
+|-     
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=Spt7 Spt7](aka GIT2)   
+| 3.999 kb/1332aa, Chr. II, <br> viable 
+| 
+|-
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=Spt8 Spt8]  
+| 1.809 kb/602aa, Chr. XII, <br> viable
+| 
+|-  
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=SPT20 Spt20] (aka Ada5)  
+| 1.815 kb/604aa, Chr. XV, <br> viable
+| 
+|}
+{| border="1" 
+! TAF subunits 
+! size, chromosome, null p-type 
+! notes
+|-  
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=TAF5 TAF5] (aka TAF90)  
+| 2.397 kb/798aa, Chr. II, <font color = red>inviable</font color> 
+|
+|- 
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=TAF6 TAF6] (aka TAF60)   
+| 1.551 kb/516aa, Chr. VII, <font color = red>inviable</font color> 
+| 
+|-  
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=TAF9 TAF9] (aka TAF17)   
+| 0.474 kb/157aa, Chr. XIII, <font color = red>inviable</font color> 
+|
+|-
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=TAF10 TAF10] (aka TAF23, TAF25) 
+| 0.621 kb/206aa, Chr. IV, <font color = red>inviable</font color> 
+|
+|-
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=TAF12 TAF12](aka TAF61, TAF68) 
+| 1.620 kb/539aa, Chr. IV, <font color = red>inviable</font color> 
+| 
+|}
+{| border="1" 
+! Tra1 subunit  
+! size, chromosome, null p-type 
+! notes
+|-  
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=TRA1 Tra1]  
+| 11.235 kb/3744aa, Chr. VIII, <font color = red>inviable</font color>
+|
+|}
+{| border="1"
+! other subunits  
+! size, chromosome, null p-type 
+! notes
+|-  
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=sgf73 Sgf73]  
+| 1.974 kb/657aa, Chr. VII , <br> viable 
+| 
+|-
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=sgf29 Sgf29]  
+| 0.779 kb/259aa, Chr. III, <br> viable
+| 
+|-
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=sgf11 Sgf11]  
+| 0.3 kb/99aa, Chr.XVI, <br> viable
+| 
+|-
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=ubp8 Ubp8]  
+| 1.416 kb/471aa, Chr. XIII, <br> viable 
+| 
+|-  
+| [http://db.yeastgenome.org/cgi-bin/locus.pl?locus=Sus1 Sus1]  
+| gene with intron, Chr. II, <br> viable  
+|
+|}
+
+We have decided to knockout the Spt3 subunit.  It's a subunit of the SAGA and SAGA-like transcriptional regulatory complexes, interacts with Spt15p to activate transcription of some RNA polymerase II-dependent genes, also functions to inhibit transcription at some promoters
+
+===Part 2: Designing deletion oligos===
+Everyone's starting strain is called FY2068, which has the following genotype:<center><br>MAT(alpha) <i>ura3-52 his3D200 leu2D1 lys2-128delta </i> <br></center>This genotype tells you that the strain is haploid and of the "alpha" mating type. The genotype also tells you that the strain cannot make its own uracil, histidine, leucine or lysine due to the indicated mutations in the <i> URA3, HIS3, LEU2 </i> and <i> LYS2</i> genes. These mutations have insignificant effects when the strain is grown on rich or "complete" media but no growth occurs when one of those needed media components is left out, or "dropped out" as such media is usually described. 
+
+[[Image:Macintosh HD-Users-nkuldell-Desktop-URA3primerdesign.png|thumb| design of deletion oligos]]
+
+Everyone will delete a SAGA subunit of their choosing by replacing it with a selectable marker, namely the <i> URA3 </i> gene. Successful replacement of the SAGA subunit with the <i> URA3 </i> gene will restore growth of the strain on "SC-ura," which is media lacking uracil ("SC" for "synthetic complete;" "minus ura" for the absence of uracil). The primers you design today will have sequences identical to the URA3 gene, which you will find on the internet. The homology will enable the primers to anneal to the <i> URA3 </i> gene and amplify it during the polymerase chain reactions you will perform at the end of lab today. These reactions will be more fully explained later in the experimental module.
+
+Everyone's primers will also include "tails" that will later allow the amplified <i> URA3 </i> gene to replace the SAGA subunit gene of interest. These tails must be at least 39 bases long to allow sufficient <b>specificity and recombination frequency </b> once the amplified fragment is transformed into yeast cells. The total length for the primer you're designing will be 59 since oligonucleotide synthesis companies change their pricing structure and recommendations for oligos 60 bases and longer. This leaves you 20 bases for the "landing" sequence that will annealing to the <i>URA3 </i> gene during PCR. Limitations in the synthesis technology impose the 59 base limit, but fortunately this turns out to be minimally intrusive for experiments like the one you'll start today. 
+
+====Designing the "forward" primer====
+#You and your partner should begin by opening a new MSWord document to create a "primer record" for the sequences you are designing. Put your names at the top, your team color, today's date and a short description of what you are trying to do. 
+#Begin your primer design by retreiving the genomic DNA sequence for the URA3 gene as it's listed at [http://www.yeastgenome.org/ SGD]. You will need 20 bases from the start of the gene to serve as the "landing sequence" for this primer. Copy these 20 bases to your MSWord document.[[Image:Macintosh HD-Users-nkuldell-Desktop-URA3fwd landing.png|thumb| right| landing sequence for forward primer]]
+#It is extremely important to know the melting temperature for this 20 base landing sequence. The first few rounds of PCR must be performed at a temperature below the melting temperature (5° below is the rule of thumb) if these 20 bases are to bind the template DNA. Later you will add 39 base "tails" to the primers which will still be present during the PCR but during the first rounds of PCR, they will have no complementary sequences to which they can anneal. Thus the reactions must start below the melting temperature ("Tm") of the landing seqeunce. The Tm depends on the length of the landing sequence, its GC content, and any secondary structures that the primer can adopt. A well-designed primer will have short hairpins (if any), its melting temperature will be around 60°C, and if possible its GC content will be about 50%. There are several websites to help you evaluate these aspects of your primer. Try to copy the 20 bases of landing sequence into the [http://www.cybergene.se/primer.html Cybergene website].  Note on your MSWord document relevant information retrieved from this query. 
+#Next you must add the primer "tail." [[Image:Macintosh HD-Users-nkuldell-Desktop-URA3fwd tail.png|thumb| right| tail sequence for forward primer]]. This is the sequence that will recombine with the region just upstream of the SAGA subunit you have decided to delete. Retrieve the sequence for this subunit from [http://www.yeastgenome.org/ SGD], including 39 bases upstream of the ATG. There is a  "custom retrieval" option from a dropdown menu that is particularly useful for this purpose. You can view the sequence in GCG or FASTA format. 
+#Paste these 39 bases to the 20 <i>URA3</i> bases in your forward primer. Will you paste the 39 bases to the left (i.e. "upstream" or "5'") or to the right (i.e. "downstream" or "3'") of the <i>URA3</i> landing sequence? If you are unsure, please ask one of the teaching faculty. 
+#Distinguish the landing sequence from the tail by making one part uppercase and the other lower case. Alternatively underline or italicize one part. Note how they are distinguished on your the MSWord document you have started as the primer's record. 
+#Use the [http://www.cybergene.se/primer.html Cybergene website] or the [http://www.idtdna.com/analyzer/Applications/OligoAnalyzer/ OligoAnalyzer] from Integrated DNA Technologies to find the Tm and GC content for the full forward primer you've designed. Note these values on the primer record. 
+#Great. Now you're ready to design the second of the primer pair. Many of the same steps are involved but it's a little trickier since you will have find the complementary sequence to the ones listed by SGD, and you'll have to reverse the primer at the very end so it reads in the conventional 5'to 3' direction. 
+  
+====Designing the "reverse" primer====
+#Note that this protocol for designing the reverse primer is just one method of many that can work. For example, taking the reverse complement can be done at any stage, making an identical primer. So if these steps don't seem sensible to you, try a way that does. 
+#Retrieve the <i> URA3 </i> sequence again from [http://www.yeastgenome.org/ SGD] and copy the last 20 bases into your MSWord primer record. Be sure to note the 5' end of the sequence and whether you have the "top" strand as you did before, or the "bottom" strand as you will need for this reverse primer. [[Image:Macintosh HD-Users-nkuldell-Desktop-URA3rev landing.png|thumb|right| landing sequence for reverse primer]]
+#Use either the [http://www.cybergene.se/primer.html Cybergene website] or [http://www.idtdna.com/analyzer/Applications/OligoAnalyzer/ OligoAnalyzer] to find the Tm, GC content etc for this landing sequence. Does it matter if you're looking at the top strand sequence or its complement? 
+#Next retrieve the tail sequence for the reverse primer by finding the 39 bases that follow ORF for the SAGA subunit you've chosen. Again the custom retrieval option from SGD is a great tool for this. 
+#Add the tail sequence to the landing. Note which end is the 5' end of the tail and that you have recorded the top strand. Think carefully about which end of the landing sequence you should paste it to, realizing that this entire sequence will be the reverse complement in the final primer you design. If you have questions or are uncertain here, please ask. Distinguish the landing sequence from the tail in the same way you did for the forward primer.[[Image:Macintosh HD-Users-nkuldell-Desktop-URA3rev tail.png|thumb|right| tail sequence for the reverse primer]]
+#Use the [http://www.idtdna.com/analyzer/Applications/OligoAnalyzer/ OligoAnalyzer] to take the reverse complement of the entire primer you've designed and note the final Tm and GC content.
+#Paste the sequences for the primers you've designed into the table of SAGA-related information on your wiki userpage. You should also print out copies of the primer record for your lab notebooks and one copy for your team to hand in. 
+#The last thing to do is to compare the sequence of the primer pair you've designed to the ones we have pre-ordered for the class. These are the ones that are available for you to use for PCR today and they are listed among the reagents list at the end of today's lab.   
+===Part 3: PCR===
+If you are unfamiliar with the Polymerase Chain Reaction (PCR) you can take a peak at some nice animations of the process, for example
+[http://www.dnai.org/b/index.html DNAi] (follow the links through “techniques” and "amplifying DNA”) or try [http://www.dnalc.org/shockwave/pcranwhole.html DNA learning]. More details about PCR will be presented later in this experimental module. 
+
+The power of PCR is its potential to generate many copies of a particular DNA sequence starting with a very few. This is also its Achilles’ heel. It is extraordinarily easy to amplify contaminating DNA sequences, generating undesired products from the reaction. Before you begin this portion of the lab, it is a great idea to wash the barrels of your pipetmen with a paper towel and 70% EtOH. You could also wash your bench area.
+
+All the components necessary for performing PCR are available from the teaching faculty, including primers like the ones you just designed. Your reactions will contain the following: 
+
+ Template       		1 ul pRS406 (=100 ng)
+ Forward Primer 		1 ul (=100 pmol)
+ Reverse Primer 		1 ul (=100 pmol)
+ PCR Master Mix*		20 ul of 2.5X stock (see REAGENTS LIST)
+ H2O            		to final volume of 50 ul
+
+*The PCR Master Mix contains buffer, dNTPs and Taq Polymerase.
+
+You will assemble two PCR tubes, one complete reaction and another without template. The second reaction serves as a control for contamination. 
+
+#Begin by adding the correct amount of water to a 200 ul PCR tube. Add that amount +1 ul to a second PCR tube. 
+#Next add the primers to each reaction. Be sure to change tips between additions. 
+#Next add template to the first reaction tube. 
+#Finally add PCR Master Mix to each tube, pipetting up and down to mix. Leave your tubes on ice until the entire class is ready to load reactions into the thermal cycler. 
+#The reactions will undergo the following PCR cycle:
+#*95° 4 minutes
+#*95° 1 minute
+#*40° 1 minute
+#*72° 3 minute
+#*repeat steps 2-4 5 times
+#*95° 1 minute
+#*45° 1 minute
+#*72° 3 minute
+#*repeat steps 6-8 5 times
+#*95° 1 minute
+#*50° 1 minute
+#*72° 3 minute
+#*repeat steps 10-12 30 times
+#*72° 10 minutes
+#*4° forever (or until one of the teaching faculty removes the reactions and stores them in the freezer)
+
+==oligo design==
+<tt>
+
+Red Team
+04/04/07
+Knock-out primer design
+
+Forward
+ATGTCGAAAGCTACATATAA
+
+Tm: 54C
+Ta: 49C
+G/C ratio: 30.0%
+
+Reverse
+TTAGTTTTGCTGGCCGCATC
+
+Tm: 55.6C
+Ta: 50.6C
+G/C ratio: 50.0%
+
+Forward w/ tail:
+ACAAGGTACCGTGCCAAAATTCAAGAGATTAGGGCAGGAATGTCGAAAGCTACATATAA
+
+Reverse w/ Tail:
+GGAAACCCATGCACCTCCATGATGAAATTATACAAAAATTTAGTTTTGCTGGCCGCATC
+
+
+
+<tt>
+
+==Summary and Interpretations==
+Oligos were designed well because we checked them against the control designs.  This PCR should come out well.

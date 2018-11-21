@@ -1,0 +1,88 @@
+{{Beauchamp Lab Notebook Navigation Bar}}
+<br>
+<div style="padding: 8px; color: #000000; background-color: #ffffff; width: 730px; border: 2px solid #666666;">
+
+#[http://129.106.236.9:8888/mediawiki/index.php/Main_Page Internal Wiki (UTHSC-H Only)]
+
+==MRI==
+#[[Beauchamp:MotionCorrection|Motion and Distortion Correction]]
+#[[Beauchamp:Autism|Autism Data]]
+
+==Creating Average Time Series==
+There are three basic steps:
+
+1) Create a mask file
+
+2) Using an AND operation, combine the activation map with the mask file to select only active voxels within the mask
+
+3) Apply the final mask to the deconvolved impulse response function to create time series for each ROI in a subject
+
+4) Move the time series into Excel (or Matlab) to calculate mean and statistics across subjects
+
+In more detail:
+1) Create a mask file
+This can be done in an automated way using pre-defined anatomical ROIs, such as the Zilles Anatomy Toolbox atlas that is included with AFNI or the FreeSurfer parcellation included with SUMA.
+Manual mask creation can be done with 3dclust (or 3dmerge -1clust_order) to find clusters of active voxels.
+Or, ROIs can be manually drawn using the Draw Dataset plug-in in AFNI or the Draw ROI tool in SUMA.
+
+To use the drawing tool in SUMA, select Tools, Draw ROI. 
+Click on the Right Mouse Button to draw an outline.
+When done, click the Join button. The outline will change color. 
+Click in the middle of the ROI to fill it in. The inside of the ROI should change color. Click the Undo button if something goes wrong. If something goes really wrong, just quit the window or SUMA and try again. 
+Once you are happy with the ROI, click Finish. The outline should get thinner.
+
+Draw another ROI and hit Join to close. Then change the number in the Value window, perhaps to the next highest number (e.g. from 1 to 2, from 2 to 3) to differentiate the new ROI from the old ROI. (The label value is optional but it may be useful in switching between ROIs).
+
+When finished drawing All ROIs and you wish to save them, change the "THIS" button to "ALL" to save ALL ROIs.
+Use the appropriate format (1D or NIML).
+
+
+
+ 
+Manual mask
+
+==MEG and MRI==
+Download and install MNE
+Go to http://www.nmr.mgh.harvard.edu/martinos/userinfo/data/MNE_register/index.php
+and register.  After registering you will be emailed a login password.  The webpage makes it
+seem that an email is sent immediately, but in my experience it took over an hour.  After you
+receive your password login and download the software, also available is the manual and installation
+instructions.  Following steps C.1 - C.2.3 should do it, unless your computer doesn't already have fink
+on it, in which case follow the instructions available on the internal wiki to install fink.  One step you'll
+have to change, C.1.2 instructs you to type "tar zxvf <filename>", however they seem to longer be
+using gzip format files, so instead change that to "tar -xvf <filename>".
+
+
+Run MNE GUI (mne_analyze)
+
+Save a label file
+format for label file is like this
+
+  # Label from mne_analyze
+  2358
+  16 -39.8716 -10.9534 17.9286 0
+  62 -40.1451 7.47006 5.60055 0
+  etc.
+
+Try to create a similar label file in SUMA
+
+
+two ways:
+1) Manually drawing an ROI (ctrl-d in SUMA)
+
+2) 3dVol2Surf
+
+Both MNE and AFNI analysis will need to use the EXACT SAME surface because otherwise the node numbering will be different and the ROIs will not correspond.
+
+
+Here is a possible way to do this, according to Ziad Saad:
+
+
+1) Create an ROI containing all nodes
+using 3dVol2Surf -oob or -oob 
+OR draw an ROI, use ROI2dataseet to convert to a file with all nodes
+
+
+2) cat or 1dcat this file with the original surface file (containing the x,y,z co-ordinates of the nodes)
+
+3) Use convertdset to select only those nodes with a value at the nodes

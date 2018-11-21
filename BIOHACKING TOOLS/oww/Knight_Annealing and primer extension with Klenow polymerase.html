@@ -1,0 +1,55 @@
+This protocol uses annealing and primer extension to generate a short fragment of DNA (~100 bp).  The DNA fragment is prepared for cloning by restriction digest.
+
+Also see [[Knight:Annealing and primer extension with Taq polymerase]] for generation for short DNA fragments for TA cloning.
+
+==Materials==
+
+*Two oligos which overlap by ~20 bp and have restriction enzyme sites at the 5' ends as in the diagram below.  See [[Restriction Digest#Notes | restriction digest notes]] for information on cutting near the ends of linear DNA fragments.  See [[Annealing and primer extension#Notes | notes]] for more information on primer ordering.
+
+Oligo 1: &nbsp;&nbsp;&nbsp;5' ---RE site-------------------------------- 3'<br>
+Oligo 2:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3' --------------------------------RE site--- 5'
+
+*[http://www.neb.com/nebecomm/products/productM0212.asp Klenow 3'<math>\rightarrow</math>5' exo<sup>-</sup> polymerase]
+*dNTPs (25 mM each dNTP in stock)
+*Restriction enzyme(s)
+*Restriction enzyme buffer
+*BSA
+
+==Calculating amount of oligo for reaction==
+
+<math> \rm{X\ L\ oligo} = \frac{\frac{Y\ g\ oligo}{(330\ g/mol\ of\ nt)(W\ nt/oligo)}\ mol\ of\ oligo}{Z\ mol/L\ oligo\ stock}</math>
+
+==Procedure==
+
+#Dilute the two oligos to a concentration of 10 or 25 &mu;M using H<sub>2</sub>O
+#Mix the following in a 0.6 mL sterile tube
+#*10 &mu;L 10X restriction enzyme buffer
+#*1 &mu;L 100X BSA
+#*X &mu;L oligo 1 (typically 1 &mu;g or more)
+#*Y &mu;L oligo 2 (typically 1 &mu;g or more)
+#*(87 - X - Y) &mu;L deionized sterile H<sub>2</sub>O
+#Anneal the two oligos together by either placing the mixture in a thermal cycler ([http://www.mjr.com MJ Research], PTC-200) at 94&deg;C for 5 mins, a cool down for 0.1&deg;C/sec to 5&deg;C below the melting temperature of the primers, hold that temperature for 5 mins, then cool down at 0.1&deg;C/sec to 37&deg;C.  Alternatively, the tube can be placed in a beaker of boiling water and let cool to room temperature.
+#Add 1 &mu;L Klenow 3'<math>\rightarrow</math>5' exo<sup>-</sup> polymerase to mixture. <br> Vortex polymerase before pipetting to ensure it is well-mixed.
+#Add 1 &mu;L dNTPS (equal to 0.25 mM final concentration of each dNTP). <br> ''Recommend using a thermal cycler for the following incubation steps.''
+#Incubate 1 hr at 37&deg;C.
+#Heat inactivate polymerase by incubating at 75&deg;C for 20 minutes.  This inactivation temperature might be higher than the melting temperature of your annealed and extended primers.  It may be prudent to ramp the temperature down from 75&deg;C. <br> ''See [[Restriction Digest]] for more information on the following steps.''
+#Add 1 &mu;L restriction enzyme(s) to mixture. 
+#Incubate for a minimum of 2 hrs.
+#Heat inactivate restriction enzyme by incubating at 80&deg;C for 20 mins.
+#[[Purification of DNA | Purify DNA]] as necessary
+
+==Notes==
+
+*For oligos greater than 50-60 bp in length, there can often be problems with errors or deletions in the primers.  Therefore, it might be worth ordering your primers with an extra purification step such as PAGE.  [https://catalog.invitrogen.com/index.cfm?fuseaction=customerSite.primersHome Invitrogen custom primers] offers this service for an extra fee.
+*Klenow is tolerant of a broad range buffer conditions.  This includes NEBuffer for EcoRI in which it will exhibit a rate of polymerization of approximately equal to 50% of that in its recommended buffer.  For greater reproducibilty, you could add DTT to the reaction, since DTT is absent from EcoRI reaction buffer. Courtesy of Paul Walsh at NEB Technical Support.
+*When using Klenow(exo-) for this type of reaction, there is much less risk of "overdoing" the reaction than when using regular Klenow.    Incubating at 37C for one hour, using one unit of Klenow(exo-) per pmol of DNA should result in the desire 90bp duplex. Courtesy of Paul Walsh at NEB Technical Support.
+*The Klenow (exo-) polymerase will exhibit >75% activity at 25&deg;C, compared to 100% at 37&deg;C.  Courtesy of Chris Benoit at NEB Technical Support.
+*If you are annealing two oligos with a region of complimentarity on each end generating an annealed, fully extended product in the 100 bp range, I recommend 5U of Klenow(exo-) per microgram of primed template.  Courtesy of Chris Benoit at NEB Technical Support.
+*'''[[User:Rshetty|Reshma]] 19:50, 19 October 2006 (EDT)''': [[Tom Knight]] suggests considering how much enzyme you use relative to how much primer.  Supposedly, polymerase does not necessarily fall off the ends of the DNA which means in 2-3 cycles, very few of your annealed primers will become completely double-stranded (as this requires two polymerases to bind to the same annealed primer molecule and extend).  This lack of complete double stranding could increase the potential for errors.
+
+==References==
+<biblio>
+#Stemmer-Gene-1995 pmid=7590320
+</biblio>
+
+[[Category:Protocol]] [[Category:In vitro]] [[Category:DNA]]

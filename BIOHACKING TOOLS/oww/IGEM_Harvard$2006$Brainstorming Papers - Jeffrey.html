@@ -1,0 +1,24 @@
+== Self organization ==
+
+<biblio>
+# so1 pmid=15858574
+# so2 pmid=15096621
+</biblio>
+
+'''A synthetic multicellular system for programmed pattern formation.'''
+*Basu ''et al.'' created a gene circuit with a non-monotonic response to AHL concentration.
+*Main idea: use two concentration boundaries to define three regions with different transcriptional activity
+**GFP is repressed at low and high concentrations of AHL, and expressed at medium concentrations
+**Basu ''et al.'' created three variants with different upper boundaries
+***Concentration varies with distance; thus, a mixture of different variants of bacteria produces a bullseye pattern when exposed to a point source of AHL
+***Multiple AHL sources produce pretty pictures
+*We could reuse the basic idea behind their circuit if we need to define a multiple-region response to some stimulus
+
+'''Spatiotemporal control of gene expression with pulse-generating networks'''
+*Basu ''et al.'' created a gene circuit that exhibits transient expression of GFP in response to AHL ("pulse generator"). 
+*The amplitude and duration of this "pulse" can be artificially adjusted, and depend on the rate of increase of AHL concentration as well as the absolute concentration.
+**Cells can be made to respond to nearby cells and ignore far-away cells
+***Reporter expression varies with distance, even though AHL concentrations eventually reach the same level everywhere
+*Further tweaking:
+**Produce AHL as well as expressing GFP, to propagate the AHL signal
+**Connect the output of the pulse generator to a bistable switch

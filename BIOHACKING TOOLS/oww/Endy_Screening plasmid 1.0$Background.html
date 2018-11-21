@@ -1,0 +1,85 @@
+Work in progress...
+==General Background==
+The screening plasmid was designed using the Pbad promoter as an inducible promoter. One fluorophore was placed upstream of the part to be measured, and a second fluorophore was placed downstream. Assuming that the fluorescence is linear with PoPS<cite>halford</cite>, then we can measure the transfer function of the device by simultaneously measuring the fluorescence of the two fluors.
+
+As long as experiments were carried out in a properly modified host (CW2553 carrying plasmid pJat8<cite>keasling1</cite>), the promoter showed consistent linear induction across an entire population. Unfortunately, CW2553 is a slightly modified derivative of K12<cite>hogg</cite> and appears to be LacI+ l+, so parts using LacI or cI will not function correctly.
+ 
+The original plan was to use CFP and YFP as reporters. A non-BioBricks MCS was introduced upstream of one fluor, with the idea that every part would be PCR’d out of the BB plasmid with tails, adding the appropriate restriction sites.  Two problems presented themselves. First, it was difficult to read CFP signals on the available flow machines. Second, a PCR with tails every time we wanted to measure a part seemed excessive.
+
+==First Generation==
+
+The second iteration was slightly modified. The fluors were GFP and mRFP1, both untagged. Two new BioBricks were introduced to aid in DNA manipulation. The first, I13450, was designed to scar out existing BioBrick ends. Cut MfeI/SpeI and ligated with a part cut EcoRI/XbaI, both ends would create non-cuttable mixed sites.  Similarly, if I13450 was cut NsiI/XbaI and ligated with a part cut SpeI/PstI, the right hand site would be scarred out.
+
+Having removed the existing BioBrick ends, I13452 was designed to introduce a new BioBrick MCS. Originally, the plan was to use IIs restriction enzymes to create Eco and Pst sticky ends in the middle of the part. Unfortunately, it turned out that mRFP1 had multiple copies of the IIs restriction sites, so this plan was scrapped. Instead, primers were designed which recognized the sequence of I13452. An around-the-horn, non-displacing PCR with tails was performed using Phusion. The resulting DNA was cut Eco/Pst and ligated with a BioBricks part, also cut EP. The inserted BioBricks part brought along with it the standard BioBricks MCS.
+
+Two plasmids (I13513 and I13514) were constructed, one with GFP before the MCS and mRFP after, the other with the fluors reversed. First, the plasmids were characterized without a part in the MCS (specifically, without the ends capped and the MCS introduced). A significant difference was noticed between the two plasmids. When GFP was the first message on the transcript, the RFP signal was almost an order of magnitude stronger than when RFP was the first message. The GFP signal was nearly unchanged in the two cases. 
+
+[[Image:513X.jpg|center|600px]] [[Image:514X.jpg|center|600px]] 
+  
+Figure 1: I13513 (top) vs. I13514 (bottom). Each point represents the population mean at a single arabinose concentration. Different colors correspond to different time points.
+
+It was hypothesized that a 5’ GFP was protecting the RFP message from RNAseE. Placing the RFP first would remove this protection and lower the RFP signal. GFP has been shown to be resistant to RNAseE cleavage, but no data exists for RFP. RNAseE is known to scan 5’ to 3’, so the hypothesis is conceivable.
+
+If true, this presents a serious problem. The calibration would depend on the identity of the part being measured, preventing comparative measurements.  One solution was to add another promoter and avoid polycistronic messages if at all possible. However, this introduced another source of variation (two identical promoters might not produce identical POPs).
+
+For one plasmid, I13513, the ends were capped, the internal site introduced, and a range of BioBricks parts inserted. Specifically, a tetR quad part inverter (Q04400), a terminator (B0015), a terminator/constitutive promoter (S03155) were tested. Qualitatively, each part showed the expected behavior. The inverter switched, though the variation between high and low was undesirably small.
+
+[[Image:513iQ04400.jpg|center|600px]]
+ 
+Figure 2: I13513 measuring Q04400
+
+==Second Generation==
+
+In an attempt to correct the problems associated with polycistronic messages, a technique was borrowed from Jay Keasling’s lab at Berkeley<cite>keasling2</cite>. Strong RNAseE sites were introduced upstream and downstream of the MCS, and a hairpin was placed 5’ of the mRFP1 transcript. The hope was that the RNAseE sites would cleave the polycistronic message into two secondary transcripts and the 5’ hairpin would then protect the mRFP1 message from further degradation.
+
+A strong RFP signal was very important. GFP showed a slight bleed into the RFP channel, so if the GFP signal was significantly higher than the RFP signal, then the compensation would become increasingly necessary.
+
+Three modified insertion sites (I13455, I13456, I13457) were constructed de novo, using oligonucleotides from Invitrogen. I13455 appended a canonical strong RNAseE site to the standard insertion site, I13452. I13456 used a shortened RNAseE site, since size would eventually become significant. I13457 placed shortened RNAseE sites upstream and downstream of the insertion site, as well as introducing the 5’ hairpin.
+
+Experiments conducted with the single RNAseE sites showed that the short site worked equally as well as the longer site. Additionally, the plots of RFP vs. GFP were very similar for I13513 (RFP first) and the new construct with GFP first followed by an RNAseE site.
+
+[[Image:RNAseEeffects.jpg|center|500px]]
+
+Figure 3: RNA independence. Orange shows GFP first, no RNAseE site. Green shows RFP first, with an RNAseE site. For comparison, Red shows RFP first, no RNAseE site, and Blue shows GFP first, with RNAseE site.
+<br>A new construct, labeled I13534, was built around with I13457 insertion site and the internal MCS introduced. Additionally, the construct was moved to a lower copy plasmid (pSB4A3) for further study. Relative to previous efforts, I13534 showed a much higher RFP signal at any given GFP signal: by comparison to the GFP positive control, the RFP signal for I13534 was clearly higher.
+
+[[Image:534.jpg|center|350px]]
+
+Figure 4: I13534 vs. GFP Positive control. Plasmid was characterized without an inserted part.
+
+I13534 has proven to be a very consistent characterization platform. As shown below, a tetR-based inverter (Q04400) was characterized in two independent experiments almost a week apart. The transfer curves from each experiment are quantitatively consistent.
+
+[[Image:Q044004A3.jpg|center|600px]]
+Figure 5: I13534 measuring Q04400. Construct is on the low copy (4 series) plasmid. Batch cultures were analyzed on the MoFlo. Each point represents the population mean of one arabinose level.
+
+==Third Generation==
+
+Finally, a series of two-promoter plasmids were constructed. One promoter drove the expression of GFP, while the second promoter led into the insertion site and mRFP. When characterizing a quad part inverter, for instance, each message would be placed on an individual mRNA, avoiding issues of polycistronic messages. However, adding the second promoter necessitated a change in pBAD. Naturally, pBAD overlaps with the pC promoter (pC drives the expression of araC on the opposite strand). However, when introducing a second promoter, we had no desire to add a second copy of pC/araC. Based on studies of the pBAD promoter, a shortened version of pBAD was constructed. Similarly, the pC/araC combination was split out as a separate part. Three two-promoter plasmids were constructed. In I13537, AraC was split out, and both promoters were short versions of pBAD.  I13538 and I13539 had one copy of the natural pBAD promoter (complexed with araC) and one shortened copy. My temptation is to move ahead with I13537, but I13538 has been maintained as well.
+
+It has been suggested that placing the transcripts for two proteins on the same polycistronic mRNA reduces stochastic variation between the expression levels of those two proteins<cite>swain</cite>. The one promoter plasmids should, therefore, be less noisy. So, if it can be demonstrated that the calibration of the one promoter screening plasmid is independent of the device being screened, then the one promoter plasmid would be preferable due to its (probable) reduction in noise.
+
+As a further test of RNA independence, plasmids I13534 (one promoter, polycistronic mRNA) and I13538 (two promoters, monocistronic mRNA) were compared without a part in the insertion site. The two populations were nearly identical, suggesting that the polycistronic mRNA is functioning similarly to the two monocistronic mRNA.
+
+[[Image:RNAIndependence.jpg|center|600px]]
+Figure 6: RNA independence. Red: One promoter, with flanking RNAseE sites. Green: two promoters. Both plasmids were characterized without an inserted part.
+
+Next, parts were ligated into the insertion site and characterized. A quad-part inverter, Q04400, was the standard initial part. This inverter uses tetR and a strong RBS. Both I13537 and I13538 gave similar results for this characterization.
+
+[[Image:Inverters1.jpg|center|600px]]
+Figure 7: Inverter characterization. Measured on the MoFlo. Each point represents the population averaged fluorescence at one arabinose concentration.
+
+[[Image:Detailed2Promoter.gif|center|600px]]
+Figure 8: Same as above, except with a broader range of arabinose concentrations. Measured on the bench-top FACS machine.
+
+==Notes==
+*[[Endy:Screening plasmid constructs|List of constructs]]
+*[[Endy:Screening plasmid RNAseE notes|RNAseE notes]]
+
+==References==
+<biblio>
+#halford pmid=15640280
+#keasling1 pmid=11739756
+#hogg pmid=2656640
+#keasling2 pmid=11097920
+#swain pmid=15544806
+</biblio>

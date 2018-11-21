@@ -1,0 +1,58 @@
+<div class="tabs-blue">
+<ul>
+<li >[[IGEM:IMPERIAL/2006/project/popsblocker| Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/popsblocker/Design | Design]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/popsblocker/Modelling| Modelling]]</li>
+<li id="current">[[IGEM:IMPERIAL/2006/project/popsblocker/Implementation| Implementation]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/popsblocker/Testing| Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Ligation strategy==
+
+*Apart from ligating into the necessary plasmid at the end, there are no ligation steps involved in making this device. PCR and PCR fusion are being are used because of the unusual design of the device, in so far as both strands have coding regions. The links below explain the method by which we will use PCR to create the device.
+ 
+*[http://openwetware.org/images/5/5a/Cre_Pops_Blocker.ppt Proposed Implementation of Cre-LoxP system (ppt)]
+
+*[http://openwetware.org/images/5/58/Redoing_Cre2a.doc Design of primers and method of construction (doc)]
+
+
+
+[[Image:Cre3.PNG|600px]]
+
+
+==Considerations==
+
+'''Stop Codons'''
+
+A stop codon has been included between Lox66 and B0021 to prevent the ''E.Coli'' cells from translating past the first Lox site. This reduces the load that this part will place on the E.coli cell so increases its stability ''in vivo''. TGA is by far the most commonly used stop codon in ''E.Coli''. 
+
+'''Frameshift'''
+
+The Lox sites are 34bp long therefore if this part is placed after an RBS it will induce a frameshift in the protein produced, therefore creating a mangled protein. Two random bases were added to the start of the Lox site to prevent a frameshift.
+
+
+==Cre plasmid==
+
+[http://openwetware.org/images/b/ba/A112-705-Cre_Version_2_1.pdf Commercially available Cre plasmid (pdf)]
+
+==WetLab work entries==
+
+Jonny Wells <br\>
+Kirsten Jensen
+
+(08/06 - 10/06)
+
+<html>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1999441; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="18996820"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c19.statcounter.com/counter.php?sc_project=1999441&amp;java=0&amp;security=18996820&amp;invisible=1" alt="website statistics" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</html>

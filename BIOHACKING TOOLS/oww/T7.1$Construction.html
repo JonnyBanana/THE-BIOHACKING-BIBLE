@@ -1,0 +1,96 @@
+{{Rebuilding T7}}
+==Overview==
+We constructed the first two sections, ''alpha'' and ''beta'' as described below. ''Alpha'' and ''beta'' contain the first 32 of 73 parts of the [[T7.1]] genome, replacing the left 11,515 base pairs of the wild-type genome with 12,179 base pairs of redesigned DNA, and encoding the entire T7 early region, the primary origins of DNA replication, most of the T7 middle genes, and the control architecture that regulates T7 gene expression.  ''Alpha'' and ''beta'' also contain the highest density of elements across the genome.  Sequencing revealed differences between the design of T7.1 and the actual ‘as-built’ sections.  Relevant sequence differences in section ''alpha'' include a single base deletion in gene 0.4 and in the E. coli terminator TE. Differences in section ''beta'' include a single amino acid substitution in both genes 1.8 and 2, a single base deletion in gene 2.5, and an 82-base truncation in gene 2.8. All differences were due to errors or limitations in construction.  We are currently working with [http://codondevices.com Codon Devices] to construct other sections on the T7.1 genome.
+
+==Section ''Alpha''==
+The design of the scaffold for section ''alpha'' included all functional genetic elements from the left end of T7 through R''0.3'', R''0.5'', parts 17,19, 21, plus the restriction sites required to add all remaining parts.  The section ''alpha'' scaffold does not contain any known protein coding domains.  We sent the scaffold sequence (1,334 bp) to [http://www.blueheronbio.com Blue Heron Biotechnology] for synthesis.  Blue Heron could not assemble the scaffold using the standard cloning plasmids then in use [we have since worked with Blue Heron to fix this problem – below]. Blue Heron agreed to ship the section ''alpha'' scaffold as four fragments with point mutations in each fragment.  The point mutations were:
+
+:Fragment 1:  Single base changes at 89(G-T), 168(A-T), 169(C-A), 245(G-A) and 249(C-A) as well as single base deletions at 138 and 159
+:Fragment 2:  A single base deletion in the -35 box of the A1 promoter
+:Fragment 3:  A four base deletion between the -35 and -10 boxes of the A3 promoter
+:Fragment 4:  A single base deletion in the loop of TE
+
+We decided to discard Fragment 1 but to correct and make use of Fragments 2, 3 and 4.  We built a new vector, pREB, to facilitate the assembly of section ''alpha''.  pREB (for rebuild) started as a chimera of the inducible copy control system of [http://www.genome.bnl.gov/Protocols/pscans.shtml pSCANS-5] and the insulated multi-cloning site (MCS) of [[Available vectors#pSB2K3-1|pSB2K3-1]]. We completed pREB by adding a smaller MCS containing PstI, BstBI and BclI restriction endonuclease sites and by removing nineteen other restriction sites from the plasmid backbone. 
+To build section alpha we first cloned parts 5, 6, 7, 8, 12, 13, 14, 15, 16, 18, 20, 22, and 24 into [[Available vectors#pSB1A3-1|pSB1A3-1]].  We cloned part 11 into [[Available vectors#pSB2K3|pSB2K3]].  We cloned each part with its part-specific bracketing restriction sites surrounded by additional [http://parts2.mit.edu/r/parts/htdocs/Assembly/index.cgi BioBrick restriction sites] [http://web.mit.edu/synbio/release/docs/biobricks.pdf (Knight, 2002)].  We used site directed mutagenesis on parts 6, 7, 14 and 20 to introduce the sites U1, U2, U3 and U4 respectively.  Our site directed mutagenesis of part 20 failed.
+
+We used site directed mutagenesis to remove a single Eco0109I restriction site from the vector pUB119BHB carrying the scaffold Fragment 4.  We cloned part 15 into this modified vector.  We then cloned scaffold Fragment 4 into pREB and used serial cloning to add the following parts: 7, 8, 12, 13, 14, 16, 18, 20, 22 and 23.  We digested the now-populated scaffold Fragment 4 with NheI and BclI and purified the resulting DNA.  
+
+Next, we cloned parts 5 and 6 into pUB119BHB carrying scaffold Fragment 3.  We used the resulting DNA for ''in vitro'' assembly of a construct spanning from the left end of T7 to part 7.  To do this, we cut wild-type T7 genomic DNA with AseI, isolated the 388bp left end fragment, and ligated this DNA to scaffold Fragment 2.  We selected the correct ligation product by PCR.  We fixed the mutation in part 3 (A1) via a two-step process.  First, PCR primers with the corrected sequence for part 3 were used to amplify the two halves of the construct to the left and right ends of part 3.  Second, a PCR ligation joined the two constructs.  We added scaffold Fragment 3 to the above left-end construct once again by PCR ligation as described above. We repaired the mutation in part 4 (A2, A3 and R''0.3'') following the same procedure as with part 3.  We used a right-end primer containing a MluI site to amplify the entire construct, and used the MluI site to add part 7.  We used PCR to select the ligation product, digested the product with NheI and purified the resulting DNA.
+
+We isolated the right arm of a BclI digestion of wild-type T7 genomic DNA and used ligation to add the populated left end construct and the populated Scaffold Fragment 4.  We transfected the three-way ligation product into IJ1127.  We purified DNA from liquid culture lysates inoculated from single plaques.  We used restriction enzymes to digest the DNA and isolate the correct clones. 
+
+Next, we added part 11 via three-way ligation and transfection.  Because the restriction sites that bracket part 9 (RsrII) also cut wild-type T7 DNA, we needed to use ''in vitro'' assembly to add this part to a subsection of section ''alpha''.  To do this, we used PCR to amplify the region spanning parts 5 through 12 from the refactored genome.  We cut the PCR product with RsrII and ligated part 9.  We used PCR to select the correct ligation product; this PCR reaction also added a SacII site to the fragment.  We digested the PCR product with SacI and SacII and cloned onto the otherwise wild-type phage.  Lastly, we used the SacII site to clone part 10 onto the phage.
+
+{| border="1" cellpadding="5" cellspacing="0" align="center"
+|+'''Errors in synthesis & construction of section ''alpha'''''
+|-
+! Location on T7.1 (Genome Position) !! Nature of Difference !! Probable Reason for Difference !! Expected Outcome
+|-
+! D1L (164-170), D1R & D2L (338-350)
+| Restriction sites were not added in construction || Difficulties in manipulating left end of genome resulted in using wild-type || Loss of manipulability in part 1 (containing A0)
+|-
+! gene ''0.4'' (1418)
+| Single base deletion || Unknown || Frameshift after 27<sup>th</sup> amino acid followed by early termination of gene ''0.4''
+|-
+! D6L (1304-1310) & D6R (1494-1500)
+| Restriction sites appear twice || Inefficiency of digestion of scaffold || No expected change
+|-
+! gene ''0.6B''
+| Single base addition || Error is now known to be in stock of wild-type genome || Dependent upon nature of putative translational slippage in formation of gene ''0.6B''
+|-
+! D11L (3302-3307)
+| Restriction site appears twice || Ineffeciency of digestion of scaffold || No expected change
+|-
+! gene ''1'' (4877,5159,5399)
+| Single base mutation || Error in PCR or within wild-type genome || Silent mutation, no expected change
+|-
+! D14R (6591-6597)
+| Restriction site appears twice || Ineffeciency of digestion of scaffold || No expected change
+|-
+! TE (7827)
+| Single base deletion || Primer synthesis error || Possible loss of function of transcriptional terminator
+|-
+! D20L (8082-8086)
+| Restriction site appears twice || Ineffeciency of digestion of scaffold || No expected change
+|-
+! U4 (8153-8159)
+| Restriction site site was not added in construction || Failure in site-directed mutagenesis || Loss of manipulability of overlap in parts 18 and 19
+|-
+! D22L (8247-8253)
+| Restriction site appears twice || Ineffeciency of digestion of scaffold || No expected change
+|}
+
+
+==Section ''Beta''==
+We constructed section ''beta'' using a process similar to that used with ''alpha''.  A scaffold with all restriction sites as well as part 26 was made by Klenow extension of overlapping primers.  We digested this DNA with BstBI and cloned it onto pREB.  We then added the following parts: 23, 24, 27, 28, 30, 31 and 32.  We had to clone part 32 (containing gene 3.8) as a truncation since we were unable to clone the full-length part, probably due to the apparent toxicity of gene 3.8 product.  The truncated version of part 32 still included the BglII site to allow for assembly of section ''beta'' onto phage.  We added parts 25 and 29, also previously reported to be toxic, ''in vitro''.  To insert part 25, we amplified a region spanning part 23 through part 27 by PCR.  We cut this fragment with BsiWI.  Part 25 was then ligated to each of these fragments separately and selected for by PCR.  We cut both PCR products with DraIII, a restriction site internal to part 25, ligated and then selected for full length part 25 by PCR.  We cut part 25 with BclI and MluI, purified, and ligated it to wild-type fragments.  We used a similar approach to insert part 29 (using the EcoO109I site internal to this part).  Lastly, we cut both phage genomes with MluI; we ligated the left fragment of the genome containing the refactored region spanning parts 23 through 27 to the right fragment of a genome containing the refactored region spanning from parts 27 through 32.
+
+{| border="1" cellpadding="5" cellspacing="0" align="center"
+|+'''Errors in synthesis & construction of section ''beta'''''
+|-
+! Location on T7.1 (Genome Position) !! Nature of Difference !! Probable Reason for Difference !! Expected Outcome
+|-
+! gene ''1.7'' (8794)
+| Single base silent mutation || Error during PCR or within wild-type genome || No expected change
+|-
+! gene ''1.8'' (9245)
+| Single base mutation || Error during PCR or within wild-type genome || Amino acid change in gene ''1.8'' from Asp to Gly
+|-
+! gene ''2'' (9447)
+| Single base mutation || Error during PCR or within wild-type genome || Amino acid change in gene ''2'' from Glu to Val
+|-
+! gene ''2.5'' (10351)
+| Single base deletion || Error during primer synthesis || Deletion in stop codon; read-through adding on 8AA
+|-
+! gene ''2.8'' (10627)
+| Single base mutation || Error during PCR || Amino acid change in gene ''2.8'' from Asp to Gly
+|-
+! gene ''2.8'' (10771-10803)
+| 82 base deletion || Error in cloning of part || Loss of function in gene ''2.8'' in addition to unknown effect on translation of ''3.0'' due to ribosome read-through.
+|-
+! gene ''3'' (1418)
+| Single base silent mutation || Error during PCR or within wild-type genome || No expected change
+|}
+==Sequences==
+Sequences for the as-built sections can be found on GenBank. <br>
+Section ''Alpha'' -- [http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&val=71534849 DQ100054] <br>
+Section ''Beta'' -- [http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&val=71534864 DQ100055] <br>

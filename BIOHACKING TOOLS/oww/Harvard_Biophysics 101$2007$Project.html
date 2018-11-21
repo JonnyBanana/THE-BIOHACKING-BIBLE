@@ -1,0 +1,100 @@
+{{Template:Harvard_Biophysics_101:2007}}
+<div style="padding: 10px; width: 720px; border: 5px solid #DDDDFF;">
+
+= [http://snp.med.harvard.edu/rosencrantz/ Completed HTML Interface] =
+
+'''Screenshots'''
+
+<gallery>
+Image:070503_screenshot1.png|Main input page
+Image:070503_screenshot2.png|Example output
+</gallery>
+
+= Overview =
+*Project Goal: To develop tools to aid in analysis of personal DNA sequences.   
+We would like to develop software and documentation that will help people get from sequence to diagnosis.  At the moment, we are focusing on identifying and classifying SNPs, but we will broaden this identification to other things like large deletions or insertions or repeats when we have more expertise.  We are attempting to harness the power of other already existing tools, and we would also like to make this tool one that others can build upon.  Specifically, our program will eventually be able to determine location based on BLAST, determine any SNPs based on NCBI SNP, and give a prognosis based on OMIM and online medical databases.
+
+= Project Summary =
+
+This code takes the input from the user (a codon sequence) which is searched against the human database to look for SNPs (Single Nucleotide Polymorphisms).  This codon sequence is found in BLAST SNP, and any SNPs are reported as an RS number<sup>1</sup>. The query is compared against the sequence in dbSNP to determine if the sequence is really a mutation; if this test passes, the RS number is then is used to generate mesh terms from PubMed, and determines which mesh terms are the most relevant.  The potential disease and the prevalence of this disease (derived from the California State Prevalence data) are extracted from the most pertinent mesh terms.  These mesh terms are then used to get updated news regarding the disease
+
+<sup>1</sup>Aside: one portion of the code accesses BLAST SNP without using RS numbers.  The information acquired through this the BLAST SNP website is queried in OMIM, and the output is as follows: disease name, mutation, and name of the mutation.  The disease name is then used to search different websites for drugs, procedure, and experts regarding the disease, and is used to provide a list of web pages with the disease name searched.
+
+=Path 1: Using BlastSNP=
+
+[[Harvard:Biophysics_101/2007/Project/Inputs/Outputs|Inputs & Outputs]]
+
+==[1]. Sequence &rarr; RS Number (BLAST SNP)&rarr; Disease Name (OMIM)==
+* Xiaodi: [[Harvard:Biophysics_101/2007/Notebook:Katie_Fifer/2007-4-15|code]] prints and outputs to file pickled version of the OMIM output for our sequence
+* Chris: quality checking [[Harvard:Biophysics_101/2007/Notebook:Christopher_Nabel/2007-4-24|code]] returns sequences back after dbSNP
+* Kay: [[Harvard:Biophysics_101/2007/Notebook:Kaull/2007-5-3|Work-around]] for SNPs non-directly linked to OMIM
+
+==[2]. RS Number &rarr; PubMed Articles &rarr; Mesh Terms ==
+* Cynthia [[Harvard:Biophysics_101/2007/Notebook:CChi/2007-5-1|code]] (1) input: rs#, (2) output: list of mesh terms (3) prints top 5 PubMed articles, print list of mesh terms
+
+
+==[3]. RS Number (OMIM) &rarr; PubMed PMIDs &rarr; Mesh Terms==
+* Resmi: [[Harvard:Biophysics_101/2007/Notebook:Resmi_Charalel/2007-4-26|code]] (1) parses OMIM XML to (2) get PubMed PMIDs to (3) get Mesh Terms 
+
+
+==[4]. Mesh Terms &rarr; Disease Name (in-house code)==
+* Deniz
+* Zach: [[Harvard:Biophysics_101/Notebook:ZS/2007-5-3 | code]] finds mesh codes(cynthia), determines most important mesh codes, finds prevalence, find CDC ID and formal disease name.b
+
+==[5]. Disease Name &rarr; Prevalence (&rarr; regulates Useful Patient Info)==
+* Zach: see above, complete and compiled
+
+==[6]. Disease Name &rarr; Useful Patient Info (Medical search engines)==
+* Deniz: [[Harvard:Biophysics_101/2007/Notebook:Denizkural/2007-4-3|examples of coding]] which returns news updates in several formats
+* Tiff: [[TChan/Notebook/2007-5-2|code]] (a) displays relevant URLs (, (b) returns lists of drugs, clinical trials, experts, etc.
+* Tiff: [[TChan/Notebook/2007-5-3#Allelic_Frequency|code]] outputs allelic frequency data parsed from dbSNP (what we actually want to show to the user must be selected out of the data)
+* Resmi: [[Harvard:Biophysics_101/2007/Notebook:Resmi_Charalel/2007-4-5|code]] displays PubMed review citations in text form
+* Cynthia: [[Harvard:Biophysics_101/2007/Notebook:CChi/2007-4-24|code]] displays PubMed article citations in text form
+
+==[7]. All displayable data &rarr; Web Interface==
+* Xiaodi and Katie: [[Harvard:Biophysics_101/2007/Notebook:Xiaodi_Wu/2007-4-17|code and description]] displays (some - still need to integrate some remaining scripts) preceding data in a web interface
+
+=Path 2: Using GenBank and PolyPhen=
+
+==[1]. Sequence &rarr; Gene Name (BLAST)==
+* Zach [[Harvard:Biophysics_101/Notebook:ZS/2007-5-2|code]] returns through BLAST HTML parse if is in CDS or not, and for former the CDS , asc#, and seq, and for latter the seq. info and surrounding genes
+* Katie [[Harvard:Biophysics_101/2007/Notebook:Katie_Fifer/2007-4-19|code]] returns BLAST XML data.
+
+==[2]. Gene Name &rarr; Mutations (GenBank)==
+* Xiaodi
+* Chris: quality checking [[Harvard:Biophysics_101/2007/Notebook:Christopher_Nabel/2007-4-17|code]] detects mismatches between our sequence and returned SNPs
+
+
+==[3]. Gene Name &rarr; ??? (PolyPhen)==
+* Mike
+
+
+==[4]. Mutations &rarr; Disease Name (OMIM)==
+* Xiaodi
+
+
+==[5]. Disease Name &rarr; Useful Patient Info (Medical search engines)==
+* Deniz: 
+**examples of code which returns [[Harvard:Biophysics_101/2007/Notebook:Denizkural/2007-4-3|Google news updates]] and [[Harvard:Biophysics_101/2007/Notebook:Denizkural/2007-4-24|MedStory news updates]] in several formats
+**blogs through technorati
+**clinical trials by disease name and by drug
+**medical articles and resources
+**research articles
+* Tiff: [[TChan/Notebook/2007-5-2|code]] (a) displays relevant URLs, (b) returns lists of drugs, clinical trials, experts, etc.
+* Tiff: [[TChan/Notebook/2007-5-3#Allelic_Frequency|code]] outputs allelic frequency data parsed from dbSNP (what we actually want to show to the user must be selected out of the data)
+* Resmi: [[Harvard:Biophysics_101/2007/Notebook:Resmi_Charalel/2007-4-5|code]] displays PubMed review citations in text form
+* Cynthia: [[Harvard:Biophysics_101/2007/Notebook:CChi/2007-4-24|code]] displays PubMed article citations in text form
+
+==[6]. All displayable data &rarr; Web Interface==
+* Xiaodi and Katie: [[Harvard:Biophysics_101/2007/Notebook:Xiaodi_Wu/2007-4-17|code and description]] displays (some - still need to integrate some remaining scripts) preceding data in a web interface
+* Deniz - write the output HTML for news, drugs, research articles, and all the other output.
+
+=Diagram=
+[[Image:BioPhys101_Project_Diagram_4_30_07.jpg|650px|Project Diagram]]
+
+
+=Project-in-Progress=
+Project-in-Progress notes have been moved to their [[Harvard:Biophysics_101/2007/Project_in_Progress|own page]].
+
+=Project Ideas=
+Project ideas have been moved to their [[Harvard:Biophysics_101/2007/ProjectIdeas|own page]].

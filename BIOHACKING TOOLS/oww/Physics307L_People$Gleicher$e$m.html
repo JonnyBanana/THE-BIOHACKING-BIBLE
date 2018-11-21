@@ -1,0 +1,164 @@
+==e/m Lab Summary==
+
+
+For this lab, the objective is to try to measure the value of the ratio of an electron's charge to its mass. The experiment is detailed here in the manual [http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf] under e/m.
+
+Using the setup detailed in the manual, we varied one the parameters while keeping the other one constant and then measuring the radius of the electron beam.
+
+The calculation of e/m involves the value of the accelerating voltage, current, and the radius of the electron beam.  The formula for e/m is given by:
+
+<math>\frac{q}{m}=\frac{2*V}{r^2*B^2}</math>.
+
+The value for the B field can be calculated by the formula given in the manual:
+
+<math>B=7.8E-4 * I</math>
+
+If the voltage (V), current (I), and radius (r), are known we can determine the vale of e/m.
+
+
+===Procedure===
+
+Mike and I kept the voltage constant and varied the current while monitoring r, then we kept current constant and varied the voltage while recording the radius.
+
+The first value of e/m involves direct calculation from the values of the accelerating voltage, the current, and the radius of the electron beam.
+
+A plot of r vs. 1/I at constant V will give a value of e/m when a linear least squares fit is performed.
+
+The last value of e/m can be obtained form another linear least squares fit of a plot of r^2 vs. V at constant I.
+
+===Data===
+
+
+The data can also be found in my notebook [[Physics307L:People/Gleicher/Notebook/071022]]
+
+Constant Current:
+
+
+{|
+|-
+!I (A)    
+!V
+!R (cm)
+|-
+|1.52
+|296
+|6
+|-
+|1.52
+|311
+|6.3
+|-
+|1.52
+|325
+|6.15
+|-
+|1.52
+|340 
+|6.65
+|-
+|1.52
+|355
+|6.6
+|-
+|1.52
+|370
+|6.5
+|-
+|1.52
+|385
+|	6.8
+|-
+|1.52
+|400
+|6.9
+|-
+|1.52
+|416
+|7
+|-
+|1.52
+|430
+|7
+|-
+|1.52
+|445
+|7
+|-
+|1.52
+|454
+|7
+|}
+
+Constant Voltage:
+
+
+{|
+|-
+!I (A)
+!V
+!R (cm)
+|-
+|2.25
+|454
+|6.5
+|-
+|2.1
+|454
+|5.25
+|-
+|1.95
+|454
+|5.9
+|-
+|1.79
+|454
+|6.25
+|-
+|1.65
+|454
+|6.37
+|-
+|1.50
+|454
+|	6.75
+|-
+|1.35
+|454
+|7.25
+|-
+|1.2
+|454
+|
+|}
+
+===Results===
+
+Thanks to Linh Le's write up, I was able to resolve my error for the calculation of e/m.
+
+The first calculated value is 1.09E+11 Coulombs/kg.  I am not sure how to calculate the error in this measurement.{{SJK comment|l=00:31, 5 December 2007 (CST)|c=you are just having end-of-the-semester brain meltdown.  You definitely know how to calculate this, since your answer is simply the average of several values.  How do you calculate the standard error of the mean?  You should get about +/- .06 C/kg}}
+
+
+
+
+
+The second value for e/m is {{SJK comment|l=00:33, 5 December 2007 (CST)|c=Good use of linear regression for these}}
+
+(1.51202 +/- .179)E+11 Coulombs/kg
+
+My third value for e/m is
+
+(1.88E +/- .646)E+11 Coulombs/kg
+{{SJK comment|l=01:02, 5 December 2007 (CST)|c=It's interesting that your numbers are actually much closer to the accepted value than others were getting, perhaps due to the much larger R that you achieved.  I will have to try to remember to have the 2008 students see if they can repeat this.}}
+<br style="clear:both;"/>
+
+===Conclusions===
+
+Initially my data was flawed but after obtaining the right formula for q/m from Lihn Le's page, and analyzing my graphs properly, I was able to end up with three reasonable values for q/m. 
+
+My value for the third calculation is the best.  This one involved plotting r vs. I^-1.{{SJK comment|l=00:46, 5 December 2007 (CST)|c=Although it looks like from the Excel that you may not have done r v. I^-1}}
+
+Possible explanations for the discrepancy include stray magnetic fields, systematic error in the procedure (data aquisition),  and incorrect values given for the calculation of the B field.
+
+Here is a link to my excel file with the calculations:
+
+[[Image:E m.xls]]

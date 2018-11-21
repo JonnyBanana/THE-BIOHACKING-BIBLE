@@ -1,0 +1,87 @@
+{{Sauer lab sidebar}}
+contributed by [[Sean Moore]]
+
+this link has been dead for some time now:
+[http://paris.chem.yale.edu/extinct.html Extinction coefficient and Tm calculator]
+
+See a discussion of the use of the words quantification and quantitation on the "Discussion" page.
+
+Ambion has a good site that gives a variety of parameters for nucleotides and nucleic acids [http://www.ambion.com/techlib/append/na_mw_tables.html].
+
+===Intro===
+Lot's of ways.  I like the spec.
+
+
+===Measuring nucleic acid concentration in a spectrophotometer===
+
+Pipette your nucleic acid sample into a cuvette and record an absorbance scan from 240-340 nm.
+
+Most calculations are done from the Abs at 260 nm.
+
+====DNA====
+
+Divide the absorbance at 260 nm by 0.02 for dsDNA or 0.027 for ssDNA.  This is the "concentration" in &mu;g/mL.  Actually, to get concentration, you have to know the length of your molecule and use the mass/volume to calculate a concentration.
+
+===RNA===
+
+ss RNA, Divide by 0.025.  There is no good way of calculating a value for folded RNA so see the next entry.  You'll notice that the peak of absorbance for RNA is left of 260, this is normal.
+
+===Making your own RNA Extinction coefficients===
+
+I couldn't find extinction coefficient for individual ribosomal subunits, so I did the following.
+
+Use this reference for more info:  Cavaluzzi MJ, Borer PN. 2004.
+
+I purified the subunits.  Then, I prepared several samples.  Each was diluted to the same extent in the final reaction.  One "Native" folded form that was in a translation buffer, one "dissociated" in Phosphate and EDTA, and one "hydrolysed" to get an accurate concentration measurement.
+
+The hydrolyzed sample was prepared by incubating 5 &mu;L of ribosome with 20 &mu;L of 1.0 N NaOH for 1 hour at 37 degrees.  Then I neutralized the sample with 20 &mu;L of 1.0 N HCl.  I Added 1 mL of 100 mM NaH<sub>X</sub>PO<sub>4</sub> at pH 7.0 with 1 mM EDTA.  (this is the same pH used by Cavaluzzi and Borer).
+
+Measure the absorbance of all three samples.  I did mine in triplicate and averaged the final values.
+
+So, use the known extinction coefficients obtained by Cavaluzzi and Borer.  Use a word processor to determine the number of each nucleotide in your particular RNA and multiply by the extinction coefficient for that nucleotide.  Then sum the four values.  This will give a "formal" extinction coefficient for your RNA.  
+
+Ext. Coeffs at 260;
+
+pA = 15,020
+
+pC = 7,070
+
+pG = 12,808
+
+pU = 9,660
+
+
+Using the observed A<sub>260</sub> for your fully hydrolyzed RNA sample, determine the concentration of your RNA.
+
+Now, with that known concentration and the measured A<sub>260</sub> of the native and unfolded samples, generate extinction coefficients for these conditions.  In the future, you won't have to hydrolyze the samples, just dilute them in a buffer an measure.
+
+I calculated the following for E. coli ribosomal subunit RNAs:
+
+<b>Hydrolyzed:</B>
+
+23S = 33,386,832
+
+16S = 17,588,970
+
+5S  = 1,318,308
+
+23S + 5S (large subunit) = 34,705,140
+
+<b>In 100mM NaH<sub>X</sub>PO<sub>4</sub> 1 mM EDTA:</b>
+
+50S = 25,457,162
+
+30S = 13,646,276
+
+70S = 39,103,438
+
+<b>In 100 mM K<sup>+</sup>glutamate, 6 mM MgCl<sub>2</sub>, 20 mM Tris-HEPES pH 7.8, 0.05% Tween-20, 14 mM mercaptoethanol</b>
+
+50S = 27,058,100
+
+30S = 13,394,967
+
+70S = 40,453,067
+
+
+I usually dilute a ribosome prep 1/500 to 1/1000 in PO<sub>4</sub> buffer and measure that because the tween and meercaptoethanol absorb like crazy and make variable baselines.

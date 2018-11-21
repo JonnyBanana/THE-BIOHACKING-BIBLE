@@ -1,0 +1,204 @@
+'''Construction of Mid-Size Insert Environmental Genomic Expression Libraries in Plasmid pMCL200'''
+
+''Adapted from Joint Genome Institute [http://www.jgi.doe.gov/sequencing/protocols/index.html protocols] for library construction and Epicentre protocols for CopyControl Fosmid library construction (Epicentre, Madison, WI).''
+
+contributed by [[Jennifer Braff]] 
+
+*pMCL200 has p15A ori; 20-40 copies/cell, 2535 bp, CamR.
+*MCS under control of wild type lac promoter.
+*vector has blue/white screen for presence of insert.
+	
+==shear environmental DNA==
+
+*if using crude extracts of environmental DNA, filter DNA through a 0.2 µm filter then concentrate before shearing.
+*wash Hydroshear before and after use as directed with filter sterile 4X HCl, 4X NaOH, and 4X TE.
+*for precise fragment size, each shearing orifice should be calibrated before use.
+
+
+	dilute DNA to ~100 ng/µl in filter sterilized TE
+
+	incubate 30 minutes at 37º C; vortex every 10 minutes
+
+	spin 20 minutes at 14 K (any pellet indicates incomplete resuspension)
+
+	transfer sample to a clean tube
+
+	run 5-10 µg DNA (if available) in 50–150 uL sample
+
+	shear at speed code 15 (gives 7-10 kb chunks) or SC 16 (gives 8-12 kb chunks) on GeneMachines Hydroshear (Genomic   Solutions)
+	
+	25 cycles
+
+	chill on ice immediately after shearing
+
+	
+==end-repair insert DNA==
+ 
+
+	8 µL 10X End-Repair Buffer
+
+	8 µL 2.5 mM dNTP mix
+
+	8 µL 10 mM ATP
+
+	4 µL End-Repair enzyme mix (End-It DNA End-Repair kit, Epicentre)
+
+	52 µL sheared DNA
+
+	[total volume = 80 µL; scale up as needed)
+
+1 hour at room temperature (don’t leave longer as DNAP can chew ends)
+
+add 7 µL 125 mM EDTA (to 10 mM) to prevent DNAP from chewing ends during heat inactivation
+
+	70º C for 10 minutes to heat inactivate
+
+	chill on ice
+
+''T4 polynucleotide kinase may not be completely heat inactivated, though the enzyme should be removed by gel purification.  If kinase carry-over and phosphorylation of vector DNA during ligation is a concern, the reaction can be phenol-chloroform extracted.'' 
+
+
+EtOH precipitation of DNA to concentrate: 
+
+
+	add 2 µL Pellet Paint (Novagen) (be sure to resuspend well)
+
+	add 1/10 volume 3 M NaAcetate (pH 5.2) to sample and mix
+
+	add 2 volumes of 95% EtOH, invert to mix
+
+	incubate 2 minutes at room temperature
+
+	spin 14K XG, 5 min
+
+	remove sup’n with pipette
+
+	wash with 70% EtOH, spin and remove sup’n as above
+
+	wash with 95% EtOH, spin and remove sup’n as above (careful of pellet here)
+
+	dry 10 minutes and resuspend in 30 uL TE
+
+
+==gel purify insert DNA==
+
+	run sample on 1% LMP SeaPlaque (FMC BioProducts ) agarose-TAE gel in 1X TAE
+
+	chill gel at 4º C before use
+
+	load entire sample in one lane
+
+load 500 ng 1 kb DNA (New England Biolabs) ladder as marker
+
+	run ~100 V (for large gel) 3-4 hrs; change running buffer after 2 hrs
+	
+	stain with SYBRGold (Molecular Probes) 15 minutes with gentle shaking 
+
+	view on non-UV safe light table and cut smaller (~6-8 kb) and larger (~8-10 kb) fractions of sheared DNA
+
+	cut away any excess agarose
+
+	if fragements 10 kb or larger, gel purify with QIAEX II kit (Qiagen) (no more than 150 mg gel/tube, don’t vortex samples)
+
+		or
+
+	if fragments <10 kb, gel purify with QIAQuick kit (Qiagen) (do isopropanol and QG washes, let PE sit 5 minutes and repeat PE wash, elute with 50 µL warm [50º C] EB buffer, let sit 10 minutes before eluting)
+
+	run a gel to check vector and insert concentrations and allow calculation of a more accurate insert:vector molar ratio in the ligation step (don’t skip this step)
+
+
+==blunt-end ligation==
+
+*shoot for 10-15 ng of vector DNA in a 10-15 µL ligation reaction (can up this if sufficient insert is available).
+*an insert:vector molar ration of approximately 3:1 works well here.
+*don’t use quick ligase.
+
+	1 µL 10X T4 DNA ligase buffer
+
+	200 units T4 DNA ligase 
+
+	~15 ng blunt-end EcoRV cut, phosphatase-treated, gel-purified pMCL200
+
+	insert DNA prepared as above
+
+	to 10 µL with stH20
+
+	16 C o/n
+
+	heat inactivate 65 C for 10 minutes
+
+	dialyze against water for 30 minutes on Millipore 0.25 µm filter 
+
+
+==transformation and test plates==
+
+*Top10-F’ (Invitrogen) cells used below carry a lacIq allele and TetR marker on an F’ plasmid to permit IPTG inducible gene expression, or use a lacIq E. coli cloning strain of your choice. 
+
+	electroporate 1 µL ligation product (10%) into 50 µL Top10-F' electrocompetent cells (Invitrogen)
+
+	25 µF, 2.0 kV, 200 Ohms, 1 mm cuvette 
+
+	mix w/ 1 mL room temp SOC
+
+	37º C with shaking for 1 hour
+
+plate 10 µL transformation product diluted 1:20 into SOC (200 µL total volume) onto a small LB-CAM/Tet/X-gal plate and the same onto a LB-CAM/Tet/X-gal/IPTG plate (see below for reagent concentrations)
+
+store the remaining transformation product as a 25% glycerol stock at -80º C to plate once library yield and quality are confirmed
+	
+incubate test plates o/n at 37º C
+
+do colony count to estimate yield
+
+score % blue (likely no-insert) colonies
+
+	
+	
+==quality check==
+
+pick 6-10 white colonies from the LB-CAM/Tet/X-gal/IPTG test plate
+
+grow up o/n liquid cultures and prep plasmid DNA (4 mL of culture is plenty)
+
+digest prepped DNA to check insert presence/length
+
+2 µL NEB buffer 2
+
+5 units BamHI (New England Biolabs)
+
+5 units HindIII (New England Biolabs)
+
+200 ng plasmid DNA
+
+H20 to 20 µL
+		
+37º C for 4 hours
+
+65º C for 20 minutes 
+
+run out on 1% agarose gel w/ EtBr to visualize bands 
+		
+
+==plate library for automated picking==
+
+*library picking done with QPixII robot (Genetix).
+
+pour large rectangular LB-CAM/Tet/X-gal/IPTG plates (no bubbles)
+
+plate glycerol stock of transformation <3000 colonies/plate (bring volume to 600 µL with SOC media for plating)
+
+37º C overnight then store 2 days at 4º C to let blue color develop on no-insert clones
+
+pick as for fosmid libraries, except set QPixII to pick only white colonies
+
+
+	
+==working concentrations and stock solutions==
+
+chloramphenicol (CAM) used at 12.5 µg/mL; stock is 12.5 mg/mL in EtOH
+
+Tetracycline (Tet) used at 10 µg/mL; stock is 10 mg/mL in 50% EtOH
+
+X-gal used at 40 µg/mL; stock is 40 mg/mL in dimethylformamide
+
+IPTG used at 1 mM; stock is 500 mM in H20 (0.71 g IPTG in 5 mL H20, filter 0.2 µm)

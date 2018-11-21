@@ -1,0 +1,175 @@
+==POC==
+http://www.ci.berkeley.ca.us/environmentalhealth/images/bacteria.gif
+<br>
+Maxine
+
+==Function==
+*To design an input for receiver unit 1 (ToxR) and receiver unit 2 (FecA)
+**Receiver 1:
+***To design a input (ligand) with 2 fluorescein molecules attached by a piece of DNA, which will be used in the intermediate step of testing if binding of an antigen to our system can cause dimerization and subsequent transcription of the desired output gene.
+**Receiver 2:
+***Input here is simply just a fluorecein molecule to test if binding of an antigen to our system can cause a conformation change and subsequent transcription of the desired output gene.
+
+==Device Depiction==
+<center>
+<table>
+<tr><td>
+[[Image:Devicepic.gif|350px]]
+</td>
+<td>http://www.steve.gb.com/images/molecules/phthalates/fluorescein.png
+<br>
+Fluorescein Structure
+</td></tr></table>
+</center>
+
+==Device Parts==
+<table>
+<tr>
+<td>
+Lengths:<p>
+10 bp<br>
+12 bp<br>
+15 bp<br>
+20 bp
+</td>
+<td>
+[[Image:DNA.gif]]
+</td></tr><table>
+* A pair of ssDNA strands complementary to each other, each bound to a fluorescein molecule at the 5' end, of various lengths.
+<p>
+http://www.biocompare.com/images/techart/Qiagen_Endofree_fig1.jpg
+
+==Current Status==
+===Completed Work===
+# Determined the length and content of DNA between fluorescein molecules
+## 10 bp ~ 33.2 A: because DNA twists every 33.2 A, at this point, the fluorescein molecules, on different strands of DNA, will be pointing directly away from each other, 180 degrees apart
+##12 bp ~ 39.2 A: fluorescein molecules will be pointing 90 degrees apart
+##15 bp ~ 50.2 A: fluorescein molecules will point in the same direction
+##20 bp ~ 66.4 A: fluorescein molecules will point 180 degrees away from each other
+# Obtained sequence of puc19 and used it for DNA construct
+# Ordered from Invitrogen, with TK's help--should arrive Friday, Jul 15
+
+===Steps to take===
+# Figure out if/how the ligand can pass through the outer membrane of the E.coli cell
+## Make cell wall more permeable with electroporation, heatshock cells, or find cells with mutation in the outermembrane??
+## Find other types of inputs that are small enough to fit into the cell
+# Determine if RE sites should be added into the piece of DNA (for negative testing of dimerization)
+
+===Current Work===
+*<b> Figure out if/how the ligand can pass through the outer membrane of the E.coli cell</b>
+
+:* <b> Troubling Data </b>
+::cell membrane premeability ~ 600 Daltons ~ 6 amino acids [http://www.rzuser.uni-heidelberg.de/~u53/abstracts/macdonald.html Source]
+::DNA base pair average molecular weight ~ 650 Dalton [http://www.growtall.com/technical-data3.htm Source] and [http://www.eppendorf.com  Source]
+::Fluorescein: 330 daltons
+::Also, see "DNA specs" under "Maxine's Notes" Section
+
+:* <b> Possible Solutions</b>
+
+::*<b>Is ligand linear enough (i.e. it has a small cross-sectional area) to fit through the outer membrane despite its large mass? </b>
+:::Fluorescein dimers for Epo receptor: best linker ~ 45 A
+:::DNA diameter: ~26 A
+:::"Antisense agents are 10 or more bp, and this length is typically too large for efficient passive cellular uptake by diffusion across lipid bilayers" [http://www.jbc.org/cgi/content/full/277/9/7144 Source]
+::*<b>Use Bacillus Subtilis instead of E. Coli</b>
+:::Permeability estimated to be 25kDa.  "The Permeability of the Wall Fabric of E. Coli and Bacillus subtilis"
+:::Use DNA uptake system??
+::::[http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=372826&tools=bot Genetic competence]
+::::[http://textbookofbacteriology.net The Bacillus Genus] 
+::*<b>Use other types of inputs</b>
+:::NPN as possible replacement for fluorescein? [http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=89666 Paper] [[../NPN/]]
+:::Nitrocefin as poss replacemeht for fluorescein? [http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=89666 Paper] [[../Nitrocefin/]]
+:::scFV that binds to isoketal adducts [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=15082070 Paper ]   [http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&val=56783236 Sequence]
+:::<s>Digoxin</s>: 780 Da -- too heavy
+
+::*<b>Increase cell wall permeability:</b>
+:::*Mutation in outer membrane: "Lipoprotein Mutation Accelerates Substrate Permeability-Limited Touluene Dioxygenase-Catalyzed Reaction," Biotechnology Progress (article not available online--see Maxine for copy of printed version)
+:::*Attachment of cell-permeabilizing peptide to our input [http://www.jbc.org/cgi/content/full/277/9/7144 Paper] [[../PNA Paper Review/]]
+:::*Electroporation
+:::*EDTA treatment
+:::*Heatshock
+
+::*<b>DNA transporter: bacterial conjugation--too complicated??</b>
+
+==Experiments==
+[[../Some initial fluorescene uptake results/]]<br>
+[[../Old Preliminary Dimer Uptake Experiment Protocol/]]
+
+===Preliminary Experiment: Uptake of Fluorescein and Fluorescein Dimers by Chemically Competent and Non-competent Bacteria===
+<b>Materials</b>
+*Competent cells (taken from Tom Knight's Lab)
+*Plate of MC4100 cells
+*M9 media
+*Fluorescein solution
+*Fluorescein dimer solution
+*Microscope: cover slips, cover slides, wells, agarose gel, penny
+*Shaker
+
+<b>Procedure</b>
+#Grow cells overnight in m9 media from the MC4100 plate.
+#Make up the following solutions: 5 micromolar solution of fluorescein dimers in m9, 5 micromolar solution of fluorescein in m9
+#Take OD of overnight culture and competent cells.  (If using the nanodrop machine multiply the reading by 10 to obtain the OD.)  Take the correct ml of culture to obtain an eventual 20 microliter sample with a concentration of ~6 X 10^8 cells/ml.
+##6 X 10^8 cells/ml*(20 microliters)*(1ml/1000 microliters)*( OD here )= ________ ml of culture
+#Take the amount calculated above of overnight and competent cell culture and pipet into 6 labelled eppendorf tubes, 3 overnight, 3 competent.  Centrifuge 1 min, 13,000 rpm.  Pour off supernatant.
+#Resuspend competent cells and overnight cells in 5 micromolar fluorescein solution, 5 micromolar fluorescein dimer solution, and M9, making a total of 6 tubes.
+#Incubate on bench for 1 hour on shaker.
+##While waiting, make agarose gel pads.  To make these, place a cover slip on top of a penny, then drop a small amount of agarose onto the cover slip.  Place another cover slip on top, and then wait for agarose gel to harden. 
+#Centrifuge 1 min, 13,000 rpm and resuspend cells in m9 media.
+#Microscope: Peel off the top cover slip of the agarose gel pad.  Cut a small piece of the agarose using a razor, drop a 5 microliter sample onto the small piece of gel, then flip upside down and place in well.  
+#Data collection
+##Take a bright field and fluorescent picture for each sample, making a total of 12 pictures
+#Image processing: for each picture...
+##Make sure to keep an iplab version saved
+##Select a region of the background and note average fluorescence level
+##Select 2 fluorescent cells and note average fluorescence level
+
+===Fluorescein Dimer Uptake and Cell Viability Experiment===
+<b> Materials </b>
+*MC4100 cells
+*EDTA solution
+*Solution of competent MC4100 cells
+*Electroporator
+*LB media
+*M9 media
+*Fluorescein dimer solution (dimer + LB) (concentrations based on results of Will's experiment (see below)
+*Fluorescein solution (Fluorescein + LB) (")
+
+<b>Procedure </b>
+#Culture MC4100 cells overnight in LB
+#Centrifuge cells, remove supernatant, resuspend in M9 media
+#Dilute cells (concentrations??)
+#Split into 5 aliquots.  Label 9 tubes and plates
+#Control 1: Centrifuge and resuspend aliquot 1 in fluorescein dimer solution.  Note volume and concentration.
+#Control 2: Centrifuge and resuspend aliquot 2 in fluorescein solution.  
+#heatshock: Put aliquot 3 in 42 degrees C shaking water bath for 1 minute.  Centrifuge and resuspend in fluorescein dimer solution.
+#CaCl2: Take competent cells (of the same volume and concentration as step 5) and centrifuge and resuspend in fluorescein dimer solution.
+#EDTA: Put aliquot 4 in 0.8 mM EDTA.  Centrifuge and resuspend cells in fluorescein dimer solution.
+#Electroporation: Put aliquot 5 in electroporator (?)
+#Cacl2 + heatshock: Put competent cells (same volume and concentration as step 5) into 42 degrees C shaking water bath for 2 min.  Centrifuge and resuspend in fluorescein dimer solution.
+#Cacl2 + EDTA: Put competent cells (same volume and concentration as step 5) into 0.8 mM EDTA.  Centrifuge and resuspend cells in fluorescein dimer solution.
+#Cacl2 + EDTA + heatshock: Do step 11, and then place in shaking water bath, 42 degrees C, 2 min.  Centrifuge and resuspend cells in fluorescein dimer solution.
+#Wait for cells to recover (place on roller drum at 37 degrees for 15 minutes).
+#Make appropriate dilution for plating, then plate a portion of contents of each of the 9 tubes.
+#Make slides of contents of 9 dubes and check for fluorescence.
+
+===Input Reception===
+<b>Questions</b>
+# Is our fluorescein dimer entering into the cell?
+# Distance in space between flurs. -- might depend on 3D conformation/wobblyness
+# Separate out single from double stranded
+
+===Conclusion===
+Mixed results for data.  Not clear if competent cells can take up input more readily than regular cells can.
+[http://www.fisheroligos.com/tec_flc.htm Fluorescein information]
+
+==Open Issues==
+*Is fluorescein too big to get into the periplasm?
+*Important to note that the optimal distance of 12/13 mer was for the EpoR protein.. ToxR might have a different optimal distance.
+
+==Need Help With==
+Issue: can we ignore the fact that our construct is too many Daltons by assuming that according to the geometry, our construct is linear enough to pass through the outer membrane?
+* Find people with experience w/cell membrane permeability of e. coli
+* Find different way to link fluorescein molecules
+
+==Maxine's Notes==
+(this section is purely for myself so that I have a spot to put my own work)
+[[../Maxine's Notes/]]

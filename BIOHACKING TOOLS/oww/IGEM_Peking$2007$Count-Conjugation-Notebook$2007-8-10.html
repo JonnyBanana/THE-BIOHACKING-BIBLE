@@ -1,0 +1,159 @@
+=Tandem Ori_T by Qu Mingzhi=
+==Double digesting test for F-OriT_J23066_OriT_pSB1A2 & R0010==
+*use Double digesting test for gel extraction.
+*F-OriT_J23066_OriT_pSB1A2 digestion system contains:
+<pre>
+4 µl       10*M buffer
+1 µl       EcoRI
+1 µl       XbaI
+20 µl      Plasmid
+14 µl      dH20
+--------------------------
+40 µl      Total
+</pre>
+*R0010 digestion system contains:
+<pre>
+4 µl       10*H buffer
+1 µl       EcoRI
+1 µl       SpeI
+20 µl      Plasmid
+14 µl      dH20
+--------------------------
+40 µl      Total
+</pre>
+
+===electrophoresis result before gel extraction===
+* from ''left'' to ''right'':
+#F-OriT_J23066_OriT_pSB1A2  -1 @ EcoRI/XbaI
+#F-OriT_J23066_OriT_pSB1A2  -2 @ EcoRI/XbaI
+#F-OriT_J23066_OriT_pSB1A2  -3 @ EcoRI/XbaI
+#R0010 -1        @ EcoRI/SpeI
+#R0010 -2        @ EcoRI/SpeI
+#R0010 -3        @ EcoRI/SpeI
+#marker （DL2000 plus)
+[[Image:Peking_2007-8-8_1-3oriT-J23066-oriTE-X_4-7r0010E-S.jpg‎]]
+
+===electrophoresis result after gel extraction===
+* from ''left'' to ''right'':
+   1-3 F-OriT_pSB1A2_OriT_pSB1A2 vector @ EcoRI/XbaI
+   4-7 R0010  fragment @ EcoRI/SpeI
+     8 marker （DL2000 plus)
+[[Image:Peking_2007-8-10_FAST_Orit-J23066-oriT_psb1A2,PlacI.jpg‎ ]]
+*Problems with R0010 gel extraction ,we will try ligation, we will do another copy of R0010
+
+==Ligation: R0010 -> F-OriT_J23066_OriT_pSB1A2 ==
+*Ligate the R0010 fragment and F-OriT_J23066_OriT_pSB1A2 vector 
+*use ''super fast T4 DNA ligase''
+*''super fast T4 DNA ligase'' Ligation system contains:
+<pre>
+1   µl     F-OriT_J23066_OriT_pSB1A2 vector
+7   µl     R0010 fragment 
+0.5 µl     ''super fast T4 DNA ligase''
+1   µl     10X T4 ligase buffer
+0.5 µl     dH20
+--------------------------
+10 µl     Total
+</pre>
+*16℃ for 20 min!
+
+==Amplification Culture of PlacI_F-OriT_J23066_OriT_pSB1A2 (''fast T4 ligase'')==
+*control plate received clones. this ligation experiment failed.
+*Just for test:I will select a PlacI_F-OriT_J23066_OriT_pSB1A2 Colonies from Plate, Culture in liquid LB,waiting for mini-prep.
+===result:failed===
+*after mini-prep & digestion
+* from ''left'' to ''right'':
+#PlacI-I741051 FAILED -1 @ EcoRI/PstI
+#PlacI-I741051 FAILED -2 @ EcoRI/PstI
+#I741051 @ EcoRI/PstI
+#pSB1A2 fragment(seems there's some problem with this fragment)
+#Maker (DL2000 plus)
+[[Image:Peking_2007-8-10_Plac-I74051_EcoRI+PstI.jpg‎]]
+
+=Lock & Key By Yu Tao=
+==Sequencing==
+*Send the precultured R0010<-J23066 to Invitrogen for sequencing.
+*Use vf2 primer.
+==Key1 & Lock1 Efficiency Test==
+===Rough Result of Key1 & Lock1 Efficiency Test===
+*Overnight incubation.
+*Tip a drop of overnight liquid culture of each sample on a slide.
+*From top to bottom:
+#I7100-DH5a
+#R0010.J23066(Key)-DH5a
+#R0010.J23066(Key) and R0040.J23078.E0040.B0015(Lock)-DH5a induced by IPTG
+#R0010.J23066(Key) and R0040.J23078.E0040.B0015(Lock)-DH5a not induced by IPTG
+#DH5a negative control.
+[[Image:Example.jpg]]
+
+*Conclusion: It seems that most of the results conform to the expectation. The lock can really 'lock' the EGFP, and the key can unravel it. However, IPTG appears to be usefulless, or even has negative effect on the efficiency of key. Nevertheless, a more accurate test will be carried out at the end of August.
+
+==Prepare Competent Cells==
+*There are only 20 or so tubes of competent cells left.
+*Newly prepare about 50 tubes of competent cells, 100uL/tube.
+*Trasform 1uL I7100 minipreped plasmids to see the efficiency.
+
+==PCR J01010 and J01008==
+*The primers of new key(J01008) and new lock(J01010) have arrived.
+*We are going to zip the primers together in order to produce a longer integral part. 
+*All primers: stored as 100uM.
+*PCR system contains:
+
+<pre>
+For J01010:                                For J01008:
+                                           1 µL       Primer 1
+0.5 µL     Primer 1                        1 µL       Primer 2
+0.5 µL     Primer 2                        1 µL       Primer 3
+4 µL       dNTP                            4 µL       dNTP
+0.5 µL     Taq                             0.5 µL     Taq
+5µL        10 X buffer                     5µL        10 X buffer
+38.5µL     dH20                            37.5µL     dH20
+--------------------------                 --------------------------
+50 µl      Total                           50 µl      Total
+</pre>
+
+*Primer final concentration 1uM.
+*Add a drop of liquid paraffin to each system.
+*PCR program setting:
+
+<pre>
+For J01010                                 For J01008
+Step1     94℃ 5min                        Step1     94℃ 5min
+Step2     94℃ 30s                         Step2     94℃ 30s  
+Step3     57℃ 30s                         Step3     55℃ 30s
+Step4     70℃ 30s                         Step4     70℃ 30s 
+Step5     Go to step 2 for 4 times         Step5     Go to step 2 for 3 times
+Step6     72℃ 10min                       Step6     72℃ 10min
+End                                        End
+</pre>
+
+===Electrophorsis Result===
+*from ''left'' to ''right'':
+#J01010 PCR product
+#J01008 PCR product
+#marker
+[[Image:Example.jpg]]
+
+==J01010 & J01008 PCR Product Purification==
+*Use Transgen EasyPure PCR Purification Kit.
+*50uL per tube after purification.
+
+==Double Digestion: J01010 & J01008==
+*Digesting J01010 and J01008 with PstI and XbaI. 
+*Each digestion system contains:
+
+<pre>
+4 µl       10*M
+1 µl       XbaI
+1 µl       PstI
+10 µl      PCR product
+4 µl       BSA
+20 µl      ddH20
+--------------------------
+40 µl      Total
+</pre>
+
+*37℃ culutre overnight (at least 12 hours).
+
+==Sequecing==
+===Sequecing Result of Sample #1===
+*The report says it fails to sequece Sample #1, damn it...

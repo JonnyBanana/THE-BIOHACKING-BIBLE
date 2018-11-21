@@ -1,0 +1,43 @@
+Basic Local Alignment Search Tool, or BLAST, is an algorithm for comparing biological sequences, such as the amino-acid sequences of different proteins or the DNA sequences. A BLAST search enables a researcher to compare a query sequence with a library or database of sequences, and identify library sequences that resemble the query sequence above a certain threshold. For example, following the discovery of a previously unknown gene in the mouse, a scientist will typically perform a BLAST search of the human genome to see if human beings carry a similar gene; BLAST will identify sequences in the human genome that resemble the mouse gene based on similarity of sequence.
+
+BLAST is one of the most widely used bioinformatics programs, probably because it addresses a fundamental problem and the algorithm emphasizes speed over sensitivity. This emphasis on speed is vital to making the algorithm practical on the huge genome databases currently available, although subsequent algorithms can be even faster.
+
+:-- from [http://en.wikipedia.org/wiki/BLAST Wikipedia entry on BLAST]
+
+=Software=
+BLAST standalones can be downloaded from http://www.ncbi.nlm.nih.gov/BLAST/download.shtml
+
+=Scoring Matrices=
+ftp://ftp.ncbi.nih.gov/blast/matrices/
+*BLOSUM62 is the usual scoring matrix used for amino acid sequences
+
+=Parsing of Output=
+[http://www.biopython.org BioPython], [http://bioperl.org BioPerl], and [http://biojava.org BioJava] have modules that extraordinarily simplify BLAST parsing in a variety of formats. A [http://bioperl.org/wiki/HOWTO:SearchIO HOWTO] on BLAST parsing in [[BioPerl]] illustrates the power of scripting this parsing. 
+
+=Parallel BLAST=
+MPI-BLAST is quite good, but not very robust.
+
+=Databases=
+See ftp://ftp.ncbi.nih.gov/blast/db/
+*NR is one of the most important databases.
+*Individual Genomes can be downloaded from ftp://ftp.ncbi.nih.gov/genomes/
+*Bacterial Genomes : ftp://ftp.ncbi.nih.gov/genomes/Bacteria/
+
+=References=
+*Altschul SF, Gish W, Miller W, Myers EW, and Lipman DJ. Basic local alignment search tool. J Mol Biol 1990 Oct 5; 215(3) 403-10. doi:10.1006/jmbi.1990.9999 pmid:2231712.
+*Altschul SF, Madden TL, Schaffer AA, Zhang J, Zhang Z, Miller W, and Lipman DJ. Gapped BLAST and PSI-BLAST: a new generation of protein database search programs. Nucleic Acids Res 1997 Sep 1; 25(17) 3389-402. pmid:9254694.
+*McGinnis S and Madden TL. BLAST: at the core of a powerful and diverse set of sequence analysis tools. Nucleic Acids Res 2004 Jul 1; 32(Web Server issue) W20-5. doi:10.1093/nar/gkh435 pmid:15215342.
+*Korf I, Yandell M, and Bedell J, BLAST O'Reilly & Associates, 2003.
+
+=External Links=
+* [http://www.ncbi.nlm.nih.gov/BLAST/ NCBI-BLAST website]
+* [http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html NCBI-BLAST Tutorial]
+* [http://blast.wustl.edu/ WU-BLAST] (Another implementation of BLAST maintained by Warren Gish at Washington University)
+* [http://services.nbic.nl:4080/bb/cgi-bin/bb_login.cgi NBIC mpiBLAST] (Netherlands Bioinformatics Centre, running mpiBLAST)
+* [http://www-users.cs.umn.edu/~rangwala/final_bglBLAST.pdf Parallel BLAST]  A dual scheduling BLAST tested on the Blue Gene/L
+* [http://wikiomics.org/wiki/BLAST BLAST HOWTO] at the [http://wikiomics.org Wikiomics bioinformatics wiki]
+
+[[Category:Protocol]]
+[[Category:In silico]]
+[[Category:DNA]]
+[[Category:Protein]]

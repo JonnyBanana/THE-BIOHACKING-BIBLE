@@ -1,0 +1,44 @@
+This protocol describes one-step real time quantitative reverse transcription PCR to quantify relative levels of a particular mRNA sequence between two samples.  This technique is also called known commerically as Taqman, qRT-PCR, real-time PCR.  This particular protocol describes use of a flourescent labeled probe (FAM) to provide readings.   
+
+== Starting Materials ==
+* Validated PCR primers & probe that are efficient over the range of RNA that you are assaying. Primers are typically designed with a 58 degree Tm but may vary by lab.  
+* PCR primers and probe for a house keeping gene (ie B-actin, GAPDH, RPL19)
+* Taq Polymerase, MuLV RT
+* dNTPs, MgCl2, nuclease free water
+* PCR strip caps or 96-well plates with transpearant caps
+* total RNA (~50ng per reaction, diluted to 10ng/ul)
+
+== Basic Principle ==
+* Combine RT, Taq, dNTPs, primers, probe and RNA in a single tube.  Add enzymes last.  
+* Reverse transcribe the RNA for ~ 30' to form a template for Taq-mediated PCR.  
+* Do 40 cycles of PCR.  Measure the levels of template after each cycle with a real-time PCR machine.  
+* Analyze the results.
+
+== Protocol ==
+* Generate a 10x solution for each gene target that includes the appropriate forward primer, reverse primer, and labelled probe (FAM-BHQ1, FAM-TAM, etc).  
+* Combine RT, Taq, dNTPs, MgCl2 and H20 in a single tube called your master mix.  Make sure to add enzymes last. Mix by pipetting (do not vortex enzymes).
+* Add the appropriate quantity (refer to your kit) of master mix to 10x primer mix.  
+* Dilute RNA to ~ 10ng/ul.  Pipet 5 ul into each well.
+* Add PCR reaction mix for each gene target into the appropriate well.  
+* Cycles for MuLV reverse transcriptase with Amplitaq Gold from Applied Biosystems.  This program may need adjustments depending on your primer design.  It's a good starting point.  
+** 30' at 48 degrees
+** 10' at 94 degrees
+** 40 Cycles
+*** 30" 94 degrees
+*** 60" 60 degrees
+*** (optional) 60" 72 degrees
+** END
+* The first time you use a primer set it is a good idea to run the sample out to ensure that you're getting one band, thus showing that your primers are specific for your desired gene product.   
+
+== Analysis ==
+Delta-Delta Ct Method.  See Livak KJ, Schmittgen.  Methods '''25''' 402-408 (2001)
+
+== Comments & Tips ==
+* Use a master mix to ensure a consistent amount of enzyme in each tube that you will be comparing.  
+
+
+== Protocol Endorsements ==
+
+[[Category:Protocol]] 
+[[Category:In vitro]] 
+[[Category:RNA]]

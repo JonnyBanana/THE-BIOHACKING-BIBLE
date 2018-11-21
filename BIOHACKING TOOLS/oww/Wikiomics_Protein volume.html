@@ -1,0 +1,66 @@
+{{stub}}
+
+Since there are several ways to represent a protein structure, its volume can be defined in various ways, depending on what we expect from it. In any case, it requires the definition of an envelope that will be derived from the 3D atomic structure of the protein.
+
+== Definitions ==
+
+=== SAS and SES ===
+
+Solvent-accessible surface (SAS) and solvent-excluded surface (SES) are related definitions of envelopes that can be defined for a set of spheres of various radii. These spheres usually represent the non-hydrogen atoms of the protein, in a structure where water, ions and ligands can be ignored, at least if they are considered as part of the solvent.
+
+SAS <cite>lee-richards71</cite> and SES <cite>richards77 connolly83a connolly83b</cite> are defined by all the possible contacts between a spheric probe of a given radius, and the set of spheres which represent the protein atoms. The spheric probe is usually given a radius of 1.4 angstroms, and is meant to be an approximation of a molecule of water rolling on the protein. The SES delimits the volume that cannot be reached by the spheric probe (''figure needed''), while the SAS is defined by the set of positions of the '''center of the spheric probe'''. The SES is the surface which is most commonly used in molecular graphics, since it renders the notion of shape complementarity between the protein and other molecules pretty well. The SAS is equivalent to the van der Waals surface, where van der Waals radii of each atom has been augmented by 1.4 or whatever the radius of the probe sphere is.
+
+Other names for SES include ''molecular surface'' and ''Connolly surface'' named after Michael Connolly who first proposed an algorithm <cite>connolly83a</cite> to compute it.
+
+=== Contact surface ===
+
+Contact area should not be confused with SES (molecular surface). The contact surface is the part of the SES which touches atoms directly. It is therefore not continuous and there is no such thing as a "contact volume".
+
+=== Comparison of SES, SAS and contact surface ===
+
+* the SAS volume is larger than the SES volume
+* the contact surface is included in the SES, so its area is smaller.
+
+=== Cavities ===
+
+Some proteins may contain extra volume which is not filled by protein atoms. Whether this is due to a problem in the protein model or a pocket which is filled with water, its surface might be taken into account by the surface detection algorithm. This may or may not be wanted, depending on the situation. It is therefore important to be aware of that and to know what a given program actually does.
+
+=== Tessellations ===
+
+A tessellation consists in dividing the space into cells, with each cell containing one input point. [[wikipedia:Voronoi tessellation|Voronoi tessellations]] <cite>poupon04</cite> and variants of them allow a "fair" assignment of space around points. The volume of these cells can be used to describe how much volume each atom occupies.
+
+However, a tessellation will result in some cells being necessarily infinite, while some others might have very large sizes. It usable though, if the solvent around the protein model is fully represented. In this case, all protein atoms will be represented in a meaningful environment. The sum of the volume of the cells can then constitute an elegant estimation of the protein volume (see for example <cite>gerstein95</cite>). The bad news is that experimental structures usually don't come with a layer of water molecules which fully immerses the protein. Water molecules must therefore be simulated, which is somewhat less reliable. 
+
+This kind of global volume computation on a protein which is not immersed in solvent is meaningless.
+
+
+== Tools ==
+
+Note: algorithms to compute SAS areas and volumes are much simpler than those for SES, however SES is really what most people want, see above.
+
+=== Libraries ===
+
+=== Web applications ===
+
+=== Standalone programs ===
+
+[http://www.scripps.edu/~sanner/html/msms_home.html MSMS] is a command-line executable which performs pure geometric computations of molecular surfaces (SES). It returns area, volume, and full triangulation if wanted. The position and radius of each atom must be specified.
+
+== References ==
+<biblio>
+#lee-richards71 pmid=5551392 // about solvent-accessible surface (SAS)
+#richards77 pmid=326146 // defines molecular surface (SES), without giving an algorithm to compute it (see <cite>connolly83a</cite>)
+#connolly83a Connolly ML. ''Analytical molecular surface calculation''. J. Appl. Cryst. 1983 Oct 5; 16(5) 548-558. [[doi:10.1107/S0021889883010985]]
+// gives an algorithm to compute the molecular surface or "Connolly surface"
+#connolly83b pmid=6879170
+#poupon04 pmid=15093839
+#gerstein95 pmid=7540695
+#pattabiraman95 pmid=9052974 // also of interest for those interested in protein packing
+</biblio>
+
+== Credits ==
+{{credits}}
+* this article was initiated by [[User:Martin Jambon|Martin Jambon]] with definitions and classic references
+
+[[Category:Structure]]
+[[Category:Protein]]

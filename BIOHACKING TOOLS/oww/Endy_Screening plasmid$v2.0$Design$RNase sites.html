@@ -1,0 +1,56 @@
+Problem:
+In the Screening Plasmid we would like to decouple the measurement (FP expression) as much as possible from the device being measured.  One necessary decoupling is the decoupling of the mRNA of the device and the FPs.  We would like to have RNase cut sites to separate the FP mRNA from the device mRNA as quickly and completely as possible. 
+
+=Design plan for SP2.0 RNase sites=
+Based on the below information, it looks like it's worth looking into using RNase III sites.  What looks the best is the single strand cutters from T7 that leave a hairpin behind.  Next step is to figure out which of those seem like the best bet - remember it's possible to flip the loop at the cut site 180 degrees to cut on the other side (depending on whether you want to leave a 3' or 5' hairpin.)
+
+=Rnase III=
+*[http://www.chem.qmul.ac.uk/iubmb/enzyme/EC3/1/26/3.html EC 3.1.26.3]
+
+==Substrate==
+[[Image:Nicholson1997Fig1.PNG|thumb|250px|right|(A) Substrate alignment analysis. (B) The “disfavored” bp, displayed in a dsRNA structure. The proximal box (PB) and distal box (DB) are included within an 11-bp helix. Arrowheads indicate the (blocked) cleavage sites. (C) Absence of conservation (degeneracy) of RNase III substrate sequence. H = A, G, U, with D′ (A, C, U) complementary to H; B = C, G, U, with V′ (G, C, U) complementary to B; W, W′ = A, U. (D) Secondary structure of the T7 R1.1 RNase III substrate, showing the proximal and distal boxes and the single cleavage site (arrowhead).]]
+
+from <cite>Elela-2004</cite>:
+"''E.Coli'' RNase III would preferably recognize substrates with two turns of an RNA helix (~21bp) but could also recognize RNAs with less than two turns of an RNA helix.  The interaction does not involve specific motifs but instead is regulated by the presence of anti-determinants.  The binding of ''E.coli'' RNase III is enhanced by Mg2+ and could be achieved in the absence of the double stranded RNA binding domain (dsRBD), albeit inefficiently, suggesting that the nuclease domain is the main source of substrate specificity.  This, most substrates that bind are cleaved."
+
+from <cite>Nicholson-1999</cite>:
+"RNase III substrates contain a 15-20bp structural element.  The minimum length that confer reactivity is slightly greater than one a-helical turn.  This, a 12bp RNA hairpin, derived from a T7 RNaseIII substrate and which also contains a single-stranded 5' extension, can be efficiently cleaved in vitro.  However, helix length per se does not select the scissile bond, since either shortening or lengthening the ~22bp stem of a T7 RNase III substrate does not change the site of cleavage."
+
+from <cite>Nicholson-1999</cite>:
+"The reactivity epitopes for a consensus E. coli RNase III substrate may be summarized as follows. A primary epitope is a dsRNA element of minimal size slightly greater than one helical turn, and which extends in at least one direction from the cleavage site. Many substrates have helical elements extending in both directions from the cleavage site, which may reflect symmetric binding of the homodimeric enzyme to substrate [131]. The cleavage site is determined by the site of RNase III binding, which in turn is dictated by bp sequence. More specifically, the cleavage site is identified by the absence of antideterminant W-C bp within the 3-bp proximal box and 2-bp distal box. It is possible that the RNase III substrates may tolerate bp mismatches at positions outside the proximal and distal boxes. Finally, an appropriately positioned internal loop can provide the necessary reactivity epitope, directing single-strand cleavage."
+
+===Single-strand cutting in T7===
+from <cite>Nicholson-1999</cite>:
+"Most of the T7 RNase III substrates exhibit an asymmetric [4 nt/5 nt] internal loop, wherein the single cleavage site occurs in the 5-nt strand. Internal loops enforce a pattern of single-strand cleavage. Thus, changing the internal loop of a T7 substrate to fully W-C base-paired form allows coordinate cleavage on both sides of the helix, which is the pattern observed for regular dsRNA. The internal loop also can control the site of cleavage. '''Thus, a 180° rotational transposition of the internal loop in a T7 substrate equivalently transposes the cleavage site (A.W. Nicholson, unpublished). A functional role for single-strand cleavage is to provide a 3′ hairpin, which can protect the upstream sequence from 3′→5′ exonucleases.'''
+
+Comparison of the asymmetric internal loops of T7 RNase III substrates reveals conserved nucleotides, suggesting a specific internal loop structure necessary for site-specific, single-strand cleavage. However, a significant fraction of a T7 RNase III substrate pool which contains a randomized internal loop of 49 (>200 000) different sequences is cleaved at a comparable rate as the single-sequence parent substrate, and at the equivalent site (I. Calin-Jageman and A.W. Nicholson, unpublished). This result argues against a requirement for a specific internal loop sequence (and therefore specific structure) for reactivity. Nevertheless, specific sequences may confer optimal reactivity: a significant fraction of the T7 substrate pool with a sequence-randomized internal loop is resistant to cleavage (I. Calin-Jageman and A.W. Nicholson, unpublished)."
+
+===Design considerations===
+We would like to leave protective hairpins on both the 5' and 3' ends.  The single cutter T7 RNase III sites provide a 3' hairpin, however for the downstream FP we will need to rotate the internal loop 180° in order to flip the cut site. (see above).  Need to determine which single cutter RNase III sites are the best choice.
+
+==Kinetics==
+from <cite>Nicholson-1999</cite>:
+"RNase III recognizes dsRNA structures formed by base-paring of comlpementary sequences flanking the 16S and 23S rRNAs.  Since the cleavage reactions occur during transcription, the full-length precursor normally is not observed."
+
+===Design Considerations===
+This is a big point in favor of RNase III over processive RNases like RNaseE.  How general are the above results - would they hold for the SP?  What experiments did they use to quantify the transcripts?
+
+==RNaseIII references==
+*Nicholson 2005<cite>Nicholson-2005</cite> -- Kinetics
+*Court 1984<cite>Court-1984</cite> -- Kinetics
+*Schlessinger 1990<cite>Schlessinger-1990</cite> -- How RNase III cleaves rRNA for 23S and 16S (and how fast)
+*Elela 2004<cite>Elela-2004</cite> -- RNA determinants for binding and cleavage 
+*Nicholson 1997<cite>Nicholson-1997</cite> -- Found the anti-determinants here via sequence alignment of known RNaseIII sites.
+*'''Nicholson 1999<cite>Nicholson-1999</cite> -- good review of all RNases, most useful read in this list.'''
+*Wulff 1990<cite>Wulff-1990</cite> -- substrate recognition (?)
+
+==References==
+<biblio>
+#Nicholson-2005 pmid=15699182 
+#Court-1984 pmid=6234400 
+#Schlessinger-1990 pmid=1701293
+#Elela-2004 pmid=14581474
+#Nicholson-1997 pmid=9391043
+#Nicholson-1999 pmid=10371039 
+#Wulff-1990 pmid=1697676
+</biblio>

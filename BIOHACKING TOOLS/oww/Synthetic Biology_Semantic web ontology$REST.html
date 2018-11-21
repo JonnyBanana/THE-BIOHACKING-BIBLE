@@ -1,0 +1,34 @@
+REST stands for Representation State Transfer, and suggests that what the Web got right is having a small, global set of verbs (GET, POST, PUT, HEAD, etc) applied to a potentially infinite set of nouns (URIs).
+*[http://en.wikipedia.org/wiki/Representational_State_Transfer REST] - Wikipedia article
+*[http://rest.blueoxen.net/ RestWiki]
+*[http://www.projectzero.org/ Project Zero] provides free development code (based on Groovy and PHP) than enables end users to build mainly “REST-style services, integration mash-ups and rich Web interfaces.”
+*[http://www.xml.com/pub/at/34 The RESTful Web] - articles from xml.com
+*[[Wikipedia:Representational_State_Transfer|Representational State Transfer]]
+*[http://www.xml.com/lpt/a/2004/12/01/restful-web.html How to Create a REST Protocol]
+*[http://www.xfront.com/REST-Web-Services.html Building Web Services the REST Way]
+*[http://www.xml.com/pub/at/34 The Restful Web]
+*[http://www.w3.org/2001/tag/doc/whenToUseGet.html URIs, Addressability, and the use of HTTP GET and POST]
+*[http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html HTTP/1.1: Method Definitions]
+*[http://vanrees.org/research/phd/getputpostdelete Get put post delete: http semantics]
+*[http://bitsko.slc.ut.us/blog/restful-api.html A RESTful Web Interface] - implementation example in Perl
+
+*Interface genericity
+:in REST each distributed software component exposes the same interface (or at least the same minimal interface).
+
+*the following rules of thumb can be extracted:
+**when retrieving information without changing the state at the server, use GET
+**when explicitly setting some piece of state on the server, use PUT
+**for pretty much everything else that changes state at the server in a loosely coupled way, use POST
+**for other operations that change state on the server in an early-bound manner (i.e. the client needs to know explicitly what is happening), define a new HTTP method (ok, so this isn't derived from any of the examples - sue me)
+
+*[http://www.intertwingly.net/wiki/pie/RestAndRpc Is SOAP RESTful?]
+:There is a profile of SOAP that supports transferring the state of a resource using only the limited actions of HTTP or some other protocols -- that profile is RESTful. Other uses of SOAP carry "actions" to be performed in the SOAP header, regardless of the protocol used -- those would not be RESTful. 
+
+*[http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm Fielding Dissertation: Chapter 5] Representational State Transfer (REST)
+:All REST interactions are stateless. That is, each request contains all of the information necessary for a connector to understand the request, independent of any requests that may have preceded it. This restriction accomplishes four functions: 1) it removes any need for the connectors to retain application state between requests, thus reducing consumption of physical resources and improving scalability; 2) it allows interactions to be processed in parallel without requiring that the processing mechanism understand the interaction semantics; 3) it allows an intermediary to view and understand a request in isolation, which may be necessary when services are dynamically rearranged; and, 4) it forces all of the information that might factor into the reusability of a cached response to be present in each request.
+
+*[http://www.ics.uci.edu/~fielding/pubs/dissertation/evaluation.htm Fielding Dissertation: Chapter 6] Experience and Evaluation
+:The definition of resource in REST is based on a simple premise: identifiers should change as infrequently as possible.
+
+*[http://effbot.org/zone/rest-vs-rpc.htm REST vs XML-RPC vs SOAP]
+:So when we started working on the design for a large image distribution and processing system, we already had a simple and scalable design, and the tools to support it. Just send XML documents representing objects back and forth over HTTP, and use the lightweight DOM structure to hold parsed versions of them inside the application. Add some glue code to let application code access the DOM structures as ordinary Python objects, and you have a complete and scalable system.

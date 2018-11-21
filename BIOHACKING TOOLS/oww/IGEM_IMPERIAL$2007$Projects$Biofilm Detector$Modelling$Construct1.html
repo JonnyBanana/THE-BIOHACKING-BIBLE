@@ -1,0 +1,63 @@
+=Construct 1: Introduction=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Modelling/Construct1/Introduction|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Modelling/Construct1/Case 1|Case 1]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Modelling/Construct1/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+With the chemical pathway below for construct 1 we can make form some initial equations about the system.
+
+[[Image: BF_model.jpg|thumb|500px|left]]
+
+<br clear="all">
+
+Our aim in modelling Infector Detector is to determine the concentration of biofilm we can detect such that we report a visible signal.  Therefore we want to relate the GFP concentration to the concentration of AHL. Starting that the rate of change in GFP concentration:
+
+:<math>\frac{d[GFP]}{dt}=k_{6}[AP]-\delta_{GFP}[GFP]\cdots\cdots(1)</math>
+
+Aussume : [AP] reaches a constant level<br>
+Reason : Treat 1st formation of AP complex as a black box - it just reaches steady state.
+
+:<math>\therefore\frac{d[AP]}{dt}=0=k_{4}[A][P]-k_{5}[AP]\cdots\cdots(2)</math>
+
+:<math>\Rightarrow[AP]=\frac{k_{4}}{k_{5}}[A][P]\cdots\cdots(3)</math>
+
+Assume : Conservation of Plux Promoters<br>
+Reason : no damage to Promoters will occour eg. no DNA damage due to old age or cell defence mechanisms attacking the DNA
+
+:<math>\displaystyle[P]_{0}=[P]+[AP]\cdots\cdots(4)</math>
+
+:<math>\displaystyle[P]=[P]_{0}-[AP]\cdots\cdots(5)</math>
+
+Substitute this into (3)
+
+:<math>[AP]=\frac{k_{4}}{k_{5}}[A]\left([P]_{0}-[AP]\right)\cdots\cdots(6)</math>
+
+Solving for [AP]
+
+:<math>[AP]+\frac{k_{4}}{k_{5}}[A][AP]=\frac{k_{4}}{k_{5}}[A][P]_{0}\cdots\cdots(7)</math>
+
+:<math>[AP]\left(1+\frac{k_{4}}{k_{5}}[A]\right)=\frac{k_{4}}{k_{5}}[A][P]_{0}\cdots\cdots(8)</math>
+
+:<math>[AP]=\frac{k_4[A][P]_{0}}{k_{5}+k_{4}[A]}=\frac{K_{\beta}[A][P]_{0}}{1+K_{\beta}[A]}\cdots\cdots(9)</math>
+
+:<math>K_{\beta}=\frac{k_{4}}{k_{5}}</math>
+
+From 9 <math>\because</math> [AP] is a constant [A] is a constant
+
+From Reaction pathways at top of page we can see that because 3 is in equilibrium 2 is in equilibrium
+
+From these two statements we can say that at equilibrium:
+
+:<math>[A]=K_{\alpha}[AHL][LuxR]\cdots\cdots(10)</math>
+
+:<math>K_{\alpha}=\frac{k_{2}}{k_{3}}</math><br><br>
+
+Substituting all of this into expression for GFP
+
+:<math>\frac{d[GFP]}{dt}=k_{6}\left[\frac{K_{\alpha}K_{\beta}[AHL][LuxR][P]_{0}}{1+K_{\alpha}K_{\beta}[AHL][LuxR]}\right]-\delta_{GFP}[GFP]\cdots\cdots(11)</math>

@@ -1,0 +1,128 @@
+==PEG fractionation==
+See beginning of experiment on [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-25|8-25]].
+<gallery>
+Image:KF-2006-08-28-gel1.jpg|gel1
+Image:KF-2006-08-28-gel2.jpg|gel2
+</gallery>
+Results: I'm confused as to why some of the nanostructures are taking so much longer to run than others in comparison with each other and with the scaffold. Also is still a bit of "double band" evidence as discussed before - maybe material stuck in the wells? Ultimately the gels could be run longer, but I think the best solution will be to use an ultracentrifuge. 
+
+
+
+==Streptavidin Bead Depletion Assay==
+
+(Because correct biotinylated oligos ordered on Saturday Early Morning haven't arrived yet, I am planning future work for me/whoever will continue with streptavidin protection assays for c5.0.  ''Italics'' indicate stuff yet to be done.)
+
+<i>
+===Immediate Future Plans for Depletion Assay===
+# Make pre-working c5.0.8(b)r and 9(b)r with incoming biotinylated oligos
+# Make working stocks c5.0.E(b)r and F(b)r with these pre-working stocks
+# Fold 3 rxns each of E(b)r and F(b)r
+# Repeat experiment done [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-23#Test_Solutions|last Wed 8.23]] using 100uL of magnetic streptavidin beads and 10uL of each reaction
+
+
+If the above depletion assay works:
+
+===Free Streptavidin Assay===
+'''1. Mix up the Stains-All stock solution.'''
+
+<pre>
+0.1% w/v STOCK SOLUTION
+-----------------------
+250mg of Stains-All lyophilized powder
+250mL of formamide
+</pre>
+
+Because the original stock jar of Stains-All will not hold 250mL but the powdered amount is exactly 250mg, the stock must be made in a new bottle.  
+
+
+IN THE DARK, quickly pipette in 10uL of formamide, pipette out into a new >250mL FOIL-WRAPPED bottle, repeat a few times and then mix in the rest of the 250mL of formamide into the larger jar. 
+
+
+
+'''2. Mix up the working stock of Stains-All, also into a foil-wrapped bottle.'''
+
+<pre>
+WORKING STOCK
+--------------
+0.005% (w/v) Stains-All 
+10% (v/v) formamide 
+25% (v/v) isopropanol 
+15 mM Trizma-HCl, pH 8.8 
+65% (v/v) H2O 
+</pre>
+
+Though the percentages v/v of formamide and H2O would technically require you to add 100mL of formamide and 650mL of H2O, when all the amounts are added, the total volume is 1020mL while the total percentages of formamide, isopropanol, and H2O add to 100%, even without the Stains-All and Trizma.  Thus, we must infer that, since the Stains-All is originally diluted in formamide by you, and the 1.5M Trizma-HCl is dissolved in water, the amounts of formamide and H2O that you actually add to the solution can be subtracted from by the amount of Stains-All stock solution and Trizma-HCl stock solution you add - in this case, exactly 10mL each, thus giving a final volume of 1000mL.
+
+For a bottle of 1000mL working stock (just halve if 500mL is all you want), you will mix up the following.  
+
+  0.005% (w/v) Stains-All 
+    Starting with 0.1% w/v stock solution:
+    0.005% = 10mg/1000mL total volume = 10mL of 0.1% stock solution
+      Thus, add <font color = red>10mL of 0.1% stock solution</font>
+  10% (v/v) formamide
+       10% v/v is 100mL, but you must subtract the 10mL the Stains-All was dissolved in.
+       Add <font color = red>90mL of formamide</font>
+  25% (v/v) isopropanol 
+       Add <font color = red>250mL of isopropanol</font>
+  15 mM Trizma-HCl, pH 8.8
+       The available stock solution of Trizma is 1.5M, or 1500mM.  Thus, to achieve 15mM we must dilute 1:100; in 1000mL, that is 10mL.
+       Add <font color = red>10mL of 1.5M Trizma</font>
+  65% (v/v) H2O
+       65% v/v is 650mL, but you must subtract the 10mL the Trizma-HCl was dissolved in.
+       Add <font color = red>640mL of H2O.</font>
+  TOTAL:
+  ------
+  10 + 90 + 250 + 10 + 640 = 1000mL! 
+
+
+'''2. Do protection assay.  Run on gel''' (2% agarose, 0.5x TBE, 10mM MgCl2, 5uL EtBr, 75V for 2hours seems to work well in respect to the ethidium front, though 100V for 1hr will get the desired separation) and stain with Stains-All (if desired, you could run an agarose gel with just free streptavidin, some oligos, and some untreated boxes/nanostructures first to see how well Stains-All works).  10uL (out of the 40uL for each reaction) of each box should be sufficient for each lane.
+
+If the lids and lid-attachment is complete by then, the protection assay should also be done with lidded unbiotinylated- and biotinylated-barrels.
+
+
+
+'''Goal:''' See if outside-biotinylated boxes show that they're attached to protein (as evidenced by a <font color = "red">red</font> protein band as well as <font color = "blue">blue</font> DNA band when stained with Stains-All) while inside-biotinylated boxes won't be attached to protein (as evidenced by a lack of a red band, but a blue band where the nanobox should run sizewise).
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Lane'''
+| align="center" style="background:#f0f0f0;"|'''Component'''
+| align="center" style="background:#f0f0f0;"|'''Condition'''
+|-
+| 1||1kb+ ladder||-
+|-
+| 2||p7308||-
+|-
+| 3||lidless barrel||untreated
+|-
+| 4||biotinylated oligos||untreated
+|-
+| 5||inside-biotinylated barrel||untreated
+|-
+| 6||outside-biotinylated barrel||untreated
+|-
+| 7||lidless barrel||free-streptavidin treated
+|-
+| 8||biotinylated oligos||free-streptavidin treated
+|-
+| 9||inside-biotinylated barrel||free-streptavidin treated
+|-
+| 10||outside-biotinylated barrel||free-streptavidin treated
+|}
+
+===Streptavidin Elution Assay===
+
+'''Goal:''' An assay showing what actually directly binds to streptavidin is probably even better than a depletion assay.
+
+We should try trials, where the goal is to elute a nanostructure bound to a bead, off of it:
+# 0.1% SDS and boiling
+# fresh trypsin ('''NO''' EDTA)?
+# larger concentrations of proteinase K (than the 2uL of the 265uL stock used before)
+
+===Thrombin Protection Assay===
+
+'''Goal:''' See that outside-aptamerized nanoboxes are retained by thrombin beads to a much greater degree than inside-aptamerized nanoboxes.  See that outside-aptamerized nanoboxes are NOT retained after treatment with free-thrombin.
+
+
+Since the original goal was to produce a box that could suck up thrombin, it would be nice for us to work on thrombin assays again.  One easy assay we can try is doing the analog for the streptavidin depletion assay with thrombin beads, with the outside- and inside-aptamered barrels.  
+
+</i>

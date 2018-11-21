@@ -1,0 +1,153 @@
+==Protocols - PCR==
+<!--INSERT THE TEMPLATE HEADER-->
+{{Streptomyces}}
+{|cellspacing="5" cellpadding="10" style="background:#000; width: 800px;"
+|-valign="top"
+|style="background:#ffffff"|
+<!--THESE CATEGORY LINES ADD THE PROTOCOL TO THE OWW PROTOCOLS PAGE-->
+[[Category:Protocol]]
+[[Category:Escherichia coli]]
+<!--CONTENT START-->
+
+==Polymerase Chain Reaction (PCR)==
+
+'''Description'''
+<br/>
+Polymerase Chain Reaction (PCR) is a method of amplifying a specific DNA target sequence. 
+The cycle involves denaturing the template double stranded DNA (dsDNA) to single stranded DNA (ssDNA). Custom designed primers/oligonucleotides then anneal to their target sequence on the ssDNA. The DNA polymerase then extends the primers in a 5’ &rarr; 3’ direction, creating a complementary double strand. The cycle repeats with the denaturing of the recently synthesised dsDNA. This becomes the template to which the unused primers will anneal. 
+A programmed thermal cycler runs through a series of specific temperatures for specific durations to achieve the amplification. 
+Primers/oligonucleotides are designed to anneal to a specific sequence of target DNA thus determining the beginning and end of the region to be amplified, e.g. flanking a gene on genomic DNA. The DNA polymerase uses Deoxynucleotide-triphosphates (dNTPs), a mix of dATP, dCTP, dGTP & dTTP in its synthesis of the complementary strand.
+ 
+
+{| cellspacing="0" cellpadding="0"
+|-
+| style="width: 150px;"| Approx. Duration: || style="width: 150px;"| || style="width: 75px;"| ||
+|-
+| || Preparation || ~5  minutes
+|-
+| || Setting up the PCR || ~10 minutes
+|-
+| || Whole Protocol || ~2  hours (Depending on cycle)
+|}
+
+
+'''Uses'''
+<br/>
+PCR is the amplification of a gene for further experimentation. For example: an amplified gene can then be digested, enabling it to be cloned into a vector. Colony PCR can then be used as a check if the ligation was successful. By using the same primers and a single colony from a transformation of a ligation; amplification of the gene would indicate that the colony had a correctly ligated construct.
+
+
+'''Prerequisites'''
+<br/>
+You should know the target sequence in order to design primers. The primers should ideally be about 20-30 nucleotides/base pairs (nt/bp) long, with little or no secondary structure formation. They should have a melting temperature (T<sub>m</sub>) between ~55°C and 65°C and a primer pair should have Tm >±5°C. The 3’ end of each primer needs to be designed carefully as this is where the DNA polymerase action begins.  
+
+
+'''Safety'''
+<br/>
+General laboratory & molecular biology safety rules apply.
+
+
+'''Requirements'''
+<br/>
+DNA template, Two oligos/primers, DNA Taq polymerase, dNTPs Deoxynucleotides-triphosphate, Buffer, 50% DMSO(Dimethylsulphoxide)/glycerol, dH<sub>2</sub>O, ice, PCR tubes, thermal cycler and program.
+
+
+'''Preparation'''
+<br/>
+Create a 50% DMSO solution using dH<sub>2</sub>O, see Notes for an alternative. Ensure the primers have been dissolved in a stock solution of 500pmol then to a working concentration of 50pmol. Thaw all other solutions on ice. Label PCR tubes to be used and setup the thermal cycler.
+
+
+'''Method'''
+<br/>
+Total volume in a PCR tube - 50µL
+
+<center>
+{| cellspacing="0" cellpadding="0"
+|-
+! style="width: 200px; text-align: left;"| Promega GoTaq: || style="width: 150px;"| Ingredient || style="width: 100px;"| Stock Conc<sup>n</sup> || style="width: 100px;"| Volume || style="width: 150px;"| Final Conc<sup>n</sup>
+|-
+| || colspan="4" |
+----
+|-
+| || Buffer || 5x || 10μL || 1x
+|-
+| || dNTPs || 1.25mM || 10μL || 0.25mM
+|-
+| || MgCl<sub>2</sub> || 25mM || 5μL || 2.5mM
+|-
+| || DMSO || 50% || 5μL || 5%
+|-
+| || Upstream Primer || 50pmol || 1μL || 1pmol
+|-
+| || Downstream Primer || 50pmol || 1μL || 1pmol
+|-
+| || Template DNA || ?? || 1μL || ~0.5μg
+|-
+| || dH<sub>2</sub>O || N/A || 16.75μL ||N/A
+|-
+| style="text-align: left;" | Mix and when ready <br/>to start the cycle add:
+|-
+| || DNA Polymerase || 5u/μL || 0.25μL || 1.25u
+|}
+</center>
+<br/>
+
+
+<center>
+{| cellspacing="0" cellpadding="0"
+|-
+! style="width: 200px; text-align: left;"| Roche High Fidelity: || style="width: 150px;"| Ingredient || style="width: 100px;"| Stock Conc<sup>n</sup> || style="width: 100px;"| Volume || style="width: 150px;"| Final Conc<sup>n</sup>
+|-
+| || colspan="4" |
+----
+|-
+| || Buffer (inc MgCl<sub>2</sub>) || 10x || 5µL || 1x
+|-
+| || dNTPs || 1.25mM || 10µL || 0.25mM
+|-
+| || DMSO || 50% || 5µL || 5%
+|-
+| || Upstream Primer || 50pmol || 1μL || 1pmol
+|-
+| || Downstream Primer || 50pmol || 1μL || 1pmol
+|-
+| || Template DNA || ?? || 1μL || ~0.5μg
+|-
+| || dH<sub>2</sub>O || N/A || 16.75μL || N/A
+|-
+| style="text-align: left;" | Mix and when ready <br/>to start the cycle add:
+|-
+| || DNA Polymerase || 5u/μL || 0.5μL || 2.5u
+|}
+</center>
+
+
+<br/>
+{| cellspacing="0" cellpadding="0"
+|-
+| An example program: || style="width: 40px;"| || style="width: 90px;"| || style="width: 100px;"| ||
+|-
+| || 96°C || – 5 minutes || || This denatures any double stranded DNA
+|-
+| || 96°C || – 1 minute || &#175;\ || First temperature of the cycle  – denaturing
+|-
+| || 55°C || – 30 seconds || &nbsp;&nbsp;&nbsp;>25 cycles || Second temperature of the cycle - annealing
+|-
+| || 72°C || – 1 minute || &#95;/ || Third temperature of the cycle  - extending
+|-
+| || 72°C || – 5 minutes || || Final extension for incomplete strands
+|-
+| || 4°C || – hold || || Finished. Hold the samples at a low temperature.
+|}
+
+
+'''Notes'''
+<br/>
+Remove the enzyme(s) from the freezer when needed and keep all the other ingredients on ice. 
+The buffer is required to provide a suitable chemical environment for the DNA polymerase to work in. The 50% DMSO helps to avoid secondary structures forming within a primer or the ssDNA template, sometimes a 50% glycerol solution gives better results than the standard 50% DMSO solution.
+Adjust the volume of the template DNA according to its concentration but remember to also adjust the volume of water added for the reaction to be in 50μL.
+Based on the design of the primers and the length of the target sequence a cycle can be created. The initial denaturing temperature is usually 96°C for 5 minutes followed by the actual cycle. The denaturing temperature usually stays the same 96°C or can decrease to 92°C to extend the life of the DNA polymerase; it normally last for 0.5-2 minutes. The annealing temperature is approximately T<sub>m</sub>-5°C (T<sub>m</sub>: melting temperature of the primers) this should avoid non-specific annealing to similar but non-identical sequences; this is for ~30 seconds. The extension temperature is always 72°C as this is the optimum temperature for DNA polymerase; the time is dependant on the length of the target, Taq DNA Polymerase has an activity ~103 base pairs per minute.
+
+
+
+<!--CONTENT END-->
+|}<br style="clear:both" />

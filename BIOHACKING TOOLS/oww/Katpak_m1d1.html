@@ -1,0 +1,51 @@
+'''
+== Module 1 Day 1: Start-up genome engineering ==
+ 
+''' 
+
+1. Generate a table that lists each gene and any re-engineering ideas you have for it. 
+
+{| border="1"
+|+ M13 Genes
+! Gene !! Location !! Function !! Notes !! Re-Engineering Ideas
+|-
+! I
+| 3196-4242 || assembly, forms channel in inner membrane || overlaps with gene IV and geneXI, has the same stop codon as geneXI|| add a regulating element in front of promoter to test effects of increaseing or decreasing number of channels, add an element that can regulate when the channel can open or close based on concentration, temperature, pH, concentration of phage, or other environmental factors
+|-
+! II
+| 8268-831||knicks dsDNA for replication of + strand|| geneX overlaps with C-terminal of geneII|| add a detection mechanism to nick the + strands of only certain phages--with a specific inserted recognizable gene sequence, for instance 
+|-
+! III
+| 1579-2853 || phage tail protein (5 copies), contacts TolA on pilus ||Contains BamHI site|| modify to bind to a protein other than TolA on the bacterial pilus, create a way to control binding strength
+|-
+! IV
+| 4220-5500 || assembly, forms channel in inner membrane ||overlaps with geneI and geneXI|| add a regulating element in front of promoter to test effects of increaseing or decreasing number of channels, add an element that can regulate when the channel can open or close based on concentration, temperature, pH, concentration of phage, or other environmental factors
+|-
+! V
+| 843-1106 || binds ssDNA to make protein/DNA complex for packaging || || add elements to increase affinity to + stranded DNA, alter packaging sequence to increase interaction to protein VIII or to change interaction to another type of protein or perhaps an inorganic material
+|-
+! VI
+| 2856-3194 || phage tail protein (5 copies), forms cap with proteinIII || || modify to bind to a protein other than TolA on the bacterial pilus, create a way to control binding strength, add a GFP fusion 
+|-
+! VII
+| 1108-1209 || blunt end of phage,interacts with protein V || stop codon overlaps with geneIX start codon|| modify to allow for integratable insertion of various elements, make fusion to GFP
+|-
+! VIII
+| 1301-1522 || phage coat protein (2700 copies) || start codon overlaps with geneIX stop codon|| modify to allow for integratable insertion of various elements, make fusion to GFP, add other surface proteins that affect solubility in the bacterial membrane, add ability to asseble or interact with inorganic materials
+|-
+! IX
+| 1206-1304 || blunt end of phage,interacts with protein V (5 copies) || start codon overlaps with geneVII stop codon,stop codon overlaps with geneVIII start codon||modify to allow for integratable insertion of various elements, make fusion to GFP, add an element to see if motility can be increased such as a flagella-like motor
+|-
+! X
+| 496-831 || allows + strand accumulation/regulation || overlaps with C-terminal of geneII|| modify to increase accumulation of double stranded genomes in bacterial host
+|-
+! XI
+| 3916-4242 || assembly, forms channel in inner membrane || overlaps with geneI and geneIV, has the same stop codon as geneI|| add a regulating element in front of promoter to test effects of increaseing or decreasing number of channels, add an element that can regulate when the channel can open or close based on concentration, temperature, pH, concentration of phage, or other environmental factors 
+|}
+
+
+2. Nature often preserves functionally critical genomic elements, and evolutionary cousins can help us identify which genetic elements are disposable, which are interchangeable, and which are essential. Who are M13's closest evolutionary relatives and how do they differ from the phage you're working with?<br>
+M13's closest evolutionary cousins are the other small, filamentous, male-specific coliphages--fd and f1. These phages are characterized by a small, single-stranded circular DNA genome of about 6400 bases. There is an average of 3.0% of nucleotide-sequence differences between the M13 and fd genomes. Only 12 of the changes result in change of amino acids. M13 DNA is only a single nucleotide shorter than fd DNA.
+
+3. Look up part BBa_M1307 and write a response to the following criticism: "BBa_M1307 is not a standard biological part and does not belong in the registry.<br>
+BBa_M1307 is the M13K07 genome with an addition of pACYC177 bearing the p15a bacterial origin of replication and a kanamycin resistance gene. As defined in lecture, a part is a basic biological function that can be encoded by as genetic material. The sequence of BBa_M1307 encodes multiple function (infection, replication of phage genome, assembly of phage proteins, kanamycin resistance, etc) and thus is not by definition a standard biological part. It is more of a device, defined as a combination of one or more parts that provide a human-defined function. Still, it seems that this very basic-level sequence is necessary regardless of the name we give it because it is a starting-point for engineering of the M13 genome. Thus, even if BBa_M1307 does not belong under a "parts" category, it should still be available as a sequence in the registry.

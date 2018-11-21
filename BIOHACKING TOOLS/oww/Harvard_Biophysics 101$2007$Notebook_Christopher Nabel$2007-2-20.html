@@ -1,0 +1,57 @@
+==Assignment Due 2/20==
+===Background===
+I have successfully installed Clustal (thanks to the help of this assignment's [http://openwetware.org/wiki/Talk:Harvard:Biophysics_101/2007/02/13 discussion page]).  I wrote a somewhat brief outline of how I might go about comparing conserved sequences.  At this point, though, I'm not entirely sure what would be the best marker for comparisons.  This all depends on your specific interests, and mine are too varied at this point to settle in on one specific one.  That said, I assembled some crude code that sets ApoE as the reference and allows you to assemble a list of sequences for comparison based on GenBank id numbers.  The rest of the code will come soon as I decide what I'd like to do...
+===Preliminary Code===
+<pre>
+#!/usr/bin/env python
+
+
+
+# PART 1: import the GenBank tools necessary to complete this analysis
+
+# To import the GenBank and Clustal Modules
+from Bio import GenBank, Seq
+from Bio import Clustalw
+
+# To parse sequence data from the GenBank Entry
+seq_parser = Genbank.FeatureParser()
+
+# To interface to Genbank
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = seq_parser)
+
+
+
+# PART 2: load our ApoE as a reference string for sequence comparison
+
+# Download ApoE's record
+parsed_ref = ncbi_dict['APOE GENBANK #']
+
+# Extract the sequence and save as a string
+ref = parsed_ref.seq.tostring()
+print "ApoE has been loaded as the reference gene"
+
+
+
+# PART 3: Input other sequences for comparison
+
+# How many sequences to import?
+x = int(raw_input("How many sequences would you like to upload for comparison?  "))
+# Now import them into a list...
+comparison_seqs = []
+for i in range(0,x):
+    new_id = int(raw_input("Please enter the GenBank ID for a sequence of interest  "))
+    parsed_entry = ncbi_dict[new_id]
+    entry_seq = parsed_entry.seq.tostring()
+    comparison_seqs.append(entry_seq)
+
+
+                 
+
+
+
+# PART 4: Check for sequence alignments: what specifically should we be looking for?
+
+
+
+# PART 5: Print the results
+</pre>

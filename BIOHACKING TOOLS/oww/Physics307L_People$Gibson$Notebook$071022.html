@@ -1,0 +1,124 @@
+=='''SPEED OF LIGHT EXPERIMENT'''==
+
+
+
+=='''Overview'''==
+*This experiment is to measure the speed of light, which is one of physics most important constants. The experiment uses a photomultiplier tube and a green LED. The LED sends pulses of light down a darkened tube where the light pulses are picked up by the PMT(photomultiplier tube). Both the PMT and LED send signals to the Time-Amplitude Converter(TAC)which using an oscilloscope shows us the output wave of the TAC and then due to it being vary chaotic you must attempt to average over the amplitudes to determine an approximate time-delay.
+
+
+=='''Procedure'''==
+*This experiment requires using a lot of different equipment
+
+Time-Amplitude Converter (TAC)
+
+LED
+
+DC Power supply (150V-200V)
+
+DC Power supply (1800V-2000V)
+
+Photomultiplier Tube (PMT)
+
+Oscilloscope
+
+Delay box
+
+
+*To start you must connect the power supplies to both the LED and the PMT that are at either ends of the tube, the low and high voltage supplies respectively. Then connect the LED to the TAC's start jack with a BNC cable, and also connect the PMT to the stop jack on the TAC with another BNC cable. Next you also want to run a cable from the PMT (PMT power supply)to the oscilloscope to Channel 1 and from the TAC to channel 2 on the oscilloscope. The oscilloscope will measure the voltage output from the PMT on channel 1 and the signal from the TAC will respresent the time delay that you want to be measuring.
+*Once all set up, you want to pick a value of the voltage on Ch 1 and attempt to maintain that value for your measurments. This is accomplished by turning the PMT left/right to allign or unallign its filter with that of the LED. 
+*Next, using the aquire button on the oscilloscope you can choose to average over the values that the oscilloscope is recieving to allow you to take measurments. You want to choose the 128 setting under the average command, so the signal is more stable. Then use the measure function to allow you to see the values outputed to channels 1 and 2 to make your measurments.
+*Then start making measurments! -  to do this you must pick your desired value for channel 1 and then holding the PMT steady have your partner pull or push the meter stick connected to the LED in or out of the tube. Record how far the meter stick moved relative to the opening of the tube and then readjust the PMT so that channel 1 on the oscilloscope returns to your previously picked value.Then simply continue.
+
+
+<gallery>
+Image:Image003.jpg|From left: power supply for photomultiplier, delay box, TAC (time amplitude converter)
+Image:Image004.jpg|Power supply for LED light emitter. 
+Image:Image005.jpg|oscilloscope 
+Image:Image006.jpg|On top tried different time delay to try and get better signal.
+</gallery>
+
+NOTE: Borrowed from Matt's Lab notebook.
+
+=='''Data'''==
+*Below is the data collected. Our picked value of the PMT voltage (Ch 1) is given for each set along with a +/- range that the oscilloscope tended to oscillate its values by around our value.Then next to each measured value of the TAC voltage is the distance the LED was moved in cm.
+'''Set 1''' 
+*Ch1 600 +/-8 mV
+            V=3.24 +/-.04 d=60               			              
+            V=3.2  +/-.04 d=80               
+            V=3.08 +/-.04 d=100             
+            V=3.00 +/-.04 d=120             
+            V=2.96 +/-.04 d=140              
+            V=3.00 +/-.04 d=130              
+            V=3.12 +/-.04 d=90               
+            V=3.2  +/-.04 d=70               
+
+'''Set 2'''
+*Ch1 800+/- 8 mV
+           
+           V=2.44  d=70
+           V=2.40  d=80
+           V=2.36  d=90
+           V=2.32  d=100
+           V=2.32  d=110
+
+'''Set 3'''
+*Ch1 720 */- 8 mV
+           V=2.80 d=27.5
+           V=2.64 d=70
+           V=2.52 d=110
+           V=2.44 d=130
+           V=2.72 d=50
+
+==Analysis==
+*Given the measured voltage from Ch2 we are able to calculate a time that the voltage corresponds to using:
+
+:<math>V = G*T</math>
+
+given that G is the gain and from how we set up the TAC was 10/100 Volts/sec or G=.1 V/s, which was explained and given to us by Dr. Koch.
+
+*solving the equation for T and then using our voltage values above we find our corresponding times to be:
+
+All times listed are in nanoseconds, however the calculation of our speed uses seconds.
+
+'''Set 1 - times'''
+      t=32.4				              
+      t=32
+      t=30.8
+      t=30
+      t=29.6
+      t=30
+      t=31.2
+      t=32
+
+'''Set 2 - times'''
+      t=24.4
+      t=24.0
+      t=23.6
+      t=23.2
+      t=23.2
+
+'''Set 3 - times'''
+      t=28.0
+      t=26.4
+      t=25.2
+      t=24.4
+      t=27.2
+
+==Results==
+
+Here we plot a least squares plot of our times and distances used above to find the speed of light.  The slope of these lines is the value which we find.
+
+Below are the numerical values for these slopes:
+[[Image:Lab-1-.jpg|thumb|right|These are plot of data sets 1-3 along with least-squares fit lines]]
+'''Data Set 1'''
+<math>c=\left(2.68  \pm 0.18\right)\times10^{8} m/s</math>
+
+'''Data Set 2'''
+<math>c=\left(2.94  \pm 0.42\right)\times10^{8} m/s</math>
+
+'''Data Set 3'''
+<math>c=\left(2.89  \pm 0.08\right)\times10^{8} m/s</math>
+
+Averaging the 3 values we arrive at our value of the speed for all three instances:
+
+<math>c=\left(2.83 \pm .23\right)\times10^8 m/s</math>

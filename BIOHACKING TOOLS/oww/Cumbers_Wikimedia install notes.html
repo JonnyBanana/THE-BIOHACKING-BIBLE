@@ -1,0 +1,126 @@
+==cumberswiki==
+WikiSysop
+
+==file dir==
+
+  to avoid the ugly extension eg "mv media.4.5.6 bach"  etc.  Use mv to rename folders, use mv .. e.g mv up a dir, mv ..
+
+[veejay@neo ~]# tar -zxvf mediawiki-1.5.2.tar.gz <br>
+[root@neo ~]# mkdir /opt/mediawiki <br>
+[root@neo ~]# cp -rf /home/veejay/mediawiki/* /opt/mediawiki <br>
+
+put into a temp dir, then cp all
+
+ cp -rf mediawiki-1.5.7 ../tatarlab/
+
+==to make short names==
+
+Edit .htaccess or httpd.conf
+from [http://meta.wikimedia.org/wiki/Using_a_very_short_URL here]
+
+1)    A. Add the following to your .htaccess in your document root directory:
+
+       Options FollowSymLinks
+       RewriteEngine On
+       RewriteCond %{REQUEST_FILENAME} !-f
+       RewriteCond %{REQUEST_FILENAME} !-d
+       RewriteRule ^(.+)$ /index.php?title=$1 [L,QSA]
+
+2) Then edit LocalSettings.php
+
+In your LocalSettings.php edit $wgArticlePath as follows:
+
+ $wgArticlePath      = "$wgScriptPath/$1";
+
+from: http://db.glug-bom.org/wiki/index.php/Setup_a_MediaWiki
+
+==Customisation==
+All customisation entries go into the LocalSettings.php file in the wiki root (/var/www/html/wiki). Add the entries to the end of the file or make changes wherever necessary.
+
+
+==Logo==
+Create a folder in the webserver document root and place your logo image there. Set $sgLogo in LocalSettings.php to the path of your logo image. 125x125 pixels is the ideal size for the image
+
+$wgLogo             = "/image/logo.png";  
+
+REMEMBER TO INCLUDE THE $wgScriptPath
+
+$wgLogo = "$wgScriptPath/images/durian_small.png";
+
+==Creating a second wiki instance==
+To create a second wiki on the same webserver, simply create a new directory (say wiki2) in the document root. lndir the /opt/mediawiki to the new directory, assign the appropriate permissions to directories and visit the wiki (http://localhost/wiki2) for configuration. Make sure that the database name, user(?) and table prefix are different for this wiki.
+
+==untar==
+ tar -xvzf mediawiki-1.5.7.tar.gz
+
+ Undo an untar in the wrong place
+ tar tfz filename.tar.gz | xargs rm
+
+make a link
+ln -s ~/sites/cumbers.com/cumberswiki/mediawiki-1.5.7/index.php ~/sites/cumbers.com/cumberswiki/
+
+insecure but easy way
+chmod o+w config
+click install
+make sure to undo this, chmod go-rwx config
+
+==only registered users can edit:==
+
+    * By adding the following line to LocalSettings.php, it is possible to entirely disable anonymous edits:
+
+
+cp AdminSettings.sample AdminSettings.php  and change uname and pword
+
+http://meta.wikimedia.org/wiki/Preventing_Access
+
+  #
+  # Permission keys given to users in each group.
+
+  # All users are implicitly in the '*' group including anonymous visitors;
+  # logged-in users are all implicitly in the 'user' group. These will be
+  # combined with the permissions of all groups that a given user is listed
+
+  # in in the user_groups table.
+  #
+  # This replaces wgWhitelistAccount and wgWhitelistEdit
+  #
+  # The following line should be commented, otherwise these settings will
+  # throw away the settings on 
+  # DefaultSettings.php (you probably don't want this).
+  # With this line commented you will only overwrite the settings you explicitly
+  # define here (that's what you probably want).
+  #$wgGroupPermissions = array();
+
+  In LocalSettings.php add:
+  $wgGroupPermissions['*'    ]['createaccount']   = false;
+  $wgGroupPermissions['*'    ]['read']            = true;
+  $wgGroupPermissions['*'    ]['edit']            = false;
+  # add these bits so you can log in still, so you can see the main page
+  $wgWhitelistRead = array( "Main Page", "Special:Userlogin" );
+  $wgGroupPermissions['*'    ]['read']            = false;
+
+==file management==
+lndir not installed
+ln -s ~/mediawiki/ ~/sites/cumbers.com/wiki/
+
+==file upload==
+
+Don't need to edit /etc/php.ini just add these lines to LocalSettings.php
+
+#added to upload files
+
+ Since you won't be able to use chown to change ownership to another
+ user/group (you're not root), use chmod instead to give the correct
+ access to "others":
+  chmod o+w /path/to/images/   (e.g /home/sites/cumbers.com/bach/images)
+ If it needs read access too then
+  chmod o+wr /path/to/images/
+
+with virtual hosting I can't change apache's group, so I have to give write perm to al as above.  not the best solution but ok for now.  find where the following lines are:
+
+ $wgEnableUploads                = true;
+ $wgMimeDetectorCommand= "file -bi"; #use external mime detector
+ $wgFileExtensions = array('png','jpg','jpeg','pdf','tgz','tar.gz');
+
+==sidebar edit==
+enter "MediaWiki:Sidebar" into the search box, need sysop rights.

@@ -1,0 +1,107 @@
+==Overview==
+
+*The following manual describes how to operate the Hysitron Triboindenter in quasistatic, dynamic, or imaging modes and acquire and analyze data. It also presents common pitfalls, troubleshooting techniques, and describes key differences in the testing of hard versus soft materials and uses of different tips.
+*The full manual can be found here [[TriboScan_Manual.pdf]]
+
+
+==Materials==
+*Appropriate Tip (Berkovich, Fluid Cell, etc...)
+*Tweezers
+*Superglue (if sample is not attached to AFM disk)
+*Millipore Water (if using Fluid Cell Tip)
+*Aluminum (For Berkovich or 20um Conical Tip Optics Calibration)
+
+==Procedure==
+===Start Up===
+#Reserve the TriboIndenter at Yahoo Calendars
+#*User Name:  nanoindenter
+#*Password:  hysitron
+#Turn on the computer if not already on
+
+
+===Changing the Tip===
+::[[Image:diagram.jpg|Fig1. Diagram of TriboIndenter]]
+#With the computer on and the TriboScan software closed, turn off the piezo and transducer controllers.
+#Unplug the left cable from the transducer holder and the granite horizontal beam.
+#Loosen the transducer holder by unscrewing the horizontal silver knob to the right of microscope.
+#Slide the transducer holdlder upwards and out of the hood.
+#Unscrew the tip using the tip tool and place in the hollow tube.  
+#Screw the tip in you desire stopping at the first sign of resistance.
+#Slide the transducer holder back into place, connect the cables and retighten the screw.
+#Turn both the peizo and transducer controllers back on.
+#Rezero the tare value.
+#Start TriboScan software.
+#In the positioning window, go to Setup>>Tip Area Function. Select the correct tip area function.  
+
+===Z-Axis Calibration===
+#Change the microscope feedback gain to 100 on the TriboScope panel and in the software. From the Positioning window select Setup>>Piezo Controls and change the value for Front-panel Microscope Feedback Gain to 100.  Minimize this window as a reminder to change the value back.
+#From the positioning window, go to Setup>>Indent Open Loop Load Function.
+#Set up the Load Function Editor to perform a 600uN 2-segment indent in air (AIR INDENT.ldf), for a total of 20 seconds.  For soft materials, this load should be increased so that the air indent goes approximately 5um, but 600uN should be sufficient.  
+#From the Open Loop Load Function window, select Setup>>Advanced z-axis Calibration.
+#Click "Calibrate Transducer."  The instructions at this point from the pop-up windows are fairly self-explanatory.
+#The calibration window will pop up.  Check that the values in the table below are correct.
+#Click done and follow the instructions.
+#A graph will appear with a fitted functions of the Electrostatic Force constant as a function of displacement.  Verify that that the fit is reasonable and close this graph.
+#Make sure to write the ESF and ZVG values in the log book.
+#Return the microsoft feedback gain to 1000 on the TriboScope and in the software by opening the window that was minimized earlier.
+::{| border="1"
+! Parameter !! Correct Value
+|-
+| Machine Compliance ||  4.0
+|-
+| Displacement Gain ||   100
+|-
+| Bias Offset || 0.2001
+|-                  
+| Disp Micro Feedback auto detect || Unchecked
+|}
+
+===Tip Optics Calibration===
+#From the positioning window, open the video window by clicking on the video button.
+#Using the arrows in the Positioning window, move the optics to the aluminum samples and find a "clean" spot to indent.
+#You will probably need to disable the X-Y Safety Height.  From the positioning window or the TriboScan Toolbar, select safety limits>>X-Y Safety Disable button.
+#Change the zoom to 5X.  Change the video settings to white=30 and black=15 to increase contrast.
+#Click on the create boundary button on the video window to create a sample boundary.
+#From the positioning window, select Setup>>Indent Open Loop Load Function
+#Open a load function appropriate for your tip (example: berk_cal.ldf,  20um.ldf)
+#Zero the tare value.
+#From the Positioning window, select Setup>>Calibrate Optics>>Stage Offset>>New 'H' Pattern.
+#The software will prompt you to adjust the tip height to about 1mm from the samples surface using the green arrows.  Click OK after you have done this.  The machine will then perform 7 indents.
+#After the H pattern is complete, the software will prompt you to move the reticule to the center of the H.  Then select OK.
+#To verify your calibration and to prevent anyone else from mistaking this H-pattern for their own, move the reticule to be between the two legs of the H, below the center indent. From the Positioning window, select Startup>>Single Indent Open Loop.
+#Zero the tare value and hit OK.
+#If the calibation is complete, the optic should return and focus on that spot once the indent is complete.
+::[[Image:hpattern.jpg|Fig2. H-Pattern Sample Photo]]
+
+===Tip Area Calibration===
+====Quartz (For Berkovich Tips)====
+#First Perform the other two calibrations (above).
+#Set up a sample boundary on the quartz sample.
+#Set up a new group of positions within the boundary.
+#Set up a new pattern.
+#Create a new method to do a large number on indents over a large range of forces.  For example, you could do 72 indents from 100 to 10,000uN.
+#Run method.
+#After all indents are complete, perform a multiple curve analysis. In the Analysis window, select Analysis>>Muliple Curve Analysis.  Select all files created from your method. Save the results as a .txt file.
+#In the Analysis window, selct Anaysis>>Calculate Area Function.  Select the text file you just created. The correct reduced modulus for quartz is 69.9GPa.  Enter this value and press OK.
+#Enter 24.5 into the C0 dialog box. Make sure that the Vary C0 check box is NOT checked.  Press Execute Fit Area.
+#Save the area function (Click on the disk icon) with the name of the tip and the date.
+
+====Polycarbonate (For Conical Tip)====
+#First Perform the other two calibrations (above).
+#Set up a sample boundary on the quartz sample.
+#Set up a new group of positions within the boundary.
+#Set up a new pattern.
+#Create a new method to do a large number on indents over a large range of forces.  For example, you could do 72 indents from 100 to 10,000uN.
+#Run method.
+#After all indents are complete, perform a multiple curve analysis. In the Analysis window, select Analysis>>Muliple Curve Analysis.  Select all files created from your method. Save the results as a .txt file.
+#In the Analysis window, selct Anaysis>>Calculate Area Function.  Select the text file you just created. The correct reduced modulus for quartz is 69.9GPa.  Enter this value and press OK.
+#Enter 24.5 into the C0 dialog box. Make sure that the Vary C0 check box is NOT checked.  Press Execute Fit Area.
+#Save the area function (Click on the disk icon) with the name of the tip and the date.
+
+
+==Notes==
+It is sufficient to calibrate tip area function once a every few months and/or with a new tip
+
+==Contact==
+*Jessica Kaufman
+*Eben Tessari

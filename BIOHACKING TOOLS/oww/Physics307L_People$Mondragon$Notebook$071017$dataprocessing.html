@@ -1,0 +1,29 @@
+==Theory==
+The <math>\tfrac{h}{e}</math> apparatus is basically a capacitor. One plate is a photocathode. Light shining on the photocathode gives electrons the energy necessary to escape the surface of the cathode and to possibly cross the gap to the anode. As charge builds up on the anode, the voltage across the capacitor will increase, as will the energy necessary for electrons to cross the gap.
+
+Just for future reference, I doubt I'll be using it though <math>q=C*V</math>, where <math>q</math> is the absolute value of charge on one plate of the capacitor, <math>V</math> is the absolute value of the voltage across the capacitor, and <math>C</math> is the capacitance of the capacitor.
+
+The energy needed by an electron to escape the photocathode's surface is <math>W_0</math>. <math>W_0</math> is a property of the photocathode. After light imparts its energy onto en electron, part of the energy will be used to escape the photocathode (if <math>E_{light} \ge W_0</math>), and the rest manifests itself as the kinetic energy of the now free electron, <math>KE_{max}</math>. <math>E_{light} = W_0 + KE_{max}</math>
+
+Because of the voltage across the capacitor, <math>KE_{max}</math> must be more than a certain potential energy <math>PE_{gap}</math> created by the voltage difference. The potential energy that needs to be overcome is proportional to the voltage difference. When <math>PE_{gap} \ge KE_{max}</math>, electrons can no longer reach the anode so the voltage no longer rises. This final voltage is called <math>V_{stop}</math>. Because of the way capacitors charge, <math>V_{stop}</math> is never actually reached in a finite amount of time. <math>V_{stop}</math> is proportional to <math>KE_{max}</math>.
+
+Electrons can only make it to the anode if <math>KE_{max} < PE_{gap}= e\,V</math>. <math>KE_{max}</math> should, in this experiment, stay the same thoughout a test, but <math>PE_{gap}</math> changes as <math>V</math> changes. When <math>V_{stop}</math> is reached, it is because <math>KE_{max} = PE_{gap}= e\,V_{stop}</math>
+
+<math>\begin{align}
+           E_{light} &= W_0 + KE_{max}\\
+           E_{light} &= W_0 + e\,V_{stop}\\
+ \frac{E_{light}}{e} &= \frac{W_0}{e} + V_{stop}\\
+\end{align}
+</math>
+
+According to the particle theory of light, the energy imparted by light is proportional to the frequency of the light, the constant of proportionality being Plank's constant. According to the wave theory of light, the energy imparted by light is proportional to the square root of the intensity of the light. The data shows that the stopping voltage doesn't change when the light intensity changes, but it does when the light frequency changes. So
+
+<math>\begin{align}
+           E_{light} &= W_0 + KE_{max}\\
+           E_{light} &= W_0 + e\,V_{stop}\\
+ \frac{E_{light}}{e} &= \frac{W_0}{e} + V_{stop} &= \frac{h\nu}{e}\\
+                                        V_{stop} &= \frac{h\nu}{e} - \frac{W_0}{e}\\
+\end{align}
+</math>
+
+&nu; is the frequency of the light falling on the photocathode and <math>h</math> is Plank's constant.

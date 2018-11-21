@@ -1,0 +1,34 @@
+{{Beauchamp Navigation Bar}}
+<b>Perceptual Biasing</b><br>
+1. Select "HumanBiasPerception" from available KNOT plugins.<br>
+2. On toolbar, open Channel Settings, Stimulus Settings and Behavior Settings windows.<br>
+3. Enter the names of all Channels.<br> 
+4. Check to see that the following fields in Stimulus Settings have default values specified below:<br>
+:a. Pre-Interval (ms): 250 (period before Interval One)
+:b. Interval (ms): 300 (length of each interval)
+:c. Inter-interval (ms): 1000 (period between Interval One and Interval Two)
+:d. Post-interval (ms): 50 (period after Interval Two)
+::Note that there is only one interval in this plugin.  For now, presentation of the visual stimulus is time-locked to the electrical stimulation Interval defined by the parameters above.
+:e. Select "Images"
+::i. Images Stimuli: 7
+::ii. Azimuth (deg): 0
+::iii. Elevation (deg): 0
+::Note that "Images Stimuli Loaded" is a counter for the number of Images Stimuli that have been loaded so far.  You can press the main Reset button, which <b>will not</b> reset the images loaded but <b>will</b> reset the eStimData window with all data plots.  The "Images Reset" button, on the other hand, resets everything, including the images loaded.
+::v. Size (deg): 25
+::vi. Press "Load Stimulus Images" and select all images in Desktop/Organized Images/BiasPerception as default.  The images in this directory should be unique to every electrode and the result of selectivity screening.  Stimuli will include a spectrum of ambiguity between a strongly preferred and anti-preferred stimulus. 
+:f. Select "Electrical"
+::i. Currents: 3
+::ii. Indicate Max. Current (uA) from Microstim Staircase detection threshold data.
+::iii. Indicate Steps per Octave from Microstim Staircase detection threshold data.  Current Factor will scale automatically.
+::iv. Frequency (Hz): 200
+::v. Pulse Width (uS): 200 
+::v. Indicate "uA per V output" (If range max is below 1000 uA, use 100 uA per V.  If range max is above 1000 uA, use 1000 uA per V.)
+::vi. DA Channel Out: 0
+::vii. Marker Pulses Bit: 1<br>
+::viii. Gate Bit: 0<br>
+::ix. Check "TTL Marker Pulses." <br>
+::x. Check "TTL Gate." <br> 
+
+Note that subject will be making a judgement between preferred (2) and non-preferred (1) in a discrimination task.  
+
+Back to [[Beauchamp:Setup Apparatus|Setup Apparatus]].

@@ -1,0 +1,48 @@
+__NOTOC__
+==Design of Composite Parts==
+Thus far we've only dealt with making Basic parts.  Now let's shift gears and talk about composite parts.  You'll need a full set of Basic Parts for your construct before you can design a composite part.  So...
+
+===Step 1:  Identify the basic parts available===
+You need to establish what basic parts will be needed to make what you want.  There's no automatic way of doing this, so I can't really tell you how to do it.  Suffice it to say, look at the complete list of available basic parts and try to make a complete cassette out of it.  If there is some "missing" function in the Biobrick library, make a basic part for it.
+
+===Step 2:  Write out the design for your basic part===
+Once you've identified the appropriate basic parts, write them down in order.  So, you might make something like this:
+
+  I0500.b0034.Bca1117.b0015.r0040.Bca1046.b0032.E0040.b0016.Bca1046.b0034.E1010.b0015
+  Pbad  rbs   Cre     term  Ptet  Lox     rbs   GFP   term  Lox     rbs   RFP   term
+
+What this thing is supposed to do is constitutively produce GFP under normal growth conditions.  When the cells are exposed to arabinose, the Cre protein gets made, the region between the two Lox sites would be excised, and the cells turn red.  ...at least that's what it's designed to do.
+
+Before you start making something like this, you need to analyze it a little more.  There is a good chance that some of the substructures of the composite have already been made.  For example, we already have 3 useful parts in our toolbox:
+
+  '''E0241:'''
+  b0032.E0040.b0016
+  rbs   GFP   term
+
+  '''I13507:'''
+  b0034.E1010.b0015
+  rbs   RFP   term
+
+  '''Bca9089:'''
+  b0034.Bca1117
+  rbs   Cre
+
+===Step 3:  Minimize the Design===
+So, we can simplify our design as:
+
+  I0500.Bca9089.b0015.r0040.Bca1046.E0241.Bca1046.I13507
+  Pbad  (cre)   term  Ptet  Lox     (gfp) Lox     (rfp)
+
+This is as simple a construction as could be designed based on the current set of available parts.  Let's now abstract this design a little further as just:
+
+  A.B.C.D.E.F.G.H
+
+===Step 4:  Parallel (or convergent) synthesis===
+In this part of the tutorial, I'm not going to tell you how you actually go about making the junctions between parts.  We'll get into that later.  For now, just keep in mind that you install each "." one at a time.  So, the most efficient way of making the above part is to assemble it convergently.  So, split it in half, then half again, and so on until you only have single pairs left.
+
+  Round 3       A.B.C.D.E.F.G.H
+  Round 2     A.B.C.D     E.F.G.H
+  Round 1  A.B    C.D     E.F    G.H
+
+So, now we have a plan for putting the thing together.  In round 1, we join A with B, C with D, E with F, and G with H.  Each of these dimeric composite parts will be assigned a number like e0241.  Next time that dimer is called for in a construction, you'll be starting one step ahead.  In round 2, we joing AB with CD and EF with GH.  In round 3, we joing ABCD with EFGH, and then we're done!
+{{Template:JCA_Arkin_tutorialfooter}}

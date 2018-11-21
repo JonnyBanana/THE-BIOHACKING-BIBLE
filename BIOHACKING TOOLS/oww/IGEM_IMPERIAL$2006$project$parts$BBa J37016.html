@@ -1,0 +1,264 @@
+<big><b><font color=red>
+This is a document for part BBa_J37016 AND BBa_J37020!!! (they are the same part where one produces polycistronic RNA and the other doesn't </font></b></big>
+
+
+
+== SPECIFICATIONS ==
+'''Design a part to'''
+
+*To measure the rate of AHL-lactonase synthesis as a function of the amount of AHL present in the medium
+*To measure the Km and Vm of LuxR in our cells.
+
+'''Background'''
+
+This expeiment will characterise the transfer function of the parts J37016 and J37020. One of these parts will form the reciver in the predator cell. There are many similarities between this characterisation and that of the prey reciver
+
+== Design ==
+
+These two parts are very similar and have the same inputs and outputs, therefore they can be analysed in exactly the same way
+
+These designs should meet the specifications mentioned above and operate as shown in fig1
+
+'''fig1'''
+[[image:AHL_GFP.JPG ]]
+
+The differences are in the rates of production of GFP to LuxR. Part J37016 will produce a polycistronic strand of mRNA and the rate of GFP to LuxR translation will depend on which RBS is farthest upstream. The second design; Part J37020 produces two strands of mRNA they are produced by the same promoter, LuxpR but the seuqance surrounding luxpR differs between the two sites so there may be differing rates of transcription between the promoters controlling GFP and luxR. A more reliable method to get the luxR rates of expression would be to tag LuxR with an antigen then run an assay for it. This would however require a very large amount o lab work and the modls do not need luxR translation, simply the transfer function of HSL -> aiiA
+
+<br>
+*<big>'''[http://parts.mit.edu/registry/index.php/Part:BBa_J37016 J37016]'''</big>
+<br>
+
+[[image:polycistronic.JPG]]
+
+
+<br>
+*<big>'''[http://parts.mit.edu/registry/index.php/Part:BBa_J37020  J37020]'''</big>
+<br>
+[[image:Monocistronic.JPG ]]
+
+== MODELLING ==
+
+[[image:Model_predetor_sensor.JPG]]
+
+*Input = AHL
+*Output = GFP
+
+The model produces GFP and LuxR as a function of LuxR + AHL
+
+An interesting dynamic has been observed in this system. 
+*The rate of synthesis of luxR depends on the AHL concentration and the luxR concentration and a constant
+*The rate of degredation of LuxR depends on only the LuxR constant and the rate of degredation
+
+
+This means that the rate of degredation can be higher than the rate of syntheses so the steady state will be no LuxR for very low values of AHL but after a critical value of AHL the steady state will be positive.
+
+[[image:Model_predetor_sensor_output_low_AHL.JPG]]
+Amount of AHL below critical value
+[[image:Model_predetor_sensor_output_high_AHL.JPG]]
+Amount of AHL above critical value
+
+
+
+'''Values (unrealistic)'''
+
+<blockquote style="background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;">
+{| border="1"
+|+ Unrealistic Values
+! Name !! Value 
+|-
+! LuxR
+| 0.8 
+|-
+! AHL (Low)
+| 0.07 
+|-
+! AHL (High)
+| 0.11
+|-
+! GFP
+| 0 
+
+|}
+</blockquote>
+
+
+'''Parameters (Un-realistic)'''
+
+<blockquote style="background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;">
+{| border="1"
+|+ Unrealistic Perameters
+! Name !! Value 
+|-
+! Vm LuxR
+| 2 
+|-
+! Km LuxR
+| 1.87
+|-
+! K_Deg_LuxR
+| 0.1
+|-
+! K_Deg_GFP
+| 0.1 
+
+|}
+</blockquote>
+
+* We assume HSL is constant
+*(the gene expression was moddeled using mechiles menten kenitics so luxR has a Km and Vm of binding to the gene)
+
+Key paremeter - Km of LuxR
+
+This must be high. We can increace the apparant Km in real cells using recombinant plasmids.
+A high Km will reduce the rate of reaction and increace the range at which AHL can alter the reaction.
+
+<big>
+<br>
+'''To work out Km and Vm'''
+<br>
+</big>
+
+Transcription at lux pR is proportional to the amount of LuxR+HSL present. This is dependent on the amount of HSL added so the rate of GFP production will be proportional to the amount of HSL added.
+
+If we know the Rate of GFP degradation and the equilibrium conc of GFP then we can work out the rate of GFP synthesis for that amount of HSL as '''degradation = synthesis''' at equilibrium.
+
+If we know the rates and the substrate conc for those rates we can make a lineweaver burke plot. Plot 1/v against 1/[s].
+
+1 / V = (Km / Vm)(1 / [S]) + (1 / Vm)
+
+Y   =         M         X    +      C
+
+[:http://openwetware.org/images/3/3b/Lineweaver_Buke_Plot.JPG]
+
+'''This will allow us to work out the real values of Km and Vm for LuxR+AHL when it binds LuxPr, :-D'''
+
+
+
+'''Transfer Function'''
+
+[[image:Transfer_Function_Predator_Sensor.JPG]]
+
+''The transfer function of this part shows an unusual property in that the system will not produce any GFP at low HSL values (rather than tending to 1/infinity). This is caused by the critical value of the system described above. This should make this device function as a low pass filter, this property is of no use to the oscilator, but should be noted. The predator cells will not become de-sensitised to HSL because the luxpR operon shows leaky expression, this keeps a low conc of LuxR in the cells at all times (this property was not modeled).''
+
+== Implementation ==
+
+These two parts are very similar and have the same inputs and outputs, therefore they can be analysed in exactly the same way
+
+<br>
+*<big>'''[http://parts.mit.edu/registry/index.php/Part:BBa_J37016 J37016]'''</big>
+<br>
+[[image:J37016.JPG]]
+
+This construct is used to characterise the pLuxR transfer function, and noteably its effect on YFP expression, which would be equivalent to AiiA expression in the full system with one promoter.
+<br>
+<br>
+*[http://parts.mit.edu/registry/index.php/Part:BBa_R0062 R0062] - 9G Plate 1
+*[http://parts.mit.edu/registry/index.php/Part:BBa_B0034 B0034] - 3O Plate 1
+*[http://parts.mit.edu/registry/index.php/Part:BBa_C0062 C0062] - 7A Plate 1
+*[http://parts.mit.edu/registry/index.php/Part:BBa_I13504 I13504] - 12D Plate 1
+
+
+<br>
+*<big>'''[http://parts.mit.edu/registry/index.php/Part:BBa_J37020  J37020]'''</big>
+<br>
+[[image:J37020.JPG]]
+
+This construct is used to characterise the pLuxR transfer function, and noteably its effect on YFP expression, which would be equivalent to AiiA expression in the full system with two promoters.
+
+The input is HSL and the outputs are LuxR and GFP. GFP will be mesured
+
+*[http://parts.mit.edu/registry/index.php/Part:J37018 J37018] - To be built!
+*[http://parts.mit.edu/registry/index.php/Part:I13504 I13504] - 12D Plate 1
+
+== VALIDATION / TESTING ==
+
+
+*Inoculate a culture from a single bacterial colony in LB growth medium containing appropriate antibiotic.
+*Incubate at 37oC for 15 hours in a shaker.
+*Remove cultures from shaker and dilute by a factor of 10, by adding 1ml of culture into 9ml of fresh LB medium.
+*Incubate at 37oC for 2 hours in a shaker - '''<font color = green>This returns cells to exponential phase</font>'''
+*We have a stock AHL solution of 1000uM
+*Serial dilute to give final 1ml stock concentrations of 1000uM, 100uM, 10uM, 1uM, 100nM, 10nM, 1nM (check the -20oC Freezer as these may be already made up).
+*Add the following to eight different labelled ependorf tubes (remember to add the AHL last):
+
+<br>
+{| border="1" cellpadding="5"
+!<u>Sample (ul)</u> || <u>Stock Concentration</u> !! <u>AHL (ul)</u> !! <u>Final AHL Concentration</u>
+|-
+|990
+|1000uM
+|10
+|10uM
+|-
+|990
+|100uM
+|10
+|1uM
+|-
+|990
+|10uM
+|10
+|100nM
+|-
+|990
+|1uM
+|10
+|10nM
+|-
+|990
+|100nM
+|10
+|1nM
+|-
+|990
+|10nM
+|10
+|0.1nM
+|-
+|990
+|1nM
+|10
+|0.01nM
+|-
+|1000
+|N/A
+|0
+|0nM
+|}
+<br>
+*Add 200uL of growth medium to a well to act as a control
+*Vortex tubes for 1 second
+*Incubate the culture in a 37oC incubator, taking readings every 30minutes
+
+*Taking readings
+**Prepare an ice bucket containing a pre-chilled 96 well plate - '''<font color = green>The ice is used to stop cell activity, therefore its imporant the plate stays cold</font>'''
+**Remove the tubes from the incubator
+**Pippet 200ul samples from each tube into the 96 well plate inside the ice bucket
+**Vortex the tubes for 1 second - '''<font color = green>As the cells aren't in the shaker, the vortex helps to airate the culture</font>'''
+**Return tubes to the oven
+**Repeat for a total of 4 measurments
+*Take 96 well plate in ice bucket to the SAF
+*Record data from the fluorimeter
+
+References
+
+Tom Hinson
+
+== <font color = red>Comments</font> ==
+
+Tom:
+*Do we need J37020??
+**The only difference is having an extra promoter
+**This can be achieved by ligating a promoter onto the end of J37016
+**Although this will take one more ligation, we don't really know how useful having two promoters will be
+***IE I think it will be better to get data from J37016 before deciding to add an extra promoter
+*How do you measure LuxR Km and Vm (In specifications)
+**LuxR is varying in response to AHL
+**We have no way of measuring LuxR expression
+Christin:
+*If we want to add a single promoter at the end of J37016, we would need 5 ligation steps, whereas ligating parts J37016 and J37020 at the same time would take 4 steps each
+*We could build J37020 at the same time and then test the two parts together, thus saving time to build it afterwards if we decide we want to use this part later after all (for whatever reason)
+*If we are absolutely sure about using J37016 though and do not need J37020, I agree with Tom's comment above
+'''Resolution (29 July)'''
+*We will be making both parts and testing them to see which one is more effective
+*<font color=red>RESOLVED ALL ISSUES</font>

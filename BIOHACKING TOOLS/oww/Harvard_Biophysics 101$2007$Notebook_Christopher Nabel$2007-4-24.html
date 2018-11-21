@@ -1,0 +1,94 @@
+==Tasks Due Today==
+
+===Write a script to parse out sequence data from dbSNP===
+* Done
+* This is an amended version of Xiaodi's XML parse: I simply had to ask the parser to pull down an additional tag name (Hsp_hseq).
+<pre>
+# extracts snp sequence
+def extract_snp_seq(str):
+	dom = parseString(str)
+	variants = dom.getElementsByTagName("Hit")
+	if len(variants) == 0:
+		return
+	seq_list = []
+	for v in variants:
+		# now populate the struct
+		parsed_seq = get_text(v.getElementsByTagName("Hsp_hseq")[0].childNodes)
+		score = get_text(v.getElementsByTagName("Hsp_score")[0].childNodes)
+		# only parse sequence if we parsed rsID
+		if int(score) > 100:
+			seq_list.append(parsed_seq)
+	return seq_list
+</pre>
+
+===Integrate QC Code with Group Script===
+* Done--all variables are lined up and matching the rest of the code found in the program.  We can discuss where the best place to implement this code might be (before or after OMIM results are reported), but that's easy to change.
+* Rather than posting the entire code from our group script, I've posted my addition, which comes between sections marked # do an omim search on each snp and 'print "yay we're done"'
+<pre>
+# error check for mis-matches
+for seq in e_seq:
+    parsed_snp = seq
+    updateseq = open('example.fasta', 'a')
+    updateseq.write(parsed_snp)
+    updateseq.close()
+    snp_len.append(len(formatted_snp))
+
+    # Align the FASTA file using Clustal
+
+cline = Clustalw.MultipleAlignCL(os.path.join(os.curdir, 'example.fasta'))
+cline.set_output('example.aln')
+alignment = Clustalw.do_alignment(cline)
+summary_align = AlignInfo.SummaryInfo(alignment)
+con = summary_align.dumb_consensus()
+
+    # Figure out where each SNP starts and stops relative to the test
+    # sequence.  This allows us to establish a start and default stop for
+    # comparing individual SNPs with the reference.
+
+size_col = Set()
+size_col = summary_align.get_column(1)
+snp_count = len(size_col)-1
+colset = Set()
+for i in range(snp_count):
+    start = 0
+    while start == 0:
+        for j in range(len(con)):
+            col=summary_align.get_column(j)
+            if col[i+1] != '-':
+                start = j
+
+    # Scan for and report mismatches in each SNP. Build in a function to tolerate
+    # insertions/deletions.
+
+    print "Scanning %n for mismatches with reference sequence", e[i]
+    for j in range(start, start+snp_len[i]):
+            
+        col=summary_align.get_column
+        if col[0] == '-': print "Deletion at basepair ", j
+        elif col[i+1] == '-': print "Insertion at basepair ", j
+        elif col[0] != col[i+1]: print "Mismatch: ", col[i+1], j, col[0] 
+        else: "No mismatches found in this SNP"
+
+
+print "Done screening SNPs for mismatches.  Any mismatches may call into question"
+print "the validity of a returned SNP.  Further studies in linkage disequilibrium"
+print "will offer more information."
+</pre>
+
+===No OMIM Entry: What to do?===
+Cynthia shared some thoughts with me on the matter, and the following ideas are possible routes to take.  I assume that Deniz is tackling the 'no entry in dbSNP' case.  So, with hits that show up in dbSNP but not in OMIM we have the following possibilities:
+# The SNP hasn't been fully phenotyped yet, and there should be an entry in OMIM or similar database (but there isn't one).
+# The SNP is non-lethal and of no real significance
+# The SNP was falsely identified, and should not be run through OMIM, regardless of whether OMIM has an entry (I realize that this includes extraneous cases for this example, but it is a concern which I will discuss below)
+This leaves us with the following dilemma: how do we know which category our SNP falls into, and, for each category, what's the best thing to do?  Here are a few short ideas:
+# We can print out a short disclaimer explaining why OMIM hasn't phenotyped the SNP yet, or that there may be no phenotype at all.  This strikes me as a cop-out, though.
+# Because we can parse out information from the SNP entry, we could transform parsed data into search parameters for Pubmed, WebMD, etc, to provide the user with more information about his/her SNP.  It may be that we parse sequence, BLAST it in genbank to find out the gene, but this is certainly doable, and OMIM isn't the only place to find relevant information.  I think this is our best shot for OMIM DOA.  Here's what I would propose:
+## BLAST the SNP in GenBank
+## Parse out a gene name, perhaps publication records
+## Transform these data into search terms (Deniz?  Resmi?)
+## Enter these search terms into our information-yielding modules
+# We can take note that a query has been submitted and that someone has requested an OMIM entry for their SNP.  It may be a little troublesome taking data from people online (and we may not want to do this...), but this could be a way to pool together information about extremely uncommon SNPs.  If there were some database that took in queries of this nature, we could build towards a resource for those infrequent SNPs.
+# We can attempt to look for correlated inheritance with other SNPs and parse information from these linkage relationships.  SNPs may exist in a heritable relationship with other SNPs that have a concrete phenotype.  This may shed more light on SNPs with no OMIM hits, but linkage disequilibrium studies may be ahead of us at this point.
+
+=='''An Additional Problem to De-Bug: Quality Control'''==
+dbSNP uses BLAST algorithms to search, just like GenBank.  This protocol uses a general score to tell you how high the match is between your query sequence and the result.  If you differ by only a single nucleotide, you'll return a high score.  However, the specific SNP in dbSNP is noted by an expanded IUPAC language beyond the simple four nucleotides.  For instance, Y stands for C/T.  A sequence with an A at this point will still pick up the hit from dbSNP because there's only one small change.  Therefore, we need an additional script which can convert our SNP into the traditional four base pairs and reject a query sequence that doesn't have the true polymorphism.  On my own, I could do this by Tuesday.  However, if someone would like to join up with me, I bet we could finish this task by Thursday.

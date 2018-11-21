@@ -1,0 +1,89 @@
+==Overview==
+Denaturing purifications can often lead to better purity and yield.  This purification refolds the protein on the column.  Refolding on the column is supposedly preferable in many cases since the proteins are separated from one another.
+
+==Materials==
+
+===Lysis and column equilibration buffer===
+*8 M urea
+*100 mM NaH<sub>2</sub>PO<sub>4</sub>
+*10 mM Tris Cl
+*10 mM imidazole (recommended by Kathleen, 9/27/2006)
+*pH 8.0
+
+===Denaturing wash buffer (wash buffer 1)===
+*8 M urea
+*100 mM NaH<sub>2</sub>PO<sub>4</sub>
+*150 mM NaCl
+*20 mM imidazole
+*pH 8.0
+
+===Native wash buffer (wash buffer 2)===
+*50 mM NaH<sub>2</sub>PO<sub>4</sub>
+*500 mM NaCl
+*20 mM imidazole
+*pH 8.0
+
+===Elution buffer===
+*50 mM NaH<sub>2</sub>PO<sub>4</sub>
+*500 mM NaCl
+*250 mM imidazole
+*pH 8.0
+
+===Notes===
+*Solid urea to make up an 8M solution takes up a lot of volume so be conservative on how much H <sub>2</sub>O you start with (maybe 50% of final volume)
+*Kathleen suggested supplementing the lysis buffer with 10mM imidazole to prevent nonspecific protein binding to the column.
+
+==Procedure==
+#Grow up an overnight 5mL culture in LB plus the appropriate antibiotic.
+#The following morning, dilute back the culture 1:50 to the appropriate culture volume (which depends on the expected yield of the protein).
+#*''Since I don't know what yield to expect, I arbitrarily did 50mL cultures assuming that my protein yield would be low and let it grow most of the day.  I try to catch the cultures around OD600nm 0.6.''
+#[[Knight:pH meter/Measurement|Verify pH]] of lysis and denaturing wash buffers.  Adjust if necessary.
+#*''Dissociation of urea can lead to changes in pH.  The pH definitely needs to be checked prior to using the solutions.''
+#Harvest the cells by centrifugation at 4000 x ''g'' for 15 mins.
+#*''The Qiagen protocol didn't specify a temperature so I did 4&deg;C.''
+#Decant supernatant.
+#The cell pellet can be stored at -70&deg;C or processed immediately.
+#*''I typically store the pellet at -80&deg;C.''
+#Thaw for 30 mins on ice.
+#*''The Qiagen protocol calls for 15 mins, but it was still frozen after 15 mins so I let it thaw for 30 mins.''
+#Transferred to 2mL eppendorf tube.
+#Resuspend in 1mL lysis buffer (see above).
+#Incubate cells with agitation for 1 hr at room temperature.
+#*''Use an orbis shaker on the bench to do this temp (usually kept in 37&deg; incubator).  Note that the shaker moves during shaking.''
+#Centrifuge lysate at 10000 x ''g'' for 30 mins at room temperature.
+#Add 600 &mu;L lysis buffer to Ni-NTA column to equilibrate.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid to remove equilibration buffer.
+#Save 20 &mu;L cleared lysate.
+#Load 600 &mu;L cleared lysate to Ni-NTA column.
+#Centrifuge Ni-NTA column 5 mins at 700 x ''g'' with closed lid.
+#*''I typically reload with the rest of my cleared lysate.''
+#*''Save flow through.''
+#Add 600 &mu;L denaturing wash buffer 1 to Ni-NTA column.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid.
+#*''Save flow through.''
+#Add 600 &mu;L native wash buffer 2 to Ni-NTA column.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid.
+#*''Save flow through.''
+#Tranfer to clean 1.5mL eppendorf tube.
+#Add 200&mu;L elution buffer.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid.
+#*''Most of the protein should elute in this elution step.''
+
+==Notes==
+*Sauer lab uses a Qiagen Ni-NTA resin but this protocol uses spin columns.  (Smaller scale purification).
+*Using the Qiagen Ni-NTA resin may be preferable for proteins with low yields.
+*Contaminating proteins tend to be less of an issue in bacteria because there are few proteins with neighboring histidines that tend to bind to the column.
+*20 year old spin columns don't work.  :)
+*Even when doing denaturing purifications, add 10mM imidazole to solutions to help with washing out non His tagged proteins.
+
+==Safety==
+
+==References==
+<biblio>
+#SauerDenaturingProtocol [[Sauer:Purification of His-tagged proteins/Denaturing prep]]
+#QiagenNTAManual [http://www1.qiagen.com/literature/handbooks/PDF/Protein/Purification/NiNTA_Spin/1023679HBNINTA_022003WW.pdf Qiagen Ni NTA Spin Kit manual]
+</biblio>
+
+[[Category:Protocol]]
+[[Category:In vitro]]
+[[Category:Protein]]

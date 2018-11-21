@@ -1,0 +1,60 @@
+{{Back to biosoftware mac}}
+
+This page describes a '''LaTeX template for writing up your PhD or DPhil'''. It can be downloaded from here. The template could also serve as a backbone for writing similar documents, like Bachelor and Masters theses. Using the template only requires minimal knowledge of LaTeX, and it contains in-line comments explaining the most essential LaTeX mark-up in the document, mainly the introduction.tex file. If you don't have a LaTeX environment on your computer, you can find some instructions below (Requirements section).
+
+== Overview of template layout ==
+
+Using this LaTeX template you will be able to produce a professionally typeset PDF document with useful features not found in most PDFs. Most of the document structure will be generated automatically without you having to set it up manually, saving you several hours of layout twiddling. Favourite features are the automatic placement of figures close to the text references and avoiding orphan lines (see below for a full list).
+
+[[Image:PhD-template-overview.png]]
+
+* cover page with institution crest and personal details (panel 1, top left)
+* automatic table of contents, automatic numbering of chapters, section,.. (panel 2)
+* automatic listing of all figures and tables after the table of contents (panel 3 & 4, top right)
+* automatic glossary in 2 columns (panel 5, bottom left)
+* special layout for the start of a chapter, always on a main page (odd page number) (panel 6)
+* easy placement of figures with bold title and indented caption below using a macro (panel 7)
+* automatic generation of reference section / bibliography at the end of the document (panel 8, bottom right)
+
+The template does most of the layout work for you. Nevertheless, you can of course change the layout if desired. You might want a different citation style or you may not need an abstract. Many alternatives are given within the documents of the template as inactive lines (preceded by %), which can be activated as desired by uncommenting (removing the % sign).
+
+== Download and use ==
+
+* download the archive with all the text files making up the template: [http://openwetware.org/images/0/08/PhDtemplateLATEX.zip PhDtemplateLATEX.zip] (2 MB)
+* unpack the archive after download
+* you will find a folder structure resembling the document (''0_frontmatter, 1_introduction,.. 9_backmatter'')
+* start by looking at the ''introduction.tex'' file in the folder ''/1_introduction''; it contains detailed comments explaining LaTeX and this template
+* you can start directly by adding contents to the sub-document, e.g. the ''introduction.tex'' file
+* also add your personal information to the central document ''thesis.tex'' which calls up all the other sub-documents
+
+== Requirements ==
+
+* LaTeX environment: pre-installed on many Linux OSs or via installers like [http://www.tug.org/mactex/ MacTeX package] (free)
+* LaTeX compiler, e.g. [http://www.uoregon.edu/~koch/texshop/obtaining.html TeXShop] (free, OS X)
+
+To use the template you'll need a piece of software that assembles the PDF from the various text files. There are flavours of this for all operating systems. For example on the Mac, I would recommend TexShop. You might also find a citation manager useful, although not strictly required. You can make the file containing the references (BibTex file) using the web site [http://www.citeulike.org/ CiteULike] instead. A reference manager comes with additional handy features though. On the Apple computers, [http://bibdesk.sourceforge.net/ BibDesk] is the best because its freeware with PubMed import, easy keyword tagging, and PDF linking/viewing.
+
+== Credits and call for improvements ==
+
+This template is based on [http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/ThesisStyle/ Harish Bhanderi's PhD template] from 2002. Thanks for a well done template that I just extended and corrected (glossary, page number 1/2 duplicated, some layout changes,..) in 2007. 
+
+If you adapt the template, change the layout, iron out glitches, write explanations, etc. please upload your improvements and make them available to the community.
+
+Especially the glossary generation is still complicated. It would be great if this were simplified. I had to resort to the command line using the OS X Terminal programme: makeindex  ''thesis.nlo -s path/nomencl.ist -o thesis.nls'' (file paths may have to be added).
+
+== See also ==
+
+on OpenWetWare:
+* [[LaTeX]] - introduction to LaTeX typesetting, pros and cons
+* [[Word vs. LaTeX]]
+* [[Getting started with LaTeX on a Mac]]
+
+in Wikipedia et al:
+* [http://en.wikipedia.org/wiki/LaTeX LaTeX]
+* [http://en.wikibooks.org/wiki/LaTeX Latex wikibook]
+* [http://en.wikipedia.org/wiki/Doctor_of_Philosophy PhD]
+
+external
+* [http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/ThesisStyle/ Harish Bhanderi's LaTeX PhD template] from 2002
+* [http://www.cs.ucl.ac.uk/research/students/Latexforthesis.htm UCL computer department thesis template]
+* [http://www.cs.utexas.edu/users/jbednar/latex/ UT thesis template] updated by James Bednar, 2006

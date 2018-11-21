@@ -1,0 +1,223 @@
+{{Synthetic biology top}}
+
+<div style="padding: 10px; width: 730px; color: #000000; background-color: #ccccff">
+
+==Motivation==
+
+Abstraction hierarchies are a '''human''' invention designed to assist people in engineering very complex systems by ignoring unnecessary details.  If the process to design a biological system was to write down the string of nucleotides, it would immediately become untenable even for experts to design anything but very simple systems.  Most people just aren't capable of processing that kind of detail all at once.  If instead, an abstraction hierarchy is specified, it allows the designer of a biological system to ignore some of the implementation details and focus only on the high-level design issues.
+
+Engineers in all disciplines take advantage of abstraction hierarchies to design and build complicated systems.  For instance, software engineers write in high level programming languages like C++ or Java which are designed to be easy for humans to read and write.  These programs are then translated into lower level sets of instructions that are more easily translatable to bit strings that are machine interpretable and implementable.  Thus, the people who write C++ programs do not need to know how to translate their programs to machine code and the people who work on instruction sets do not need to envision all possible programs that the software engineer might write.
+
+To enable the engineering of very complex biological systems, it will be necessary to develop abstraction hierarchies for biological engineering.  At this point, it is not necessarily clear which hierarchies are most useful and in fact it may be slightly premature to try and develop them.  Nevertheless, thinking about what an abstraction hierarchy in synthetic biology should look like might help us think about the "right" way to engineer biological systems and to design biological parts.
+
+Below several abstraction hierachies are listed that might be appropriate for biological engineering.  Anyone should feel free to revise them, add new candidate hierarchies or add comments as this is very much a work in progress.  An attempt has been made to give credit to the originators of each of the candidate abstraction hierarchies; however, this should in no way be a deterrent to those interested in offering revisions.  The abstraction hierarchies have been listed in chronological order of inception.
+
+==Candidate abstraction hierarchies==
+
+===DNA, parts, devices and systems model===
+
+[[Image:AbstractionHierarchy.jpg]]
+
+
+{| style="background:#ccccff"
+! align="left" | Layer name
+! align="left" | Definition
+! align="left" | Example
+|--
+| DNA
+| sequence of nucleotides
+| ATGGATCATGATG
+|--
+| Part
+| a finite sequence of nucleotides with a specific function
+| RBS, CDS, promoter, terminator
+|--
+| Device
+| multiple parts with a higher level function
+| inverter
+|--
+| System
+| multiple devices hooked together
+| ring oscillator
+|}
+
+The original abstraction hierarchy is posted on the [http://parts2.mit.edu/r/parts/htdocs/AbstractionHierarchy/index.cgi Registry page] and is originally from one of [[Drew Endy | Drew's]] slides.
+
+by [[Drew Endy]].
+
+----
+
+===Screenability model===
+
+{| style="background:#ccccff"
+! align="left" | Layer name
+! align="left" | Definition
+! align="left" | Example
+|--
+| DNA
+| sequence of nucleotides
+| ATGGATCATGATG
+|--
+| Part
+| a finite sequence of nucleotides with a specific function
+| RBS, CDS, promoter, terminator
+|--
+| Device
+| one or more parts which can be screened for functionality 
+| promoter, terminator, inverter
+|--
+| System
+| multiple devices which cannot be screened for functionality
+| ring oscillator
+|}
+
+by [[Jason Kelly]].
+
+----
+
+===Composition model===
+
+{| style="background:#ccccff"
+! align="left" | Layer name
+! align="left" | Definition
+! align="left" | Example
+|--
+| DNA
+| sequence of nucleotides
+| ATGGATCATGATG
+|--
+| Part
+| a sequence of DNA with a specific function that can be physically combined with other parts via an assembly standard
+| RBS, CDS, promoter, terminator
+|--
+| Device
+| a set of parts that can be functionally combined with other devices via a common, standard signal carrier (i.e. PoPS, RiPS, PhPS)
+| inverter
+|--
+| System
+| a set of devices that cannot be functionally combined with other devices via a common, standard signal
+| ring oscillator
+|}
+
+See [[Synthetic Biology:Abstraction hierarchy/Composition model]] for notes on the abstraction hierarchy developed based on composability.  
+
+by [[Reshma Shetty]] and [[Barry Canton]].
+
+----
+
+===Network layer model===
+
+This model derives inspiration from the [[Wikipedia:OSI model]] for computer network protocols.
+
+====Version 1====
+
+{| style="background:#ccccff"
+! align="left" | Layer Number
+! align="left" | Layer Name
+! align="left" | Example Standard
+! align="left" | Role of User
+! align="left" | Category
+|----
+|Layer 7
+|Application
+|chemical detector
+|Brainstorm need
+|System
+|----
+|Layer 6
+|Packaging
+|pSB plasmids
+|Physical handling of system
+|System
+|----
+|Layer 5
+|Environment
+|wavelengths of light
+|Provide input or observe output
+|System
+|----
+|Layer 4
+|Cell
+|cell-cell signaling
+|none
+|Cell
+|----
+|Layer 3
+|Protein
+|dimerization interface
+|none
+|Part
+|----
+|Layer 2
+|RNA
+|PoPS
+|none
+|Part
+|----
+|Layer 1
+|DNA
+|BioBricks assembly
+|none
+|Part
+|----
+|Layer 0
+|Chassis
+|nucleotides/amino acids
+|none
+|Chassis
+|}  
+
+by [[Austin Che]].
+
+====Version 2====
+
+This version attempts to reconcile the network layer model with the composition model.
+
+{| style="background:#ccccff"
+! align="left" | Layer Number
+! align="left" | Layer Name
+! align="left" | Example Standard
+! align="left" | Role of User
+|----
+|6
+|User
+|Detector of Chemical X
+|
+|----
+|5
+|Environment
+|Batch/continuous, Temp., Media
+|Provide input or observe output
+|----
+|4
+|Population
+|cell-cell signaling
+|Design interactions between different cells
+|----
+|3
+|System
+|Signaling molecules, fluorescence
+|Design system to process external inputs into detectable outputs
+|----
+|2
+|Device
+|PoPS, RiPS
+|Use parts to design device with particular transfer curve
+|----
+|1
+|Part
+|BioBricks assembly
+|Plan and assemble
+|----
+|0
+|Materials
+|nucleotides/amino acids
+|Choose the materials
+|}
+
+by [[Barry Canton]].
+
+See [[Synthetic Biology:Abstraction hierarchy/Network layer model]] for more detailed and extensive notes on the network layer model.
+
+</div>
+{{Synthetic biology bottom}}

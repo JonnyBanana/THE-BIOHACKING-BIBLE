@@ -1,0 +1,263 @@
+==Experiment 1 ==
+
+'''Aims''': <br>
+*Determine the DNA concentration and purity. From this determine volume of the DNA needed to add to the in vitro expression systems.
+
+*For this experiment we need to have tested <font color=blue>'''pTet-GFP ([http://parts.mit.edu/registry/index.php/Part:BBa_I13522 BBa_I13522])'''</font> and <font color=blue>'''pT7-GFP ([http://parts.mit.edu/registry/index.php/Part:BBa_E7104 BBa_E7104])'''</font> mini/midi prep DNA. 
+
+'''Status''': <font color=red> FEEDBACK/VALIDATION REQUIRED </font>
+*DNA sample of pT7 and pTet available for Friday
+*DNA sample of pCI will be avaible next week, however, if either pTet or pT7 are suitable for Cell by Date these will be pursed 
+
+====Equipment====
+*Spectrometer
+*Curvette x2
+*Calculator
+
+====Reagents====
+*DNA isolated from the midi preps
+*Distilled water
+
+====Protocol====
+We need to be able to quantify the DNA from the midi preps. To do this we measure the A<sub>260nm</sub> and using the standard calibration that 1.0 unit of absorbance corresponds to 50ug/ml of double stranded DNA.
+
+#First remove 5ul of the DNA sample and add to 1ml distilled water to a quatz curvette.
+#Then fill a curvette with 1ml of the distilled water the DNA is in. This curvette will be the 'blank' for our experiment. 
+#Set the spectrometer to measure at 260nm and place the 'blank' in the spectrometer. Press the zero button on the machine to take into account for the absorbance of the buffer.
+#Remove the 'blank' curvette and place the curvette containing the DNA in the spectrometer. Wait for a the reading to settle and record the A<sub>260nm</sub> .
+#Now we need to measure the absorbance at 280nm. First adjust the spectrometer to a measure absorbance at 280nm and again zero the machine using the 'blank' curvette.
+#Then add the curvette containing the DNA sample in the spectrometer and record the A<sub>280nm</sub> reading.
+#At the end of the experiment through away the DNA dilution in the curvette.
+
+====Data Analysis====
+*The DNA provided has been purified by a midi prep. This purification process involves several washes to remove impurities such as media, genomic DNA and cell wall. In addition a 2x wash with 70% ethanol is used to remove salts such as Na<sup>+</sup>. A major concern for us is too remove any salts from our DNA as this can limit the in vitro expression. If in our initial testing of constructs in vitro we find that we have a very low rate of expression we will consider carry out additional purification steps or modifying the midi prep protocol. 
+*To calculate the concentration of DNA from the A<sub>260nm</sub> we need to use the following formula: <br><p align="center"> <font color=blue>'''DNA ug/ml = 50 x A<sub>260nm</sub> x Dilution Factor'''</font>
+*Dilution factor is calculated by: <br> 
+<center><font color=blue>'''Dilution Factor=Final volume/ Initial volume'''</font></center>
+*From the concentration calculation we can now calculate the volume needed to obtain 2ug, e.g. for concentration 10ug/ml:
+<center><font color=blue>'''Concentration of DNA (ug/ml)= 10ug/ml'''</font></center><br>
+<center><font color=blue>'''volume needed for 2ug(ml)= ( 2ug/10ug ) * 1ml'''</font></center><br>
+*So for this example we would require 0.2ml of the DNA solution to get 2ug of DNA.
+
+*To calculate the purity of the DNA we can use the following formula:<br> <center><font color=blue>'''DNA purity = A<sub>260nm</sub>/A<sub>280nm</sub>'''</font></center>
+*A value between 1.8 - 2.0 indicates pure  DNA, anything less we will need to carry out further purification steps.
+
+==Experiment 2==
+'''Aims:'''
+*To determine which constructs for cell by date expresses ''in vitro''
+*To test the pTet and pcI constructs in commercial S30 E.coli cell extract and home made S30 extract
+*To test the pT7 construct in commercial S30 T7 cell extract and home made S30 extract.
+*To investigate optimum volume of home made S30 extract 
+*To investigate the differences between home made and commercially bought S30 extract. This is in terms of rates of expression, length of expression and total output. 
+'''Status''' <font color=red> FEEDBACK/VALIDATION REQUIRED </font>
+*midi/mini preps for pTet and pT7 to be completed friday. 
+*T7 commercial extract arrived
+*E.coli commercial extract to arrive Friday
+*Home made extract to be completed on Tuesday - delays from growth of E.coli cells
+
+====Equipment====
+*Fluorometer + Connected PC '''Turn on before beginning'''
+*96 well plate x1 + Plate lid
+*1.5ml eppendorf tube x7
+*eppendorf rack
+*Gilson p20,p200,p1000
+*Stop watch
+
+====Reagents====
+*Our Prepared S30 extract
+*Commercial S30 E.coli extract. Including:
+**175µl Amino Acid Mixture Minus Cysteine, 1mM
+**175µl Amino Acid Mixture Minus Methionine, 1mM
+**175µl Amino Acid Mixture Minus Leucine, 1mM
+**450µl S30 Extract, Circular (3 × 150µl)
+**750µl S30 Premix Without Amino Acids
+*Commercial S30 T7 extract. Including:
+**175µl Amino Acid Mixture Minus Cysteine, 1mM
+**175µl Amino Acid Mixture Minus Methionine, 1mM
+**175µl Amino Acid Mixture Minus Leucine, 1mM
+**450µl T7 S30 Extract, Circular (3 × 150µl)
+**750µl S30 Premix Without Amino Acids
+*MiiA water x1ml
+*GFP solution (For this initial experiment does not need to be purified GFP, we just want to know we have the right filter and that our settings are adjusted to measuring GFP)
+
+====Protocols====
+#First collect all equipment and reagents and ensure that the fluorometer and that the PC connected has a data collection protocol installed. 
+#''Commercial E.coli Cell Extract'': First prepare a complete amino acid mixture for both extract solutions: Add the 7.5μl volume of two amino acid minus mixtures into an labeled eppendorf to give a volume of 15μl. Each amino acid minus mixture is missing one type of amino acid, and so by combining two solutions we are complementing each solution for the missing amino acid. Place eppendorf in a rack on bench.
+#''Commercial T7 Cell Extract'':Carry out procedure above for the T7 amino acid minus mixtures.
+#''S30 home-made Cell Extract'':Remove 1.2ml and place in a labeled eppendorf tube. Place these tubes in a rack on bench. 
+#''Commercial E.coli Cell Extact'':Take a eppendorf tube and add 5µl of the E.coli complete amino acid mixture. Then add add 20µl of S30 Premix Without Amino Acid. Then add 15µl of S30 Extract Circular. Finally add nuclease-Free Water to bring final volume (inc.DNA vol) to 60µl, the volume of DNA added will be determined in experiment 1 and the volume of the nuclease free water adjusted accordingly. Place the eppendorf tube in a rack on the bench
+#Carry out step above twice more so that we end up with three eppendorf tubes of prepared commercial E.coli extract.
+#''Commercial T7 Cell Extract'':Repeat step 3 and 4 again three times however use the T7 cell extract reagents and the T7 prepare complete amino acid mixture. We will now have three eppendorf tubes of prepared commercial T7 cell extract.
+#Vortex the tubes to mix thoroughly and place the 5x eppendorf tubes in the incubator at 37<sup>o</sup>C
+
+'''Loading Plate'''
+#Follow the schematic for the plate and begin by loading the in vitro expression system into the correct wells. Before loading in the samples vortex the tubes for a few seconds to mix the solution.
+#Place the lid on the 96well plate and tape up the edges of the lid. This should be put into the incubator at 37<sup>o</sup>C for 10 minutes to allow temperature to equilibrate
+#Remove from 37<sup>o</sup>C incubator and spin-down in centrifuge in plate centrifuge at 2000rpm for a few seconds. Spin down is the process of bringing down any solution on lid or side of well into the base of the well. Alternatively can tap the top of the lid to bring down any solution to bottom of the well.
+#Remove lid off th e 96well plate and place in the fluorometer. Create a file name protocol 2-1 under:  D:\IGEM\'''INSERT DATE'''\CBD\ protocol 2-1. Export the data here. If repeated measurements change the second number to suit repeat number, e.g. 2nd repeat protocol 2-2, 5th repeat protocol 2-5. Once the data collection is set up then initiate the measurements.
+#This measurement will give a back ground fluorescence measurement and can be used as our time zero data. 
+#Then to begin the reaction add required volume of purified DNA sample to give 2µg to the wells indicated on the schematic. Be careful not to add to wells that DO NOT NEED DNA. 
+#Place lid back on and place back in the incubator at 37<sup>o</sup>C <br><br>
+#After 30 minutes of incubation measure the fluorescence by repeating procedure 3-4 above. This initial measurement of 30 minutes is to find out how fast GFP is being produced. After this initial measurement, the intervals should be reassessed and adjusted accordingly
+#Before each measurement be careful to remember to either spin down or tap down the solution and to remove the lid before placing in the fluorometer
+
+'''Schematic'''
+{| border="1" cellpadding="1"
+|
+{| border="1" cellpadding="2"
+!<u>Well </u> || <u>Test Construct</u> !! <u>In vitro chassis</u> !! <u>Vol of in <br> vitro chassis (ul)</u>
+|-
+|<font color=blue> A1 
+|<font color=blue> pTet
+|<font color=blue>Commercial E.coli extract 
+|<font color=blue>60-DNA volume
+|-
+|<font color=blue>A2
+|<font color=blue>pTet
+|<font color=blue>Commercial E.coli extract 
+|<font color=blue>60-DNA volume
+|-
+|<font color=blue>A3 
+|<font color=blue>pTet
+|<font color=blue>Our S30 Cell extract 
+|<font color=blue>50µl-DNA volume
+|-
+|<font color=blue>A4
+|<font color=blue>pTet
+|<font color=blue>Our S30 Cell extract 
+|<font color=blue>50µl-DNA volume
+|-
+|<font color=blue>A5
+|<font color=blue>pTet
+|<font color=blue>Our S30 Cell extract 
+|<font color=blue>100-DNA volume
+|-
+|<font color=blue>A6
+|<font color=blue>pTet
+|<font color=blue>Our S30 Cell extract 
+|<font color=blue>100-DNA volume
+|-
+|<font color=blue>A7
+|<font color=blue>pTet
+|<font color=blue>Our S30 Cell extract 
+|<font color=blue>150-DNA volume
+|-
+|<font color=blue>A8
+|<font color=blue>pTet
+|<font color=blue>Our S30 Cell extract 
+|<font color=blue>150-DNA volume
+|-
+|<font color=purple>C1
+|<font color=purple>pT7
+|<font color=purple>Commercial T7 extract
+|<font color=purple>60-DNA volume
+|-
+|<font color=purple>C2
+|<font color=purple>pT7
+|<font color=purple>Commercial T7 extract
+|<font color=purple>60-DNA volume
+|-
+|<font color=purple>C3
+|<font color=purple>pT7
+|<font color=purple>Our S30 Cell extract 
+|<font color=purple>50-DNA volume
+|-
+|<font color=purple>C4
+|<font color=purple>pT7
+|<font color=purple>Our S30 Cell extract 
+|<font color=purple>50-DNA volume
+|-
+|<font color=purple>C5
+|<font color=purple>pT7
+|<font color=purple>Our S30 Cell extract 
+|<font color=purple>100-DNA volume
+|-
+|<font color=purple>C6
+|<font color=purple>pT7
+|<font color=purple>Our S30 Cell extract 
+|<font color=purple>100-DNA volume
+|-
+|<font color=purple>C7
+|<font color=purple>pT7
+|<font color=purple>Our S30 Cell extract 
+|<font color=purple>150-DNA volume
+|-
+|<font color=purple>C8
+|<font color=purple>pT7
+|<font color=purple>Our S30 Cell extract 
+|<font color=purple>150-DNA volume
+|-
+|<font color=orange> E1 
+|<font color=orange> pcI
+|<font color=orange> Commercial E.coli extract 
+|<font color=orange>60-DNA volume
+|-
+|<font color=orange>E2
+|<font color=orange>pcI
+|<font color=orange>Commercial E.coli extract 
+|<font color=orange>60-DNA volume
+|-
+|<font color=orange>E3 
+|<font color=orange>pcI
+|<font color=orange>Our S30 Cell extract 
+|<font color=orange>50-DNA volume
+|-
+|<font color=orange>E4
+|<font color=orange>pcI
+|<font color=orange>Our S30 Cell extract 
+|<font color=orange>50-DNA volume
+|-
+|<font color=orange>E5
+|<font color=orange>pcI
+|<font color=orange>Our S30 Cell extract 
+|<font color=orange>100-DNA volume
+|-
+|<font color=orange>E6
+|<font color=orange>pcI
+|<font color=orange>Our S30 Cell extract 
+|<font color=orange>100-DNA volume
+|-
+|<font color=orange>E7
+|<font color=orange>pcI
+|<font color=orange>Our S30 Cell extract 
+|<font color=orange>150-DNA volume
+|-
+|<font color=orange>E8
+|<font color=orange>pcI
+|<font color=orange>Our S30 Cell extract 
+|<font color=orange>150-DNA volume
+|-
+|<font color=green>G1
+|<font color=green>None
+|<font color=green>GFP sample
+|<font color=green>None
+|-
+|<font color=red>G2
+|<font color=red>None
+|<font color=red>Commercial E.coli extract  
+|<font color=red>60
+|-
+|<font color=red>G3
+|<font color=red>None
+|<font color=red>Commercial T7 extract  
+|<font color=red>60
+|-
+|<font color=red>G4
+|<font color=red>None
+|<font color=red>Our S30 Cell extract
+|<font color=red>50
+|-
+|<font color=red>G5
+|<font color=red>None
+|<font color=red>Our S30 Cell extract
+|<font color=red>100
+|-
+|<font color=red>G6
+|<font color=red>None
+|<font color=red>Our S30 Cell extract
+|<font color=red>150
+|}
+|
+[[Image:Intialtestingplate1.PNG|400px|96 Plate Schematic]]
+|}
+<br>

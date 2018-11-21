@@ -1,0 +1,47 @@
+Functions of elements inside the sequence between HpaI and BamHI:
+Gene 	Function 	Re-Engineering Plans 
+I 	assembly 	
+II 	replication of DNA + strand 	One way to control rate of phage infection is to control replication of phage DNA based on stimuli from the environment. Assuming gene II also has a promoter, we could implement a strategy similar to that used for gene I. 
+III 	phage tail protein 	Modify in such a way that would allow us to directly control the length of the phages that shed from the E. coli host. For instance, we could delay the time at which the p3/p6 cap is added by making p3 expression a function of environmental cues such as ionic strength or pH. We would also have to take the effect this would have on the infection process since p3 is also the protein which binds to the TolA protein on the bacterial pilus. 
+IV 	assembly 	Not in region.
+V 	binds ssDNA 	Modify expression so that we can control the amount of time the virus DNA spends inside the host (as opposed to actively being packaged and spreading to other bacteria). 
+VI 	phage tail protein 	Not in region.
+VII 	phage head  protein 	
+Not in region.
+VIII 	phage coat protein 	Add a tag that increases the affinity of the virus coat to various elements that could form nano-constructs. Must be careful when modifying since the sequence of VIII is coupled to that of IX. 
+IX 	phage head protein 	Could implement an idea similar to the one for VII, since they both can have residues added to their N-terminal end, and are similar in size and function. Must be careful when modifying since the sequence of IX is coupled to that of VII and VIII. 
+X 	DNA replication 	Modify to add another level of regulation for phage propagation. This, coupled with control of II, could allow complex control of the life cycle behavior of the virus. 
+XI 	assembly 	Not in region.
+New parts defined:
+Part Name	Part Type	Description
+BBa_M31516	Project	This is the fully annotated sequence between HpaI and BamHI. Changes made were only shown in the separate but related parts (BBa_M31519 and BBa_M
+BBa_M31519	Regulatory	This is the promoter sequence of g3 which has been separated from g8. It also includes the restriction enzyme EcoRV in front.
+BBa_M31520	Coding	This is a modified g8 that has point mutations to delete the promoter of g3 inside it. It also has an EcoRI restriction site added to the end. Therefore, it operates independent of g3.
+
+
+Motivation for refactoring: 
+After having annotated the M13K07 sequence across the region given, I decided to decompress the genome makes it much easier to engineer the parts indepedently of each other. For example, one could begin refactoring by separating the promoter of gene 3 from the tail end of gene 8. By making the promoter of gene 3 independent of gene 8 (an important coat protein that I do not wish to modify presently), so that I will be able to make changes to the gene 3 promoter without affecting the protein coat integrity of M13. Once we have an independent gene 3 promoter, I will be able to control the level of expression of gene 3 (using environmental signals) and directly control the length of the phages that shed from the E. coli host. For instance, we could delay the time at which the p3/p6 cap is added by making p3 expression a function of environmental cues such as ionic strength or pH. We would also have to take the effect this would have on the infection process since p3 is also the protein which binds to the TolA protein on the bacterial pilus.
+Refactoring Process: 
+Original gene 8 + gene 3 promoter overlap:
+Atgaaaaagtctttagtcctcaaagcctctgtagccgttgctaccctcgttccgatgctgtctttcgctgctgagggtgacgatcccgcaaaagcggcctttaactccctgcaagcctcagcgaccgaatatatcggttatgcgtgggcgatggttgttgtcattgtcggcgcaactatcggtatcaagctgtttaaga|aattcacctcgaaagcaagctga  taaaccgatacaattaaaggctcct
+(After line = gene 3 promoter sequence. Gene 8 ends at the space. Notice the overlap.)
+Editting:
+1. Repeat part of gene 3 promoter sequence and B. disrupt the original gene 3 promoter with point mutations without changing the amino acid sequence of gene 8. 
+A) atgaaaaagtctttagtcctcaaagcctctgtagccgttgctaccctcgttccgatgctgtctttcgctgctgagggtgacgatcccgcaaaagcggcctttaactccctgcaagcctcagcgaccgaatatatcggttatgcgtgggcgatggttgttgtcattgtcggcgcaactatcggtatcaagctgtttaagaaattcacctcgaaagcaagctga|aattcacctcgaaagcaagctgataaaccgatacaattaaaggctcct
+
+B) atgaaaaagtctttagtcctcaaagcctctgtagccgttgctaccctcgttccgatgctgtctttcgctgctgagggtgacgatcccgcaaaagcggcctttaactccctgcaagcctcagcgaccgaatatatcggttatgcgtgggcgatggttgttgtcattgtcggcgcaactatcggtatcaagctgtttaagaaattTacTtcCaaGgcGagTtga|aattcacctcgaaagcaagctgataaaccgatacaattaaaggctcct
+
+3.	Add two zero-cutter restriction enzymes (EcoRI and EcoRV) to define two new parts: one with gene 8 and the other with the independent promoter of gene 3 (+ gene 3 itself). 
+
+atgaaaaagtctttagtcctcaaagcctctgtagccgttgctaccctcgttccgatgctgtctttcgctgctgagggtgacgatcccgcaaaagcggcctttaactccctgcaagcctcagcgaccgaatatatcggttatgcgtgggcgatggttgttgtcattgtcggcgcaactatcggtatcaagctgtttaagaaattTacTtcCaaGgcGagTtgaGAATTC|GATATCaattcacctcgaaagcaagctgataaaccgatacaattaaaggctcct
+
+
+Other regions exist which are more difficult to re-factor due to overlapping genes, promoters, and rbs sequences, but nevertheless need to be re-factored if we want to stick to the design constraint of one function per part. These include:
+
+Overlap:	Possible re-factoring problems:
+Promoter-g10, g2	Promoter is essentially inside g2 and separation will require repeating a large sequence, which could affect protein integrity since too many point mutations may be damaging, while too few may not be enough to “erase” the promoter from inside g2.
+Rbs-g10, g2	Same reasons as above.
+G10, g2	G10 and g2 are essentially inseparable and need major re-vamping (i.e. repeat of huge sequences in the genome, a potentially risky thing to do – see above.)
+Promoter-g5, g2, g10	A three-layered compression structure which would take major re-vamping to decouple.
+Rbs-g7, g5	Can re-factor using exact same method as the g8/promoter g3.
+Promoter g8, rbs-g9	Rbs-g9 is extremely far away from the g9 ORF, so maybe be hard to define a part.

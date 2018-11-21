@@ -1,0 +1,200 @@
+==Abstract==
+
+I am comparing the sequencing data from the aiiA plus immunotag (ie.after PCR) with the expected sequence using bio-informatics tools. 
+
+My conclusion from this work the sequencing data is unreliable so no conclusions can be drawn.
+
+==Method==
+
+Using Clustaw analysis I compared the sequencing data and the expected sequence. I set the program for maximum gap penalties which causes the program to effectively slide the sequences against each other and pick the one with the most bases aligned.
+
+==Results== 
+
+Running alignment with maximum penalties for gap opening and extension, this tells the program to slide the sequences against each other and pick the alignment with the highest number of bases matching. 
+
+Score = 29 '''this effectively says there is no similarity between the sequences.'''
+
+ CLUSTAL W (1.83) multiple sequence alignment 
+ 
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      NNANANNAACNATAGAGTGGAAANGGGGNNATCTTGAGNCNTGGGNAAAACGGNAAAAAA 60
+                                                                              
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      GGNGTGNANGTNATNTNCNGGAATTTCCTGNAGANTGNNAAANAGAGAGNANNTGAATAG 120
+                                                                              
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      AAAACNGNCNNCAGNNGNNCNCTTTTACNGNGGTANCAANANGGCAAAGNANGCTTTNCG 180
+                                                                              
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      NGCTNANTNTTGNNGNNGANAGAANNGGTANTNGGANGNTNGNAGGACNCCNNATNACNC 240
+                                                                              
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      GGGATAANGATNTATNGNNTTAANAGGACCTNANAATAGTTNNACNATAGNCNTNNCTNG 300
+                                                                              
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      ACNAGNNNTTCNANTNGCGNGNNAANTNATNCACNTNAAGCNGGAAANTGTTGNCNANAC 360
+                                                                              
+ 
+ aiia             ------------------------------------------GATTATAAAGATGATGAT 18
+ Sequenceing      NNGNTCTGCNTACGGCANNNGAGANNTNCAGCANGCTTNTATNNNNACGAGAGANTCGNT 420
+                                                                *  *       * *
+ 
+ aiia             GATAAAGGTATGACAGTAAAGAAGCTTTATTTCGTCCCAGCAGGTCGTTGTATGTTGGAT 78
+ Sequenceing      NNNCNNGNANNGNNANTNGNGCCGNCGTTAATGATANNNCGGCTTNANTNCGAAGNGTCN 480
+                        *    *  * *   *  *   *   *  *         *   *       *    
+ 
+ aiia             CATTCGTCTGTTAATAGTACATTAACACCAGGAGAATTATTAGACTTACCGGTTTGGTGT 138
+ Sequenceing      NGCCTNCNANANGAACNNANCCTGGANAGAGAANCANNGGATANGNGGGCNACTCCGNAN 540
+                               *    *   *      ** *  *             *   *  *    
+ 
+ aiia             TATCTTTTGGAGACTGAAGAAGGACCTATTTTAGTAGATACAGGTATGCCAGAAAGTGCA 198 
+ Sequenceing      NGACNATCAATNCNNNNNGGCNAAANNNNNGGACCGNNNCCGGTCTNNNNNCACCACGCN 600
+                     *  *           *    *        *       * *         *    **  
+ 
+ aiia             GTTAATAATGAAGGTCTTTTTAACGGTACATTTGTCGAAGGGCAGGTTTTACCGAAAATG 258
+ Sequenceing      GNANCCGNCCNGTAAACCCACNNTGCCGGGCTANNNGGGANGNANNNNCTCTNACNNTNG 660
+                  *                       *      *    *    * *     *         *
+ 
+ aiia             ACTGAAGAAGATAGAATCGTGAATATTTTAAAACGGGTTGGTTATGAGCCGGAAGACCTT 318
+ Sequenceing      CAATTGNCNNNACGANGANGNNCCTGNATACNCTNCTGNACCTNGNNANNGGCNGTGGCT 720
+                               **             **            *       **  *    *
+ 
+ aiia             CTTTATATTATTAGTTCTCACTTGCATTTTGATCATGCAGGAGGAAATGGCGCTTTTATA 378
+ Sequenceing      NTNACANCNNCNNNNTGGTNGGNGNNNTNNNTCTNNNGNAATNNNAANNNNCTAATNTNN 780
+                   *             *       *   *                 **        *    
+ 
+ aiia             AATACACCAATCATTGTACAGCGTGCTGAATATGAGGCGGCGCAGCATAGCGAAGAATAT 438
+ Sequenceing      GNCANCNNNAGNGNGGNANGNGANTCNTANNTNTTNNNNNNAAANNNNNGNNNTGNTGNN 840
+                     *     *     * *       *  *              *     *    *      
+ 
+ aiia             TTGAAAGAATGTATATTGCCGAATTTAAACTACAAAATCATTGAAGGTGATTATGAAGTC 498
+ Sequenceing      CNGNNTNNNCANGNGANNNCTTNNAAGNGNNGCGTNCACNNNTNANGAANNNCATNANNN 900
+                    *                *            *     *     * *         *   
+ 
+ aiia             GTACCAGGAGTTCAATTATTGCATACACCAGGCCATACTCCAGGGCATCAATCGCTATTA 558
+ Sequenceing      NNANCTAGNANCNANNNNGNTAGNGNNNTNTNNCGNCTTANNNNNAANNTNGAAGNNAGG 960
+                    * *  *     *                   *    *       *             
+ 
+ aiia             ATTGAGACAGAAAAATCCGGTCCTGTATTATTAACGATTGATGCATCGTATACGAAAGAG 618
+ Sequenceing      GAANAAANGNGGNCGTNNTNTTANGAGAGNNNNNNNNGCNNNGTNNAAGNNGNGNNNNNC 1020
+                      * *        *    *   *                 *          *      
+ 
+ aiia             AATTTTGAAAATGAAGTGCCATTTGCGGGATTTGATTCAGAATTAGCTTTATCTTCAATT 678
+ Sequenceing      ANGNNGNNGAGTGCGNGGCGNANTGGNGGANNNANNANNNGNNGCGCCANNNNNTGGNAT 1080
+                  *        * **    **    **  ***               **       *    *
+ 
+ aiia             AAACGTTTAAAAGAAGTGGTGATGAAAGAGAAGCCGATTGTTTTCTTTGGACATGATATA 738
+ Sequenceing      AAGTNGANNATTNNGGCAGNAANANGGNAAGNTANNNANGAGNANCNTNACNNANANNNC 1140
+                  **       *     *  *  *      *          *       *       *    
+ 
+ aiia             GAGCAGGAAAGGGGATGTAAAGTGTTCCCTGAATATATAGCTGCAAACGACGAAAACTAC 798
+ Sequenceing      ATNNCANNGTNTGACAGANCTTNNCNNCNTCNCCNAGNNNACTGAGANCTNGAAANNNTN 1200
+                              *   *          * *              * *    ****     
+ 
+ aiia             GCTTTAGTAGCTTAATAA---------------------------------- 816
+ Sequenceing      NGAAANGAANNNNNANNATNTAANTNNNNNNNTNNTNNCGGNNACCCNCTNG 1252
+                        * *     *  *                                   
+ 
+ <small>PLEASE NOTE: Showing colors on large alignments is slow.</small>
+
+Running first alignment, Defult penalties for gap open and extention. This is useful in evolutionary analysis but not for our purpouses.
+
+ ''' CLUSTAL W (1.83) multiple sequence alignment'''
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      NNANANNAACNATAGAGTGGAAANGGGGNNATCTTGAGNCNTGGGNAAAACGGNAAAAAA 60
+                                                                               
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      GGNGTGNANGTNATNTNCNGGAATTTCCTGNAGANTGNNAAANAGAGAGNANNTGAATAG 120
+                                                                               
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      AAAACNGNCNNCAGNNGNNCNCTTTTACNGNGGTANCAANANGGCAAAGNANGCTTTNCG 180
+                                                                              
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      NGCTNANTNTTGNNGNNGANAGAANNGGTANTNGGANGNTNGNAGGACNCCNNATNACNC 240
+                                                                              
+ 
+ aiia             ------------------------------------------------------------
+ Sequenceing      GGGATAANGATNTATNGNNTTAANAGGACCTNANAATAGTTNNACNATAGNCNTNNCTNG 300
+                                                                               
+  
+ aiia             ----------------------------------------------------GATTATAA 8
+ Sequenceing      ACNAGNNNTTCNANTNGCGNGNNAANTNATNCACNTNAAGCNGGAAANTGTTGNCNANAC 360
+                                                                      *   * * 
+  
+ aiia             AGATGATGATGATAA-AGGTATGACAGTAAAGAAGCTTTATTTCGTCCCAGCAGGTCGTT 67
+ Sequenceing      NNGNTCTGCNTACGGCANNNGAGANNTNCAGCANGCTTNTATNNNNACGAGAGANTCGNT 420
+                        **   *    *     **     *  * ****   *     * **    *** *
+ 
+ aiia             GTA--TGTTGGATCATTCGT----CTGTTAATAGTACATTAACACCAGGA-GAATTATTA 120
+ Sequenceing      NNNCNNGNANNGNNANTNGNGCCGNCGTTAATGATANNNCGGCTTNANTNCGAAGNGTCN 480
+                        *       * * *       ******  **      *   *    ***   *  
+ 
+ aiia             GACTTACCGGTTTGGTGTTATCTTT-TGGAGA----CTGAAGAAGGACCTATTTTAGTAG 175
+ Sequenceing      NGCCTNCNANANGAACNNANCCTGGANAGAGAANCANNGGATANGNGGGCNACTCCGNAN 540
+                    * * *              **     ****      * * * *        *  * * 
+ 
+ aiia             ATACAGGTA-TGCCAGAAAGTGCAGTTAATA-ATGAAGGTCTTTTTAACGGTAC-ATTTG 232
+ Sequenceing      NGACNATCAATNCNNNNNGGCNAAANNNNNGGACCGNNNCCGGTCTNNNNNCACCACGCN 600
+                    **    * * *      *   *        *       *  * *      ** *    
+ 
+ aiia             TCGAAGGGCAGGT---TTTACCGAAAATGACTGAAGAAGATAGAATCG---TGAATATTT 286
+ Sequenceing      GNANCCGNCCNGTAAACCCACNNTGCCGGGCTANNNGGGANGNANNNNCTCTNACNNTNG 660
+                        * *  **      **       * **      **   *       * *   *  
+ 
+ aiia             TAA--AACGGGTTGGTTATGAGCCGGAAGACCTTCTTTA----TATTATTAGTTCT--CA 338
+ Sequenceing      CAATTGNCNNNACGANGANGNNCCTGNATACNCTNCTGNACCTNGNNANNGGCNGTGGCT 720
+                   **    *     *   * *  ** * * **  *  *          *   *   *  * 
+ 
+ aiia             CTTGCATTTTGATCATGCAGGAGGAAATGGCGCTTTTATAAATACACCAATC-ATTGTAC 397
+ Sequenceing      NTNACANCNNCNNNNTGGTNGGNGNNNTNNNTCTNNNGNAATNNNAANNNNCTAATNTNN 780
+                   *  **         **   *  *   *    **     **    *     * * * *  
+ 
+ aiia             AGCGTGCTGAATATGAGGCGGCGCAGCATAGCGAAGAATATTTGAAAGAATGTATATTGC 457
+ Sequenceing      GNCANCNNNAGNGNG-GNANGNGANTCNTANNTNTTNNNNNNAAANNNNNGNNNTGNTGN 839
+                    *      *    * *   * *   * **              *         *  ** 
+ 
+ aiia             CGAATTTAAACTACAAAATCATTGAAGGTGAT---------TATGAAGTCGTACCAGGAG 508
+ Sequenceing      NCNGNNTNNNCANGNGANNNCTTNNAAGNGNNGCGTNCACNNNTNANGAANNNCATNANN 899
+                        *   *     *    **  * * *             * * *     *      
+ 
+ aiia             TTCAATTATTGCATACACCAG----GCCATACTCCAGGGCATCAATCGCTATTAATTGAG 564
+ Sequenceing      NNNANCTAGNANCNANNNNGNTAGNGNNNTNTNNCGNCTTANNNNNAANNTNGAAGNNAG 959
+                     *  **      *          *   *    *     *            **   **
+ 
+ aiia             ACAGAAAAATCCGGTCCTGTATTATTAA--CGATTGATGCATCGTATACGAAAGAGAATT 622
+ Sequenceing      GGAANAAANGNGGNCGTNNTNTTANGAGAGNNNNNNNNGCNNNGTNNAAGNNGNGNNNNN 1019
+                    *  ***    *      * ***  *           **   **  * *          
+ 
+ aiia             TTGAAAATGAAGTGCCATTTGCGGGATTTGATTCAGAATTAGCTTTATCTTCAATTAAAC 682
+ Sequenceing      CANGNNGNNGAGTGCGNGGCGNANTGGNGGANNNANNANNNGNNGCGCCANNNNNTGGNA 1079
+                            *****     *        **   *  *   *      *      *     
+ 
+ aiia             ---GTTTAAAAGAAGTGGTGATGAAAGAGAAGCCGATTGT---TTTCTTTGGACATGATA 736
+ Sequenceing      TAAGTNGANNATTNNGGCAGNAANANGGNAAGNTANNNANGAGNANCNTNACNNANANNN 1139
+                     **  *  *     *  *    * *  ***              * *     *     
+ 
+ aiia             TAGAGCAGGAAAGG---GGATGTAAAGTGTTCCCTGAATATAT----AGCTGCAAACGAC 789
+ Sequenceing      CATNNCANNGTNTGACAGANCTTNNCNNCNTCNCCNAGNNNACTGAGANCTNGAAANNNT 1199
+                   *   **      *   *    *       ** *  *    *     * **  ***    
+ 
+ aiia             GA-AAACTACGCTTTAGTAGCTTAATAA------------------------- 816
+ Sequenceing      NNGAAANGAANNNNNANNATNTAANTNNNNNNNTNNTNNCGGNNACCCNCTNG 1252
+                     ***  *      *  *  * * *                           
+ 
+ <small>PLEASE NOTE: Showing colors on large alignments is slow.</small>
+
+==Conclusion==
+
+There is no homology (similarity) between the sequencing data and the desired sequence. There are far more errors than you would expect from PCR alone. The sequencing could only identify 62.7% of the bases, usually you would expect above 95% accuracy so I conclude that the sequencing data is unreliable. No useful information can be gained from this data.
+
+The most likely possible cause of this is errors in the primer design, for sequencing the primers must be perfect. It could also be that the DNA is impure and there are multiple plasmids stored.

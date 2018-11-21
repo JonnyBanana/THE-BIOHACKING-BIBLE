@@ -1,0 +1,83 @@
+{{Template:PHYC500/2007F}}
+
+<div style="padding: 10px; width: 720px; border: 5px solid #BA273F;">
+
+'''You can use this page for posting questions and whatever.  Feel free to create new pages! (such as [[/New page|this]])'''
+
+==Living cells in an electron microscope?==
+Electron microscopy requires that cells be "fixed" (chemically cross-linked). Why? Why can't we look at living cells in an electron microscope? - JLT
+
+*I think the reason why we can't look at living things is the fact that we have to put the samples in a vacuum. The EM uses an electron beam to illuminate and create an image of a cell. Hence, molecules in air would scatter the electrons :( -KS [[User:Kathrin Spendier|user page]]
+
+*Great answer, Kathrin!  This reminded me of a talk I saw a few years ago ([http://www.research.ibm.com/uhvtem/ a scientist from IBM]) where they developed a very thin sample chamber that allowed them to do transmission electron microscopy (TEM) on a sample in solution (I think this was a gold nanowire growing).  So, the majority of the TEM was in vacuum, except for a thin slice of liquid-phase sample (vacuum tight).  So, I think in situ TEM has been demonstrated in proof of principle.  I would guess it's pretty difficult to think of doing something similar w/ living cells, but maybe not impossible? (I suppose also the cells would die quickly while being zapped with electrons.)--[[User:Steven J. Koch|Steven J. Koch]] 00:04, 29 August 2007 (EDT)
+
+==Controls for cross-linking experiments?==
+
+If you use a chemical that can cross-link biological components together (when prepping samples for electron microscopy), what controls could you do to see whether that cross-linking changes the spatial distribution of the components? - JLT
+
+*First, I would tag the biological component of interest with a gold particle. Then I would take an image of the sample with no cross-linker. I would then compare an image made from an identically prepared sample with cross-linker added. If there exists regions where the gold particles are in higher concentration, as compared to the sample with no cross-linker, I would say that the cross-linker worked and the biological components are now fused together. - Andy_
+
+I'm not sure I made my question clear. Electron microscopists HAVE to use crosslinkers (fixatives) to look at their cells. They also usually assume that the fixative does not change the spatial distribution of the components. How can they be sure that the fixative does not? You can't do EM without the fixative.  - JLT
+
+*Can we use optics microscope to measure the flourecent tagged particle to see whether there's a difference of concentration before and after crosslink? I mean we can make a sample and measure the distribution of particles of interests with optics microscope and then do the crosslink thing and measure it again with optics microscope to make true nothing changed during the crosslinking. -Fang
+
+*I would tag the components of interest with quantum dots at very low labeling density so that individual emitters could be localized in an optical microscope with nanometer accuracy.  I would then image the cell while fixing it.  If the relative positions of well localized emitters changes during the fixing process, then you've got a problem.  Otherwise, you can conclude that the crosslinker has not affected the spatial distribution of components.  Additionally, since QDs are electron dense, they can be used in the electron microscope.  Is there a technique that does not require the use of an optical microscope? -Paul
+
+That is a really good idea! I wonder if anyone has done it?! - JLT
+
+== DNA Crossing Angles? ==
+
+Rather than do those complicated Monte Carlo simulations to find DNA crossing angle distributions, why didn't Keir just pull harder on the DNA so it would be straight? Then he could find the crossing angle just from the DNA length and the separation between two strands? - JLT
+
+*If the separation between both strands is fixed, when you pull to stretch the DNA, won't the crossing angles be different (smaller) as you increase the length of the DNA strands (compared to before the stretch)?
+
+-Diego
+
+If you knew the height of the bead and the DNA separation, you can calculate the crossing angle from simple trig...
+no simulations required. 
+The problem is this, I think: THERMAL FLUCTUATIONS cause the DNA to flop around a lot. If you want to pull the DNA to be straight, you have to pull VERY HARD to get overcome the thermal flopping. SO HARD, in fact, that you will break the covalent bonds that hold the molecule together.
+
+== A Theory Question (Help, Prof. Cahill!) ==
+
+
+Can a system ever resonate (Q > 1) in response to a purely entropic driving force? Or are entropic forces inherently overdamped?
+
+A specific example would be DNA. If you stretch it and release it, it relaxes back to a random coil. If you compress it and release it, it relaxes back to a random coil. These relaxation tendencies give real, measurable forces if you hold the ends of the DNA. 
+
+Can it ever "overshoot" on relaxation, and oscillate?  I tend to doubt it, but I would like to know if it is theoretically impossible for some deep physical reason. - JLT
+=== Some supporting info ===
+[[Image:DNA force extension.png|right|thumb|Computed force-extension curves for single- and double-stranded DNA]]
+Great question, JLT!  Here is some related info, but not the answer.  dsDNA is modeled very well by a "worm-like chain" (WLC) model.  See the [http://en.wikipedia.org/wiki/Worm-like_chain#Stretching_Worm-like_Chain_Polymers Wikipedia WLC article].  At low forces, where the DNA is very coiled, it behaves like a hookean spring:
+
+:<math> F = \frac {3}{2} \frac {{k_B}T}{P} \frac {x}{L_0} </math>
+
+where <math>F</math> is the force, <math>{k_B}T</math> is thermal energy, <math>P</math> is the persistence length, and <math>\frac {x}{L_0}</math> is the relative end-to-end extension.  So, the effective spring constant only depends on temperature and persistence length.
+
+If a bead were on the end of the DNA, the 1-D equation of motion for the bead would be:
+:<math> m \ddot{x} + \beta \dot{x} + kx = f(t)</math>
+
+where <math>m</math> is bead mass, <math>k</math> is the spring constant from above, and <math>\beta</math> is the viscous drag (stokes drag for a microsphere).  Usually, the intertial term is completely negligible, because the system is way over damped.  If you get rid of the bead, <math>\beta</math> would decrease a lot, but probably would still be overdamped (drag on the DNA molecule itself).  However, just looking at things, it appears that you can keep dreaming up ways of reducing damping, without necessarily changing the spring constant.  So, it doesn't yet appear impossible to have a resonant system with entropic forces.  But I for sure didn't scrutinize many or all of my assumptions. --[[User:Steven J. Koch|Steven J. Koch]] 16:34, 13 September 2007 (EDT)
+
+* Well, I think I was wrong! Here's a counterexample of a system that resonates in response to a purely entropic restoring force: A SMALL WEIGHT HANGING ON A RUBBER BAND! When you stretch a rubber band, you do NOT stretch any chemical bonds. All you do is increase the ORDER in the rubber molecules (polymers) by aligning them. This is entropically unfavorable, so the rubber band wants to relax. Put a weight on it and watch it go up and down. I think this works because the INERTIAL TERM can be as large as we want... we can put any weight on the end of the rubber band.
+
+Perhaps this question still stands, though: Can a POLYMER, with no added inertia, undergo entropically driven oscillations? Here it may not be possible to decouple the damping from the inertia. JLT
+
+==20S proteasome, what does the "S" stand for?==
+
+According to JLT's comment, the "S" has a specific meaning:
+
+A Svedberg (symbol S, sometimes Sv, not to be confused with Sv for Sverdrup) is a non-SI physical unit used to characterize the behaviour of a particle type in ultracentrifugation. Bigger particles have higher svedberg values. It is a unit of time amounting to <math>10^{-13}</math>s or 100fs.
+
+It is named after the Swedish physicist and chemist Theodor Svedberg (1884-1971), winner of the Nobel prize in chemistry in 1926 for his work in the chemistry of colloids and his invention of the ultracentrifuge.
+
+The sedimentation rate or coefficient of a particle or macromolecule is computed through dividing the constant speed of sedimentation (in ms<math>^{-1}</math>) by the acceleration applied (in ms<math>^{-2}</math>). The speed is constant because the force applied by the ultracentrifuge (measuring typically in multiples of hundreds of thousands of gravities) is canceled by the viscous resistance of the medium (normally water) through which the particle is moving. The result has the dimensions of a unit of time and is expressed in svedbergs. One svedberg is defined as exactly <math>10^{-13}</math>s.
+
+Bigger particles have higher svedberg values. The svedberg is not additive, since the sedimentation rate is associated with the size of the particle, when two particles bind together there is inevitably a loss of surface area. Thus when measured separately they will have svedberg values that do not add up to that of the particle formed when they bind together.
+
+This is particularly the case with the ribosome. The most important measure used to distinguish ribosomes, which indicates their source organism, is the svedberg. A 70S ribosome comes from eubacteria, but is composed of a 50S subunit and a 30S subunit.
+
+This is from Wikipedia, '''KS'''
+
+* Great answer, Kathrin. So the 'Svedbergs' of a protein or complex will depend on BOTH its DENSITY and its SIZE. If we assume a value for density, say 1.35 g/cm^3, we could calculate how big a 20S particle is from the Stokes-Einstein relation. Force = velocity * friction coeff f,  f=6*pi*viscosity*radius. Force also equals Volume*(density-1)*g-force.
+
+   By the way, apparently the density of proteins depends on their molecular weight. http://www.proteinscience.org/cgi/content/full/13/10/2825

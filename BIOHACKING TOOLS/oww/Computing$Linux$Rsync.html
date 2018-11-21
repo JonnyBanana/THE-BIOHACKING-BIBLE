@@ -1,0 +1,26 @@
+*Rsync is a program useful for making backups.  Example:
+ /usr/bin/rsync -a /home/username/ /path/to/backupdir
+
+*If a file was originally in both source/ and destination/ (from an earlier rsync, for example), and you delete it from source/, you probably want it to be deleted from destination/ on the next rsync:
+ rsync -a --delete source/ destination/
+
+*Directory vs files:
+**rsync -a /source /dest - copy "source" directory; result: /dest/source/sourcefiles
+**rsync -a /source/ /dest - copy contents of "source"; result: /dest/sourcefiles
+
+*Useful options:
+ -a, --archive
+              This  is equivalent to -rlptgoD. It is a quick way of saying you
+              want recursion and want to preserve almost everything.
+              Note however that -a does not preserve hardlinks, because  find-
+              ing  multiply-linked  files  is  expensive.  You must separately
+              specify -H.
+ -r, --recursive             recurse into directories
+ -l, --links                 copy symlinks as symlinks
+ -p, --perms                 preserve permissions
+ -t, --times                 preserve times
+ -g, --group                 preserve group
+ -o, --owner                 preserve owner (root only)
+ -D, --devices               preserve devices (root only)
+ --exclude=PATTERN       exclude files matching PATTERN (--exclude ´*~´)
+ --delete-excluded       also delete excluded files on the receiving side

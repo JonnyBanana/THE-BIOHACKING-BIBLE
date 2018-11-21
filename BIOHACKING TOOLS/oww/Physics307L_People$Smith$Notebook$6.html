@@ -1,0 +1,395 @@
+=Lab 6: Electron Spin Resonance=
+Lab partner: [[Physics307L:People/Martin | Kyle Martin]]
+==Purpose==
+Using  ESR (Electron Spin Resonance), we will experimentally determine the <math>g_s\;</math> factor of the electron by looking at the spin-flip transition of a free electron in a magnetic field.
+
+==Materials==
+[http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf See lab manual for more information.]
+*Helmholtz coils (radius 6.75 cm, 320 turns) model 55506 mfd. Leybold Didactic GMBH
+*Digital Storage Oscilloscope (DSO) - TDS 1012 mfd. by Tektronix
+*Power supplies for ESR Adapter: Model 721A mfd. by Hewlett Packard
+*ESR Adapter: Model 51416 mfd. by Leybold
+*Phase shifter: made by Physics Dept.
+*ESR Probe Unit: Model 51455 mfd. Leybold
+*Soar DC Power Supply model PS-3630
+*Fluke 111 Mutlimeter
+*Variac: W5MT3 mfd. by General Radio Company
+*Alligator clips
+*BNC connectors
+*Banana connectors
+*5001 Universal Counter Timer mfd. Global Specialties Corporation
+*Transformer: 6.3V 1Amp Model T-631 mfd. by Caltronics
+*1000 <math>\mu F</math> capacitor, model 593A, 16V, -40-85°C
+
+==Setup==
+[http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf As described by the lab manual.]
+*The sample of DPPH is placed in a coil inserted into the ESR probe unit and placed in a uniform magnetic field (produced by the Helmholtz coils).  The ESR probe unit is our RF oscillator, with frequency set by a knob on its top.
+*The uniform magnetic field produced by the Helmholtz coils should oscillated around some fixed value in order to remove the need for knowing this RF frequency with considerable accuracy.  To do this, the Helmholtz coils are connected to a DC power supply in series with a smaller AC current.  
+*In order to reduce distortion of the sinusoidal wave voltage, in between the DC and AC sources is a <math>1000\;\mu F</math> capacitor.  
+*Because of the inductance of the Helmholtz coils, the current in the coils is out of phase of the power supplies (and with the voltage seen on the oscilloscope.)  To correct for this, a phase shifter device has been made.  It consists of a <math>100\;k\Omega</math> variable resistor in parallel with a <math>0.1\;\mu F</math> capacitor.
+
+==Theory==
+The magnetic field ("B field") caused by the Helmholtz coils is given by the equation
+*<math>B=\mu_0\left(\frac{4}{5}\right)^{\frac{3}{2}}N\frac{I}{r}</math>
+**<math>\mu_0=1.2567\times 10^{-6}\;m\cdot kg\cdot s^{-2}\cdot A^{-2}</math> is the magnetic constant
+**<math>N=320</math> is the number of turns in each coil
+**I is the current through each coil
+
+The electron has a magnetic dipole moment <math>\mu_s</math> related to its intrinsic angular momentum (spin):
+*<math>\vec{\mu_s} = -g_s \mu_B \left(\frac{\vec{S}}{\hbar}\right)</math>
+**<math>g_s=\;</math> a constant characteristic of the electron, its intrinsic g-factor
+**<math>\mu_B=\frac{e \hbar}{2 m_e} = 5.788 \times 10^{-9}</math> eV/G is the Bohr magneton
+**<math>\vec{S} = </math> the spin of the electron
+**<math>\hbar = \frac{h}{2 \pi}=6.582 \times 10^{-16}</math>eV-sec or <math>\hbar c = 197.3</math> eV-nm
+
+This magnetic dipole moment interacts with the magnetic field, <math>E = -\vec{\mu_s} \cdot \vec{B}</math>.  
+
+The electron is either spin up or spin down, with energy
+*<math>E = E_0 \pm \frac{g_s \mu_B B}{2}</math>
+**<math>E_0\;</math> is the energy of the electron before the magnetic field was applied
+**This means that the energy difference between a spin-up electron and a spin-down electron is <math>g_s \mu_B B</math>.
+
+The condition for resonance is
+*<math>h\nu = g_s\mu_B B \;</math>
+**<math>\;\nu</math> is the frequency of oscillating RF field
+
+==Procedure==
+As described in the lab manual.
+[[Image:ESR_fig1.gif|thumb|'''Figure 1''': Oscilloscope Traces, not in resonance.  Channel one and channel two traces visible.  Channel one trace is the sinusoidal wave pattern, channel two is the steady reading with some periodic drops.]]
+[[Image:ESR_fig2.gif|thumb|'''Figure 2''': Oscilloscope Traces, in resonance.  Channel one and channel two traces visible.  Channel one trace is the sinusoidal wave pattern, channel two is the steady reading with some periodic drops.  Channel two drops should coincide with channel one passing through "zero", or more accurately, reading the voltage about which they oscillate.]]
+*Set the amplitude knob of the ESR probe unit to about 75% and turn the frequency knob of the ESR probe unit fully counterclockwise
+*Ensure that the sample is placed in the ESR probe unit's coil and that this coil is seated correctly
+*Set the variac voltage to between 15 and 20 volts
+*Make sure the Helmholtz coils are parallel and that the ESR probe unit, placed between them, is touching both coils.  This should make the distance between the coils about the same as their radius (6.75 cm) 
+*Turn the voltage on the DC power supply connected to the Helmholtz coils up so that it is current limited instead of voltage limited.  The Helmholtz coils should have less than 2 amps going through each of them (or 4 amps total, as they presumably have the same resistance and are wired in parallel, making the voltage to each the same).  The DC power supply we used doesn't supply more than 3 amps, which means that we don't have to worry about turning the current up too high.
+*Turn everything on (cross your fingers and hope that stuff doesn't blow up)
+*The frequency counter should be displaying a value at this point, and the multimeter should be reading some DC current.  These readings aren't important yet.
+*The oscilloscope should be displaying two traces at this point, something similar to Figure 1 on the right.
+*Make sure that channel one is triggering the oscilloscope.  Set the oscilloscope to trigger as the signal rises, and set the trigger point to be zero.  This makes the channel one trace cross zero (which is really the DC component of the current through the Helmholtz coils) in the middle of the screen (when time is "zero").
+*Channel two of the oscilloscope should have a trace that produces a steady value with several drops, as in Figure 1.  If it doesn't turn the current knob on the Helmholtz coils' DC power supply until it does.
+*The trace of channel two should have a drop when channel one is zero - which should be at the y-axis, if you've set the trigger correctly.  To easily see if it does, you can position the channel two trace just above the x-axis on the screen of the oscilloscope, and if necessary "zoom in". By decreasing the time per horizontal division, you effectively "zoom in" on the traces about the time equals zero axis (y-axis).  If the trace of channel two doesn't drop as channel one reaches zero, you can turn the knob on the phase shifter until it does.  This changes the resistance of the RC circuit and effectively shifts the phase of channel one in relation to channel two.
+*It may be necessary to "zoom out" at this point, by increasing the time per horizontal division on the oscilloscope.  1 period should be visible on the screen (channel one trace should cross zero three times).
+*Change the current to the Helmholtz coils by turning the current knob on the DC power supply until the channel two trace drops each time the channel one trace crosses zero, as shown in Figure 2.
+*It's all resonating now, record your current and frequency and then repeat for a different frequency.  Blah blah blah.
+
+==Data==
+Recorded below are the current readings (in amps) through the two Helmholtz Coils and the frequency displayed on the frequency counter.  The numbers recorded are the result of watching the displays over several seconds to see their range.
+
+===Low Range Coil (13-30 MHz)===
+{|
+!Current (Amps)
+!Frequency (MHz)
+|----
+|0.248
+|13.05
+|----
+|0.293
+|15.6
+|----
+|0.365
+|18.55
+|----
+|0.376
+|21.25
+|----
+|0.483
+|24.2
+|----
+|0.519
+|27.55
+|----
+|0.573
+|30
+|----
+|}
+
+===Medium Range Coil (30-75 MHz)===
+
+{|
+!Current (Amps)
+!Frequency (MHz)
+|----
+|0.608
+|32.95
+|----
+|0.663
+|36.05
+|----
+|0.744
+|40.75
+|----
+|0.898
+|47.35
+|----
+|0.952
+|52.95
+|----
+|1.05
+|57.55
+|----
+|1.196
+|64.95
+|----
+|1.252
+|68.25
+|----
+|1.324
+|73.65
+|----
+|}
+
+===High Range Coil (75-130 MHz)===
+{|
+!Current (Amps)
+!Frequency (MHz)
+|----
+|1.363
+|75.25
+|----
+|1.457
+|81.75
+|----
+|1.556
+|87
+|----
+|1.64
+|91.95
+|----
+|1.776
+|98.05
+|----
+|1.863
+|103.55
+|----
+|1.951
+|108.95
+|----
+|2.054
+|114.25
+|----
+|2.0905
+|116.95
+|----
+|2.217
+|123
+|----
+|2.29
+|126.95
+|----
+|}
+
+==Analysis==
+[http://openwetware.org/images/d/d7/JJS_ESR.xlsx Please see my Excel spreadsheet for a more in-depth look at my calculations.]
+
+Since the Helmholtz coils are wired in parallel, and they presumably have equal resistances, the current through each of them should be the same (which means the total amperage, which is recorded above, should be twice the current through a single coil). 
+
+To calculate the g-factor of each of our measurements, I first calculated the magnetic field (in Gauss) of each trial by using the Biot-Savart law (this result is recorded in the third column of the following tables.)  Then I used the relationship <math>h \nu = g_s \mu_B B\;</math>, where h is Planck's constant <math>(6.626\times 10^{-34}\;J\cdot S )</math>, <math>\nu \;</math> is the frequency of our RF oscillator (column 2 of my data), <math>\mu_B \;</math> is the Bohr Magneton <math>(9.274\times 10^{-28}\;\frac{J}{G})</math> (that's Joules per Gauss) and B is the magnetic field I've just calculated (in Gauss).  I solved for <math>g_s</math> for each measurement and that result is recorded in the fourth column of the following tables.
+
+===Low Range Coil===
+{|
+!Current (Amps)
+!Frequency (MHz)
+!Magnetic Field (Gauss)
+!measured g-factor
+|----
+|0.248
+|13.05
+|5.286089186
+|1.763844785
+|----
+|0.293
+|15.6
+|6.245258595
+|1.784672422
+|----
+|0.365
+|18.55
+|7.779929649
+|1.703540975
+|----
+|0.376
+|21.25
+|8.014393282
+|1.894404096
+|----
+|0.483
+|24.2
+|10.29508499
+|1.679460407
+|----
+|0.519
+|27.55
+|11.06242051
+|1.779327045
+|----
+|0.573
+|30
+|12.21342381
+|1.754963819
+|----
+|}
+
+Mean g-factor: 1.7657
+
+Standard Error: 0.026063
+
+Accepted Value: 2.0023
+
+% Difference: 11.81%
+
+
+===Medium Range Coil===
+{|
+!Current (Amps)
+!Frequency (MHz)
+!Magnetic Field (Gauss)
+!measured g-factor
+|----
+|0.608
+|32.95
+|12.95944446
+|1.816575172
+|----
+|0.663
+|36.05
+|14.13176262
+|1.822608013
+|----
+|0.744
+|40.75
+|15.85826756
+|1.835930396
+|----
+|0.898
+|47.35
+|19.14075842
+|1.767442042
+|----
+|0.952
+|52.95
+|20.29176171
+|1.864363323
+|----
+|1.05
+|57.55
+|22.38061954
+|1.837204766
+|----
+|1.196
+|64.95
+|25.4925914
+|1.820327417
+|----
+|1.252
+|68.25
+|26.68622444
+|1.827257956
+|----
+|1.324
+|73.65
+|28.22089549
+|1.864602665
+|----
+|}
+
+Mean g-factor: 1.8285
+
+Standard Error: 0.010
+
+Accepted Value: 2.0023
+
+% difference: 8.68%
+
+===High Range Coil===
+{|
+!Current (Amps)
+!Frequency (MHz)
+!Magnetic Field (Gauss)
+!measured g-factor
+|----
+|1.363
+|75.25
+|29.05217565
+|1.850598403
+|----
+|1.457
+|81.75
+|31.05577397
+|1.880744256
+|----
+|1.556
+|87
+|33.16594667
+|1.874179549
+|----
+|1.64
+|91.95
+|34.95639623
+|1.879357581
+|----
+|1.776
+|98.05
+|37.85521933
+|1.850572786
+|----
+|1.863
+|103.55
+|39.70961352
+|1.863111227
+|----
+|1.951
+|108.95
+|41.58532259
+|1.871851965
+|----
+|2.054
+|114.25
+|43.78075479
+|1.864478175
+|----
+|2.0905
+|116.95
+|44.55874776
+|1.875217248
+|----
+|2.217
+|123
+|47.25507954
+|1.859691701
+|----
+|2.29
+|126.95
+|48.81106547
+|1.858226963
+|----
+|}
+
+
+Mean g-factor: 1.8662
+
+Standard Error: 0.003
+
+Accepted Value: 2.0023
+
+% difference: 6.80%
+
+===Mean of All Measurements===
+I also found the mean of all measurements of the g-factor.  This value was 1.8276, with a standard error of 0.01.  This makes the best estimate of the g-factor <math>1.8276 \pm 0.01</math>, which is 8.73% different than the accepted value of 2.0023 and has a relative uncertainty of 0.58%.
+
+
+===Linear Regression Method===
+[[Image:ESR_fig3.gif|thumb|400px|right|'''Figure 3''': Frequency (in MHz) vs. Magnetic Field (in Gauss).  Conditions at resonance.  The two variables are linearly related, and the linear trendline is shown.]]
+I also found the g-factor using the slope of a linear regression of all of our measured currents and frequencies.  (See my Excel sheet).  I used Excel to do this, and I forced the y-intercept to be 0.  This makes sense because when there is no magnetic field there should be no resonant frequency.
+
+Plotting the frequency vs. magnetic field conditions for resonance, there is a linear relationship between the variables <math>\nu</math> and B.  See Figure 3.  The linear equation I found the slope of was <math>\nu = \frac{g_s \times \mu_B}{h} B</math>.  I considered B to be the independent variable and <math>\nu</math> to be the dependent variable, with the slope equal to <math>\frac{g_s \times \mu_B}{h}</math>.  The slope of this regression was 2600000 with a standard error of 7300
+
+Solving for <math>g_s</math>, I found the g-factor to be 1.86.  Multiplying the standard error of the slope by h and dividing by <math>\mu_B</math>, I found the standard error of <math>g_s</math> to be 0.005.  This makes my best estimate of the g-factor <math>1.86 \pm 0.005</math> based on my data.  This is 7.27% different than the accepted value of 2.0023, and has a relative uncertainty of 0.28%.
+
+==Remarks==
+I was excited about this lab, since being able to detect quantum phenomenon is fun.  I was a little bit disappointed that my result for the g-factor was almost 10% different than the accepted value.  The method used to measure the resonant frequency and current going through the Helmholtz coils was kludgy, however.  Eyeballing an oscilloscope and tweaking knobs until two traces appear to cross zero at the same time is, it seems to me, inherently imprecise.  I'm not very familiar with other electronic instrumentation, so I'm not sure if there is a better way to have done this - but it sure seems like there should be.  I also wondered if the Earth's magnetic field would affect this experiment, but it seems that the strength of that field is around 0.3 Gauss (though this varies widely, and might be significantly different in the lab) which is much smaller than the magnetic field we put our sample in.  Also, I didn't pay attention to which way we had aligned our Helmholtz coils in relation to the magnetic poles of Earth, as I figured it didn't matter.
+
+I also noticed during the experiment that in using the phase shifter, turning the knob (which is connected to the variable resistor) had the effect of not only changing the phase of the ESR probe signal in relation to the voltage to the Helmholtz coils (displayed on the oscilloscope) but also of changing the ''amplitude'' of the voltage to the Helmholtz coils.  Thinking back, the effect wasn't large but it was noticeable.  I didn't check the multimeter to see if the current going through it changed as the amplitude of the voltage readings on the oscilloscope changed - but thinking about it, I certainly should have.  I sure hope they changed together, as I can't think of any reason why they shouldn't have, although I haven't taken junior E&M yet as that comes next semester.  I'm sure we will deal with things like our phase shifter (or RC circuits being used in alternating currents).
+
+Also, part of the ESR adapter divided the frequency from megahertz to kilohertz (which are more easily counted by the cheap electronic equipment that is ubiquitous in undergraduate laboratories).  I don't know exactly how this frequency divider was designed, but if it were poorly designed it certainly could have been a source of error.  I would hope that this was a precise process, but it may not have been.
+
+Another source of error may have been the alignment of the Helmholtz coils.  The calculations I did for the magnetic field produced by a current through these coils doesn't take into account their alignment; if they weren't parallel or were too close together or too far apart, the magnetic field would probably be slightly different.

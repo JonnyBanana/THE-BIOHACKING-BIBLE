@@ -1,0 +1,136 @@
+==Miscellaneous==
+*[http://www.isi.edu/in-notes/rfc2396.txt Uniform Resource Identifiers (URI): Generic Syntax] RFC 2396
+*[http://hvassing.com/2006/uri-vs-url/ URI vs. URL]
+*[http://www.iupac.org/inchi/ InChI]: the IUPAC International Chemical Identifier
+
+==DOI==
+Digital Object Identifier - a digital identifier for any object of intellectual property (from [http://www.doi.org/faq.html DOI FAQ], [http://www.medra.org/en/DOI.htm mEDRA] and [http://www.biocrawler.com/encyclopedia/Digital_object_identifier The Biology Wiki]).
+
+The DOI is a [http://handle.net/ Handle System] implementation.
+
+The [http://handle.net/ Handle System] is a comprehensive system for assigning, managing, and resolving persistent identifiers, known as "handles," for digital objects and other resources on the Internet.
+
+If you give each object a name (a handle), and associate that name with the object's location using the Handle System, you'd only have to update the handle record with the new location, not notify everyone who might want to find the object.
+
+[http://www.doi.org/doi_proxy/index.html Proxy servers] (DOI resolvers)
+*http://hdl.handle.net/
+*http://dx.doi.org/
+*http://dx.medra.org/
+You can resolve a DOI by typing on your browser address bar the proxy server name followed by your DOI. For example, http://dx.medra.org/10.1000/182. To speed resolution, the proxy servers cache handle values, with the TTL set to 24 hours.
+
+*[http://www.crossref.org/guestquery/ DOI lookup]
+*[http://crossref.org/openurl/ OpenURL resolver] can be used to retrieve DOI metadata in XML
+
+[http://library.caltech.edu/openurl/ Description of OpenURL standard]
+OpenURL is a syntax for embedding parameters such as identifiers and metadata in links.
+
+[http://dx.doi.org/10.1045/january2003-paskin On Making and Identifying a Copy]
+
+To obtain a DOI Prefix, you need to work either with a [http://www.doi.org/handbook_2000/registration_agencies.html DOI Registration Agency] or, for experimental or prototype purposes, with the International DOI Foundation. To obtain a DOI prefix for experimental use, write to the IDF at contact@doi.org, giving clear indication why it is required. Prefixes issued directly by the IDF will be at a cost of US$1,000 per prefix. These prefixes will be issued purely at the discretion of the IDF.
+[http://www.doi.org/registration_agencies.html List of agencies].
+
+[http://www.doi.org/handbook_2000/enumeration.html DOI Numbering]
+
+The DOI consists of a unique alpha-numeric character string divided in two parts: a prefix and a suffix.
+For example:
+*'''10.1000/abc'''
+where:
+*'''10.1000''' is the prefix
+*'''10''' identifies the string as a DOI (distinguishes a DOI from any other implementation of the Handle System).
+*'''1000''' identifies the publisher
+*'''abc''' is the suffix (identifying the digital object)
+
+The suffix can integrate other standard identifiers such as ISBN or ISSN. As a consequence, the DOI allows to mantain the standard identifiers already in use.
+The suffix is assigned by the publisher (registrant). The DOI suffix can be any alphanumeric string (any printable characters from the Universal Character Set (UCS-2), of ISO/IEC 10646, which is the character set defined by Unicode v2.0).
+The DOI is an "opaque string" or "dumb number" - nothing at all can or should be inferred from the number in respect of its use in the DOI System. 
+
+Handle syntax imposes two constraints on the prefix -- both slash and dot are "reserved characters".
+
+Publishers use many different schemes which all form DOIs that can then be used together: e.g.:
+
+ Publisher A uses PII: S1384107697000225
+ Publisher B uses SICI: 0361-9230(1997)42:<OaEoSR>2.0.TX;2-B
+ Publisher C uses "C-numbers": JoesPaper56 
+
+These three schemes are not at all interoperable, but become so in the DOI system as:
+
+ DOI:10.2345/S1384107697000225
+ DOI:10.4567/0361-9230(1997)42:<OaEoSR>2.0.TX;2-B
+ DOI:10.6789/JoesPaper56 
+
+Each publisher can retain his own scheme and does not need to switch to a new one, though all publishers need to agree on a common metadata set for their DOIs. 
+
+Each DOI has associated with it some minimum set of metadata (the Kernel); and may have associated with it some additional metadata.
+
+DOIs are case insensitive. All DOIs are converted to upper case upon registration.
+
+[http://www.crossref.org/02publishers/15doi_guidelines.html DOI Guidelines] - sample DOIs, etc
+
+Suffix nodes may be used to reflect hierarchical information or levels of granularity. For instance, the first node might be a multiple-letter code for the journal title, while successive nodes encode year of article acceptance and order of article acceptance. This is the scheme used by Academic Press, with resulting DOIs like [http://dx.doi.org/10.1006/jmbi.1998.2354 doi:10.1006/jmbi.1998.2354].
+
+Digital Object Identifiers (DOI) - An Embarrassment of Riches [http://samvak.tripod.com/busiweb16.html Part I] and [http://samvak.tripod.com/busiweb17.html Part II]
+
+Multiple Resolution
+*operates on the premise that content, not its location, is identified.
+*enables content owners and distributors to identify their intellectual property with bound collections of related resources at a hyperlink's point of departure, instead of requiring a user to leave the page to go to a new location for further information.
+
+===Fees===
+*[http://www.medra.org/en/terms.htm mEDRA]
+**Annual fee of $400 per 100 DOIs, $600 per 200 DOIs, etc
+*[http://www.crossref.org/02publishers/20pub_fees.html crossref.org]
+**Annual fees: $250 and up
+**Deposit fees: ~$1 per item
+
+===References===
+*[http://www.contentdirections.com/materials/PRQ-CDIPracticalGuide.htm Digital Distribution: Just DOI it]
+*[http://www.press.umich.edu/jep/04-02/davidson.html DOI: Promise and Problems]
+
+==LSID==
+*[http://www.omg.org/cgi-bin/doc?dtc/04-10-08 Life Sciences Identifiers Specification]
+*[http://lsid.sourceforge.net/ LSID project] - authority server, client resolution stacks, LaunchPad client (Windows only)
+*LSID authorities
+**[http://lsid.biopathways.org/ BioPathways] and their [http://lsid.biopathways.org/resolver/ web resolver]
+**[http://lsid.limnology.wisc.edu/ University of Wisconsin CFL]
+*[http://www.ibm.com/developerworks/opensource/library/os-lsidbp/ LSID best practices] - A guide to deploying Life Science Identifiers - IBM
+*[http://www.ibm.com/developerworks/opensource/library/os-lsid/ Build an LSID Resolution Service using the Java language] - IBM tutorial
+*[http://www.ibm.com/developerworks/opensource/library/os-lsid2/ Build a life sciences collaboration network with LSID] - IBM
+*[[Computing/Firefox|Firefox extensions]]
+*[http://www.bio-itworld.com/archive/011204/lsid.html LSID: An Informatics Lifesaver] - BioITWorld article
+*[http://knb.ecoinformatics.org/software/metacat/lsid_authority.html Metacat LSID support] - implementation example
+*[http://esw.w3.org/topic/HCLSIG_BioRDF_Subgroup/Tasks/URI_Best_Practices/LSID_Pros_%26_Cons LSID Pros & Cons]
+
+===Specification===
+"a standardized naming schema for biological entities in the Life Sciences
+domains"<br/>
+An LSID consists of three scoping mechanisms: an authority, a namespace, and an identifier. It can also optionally contain a version, specified by a revision identifier.
+ urn:lsid:authority:namespace:identifier:revision
+*"URN"
+*"LSID"
+*authority identification (usually an Internet domain name)
+*namespace identification
+*object identification
+*optionally: revision identification. If revision field is omitted then the trailing colon is also omitted.
+
+===Examples===
+*URN:LSID:ebi.ac.uk:SWISS-PROT.accession:P34355:3
+*URN:LSID:rcsb.org:PDB:1D4X:22
+*URN:LSID:ncbi.nlm.nih.gov:GenBank.accession:NT_001063:2
+*URN:LSID:parts.mit.edu:BBa:B0030
+
+===Notes===
+*While an LSID is defined to be semantically opaque, the author of an LSID resolution service must interpret the encoding to resolve and return the correct data.
+*Since LSID resolution uses [[Wikipedia:SRV_record|SRV records]], your TLD does not have to point to the IP of your LSID server.
+*LSID metadata is normally represented in an RDF serialization.
+*LSIDs may be used in valid RDF syntax.
+*Resolution (from [http://www-128.ibm.com/developerworks/opensource/library/os-lsid/] and [http://www.bio-itworld.com/archive/011204/lsid.html]):
+*#query DNS (SRV record) to find the network location of the appropriate LSID authority (optional if resolution server name is part of LSID?).
+*#*Example:
+*#**<pre>host -t srv _lsid._tcp.pdb.org</pre>
+*#**The response should look like this:
+*#**<pre>_lsid._tcp.pdb.org SRV 1 0 8080 lsidauthority.pdb.org.</pre>
+*#**This tells us that the service for the pdb.org authority is running on the host with name lsidauthority.pdb.org and is waiting for connections on TCP port 8080. Unfortunately, this information is not sufficient to determine the endpoint for the pdb.org authority service. That is why the '''LSID Resolution Proposal mandates that the service is available on the host path /authority/'''. In the case of pdb.org, the fully qualified URL of the authority service should therefore be: http://lsidauthority.pdb.org:8080/authority/.
+*#make a request to that authority, which returns a document that includes the location of the data and metadata of the entity
+*#the information in this document is then used by an informatics application to retrieve the data (e.g. a URL, but more complex data may be provided)
+
+==PURL==
+[http://www.purl.org/ PURL] is not very useful because it's inherently dependent on DNS (from [http://web.mit.edu/handle/www/purl-eval.html PURL evalution])

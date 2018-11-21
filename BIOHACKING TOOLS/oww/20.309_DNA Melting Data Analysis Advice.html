@@ -1,0 +1,41 @@
+<div style="padding: 10px; width: 774px; border: 3px solid #000000;">
+
+<center><big>'''20.309 Fall Semester 2007'''</big></center>
+<center><big>Recitation Notes for 9/21/2007'''</big></center>
+<br/>
+
+==Overview==
+In broad outline, the steps to take for data analysis are:
+
+#Filter out noise
+#Convert raw data from voltages to temperature and relative fluorescence/percentage hybridized
+#If desired, reduce the amount of data (optional)
+#Ensure that the resulting dataset is single valued
+#Take the (discrete time) derivative
+
+In addition, you may want to model other factors that affected your data such as bleaching. Be sure to think about what model of the phenomenon is apporpriate and how to work it into the analysis. (For example, some things must be modeled in the time domain and others in the temperature domain.)
+
+===Filtering===
+Time domain filtering of the raw data significantly reduces noise. Useful Matlab functions include: <code>conv</code> and <code>filter</code>. Remember to account for the edge effects of these functions. You can pad your data on either end with the initial and terminal values to reduce the edge effects. (This is quite simple in MatLab. Remember that you can append a bunch of vectors by listing them in order inside square braces.)
+
+<code>Resample</code> is not a good function for low pass filtering.
+
+===Converting===
+Transforming the raw data is straightforward. Only simple mathematical operations should be required.
+
+In order to convert to relative fluorescence (or percent hybridized), you must make some sort of assumption.
+
+===Data reduction===
+Here is where the <code>resample</code> function comes in handy. You can, for example, reduce a few thousand data points to a few hundred. But you can certainly keep all the points, too.
+
+===Single value===
+In will be necessary to take the (discrete time) derivative of the data, &Delta;F/&Delta;T. As such, T (temperature) must be single valued function. If not, the derivative will be undefined at multiple valued points.
+
+It is possible that (after filtering and reduction) there will be identical values of T. If there is more than one sample with the same temperature value, it will be necessary to transform your dataset into a single valued function. Useful functions for this purpose include: <code>sortrows</code> and <code>for ... end</code>. You can iterate through each sample and check if the value has not changed. If this occurs, one approach is to average all of the samples for the sampe temperature value. <code>sortrows</code> is nice because it ensures that all the samples are in increasing order.
+
+If that sounds hard, another approach is to fit an exponential to the cooling curve, which will guarantee uniqueness.
+
+===Differentiation===
+You will probably find the Matlab function <code>diff</code> quite useful. Differentiation is extremely sensitive to noise. If your derivative is noisy, perhaps more filtering is in order.
+
+</div>

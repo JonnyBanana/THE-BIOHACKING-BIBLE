@@ -1,0 +1,69 @@
+__TOC__
+=Transformations=
+Continued from [[Koeris/Notebook/2007-1-17 | 1/17]]. A construct didn't give any colonies -> try using more plasmid DNA, i.e. not 1ul but 2.5ul and 5ul in two aliquots.
+
+Also plate ON RT aliquot, maybe there is one or two transformants, though historically there is a lower chance of that happening.
+
+=P. aeruginosa mer operon cloning=
+Continued from [[Koeris/Notebook/2007-1-15 | 1/15]].
+
+==Approach==
+I designed two primers: one new set of mer operon primers, that are significantly longer than before (merSO 2F&R 44bp, 36bp), as well as a set of check primers to see if the DNA preparation is usable at all, or if it is degraded.
+
+I will use the Invitrogen Taq SuperMix for the PCR.
+
+==PCR set-up==
+*50 ul total reaction volume
+*1ul template DNA @ 300ng/ul
+*200pmol primer mix or 400pmol
+*47ul Taq SuperMix
+===Pipetting scheme===
+Labels in the respective field codes
+{| border="1"
+! Primer !! Tube Label 
+|-
+! merSO 2F&R 200pmol
+| A1
+
+|-
+! merSO 2F&R 400pmol
+| A2
+|-
+! recF 1F&R 200pmol
+| A3
+|-
+! recF 1F&R 400pmol
+| A4
+|}
+
+===Thermal profile===
+#92 deg C - 5min
+#92 deg C - 30s
+#50 deg C - 45s
+#72 deg C - 120s
+#Cycle back to 2. 29X
+#72 deg C - 10min
+#4 deg C - indefinite
+
+==Gel Run==
+'''IMPORTANT''': Load genomic DNA on the gel as well to test -> at least 1ug - 2ug
+*14-comb gel @ 50ml
+*Loading volume: 20ul of PCR Rx = 40% product
+*1% agarose TAE gel, ran @ 100V for 60min
+
+===Lanes===
+[[Image:2007-01-18 new primers + control.tif|thumb|Description]]
+Starting from the ladder
+#Ladder (1ug load total)
+#1.5ug genomic DNA
+#merSO 2F&R 200pmol
+#merSO 2F&R 400pmol
+#recF 1F*R 200pmol
+#recF 1F&R 400pmol
+
+Gel run shows that the genomic DNA isolated from P. aeruginosa is a valid template for PCR. On the other hand the mer operon cannot be amplified that easily. Check back the genotype of P. aeruginosa with Guillaume.
+
+Also check if the recF primers are able to bind somewhere in K-12 E. coli -> cross-contamination.
+
+===Solution===
+The P. aeruginosa strain we were using is not the correct one. We need '''PA14''', instead we have '''PAO-1'''...

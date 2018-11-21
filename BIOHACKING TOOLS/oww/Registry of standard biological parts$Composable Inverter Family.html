@@ -1,0 +1,31 @@
+==Possible Next Steps==
+#Can we get a ballpark on the low PoPS signal?  It needs to be above noise, and above leakiness. Basically we want a physical number for leaky expression for our typical operators in the OFF state.
+#*We have some data here to inform this for tetR-based inverter on 3 series (from felix’s latest runs).
+#Can we get a ballpark on the max high signal assuming we want to be able to put together 3-4 inverters without creating load?
+#*<talk to Barry, Weiss, Kris, Others?> 
+#ask mary in sauer lab about the flow data from Farrell / was he able to detect chromosomally-expressed GFP?
+#*How do they normally measure their chromosomally-expressed GFP
+#After we have a draft standard from 1-3, have an SB lunch to run it by people and get feedback.
+#*What lunch is free?  12/12 is the next free slot, but we might be able to ask someone to switch with us: 11/28 is collin or 11/21 is thanksgiving skip, but ppl might be around – though JK wont be.
+#In parallel with above, design tuning infrastructure
+#*If we assume that inverters will need to be tuned to meet our standard, then we should have the infrastructure in place to do the tuning.  
+#*This will be somewhat dependent on the eventual standard.  Since we may need a screen that can detect the low and high levels of the inverter.  
+#*We might have some trouble, for instance lacZ-a might be good as it can also be used to screen colonies?  Can't use it on the FACS though (although reshma mentioned some dye, we could look into).
+#We could work on making an RBS and Promoter library for Q04400 to see how much variability we can get out of it, even if we haven’t settled on the exact standard (though I think we will by the time we get to this point).
+
+==Notes from meeting with Reshma==
+Parameters for designing an inverter:
+#Reliability -> having it produce the “right” output for a given input (low->high)
+#Load
+#Latency
+
+What can you control:
+#Swing – Reshma has good experience tuning this by varying the strength of the -35 and -10 regions of the promoter.
+#Trip point – Can tune this by varying the strength of the RBS.  A stronger RBS will move the trip point lower (e.g. you’ll lower the PoPSin that is considered a high input).  You could also tune this by changing the properties of the repressor itself, which would allow you to tune performance without affecting the load.  As an example, you could weaken the binding between repressor and the operator – which would mean your device operation would actually have a higher load.  Assuming you want to minimize load, it seems like you would always want your repressor to bind as strongly as possible (above some limit, where it’s OFF just due to leakiness) and then tune with the RBS.
+
+*Reshma estimates the worst-case PoPS noise for any given I/O values based on a model from the elowitz GRF paper supplementary materials.
+**Adam pointed out at SynBERC that there was some way to change the width of the distribution of PoPS without changing the mean. (e.g. you could reduce the noise in your I/O levels)
+***Could follow up with him on this if he is at iGEM.
+*The swing needs to be > noise from the input, so that it doesn’t accidentally flip states.
+
+==Questions for Ron==

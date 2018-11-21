@@ -1,0 +1,30 @@
+The following shows a Perl script that calls libRmath to calculate the Student's
+t-distribution. It takes each line of input and calculating the t-distribution 
+''P''(''T''<''t'') for the first number with the second number (tab separated) giving the degrees
+of freedom.
+
+It illustrates several points about how to use Inline::C, including the use of prefixes and library inclusion.
+
+<code><pre>
+#!/usr/bin/perl
+use strict;
+use Inline C => "DATA",
+  LIBS => '-lRmath -lm',
+  PREFIX => 'R_';
+
+while(<>)  {
+  chomp;
+  my ($q, $df) = split /\t/, $_;
+  print pt($q, $df || 5), "\n";
+}
+
+__DATA__
+__C__
+
+#define MATHLIB_STANDALONE 1
+#include <Rmath.h>
+
+double R_pt(double q, int df)  {
+  return pt(q,df,1,0);
+}
+</pre></code>

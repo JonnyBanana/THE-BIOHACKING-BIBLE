@@ -1,0 +1,218 @@
+==AscI digestion protocol proposal==
+
+adopted from [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-2#AscI_digestion_protocol_proposal|Wednesday's proposal]]
+
+====Initial test, just oligos====
+
+Start by trying to digest ~25 ng DNA.
+
+1 unit = enough enzyme to digest 1 {{ug}} DNA at 37{{c}} in 1 h in a total reaction volume of 50 {{ul}} [http://www.neb.com/nebecomm/products/productR0558.asp]
+* = enough enzyme to digest 5 {{ug}} DNA at 37{{c}} in 1 h in a total reaction volume of 10 {{ul}}
+* = enough enzyme to digest 1 {{ug}} DNA at 37{{c}} in 12 min. in a total reaction volume of 10 {{ul}}
+
+Mix together, adding enzyme last:
+* 998 fmols (14.0 ng) ligand DNA (MW = 14,027 Da [http://www.changbioscience.com/genetics/mw.html]) = 1 {{ul}} 1 {{um}}
+** 45 nt: TAAAGAAACTCGGATGCGCCACGCAGGATTGGGGCGCGCCCGCGG
+* 1 pmol (11.3 ng) attachment DNA c4.0.6.1.ob (MW = 11,259.3 Da) = 1 {{ul}} 1 {{um}}
+** 37 nt: AAGGCTCCGATCTATTTTTTTTCCGCGGGCGCGCCCC
+* 2 {{ul}} 10x BSA
+* 2 {{ul}} 10x NEBuffer 4 [http://www.neb.com/nebecomm/products/productR0558.asp]
+* 25 ng DNA should require 0.025 units (25 milliunits) for a 12-minute digest. Do the following trials:
+** no enzyme, 12-minute digest
+** no enzyme, 24-minute digest
+** 50 milliunits (1 {{ul}} 50 milliunits/{{ul}}), 12-minute digest
+** 500 milliunits (1 {{ul}} 500 milliunits/{{ul}}), 12-minute digest
+** 50 milliunits (1 {{ul}} 50 milliunits/{{ul}}), 24-minute digest
+** 500 milliunits (1 {{ul}} 500 milliunits/{{ul}}), 24-minute digest
+* water to 20 {{ul}}
+
+Incubate samples at 37{{c}} for specified time. Added 1 {{ul}} 10x TBE loading dye. Run on an 4-20% gradient TBE PA gel for 1 h at 120 V. Stained w/ SYBR Gold for 30 min. Imaged under EtBr filter.
+* expected ss sizes
+** 34 nt, 11 nt (digested ligand)
+** 29 nt, 8 nt (digested attachment DNA)
+** 45 nt (undigested ligand)
+** 37 nt (undigested attachment DNA)
+
+====First gel analysis====
+<gallery>
+Image:Igem_harv06_20060807_4-20grad_digest.jpg|4% to 20% gradient PA gel
+</gallery>
+
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Lane'''
+| align="center" style="background:#f0f0f0;"|'''Contents'''
+|-
+| 1||10 {{ul}} 25 bp+ ladder
+|-
+| 2||10 {{ul}} 10 bp+ ladder
+|-
+| 3||10 {{ul}} -enzyme, 12 min.
+|-
+| 4||10 {{ul}} 50 mU, 12 min.
+|-
+| 5||10 {{ul}} 500 mU, 12 min.
+|-
+| 6||10 {{ul}} -enzyme, 24 min.
+|-
+| 7||10 {{ul}} 50 mU, 24 min.
+|-
+| 8||10 {{ul}} 500 mU, 24 min.
+|-
+| 9||10 {{ul}} 10 bp+ ladder
+|-
+| 10||10 {{ul}} 25 bp+ ladder
+|}
+
+Results/discussion:
+* gel shows poor resolution at low MW
+* lack of one-DNA controls makes gel difficult to interpret
+
+====Second gel analysis====
+
+Made two new controls:
+* no enzyme, no oligo ligand; just attachment DNA + buffer + BSA + dye
+* no enzyme, no attachment DNA; just oligo ligand + buffer + BSA + dye
+Another gel: 18% Tris-Gly PA gel, 1.5 h at 120 V. Stained w/ SYBR Gold. Imaged w/ EtBr filter.
+
+<gallery>
+Image:Igem_harv06_20060807_18_PA_TBE.jpg|18% PA gel
+</gallery>
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Lane'''
+| align="center" style="background:#f0f0f0;"|'''Contents'''
+|-
+| 1||5 {{ul}} 25 bp+ ladder
+|-
+| 2||5 {{ul}} 10 bp+ ladder
+|-
+| 3||10 {{ul}} attachment DNA control mix
+|-
+| 4||10 {{ul}} oligo ligand control mix
+|-
+| 5||10 {{ul}} -enzyme, 12 min.
+|-
+| 6||10 {{ul}} 50 mU, 12 min.
+|-
+| 7||10 {{ul}} 500 mU, 12 min.
+|-
+| 8||10 {{ul}} -enzyme, 24 min.
+|-
+| 9||10 {{ul}} 50 mU, 24 min.
+|-
+|10||10 {{ul}} 500 mU, 24 min.
+|-
+|11||5 {{ul}} 10 bp+ ladder
+|-
+|12||5 {{ul}} 25 bp+ ladder
+|}
+
+Results/discussion:
+* lane 3 shows ss attachment DNA (37 nt) at about 85 bp
+* lane 4 shows oligo ligand DNA (45 nt) at about 28 bp
+** this is perplexing as to why shorter DNA is running slower -- maybe mixed them up when loading lanes 3 and 4?
+* lanes 5, 8 shows ds construct slightly gel shifted from lane 3
+* lanes 6, 9 show partial digestion from partial disappearance of band in lanes 5 and 8, as well as appearance of digested DNA (29 nt) at about 20 bp
+* lanes 7, 10 show more complete digestion from near complete disappearance of band in lanes 5 and 8, as well as further appearance of digested DNA
+* lanes 10 shows higher concentration of DNA at dye front, which likely contains extra smaller digest products
+* '''increased concentration of enzyme appears to be more important than digest duration''', although increased duration (lane 7 vs. lane 10) appears to help as well
+
+==Microcon Fractionation Trials==
+Do the following with both 6hb and c5.0 barrels:
+
+* reserve 40 uL (1 rxn) of folded nanostructure for gel
+
+* mix 200ul (5 rxns) of nanostructure + 200uL of dH2O
+** add 200uL of this dilution to Microcon sample reservoir
+** mark tube to be able to determine when 200uL is in it
+
+* add remaining 200uL of dilution to sample reservoir; cap
+
+* spin for 1 minute at 14,000 g (max spin speed recommended in Microcon manual)
+** remove from centrifuge and assess remaining liquid in sample reservoir
+** repeat till liquid remaining is 200uL 
+***'''spinning down to 200uL from 400uL takes 3 min'''
+
+* remove the 200uL of '''flowthrough''' at the bottom of the vial for gel
+** repeat 4x (until there are 5 fractions total)
+
+* for the final 200uL, reverse the sample reservoir and place into a sample-collecting vial, as instructed by the Microcon manual
+**spin at 1g for 1min
+
+* run a gel for 1hr @ 110V with:
+<pre>
+lane 0: 10uL 1x 1kb ladder
+
+c5.0
+----
+lane 1: 40uL original reaction
+lane 2: 40uL (out of 200uL) of fraction 1 of the flowthrough (should contain the bulk of the oligos)
+lane 3: 40uL (out of 200uL) of fraction 2 of the flowthrough
+lane 4: 40uL (out of 200uL) of fraction 3 of the flowthrough
+lane 5: 40uL (out of 200uL) of fraction 4 of the flowthrough
+lane 6: 40uL (out of 200uL) of fraction 5 of the flowthrough
+lane 7: 40uL (out of 200uL) of final "top" product (should contain the nanostructures)
+
+6hb
+----
+lane 8: 40uL original reaction
+lane 9: 40uL (out of 200uL) of fraction 1 of the flowthrough (should contain the bulk of the oligos)
+lane 10: 40uL (out of 200uL) of fraction 2 of the flowthrough
+lane 11: 40uL (out of 200uL) of fraction 3 of the flowthrough
+lane 12: 40uL (out of 200uL) of fraction 4 of the flowthrough
+lane 13: 40uL (out of 200uL) of fraction 5 of the flowthrough
+lane 14: 40uL (out of 200uL) of final "top" product (should contain the nanostructures)
+</pre>
+
+<gallery>
+Image: iGEMHarv_Microcon_assay_gel_TC.jpg
+</gallery>
+
+* '''Conclusions:'''
+** Due to image taker's error, gel image isn't bright enough to be entirely conclusive in saying that there were no oligos in the Microcon "elute"
+** Seems to be some reduced yield post-Microcon, but the recovery was only done for 1 min at 1300g, rather than 3 min - this was noted only after 8/9.
+** The flowthroughs might have oligos in them, but because they were not concentrated down from 200uL per fraction, and only 40uL was loaded into each well, it is hard to say that the Microcon did or didn't work.
+
+==Mg2+, 1:6x Titrations for Folding==
+
+* aliquoted 20uL of each of the 6 rxns post-folding for gel
+* with the other 20uL of the 6 rxns, PEG precipitated:
+<pre>
+Added:
+   20uL 20% PEG
+   10uL 2.5M NaCl
+Iced for 15 min
+Spun at 4 deg C for 10 min
+Removed supernatant (50uL) to a separate tube
+Reconstituted pellet in 20uL H2O
+</pre>
+
+*ran gel @ 100V for 1hr; loaded 20uL of each component with 2uL of loading dye:
+<pre>
+lane 0: 10uL 1x 1kb ladder
+lane 1: 4.5uL scaffold (44nM)
+lane 2: 10nM Mg2+ final concentration, 1x oligos, PELLET
+lane 3: 10nM Mg2+ final concentration, 1x oligos, SUPERNATANT
+lane 4: 20nM Mg2+ final concentration, 1x oligos, PELLET
+lane 5: 20nM Mg2+ final concentration, 1x oligos, SUPERNATANT
+lane 6: 30nM Mg2+ final concentration, 1x oligos, PELLET
+lane 7: 30nM Mg2+ final concentration, 1x oligos, SUPERNATANT
+lane 8: 10nM Mg2+ final concentration, 6x oligos, PELLET
+lane 9: 10nM Mg2+ final concentration, 6x oligos, SUPERNATANT
+lane 10: 20nM Mg2+ final concentration, 6x oligos, PELLET
+lane 11: 20nM Mg2+ final concentration, 6x oligos, SUPERNATANT
+lane 12: 30nM Mg2+ final concentration, 6x oligos, PELLET
+lane 13: 30nM Mg2+ final concentration, 6x oligos, SUPERNATANT
+</pre>
+
+<gallery>
+Image:iGEMHarv_Mg_6x_folding_titration_TC.jpg
+</gallery>
+
+
+
+*'''Conclusions:'''
+** Once again due to image taker's error, gel is too dark to be certain no oligos are present in the pellets, or aren't present in the supernatants.
+** The supernatants were not concentrated, so only 40uL (1/5) of their total contents were loaded into the gel, which might also make it difficult to come to a conclusion about the efficacy of the PEG precipitation.
+** (When the gel image taker was visualizing the gel on the computer, no visible oligos were seen in pellet lanes - this is not entirely conclusive, as no physical evidence is available, though.)

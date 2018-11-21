@@ -1,0 +1,96 @@
+== Comments on the Registry ==
+
+This page is meant to be workspace for comments and suggestions regarding [http://parts.mit.edu Parts Registry]. 
+
+The registry is still in development.  The site can be divided into several functions:
+
+# Information and background material about synthetic biology, iGEM, and DNA assembly
+# A database of standard biological parts
+# An assembly tool for construction of parts, devices, and systems
+# Collection of subscriber information
+
+== Information and background material ==
+
+Most first-time registry visitors are presumed to new to the ideas and tools used in synthetic biology (SB).  (Is this true?)  It is important for the site to seed interest and support for iGEM and SB.  The registry documentation should assume a minimum of biological knowledge.
+
+Suggested improvements:
+
+* The About the registry, references, glossary, and FAQ pages need updating
+* The page headers are inconsistent within different pages
+* The domains parts2.mit.edu and parts.mit.edu should be integrated
+
+== Parts Database ==
+
+'''Parts, Devices, and Systems:'''
+
+The abstraction hierarchy outlined in Parts, Devices, and Systems is important, yet the registry does not clearly subscribe to this architecture.  The icon menu at the top of the page lists various parts categories (eg. RBS) then confusingly jumps to composites, projects, or unrelated heading like "cell" or "plasmid".
+
+Perhaps Parts, Designs, and Systems could be made more fundamental in how the data is presented to users.  This could also help classify the informatioin within the registry.
+
+For example:
+
+'''Parts (discrete, non-reducible components)'''
+
+''Categories:''
+
+a.  Designs only
+
+b.  Designed and synthesized
+
+c.  Designed, synthesized, and used in at least 1 assembly (RE sites work, etc)
+
+d.  Designed, synthesized, used in assembly, and tested/measured
+
+e.  Intermediates stages (used for tracking purposes)
+
+#'Designs only' could be be regularly swept (no need to delete permanently, just make them away).
+#Designed and synthesized would include a physical location of the part.  If no part can be found in the registry freezer, the record could be swept.
+#Intermediates chould be flagged for review if stalled.
+#Parts that are synthesized but not assembled could be noted as 'available but unverified'
+#Wherever possible, test and measurement data would be recorded for the part.  Users could be prompted to enter this data periodically.  They could also be asked to score the part for ranking purposes.
+
+* Could the part serial numbers be assigned automatically?
+* Could pull menus be used to help ensure standard classification of part descriptions?
+* Can a machine-readable ontology be developed to better organize and classify parts?
+
+'''Devices (combinations of 2 or more parts):'''
+
+''Categories:''
+
+a.  Designs only
+
+b.  Designed and assembled
+
+c.  Designed, assembled, and tested/measured
+
+d.  Intermediates
+
+''Comments''
+
+#In process categories could be reviewed regularly, automatically.
+#Designs and intermediates could be swept or reviewed regularly as necessary.
+#Test and measurement data could include scoring system for ranking
+#Devices made but not tested could generate email prompts to the owner of record or subsequent users for accurate record keeping.
+
+'''Systems (combinations of 2 or more devices)'''
+''Similar to Device categories''
+
+== Assembly Tools ==
+
+The assembly tool is non-functioning on the "parts.mit.edu" domain.
+
+== Subscriber registration ==
+
+The registry The registration page should collect the necessary information required to keep accurate construction records about the parts, systems, and devices the users create.
+
+Suggestions:
+
+* Allow general browsing for users not logged in
+* Guestws can register with an email address only
+* Registered guests able to browse parts and use assembly tools, but information is not placed in the public registry, nor will assemblies be created.
+* iGEM users, or other registry users able to promote the synthesis or construction of parts, devices, or systems should have physical, real-world address information associated with their accounts
+
+== Other comments == 
+
+*Should the registry be included in openwetware or stand alone?
+*Can parts be standardized to allow others to develop their own assembly editors?

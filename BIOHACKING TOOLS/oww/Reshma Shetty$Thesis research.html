@@ -1,0 +1,32 @@
+===My goal is to engineer transcription-based combinational digital logic in ''Escherichia coli'' cells.===
+
+Synthetic Biology seeks to intentionally design, fabricate and operate biological systems.  There are three primary areas in which synthetic biological systems are of immediate utility: chemical energy, materials and information.  To harness these systems to either generate new energy sources or synthesize new materials, it is necessary to develop the necessary infrastructure such that cells can be engineered to sense information, process that information using some form of logic and effect a response.  Ideally, the parts and devices used to carry out information processing ''in vivo'' would have the following characteristics:
+
+#Well-characterized:  Device behavior should be quantitatively measured under standard operating conditions.
+#Composable:  Devices should be designed such that the output of one device can drive the input of another device.  In other words, devices should be well-matched.
+#Engineerable: It is difficult to imagine every context in which a device might be used.  Therefore it is helpful if devices can be tuned such that they work well in larger systems.
+#Numerous:  Currently the size of the systems we can construct is severely limited by the lack of well-characterized devices.  Therefore, it will be important to develop libraries of devices such that more complicated systems can be assembled.
+
+My thesis work seeks to address these goals by developing a new type of transcription-based logic that uses modular, synthetic transcription factors.  I derive the DNA binding domains of these transcription factors from zinc finger domains so that arbitrary DNA recognition sites may be used.  I use leucine zippers as the dimerization domain so that these repressors are also capable of heterodimerizing increasing both the number and functionality of available dimerization domains.  This implementation change adds modularity to the repressors so that domains are interchangeable and may be fine-tuned independently.  Also, since there are large sets of both of these domains kinds available, this design enhances the scalability of transcription-based logic.  Another key benefit of my proposed transcription-based logic is that by changing the fundamental event that occurs in the device from a single protein dimerizing on the DNA and repressing transcription to two proteins heterodimerizing on the DNA and repressing transcription, faster and more compact logic may be developed.
+
+Some of the questions that I am interested in addressing as a part of my thesis work include the following.  
+# How do you evaluate device performance?  When is the performance of a device good enough?  What does good enough mean?
+# How do you engineer a device to deliver good performance?
+# How should device behavior be characterized and quantified?  How little work can we get away with and call a device characterized?
+# How do you insulate devices from one another?  How do you design them to be orthogonal?  How many devices can you put inside a cell?
+and more.
+
+===Relevant work of others===
+
+====Some publications which helped to inspire this work.====
+<biblio>
+#Pomerantz-Biochem-1998 pmid=9467467
+#Wolfe-Structure-2000 pmid=10903945
+#Newman-Science-2003 pmid=12805554
+#Wolfe-Biochem-2003 pmid=14621985
+</biblio>
+
+====Acknowledgements====
+I am deeply indebted to Scot Wolfe, Keith Joung and Amy Keating for their useful advice on this project.  Scot Wolfe and Amy Keating were also kind enough to gift constructs needed for my project.
+
+__NOTOC__

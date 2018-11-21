@@ -1,0 +1,54 @@
+==Q&A==
+*Q1: "I keep getting indentation errors when running my python scripts - what's the deal?"
+*A1: See [http://www.diveintopython.org/getting_to_know_python/indenting_code.html 1], [http://docs.python.org/tut/node5.html#SECTION005200000000000000000 2] for info.
+
+==New tasks==
+*Start thinking about what kind of project you want to work on.
+*Read the [http://www.python.org/dev/peps/pep-0008/ Python Style Guide] by [http://en.wikipedia.org/wiki/Guido_van_Rossum GvR]
+
+==Solution to Feb 6 Assignment==
+*Here's my take on the [[Harvard:Biophysics_101/2007/02/06|Feb 6]] assignment.  --[[User:ShawnDouglas|smd]] 12:28, 8 February 2007 (EST)
+<pre>
+#!/usr/bin/env python
+
+from random import choice
+
+# create a list to store our results
+tally = [0 for i in range(11)]
+
+for i in range(10000):
+    # generate a random 10-mer
+    coinflip = ''.join([choice('HT') for j in range(10)])
+
+    # tally k-mers in the 10-mer
+    for k in range(2,11):
+        Hcount = Tcount = 0
+
+        H = ''.join(['H' for n in range(k)]) # k-mer of H's
+        pos = coinflip.find(H,0)
+        while not pos == -1:
+            Hcount = Hcount + 1
+            pos = coinflip.find(H,pos+1)
+
+        T = ''.join(['T' for n in range(k)]) # k-mer of T's
+        pos = coinflip.find(T,0)
+        while not pos == -1:
+            Tcount = Tcount + 1
+            pos = coinflip.find(T,pos+1)
+
+        tally[k] = tally[k] + Hcount + Tcount
+
+for i in range(2,11):
+    print '%2s: %5d' % (i, tally[i])
+</pre>
+
+*Example output
+  2: 45129
+  3: 20055
+  4:  8776
+  5:  3784
+  6:  1588
+  7:   638
+  8:   247
+  9:    81
+ 10:    22

@@ -1,0 +1,68 @@
+''Note: This information comes from the Biopolymers Lab @ MIT.'' 
+
+First, have you checked the DNA sequencing section of our web page?   http://web.mit.edu/biopolymers/www/
+
+Second, if your sample sequence terminates prematurely, and you suspect a hairpin (e.g. RNA silencing construct) or high GC rich problem, tell us and we will use different sequencing conditions.
+
+---------------------------------------
+We have recently begun using the new ABI 3730 DNA Analyzer for DNA sequencing. The 3730 is a more sensitive capillary sequencer that has the ability to provide longer, higher quality reads than our previous slab gel instrument.  However, some individuals who previously were getting good quality sequences may begin to have problems due to the instrument's increased sensitivity to residual salts, proteins, detergents, etc. Please ensure that these remnants are removed during your final purification. One of the most important things to remember is to USE WATER FOR THE FINAL ELUTION (not TE or EB)!!!!!  Below is a description of molecules that should be removed from the final product and how they will adversely affect sequencing of DNA if they are not.
+
+==Ensuring Template Quality==
+The quality of DNA in a reaction affects the performance of the DNA Analyzer. When preparing DNA templates, it is critical to avoid the following:
+*Residual salts
+*Proteins
+*Residual detergents
+*Residual RNA
+The presence of residual salts, proteins, RNA, and detergents can interfere with capillary electrophoresis and electrokinetic injection. Your current template purification methods may have to be modified to remove residual salts, proteins, and detergents.
+
+===Effect of Residual Salts===
+The 3730 DNA Analyzer is especially susceptible to salt in samples from template preparation. The negative ions in salts can be preferentially injected into the capillary array during electrokinetic injection, leading to lower signal. In addition, the negative ions compete and interfere with the injection of larger DNA extension fragments, leading to shortened read lengths. If salts and unincorporated dyes are not removed from the
+sequencing reaction, they will compete with extension fragments during electrokinetic injection and result in weak signals.
+ 
+===Effect of Proteins===
+Many DNA preparation methods for sequencing require the recovery of DNA from lysed bacterial cultures. Unless DNA is carefully purified, protein can remain in the DNA samples. Protein can be injected and adhere to the walls of the capillary array adversely affecting data resolution. 
+
+===Effect of Residual Detergents===
+Some methods of template preparation, such as the Thermomax method for M13 preparation, use detergents such as Triton X-100 to lyse the protein coat of phage particles. Other detergents, such as sodium dodecyl sulfate (SDS), are used in plasmid purification protocols to lyse bacterial cells. Small, negatively charged detergents may be preferentially injected over DNA during electrokinetic injection. If present at high levels, detergents such as Triton X-100 and SDS will adversely affect the life of the capillary array and the quality of the sequencing data.
+
+===Effect of Residual RNA===
+Residual RNA that is present in DNA template preps competes with the DNA for injection into the capillary array. Residual RNA has the same effect as excess salt, that is, decreased signal and shortened read lengths.
+
+==Template Quantity==
+
+===Effect of Too Little Template===
+Too little template or primer reduces the signal strength and peak height. In the worst case, the signal-to-noise level decreases so that bases cannot be called.
+
+===Effect of Excess Template===
+Excess template can affect data quality when present in sample loading onto the DNA Analyzer. Excess template inhibits the injection of extension fragments thus affecting signals generated from the instrument. Excess template can behave similarly to proteins and accumulate in the capillary array, which affects data resolution.
+
+(Applied Biosystems 3730/3720xl DNA Analyzers Sequencing Chemistry Guide, p.18-22)
+
+
+
+==Frequent reasons for failure to get good data==
+
+Failure results when there is an insufficient level of fluorescent termination products for the computer software to assign a sequence. Some possible reasons:
+
+#Our new capillary sequencer (and corresponding new sequencing polymerase kits) provides longer reads but is also more sensitive to residual salt and ethanol in sample.
+#*If you are experiencing variable results(e.g. in silica based purification schemes where 10 mM Tris is the recommended elution buffer), try a post spin-out ethanol PPT or elute in water instead of E.B.
+#Too little template results in reactions with little or no signal and poor or no base calling. 
+#Too much DNA producing reactions which terminate prematurely, often with fewer than 250 bases of reliable sequence data. 
+#Poor quality template DNA. Template DNA must be free of residual ethanol and salt.
+#Insufficient primer concentration or poor quality. 
+#The Tm of the primer is << 50 oC.
+#The template does not contain a sequence complementary to the primer. 
+#Primer and/or template was not added to the reaction.
+#Using the same primers for sequencing as were used for PCR. One of the primers used to generate the PCR product does not work under fluorescent cycle sequencing reaction conditions.     
+#Template from two different colonies was submitted inadvertently. You may have picked the biggest colony or plated too densely in which case many of your colonies are actually different colonies rather than the one of interest. This results in two overlapping sequences on the electropherogram. The fix is to re-plate at a lower density and re-sequence.
+
+
+==Some common mistakes with Qiagen plasmid kits which affect the final quality of sequence data==
+
+#The directions for cell growth are not followed resulting in overloading the Qiagen resin.  Usually, a poor yield of plasmid DNA results, presumably due to competition with RNA fragments for binding to the Qiagen resin. Use the recommended quantity of LB (don't use Terrificbroth) for cell growth.
+#The isopropanol-precipitated DNA is not washed with 70% ethanol to remove excess salt.
+#*Wash the DNA pellet at least once as directed with 70% ethanol. Residual salt in the final template will interfere with the activity of Taq polymerase resulting in sequence data which extends fewer than 200 bases from the primer and exhibits a low signal to noise ratio. 
+#The template DNA is not dried completely before final resuspension in H2O. 
+#*To remove residual ethanol, dry the DNA for 5 min. in a properly operating speedvac. 
+#*If air-drying, make sure that the DNA is dry (no fluid in the tube, the DNA pellet does not look wet).
+#*When air drying, a brief 15 min incubation of the open tube at 65 oC is often sufficient to completely dry the DNA. Residual ethanol is detrimental to Taq cycle sequencing resulting in data with a drastically reduced signal.

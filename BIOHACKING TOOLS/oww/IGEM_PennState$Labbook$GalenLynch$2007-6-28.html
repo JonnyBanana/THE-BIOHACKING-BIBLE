@@ -1,0 +1,66 @@
+<h1>'''June 28th, 2007''':9:45-5:00</h1>
+continued from the 26th
+Lambda bacteriophage regions of interest:
+<h2>Lambda control region (O<sub>R</sub>)</h2>
+*Contains O<sub>R</sub>1, O<sub>R</sub>2, and O<sub>R</sub>3, shown in reverse order (i.e. the leftmost binding region below is O<sub>R</sub>3)
+*Bi directional promoter
+**in the lambda phage, CI is to the left(P<sub>RM</sub>), cro is to the right(P<sub>R</sub>)
+*recognized by cro, CI
+**cro binding affinities: O<sub>R</sub>3, O<sub>R</sub>2 ~ O<sub>R</sub>1 (O<sub>R</sub>1 is slightly less)
+**CI binding affinites: O<sub>R</sub>1, O<sub>R</sub>2 ~ O<sub>R</sub>3 (O<sub>R</sub>3 is slightly less)
+*CI acts as a positive regulator for P<sub>RM</sub> when bound to O<sub>R</sub>2, but and a negative regulator for P<sub>R</sub> when bound to O<sub>R</sub>3
+<html><pre>ACGTTA<font color=cyan>AATC </font><font color= blue>TA</font><font color=green>TCACCGCA AGGGATA</font>AA<font color=cyan>T ATC</font><font color = blue>TA</font><font color = green>ACACC GTGCGTG</font><font color =blue>TTG</font><font color=cyan> ACT</font>ATTT<font color=green>TAC
+CTCTGGCGGT </font><font color=blue>GATA</font><font color=cyan>AT</font>GGTT GC</pre></html>
+Cro and CI binding regions are depicted in <font color = green>green</font>, -10 and -35 sequences in <font color = cyan>cyan</font>, and shared regions are in <font color = blue>blue</font>
+<h3>Primers</h3>
+  Readable primer:ggaattcgcg gccgcttcta gag ACGTTAAATC TATCACCGC (left side)
+  Primer sequence:ggaattcgcggccgcttctagagACGTTAAATCTATCACCGC
+*Mp: 57,77
+  Readable primer:ctgcagcggc cgctactagt a GCAACCATTA TCACCGC (right side)
+  Primer sequence:ctgcagcggccgctactagtaGCAACCATTATCACCGC
+*Mp: 58,78
+<h2>Lambda Repressor (CI)</h2>
+*Forms dimers
+**Dimers associate to form tetramers, octamers etc
+*Binds to O<sub>L</sub> and O<sub>R</sub> operators in bacteriophage genome
+*Cleaved by activated RecA protein (activates with ssDNA exposure)
+<html><pre><font color=green>ATG</font>AGCACAA AAAAGAAACC ATTAACACAA GAGCAGCTTG AGGACGCACG TCGCCTTAAA
+GCAATTTATG AAAAAAAGAA AAATGAACTT GGCTTATCCC AGGAATCTGT CGCAGACAAG
+ATGGGGATGG GGCAGTCAGG CGTTGGTGCT TTATTTAATG GCATCAATGC ATTAAATGCT
+TATAACGCCG CATTGCTTGC AAAAATTCTC AAAGTTAGCG TTGAAGAATT TAGCCCTTCA
+ATCGCCAGAG AAATCTACGA GATGTATGAA GCGGTTAGTA TGCAGCCGTC ACTTAGAAGT
+GAGTATGAGT ACCCTGTTTT TTCTCATGTT CAGGCAGGGA TGTTCTCACC TGAGCTTAGA
+ACCTTTACCA AAGGTGATGC GGAGAGATGG GTAAGCACAA CCAAAAAAGC CAGTGATTCT
+GCATTCTGGC TTGAGGTTGA AGGTAATTCC ATGACCGCAC CAACAGGCTC CAAGCCAAGC
+TTTCCTGACG GAATGTTAAT TCTCGTTGAC CCTGAGCAGG CTGTTGAGCC AGGTGATTTC
+TGCATAGCCA GACTTGGGGG TGATGAGTTT ACCTTCAAGA AACTGATCAG GGATAGCGGT
+CAGGTGTTTT TACAACCACT AAACCCACAG TACCCAATGA TCCCATGCAA TGAGAGTTGT
+TCCGTTGTGG GGAAAGTTAT CGCTAGTCAG TGGCCTGAAG AGACGTTTGG C<font color=red>TGA</font></pre></html>
+Start codon is in <font color=green>green</font> and stop codon is in <font color=red>red</font>
+<h3>Primers</h3>
+  Readable Primer:ggaattcgcg gccgcttcta gag ATGAGCACAA AAAAGAAACC (left side)
+  Primer sequence:ggaattcgcggccgcttctagagATGAGCACAAAAAAGAAACC
+*Mp: 56,77
+  Readable primer:ctgcagcggc cgctactagt a TCAGCCAAAC GTCTCTTC (right side)
+  Primer sequence:ctgcagcggccgctactagtaTCAGCCAAACGTCTCTTC
+*Mp: 58,78
+
+<h2>Lambda Repressor (CI) with degredation tag (LVA)</h2>
+Part [http://parts.mit.edu/registry/index.php/Part:BBa_C0051 BBa_C0051] on MIT's parts registry
+*same as CI repressor, but with degredation tag on the N terminus to promote degredation
+<h2>Lambda AntiRepressor (Cro)</h2>
+*Binds to O<sub>R</sub> and O<sub>L</sub> operators
+*transcriptional activator, repressor
+*favors lytic pathway in lambda bacteriophage
+<html><pre><font color=green>ATG</font>GAACAAC GCATAACCCT GAAAGATTAT GCAATGCGCT TTGGGCAAAC CAAGACAGCT
+AAAGATCTCG GCGTATATCA AAGCGCGATC AACAAGGCCA TTCATGCAGG CCGAAAGATT
+TTTTTAACTA TAAACGCTGA TGGAAGCGTT TATGCGGAAG AGGTAAAGCC CTTCCCGAGT
+AACAAAAAAA CAACAGCA<font color=red>TA A</font></pre></html>
+Start codon is in <font color=green>green</font> and stop codon is in <font color=red>red</font>
+<h3>Primers</h3>
+  Readable primer:ggaattcgcg gccgcttcta gag ATGGAACAAC GCATAACC (left side)
+  Primer sequence:ggaattcgcggccgcttctagagATGGAACAACGCATAACC
+*Mp: 57,78
+  Readable primer:ctgcagcggc cgctactagt a TTATGCTGTT GTTTTTTTGT TACT (right side)
+  Primer sequence:ctgcagcggccgctactagtaTTATGCTGTTGTTTTTTTGTTACT
+*Mp: 58,75

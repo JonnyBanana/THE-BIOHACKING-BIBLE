@@ -1,0 +1,53 @@
+This has been of enough interest to various team members to pursue the Calvin cycle component of the project, the dedicated project page can be found [[IGEM:MIT/2006/Autotrophic E.coli|here]].
+
+==Description==
+Construct an autotrophic E.coli.  Specifically, "domesticate" a light-driven proton pump and utilize the generated proton gradient in order to drive a mechanism to metabolize carbon (possibly from CO2 via the Calvin cycle).  
+*'''Deliverable:''' E.coli that grow on minimal media with no carbon source.
+
+==Requirements==
+
+===Design===
+
+===Light-driven Proton pump (Proteorhodopsin)===
+[http://biology.plosjournals.org/perlserv?request=get-document&doi=10.1371/journal.pbio.0030273 This paper] describes co-transforming E.coli, with pACCAR16<delta>crtX and a plasmid containing the ''blh'' gene and the Proteorhodopsin gene each under inducible control.
+*pACCAR16<delta>crtX - contains ''crtE,crtB,crtI,''and''crtY'' genes, which are responsible for B-carotene biosynthesis in ''E.herbicola''
+**Originally, specified in [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=PubMed&cmd=Retrieve&list_uids=7733978&dopt=Abstract this paper] written by researchers at [http://www.kirin.com/ Kirin], makers of a very fine product.
+*Blh protein cleaves B-carotene creating retinal
+in particular see [http://biology.plosjournals.org/perlserv?request=slideshow&type=figure&doi=10.1371/journal.pbio.0030273&id=32448 this figure] where they demonstrate inducing both Blh and proteorhodopsin and getting red E.coli (an indicator of proteorhodopsin bound to retinal).  The particular Blh-homolog used in this study was found in a BAC library from the same paper.
+
+This project would involve "domesticating" this system by getting the relevant genes either chromosomally integrated or all on a single BioBrick plasmid.  We would be able to tell its working at a first pass by just seeing that the cells turn red, and we could follow up by doing pH measurements as specified by [[DeLong Lab|Ed Delong's group]].  
+
+===Calvin Cycle===
+So check [http://peds.oxfordjournals.org/cgi/content/abstract/19/3/113 this out]. In an effort to do directed evolution on RuBisCO, these folks partially reconstructed the Calvin cycle in E.Coli (wt E.coli naturally expresses 8 of 11 of the required calvin cycle enzymes), by adding RuBisCO & phosphoribulokinase from cyanobacteria PCC6301 and PCC7492, respectively.  Anyway, these cells needed CO2 to grow (as well as a pentose C-source), so this looks to be something close to the other piece of the puzzle.  I have to do my e.coli metabolism HWK, but it seems like it might be possible to fill in the other calvin cycle genes, hook up the light-driven proton pump and then grow on minimal media. 
+
+===Construction===
+===Testing===
+==Feasibility & Timeline==
+Rought timeline:
+#Order strains/plasmids/synthesis
+#Research the existence proofs for each of the parallel tracks
+#Research if the metabolic "fluxes" work out -- could we get sufficient energy out of the proton pumps?
+#build the proton pump / metabolically engineer the calvin cycle in
+#test each one
+#integrate 
+==Parallelizability==
+Seems parallelizable:
+#Get the proton pump working
+#Plug the proton gradient into the Calvin cycle
+==Intermediate goals==
+#Working proton pump (As tested via methods from DeLong group)
+#Working calvin cycle, by the methods specified [http://peds.oxfordjournals.org/cgi/content/abstract/19/3/113 here].
+#Final goal: integrate the two systems.
+==Significance==
+#Think of all the glucose that could be saved!
+#Better model organism for studying "photosynthesis-sort-of", rather than slow growing cyanobacteria
+#Better power supply/chassis?  
+
+==Safety & ethics==
+#Would these be more fit then native e.coli?  could they displace them in the environment?
+
+==Summary (pros/cons)==
+
+
+==References==
+[[Image:PACCAR16.JPG|thumb|left|pACCAR16 plasmid structure]]

@@ -1,0 +1,288 @@
+=Modeling Arsenic Biosensor System=
+'''Author(s): '''[[User:yizhi|Yizhi Cai]],Bryony Davidson<br> 
+'''Supervisor(s): '''Hongwu Ma,Chris French <br> 
+'''Affiliations:''' University of Edinburgh  <br>
+'''Contact:'''caiyizhi@gmail.com <br>
+'''Keywords:''' 'arsenic biosensor', 'signal transduction modeling', 'iGEM' 
+
+[[Category:BioSysBio Keywords add_keyword_1]] 
+[[Category:BioSysBio Keywords add_keyword_2]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+=Abstract= 
+This paper reports the modeling progress of an arsenic biosensor system, which is the iGEM project accomplished in the University of Edinburgh 2006. The arsenic biosensor system sought to address the fatal water pollution problem occurring in many poor countries/areas like Bangladesh by producing a calibratable pH changes in response to a range of arsenic concentrations. A computational model which contains 3 operons, 19 reactions and 17 species has been constructed to shed light on the wet-lab experimental design. By analyzing the sensitivity of each parameter/species, we identified their relative importance in the system which gives the theoretical guide when measuring the variable in wet-lab. The next step research is to refine the model by comparing it with the biological output. 
+
+For more information, you are welcome to our [http://parts2.mit.edu/wiki/index.php/University_of_Edinburgh_2006:iGEM Wiki pages@iGEM2006].
+
+=Background/Introduction=
+== Aim ==
+
+Develop a bacterial biosensor that responds to a range of arsenic concentrations and produces a change in pH that can be calibrated in relation with the arsenic concentration. 
+
+
+=== The worst mass poisoning the world has ever known ===
+
+[[Image:bangladesh.jpg|400px|thumb|right|This photo is the courtesy of [http://www.wateraid.org WaterAid] / Liba Taylor]]
+
+It is estimated that at this very moment up to 100 million people across the world are being poisoned due to the presence of arsenic in their drinking water. One in a hundred of these people will develop a fatal cancer as a result, and countless others will get ill and suffer as the poison slowly damages their bodies.
+
+This problem is greatest in one of the world’s poorest countries – Bangladesh. Because of the combination of regular yearly floods and poor sanitation, the available fresh water is swarming with harmful diseases. In an attempt to alleviate this problem, a large number of tube-wells were dug all across the country in order to provide people with clean water. However, in a cruel twist of fate, a lot of these wells were dug through a sedimentary layer containing arsenic. 
+
+Arsenic wasn't a standard thing to test for at the time, and by the time the first signs of the poisoning emerged, it was already too late – out of the estimated 10 million wells dug by now, at least 1 in 4, and possibly almost as many as a half of these wells contain water with harmful levels of arsenic. The organisations working in present day Bangladesh do carry out routine tests for arsenic in new wells, and arsenic mitigation efforts are being carried out, but the immense scale of the problem means these are basically just a drop in the ocean.
+
+So the choice facing a poor rural family in Bangladesh is one between a quick death from disease if they drink the water from the rivers, or the potential of slow death from poisoning if they drink the water from the wells. The problem is that they don’t know which wells are poisoned, and because the effects of arsenic are slow and cumulative, by the time they find out, it’s already too late. 
+
+1 in 4 wells. Would you play Russian roulette with your children’s lives?
+
+
+== The project ==
+
+Scientists around the world have been working to change this. The distribution of arsenic in the wells is quite irregular, so if a cheap, easy-to-use arsenic detector was to become available, all the wells could be tested, and safe ones could be found – something that is currently financially unfeasible because of the instruments and expertise required.
+
+A lot of research has been done into arsenic biosensors already, and some have already been created, mostly using fluorescence. The components are available, there are gene promoters that respond to the presence of arsenic, and various different outputs are possible. The next stage is really more of an engineering question: how do you come up with an optimal design that’s easy to use in the field?
+
+Our suggested project uses a pH change as a signal for the presence of arsenic, improving upon previous designs because the change is easily detectable using a pH meter, or even just a couple of drops of indicator. It is also potentially possible to make the system detect a large range of arsenic concentrations, because the change in pH is gradual. 
+
+Not only is such a device both practical and marketable, it is ethically imperative to produce it. Using the cutting edge of modern science, it really is possible to change the world.
+
+
+
+=Images/Tables=
+==System Diagram of Arsenic Biosensor==
+[[Image:Model_Diagram2.JPG|750 px]]
+
+== Reaction set ==
+{|border=1
+| No. || Name || Equation || Rate Law ||Parameters
+|-
+|1 ||ArsD binding to Arsenic (III) ||ArsD+2As(III)=ArsD-2As(III)||Mass Action|| K1=1000 K-1=0.65
+|-
+|2 ||ArsD binding to promoter1  ||2 ArsD+promoter1=2ArsD-promoter1 || Mass Action||K2=10000, K-2=0.65
+|-
+|3 ||ArsD degradation ||ArsD->null|| Mass Action||K3=0.05
+|-
+|4 ||ArsD production ||promoter1->promoter1+ArsD||Michaelis-Menten ||V4m=0.5, K4m=75
+|-
+|5 ||ArsR binding to Arsenic (III) ||ArsR+2As(III)=ArsR-2As(III) ||Mass Action ||K5=1000, K-5=0.65
+|-
+|6 ||ArsR binding to promoter2 ||2ArsR+promoter2=2ArsR-promoter2 ||Mass Action ||K6=10000, K-6=0.65
+|-
+|7 ||ArsR degradation ||ArsR->null  ||Mass Action ||K7=0.05
+|-
+|8 ||ArsR production ||promoter2->promoter2+ArsR ||Michaelis-Menten ||V8m=10, K8m=25
+|-
+|9 ||LacI binding to allolactose ||LacI+allolactose=LacI-allolactose ||Mass Action ||K9=10000, K-9=0.1
+|-
+|10 ||LacI binding to promoter4 ||LacI+promoter4 = LacI-promoter4 ||Mass Action ||K10=1000, K-10=0.5
+|-
+|11 ||LacI degradation ||LacI->null  ||Mass Action ||K11=0.1
+|-
+|12 ||LacI production ||promoter3->promoter3+LacI ||Michaelis-Menten ||V12m=0.5, K12m=40
+|-
+|13 ||lacZ degradation ||lacZ->null  ||Mass Action ||K13=0.1
+|-
+|14 ||lacZ production ||promoter1->promoter1+lacZ ||Michaelis-Menten ||V14m=25, K14m=10
+|-
+|15 ||LCI binding to promoter 4 ||LCI+promoter4=LCI-promoter4 ||Mass Action ||K15=10000, K-15=0.5
+|-
+|16 ||LCI degradation ||LCI->null  ||Mass Action ||K16=0.1
+|-
+|17 ||LCI production ||promoter2->promoter2+LCI ||Michaelis-Menten ||V17m=10, K17m=25
+|-
+|18 ||Urease degradation ||Urease->null  ||Mass Action ||K18=0.1
+|-
+|19 ||Urease production ||promoter4->promoter4+Urease ||Michaelis-Menten ||V19m=10, K19m=40
+|}
+Note: The units for first, second and third order rate constants are expressed in units of second^-1, nMol^-1*second^-1 and nMol^-2*second^-1 respectively.
+[[Image:Reaction_Map.JPG]]
+
+This reaction map is generated from the reaction set above using Simbiology Toolbox.
+
+== Initial concentration ==
+{|border=1
+| No. || Species || Intial Concentration (nMol)
+|-
+|1 ||ArsD ||25
+|-
+|2 ||As(III) ||40
+|-
+|3 ||2ArsD-promoter1 ||25
+|-
+|4 ||promoter1 ||5
+|-
+|5 ||ArsR ||25
+|-
+|6 ||2ArsR-promoter2 ||25
+|-
+|7 ||promoter2 ||5
+|-
+|8 ||LCI ||4
+|-
+|9 ||LacI ||0.1
+|-
+|10 ||LacI-allolactose ||0.1
+|-
+|11 ||allolactose ||1000
+|-
+|12 ||LacI-promoter4 ||0.1
+|-
+|13 ||promoter4 ||25
+|-
+|14 ||LCI-promoter4 ||0.1
+|-
+|15 ||Urease ||0.1
+|-
+|16 ||promoter3 ||5
+|-
+|17 ||Other species ||0
+|}
+
+=Methodology=
+===Software used===
+In order to model the quantitative behavior of the dynamic system, many modeling
+software systems have been developed in the past few years. In this project, three kinds of software systems are used for modeling. This section introduces their functions and features.
+
+1.System biology toolbox for Matlab: SimBiology toolbox provides functions for
+modeling, simulating, and analyzing biochemical pathways on basis of the powerful computing engine of Matlab. Aside from the conventional typing reaction equation, SimBiology provides a user-friendly ‘dragging-and-dropping’ block diagram editor to build a new model. Thanks to the powerful computing ability of Matlab, SimBiology integrates a wide range of numerical solvers for both stochastic and deterministic simulations. Another strength of SimBiology is its analyzing ability which includes sensitivity analysis, parameter estimation and conservation of moieties. Last but not the least, SimBiology provides user-defined plotting function which was widely used in this research project. However SimBiology is commercial software, it costs the budgeted researchers extra expense to purchase the license for this toolbox. Also, there is no GUI for sensitivity analysis and parameters scan functions, so users should obtain the skill of programming with Matlab.
+
+2.BIOCHAM: BIOCHAM stands for biochemical abstract machine which is a formal modeling environment for system biology. Because of its rule-based language and temporal logic based language, BIOCHAM can offer an automatically reasoning tool for querying the temporal properties of the system under all its possible behaviors. It is very useful for constructing models especially when numerical data is unavailable. BIOCHAM also provides a state-of-the-art symbolic model checker for handling the complexity of large highly non-deterministic models. Furthermore, it provides simulation results via its graphical interface. One disadvantage of BIOCHAM is that because it is initially developed under UNIX, it uses command line rather than GUI to build new models, requiring users to write scripts by hand. Another problem was that when transplanting the program from UNIX to Windows, the model checker of NuSMV does not work well. So this project used BIOCHAM in Fedora 5 rather than Windows XP.
+
+3. COPASI: COPASI is freeware developed with collaboration of VBI and EMLR. It provides almost the same functions as SimBiology, though not quite powerful. But compared with SimBiology, it provides a friendly user interface for model analysis, such as parameter estimation, and parameter scan. But there is no parameters/species sensitivity analysis function in COPASI, and also it is not very stable in use, crashing without any responses.
+
+To sum up, each software has its own pros and cons. A good strategy is to apply
+them for different purposes, for example, using SimBiology to analyze the sensitivity of the model, and using COPASI to scan the most sensitive parameters. When logical queries are needed, BIOCHAM should be the first choice. SimBiology is suitable for generating professional plots, however due to the license requirement, COPASI can be the alternative choice to to run simulations and export the results to such plotting software as SigmaPlot.
+
+=Results=
+==System response==
+
+[[Image:System_output_5ppb.jpg|600 px|thumb|center|Fig.1 System response with 5ppb arsenic input]]
+
+[[Image:System_output_20ppb.jpg|600 px|thumb|center|Fig.2 System response with 20ppb arsenic input]]
+
+==Parameter sensitivity analysis==
+[[Image:Sensitivity_of_lacZ_with_Respect_to_Model_Parameters_1-16.jpg|600 px|thumb|center|Fig.3 Sensitivity of lacZ with Respect to Model Parameters 1-16]]
+
+[[Image:Sensitivity_of_lacZ_with_Respect_to_Model_Parameters_17-32.jpg|600 px|thumb|center|Fig.4 Sensitivity of lacZ with Respect to Model Parameters 17-32]]
+===The most sensitive parameters affecting lacZ===
+{|border=1|center
+| Nanme || Description ||Peak value of sensitivity || Normal value
+|-
+|K-1 ||ArsD-2AS(III) dissociate rate ||-2||0.65/s
+|-
+|K-2 ||2ArsD-promoter1 dissociate rate ||4 ||0.65/s
+|-
+|K3 ||ArsD degradation rate ||90 ||0.05/s
+|-
+|K7 ||ArsR degradation rate ||12 ||0.05/s
+|-
+|K13 ||LacZ degradation rate ||-35 ||0.1/s
+|}
+
+[[Image:Varying_the_Value_of_Parameter_K-1_effect_on_lacZ.jpg|600 px|thumb|center|Fig.5 Varying the Value of Parameter K-1 effect on lacZ]]
+
+[[Image:Varying_the_Value_of_Parameter_K-1_effect_on_lacZ_(3D).JPG|600 px|thumb|center|Fig.5 Varying the Value of Parameter K-1 effect on lacZ (3D)]]
+
+[[Image:Varying_the_Value_of_Parameter_K-2_effect_on_lacZ.jpg|600 px|thumb|center|Fig.5 Varying the Value of Parameter K-2 effect on lacZ]]
+
+[[Image:Varying_the_Value_of_Parameter_K3_effect_on_lacZ.jpg|600 px|thumb|center|Fig.5 Varying the Value of Parameter K3 effect on lacZ]]
+
+[[Image:Varying_the_Value_of_Parameter_K7_effect_on_lacZ.jpg|600 px|thumb|center|Fig.5 Varying the Value of Parameter K7 effect on lacZ]]
+
+
+[[Image:Varying_the_Value_of_Parameter_K13_effect_on_lacZ.jpg|600 px|thumb|center|Fig.5 Varying the Value of Parameter K13 effect on lacZ]]
+
+[[Image:Sensitivity_of_Urease_with_Respect_to_Model_Parameters_1-16.jpg|600 px|thumb|center|Fig.5 Sensitivity of Urease with Respect to Model Parameters 1-16]]
+
+[[Image:Sensitivity_of_Urease_with_Respect_to_Model_Parameters_17-32.jpg|600 px|center|thumb|Fig.6 Sensitivity of Urease with Respect to Model Parameters 17-32]]
+===The most sensitive parameters affecting Urease===
+{|border=1|center
+| Nanme || Description ||Peak value of sensitivity || Normal value
+|-
+|k3 ||ArsD degradation rate ||-30||0.05/s
+|-
+|k-6 ||2ArsR-promoter2 dissociate rate ||-5 ||0.65/s
+|-
+|k7 ||ArsR degradation rate ||-120 ||0.05/s
+|-
+|K18 ||Urease degradation rate ||-350  ||0.1/s
+|-
+|V19m ||Urease production maxium rate ||3.5 ||10 nMol/s
+|}
+
+[[Image:Varying_the_Value_of_Parameter_K3_effect_on_Urease.jpg|600 px|thumb|center|Fig.5 Varying the Value of Parameter K3 effect on Urease]]
+
+[[Image:Varying_the_Value_of_Parameter_K-6_effect_on_Urease.jpg|600 px|thumb|center|Fig.5 Varying the Value of Parameter K-6 effect on Urease]]
+
+
+[[Image:Varying_the_Value_of_Parameter_K18_effect_on_Urease.jpg|600 px|thumb|center|Fig.5 Varying the Value of Parameter K18 effect on Urease]]
+
+
+
+==Species sensitivity analysis==
+[[Image:Sensitivity_of_lacZ_with_Respect_to_Model_Species.jpg|600 px|center|thumb|Fig.7 Sensitivity of lacZ with Respect to Model Species]]
+===The most sensitive species affecting lacZ===
+{|border=1|center
+|Name||Initial concentration (nMol)
+|-
+|promoter1 ||5.0
+|-
+|promoter2 ||5.0
+|-
+|ArsD-2As(III) ||0
+|-
+|ArsD  ||25
+|-
+|ArsR  ||25
+|}
+
+
+[[Image:Varying_the_Value_of_Species_promoter1_Effect_on_lacZ.jpg|600 px|center|thumb|Fig.7 Varying the Value of Species promoter1 Effect on lacZ]]
+
+[[Image:Varying_the_Value_of_Species_promoter2_Effect_on_lacZ.jpg|600 px|center|thumb|Fig.7 Varying the Value of Species promoter2 Effect on lacZ]]
+
+[[Image:Varying_the_Value_of_Species_ArsD-2As(III)_Effect_on_lacZ.jpg|600 px|center|thumb|Fig.7 Varying the Value of Species ArsD-2As(III) Effect on lacZ]]
+
+
+[[Image:Varying_the_Value_of_Species_ArsR_Effect_on_lacZ.jpg|600 px|center|thumb|Fig.7 Varying the Value of Species ArsR Effect on lacZ]]
+
+[[Image:Sensitivity_of_Urease_with_Respect_to_Model_Species.jpg|600 px|center|thumb|Fig.8 Sensitivity of Urease with Respect to Model Species]]
+===The most sensitive species affecting Urease===
+{|border=1|center
+|Name||Initial concentration (nMol)
+|-
+|LCI ||4
+|-
+|LacI-promoter4 ||0.1
+|-
+|promoter4 ||25
+|-
+|promoter2  ||5
+|-
+|promoter1 ||5
+|}
+
+[[Image:Varying_the_Value_of_Species_LCI_Effect_on_Urease.jpg|600 px|center|thumb|Fig.7 Varying the Value of Species LCI Effect on Urease]]
+
+
+[[Image:Varying_the_Value_of_Species_LacI-promoter4_Effect_on_Urease.jpg|600 px|center|thumb|Fig.7 Varying the Value of Species LacI-promoter4 Effect on Urease]]
+
+[[Image:Varying_the_Value_of_Species_promoter4_Effect_on_Urease.jpg|600 px|center|thumb|Fig.7 Varying the Value of Species promoter4 Effect on Urease]]
+
+[[Image:Varying_the_Value_of_Species_promoter2_Effect_on_Urease.jpg|600 px|center|thumb|Fig.7 Varying the Value of Species promoter2 Effect on Urease]]
+
+
+
+=Conclusion=
+Add your text here
+
+=Acknowledgements=
+We would like to express our sincere gratitude and appreciation to our teammates who have done a lot of work on this research during the past three months, they are: 
+[http://parts2.mit.edu/wiki/index.php/User:Judenich Judith Nicholson],[http://parts2.mit.edu/wiki/index.php/User:Fbizzari Farid Bizzari],[http://parts2.mit.edu/wiki/index.php/User:Jelena Jelena Aleksic],[http://parts2.mit.edu/wiki/index.php/User:Jenwilson Jen Wilson] and 
+[http://parts2.mit.edu/wiki/index.php/User:Kim Kim de Mora]
+
+
+=References=
+
+
+For further help on editing, please see [ http://en.wikipedia.org/wiki/Help:Editing here]

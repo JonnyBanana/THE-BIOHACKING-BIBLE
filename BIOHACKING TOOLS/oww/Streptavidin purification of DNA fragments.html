@@ -1,0 +1,147 @@
+==Biotin Primers==
+
+* Make primers for PCR reactions with a 5' biotin modification
+** HPLC purification of these primers is desirable to eliminate short primers and ones without a biotin tag
+** Virtually all oligo manufacturers can supply 5' biotin
+** An alternative is to make 5' amine primers and link biotin to the amine group
+
+==PCR Reaction==
+* Normal PCR reaction conditions apply.
+* Approximately 1 pmol/&mu;l biotinylated primer should be used.
+
+
+* 100 &mu;l reaction
+* 100 &mu;l PCR Supermix High Fidelity (Invitrogen)
+* 1.5 &mu;l Suffix-FB biotinylated primer (30 pmol/&mu;l)
+* 1.5 &mu;l Prefix-RB biotinylated primer (30 pmol/&mu;l)
+* 0.5 &mu;l diluted plasmid backbone template DNA (10 ng/&mu;l)
+
+
+* Cycle 36x
+* initial denature 95&deg; 2 min
+* 36 cycles
+** 95&deg; 20 sec
+** 62&deg; 20 sec
+** 68&deg; 4:00 min 
+* final extension 68&deg; 20 min
+
+==Post PCR Cleanup==
+* Elimination of PCR enzymes and dNTPs is required prior to enzymatic cutting
+* Add 1 &mu;l Proteinase-K
+* digest at 50&deg; for 1 hour
+* heat kill Proteinase K at 80&deg; for 20 minutes
+* Add 5x (500 &mu;l) Qiagen buffer PB, vortex
+* Spin in Qiagen column at 8000g 1 minute
+* Pour flow through back into the column, spin again
+* Discard flow through, add 500 &mu;l buffer PB, spin again
+* Discard flow through, add 750 &mu;l wash PE, spin again
+* Discard flow through, add 750 &mu;l wash PE, spin again
+* Discard flow through, spin again at 12000g, 2 minutes to dry
+* Transfer column to a clean 1.7 ml tube, add 30 &mu;l EB heated to 50&deg;, spin at 8000g 1 minute
+* Add a further 30 &mu;l EB, spin again
+* Discard the column and retain the eluted DNA
+* measure yield with the Nanodrop, expect 150-250 ng/&mu;l in 45 &mu;l
+
+==Restriction digests==
+* Digest in a 300 &mu;l final volume
+* Initial DNA is 45 &mu;l from the elution
+* Add 30 &mu;l Buffer 2
+* Add 3 &mu;l BSA
+* Add 212 &mu;l DI water
+* Add 5 &mu;l EcoRI
+* Add 5 &mu;l PstI
+* Add 1 &mu;l DpnI
+* Digest 2 hours at 37&deg;
+* Heat kill 20 minutes at 80&deg;
+
+==Binding and removing uncut DNA and short ends to streptavidin-agarose==
+* For binding uncut and short fragments, the salt concentration must be increased.
+** Adjust restriction digest to 1 M NaCl by adding 60 &mu;l of 5M NaCl
+* During the binding reaction, the exposed cut ends must be protected from exonucleases by removing the magnesium
+** Chelate Mg<sup>++</sup> by adding 20 &mu;l of 500 mM EDTA
+* Use Pierce Streptavidin-agarose beads, Pierce 20349 [[http://www.piercenet.com/files/0187as4.pdf]]
+** These have high capacity, around 75 pmol/&mu;l
+* Dispense 100 &mu;l of the settled beads into a 2 ml tube
+* Add 1.7 ml of binding buffer, resuspending the beads
+* Wash 30 minutes at room temperature with agitation
+* Centrifuge at 8000g for 1 minute
+* Discard the supernatent
+* Add 1.7 ml of binding buffer, resuspending the beads
+* Wash for 30 minutes at room temperature with agitation
+* Centrifuge at 8000g for 1 minute
+* Discard the supernatent
+* Add 300 &mu;l of binding buffer and resuspend the beads
+* Add the cut and adjusted PCR product (380 &mu;l)
+* Bind overnight at room temperature with agitation
+* Centrifuge at 8000g for 1 minute in a Bio101 spin filter cartridge
+* Discard the filter
+* Add 1 &mu;l of pellet-paint
+* Add 500 &mu;l of isopropanol and mix
+* Freeze for 30 minutes at -80&deg; to form a gel
+* Centrifuge at 17000g for 30 minutes to precipitate the recovered DNA
+* Wash the DNA pellet with 70% ethanol
+* Resuspend the purified DNA in 50 &mu;l TE
+* Quantitate the DNA
+** expect about a 50% yield over the purified PCR product (3 to 6 &mu;g total, 50 to 150 ng/&mu;l)
+
+==Testing the purified DNA==
+* Mix a master ligation mix containing
+** 250 ng of DNA
+** 7.5 &mu;l T4 DNA ligase buffer
+** water to 75 &mu;l
+* Set aside 15 &mu;l as a reference band A and add to it 1 &mu;l of 500 mM EDTA to remove magnesium
+* Add 0.3 &mu;l T4 DNA ligase
+* Restriction enzymes require some salt for activity
+** Adjust salt concentration to 25 mM by addition of 1.6 &mu;l of 1 M NaCl, mix
+* Aliquot 15 &mu;l samples to tubes B, C, D, and E
+** Add  0.3 &mu;l EcoRI to sample C
+** Add  0.3 &mu;l PstI to sample D
+** Add  0.3 &mu;l EcoRI and 0.3 &mu;l PstI to sample E
+* Ligate 60 minutes at 16&deg;
+* Cut for 10 minutes at 37&deg; 
+* Heat kill for 20 minutes at 80&deg;
+* Run an 0.8% gel
+** Ligated band B should show little single length fragment and a high MW smear, with some double and quad length fragments
+** Ligated and single cut bands C and D should show double length fragments
+** Ligated and double cut band E should show single length fragments
+
+==Binding buffer==
+* 1 M NaCl
+* 20 mM Tris-HCl pH 7.5
+* 5 mM EDTA pH 8.0
+* 0.1% NP-40 detergent
+
+==Construction Plasmid Biotin Primers==
+* Primers amplify any Biobrick plasmid backbone
+* Order 50 nM, 5' biotin modification, HPLC purified
+*   GTT TCT TCC TCT AGA AGC GGC CGC GAA TTC,Prefix-RB
+*   GT TTC TTC TAC TAG TAG CGG CCG CTG CAG,Suffix-FB
+* Dilute to 30 pmol/&mu;l with TE
+* Optimal annealing temperature seems to be about 62&deg;
+
+==Ligation and Restriction enzyme buffers==
+
+* T4 DNA Ligase Buffer
+** 50 mM Tris-HCl
+** 10 mM MgCl<sub>2</sub>
+**  1 mM ATP
+** 10 mM DTT
+** 25 ng/&mu;l BSA
+** pH 7.5
+
+* EcoRI buffer
+** 100 mM Tris-HCl
+** 50 mM NaCl
+** 10 mM MgCl<sub>2</sub>
+** pH 7.5
+** star activity with NaCl < 25 mM
+
+* PstI (Buffer 3)
+** 50 mM Tris-HCl
+** 100 mM NaCl
+** 10 mM MgCl<sub>2</sub>
+** 1 mM DTT
+** low salt gives star activity
+
+
+[[Category:Protocol]] [[Category:In vitro]] [[Category:DNA]]

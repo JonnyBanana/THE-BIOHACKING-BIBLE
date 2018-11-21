@@ -1,0 +1,85 @@
+__NOTOC__
+==Internal Restriction Sites==
+If any of the restriction enzymes you want to use are present in your gene, you need to remove them.  For Biobrick 2.0 format, that would be BamHI, BglII, EcoRI, and XhoI. This section of the tutorial will explain one of many ways to achieve this.
+
+As an example of this, let's look at a salicylate promoter basic part, Bca1111.  This part confers exogenous salicylate-dependent transcription of downstream genes.  Let me point out an unusual aspect of Biobrick basic parts before we dive into the construction file.  '''A Biobrick basic part is defined as a sequence flanked by Biobrick restriction enzymes that has not been constructed based on biobrick standard assembly.'''  In other words, anything that cannot be described as a '''composite part''' is a '''basic part'''.  In the case of basic parts such as the ceaB open reading frame described in the first section, the open reading frame for the protein cannot be trivial deconstructed into a series of simpler sequences.  Let's call this type of element a '''fundamental part'''.  Therefore the part you designed is a "basic part" and a "fundamental part"--it can't be made any more ''basic''.  Biobrick part Bca1111, in contrast, contains several of these fundamental parts.  It has an entire gene cassette of a promoter, ribosome binding site, the nahR open reading frame, and terminator.  Together these parts produce the transcription factor protein, NahR.  Additionally, Bca1111 contains the Psal promoter, which is activated by NahR.  We ''could'' Biobrick all these fundamental parts, and then assemble something with the same utility as Bca1111 as a composite part.  This procedure is the essence of '''refactoring'''--splitting a naturally-occuring sequence into its fundamental basic parts and reassembling them into a composite part that maintains the activity of the original.  In some instances, this might be useful as subtle properties of the original cassette could be altered or improved by refactoring.  In other instances, it just creates more work for you.
+
+==== ====
+Alright, let's look at the construction file:
+  '''Construction of salicylate promoter basic part'''
+  PCR ca1110F/ca1111R on pBACr899     (814 bp, gp = A)
+  PCR ca1111F/ca899R on pBACr899      (497 bp, gp = B)
+  ---------------------------------------------------
+  PCR ca1110F/ca899R on A+B           (1287 bp, EcoRI/BamHI)
+  Digest pBca1100                     (EcoRI/BamHI, 2927+28, L)
+  Product is pBca1100-Bca1111  {nahR-Psal}
+  ---------------------------------------------------
+  ca1110F  Forward EcoRI for Biobrick extreme variant of nahR-Psal  ctctggaattcatgAGATCTGCGATCCCGCGAAGAACC
+  ca1111F  Removing the BglII site in nahR  catgaagtagatTtcgccaatgtc
+  ca1111R  Removing the BglII site in nahR  gacattggcgaAatctacttcatg
+  ca899R   Reverse BamHI for nahR promoter  GCAAAggatccTCTATGGTACTCGTGATGGC
+Go ahead and download the 3 relavenent sequence files:<br>
+[[Image:JCApicofpbacr899.jpg|150px|right]]
+  [[Media:JCAseq_pBACr899.str]]<br>
+  [[Media:JCAseq_pBca1100.str]]<br>
+  [[Media:JCAseq_pBca1100-Bca1111.str]]<br>
+'''Note:'''  When you launch these files with ApE the window should resemble the image at right.  If you aren't seeing the little blocks of color, you've somehow lost the annotations in the file.  Do a right click on the file links and directly launch the files in ApE rather than a text-only editor.
+
+Open up pBACr899 in your editor.  Predict what the product of PCR with oligos ca1110F and ca899R would be.  Look for EcoRI/BamHI/BglII/XhoI restriction sites in that PCR product.  Notice anything wrong?  There is a single BglII site in the sequence.  It must be removed, or the future use of BglII during assembly would result in internal cleavage of the part.  This construction file will result in a basic part without the internal BglII site.
+
+The construction file is telling you to perform 2 separate PCR reactions with the ca### oligos using pBACr899 as template.  The names of those PCR products are "A" and "B".  Oligos ca1111F and ca1111R will not match the template exactly, so you'll need to use the tricks described in the first tuturial to figure out where they would anneal.  Go ahead and predict the products of those reactions.  Now let's examine them.
+
+Copy the last 24 bases of "A" and search for this sequence in "B".  You should find it on the 5' (left) end of the sequence.  This is the '''homology region''' between the two PCR products.  Instead of using restriction enzymes on these PCR products, the construction file has you gel-purify, or '''gp''' them.  This procedure will physically separate your shorter PCR products from the plasmid DNA template still present in the reaction.
+
+In the next step, you set up another PCR reaction using a mixture of the gel-purified A and B fragments.  The two oligos in the reaction anneal to the ends of the fragments.  Notice that these oligos are the same two oligos you used in the first PCR simulation of this tutorial.  They amplify the entire nahR-Psal cassette.  Indeed, if you used pBACr899 as template for this reaction, you would obtain a PCR product that retained the internal BglII site.  This is the reason we must separate out the template for the A and B pcrs prior to this third reaction, the assembly reaction. 
+
+The assembly reaction is an example of a non-canonical PCR reaction.  Some people call it "SOEing," some call it "overlap PCR", and it is also somewhat similar to a method called "Quikchange".  Here's what happens during the reaction:
+
+==== ====
+[[Image:JCAAssembly.jpg|left|200px]]
+As illustrated at left, during the initial denaturation step of the PCR, everything becomes denatured into single strands.  Upon annealing, the stands all anneal to homologous sequences.  There are many potential ligation products.  However, the only relavent ones are those that are substrates for polymerization.  Do you recall the rules defining whether a double-stranded complex is sufficient to initiate polymerization?  I've shown 4 of these products, and I leave it to you to figure out if there are additional products.  Upon polymerization, only one of the annealing products can result in a full-length double stranded product containing the mutations present in the 24 bp annealing region.  This product then becomes the substrate for PCR amplification with the oligos.
+
+The rest of the construction file should look familiar to you from your previous tutorial exercises.  Go ahead and simulate the rest of it and confirm that this results in the desired product.
+
+Before we move on to the design section, let's take an aside and look at plasmid pBca1100.  This plasmid is fairly similar to pBca9145.  In fact, it matches pBca9145 exactly external to the EcoRI and XhoI sites.  The difference is that a cassette is inserted between BamHI and XhoI containing a ribosome binding site, the red fluorescent protein (mRFP1) open reading frame, and a terminator.  Without a promoter, pBca1100 doesn't confer production of the red protein product.  Upon insertion of a transcription-initiating element within the BglII/BamHI region, the downstream gene should be expressed.  I call pBca1100 an "RFP reporter" for Biobrick promoter basic parts.  What do you suppose the phenotype is of cells harboring this plasmid upon growth in the presence or absence of exogenous salicylate?  Think about it.  This and other plasmids containing cassettes between EcoRI/BglII or between BamHI/XhoI can be useful during assembly of the Biobricks because they confer readily-observable phenotypes to the bacteria.  Because these plasmids maintain the uniqueness of all 4 Biobrick enzymes, their relative positioning, and the specific locations of BamHI and BglII, they do not interfere with any (currently described) methods of Biobrick assembly.
+
+==Design==
+===Make a ''normal'' construction file===
+Here's how to design the construction.  First of all proceed as you did for the normal case.  In fact, go ahead and do an entire construction file ignoring the internal sites.  You'll still need the external oligos that are similar in both schemes, so you haven't wasted your time.  Similarly, you'll still need to pick a vector to paste it into, digest that plasmid, note the digestion products, and give the product of the experiment a name.
+
+===Find the restriction site in your sequence===
+Find the restriction site.  To remove the restriction site, you'll want to make a point mutation at one position present in the restriction site.  In our nahR example, we mutate agatCt to agatTt.  You have to be careful in making this mutation.  Not only must it destroy the restriction site, but it must maintain the function of the part.  For things like ribosome binding sites, promoters, and terminators, this is quite tricky but fortunately rare.  Those elements tend to be short and are unlikely to contain the internal restriction sites.  This problem case almost always is due to a restriction site present in an open reading frame.  It is critical that you maintain the coding of your open reading frame part when you make this mutation.  This can be achieved due to the degeneracy of the genetic code.
+
+===Design the silent mutation===
+====1) Exploit the degeneracy of the genetic code====
+Consider the sequence AGATCT.  Translated in the 0 frame, this sequence encodes two amino acids Arg (AGA) Ser (TCT).  There are many other codons for Arg including all the CGN codons.  In the 0 frame, then, you could replace Agatct with Cgatct and maintain Arg-Ser coding.  This type of mutation is termed a "silent" mutation.
+====2) Note the frame of the restriction site====
+Changing an AGATCT to CGATCT is not a one-size-fits-all solution to removing BglII sites, though.  Consider the following open reading frame parts:
+  atgAGATCTtaa
+   M  R  S  *
+  atgaAGATCTaa
+   M  K  I  *
+  atgaaAGATCTataa
+   M  K  D  L  *  
+Each contains the BglII site, but each encodes a different amino acid sequence.  The solution to this problem starts with translating your open reading frame.  Select the entire open reading frame from start codon to stop codon, paste it into your editor or web program, and let the computer translate it showing the DNA sequence above the amino acid sequence.  Find the restriction site in the DNA and look at the codons that and amino acids around the restriction site.  Use a genetic code table to identify an alternate codon.
+====3) Avoid rare codons====
+The third issue you need to consider is that some codons in the genetic code should be avoided:  AGA and AGG.  The tRNAs for these codons are rare in E. coli, and genes containing these codons sometimes express poorly.  There are always multiple silent mutation options, so do something other than introduce AGA or AGG.
+
+====Give it a try====
+Using nahR as an example, go ahead and give this a try.  Is the mutation we introduce with oligos ca1111F and ca1111R silent?  What other mutations would be silent?
+
+===Design the mutagenic oligos===
+Now we need to design the oligos that will introduce the point mutation.  You are going to order 2 additional oligos for this.  The two sequences will be reverse complements of one another.  All the normal rules for PCR still apply here--you still need 6 bases of perfect homology on the 3' ends, good G/C content and base balance, etc.  For the overlap PCR reaction to work, you want at least 20 bp homology, so these oligos should be at least 20 bp in length.  Note that the two oligos for nahR were 24 bp in length.  Sometimes the sequence present in this overlap region doesn't have a good base balance or the other desirable properties, and making the sequences are a little longer will help guarantee success.  Oligos are cheap, so it is always better to make a little longer oligo than risk a failed assembly.  In general, though, you want to locate your silent mutation site in the sequence, put it right in the middle of your ~20bp sequence, choose that sequence, and order it and its reverse complement.  I leave it to you now to figure out how to write up the construction file.
+
+==Test your construction file!!!==
+Always always always!  The easiest mistake to make in these construction files is to put the external oligos with the wrong one of the two internal oligos during the first 2 pcrs.  So, predict the products of the various PCRs, and keep in mind that your "forward" oligo in each case should match your template exactly, the "reverse" oligo should anneal as its reverse complement.
+
+==Quiz==
+Construct a Biobrick 2.0 basic part in plasmid pBca9145 (just as you did in the first tutorial, using BglII and XhoI restriction sites, and make sure you clone it in the right orientation) for the kdsB open reading frame from Rhizobium leguminosarum.  The sequence of this gene is available in accession number AM236080 in pubmed.  Name your external oligos qbs001 and qbs002.  Name the internal oligos qbs003 and qbs004.  Answer the following and send them to JCAnderson2167-at-gmail.com with the subject line: ''<yourname> - Oligo Tutorial 2''
+
+*How long is this open reading frame sequence?
+*What internal restriction site is present in the sequence?
+*What codons and peptide sequence overlap this restriction site?
+*Design oligos to make your basic part
+*Writeup the construction file
+{{Template:JCA_Arkin_tutorialfooter}}

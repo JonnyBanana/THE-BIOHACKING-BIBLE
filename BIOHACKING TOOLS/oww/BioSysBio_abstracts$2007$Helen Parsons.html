@@ -1,0 +1,36 @@
+* Add or delete the sections that you require.
+
+=Variance stabilising transformations for NMR metabolomics data=
+'''Author(s): '''[[User:your_oww_username|Helen Parsons]]<br> 
+'''Affiliations:''' University of Birmingham  <br>
+'''Contact:'''email: hmp166(at)bham.ac.uk <br>
+'''Keywords:'''  
+
+[[Category:BioSysBio Keywords add_keyword_1]] 
+[[Category:BioSysBio Keywords add_keyword_2]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+==Abstract (poster)==
+Classifying the fingerprint of an NMR spectrum is a crucial step in many metabolomics experiments. Since many classification techniques such as principal component analysis (PCA) depend upon variance discrepancies, it is important to first maximise any contribution from wanted class variance between biological samples and minimise any contribution from unwanted technical variance arising from the preparation of the samples and measurement of the NMR metabolic fingerprints. The generalised logarithm (glog) transform was developed to stabilise the variance between technical replicates in a two component error model [1] and has also been applied to NMR spectra previously [2]. To increase the effectiveness of the transform on NMR spectra, the glog was extended to include a baseline offset term. This decreases the unwanted noise contribution on the transformed spectra. The extended glog transformation is given as:
+<center><math>z = \ln{\left((y-y_0)+\sqrt{(y-y_0)^2+\lambda}\right)}</math></center>
+
+for z the transformed intensity and y the original intensity of the spectra. <math>y_0</math> and <math>\lambda</math> are transformation parameters which are to be found.
+
+
+Here we have applied the extended glog transform to technical replicates of NMR spectra of tissue extracts from marine mussels, to determine the optimised transformation parameters <math>\lambda</math> and <math>y_{0}</math>. Next we applied the optimised transformation to a data set comprised of two classes of NMR spectra from stressed and unstressed mussels. Following transformation, the results show significantly better separation of the classes on a PCA scores plot than can be achieved with both untransformed data and also data transformed using Pareto scaling, a widely used method in NMR metabolomics [3]. In conclusion, we have demonstrated the value of the extended glog transformation to stabilise the technical variance in an NMR metabolomics dataset and have achieved significantly improved classification of NMR fingerprints from stressed and unstressed animals. 
+
+
+==References==
+[1] D.M. Rocke and S. Lorenzato, "A two-component model of measurement error in analytical chemistry," ''Technometrics'', vol. 37, no. 2, p176-184, 1995.
+
+[2] P.V. Purohit, D.M. Rocke, M.R. Viant and D.L. Woodruff, "Discrimination Models Using Variance-Stabilizing Transformation of Metabolomic NMR Data," ''Omics'', vol. 8, no. 2, p118-130, 2004.
+
+[3] H.C. Keun, T.M.D. Ebbels, H. Antti, M.E. Bollard, O. Beckonert, E. Holmes, J.C. Lindon and J.K. Nicholson, "Improved analysis of multivariate data by variable stability scaling: application to NMR-based metabolic profiling" ''Analytica Chimica Acta'', vol. 490, no. 1, p265–276, 2003.
+
+
+
+
+For further help on editing, please see [ http://en.wikipedia.org/wiki/Help:Editing here] 
+
+__NOTOC__

@@ -1,0 +1,158 @@
+==Streptavidin Depletion Assay==
+
+New, [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-25#Discovery_of_Mistake_in_Biotinylated_Oligos|correctly biotinylated]] oligos arrived today - yay!  Proceeded according to [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-28#Immediate_Future_Plans_for_Depletion_Assay|previously written procedure]].
+
+===Reconstitution===
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''oligo name'''
+| align="center" style="background:#f0f0f0;"|'''nmoles in tube'''
+| align="center" style="background:#f0f0f0;"|'''EB necessary for 200uM (uL)'''
+|-
+| c5.0.8.1ra||79.7||398.5
+|-
+| c5.0.8.2ra||144.4||722
+|-
+| c5.0.8.5ra||136.9||684.5
+|-
+| c5.0.9.1ra||138.4||692
+|-
+| c5.0.9.2ra||55.8||279
+|-
+| c5.0.9.3ra||124.7||623.5
+|-
+| cc5.0.9.4ra||121.3||606.5
+|-
+| c5.0.9.5ra||162.7||813.5
+|}
+
+===Stocks Made===
+* Pre-Working Stocks c5.0.8(b)r and c5.0.9(b)r
+** Added [[IGEM:Harvard/2006/Container_Design_5/Oligos#Revised_Biotinylated_c5.0.8_and_c5.0.9_Oligos_.288.2F25.29|these oligos]] in the following proportions to respective tubes for c5.0.8(b)'''r''' and c5.0.9(b)'''r'''
+*** 2.5uL of each (biotinylated and unbiotinylated) c5.0.8.#r and c5.0.9.#r oligo in respective tubes
+*** 7.5uL of dH2O for each (8*7.5 for c5.0.8 = 60uL, 8*7.5 for c5.0.9 = 60uL)
+
+* Working Stocks c5.0.E(b)'''r''' (outside biotinylation) and c5.0.F(b)'''r''' (inside biotinylation)
+**Made as given [[Table_of_c5.0_Working_Stocks|here]].
+
+===Folding===
+* Folded, using FOLDINGD protocol, 3 rxns each of A (lidless), E(b), F(b).
+<pre>
+Per Reaction:
+-----------
+9.4uL of p7308 ~42nM
+11uL of H2O
+4uL of 10x folding buffer, 30mM MgCl2
+16uL of working stock
+</pre>
+
+
+
+===Protocol===
+As done previously:
+
+====Test Solutions====
+* a) c5.0.A lidless (barrel) - 10uL
+* b) c5.0.9b (biotinylated oligos - inside) - 5uL + 5uL H2O
+* c) c5.0.Eb (outside biotinylated barrels) - 10uL 
+* d) c5.0.Fb (inside biotinylated barrels) - 10uL (folded 8.22.06)
+
+====Treatment Conditions====
+* '''(1) Untreated'''
+* '''(2) Incubated with Beads'''
+**in four clean tubes, use the MagnaRack to pellet 100uL of magnetic streptavidin beads (NEB); remove the supernatant (ie. the initial solution they were suspended in)
+**pipette the 10uL of each test solution in to the bottom, repeatedly triturating with the beads and trying to avoid as much as possible leaving "beads" of liquid on the sides of the tube 
+**let sit for >5 min
+**add 1x folding buffer, 30mM MgCl2, up to 30uL (ie. 20uL)
+* '''(3) Incubated with free-streptavidin'''
+**in four clean tubes, put 10uL of each test solution in tube
+**triturate, avoiding "beading" as much as possible on the sides, with 3uL of 1mg/mL stock tube of streptavidin (NEB)
+**add 1x, 30mM MgCl2 folding buffer to 30uL (ie. 17uL)
+**let sit for >5min
+* '''(4) Incubated with free-streptavidin, then beads'''
+**in four clean tubes, use the MagnaRack to pellet 100uL of magnetic streptavidin beads (NEB); remove the supernatant (ie. the initial solution they were suspended in)
+**in four separate clean tubes, repeat the steps done for (3) Incubated with free-streptavidin.
+**pipette the 30uL of the free-streptavidin-incubated solutions into the bottoms of each of the tubes of pelleted beads, repeatedly triturating with the beads and trying to avoid as much as possible leaving "beads" of liquid on the sides of the tube 
+**let sit for >5 min
+
+After completion of all of these steps, the tubes containing beads (ie. (2) and (4)) were pelleted using the MagnaRack.  The supernatants of these tubes were loaded into the gel, as were the entire 10uL of the original untreated folded reactions and the 30uL of the free-streptavidin incubated reactions.
+
+===Gel===
+* 2% agarose, 0.5x TBE, 10mM MgCl2, 5uL EtBr
+* 2ul of 10x loading dye each reaction
+* Ran at 75V for 1hr30m in 0.5x TBE, 10mM MgCl2
+
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''lane'''
+| align="center" style="background:#f0f0f0;"|'''component'''
+| align="center" style="background:#f0f0f0;"|'''amount'''
+| align="center" style="background:#f0f0f0;"|'''treatment conditions'''
+|-
+| 1||1kb+ ladder||10uL||-
+|-
+| 2||p7308 (~42nM)||9.4uL||-
+|-
+| 3||'''c5.0.A''' (barrel)||10uL||untreated
+|-
+| 4||'''c5.0.9(b)r''' (biotinylated oligos, \"outside\")||10uL||untreated
+|-
+| 5||'''c5.0.E(b)r''' (outside biotinylated barrel)||10uL||untreated
+|-
+| 6||'''c5.0.F(b)r''' (inside biotinylated barrel)||10uL||untreated
+|-
+| 7||barrel||~30uL||incubated with streptavidin beads
+|-
+| 8||biotinylated oligos||~30uL||incubated with streptavidin beads
+|-
+| 9||outside-biotinylated barrel||~30uL||incubated with streptavidin beads
+|-
+| 10||inside-biotinylated barrel||~30uL||incubated with streptavidin beads
+|-
+| 11||barrel||~30uL||incubated with free streptavidin
+|-
+| 12||biotinylated oligos||~30uL||incubated with free streptavidin
+|-
+| 13||outside-biotinylated barrel||~30uL||incubated with free streptavidin
+|-
+| 14||inside-biotinylated barrel||~30uL||incubated with free streptavidin
+|-
+| 15||barrel||~30uL||incubated with free streptavidin, then with streptavidin beads
+|-
+| 16||biotinylated oligos||~30uL||incubated with free streptavidin, then with streptavidin beads
+|-
+| 17||outside-biotinylated barrel||~30uL||incubated with free streptavidin, then with streptavidin beads
+|-
+| 18||inside-biotinylated barrel||~30uL||incubated with free streptavidin, then with streptavidin beads
+|}
+
+(NB: Sorry, will label lanes with numbers once I get back to a computer with Photoshop.)
+<gallery>
+Image:TC20060831-strepdeplrevised.jpg
+</gallery>
+
+
+
+====Key Points of Gel====
+* Lane 9 (bead-treated outside-biotinylated barrel) shows no band, whereas Lane 10 (bead-treated inside-biotinylated barrel) does!  
+**This means that the inside-biotins were protected from the streptavidins bound to the beads, but the outside-biotins were not.
+* Lane 17 (free-streptavidin, then bead-treated outside-biotinylated barrel) shows a band.
+**This means the free streptavidin did bind to the outside-biotins.  They thus blocked them from being bound by the bead-streptavidins, which would have kept them out of the supernatant and thus caused no band to be present in Lane 17.  
+* Lane 4 shows an oligo-sized smear, but lane 8 does not.
+**This means that the bead-streptavidins bound the biotinylated oligos and the biotinylated oligos are working properly.
+
+'''SUCCESS!  FINALLY!  The protection assay worked and showed that inside biotins were protected by the barrel!'''
+
+===Future Directions===
+* This gel is pretty faint:
+** Stain for 30 min w/ 3uL EtBr, and/or:
+** Redo today's work (still have 80uL of each folded material to work with) with 20uL of each rxn.  This would be nice, because then we could see the gel-shifted oligos-bound-to-streptavidin.  Will go forward with this, perhaps tomorrow, probably next-next weekend, after taking the GRE and moving back onto campus.
+* Go forward with the plans outlined [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-28#Streptavidin_Bead_Depletion_Assay|previously here]].
+
+
+===Further Questions===
+* Why do all the barrels look like there are two bands, one bright one and one faint one slightly farther down, rather than one?  Is the bottom band scaffold, and if so, is there some misfolding going on?  Why?
+* Why does this gel look so much more faint than the [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-25#Gel|last one]] run with only 10uL of each reaction?
+** This time, I tried to keep the voltage down (75V, as opposed to 100V) in order to keep the ethidium front from running up the gel and overwhelming bands as in the past, but consequently had to run for longer (1hr 30min, as opposed to 1hr), which may have allowed some of the DNA to diffuse out.
+* Why (in lanes 17 and 18) do the inside-biotinylated-and-streptavidin-bound and outside-biotinylated-and-streptavidin-bound barrels run at different rates?
+** Maybe there's some "aerodynamicity" lost when streptavidin binds and clogs the inside of a barrel?

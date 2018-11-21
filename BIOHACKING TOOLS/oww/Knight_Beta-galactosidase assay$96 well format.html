@@ -1,0 +1,85 @@
+This protocol is directly derived from [[User:Smoore|Sean Moore's]] [[Beta-Galactosidase Assay (A better Miller)]].  Please go there for the original protocol.  
+
+This protocol is an attempt to modify the protocol to 96 well format for assaying many samples in parallel.  
+
+==Materials==
+*96 deep well plates for growing cultures
+**Square wells aerate the cultures better
+*96 well plates for the assay itself
+**[[User:Kgriff|Kevin Griffith]] (<cite>Griffith-2002</cite>) uses Marsh brand (MP-9091) 96 well plates available through ThermoFisher Scientific (but not available on the website).  This plate is a polystyrene plate that has a max well volume of 0.3ml.  The wells are a flat bottom design.  These plates are not coated or treated.  The MP-9091 is packaged as 100 plates per case.
+
+*500mM dibasic sodium phosphate (Na<sub>2</sub>HPO<sub>4</sub>)
+**1M Na<sub>2</sub>HPO<sub>4</sub> seems to come out of solution in my hands.
+*4M potassium chloride (KCl)
+*1M magnesium sulfate (MgSO<sub>4</sub>)
+*1% hexadecyltrimethylammonium bromide (CTAB)
+*10% sodium deoxcholate (light-sensitive, stored at 4&deg;C)
+*1M NaH<sub>2</sub>PO<sub>4</sub>
+*o-nitrophenyl-&beta;-D-Galactoside ONPG (solid)
+*1M sodium carbonate (Na<sub>2</sub>CO<sub>3</sub>)
+
+See [[Talk:Knight:Beta-galacosidase assay]] for stock solution recipes.
+
+===Permeabilization Solution===
+For 8mL:
+*1.6 mL 500 mM Na<sub>2</sub>HPO<sub>4</sub>
+*40 &mu;L 4M KCl
+*16 &mu;L 1M MgSO<sub>4</sub>
+*480 &mu;L 1% CTAB
+*32 &mu;L 10% sodium deoxycholate
+*43.2 &mu;L TCEP (it is a more stable reducing agent than &beta;-mercaptoethanol)
+H<sub>2</sub>O to 8mL
+(You need 80 &mu;L per sample.  This is enough for a 96 well plate.)
+
+===Substrate solution===
+For 15mL
+*1.8mL 500mM Na<sub>2</sub>HPO<sub>4</sub>
+*600&mu;L 1M NaH<sub>2</sub>PO<sub>4</sub>
+*15 mg ONPG
+*40.5 &mu;L TCEP (more stable reducing agent than &beta;-mercaptoethanol)
+(You need 150 &mu;L per sample.  This is enough for a 96 well plate.)
+
+==Protocol==
+
+[[Image:Knight96wellbetagalatosidaseassay.JPG|thumb|right|200px|96 well plate after completion of this assay.]]
+
+#Grow cultures in tubes under whatever conditions you wish to test.
+#*96 well plates did not give me as good of growth as tubes.
+#*If growing in 96 well plates, use incubator in 32-322 because plate shaker in 32-314 doesn't hold the right temperature.
+#During growth
+##Make permeabilization solution.
+##Pre-measure 80 &mu;L aliquots of permeabilization solution into a 96 well microplate and cover to reduce evaporation (permeabilization plate).
+#Aliquot cultures into a 96 well microplate (175 &mu;L per well).
+#Measure Abs<sub>600</sub> of cultures using plate reader (absorbance plate).
+#Remove a 20 &mu;L aliquot of each well of the absorbance plate and add it to the corresponding well of the permeabilization plate.
+#*The sample is now stable for several hours.  This allows you to perform time-course experiments.
+#*Also include a blank (solutions-only) sample for subtracting the background absorbance later.
+#Once the time course is nearly complete, make substrate solution.
+#Add 150 &mu;L substrate solution to each well of measurement plate.
+#Add 25 &mu;l of permeabilized samples to measurement plate.
+#Place the plate in the plate reader to measure the A<sub>420</sub> over 60-90 mins.
+#*The plate reader does not actually have a 420 excitation filter.  So you must use the CFP 430 excitation filter.
+
+==Controls==
+#Compare measured beta-galactosidase activity in plate reader versus that in microfuge tubes to ensure that the plate is not impacting measured &beta;-galactosidase activity.
+
+==Standard curves==
+#Make a standard curve in the plate reader of A<sub>420</sub> vs [[ONP|o-nitrophenol]] concentration using a two-fold serial dilution of ONP.
+#Make a standard curve in the plate reader of change in A<sub>420</sub> versus time as a function of &beta;-galactosidase concentration.
+
+==References==
+<biblio>
+#Zhang-JBC-1995 pmid=7538113
+// (from which this assay was derived)
+#Miller-1972 isbn=0879691069 
+// (original Miller assay)
+#Miller-1992 isbn=0879693495
+#Griffith-2002 pmid=11779182
+// 96 well format
+#Promega [http://molecool.wustl.edu/krolllab/PDFs/B-gal%20assay-Promega.pdf Promega &beta;-galactosidase assays] (96 well format and standard curves)
+#Invitrogen [https://www.invitrogen.com/content/sfs/manuals/bgalassay_man.pdf Invitrogen &beta;-galactosidase assays] (96 well format)
+#Thibodeau-Biotechniques-2004 pmid=15038156
+</biblio>
+
+[[Category:Protocol]]
+[[Category:Escherichia coli]]

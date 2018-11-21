@@ -1,0 +1,68 @@
+== Purify Protein Invitro Kinase Assay ==
+
+
+=== Measure protein expression with absorbance spectrum: ===
+#Set up the configuration, including scale, spectrum, 400-650 should be enough for FRET indicators.
+#Clean the asymmetric tube (all crystal).
+#Add blank solution, hit Zero, hit baseline.
+#Add 1ml indicator solution, hit start, save the data file *.dsw in the correct directory.
+
+
+=== Purify Protein and In vitro kinase assay: ===
+
+#Transform PRSET plasmids to JM109 (DE3) (from Promega). 
+#Under ex 480, green gargo, pick up bright colonies. 
+#put in 2ml 100uM amp LB medium, o/n shake 250rpm 37oC.
+#take bacteria medium, put in 100ml 100uM amp LB medium, shake 250rpm, 2-4hr, monitor the OD 600 reading, 0.2-0.4, dilute into (+400ml) 500ml 100uM amp LB medium, add 0.4mM IPTG to induce, shake o/n, RT, with air venturation. 
+#spin down 7000rpm, 10min. 
+#add 15 ml bper+0.5 protease coctail tablet+100uM PMSF, completely suspend gently, gentle rock at RT 10min, covered with foil.
+#spin 15000rpm 15 min. filter through (optional). Add Ni-NTA agarose beads 1ml , gentle rock at RT 1hr. 
+#prepare the column, rinse with 2x10ml 1xTNS, 50mM Tris,HClph=7.4, 300mM NaCl.
+#Rinse 1x10ml 50mM Tris,HClph=7.4, 300mM NaCl, 10mM imidazole.
+#elute with 1x10ml 50mM Tris,HClph=7.4, 300mM NaCl, 100mM imidazole.
+#dialysis the protein solution 4oC, 4hr-o/n, in 50 mM Tris pH 8, 100 mM NaCl, 10 mM MgCl2, 2mM DTT. 10x Src kinase buffer stock solution: 500 mM Tris pH 8, 1 M NaCl, 100 mM MgCl2, dilute 10x, add 1:1000 2M DTT.
+#Measure the absorbance following the above protocol.
+#YFP (extinction coefficient) EC=77000 M-1 CM-1 , CFP EC=32500 M-1 CM-1, GFP EC=62000 M-1 CM-1. So Concentration=reading/EC
+
+=== In vitro kinase assay ===
+#Find the 3-way cuvette. Side line facing the emission, small aligned holes for excitation. Clean the cuvette.
+#add 100 ul of indicator solution
+#put in the holder and cover the cover. Make sure to ajust the aperture to ex=0.5-1 and em=0.5-1
+#Hit F10, select HV#950 ON and HV#440 ON.
+#Define Exp.
+#Emission Scan
+#Data acquisition paramter: 
+#*Number of scan:				1
+#*Start:470   End: 530
+#*Incremen: 2nm
+#*Integration time: 1sec
+#*Excitation monochrome: 434
+#*Acquisition mode: s / r
+#Correct factor file: Mcorrect.spt
+#*Measure the peak 526/476, record the number as time goes on, calculate the ratio. 
+#*Add Src, Add ATP. 
+#Esp, Esp, Run experiment, Go.
+
+
+==== For Absorbance: ====
+
+*Scan, connect on line.
+*Baseline checked
+*Zero for the blank.
+*Start for the samples.
+*Save data as .csv for ascII format
+
+
+==== For Fluorometer: ====
+
+*Other functions, output to ascII, F1 to pickup files from directory. 
+
+
+==== For Platereader: ====
+
+*Connect, move in. measurement configuration.
+*Dynamics: 3-5 cycles without ATP.
+*60 cycles after ATP, 2 min interval. 30 flashes.
+*Increasing step: 5 nm.
+*Band width 5nm. Excitation wavelength: 420nm.
+*Emission: 471 to 531. temperature: 30oC.

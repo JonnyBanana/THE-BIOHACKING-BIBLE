@@ -1,0 +1,95 @@
+{{Linkless-date|July 2006}}
+'''Metabolic network reconstruction and simulation''' allows for an in depth insight into comprehending the molecular mechanisms of a particular organism, especially correlating the [[genome]] with molecular [[physiology]] (Francke, Siezen, and Teusink 2005). A reconstruction breaks down [[metabolism]] pathways into their respective reactions and enzymes, and analyzes them within the perspective of the entire network. Examples of various metabolic pathways include [[glycolysis]], [[citric acid cycle|Krebs cycle]], [[pentose phosphate pathway]], etc. In simplified terms, a reconstruction involves collecting all of the relevant metabolic information of an organism and then compiling it in a way that makes sense for various types of analyses to be performed. The correlation between the genome and metabolism is made by searching gene databases, such as KEGG [http://www.genome.ad.jp], GeneDB [http://www.genedb.org], etc., for particular genes by inputting enzyme or protein names. For example, a search can be conducted based on the protein name or the [[EC number]] (a number that represents the catalytic function of the enzyme of interest) in order to find the associated [[gene]] (Francke et al. 2005). 
+
+==Beginning steps of a reconstruction==
+===Resources===
+
+Below is more detailed description of a few gene/enzyme/reaction/pathway databases that are crucial to a metabolic reconstruction:
+
+*'''Kyoto Encyclopedia of Genes and Genomes (KEGG)''': This is a bioinformatics database containing information on genes, proteins, reactions, and pathways. The ‘KEGG Organisms’ section, which is divided into [[eukaryotes]] and [[prokaryotes]], encompasses many organisms for which gene and [[DNA]] information can be searched by typing in the enzyme of choice. This resource can be extremely useful when building the association between metabolism enzymes, reactions and genes. 
+
+*'''Gene DataBase (GeneDB)''': Similar to the KEGG resource, the Gene DataBase provides access to genomes of various organisms. If a search for [[hexokinase]] is carried out, genes for the organism of interest can be easily found. Moreover, the metabolic process associated with the enzyme is also listed along with the information on the genes (in the case of hexokinase, the pathway is glycolysis). Therefore, with one click, it is very easy to access all the different genes that are associated with glycolysis. Furthermore, GeneDB has a hierarchical organizational structure for metabolism, and it is possible to see at what level of the chain one is currently working on. This helps broaden an understanding of the biological and chemical processes that are involved in the organism. 
+
+*'''BioCyc, EcoCyc and MetaCyc''': BioCyc is a collection of over 200 pathway/genome databases, containing whole databases dedicated to certain organisms. For example, EcoCyc which falls under the giant umbrella of BioCyc, is a highly detailed [[bioinformatics]] database on the genome and metabolic reconstruction of ''[[Escherichia Coli]]'', including thorough descriptions of the various signaling pathways. The EcoCyc database can serve as a paradigm and model for any reconstruction. Additionally, MetaCyc, an encyclopedia of metabolic pathways, contains a wealth of information on metabolic reactions derived from over 600 different organisms.
+
+*'''Pathway Tools [http://bioinformatics.ai.sri.com/ptools/]''': This is a bioinformatics package that assists in the construction of pathway/genome databases such as EcoCyc (Francke et al. 2005). Developed by Peter Karp and associates at the SRI International Bioinformatics Group, Pathway Tools comprises several separate units that work together to generate new pathway/genome databases. First, PathoLogic takes an annotated genome for an organism and infers probable metabolic pathways to produce a new pathway/genome database. This can be followed by application of the Pathway Hole Filler, which predicts likely genes to fill "holes" (missing steps) in predicted pathways. Afterward, the Pathway Tools Navigator and Editor functions let users visualize, analyze, access and update the database. Thus, using PathoLogic and encyclopedias like MetaCyc, an initial fast reconstruction can be developed automatically, and then using the other units of Pathway Tools, a very detailed manual update, curation and verification step can be carried out (SRI 2005). 
+
+*'''ENZYME''': This is an enzyme [[nomenclature]] database (part of the ExPASY [http://ca.expasy.org/] proteonomics server of the Swiss Institute of Bioinformatics). After searching for a particular enzyme on the database, this resource gives you the reaction that is catalyzed. Additionally, ENZYME has direct links to various other gene/enzyme/medical literature databases such as KEGG, BRENDA, PUBMED, and PUMA2 to name a few. 
+
+*'''BRENDA''': A comprehensive enzyme database, BRENDA, allows you to search for an enzyme by name or EC number. You can also search for an organism and find all the relevant enzyme information. Moreover, when an enzyme search is carried out, BRENDA provides a list of all organisms containing the particular enzyme of interest. 
+
+*'''PUBMED''': This is an online library developed by the [[National Center for Biotechnology Information]], which contains a massive collection of medical journals. Using the link provided by ENZYME, the search can be directed towards the organism of interest, thus recovering literature on the enzyme and its use inside of the organism.
+
+==Next steps of the reconstruction==
+
+After the initial stages of the reconstruction, a systematic verification is made in order to make sure no inconsistencies are present and that all the entries listed are correct and accurate (Francke et al. 2005). Furthermore, previous literature can be researched in order to support any information obtained from one of the many metabolic reaction and genome databases. This provides an added level of assurance for the reconstruction that the enzyme and the reaction it catalyzes do actually occur in the organism. 
+
+Any new reactions not present in the databases need to be added to the reconstruction. The presence or absence of certain reactions of the metabolism will affect the amount of [[reactants]]/products that are present for other reactions within the particular pathway. This is because products in one reaction go on to become the reactants for another reaction, i.e. products of one reaction can combine with other proteins or compounds to form new proteins/compounds in the presence of different enzymes or [[catalysts]] (Francke et al. 2005). 
+
+Francke et al. (2005) provide an excellent example as to why the verification step of the project needs to be performed in significant detail. During a metabolic network reconstruction of ''[[Lactobacillus plantarum]]'', the model showed that [[succinyl-CoA]] was one of the reactants for a reaction that was a part of the biosynthesis of [[methionine]]. However, an understanding of the physiology of the organism would have revealed that due to an incomplete tricarboxylic acid pathway, ''Lactobacillus plantarum'' does not actually produce succinyl-CoA, and the correct reactant for that part of the reaction was [[acetyl-CoA]]. 	
+
+Therefore, systematic verification of the initial reconstruction will bring to light several inconsistencies that can adversely affect the final interpretation of the reconstruction, which is to accurately comprehend the molecular mechanisms of the organism. Furthermore, the [[simulation]] step also ensures that all the reactions present in the reconstruction are properly balanced. To sum up, a reconstruction that is fully accurate can lead to greater insight about understanding the functioning of the organism of interest (Francke et al. 2005).
+
+==Advantages of a reconstruction==
+
+*Several inconsistencies exist between gene, enzyme, and reaction databases and published literature sources regarding the metabolic information of an organism. A reconstruction is a systematic verification and compilation of data from various sources that takes into account all of the discrepancies.
+*A reconstruction combines the relevant metabolic and genomic information of an organism. 
+*A reconstruction also allows for metabolic comparisons to be performed between various species of the same organism as well as between different organisms. 
+
+==Metabolic network simulation==
+
+A metabolic network can be broken down into a stoichiometric matrix where the rows represent the compounds of the reactions, while the columns of the matrix correspond to the reactions themselves. [[stoichiometry]] is a quantitative relationship between [[substrate]]s of a chemical reaction (Merriam 2002). In order to deduce what the metabolic network suggests, recent research has centered on two approaches; namely [[extreme pathways]] and [[elementary mode analysis]] (Papin, Stelling, Price, Klamt, Schuster, and Palsson 2004). 
+
+===Extreme Pathways===
+Price, Reed, Papin, Wiback and Palsson (2003) use a method of singular value decomposition (SVD) of extreme pathways in order to understand regulation of a human [[red blood cell]] metabolism. Extreme pathways are convex [[Basis (linear algebra)|basis vectors]] that consist of [[steady state]] functions of a metabolic network (Papin, Price, and Palsson 2002). For any particular metabolic network, there is always a unique set of extreme pathways available (Papin et al. 2004). Furthermore, Price et al. (2003) define a [[constraint-based approach]], where through the help of [[constraint]]s like [[mass balance]] and maximum [[reaction rates]], it is possible to develop a ‘solution space’ where all the feasible options fall within. Then, using a kinetic model approach, a single solution that falls within the extreme pathway solution space can be determined (Price et al. 2003). Therefore, in their study, Price et al. (2003) use both constraint and [[kinetic]] approaches to understand the human red blood cell metabolism. In conclusion, using extreme pathways, the regulatory mechanisms of a metabolic network can be studied in further detail. 
+
+===Elementary mode analysis===
+Elementary mode analysis closely matches the approach used by extreme pathways. Similar to extreme pathways, there is always a unique set of elementary modes available for a particular metabolic network (Papin et al. 2004). These are the smallest sub-networks that allow a metabolic reconstruction network to function in steady state (Schuster, Fell, and Dandekar 2000; Stelling, Klamt, Bettenbrock, Schuster, and Gilles 2002). According to Stelling et al. (2002), elementary modes can be used to understand cellular objectives for the overall metabolic network. Furthermore, elementary mode analysis takes into account [[Stoichiometry|stoichiometrics]] and [[thermodynamics]] when evaluating whether a particular metabolic route or network is feasible and likely for a set of proteins/enzymes (Schuster et al. 2000). 
+
+===Flux balance analysis===
+A different technique to simulate the metabolic network is to perform [[flux balance analysis]]. This method uses linear programming, but in contrast to elementary mode analysis and extreme pathways, only a single solution results in the end. Linear programming is usually used to obtain the maximum potential of the objective function that you are looking at, and therefore, when using flux balance analysis, a single solution is found to the optimization problem (Stelling et al. 2002). In a flux balance analysis approach, exchange [[flux|fluxes]] are assigned to those metabolites that enter or leave the particular network only. Those metabolites that are consumed within the network are not assigned any exchange flux value. Also, the exchange fluxes along with the enzymes can have constraints ranging from a negative to positive value (ex: -10 to 10). 
+
+Furthermore, this particular approach can accurately define if the reaction stiochiometry is in line with predictions by providing fluxes for the balanced reactions. Also, flux balance analysis can highlight the most effective and efficient pathway through the network in order to achieve a particular objective function. In addition, [[gene knockout]] studies can be performed using flux balance analysis. The enzyme that correlates to the gene that needs to be removed is giving a constraint value of 0. Then, the reaction that the particular enzyme catalyzes is completely removed from the analysis.
+
+==Conclusion==
+
+In conclusion, metabolic network reconstruction and simulation can be effectively used to understand how an organism or parasite functions inside of the host cell. For example, if the parasite serves to compromise the [[immune system]] by lysing [[macrophages]], then the goal of metabolic reconstruction/simulation would be to determine the metabolites that are essential to the organism's [[proliferation]] inside of macrophages. If the proliferation cycle is inhibited, then the parasite would not continue to evade the host's immune system. A reconstruction model serves as a first step to deciphering the complicated mechanisms surrounding disease. The next step would be to use the predictions and postulates generated from a reconstruction model and apply it to [[drug delivery]] and [[drug-engineering]] techniques. 
+
+Currently, many tropical diseases affecting third world nations are very inadequately characterized, and thus poorly understood. Therefore, a metabolic reconstruction and simulation of the parasites that cause the tropical diseases would aid in developing new and innovative cures and treatments. 
+
+==See also==
+*[[Metabolic network]]
+*[[Computer simulation]]
+*[[Computational systems biology]]
+*[[Metabolic pathway]]
+*[[Metagenomics]]
+
+==References==
+#Francke, C., Siezen, R. J. and Teusink, B. (2005). Reconstructing the metabolic network of a bacterium from its genome. Trends in Microbiology. 13(11): 550-558. 
+#Merriam Webster's Medical Dictionary. (2002). http://dictionary.reference.com/medical/
+#Papin, J.A., Price, N.D., and Palsson, B.O. (2002). Extreme Pathway Lengths and Reaction Participation in Genome-Scale Metabolic Networks. Genome Research. 12: 1889-1900.
+#Papin, J.A., Stelling, J., Price, N.D., Klamt, S., Schuster, S., and Palsson, B.O. (2004). Comparison of network-based pathway analysis methods. Trends in Microbiology. 22(8): 400-405.
+#Price, N.D., Reed, J.L., Papin, J.A., Wiback, S.J., and Palsson, B.O. (2003). Network-based analysis of metabolic regulation in the human red blood cell. Journal of Theoretical Biology. 225: 185-194.
+#Schuster, S., Fell, D.A. and Dandekar, T. (2000). A general definition of metabolic pathways useful for systematic organization and analysis of complex metabolic networks. Nature Biotechnology. 18: 326-332.
+#SRI International. (2005). Pathway Tools Information Site. http://bioinformatics.ai.sri.com/ptools/
+#Stelling, J., Klamt, S., Bettenbrock, K., Schuster, S. and Gilles, E.D. (2002). Metabolic network structure determines key aspects of functionality and regulation. Nature. 420: 190-193.
+
+==External links==
+*[http://www.genedb.org/ GeneDB]
+*[http://www.genome.ad.jp/ KEGG]
+*[http://www.brenda.uni-koeln.de/ BRENDA]
+*[http://www.biocyc.org/ BioCyc] and [http://nemo-cyclone.sourceforge.net Cyclone] - provides an open source Java API to the pathway tool BioCyc to extract Metabolic graphs.
+*[http://ecocyc.org/ EcoCyc]
+*[http://metacyc.org/ MetaCyc]
+*[http://www.expasy.org/enzyme/ ENZYME]
+*[http://apps.sbri.org/Genome/Link/Bioinformatics_Tools_Software.aspx/ SBRI Bioinformatics Tools and Software]
+*[http://www.tigr.org/ TIGR]
+*[http://bioinformatics.ai.sri.com/ptools/ Pathway Tools]
+*[http://genome-www.stanford.edu/ Stanford Genomic Resources]
+
+[[Category:Bioengineering]]
+[[Category:Biomedical engineering]]
+[[Category:Biology]]
+[[Category:Systems biology]]
+[[Category:Bioinformatics]]
+[[Category:Genomics]]

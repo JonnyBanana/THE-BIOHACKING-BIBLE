@@ -1,0 +1,230 @@
+{{IGEM:IMPERIAL/2006/Biosensor}}
+
+==Biosensor: Checking & assessing the activity of the enzyme (acylase)==
+
+===Motivation===
+
+We would like to check whether the enzyme is actually degrading the AHL present in solution (regardless of whether we get a pH change or not). In order to assess the activity of the enzyme, the protocol below should be carried out. 
+Since the enzyme is being used in the J37015 Testing Protocol, this protocol is to assess the activiy of the enzyme for these purposes as well. 
+
+===Equipment and Materials===
+
+''Equipment:''
+*pH meter
+*Eppendorf Tubes
+*Small White Cap Tubes
+*Gilson Pippettes
+*37{{c}} shaker
+*Wallac Victor 3 Multi-Well Fluorimeter
+
+''Materials:''
+*Enzyme Acylase from Porcine Kidney [http://www.sigmaaldrich.com/catalog/search/ProductDetail/SIGMA/A3010 (more info & catalogue no: sigmaaldrich)], stored as powder in freezer
+*AHL (N-(β-Ketocaproyl)-DL-homoserine lactone) [http://www.sigmaaldrich.com/catalog/search/ProductDetail?ProdNo=K3255&Brand=SIGMA (more info & catalogue no: sigmaaldrich)], comes as powder to be stored in -20{{c}} freezer 
+: - has been diluted into different stock concentrations (the solutions are stored in the -20{{c}} freezer)
+*(Potassium Phosphate (KPO<sub>4</sub>) buffer)
+*MiliQ
+*(LB Medium)
+*T9002 assay being cultured up following the [http://openwetware.org/wiki/IGEM:IMPERIAL/Protocols/T9002 T9002 testing protocol]
+
+===Protocol===
+
+*This protocol is dependent on the [http://openwetware.org/wiki/IGEM:IMPERIAL/Protocols/T9002 T9002 testing protocol]: 
+**Follow the T9002 testing protocol up to the AHL incubation, then follow the protocol as outlined below
+**NOTE: Since the T9002 testing is carried out in parallel, any T9002 cultures needed can be diluted from that experiment (about 4mL of T9002 cells of OD600 0.1 are needed)
+
+*First of all, follow the [http://openwetware.org/wiki/IGEM:IMPERIAL/2006/Protocols/Biosensortest Biosensor testing protocol], thus setting up the solutions in the table below
+
+
+'''Dissolving the enzyme:''' (only need to do this the very first time, or if you run out of enzyme mix)
+ Soln 1: Dissolve 1mg enzyme in 1mL KPO<sub>4</sub> buffer (-> concentration of 2000units/mL)
+ Soln 2: Take 0.5mL of Soln 1 and dilute in 0.5mL MiliQ (-> concentration of 1000units/mL)
+ Soln 3: Take 0.1mL of Soln 1 and dilute in 0.9mL MiliQ (-> concentration of 200units/mL)
+ Soln 4: Take 0.1mL of Soln 2 and dilute in 0.9mL MiliQ (-> concentration of 100units/mL)
+ Soln 5: Take 0.1mL of Soln 3 and dilute in 0.9mL MiliQ (-> concentration of 20units/mL)
+ Soln 6: Take 0.1mL of Soln 5 and dilute in 0.9mL MiliQ (-> concentration of 2units/mL)
+ Soln 7: Take 0.1mL of Soln 6 and dilute in 0.9mL MiliQ (-> concentration of 0.2units/mL)
+ Soln 8: Take 0.1mL of Soln 7 and dilute in 0.9mL MiliQ (-> concentration of 0.02units/mL)
+ Soln 9: Take '''0.15mL''' of Soln 8 and dilute in '''1.35mL''' MiliQ (-> concentration of 0.002units/mL)
+ Soln 10: Take '''0.5mL''' of Soln 9 and dilute in '''0.5mL''' MiliQ (-> concentration of 0.001units/mL)
+ Soln 11: Take 0.1mL of Soln 10 and dilute in 0.9mL MiliQ (-> concentration of 0.0002units/mL)
+ Soln 12: Take 0.1mL of Soln '''10''' and dilute in 0.9mL MiliQ (-> concentration of 0.0001units/mL)
+ Soln 13: Take 0.1mL of Soln '''11''' and dilute in 0.9mL MiliQ (-> concentration of 0.00002units/mL) 
+ Soln 14: Take 0.1mL of Soln 13 and dilute in 0.9mL MiliQ (-> concentration of 0.000002units/mL) 
+
+
+{| border="3" cellpadding="3"
+!<u>Label</u>||(1)<br><u>LB medium ({{uL}})</u>||(2)<br><u>Available Stock Concentr of AHL</u> !! (3)<br><u>Volume of AHL to add ({{uL}})</u> !! (4)<br><u>Final AHL Concentration</u> !!(5)<br><u>Amount of AHL present <br>in solution</u>!!(6)<br><u>Volume of Enzyme to add</u>
+|-
+!A
+|0
+|1000uM
+|200
+|1000uM
+|1um
+|4uL of Soln 1 (=8units)
+|-
+!B
+|100
+|1000uM
+|100
+|500uM
+|500nm
+|4uL of Soln 2 (=4units)
+|-
+!C
+|0
+|100uM
+|200
+|100uM
+|100nm
+|4uL of Soln 3 (=0.8units)
+|-
+!D
+|450
+|1000uM
+|50
+|100uM
+|100nm
+|4uL of Soln 3 (=0.8units)
+|-
+!E
+|100
+|100uM
+|100
+|50uM
+|50nm
+|4uL of Soln 4 (=0.4units)
+|-
+!F
+|990
+|1000uM
+|10
+|10uM
+|10nm
+|4uL of Soln 5 (=0.08units)
+|-
+!G
+|990
+|100uM
+|10
+|1uM
+|1nm
+|4uL of Soln 6 (=0.008units)
+|-
+!H
+|990
+|10uM
+|10
+|100nM
+|0.1nm
+|4uL of Soln 7 (=8E-4units)
+|-
+!I
+|990
+|5uM
+|10
+|50nM
+|0.1nm
+|4uL of Soln 8 (=8E-5units)
+|-
+!J
+|990
+|1uM
+|10
+|10nM
+|0.01nm
+|4uL of Soln 9 (=8E-6units)
+|-
+!K
+|990
+|500nM
+|10
+|5nM
+|0.005nm
+|4uL of Soln 10 (=4E-6units)
+|-
+!L
+|990
+|100nM
+|10
+|1nM
+|0.001nm
+|4uL of Soln 11 (=8E-7units)
+|-
+!M
+|990
+|50nM
+|10
+|0.5nM
+|0.0005nm
+|4uL of Soln 12 (=4E-7units)
+|-
+!N
+|990
+|10nM
+|10
+|0.1nM
+|0.00005nm
+|4uL of Soln 13 (=8E-8units)
+|-
+!O
+|990
+|1nM
+|10
+|0.01nM
+|0.00001nm
+|4uL of Soln 14 (=8E-9units)
+|-
+!P
+|1000
+|N/A
+|N/A
+|N/A
+|N/A
+|N/A
+|}
+(Note: The seemingly arbitrary numbers in row A-E were chosen because of the limited stock and concentrations of AHL available)
+
+
+''After having carried out the pH measurement, as described in the Biosensor testing protocol: ''
+
+Use the T9002 Protocol as AHL assay as outlined below: <br>
+'''<bbpart>T9002</bbpart> Protocol Section (slightly revised)'''
+*To start "AHL incubation":
+[[Image:IGEM IMPERIAL Biosensor 96WellPlate.png|600px|right]]
+<showhide>
+:*Label 9 eppendorf tubes for rows A,B,C,E,H,K,N,O,P with the appropriate letter of the row in the table above__HIDER__
+<hide>
+::<font color=green>We are only testing some samples of the above table since if the highest and lowest concentrations of AHL are degraded, all the other concentrations in betweeen should be degraded as well.</font>
+</hide>
+:*Add '''400{{uL}}''' of the appropriate AHL-enzyme mixture (NOTE: Add '''200{{uL}}''' for row A,B,C,E)
+:*Add '''600 {{uL}}''' of T9002 of OD600 0.1 (dilute the T9002 if necessary) (NOTE: Add '''300{{uL}}''' for row A,B,C,E)
+*At this stage, a pH buffer might be added (pH 7 or 9)
+*Vortex each tube
+*Incubate the 15 new eppendorf tubes in a 37°C shaker for 4 hours so GFP expression can reach steady state
+*After 4 hours: 
+**Add a 200uL sample (with repeats) from each tube to a 96 well plate as outlined in the picture
+**Add 4 x 200uL of LB medium to a well to act as a control
+*Take the plate to BioChem
+*Add 190ul of MiliQ to the eppendorf, together with 10ul of undiluted GFP standard solution and mix
+*Add 4 x 200uL of the 200x diluted GFP standard solution to the wells 
+*Take 3 readings using the Perkin Elmer Victor III: Measure flourescence and absorbance, deselect any wells that are empty 
+*Save data files from computer on a memory stick
+*Copy and paste the data into the [http://openwetware.org/images/4/4a/S01656_Compiled_Spreadsheet_Template.xls Results Spreadsheet]
+
+===Expected Results===
+*Assuming the enzyme degrades all the AHL present in the solution, all the solutions with previously different concentrations of AHL being added should show no fluorescence induced by AHL. The fluorescence values should all equal since all should have the same background fluorescence.
+
+
+<html>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1999441; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="18996820"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c19.statcounter.com/counter.php?sc_project=1999441&amp;java=0&amp;security=18996820&amp;invisible=1" alt="website statistics" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</html>

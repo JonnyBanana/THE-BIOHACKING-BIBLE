@@ -1,0 +1,38 @@
+[[IGEM:Melbourne/2008|Return to Melbourne Homepage]]
+
+[[IGEM:Melbourne/2008/BioClock/Version2|Return to Version2]]
+
+Okay, here goes the first model for Di's binary clock bit1.
+
+A few things to note:
+
+* parameters such as reaction rates are arbitrary.
+
+* all components are hypothetic.
+
+* biochemical pathwasys of certain parts are vulnerable to change.
+
+----
+[[Image:Stage1 model Di.jpeg|800px|bit1 biochemical pathway]]
+
+Di, I still think the inhibition from ''InhibitOff'' should act on the self-promotion loop of ''Off'' since without the production of B1, the pathway from ''Tr1P'' to ''Off'' does not exist, therefore the only thing to repress is the self-promotion of ''Off''. In addition, to achieve the modelling of a stronger promotion from ''Tr1P'' and a weaker self-promotion from ''Off'', in relation to the Inhibition from ''InhibitOff'', this shall be the way to represent their pathways.
+
+
+[[Image:Stage1 Sg0.jpg|thumb|left|400px|Input Signal pulse]]
+
+[[Image:Stage1 On0.jpg|thumb|right|400px]]
+
+[[Image:Stage1 B1.jpg|thumb|left|400px|Output reporter molecule]]
+
+[[Image:On1.jpg|thumb|right|400px]]
+
+[[Image:Stage1 Sg1.jpg|thumb|left|400px|Signalling molecule for bit2]]
+
+
+----
+As we can see, Sg1 does not follow the pulsing pattern, which should be due to parameter settings in the model. This shall be improved after a parameter test is taken.
+
+
+
+
+In addition, the oscillation of B1 and On1 is not completely satisfying since their minimum values are still within ranges of their effectivity. However, these should again be taken as the results of inaccurate parameter assignment.

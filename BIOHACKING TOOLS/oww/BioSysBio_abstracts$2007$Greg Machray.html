@@ -1,0 +1,26 @@
+=Prediction and Classification of Glycosyltransferases=
+'''Author(s): '''[[Special:Mypage|Greg Machray]], M.A.J.Ferguson, G.J.Barton<br> 
+'''Affiliations:''' School of Life Sciences Research, Dundee University, Dundee, Scotland <br>
+'''Contact:'''email: greg@compbio.dundee.ac.uk <br>
+'''Keywords:''' 'Hidden Markov Model' 'Multiple Sequence Alignment' ' Genome Annotation'
+
+[[Category:BioSysBio Keywords add_keyword_1]]
+[[Category:BioSysBio Keywords add_keyword_2]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+
+
+==Introduction==
+Hidden Markov model (HMM) libraries such as SUPERFAMILY and Pfam are commonly used to annotate newly sequenced genomes and provide a valuable insight into the possible roles of putative proteins. In order to improve the specificity and coverage of these libraries we have developed a multi-level HMM library to aid in the automatic identification and classification of putative glycosyltransferases.
+
+Glycosyltransferases are a large family of enzymes that catalyse the addition of a sugar moiety from a glyconucleotide donor to a variety of acceptor substrates including oligosacharrides, lipids and proteins. Due to the large number of donor and acceptor molecules there are many distinct functions that are catalysed by this family, making accurate functional prediction of glycosyltransferases challenging. However, given the difficulty in characterising them via biochemical means, automatic annotation can be hugely useful.
+
+==Methods==
+The HMMs were created from glycosyltransferase sequences obtained from the cazy database[1]. Constituent domains were extracted from the full length sequences, and used to construct complete linkage clusters using pairwise distances using the programs AMPS[2] and OC[3]. These clusters were viewed in the format of a tree which allowed rapid selection of sub families. Subfamily HMMs were produced using AMPS to create multiple sequence alignments, and the package HMMER to calculate the HMMs. 
+
+==References==
+1.http://afmb.cnrs-mrs.fr/CAZY/<br>
+2.http://www.compbio.dundee.ac.uk/Software/Amps/amps.html<br>
+3.http://www.compbio.dundee.ac.uk/Software/OC/oc.html<br>
+__NOTOC__

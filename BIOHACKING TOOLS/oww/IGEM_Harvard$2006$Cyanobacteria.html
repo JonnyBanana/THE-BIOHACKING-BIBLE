@@ -1,0 +1,100 @@
+{{IGEM:/Harvard/2006/Cyanobacteria}}
+
+__TOC__
+==Introduction==
+
+Welcome to the lab notebook for the Cyanobacteria oscillator project! The goal of our team, composed of four members, is to reconstruct the cyanobacterial circadian oscillator system into E. coli. Three proteins, KaiA, B, and C, have been shown to have an in-vitro phosphorylation state oscillation (Nakajima et al. 2005) by transcriptional-translational independent methods. If this system can be reconstituted in ''E. coli'', there are two important applications:
+
+#'''Synthetic Biology''': Creating a functional, oscillating set of proteins is the next logical step from the synthetic "repressilator" system engineered by Elowitz et al. (2000). Although a good proof of concept, the "repressilator" lacks the stability needed from a robust oscillator such as the naturally evolved cyanobacterial oscillator. This robust oscillator could prove useful in an eventual biocircuit.
+#'''Circadian Biology''': Cyanobacteria are the simplest model organisms for the study of circadian oscillation. Although circadian oscillation has been fairly well characterized, less is understood at the molecular level. By porting the oscillation system into ''E. coli'', one can begin to understand more precisely the pathways involved in the genomic oscillation of cyanobacteria.
+
+For more background information on the ciracadian system, please check out our "Literature" section. Otherwise, day-to-day work can be found under the "Lab Notebook" tab; we will post major results of our work and links to the days as they become available. If you have questions or comments, feel free to contact us: information is located at the main Harvard iGEM 2006 page. Thanks!
+
+
+Sincerely,<br>
+Zhipeng, Hetmann, Dave, and Jeff
+
+
+'''Update 10/27/06:''' We believe we can express the three proteins into e. coli, and that there is interaction between A+C and possible interaction between B+C. See the Lab Notebook for more information.
+
+[[Image:102706_cyanoresult.jpg]]
+
+==Outline of Findings and Signifigant Dates==
+*07/05/06: The incubator for growing up our cyanobacteria is complete; we have cultures growing! [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-5 | Link]]
+*07/10/06: Some computer modeling has been done to see the effect of multiple unsyncronized clocks on phosphorylation state output. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-10 | Link]]
+*07/21/06: Upon having trouble with site-specific mutagenesis on the KaiA and KaiBC operons from the cyanobacterial genome, we have decided to pursue synthesis of the constructs in parallel with continued extraction attempts. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-21 | Link]]
+*08/01/06: Preliminary success with site-specific mutagenesis. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-8-1 | Link]]
+*08/05/06: Promoter leakness tests come out negative. May have to use low-copy plasmids if we want good control of protein expression in Top10F. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-8-5 | Link]]
+*08/11/06: We are moving to the synthetic KaiA, KaiB, and KaiC for future work. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-8-11 | Link]]
+*08/30/06: We successfully made the first construct, Lac+RBS+KaiC. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-8-30 | Link]]
+*09/01/06: Using the newly developed ligation protocol, we have successfully repeated Lac+RBS+KaiC from 08/30/06 and made Lac+RBS+KaiA. [[IGEM:Harvard/2006/Nicholas_Stroustrup%27s_Notebook#Results_Summary | 
+Link]]
+*10/21/06: Successfully made Lac+RBS+KaiB and Lac+RBS+KaiA+Lac+RBS+KaiC. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-10-21 | Link]]
+*10/24/06: Successfully made Lac+RBS+KaiB+Lac+RBS+KaiC. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-10-24 | Link]]
+*10/25/06: Constructs for Stage I have been completed; ready to move to Stage I of Western Blotting, to verify expression of KaiC and interaction of KaiA and KaiB with KaiC. [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-10-24 | Link]]
+*'''10/27/06: Preliminary data indicates that the Kai proteins are being expressed in e. coli and that there is interaction between the three proteins! [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-10-27 | Link]]'''
+
+==Construct Planning==
+
+[[Image:construct_plans.png|thumb|left|330px|Constructs we plan to create.]]
+
+<br style="clear:both">
+
+=== Lengths ===
+From VF2 to VR (BioBrick primers):
+* KaiA + J04500: 1406 bp
+* KaiB + J04500: 859 bp
+* KaiC + J04500: 2110 bp
+
+
+
+==Agenda==
+''See image at right for our long-term project outline.''
+[[Image:Cyanobacteria_Flowchart.png|thumb|Long-term project outline]]
+
+==BioBricks Used==
+
+:*<bbpart>BBa_J04450</bbpart>
+:**RFP device
+:**Insert size: 1069bp
+:**[[http://parts.mit.edu/registry/index.php/Part:pSB1A2 pSB1A2]]
+:***High-copy, Amp<sup>R</sup>
+:***Size: 2079bp
+:*<bbpart>BBa_J04500</bbpart>
+:**Lac promoter + RBS
+:**Insert size: 220bp
+:**[[http://parts.mit.edu/registry/index.php/Part:pSB1AK3 pSB1AK3]]
+:***High-copy, Amp<sup>R</sup>, Kan<sup>R</sup>
+:***Insert size: 3189bp
+:*[[http://parts.mit.edu/registry/index.php/Part:pSB4A3 pSB4A3]]
+:**Low-copy, Amp<sup>R</sup>
+:**Insert size: 3339 bp
+:*<bbpart>BBa_R0010</bbpart> + <bbpart>BBa_E0241</bbpart>
+:**GFP device
+:**Insert size: 995 bp
+
+==Presentations==
+*[[IGEM:Harvard/2006/Presentation_cyano_week2 | Project proposal (week 2)]]
+*[[Media:Cyan_week3.ppt |Week 3 progress update]]
+**Built incubator and obtained WH8102, PCC7942, and PCC6803 strains
+*[[Media:Cyano_week4.ppt |Week 4 progress update]]
+*[[Media:Cyanobacteria_Presentation_Week_5.ppt |Week 5 progress update, upd. 10:10 7/17]]
+*[[Media:Cyanobacteria_Presentation_Week_6.ppt |Week 6 progress update, upd. 10:02 7/24 HH]]
+*[[Media:Cyanobacteria_Presentation_Week_7.ppt |Week 7 progress update]]
+*[[Media:Cyanobacteria_presentation_Week_8.ppt |Week 8 progress update]]
+*[[Media:Cyanobacteria_presentation_Week_9.ppt |Week 9 progress update]]
+*[[Media:Cyanobacteria_presentation_Week_10.ppt |Week 10 progress update, 50% complete]]
+*''[[Media:Cyanobacteria_final_presentation.ppt |Final Presentation (incomplete)]]'' --old
+*''[[Media:final_presentation_draft2.ppt |Final Presentation (complete)]]'' --old
+*[[:Image:Cyano presentation.ppt | Jamboree presentation]] (in progress)
+**[[:Image:Cyano_presentation_script.doc|Script]] (in progress)
+*[[:Image:Cyano poster.ppt | Cyano poster]] (in progress)
+
+==Team Members==
+*[[User:Hetmann|Hetmann Hsieh]] ([[User_talk:Hetmann|talk]], [[Special:Contributions/Hetmann|edits]])
+*[[User:JeffreyLau|Jeffrey Lau]] ([[User_talk:JeffreyLau|talk]], [[Special:Contributions/JeffreyLau|edits]])
+*[[User:Zhipeng Sun|Zhipeng Sun]] ([[User_talk:Zhipeng_Sun|talk]], [[Special:Contributions/Zhipeng_Sun|edits]])
+*[[User:DavidRamos|David Ramos]] ([[User_talk:DavidRamos|talk]], [[Special:Contributions/DavidRamos|edits]])
+
+==Recent Changes==
+{{Special:Recentchanges/b=IGEM:Harvard/2006/Cyanobacteria&limit=25}}

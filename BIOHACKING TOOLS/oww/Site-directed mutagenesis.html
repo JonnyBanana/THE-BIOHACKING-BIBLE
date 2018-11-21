@@ -1,0 +1,49 @@
+==General Information==
+Site-directed mutagenesis can be used to change particular base pairs in a piece of DNA.  There are a number of methods for achieving this.  The approach described here is adapted from the Stratagene site-directed mutagenesis kit, the manual can be found [http://www.stratagene.com/manuals/200518.pdf here].  Even when using a kit it will be necessary to design primers that are suitable for the specific changes you want to make to your DNA.  Most of the contents of the kit can be found in your favorite labs stocks so you may not need to buy the kit itself.  If you have problems with this procedure, you can try [['Round-the-horn site-directed mutagenesis]] which uses PCR to amplify the desired mutant product.
+
+==General Procedure==
+#Purify template plasmid DNA from a dam<sup>+</sup> ''Escherichia coli'' strain (to ensure that all GATC sites are methylated for later digestion with DpnI).
+#Design forward and reverse primers that will bind to the region of DNA you want to mutate but that contain the modifications you wish to make.
+#Run a primer-extension reaction with a proof-reading, non-displacing polymerase such as ''PFU'' DNA polymerase.  This results in nicked circular strands of the plasmid.
+#Cut up the template DNA with DpnI.
+#Transform the circular nicked DNA into a highly competent strain such as XL1-Blue.  These cells will repair the nicks and not restrict the unmodified product DNA.
+#Select colonies with the correct DNA.
+
+==Specific Protocols==
+*[[Endy:Site-directed Mutagenesis]]
+*[[Knight:Site-directed mutagenesis]]
+*[['Round-the-horn site-directed mutagenesis]]
+*[[Overlap Extension PCR]]
+
+==Notes==
+*This protocol is at a very early stage of development.  Any contributions welcome!
+*Although the manual recommends only 12 cycles for point mutations, I usually do more (at least 18 cycles). --[[User:Rshetty|Reshma]] 05:28, 14 Jul 2005 (EDT)
+*I disagree here, further rounds of the reaction favor end-filling instead of primer extension on the template.  This is not PCR!  You need to primer extend on the original template each time.  As the primers become depleted, the polymerase will find other things to extend. [[User:Smoore|Smoore]] 18:52, 14 Sep 2005 (EDT)
+*I tried using this protocol to do an insertion/deletion and I believe it failed suggesting that point mutations are easier to accomplish than insertions/deletions. --[[User:Rshetty|Reshma]] 05:28, 14 Jul 2005 (EDT)
+*[[User:Lchan|Leon Chan]] suggested that attempting to modify three consecutive bases is difficult.  He suggested using 4-5 more cycles than recommended by [http://www.stratagene.com Stratagene].
+*See my [['Round-the-horn site-directed mutagenesis]] protocol to get around these limitations. [[User:Smoore|Smoore]] 18:52, 14 Sep 2005 (EDT)
+*[[User:Lchan|Leon]] also recommended letting the DpnI digestion run for 2-3 hours.  
+*Doing a [[PNK Treatment of DNA Ends|PNK step]] on the primers should boost efficiency.
+*It is not necessary to use XL1-Blue cells.  Any highly competent cells should be ok.
+*Stratagene recommends trying various concentrations of template DNA in the PCR step.
+*It <b>IS NOT PCR</b> people![[User:Smoore|Smoore]] 18:52, 14 Sep 2005 (EDT)
+*I've had great luck with [[Overlap Extension PCR]] which uses a two-step PCR method to introduce substitutions as long as 7 - 8bp at a time. - Nandita
+*For enhanced amplification try using the primer design from this paper<cite>Zheng-NAR-2004</cite>.   To reduce self-primer annealing it uses oligos that do not completely overlap.  I've made up to 60bp deletions with QuickChange, but it can be really, really painful.  Point mutants are much easier.  -[[User:Icb410|Ian]]
+*For multiple non-adjacent mutations, you can use a method that incorporates PCR and Type IIs restriction systems to incorporate multiple mutations <cite>ko-ma</cite>. --[[Sri Kosuri]] ([[User talk:Skosuri|talk]]) 15:27, 10 November 2006 (EST)
+
+==References==
+
+===Manuals===
+*[http://www.stratagene.com/manuals/200518.pdf Stratagene QuikChange Site-directed Mutagenesis Kit]
+
+===Publications===
+<biblio>
+#MolecularCloning isbn=0-87969-577-3
+#Zheng-NAR-2004 pmid=15304544
+#ko-ma pmid=15659713
+</biblio>
+
+
+[[Category:Protocol]]
+[[Category:DNA]]
+[[Category:In vitro]]

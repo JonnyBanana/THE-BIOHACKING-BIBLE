@@ -1,0 +1,86 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|-
+!height="25pt" width="80pt"| Super Parts
+!colspan="4" | [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct | Predator Construct]]
+|-
+!height="25pt" width="80pt"|Actual Part
+!colspan="4"| [[Image:J37016 logo.png|300px]] 
+|-
+!height="25pt" width="80pt"|Sub Parts
+! <bbpart>R0062</bbpart>
+! <bbpart>B0034</bbpart> 
+! <bbpart>C0062</bbpart> 
+! <bbpart>I13504</bbpart> 
+|}
+<div class="tabs-blue">
+<ul>
+<li id="current">[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct |Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct/Design|Design]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct/Modelling|Modelling]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct/Implementation|Implementation]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Motivation==
+
+*The purpouse for building and testing this part is so we can characterize the production of AHL-lactonase
+*The Aiia gene has been replaced with GFP to allow direct measurement of protein production
+*From this data we can create a transfer function where AHL is the input and GFP the output 
+*Making the assumpion that AHL-lactonase is transcribed at the same rate as GFP we can use the transfer curve to extract parameters to allow characterization of the sensing part of the predator
+*The part will be used to form the sensing part of the final predator construct
+
+==Parts Interface==
+
+{| border="0" width="100% align="center"
+|-
+|
+{| border="1" cellpadding="15" width="100%"
+|- 
+! style="background:#66CC99"| INPUTS !!style="background:#FF3333"| OUTPUTS 
+|-
+| AHL || AHL-lactonase & fluctuating [AHL]
+|}
+||
+[[Image:PredatorAtDeviceLevel.png|thumbnail|right|350px|Predator construct at the device level.]]
+|-
+|
+{| border="1" cellpadding="15" width="100%"
+|- 
+! style="background:#66CC99"| INPUTS !!style="background:#FF3333"| OUTPUTS 
+|-
+| AHL || AHL-lactonase
+|}
+||
+[[Image:Predsenspart.png|thumbnail|right|350px|Predator sensing test construct.]]
+|-
+|
+{| border="1" cellpadding="15" width="100%"
+|- 
+! style="background:#66CC99"| INPUTS !!style="background:#FF3333"| OUTPUTS 
+|-
+| AHL || GFP
+|}
+||
+[[Image:Predsensingblackbox.png|thumbnail|right|350px|Predator sensing test construct.]]
+|}
+
+==Expected behavior and performances==
+
+{| border="1" width="100%"
+System level specifications
+|- 
+! style="background:lightgrey" width="100pt" |Properties !! colspan="2" | Specifications
+|-
+| Input Range(s)|| colspan="2" | [0.01nm,10000nm]
+|-
+| Output Range(s)|| colspan="2" | <font color=red>'''?'''</font> 
+|-
+| Transfer function(s) || [[Image:016transfercurve.png|250px]] 
+|-
+| Robustness || colspan="2" | Device should work for at least 10 cycles of the oscillator to match system level oscillator specifications.
+|-
+| Variability  || colspan="2" | Variability at the device population level (day to day, device to device) should be as low as possible.
+|}

@@ -1,0 +1,176 @@
+{{Template:BE.109}}
+
+==Introduction==
+We began this experimental module considering the limited usefulness of sequence information. Life is evidently more complicated than base-pair chemistry since even a perfect cataloging of an organism’s genetic information does not allow us to build a cell from scratch. Furthermore, two cells in a multicellular organism can have identical genomes but different physiologies. Even at an organismal level, we see that identical twins do not exhibit identical traits. Moreover, minimal differences in DNA code can separate species. With human DNA sequence less than 1.25% different from that of chimpanzees, it appears too simple to believe, “…our fate is in our genes" (as Nobelist Jim Watson told TIME magazine in 1989, "We used to believe our destiny was in the stars; now we know in large measure our fate is in our genes.”) 
+
+Rather than genetic content it may be changing expression patterns of a genome that explain cellular differentiation and development. A single cell develops into a differentiated multicellular organism by varying gene expression in groups of cells as they divide. A liver cell must express the parts of the genome related to liver function, while a skin cell uses the parts of the code for making skin related proteins. Scientists are trying to describe other “-omes,” such as the “transcriptome” (the complete RNA content of a cell or organism) and the “proteome” (its total protein content), to complement the cataloging of an organism’s total DNA content. Fortunately, techniques for detecting the RNA and protein output of a cell abound. Older methods have been used productively for decades and newer techniques offer increased sensitivity and higher throughput methods. Because of their widespread use, several fundamental techniques in gene expression analysis will be considered in detail. 
+
+One classic technique for monitoring gene expression is Northern analysis. In this approach, an RNA sample is electrophoresed through a polyacrylamide matrix and then transferred (“blotted”) from the gel to a solid support, usually made of nitrocellulose or nylon. The blot is then probed with radiolabelled DNA, or less often RNA, and then exposed to X-ray film. Hybridization of the probe to the blot is detected as a darkened area of the film and the signal gives information about the size and concentration of that RNA in the original sample. Valid Northern analysis data includes re-probing the blot with a  “loading control” to demonstrate that each sample was equally loaded on the agarose gel and evenly transferred to the blot. Typical loading controls are 18S rRNA and actin mRNA since these are abundant transcripts in most cell types and are seldom affected by experimental conditions.
+
+[[Image:Be109northern.jpg|thumb|left|400px|'''Sample Northern gel''']]	        
+<br style="clear:both" />
+
+An alternative to Northern analysis is q-PCR (quantitative-Polymerase Chain Reaction, sometimes also called RT-PCR which can stand for either Reverse Transcriptase-PCR or real time-PCR ... RT RT-PCR??).  You gained experience with “end point PCR” in the DNA Engineering module when you used the final product of that amplification in cloning. With q-PCR, quantitative information is gleaned from the early stages of the PCR cycling protocol. A specialized thermal cycler is used as well as a fluorescent dye to monitor the amount of double stranded DNA in each reaction at each step of the PCR protocol. RNA is isolated from cells of interest (as you did last time) and converted to DNA using an enzyme called reverse transcriptase (as you will do today). This DNA serves as the template in the q-PCR reactions. After a limited number of PCR cycles, the amount of PCR product can be sensitively detected by its fluorescence and quantitatively reflects the amount of transcript in the original sample.
+
+Gene expression can also be assessed by measuring the protein product of a gene. Convenient enzymatic assays are available for some proteins, like beta-galactosidase, and this is how you will assess protein activity. You’re also familiar with assessment of fluorescent proteins which can be measured using flow cytometry, a technique that is both quick and quantitative. What about the proteins with no convenient enzymatic activity to test? What about the labs that can’t afford FACS machines? The most widely applicable technique for measuring proteins is Western analysis, which is similar to Northern analysis in that the cell’s contents (its proteins in this case) are separated by electrophoresis and subsequently moved to a filter. The filter is then probed with an antibody that recognizes the protein of interest and a secondary antibody is used to detect the first. Antibodies to many proteins are commercially available, and other companies are in the business of making custom antibodies. 
+
+By the way, where did all these directional techniques, like “Northern” and “Western” come from? The founding member of the geographical collection is the “Southern” in which DNA, most often digested genomic DNA, gets separated through a gel and then blotted to a filter. The blot is then probed with radiolabelled DNA of choice. Hybridization of the probe to the blot reveals the presence, copy number and size of the sequence of interest. This technique was first described in 1975 by Ed Southern. The Western and Northern are humorous derivatives of Professor Southern’s name, and while there is no “Eastern” technique, permutations such as the “Far Western” and the “NorthWestern” now exist. 
+
+==Protocol==
+===Part 1: cDNA synthesis===
+With these reactions you will convert your RNA to single stranded DNA, using a kit supplied by Epicenter (Tuesday/Thursday lab section) or Invitrogen (Wednesday/Friday lab section) for the conversion. Regardless of supplier, the protocol requires that you anneal random primers (9mers) to the RNA then add nucleotides and enzyme (reverse transcriptase) to extend the annealed primers into complementary DNA (“cDNA”). A reaction without reverse transcriptase will serve as a control. In part II of today’s experiment you will use the cDNA from both reactions as template for q-PCR. 
+
+====Protocol for Epicenter kit====
+
+# Clean your bench in preparation for RNA work. If you are unsure what this involves, review the protocol from last time. 
+# In an RNase-free PCR tube mix 
+#* ___ 	&mu;l Rnase free H2O
+#* ___ 	&mu;l RNA (ideally 1&mu;g but 0.5 &mu;g for each sample is OK if volume would be >26 &mu;l)
+#*  4	&mu;l Random 9-mer primers (50 &mu;M)
+#* to a final volume of 30 &mu;l
+# Incubate 65&deg;C 1 minute in the thermal cycler and then allow the tubes to cool (4&deg;C hold).
+# Move 15 &mu;l of each rxn to new PCR tubes and add add 4 &mu;l MonsterScript 5X cDNA premix and 1&mu;l reverse transcriptase to each new tube. Flick to mix.
+# To what remained in the original annealing tubes, add 4 &mu;l MonsterScript 5X cDNA premix and 1&mu;l RNAse free H<sub>2</sub>O. Flick to mix.
+# Incubate in thermal cycler (program “cDNA”)
+#*37&deg;C 	5 minutes 
+#*42&deg;C 	5 minutes 
+#*60&deg;C	40 minutes
+#*90&deg;C 	5 minutes
+#* 4&deg;C 	hold
+#These samples can be used directly for q-PCR, as you will do today. Alternatively, they can be stored at –20&deg;C for later use.
+
+====Protocol for Invitrogen kit====
+# Clean your bench in preparation for RNA work. If you are unsure what this involves, review the protocol from last time. 
+# In an RNase-free PCR tube mix 
+#* ___ 	&mu;l Rnase free H2O
+#* ___ 	&mu;l RNA (ideally 1&mu;g but 0.5 &mu;g for each sample is OK if volume would be >16 &mu;l)
+#*  2	&mu;l random hexamers (50 ng/&mu;l)
+#*  2   &mu;l 10 mM dNTP mix 
+#* to a final volume of 20 &mu;l
+# Incubate 65&deg;C 5 minute in the thermal cycler and then allow the tubes to cool (4&deg;C hold).
+# Add 20 &mu;l cDNA synthesis cocktail to each tube then move 20 &mu;l of each rxn to new PCR tubes. To one of each pair, add 1 &mu;l reverse transcriptase. Flick to mix.
+# To what remained in the original annealing tubes, add 1&mu;l RNAse free H<sub>2</sub>O. Flick to mix.
+# Incubate in thermal cycler (program “cDNA”)
+#*25&deg;C 	10 minutes 
+#*50&deg;C 	50 minutes 
+#*85&deg;C	5 minutes
+#* 4&deg;C 	hold
+# Add 1 ul RNaseH to each tube and incubate at 37&deg;C for 20 minutes. 
+#These samples can be used directly for q-PCR, as you will do today. Alternatively, they can be stored at –20&deg;C for later use.
+
+===Part 2: q-PCR===
+You will set up reactions to compare the amount of ''LacZ'' RNA (now conveniently cDNA) in your two samples. Primers specific for ''LacZ'' will be used for the reactions. For better confidence in your data, you will make each measurement in triplicate. 
+
+The remaining samples you will prepare today are controls, broadly addressing the questions of '''product specificity''' and '''concentration'''. 
+
+Specificity is an issue because the machine will measure fluorescence in your reactions (arising from the fluorescent dye, SYBR Green, in the reaction mix), and you’d like to assume that the fluorescence arises from the number of ''LacZ'' sequences in the tube. The fluorescence of SYBR Green increases more than 300 fold when it binds to double-stranded DNA, but in solution it has some natural fluorescence you must correct for. Double-stranded DNA could also arise from contaminating ''LacZ'' DNA that is being amplified (DNA carried over from the cells themselves, or brought in with the Taq polymerase which in many kits was purified from bacteria). Fluorescence could arise from amplification of sequences that are not ''LacZ''. You’d see these as extra bands on a gel if you were running the products out but since you’re not doing that, you’ll have to detect other products in other ways. Finally, some of the controls you’ll set up are identical to ones you ran when you performed “end point” PCR in the DNA engineering module, looking for contamination of the PCR tubes or reaction mixes with template. 
+
+You will also make serial dilutions of DNA template to generate a fluorescence vs concentration standard curve. The source of DNA for these reactions will be the lysed cells you prepared last time. From the number of cells, you’ll know the number of ''LacZ'' templates you’re adding to each tube. Next time you will assess the accumulation of ''LacZ'' products as a function of cell number, then use this standard curve to determine the number of copies in each of your cDNA reactions, expressing the result and # of ''LacZ'' mRNA/cell. 
+
+Use the following pattern to help you plan your reactions. You will need two strips of 8 PCR tubes, two strips of caps, and a cold block to use as you assemble the reactions. <b> Each of your reactions today should have a final volume of 25 &mu;l. </b>
+
+====1st strip of 8 tubes====
+
+{| border="1"
+|-
+! 1
+! 2
+! 3
+! 4
+! 5
+! 6
+! 7
+! 8
+|-
+| <font color="red">No RT</font>
+| <font color="red">cDNA</font>
+| <font color="red">cDNA</font>
+| <font color="red">cDNA</font>
+| <font color="green">No RT</font>
+| <font color="green">cDNA</font>
+| <font color="green">cDNA</font>
+| <font color="green">cDNA</font>
+|}
+
+
+
+#You should prepare a “master mix cocktail” sufficient for four reactions. Each reaction will have cDNA (1 &mu;l/reaction), primers (0.5 &mu;l of the forward primer and 0.5 &mu;l of the reverse primer/reaction), reaction mix (12.5 &mu;l of 2X mix), and water. Since you have two samples of cDNA you will prepare two such master mixes. Aliquot the reactions into the PCR tubes using the pattern above. 
+# You should prepare one complete reaction (no RT cDNA, primers, reaction mix and water) for each of your “no reverse transcriptase” controls.
+
+====2nd strip of 8 tubes====
+
+{| border="1"
+|-
+! 1
+! 2
+! 3
+! 4
+! 5
+! 6
+! 7
+! 8
+|-
+| DNA standard 1
+| DNA standard 1:10
+| DNA standard 1:100
+| DNA standard 1:1000
+| DNA standard 1:10000
+| DNA standard 1:100000		
+|primers only
+|blank
+|}
+
+
+# You should prepare a master mix cocktail sufficient for 8 reactions, each with 12.5 &mu;l of 2X reaction mix, 0.5 &mu;l forward primer, 0.5 &mu;l reverse primer, and enough water to bring the volume to 24 &mu;l. Aliquot these into the first 7 tubes of the second strip. 
+# Serially dilute the DNA you isolated from cells with the Lyse-N-Go protocol,  making 1:10 dilutions in water.
+# Add 1 &mu;l of undiluted DNA to first tube in the second strip. 
+# Add 1 &mu;l of each dilution to the following 5 tubes in the second strip. 
+# The 7th tube of the second strip should be your "primers only" reaction. There should be enough volume in the cocktail you prepared for this reaction. 
+# The 8th tube of the second strip should be a "blank" reaction which leaves out both template and primers. Specifically, this reaction should have only 2X reaction mix and water. 
+
+When everyone is ready we will walk our samples to the BioMicroCenter in Building 68 and begin the q-PCR cycles.   
+##94° 3 minutes
+##94° 15 seconds
+##53° 30 seconds
+##72° 30 seconds
+##Plate read
+##repeat steps 2-5, 35 times
+##melting curve 65°-95°C, read every 0.5°C
+##end  
+
+DONE!
+
+==For next time==
+# If we were studying the RNA from eukaryotic cells, we could use poly-dT to prime the reverse transcriptase reactions. Why?
+# What do the following controls “control” for? That is, what can their amount of product tell you?
+#* no reverse transcriptase in the cDNA synthesis reactions 
+#* plus primers, no cDNA, plus Taq reaction mix
+#* no primers, no cDNA, plus Taq reaction mix
+#* melting curve data performed after the cycling program has completed
+# Complete your first draft of your writing assignment. Bring the previous writing assignments together into an integrated, informative, challenging essay. The details of the assignment can be reviewed at [[BE.109:Systems engineering/Tools for systems engineering | Tools for systems engineering]] lab handout for this module. Please bring three copies of this essay to hand in next time when, as a class, we will spend some time discussing the issues and exploring your opinions. Come prepared to engage in a conversation. You must also email a copy of your essay to  Drew Endy, Neal Lerner and Natalie Kuldell before you arrive for lab.
+
+==Reagents list==
+===cDNA synthesis kit===
+Epicenter MonsterScript 1st-strand cDNA synthesis kit (cat #MS040910) <br>
+or<br>
+Invitrogen SuperScript III First-Strand Synthesis kit (cat #18080-051)
+
+===LacZ primers for 3075 bp ORF===
+
+<b>5' end of LacZ gene <br></b>
+Forward is 20-mer starting at bp 238: 5'- CCTGAGGCCGATACTGTCGT<br>
+Reverse is 19-mer starting at bp 308: 5'- TTGGTGTAGATGGGCGCAT<br>
+Product: 70 bp long
+
+<b>Middle of LacZ gene <br> </b>
+Forward is 18-mer starting at bp 1260: 5'- CATGGTGCCAATGAATCG <br>
+Reverse is 20-mer starting at bp 1375: 5'- GCGACCAGATGATCACACTC<br>
+Product:  115 bp long<br>
+
+<b> 3' end of LacZ gene <br> </b>
+Forward is 21-mer starting at bp 2567: 5'-CCTACCGGATTGATGGTAGTG<br>
+Reverse is 18-mer starting at bp 2664: 5'-CTGGCAGTTCAGGCCAAT<br>
+Product: 102 bp long
+
+===SYBR GREEN PCR reaction mix===
+Applied Biosystems Power SYBR Green PCR Master Mix (cat #4368577)

@@ -1,0 +1,21 @@
+This is a preliminary protocol, it will be finalised on Monday when I have seen the chemostat in more detail.
+
+'''Aims'''
+
+We are trying to determine the Rate of production of AHL. We will also gain experience with the chemostat for use in testing the final system.
+
+'''Theory'''
+
+Prey cells will Produce AHL in response to AHL The chemostat will keep the AHL concentration at a maximum steady state where washout = production. Altering the flow rate will not alter this concentration; it is solely dependent on OD.
+
+We can change the AHL concentrations by washing in AHL. So the level of AHL will be equal to 
+ AHL <small>wash in</small> + AHL <small>Produced by bacteria</small> - AHL <small>washout</small>
+At steady State
+ AHL <small>wash in</small> + AHL <small>Produced by bacteria</small> = AHL <small>washout</small>
+So we can work out the amount of AHL produced by the bacteria.
+
+Hopefully increasing AHL wash-in will increase the amount of AHL produced by the bacteria, however this may not be the case as the LuxP promoter may be saturated by AHL. If this is the case we may need to do something more complicated which will use up the spare day on the chemostat chart. 
+
+We have a blanket esterase so we can add this to the medium that gives us this model. 
+ AHL <small>Produced by bacteria</small> - AHL <small>washout</small> - AHL degraded by esterase
+We know the activity of our esterase so can work out how much of the AHL is produced by the bacteria. There is a big side problem to this though. The esterase will degrade components of the LB which may cause an altered AHL expression so a control needs to be run where we leave media + esterase for 6hrs then autoclave it then run it through the chemostat.

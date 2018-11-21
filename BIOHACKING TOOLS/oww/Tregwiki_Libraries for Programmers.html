@@ -1,0 +1,10 @@
+All the usual Bio*-languages support searches for binding sites:
+
+* BioPerl
+* Could [http://www.biomedcentral.com/1471-2105/9/11/abstract SeqAn] finally be a usable C++ library for motif sequence analysis? It has some nice algorithms, e.g. suffix trees / ESAs
+* TFBS seesm to be the best library for perl, using PDL makes it pretty quick though probably not as fast as cread with its suffix trees
+* [http://www.biopython.org BioPython] has some redundancy, both its [http://cvs.bioperl.org/cgi-bin/viewcvs/viewcvs.cgi/biopython/Bio/MEME/Motif.py?rev=HEAD&cvsroot=biopython&content-type=text/vnd.viewcvs-markup Meme] modules and [http://cvs.bioperl.org/cgi-bin/viewcvs/viewcvs.cgi/biopython/Bio/AlignAce/?cvsroot=biopython AlignACE]-support can parse and scan for matrices (see [[Biopython-Meme example]])
+* [http://rulai.cshl.edu/cread/index.shtml CREAD] searches matrices, compares them, mines chipchip, nice and very fast C++ library
+* [http://genereg.molgen.mpg.de/ProfileStats/index.shtml Sven Rahmanns Perl-Module] to calculate matrix quality
+* Biojava has a [http://www.biojava.org/docs/api14/org/biojava/bio/dist/package-summary.html Distribution-class ] that should probably be called WeightMatrix. One of its example programs is the [http://www.biojava.org/docs/bj_in_anger/gibbs.html Gibbs Sampler]. (Back in 1993, that was a publication in Science. Today it's an example for a library...)
+* [http://jura.wi.mit.edu/fraenkel/TAMO/ TAMO] [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=15905282&query_hl=1 (article)] is the best library in Python and probably the library for promotor analysis in general: Classes for motifs, motif-databases, scanning, logo-creating and various scoring methods, with parsers for most well-known motif discovery algorithms are included.

@@ -1,0 +1,188 @@
+= Balmer Series =
+Experimentalists: 2 of the greatest
+
+==Goal==
+We want to see if we can measure the wavelengths of the emission spectra (EM radiation produced from electron transitions) of hydrogen and deuterium.  We also want to calculate Rydberg's constant for hydrogen and deuterium.  Basically, we are studying emission spectra of atoms with 1 outer electron, which is something that quantum mechanics can explain very easily to be quantized.
+
+For hydrogen, the Balmer series, which is the series that results when electrons transition from a high principle quantum number to the second principle quantum number, produces visible light that can be observed through a spectroscope.  The wavelengths produced from these transitions are predicted to be given by
+
+<math>\frac{1}{\lambda}=R\left(\frac{1}{2^2}-\frac{1}{n^2}\right)</math>,
+
+where <math>n</math> is an integer greater than 2 that represents the initial principle quantum number of the electron before it transitions to the second principle quantum number, <math>\lambda</math> is the wavelength, and <math>R</math> is some constant called the Rydberg constant.
+
+We hope to observe the Balmer series for hydrogen, which contains the following wavelengths:
+
+{| border="1"
+|+ '''Hydrogen's actual wavelenghts'''
+|-
+!<math>n\,</math>
+!3
+!4
+!5
+!6
+|-
+!<math>\lambda\,</math> (nm)
+|656.3
+|486.1
+|434.1
+|410.2
+|}
+
+And we hope to find that the Rydberg constant for hydrogen is <math>R</math>=1.097758x10<sup>7</sup> 1/m.
+
+For deuterium, we expect the Rydberg constant to be very slightly larger because, for a larger nucleus, the nucleus wiggles less as the electron moves, which causes slightly smaller wavelengths.
+
+==Equipment==
+[[Image:Physics_307L_Balmer2.JPG|thumb|The current generator is on the left and the two shiny scopes (at a right angle with each other) are parts of the spectroscope.|none]]
+
+*Something to send current through samples to excite the electrons
+*Mercury, hydrogen, deuterium, and sodium samples
+*Constant-deviation spectrometer (ours was made at and for UNM)
+
+==Setup==
+We plugged in the electric current source, and calibrated the spectrometer using mercury by rotating the prism inside of it.  We knew the wavelengths mercury produces, so we simply had to make sure the spectrometer was measuring the wavelengths at what we knew them to be.
+
+The most difficult obstacle was that the spectrometer (made at UNM) had a loose knob for rotating the prism and changing the wavelength to be observed.  This knob was supposed to give us precise readings, but, since it was loose, we did not know which data to take.  This problem would have been easy to fix if the looseness did not vary as the knob was turned to different wavelengths.  At low wavelengths, the looseness vanished, and this is where we calibrated.  We noticed that, for higher wavelengths, the knob's looseness was causing error that had little to no bias towards too high or too low (ie, the knob's wiggling is basically centered on the correct value).
+
+==Procedure==
+First, we turned off the lights.
+{{SJK comment|l=01:32, 19 November 2007 (CST)|c=Are you sure this isn't just "backlash" from the threads on the micrometer?  In that case, the best idea is to calibrate and take measurements in the same direction on the dial.}}
+
+For both helium and deuterium, we put current through the samples and used the spectroscope to measure the strongest wavelengths produced.  When taking a measurement, we took the value from the rightmost part of the band of light since the adjustable slit that lets light into the spectrometer only changes the left side (we calibrated on the rightmost part of the band also).
+
+We took each measurement twice.  One measurement was by turning the wavelength-selecting knob to increasing wavelengths, and the other was by turning the knob to decreasing wavelengths.  We did this because the looseness of the knob made these values different.  We only needed these two numbers instead of repeating over and over and getting a Gaussian, because the systematic uncertainty of the knob far outweighed any random error.
+
+==Data==
+The decreasing wavelength is when the knob is being turned as to only decrease the wavelength, and vice versa.
+
+I am providing as many significant digits as our spectroscope can allow us to give.
+
+Also, I would like to point out that low wavelength means high energy and high frequency, so, as the wavelength decreases, the color is changing from red to purple.
+
+{| border="1"
+|+ '''Hydrogen Data'''
+|-
+!<math>n\,</math>
+!3
+!4
+!5
+!6
+|-
+!<math>\lambda\,</math> (nm) decreasing
+|656.0
+|485.6
+|434.0
+|410.3
+|-
+!<math>\lambda\,</math> (nm) increasing
+|658.0
+|485.9
+|434.2
+|410.4
+|}
+
+
+
+{| border="1"
+|+ '''Deuterium Data'''
+|-
+!<math>n\,</math>
+!3
+!4
+!5
+!6
+|-
+!<math>\lambda\,</math> (nm) decreasing
+|654.9
+|485.5
+|433.8
+|409.8
+|-
+!<math>\lambda\,</math> (nm) increasing
+|658.0
+|486.2
+|434.3
+|410.2
+|}
+
+
+
+==Calculating Rydberg constant for helium and deuterium==
+For a given substance such as hydrogen, there are four different Rydberg constants for the four wavelengths of the Balmer series that we measured, where
+
+<math>R_n=\frac{1}{\lambda\left(\frac{1}{2^2}-\frac{1}{n^2}\right)}</math>,
+
+which will produce <math>R_3</math>, <math>R_4</math>, <math>R_5</math>, and <math>R_6</math>.
+
+To calculate the Rydberg constant for a substance, I will use the average:
+
+<math>R=\frac{R_3+R_4+R_5+R_6}{4}</math>.
+
+Before I can do this, I must first determine the wavelengths I will use and the uncertainty of those wavelengths.  The uncertainty will be dominated by the systematic error of the looseness of the knob, and I will simply use the difference between the "increasing wavelength" and "decreasing wavelength" values as the uncertainty.  The wavelengths and the uncertainty are as follows...
+
+{| border="1"
+|+ '''Hydrogen Wavelengths'''
+|-
+!<math>n\,</math>
+!3
+!4
+!5
+!6
+|-
+!<math>\lambda\,</math> (nm)
+|657.00 <math>\pm</math> 2.00
+|485.75 <math>\pm</math> 0.30
+|434.10 <math>\pm</math> 0.20
+|410.35 <math>\pm</math> 0.10
+|}
+
+
+
+{| border="1"
+|+ '''Deuterium Wavelengths'''
+|-
+!<math>n\,</math>
+!3
+!4
+!5
+!6
+|-
+!<math>\lambda\,</math> (nm)
+|656.45 <math>\pm</math> 3.10
+|485.85 <math>\pm</math> 0.70
+|434.05 <math>\pm</math> 0.50
+|410.00 <math>\pm</math> 0.40
+|}
+
+
+
+Before I go on, I'd like to point out that, with the exception of n=4, the deuterium wavelengths are slightly smaller than the hydrogen as I predicted.  As for n=4, the difference of 0.1 is well within the uncertainty.
+
+Using the above formula for R and propagating the uncertainty, we get
+
+<math>R_{hydrogen}=1.09686(86)\times10^7\frac{1}{m}</math>,
+
+and
+
+<math>R_{deuterium}=1.09730(142)\times10^7\frac{1}{m}</math>.
+
+Perhaps the best idea would be to say that <math>R=R_6</math>, since <math>R_6</math> has the smallest uncertainty.  This method gives
+
+<math>R_{hydrogen}=1.09662(27)\times10^7\frac{1}{m}</math>,
+
+and
+
+<math>R_{deuterium}=1.09756(107)\times10^7\frac{1}{m}</math>.
+
+Regardless of which of these two methods I use, deuterium has a larger R than hydrogen, which is what I expected.  However, the differences between the R's and the uncertainties are about equal.
+
+==Error and Conclusions==
+The only error that needs to be considered is the loose knob, since this error is pretty large compared to any other conceivable error.  For this reason, I cannot definitively say that deuterium's Rydberg constant is greater than hydrogen, but this does appear to be the case.  Especially when one realizes that the loose knob affects only the absolute measurements and not the relative comparisons between measurements.
+
+Quantum theory's prediction of what wavelengths I should find is right on!  Comparing, the hydrogen observed wavelength's with those predicted by theory (both of these tables are in this notebook), there is never more than a 1nm absolute error, which is well within my uncertainty!
+
+As for the Rydberg constant, this theoretically derived value and my calculated value are very close (ie, the error is well within my uncertainty).
+
+==Also...==
+There was an unknown sample of gas that we tried to identify.  Koch, being very familiar with Las Vegas Nevada, recognized the orange color as that of neon from neon lights, and, after comparing the spectrum of the unknown sample with the internet and with the neon sample we had and noticing the spectra were identical, we concluded that the unknown sample was indeed neon.  Since neon has many electrons, there were many more observable wavelengths than there was for hydrogen and deuterium.
+{{SJK comment|l=01:37, 19 November 2007 (CST)|c=Yeah, why do I know exactly what color neon makes?  That makes me feel old somehow.  OK, so from now on (Lab #4 and up), my comments will be pretty limited, because people will be focused on their formal reports.  Excellent work on this lab (once again)!  My main comment is to question whether you dealt with the backlash properly...}}

@@ -1,0 +1,56 @@
+==Goals and Objectives==
+Using random cosmic events we will compile a set of data.  The goal is to use this data to reflect the properties of a Poisson Distribution, while comparing, and contrasting it to both a Binomial and Gaussian distribution. We will vary the bin size and data collection times to maximize the variance between data sets.  We will show how some data sets give distributions with binomial characteristics, and by just increasing our bins or collection times we can create a Poisson distribution similar to that of a normal curve.
+
+==Setup==
+Buried underneath a mountain of lead bricks we place a photomultiplier tube and a Nal Scintillator.  These devices are hooked up to a computer through a data collection board.  The photomultiplier tube and Nal Scintillator are powered by a high voltage source (~1000V).  The computer comes equipped with PCAIII, a computer software package that collects data, and outputs it in usable files. We used coaxial cables to connect the photomultiplier tube and Scintillator to the data collection card on the computer.
+
+==General Procedure==
+Using only the computer program, we set the bin size, which is the values that determines how many times you will collect information per run. The next value set is the collection time, this determines how long each bin will stay open.  When you press start the data collection begins.
+
+==Underlying Theory==
+To truly appreciate the effects of this lab it is important to understand the mathematics governing each type of distribution.  We start by analyzing the most simple distribution, the Binomial.
+
+<math>B(x)=\frac{N!}{x!(N-x)!}p^nq^{N-n}</math>
+
+we have a standard deviation of:  <math>\sigma=\sqrt{pN(1-p)}</math>
+
+and a mean of: <math>a=pN</math>
+
+<math>N</math> = the number of counts
+<math>p</math> = Probabilistic occurrence rate
+<math>q</math> = the probability of counts not occurring.  This is a binomial distribution, which means there are only two outcomes, either something happens or it does not, because of this we have the following relationship: <math>p+q=1</math>.  Our <math>N</math> is quite large but we have a very small <math>p</math>.  Using these assumptions we can approximate the binomial distribution to be the Poisson distribution.  Additional information can be found on Wikipedia at the following link [http://en.wikipedia.org/wiki/Binomial_distribution here].
+
+Another distribution, similar to poisson when using many data bins for longer periods of time, is the normal or Gaussian Distribution.  It is modeled by the following equation:
+
+<math>G(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{\left(x-a\right)^2}{2\sigma^2}}</math>
+
+<math>a</math> = mean, <math>\sigma</math> = standard deviation.
+
+This is the most common of distributions, it is of course an approximation in an ideal world, but it works to a great degree of accuracy.
+
+We also have the Poisson distribution given by the following equation:
+
+<math>P(x)=e^{-a}\frac{a^x}{x!}</math>
+
+with a standard deviation of
+
+<math>\sigma=\sqrt{a}</math>,
+
+We can see through some mental manipulation that the Poisson distribution is very similar to the Binomial distribution, with respect to the standard deviation.  If we take (1-p) to be very small, then they are essentially the same.  The same is true with the distribution itself, if N-1 is very small then we have junk/x! which will give us a similar result as the straight Poisson distribution at small N's.
+
+The Poisson distribution shares a few properties with the Gaussian distribution at large values of N.  If a Gaussian were normalized so that it can only have a mean greater than zero then we would have a distribution similar to that of a Poisson.  (Thank you Matthew Gooden for that description!)  We will show the emergence of these two cases through the analysis of the following data.
+
+==Results==
+Please see this file for spreadsheets of all data collected: [[Media:anniemattpoisson.xlsx]]  The following data sets contain with normal distribution and poisson distribution curves overlapped for contrast.
+
+[[Image:11s256bins.jpg]]
+[[Image:11s512bins.jpg]]
+[[Image:2s256bins.jpg]]
+[[Image:140ms256bins.jpg]]
+[[Image:140ms512bins.jpg]]
+
+==Discussion==
+Based on our data , it is easy to see, that at low collection times such as 140ms, we get a general approximation of the binomial distribution.  As we increase collection times we find that the Poisson distribution tends toward the normal curve.  The higher the bin count the better fit we have to both the binomial and normal distributions.  It is inconclusive as to whether or not the Poisson distribution fits the raw data better than the Gaussian distribution.
+
+==Better Luck Next Time?==
+Collecting more data would definitely help us in the future.  It would be more likely for us to have a distribution fit our Poisson model if we collected data over days instead of minutes.  This increase in bin total and size would direct our data to fit a more accurate mean.  Random events modeled by the binomial theorem, take the form of an event, or no event occurring.  We see the binomial distribution decently in our data, because for every bin there is a chance it will not experience even one cosmic event.  If we used a large amount of bins, each with an extremely small collection time, we would see the emergence of a more precise binomial distribution.

@@ -1,0 +1,127 @@
+'''SSH/OpenSSH is a secure remote login program'''
+
+==Resources==
+*[http://www.suso.org/docs/shell/ssh.sdf SSH Tutorial for Linux] from suso.org
+*[http://thinkhole.org/wp/2006/05/10/howto-secure-firefox-and-im-with-putty/ HOWTO: Secure Firefox and IM with SSH]
+ ssh -qTfnN -D 7070 remotehost
+
+ -q :- be very quite, we are acting only as a tunnel.
+ -T :- Do not allocate a pseudo tty, we are only acting a tunnel.
+ -f :- move the ssh process to background, as we don’t want to interact with this ssh session directly.
+ -N :- Do not execute remote command.
+ -n :- redirect standard input to /dev/null.
+
+==File locations==
+
+===Linux/UNIX===
+*Private keys
+**<tt>~/.ssh/identity</tt> contains the protocol version 1 RSA authentication identity of the user
+**<tt>~/.ssh/id_dsa</tt> contains the protocol version 2 DSA authentication identity of the user
+**<tt>~/.ssh/id_rsa</tt> contains the protocol version 2 RSA authentication identity of the user
+*Public keys
+**<tt>~/.ssh/id_dsa.pub</tt> - DSA protocol
+**<tt>~/.ssh/id_rsa.pub</tt> - RSA protocol
+*Public keys from remote machines (one key per line)
+**<tt>~/.ssh/authorized_keys</tt>
+
+To enable publickey authentication for connection from account on localbox to account on remotebox, copy public key from <tt>~/.ssh/id_dsa.pub</tt> on localbox to <tt>~/.ssh/authorized_keys</tt> on remotebox.
+
+To enable host key login:
+ [localbox]$ ssh-keygen -t rsa
+ [localbox]$ scp ~/.ssh/id_rsa.pub remotebox:
+ [remotebox]$ cat ~/id_rsa.pub >> ~/.ssh/authorized_keys
+ [remotebox]$ rm ~/id_rsa.pub
+
+Make sure your <tt>.ssh</tt> directory and your private key are accessible only by you:
+ [localbox]$ chmod 700 ~/.ssh
+ [localbox]$ chmod 600 ~/.ssh/id_rsa
+
+Using ssh-agent for caching decrypted private keys:
+ eval `ssh-agent`
+ ssh-add
+
+To change an SSH key passphrase:
+ ssh-keygen -p
+
+==Key management==
+Tutorial @ IBM: [http://www.ibm.com/developerworks/library/l-keyc.html Parl 1], [http://www.ibm.com/developerworks/linux/library/l-keyc2/ Part 2] and [http://www.ibm.com/developerworks/linux/library/l-keyc3/ Part 3]
+
+[http://www.gentoo.org/proj/en/keychain/ Keychain] script makes handling RSA and DSA keys both convenient and secure, it acts as a front-end to ssh-agent
+*<tt>ssh-keygen</tt> - authentication key pair generation, management and conversion
+*<tt>ssh-keyscan</tt> - utility for gathering the public ssh host keys of a number of hosts
+*<tt>ssh-agent</tt> - holds private keys used for public key authentication
+*<tt>ssh-add</tt> - adds RSA or DSA private keys to ssh-agent
+:<tt>-l</tt> displays the identities currently held by the agent
+:<tt>-s reader</tt> adds key to smartcard <tt>reader</tt>
+
+Using keychain:
+ $ keychain ~/.ssh/id_rsa
+ $ source ~/.keychain/$HOSTNAME-sh
+
+Here's a good standard keychain-enabled <tt>~/.bash_profile</tt>:
+ # initialize SSH key management
+ /usr/bin/keychain ~/.ssh/id_rsa
+ source ~/.keychain/${HOSTNAME}-sh
+
+Here's a run-through of how keychain works. When started from your <tt>~/.bash_profile</tt>, it will first check to see whether an ssh-agent is already running. If not, then it will start <tt>ssh-agent</tt> and record the important <tt>SSH_AUTH_SOCK</tt> and <tt>SSH_AGENT_PID</tt> variables in the <tt>~/.keychain/$HOSTNAME-sh</tt> file for safe keeping and later use.
+
+Don't forget that you can also get your cron jobs and scripts to "hook in" to the running <tt>ssh-agent</tt> process. To use <tt>ssh</tt> or <tt>scp</tt> commands from your shell scripts and cron jobs, just make sure that they source your <tt>~/.ssh-agent</tt> file first:
+ source ~/.keychain/$HOSTNAME-sh
+
+Keychain options:
+*<tt>--clear</tt> option allows you to tell keychain to assume that every new login to your account should be considered a potential security breach until proven otherwise. When you start keychain with the <tt>--clear</tt> option, keychain immediately flushes all your private keys from ssh-agent's cache when you log in, before performing its normal duties. Using keychain with <tt>--clear</tt> still has advantages over using ssh-agent all by itself; remember, when you use keychain <tt>--clear</tt>, your cron jobs and scripts will still be able to establish passwordless connections; <tt>--clear</tt> option an ideal choice for infrequently accessed servers that need to perform occasional secure copying tasks, such as backup servers, firewalls, and routers.
+
+A better ~/.bash_profile?
+<pre>
+kch=`type -p keychain`;
+hostfilename=`echo $HOST | sed 's/\..*//'`;
+if [ -n "$kch" ]; then
+    $kch;
+    if [ -f ~/.keychain/${hostfilename}-sh ]; then
+        echo "Sourcing ~/.keychain/${hostfilename}-sh...";
+        . ~/.keychain/`uname -n`-sh;
+        if ! ssh-add -l | grep -q id_rsa; then
+            ssh-add;
+        fi;
+    else
+        echo "No keychain host file found.";
+    fi;
+else
+    echo "keychain script was not found!";
+fi
+</pre>
+
+===OS X===
+[http://www.sshkeychain.org/ SSH Keychain] - GUI app for managing SSH keys
+
+==Port forwarding==
+
+===Local===
+ $ ssh -L localport:host:port server
+Service runs on remote host:port. We ssh to server and forward localport to host:port via server. Example:
+ $ ssh -L 3002:localhost:631 openwetware.org
+
+===Remote===
+-R port:host:hostport
+Specifies that the given port on the remote (server) host is to be forwarded to the given host and port on the local side.  This works by allocating a socket to listen to port on the remot             side, and whenever a connection is made to this port, the connection is forwarded over the secure channel, and a connection is made to host port hostport from the local machine.
+
+==Authentication agent forwarding==
+*running ssh-agent on untrusted machines is quite dangerous: if someone manages to get root access on the system, then your decrypted keys can be extracted from ssh-agent
+*Authentication forwarding allows remote ssh processes to contact the ssh-agent that is running on your local trusted machine -- rather than requiring a version of ssh-agent to be running on the same machine that you are sshing out from.
+*Add this line to your <tt>/etc/ssh/ssh_config</tt>:
+ ForwardAgent Yes
+*Advantages:
+*#The private key is stored only on the trusted machine. This prevents malicious users from grabbing your encrypted key from disk and attempting to crack the encryption.
+*#ssh-agent runs only on the trusted machine. This prevents an intruder from doing a memory dump of a remote <tt>ssh-agent</tt> process and then extracting your decrypted private keys from the dump.
+*#Since you only need to type in the passphrase on your trusted machine, you prevent any keystroke loggers from stealthily grabbing your passphrase as it is entered.
+
+==Miscellaneous==
+*Use RSA instead of DSA
+*[http://www.diceware.com/ DiceWare] recommends using at least five words each generated randomly by rolling five dice, which gives over 2^64 possible passphrases and is probably not a bad scheme. If you want your passphrase to make grammatical sense, this cuts down the possibilities a lot and you should use a longer one as a result.
+
+==Troubleshooting==
+Slow login:
+*[http://ubuntuforums.org/showthread.php?t=445677 Problem]: it takes up to 20 seconds for the password prompt to appear
+*[http://ubuntuforums.org/showthread.php?p=3189998#post3189998 Solutions]:
+**add <tt>UseDNS no</tt> to <tt>/etc/ssh/sshd_config</tt> (on the server)
+**add <tt>GSSAPIAuthentication no</tt> on my <tt>/etc/ssh/ssh_config</tt> file (on the client)

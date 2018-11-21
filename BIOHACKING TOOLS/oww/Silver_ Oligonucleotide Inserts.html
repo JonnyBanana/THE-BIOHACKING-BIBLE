@@ -1,0 +1,35 @@
+== Design of oligonucleotide inserts==
+
+*The sense oligo should be of the form:<br> 5' CTAGA(coding sequence)ACTAGTAGCGGCCGCTGCA 3'
+*The anti-sense oligo should be of the form:<br> 5' GCGGCCGCTACTAGT(reverse complement of coding sequence)T 3'
+*Design considerations.  Make sure that:
+**either primer will not form a stable internal hairpin structure, &Delta;G < -3 kcal/mole
+**either primer does not contain a EcoRI, PstI, SpeI, XbaI, NotI, or BstEII site outside of the flanking regions
+**the insert for the forward primer does not begin with TC (or else a DAM I site (GATC) is formed, the A is methylated and XbaI cannot cut at its site)
+*Order 100 nmol DNA oligo with 5' phosphorylated ends and PAGE purification from [http://www.idtdna.com IDT].
+
+== Phosphorylation of 5' ends & hybridization (only if you didn't order 5'phosphorylated oligos) ==
+*Mix:
+**3 uL 100 µM sense oligo
+**3 uL 100 µM anti-sense oligo
+**3 uL 10 x PNK (polynucleotide kinase) buffer
+**2 uL 10mM ATP
+**2 uL T4 polynucleotide kinase (PNK)
+**17 uL distilled water
+to give 30 uL total volume
+*Incubate at 37C for 1.5 hours.
+*Add 4 uL 0.5 M NaCl.
+*Place in boiling water bath for 2 min., then remove water bath from the heat source and allow the reaction (still in the water bath) to cool to room temperature.
+
+
+== Hybridize ssDNA to form ds insert (start here if you ordered phosphorylated oligos)==
+*Mix:
+**3 uL 100 µM sense oligo
+**3 uL 100 µM anti-sense oligo
+**3 uL 10 x PNK (polynucleotide kinase) buffer (in common buffer stocks)
+**3 uL 0.5 M NaCl
+**18 uL distilled water
+to give 30 µL total volume
+
+*Place in boiling water bath for 2 min., then remove water bath from the heat source and allow the DNA (still in the water bath) to cool to room temperature.
+*1x PNK buffer (NEB catalog # B0201S) contains: 70 mM Tris-HCl, 10 mM MgCl2, 5 mM Dithiothreitol, pH 7.6.

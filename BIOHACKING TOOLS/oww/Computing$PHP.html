@@ -1,0 +1,12 @@
+==Frameworks==
+*[http://www.xoops.org/ XOOPS] is an extensible, OO (Object Oriented), easy to use dynamic web content management system written in PHP
+*[http://www.xajaxproject.org/ xajax] is an open source PHP class library that allows you to easily create powerful, web-based, Ajax applications using HTML, CSS, JavaScript, and PHP
+*[http://biophp.org/ BioPHP] - PHP for Bioinformatics
+
+==Recipes==
+*[http://www.ilovejackdaniels.com/php/email-address-validation/ Email address validation]
+*[http://www.weberdev.com/get_example-4291.html Get the self URL of current page]
+
+==Notes==
+Apache2 has a slightly different configuration system than the previous version.  In addition to the main configuration file (<tt>/etc/httpd/conf/httpd.conf</tt>), it places the module-specific configuration files into <tt>/etc/httpd/conf.d</tt> directory.
+Both PHP4 and PHP5 will add a <tt>LoadModule</tt> line into <tt>httpd.conf</tt> at the installation time by default.  This line should be moved to <tt>/etc/httpd/conf.d/php.conf</tt> instead.

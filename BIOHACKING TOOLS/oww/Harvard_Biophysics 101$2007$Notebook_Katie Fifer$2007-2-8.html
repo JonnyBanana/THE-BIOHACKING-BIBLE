@@ -1,0 +1,101 @@
+== Script ==
+
+  #!/usr/bin/env python
+  
+  # Katie Fifer 
+  # asst2.py 
+  # 2/7/07 
+  # Description: A script to generate 10,000 strings of 10 random
+  # coinflips (H or T) and outputs the tally of contiguous (overlapping
+  # stretches of 2,3,4,5,6,7,8,9, and 10 H's or T's in that set of
+  # 10,000 10-mers
+  
+  import random
+  
+  # set constants
+  num_strings = 10000
+  num_flips = 10
+  max_repeat = 10
+  all_strings = [ ]
+  
+  # random number generation
+  
+  # generate a list of new strings
+  for i in range(num_strings):
+      new_string = ''.join([random.choice(['H','T']) for n in range (num_flips)])
+      all_strings.append(new_string)
+  
+  # figure out how many overlapping stretches of H's there are. will do
+  # this for each string for each substring. in other words will find
+  # all instances of 'HH' in each of the strings, and then all instances
+  # of 'HHH' in each of the strings etc.
+  
+  def analyze (letter):
+      for i in range(max_repeat):
+  	  # generate the substring to search for. the i + 1 is to account
+  	  # for the fact that i starts at 0
+  	  substr = ''.join([letter for n in range (i + 1)])
+  	  # for each of the strings in the list, find the number of
+  	  # instances of the substring just set (overlapping)
+  	  total = 0
+  	  for j in range(num_strings):
+  	      curr_string = all_strings[j]
+  	      count = 0
+  	      pos = curr_string.find(substr, 0)
+  	      while not pos == -1:
+  		  count = count + 1
+  		  total = total + 1
+  		  pos = curr_string.find(substr, pos + 1)
+  	  print substr, total
+    
+  analyze('H')
+  analyze('T')
+
+
+== Output ==
+* program run to generate 10,000 strings
+  H 49831
+  HH 22372
+  HHH 9860
+  HHHH 4232
+  HHHHH 1813
+  HHHHHH 754
+  HHHHHHH 313
+  HHHHHHHH 127
+  HHHHHHHHH 44
+  HHHHHHHHHH 8
+  T 50169
+  TT 22622
+  TTT 10065
+  TTTT 4401
+  TTTTT 1937
+  TTTTTT 824
+  TTTTTTT 341
+  TTTTTTTT 122
+  TTTTTTTTT 37
+  TTTTTTTTTT 7
+
+== Testing ==
+* Output for just 5 strings so you can double check by hand
+
+  all strings: ['HHTTHTHTTT', 'THTTTTTTTH', 'TTTHHTHTHT', 'HTHTHTHTTH', 'HTTHHHTTTT']
+  H 19
+  HH 4
+  HHH 1
+  HHHH 0
+  HHHHH 0
+  HHHHHH 0
+  HHHHHHH 0
+  HHHHHHHH 0
+  HHHHHHHHH 0
+  HHHHHHHHHH 0
+  T 31
+  TT 16
+  TTT 9
+  TTTT 5
+  TTTTT 3
+  TTTTTT 2
+  TTTTTTT 1
+  TTTTTTTT 0
+  TTTTTTTTT 0
+  TTTTTTTTTT 0

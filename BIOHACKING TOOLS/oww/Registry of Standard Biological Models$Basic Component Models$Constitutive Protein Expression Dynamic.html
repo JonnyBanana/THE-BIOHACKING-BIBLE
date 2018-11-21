@@ -1,0 +1,127 @@
+==ID: Constitutive mRNA/Protein expression==
+
+*'''Description''': Constitutive Protein expression
+*'''Hypothesis''': 
+**central dogma: gene -> mRNA -> protein
+**quasi steady state on mRNA expression
+**all hypothesis applicable to sub-parts
+*'''Inputs''':
+**nb-gene-copies
+*'''Outputs''':
+**[Protein]
+*'''Internal parameters''':
+** ???
+
+==CellML structure (CellML 1.1 spec)==
+*'''Component''': ConstitutiveProteinExpression
+*'''Units''': 
+**TBD
+*'''Imports''':
+**Components:
+***ConstituvePromoter_RBS_Coupled
+***Protein
+
+*'''Variables''':
+**time (public interface = in)
+**nbGeneCopies (public interface = in)
+**protein (public interface = out / init value = 0.)
+*'''MathML'''
+**none
+
+==Examples==
+{| border="1"
+! BioBricks from Registry !! CellML file
+|-
+|<bbpart>BBa_I7101</bbpart> ==> GFP protein expression from TetR  || [[Media:BBa_I7101_Model.xml]]
+|-
+|other part || other file
+|}
+
+
+==CellML Code==
+
+[http://openwetware.org/index.php?title=Registry_of_Standard_Biological_Models/Basic_Component_Models/Constitutive_Protein_Expression_Dynamic&action=raw"
+
+<syntax type = 'xml'>
+<?xml version="1.0"?>
+
+<model xmlns="http://www.cellml.org/cellml/1.1#"
+       xmlns:cmeta="http://www.cellml.org/metadata/1.0#"
+       xml:base="file:///C:/CellML_models/protein-generator.cml"
+       cmeta:id="protein-generator"
+       name="protein-generator">
+
+
+<import xmlns:xlink="http://www.w3.org/1999/xlink" 
+        xlink:href="http://openwetware.org/index.php?title=Registry_of_Standard_Biological_Models/Basic_Component_Models/...&action=raw">
+      
+      <component component_ref="Protein" name="Protein"/>
+</import>
+
+<import xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="http://openwetware.org/index.php?title=Registry_of_Standard_Biological_Models/Basic_Component_Models/...&action=raw">
+
+      <component component_ref="promoter-RBS_constitutive" name="promoter-RBS_constitutive"/>
+</import>
+
+<import xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="http://openwetware.org/index.php?title=Registry_of_Standard_Biological_Models/Basic_Component_Models/...&action=raw">
+
+      <component component_ref="Plasmid" name="Plasmid"/>
+</import>
+
+<import xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="http://openwetware.org/index.php?title=Registry_of_Standard_Biological_Models/Basic_Component_Models/...&action=raw">
+
+      <units name="moles_per_second" units_ref="moles_per_second"/>
+      <units name="per_second" units_ref="per_second"/>
+</import>
+
+
+<group>
+
+<relationship_ref name="protein-generator" relationship="encapsulation"/> 
+    <component_ref component="protein-generator"> 
+       <component_ref component="promoter-RBS_constitutive"/> 
+       <component_ref component="Protein"/>
+       <component_ref component="Plasmid"/>
+    </component_ref> 
+
+</group> 
+
+
+
+<component name="protein-generator">
+      <variable name="time"                 public_interface="in"  private_interface="out" units="second"/>
+      <variable name="proteinConcentration" public_interface="out" private_interface="in" units="second"/>
+</component>
+
+
+<connection>
+	<map_components component_1="Plasmid"   component_2="promoter-RBS_constitutive"/>
+	<map_variables  variable_1="nbGeneCopiesOut"                variable_2="nbGeneCopiesIn"/>
+</connection>
+
+<connection>
+	<map_components component_1="promoter-RBS_constitutive"   component_2="Protein"/>
+	<map_variables  variable_1="RiPSOut"                variable_2="RiPSIn"/>
+</connection>
+
+<connection>
+       <map_components component_1="Protein"  component_2="protein-generator"/>
+       <map_variables variable_1="time"       variable_2="time"/>
+</connection>
+
+<connection>
+       <map_components component_1="Protein"            component_2="protein-generator"/>
+       <map_variables variable_1="proteinConcentration" variable_2="proteinConcentration"/>
+</connection>
+
+</model>
+</syntax>
+
+
+==Comments==
+*No too sure how to connect the components together following the import
+*Do I have to declare all the variables I need to use from the imported components ?
+*How do I 'trigger' the dynamic behaviour of the sub-components ?

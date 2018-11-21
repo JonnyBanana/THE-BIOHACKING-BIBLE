@@ -1,0 +1,40 @@
+==Current Status==
+
+Three screening plasmids are currently being maintained and characterized.
+
+I13534:<br>
+Pbad <font style="background-color: #73FC64">GFP</font> MCS <font style="background-color: #DB2929">RFP</font> Term
+
+I13537, I13538:<br>
+Pbad <font style="background-color: #73FC64">GFP</font> Term Pbad MCS <font style="background-color: #DB2929">RFP</font> Term
+
+In each plasmid, the multiple cloning (BioBrick) site is flanked by RNAseE sites upstream and downstream. The mRFP1 transcript has a hairpin just downstream of the RNAseE cut site (protecting against further RNAse degredation).
+
+All plasmids were constructed at high copy (1A2/1A3). I13534 has been moved to a lower copy (4A3) plasmid. On the low copy plasmid, the RFP signal is too low to effectively measure on the benchtop FACS machines. The MoFlo at the Cancer Center can make these measurements, but scheduling is difficult.
+
+All experimental work is conducted using strain CW2553 carrying plasmid pJat8 (a gift from the Keasling Lab). This strain appears to be <math>\lambda^+</math> lacI<sup>+</sup>.
+
+==Future Work==
+*Pick one plasmid
+**Maintaining all three plasmids is difficult, tripling the work necessary to characterize any part.
+*Find (or construct) a better standard strain.
+**cI, cII, and LacI inverters do not appear to function in CW2553, eliminating many of our most popular parts.
+***Turns out cI was constructed, but never tested - should be verified that this (Q04510) does not function.
+**Some evidence suggests that a better transporter could provide more uniform expression<cite>morgan-kiss</cite>
+**CW2553 has background kan resistance, preventing us from using Kan plasmids such as [http://parts.mit.edu/r/parts/partsdb/view.cgi?part_id=4584 pSB2K3]
+*Measure fluorescence better
+**mRFP1 is poorly excited using our available machines.
+**Either change fluorophores<cite>shaner</cite> or change machines.
+***Changing fluorophores is probably more reasonable. We have BioBricked copies of mCherry, and a few others. Changing machines requires waiting for MIT to buy a new machine (if there are benchtop machines which can effectively excite mRFP1).
+***We have seen that GFP bleeds into the "RFP" channel, which cannot be solved by changing the red fluor. We have developed strategies for coping with this effect, but it may be helpful to change fluors entirely.
+*Switch to a chemostat
+**Our models require that the cells reach steady state, where dilution due to cell division balances production of the fluors. Using batch cultures is much simpler than chemostats, but only approximates steady state.
+***Cells grow at different rates depending on the load placed on the cell. Different parts, or different inductions of the same part, all have different growth rates. Ensuring that cultures stay in log phase for the entire course of an experiment is difficult. 
+**Additionally, our models require that we either control or measure the growth rate (which affects the dilution rate). Doing this in a chemostat would be much simpler than in batch culture. Alternately, we could work on pads, though the lab currently has no expertise in this area.
+***It is likely that we will need more than one 'standard' growth rates (since the growth rate can vary widely between cultures). A chemostat would allow us to set a small number of standard growth rates and account for the differences.
+
+==References==
+<biblio>
+#morgan-kiss pmid=12032290
+#shaner pmid=16299475
+</biblio>

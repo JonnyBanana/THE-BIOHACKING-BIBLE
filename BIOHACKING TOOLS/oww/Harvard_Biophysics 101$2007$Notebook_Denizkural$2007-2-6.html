@@ -1,0 +1,199 @@
+'''Assignment due February 6'''
+
+Here is the code for my assignment:
+
+<pre>
+#!/usr/bin/env python
+
+from Bio import GenBank, Seq
+from Bio.Seq import translate
+
+# We can create a GenBank object that will parse a raw record
+# This facilitates extracting specific information from the sequences
+record_parser = GenBank.FeatureParser()
+
+# NCBIDictionary is an interface to Genbank
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+
+# If you pass NCBIDictionary a GenBank id, it will download that record
+parsed_record = ncbi_dict['124484046']
+
+print "GenBank id:", parsed_record.id
+
+# Extract the sequence from the parsed_record
+s = parsed_record.seq.tostring()
+print "total sequence length:", len(s)
+
+max_repeat = 9
+
+# Translate the sequence into a protein
+my_protein = translate(s)
+
+print "protein length:", len(my_protein) 
+print 'protein translation is: \n%s' %my_protein
+
+print "\nmethod 1"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\nmethod 2"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+
+print "\nNow we would like to print raw records:"
+
+# Create new dictionary without parser
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank')
+gb_record = ncbi_dict['124484046']
+
+print '\n%s' %gb_record
+</pre>
+
+And here is the output:
+
+<pre>
+GenBank id: AM491363.1
+total sequence length: 1496
+protein length: 498
+protein translation is: 
+PSMAFRVHSRNGKSYTFLISSDYERAEWRENIREQQKKCFRSFSLTSVELQMPTNSC
+VKLQTVHSIPLTINKEDDESPGLYGFLNVIVHSATGFKQSSNLYCTLEVDSFGYFVN
+KAKTRVYRDTAEPNWNEEFEIELEGSQTLRILCYEKCYNKTKIPKEDGESTDRLMGK
+GQVQLDPQALQDRDWQRTVIAMNGIEVKLSVKFNSREFSLKRMPSRKQTGVLGVKIA
+VVTKRERSKVPYIVRQCVEEIERRGMEEVGIYRVSGVATDIQALKAAFDVKALQRPV
+ASDFEPQGLSEAARWNSKENLLAGPSENDPNLFVALYDFVASGDNTLSITKGEKLRV
+LGYNHNGEWCEAQTKNGQGWVPSNYITPVNSLEKHSWYHGPVSRNAAEHLLSSGING
+SFLVRESESSPGQRSISLRYEGRVYHYRINTASDGKLYVSSESRFNTLAELVHHHST
+VADGLITTLHYPAPKRNKPSVYGVSPNYDKWEMERTDITMKH
+
+method 1
+T 290
+TT 39
+TTT 9
+TTTT 3
+TTTTT 0
+TTTTTT 0
+TTTTTTT 0
+TTTTTTTT 0
+TTTTTTTTT 0
+
+method 2
+T 290
+TT 48
+TTT 12
+TTTT 3
+TTTTT 0
+TTTTTT 0
+TTTTTTT 0
+TTTTTTTT 0
+TTTTTTTTT 0
+
+Now we would like to print raw records:
+
+LOCUS       AM491363                1496 bp    mRNA    linear   PRI 13-FEB-2007
+DEFINITION  Homo sapiens partial mRNA for bcr-abl1 e19a2 chimeric protein.
+ACCESSION   AM491363
+VERSION     AM491363.1  GI:124484046
+KEYWORDS    bcr-abl1 e19a2 chimeric protein; BCR-ABL1 gene.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1
+  AUTHORS   Burmeister,T. and Reinhardt,R.
+  TITLE     A multiplex PCR for improved detection of all known BCR-ABL fusion
+            transcripts
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 1496)
+  AUTHORS   Burmeister,T.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (02-FEB-2007) Burmeister T., Medizinische Klinik III,
+            Charite Universitaetsmedizin Berlin, CBF, Hindenburgdamm 30, 12200
+            Berlin, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1496
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /cell_type="leukocyte"
+                     /note="fusion of BCR exon 19 and ABL1 exon 2"
+     source          1..835
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /map="22q11"
+     source          836..1496
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /map="9q34"
+     gene            <1..>1496
+                     /gene="BCR-ABL1 e19a2"
+     CDS             <1..>1496
+                     /gene="BCR-ABL1 e19a2"
+                     /function="tyrosine kinase, oncogene"
+                     /codon_start=1
+                     /product="bcr-abl1 e19a2 chimeric protein"
+                     /protein_id="CAM33013.1"
+                     /db_xref="GI:124484047"
+                     /translation="PSMAFRVHSRNGKSYTFLISSDYERAEWRENIREQQKKCFRSFS
+                     LTSVELQMPTNSCVKLQTVHSIPLTINKEDDESPGLYGFLNVIVHSATGFKQSSNLYC
+                     TLEVDSFGYFVNKAKTRVYRDTAEPNWNEEFEIELEGSQTLRILCYEKCYNKTKIPKE
+                     DGESTDRLMGKGQVQLDPQALQDRDWQRTVIAMNGIEVKLSVKFNSREFSLKRMPSRK
+                     QTGVLGVKIAVVTKRERSKVPYIVRQCVEEIERRGMEEVGIYRVSGVATDIQALKAAF
+                     DVKALQRPVASDFEPQGLSEAARWNSKENLLAGPSENDPNLFVALYDFVASGDNTLSI
+                     TKGEKLRVLGYNHNGEWCEAQTKNGQGWVPSNYITPVNSLEKHSWYHGPVSRNAAEHL
+                     LSSGINGSFLVRESESSPGQRSISLRYEGRVYHYRINTASDGKLYVSSESRFNTLAEL
+                     VHHHSTVADGLITTLHYPAPKRNKPSVYGVSPNYDKWEMERTDITMKH"
+     variation       158
+                     /gene="BCR-ABL1 e19a2"
+                     /note="T->C"
+                     /replace="t"
+     variation       667
+                     /gene="BCR-ABL1 e19a2"
+                     /note="C->T"
+                     /replace="c"
+     variation       1171
+                     /gene="BCR-ABL1 e19a2"
+                     /note="T->C"
+                     /replace="t"
+     variation       1426
+                     /gene="BCR-ABL1 e19a2"
+                     /note="A->T"
+                     /replace="a"
+ORIGIN      
+        1 cccagcatgg ccttcagggt gcacagccgc aacggcaaga gttacacgtt cctgatctcc
+       61 tctgactatg agcgtgcaga gtggagggag aacatccggg agcagcagaa gaagtgtttc
+      121 agaagcttct ccctgacatc cgtggagctg cagatgccga ccaactcgtg tgtgaaactc
+      181 cagactgtcc acagcattcc gctgaccatc aataaggaag atgatgagtc tccggggctc
+      241 tatgggtttc tgaatgtcat cgtccactca gccactggat ttaagcagag ttcaaatctg
+      301 tactgcaccc tggaggtgga ttcctttggg tattttgtga ataaagcaaa gacgcgcgtc
+      361 tacagggaca cagctgagcc aaactggaac gaggaatttg agatagagct ggagggctcc
+      421 cagaccctga ggatactgtg ctatgaaaag tgttacaaca agacgaagat ccccaaggag
+      481 gacggcgaga gcacggacag actcatgggg aagggccagg tccagctgga cccgcaggcc
+      541 ctgcaggaca gagactggca gcgcaccgtc atcgccatga atgggatcga agtaaagctc
+      601 tcggtcaagt tcaacagcag ggagttcagc ttgaagagga tgccgtcccg aaaacagaca
+      661 ggggtcctcg gagtcaagat tgctgtggtc accaagagag agaggtccaa ggtgccctac
+      721 atcgtgcgcc agtgcgtgga ggagatcgag cgccgaggca tggaggaggt gggcatctac
+      781 cgcgtgtccg gtgtggccac ggacatccag gcactgaagg cagccttcga cgtcaaagcc
+      841 cttcagcggc cagtagcatc tgactttgag cctcagggtc tgagtgaagc cgctcgttgg
+      901 aactccaagg aaaaccttct cgctggaccc agtgaaaatg accccaacct tttcgttgca
+      961 ctgtatgatt ttgtggccag tggagataac actctaagca taactaaagg tgaaaagctc
+     1021 cgggtcttag gctataatca caatggggaa tggtgtgaag cccaaaccaa aaatggccaa
+     1081 ggctgggtcc caagcaacta catcacgcca gtcaacagtc tggagaaaca ctcctggtac
+     1141 catgggcctg tgtcccgcaa tgccgctgag catctgctga gcagcgggat caatggcagc
+     1201 ttcttggtgc gtgagagtga gagcagtcct ggccagaggt ccatctcgct gagatacgaa
+     1261 gggagggtgt accattacag gatcaacact gcttctgatg gcaagctcta cgtctcctcc
+     1321 gagagccgct tcaacaccct ggccgagttg gttcatcatc attcaacggt ggccgacggg
+     1381 ctcatcacca cgctccatta tccagcccca aagcgcaaca agccctctgt ctatggtgtg
+     1441 tcccccaact acgacaagtg ggagatggaa cgcacggaca tcaccatgaa gcacaa
+//
+</pre>

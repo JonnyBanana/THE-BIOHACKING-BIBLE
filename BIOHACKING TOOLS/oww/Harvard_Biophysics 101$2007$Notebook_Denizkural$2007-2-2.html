@@ -1,0 +1,49 @@
+I would like to share my experiences on installing python and biopython on Ubuntu-Edgy Eft - it was relatively straightforward but not entirely obvious. If you have naively installed the python-biopython package with the correct dependencies like I did and received errors from GenBank, read the following to avoid wasting time:
+
+==Installing/maintaining packages on Ubuntu==
+First of all, this is not meant to replace the extensive online documentation Ubuntu has. Before doing anything, go to System->Administration->Software Sources and make sure you select all the sources you will need. You can either use Synaptic Package Manager or use the command-line. Synaptic is fairly self-obvious. You usually need some kind of root access to manage packages. I recommend doing your updates/upgrades regularly - this will make sure you maintain an up-to-date list of available package, and upgrade packages when they get updated:
+
+   sudo aptitude update
+   sudo aptitude upgrade
+
+To install/upgrade a package:
+
+   sudo aptitude install [package]
+   sudo aptitude upgrade [package]
+   
+   ''to give an example:''
+   sudo aptitude install gcc
+
+==Installing Biopython==
+Note that the following ara package names and you can just plug those names to the above. Most Ubuntu installations already come with the following but make sure you have them:
+
+* python (2.3 or higher)
+* gcc (or any other 
+
+Make sure you install or update the following packages:
+
+* python-dev
+* python-egenix-mxtexttools
+* libc6-dev
+* python-numeric
+* python-numeric-ext
+
+And then install biopython:
+
+* python-biopython
+
+In theory we should be all set, but the problem is that this package is not made from the latest version of biopython we want to install it nonetheless to get the dependencies right.  Download the latest stable release from the biopython website, currently residing at http://biopython.org/DIST/biopython-1.42.tar.gz and untar this file into a directory:
+
+   tar xzvf biopython-1.42.tar.gz
+   cd biopython-1.42
+
+
+You can alternatively do this just using the GUI, clicking etc. Now, from that directory, run the following commands:
+
+   sudo python setup.py build
+   sudo python setup.py install
+
+
+Note that on the README it asks you to run test as well. I did and it seems to not progress after the 3rd test, and for now I haven't seen any harm in skipping the tests. I will report on this more later. You're all set, save any script to a file (usually with a .py extention but this is not strictly necessary) and run it using the following:
+
+   python example.py

@@ -1,0 +1,325 @@
+= Analysis of Reporters in Application Design =
+
+
+==Introduction==
+Reporters genes are primarily used in molecular biological research for monitoring gene expression, as well as protein localization studies. While the ultimate goal of the molecular biologist is to elucidate intracellular events, this is not always the case for synthetic biology. This analysis of the common reporters available to molecular biology is an attempt to re-think the way we define a reporter's feasibility in accordance to its physical characteristics, and perhaps find the most suitable reporter gene for our applications.
+
+== Fluorescent Reporters ==
+
+=== GFP (Green Fluorescent Protein) ===
+* Gene name: ''gfp''
+* Organism: ''Aequorea victoria'', ''Aequorea coerulescens''
+* Gene sequence: 5170 bp, [http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nuccore&id=155662 GenBank]
+* Availability in Registry: [http://parts.mit.edu/registry/index.php/Part:BBa_E0040 BBa_E0040] as GFP mut3b (derived from wt GFP)
+
+'''Characteristics'''<br>
+{| style="background:#F5FAFF; border: 1px solid #aabadd; color:Black"
+|- style="background:#a4d4b0; color:Black" align="center"
+| style="background:#a4d4b0" | '''GFP Variants'''
+|| '''Sequence Comparison''' || '''Spectral Properties''' || '''Physical Properties''' || '''Detection Time''' || '''Maturation Time''' || '''Relative Fluorescent Intensity''' || '''Degradation (Half-Life)'''
+|- style="background:#d5e9d7" 
+| style="background:#a4d4b0" | ''wt GFP''
+|| N/A || 
+*Excitation Max: 395 (470)nm
+* Emission Max: 509 (540)nm 
+* Extinct Coeff.: 9,500 
+* Quantum Yield: 0.80
+<cite>GFP</cite>
+||  
+* ''pH Sensitivity'': 5.5-12, decreases btw. 5.5-4, drops sharply > 12.<cite>GFP</cite>
+* ''Thermostability'': 70&deg;C for matured proteins with possibility of re-naturation; assumed for all GFP variants.<cite>GFP</cite>
+* ''Temp Sensitivity'': Variable across different organisms.
+** For ''E. coli'', increased gene expression at 24&deg;C and 30&deg;C compared to 37&deg;C. <cite>GFP</cite>
+** For yeast, strongest gene expression at 15&deg;C, decreasing to 25% at 37&deg;C. <cite>GFP</cite>
+** For mammalian cells, stronger fluorescence at 30-33&deg;C than 37&deg;C. <cite>GFP</cite>
+* ''Protein Solubility'': Much is insoluble form; forms inclusion bodies.<cite>Andersen</cite>
+* ''Redox Stability'': Requires O<sub>s</sub> for oxidized state; assumed for all GFP variants.<cite>GFP</cite>
+|| ~1-2 h <cite>Andersen</cite> || 24 h <cite>GFP</cite> || 1-fold <cite>Andersen</cite> <br /> 1-fold excited under UV <cite>Andersen</cite> || 24 h ''in vivo'' <cite>GFP</cite>
+|- style="background:#d5e9d7" 
+| style="background:#a4d4b0" | ''GFP mut3b''
+|| S2R, S65G, S72A <br /> Optimized for bacteria <cite>Andersen</cite>|| 
+* Excitation Max: 501nm
+* Emission Max: 511nm <cite>Andersen</cite>
+||  
+* ''pH Sensitivity'': Not determined <br />
+* ''Protein Solubility'': Virtually all in soluble form.<cite>Andersen</cite>
+|| ~8 min <cite>Andersen</cite> || ?? || 21-fold <cite>Andersen</cite> <br /> 0.2-fold excited under UV <cite>Andersen</cite> || Est. > 24 h ''in vivo'' <cite>Valdivia</cite>
+|- style="background:#d5e9d7" 
+| style="background:#a4d4b0" | ''EGFP (GFP mut1)''
+|| F64L, S65T <br /> Optimized for mammalian cells <cite>Andersen</cite>|| 
+* Excitation Max: 484nm
+* Emission Max: 510nm
+* Extinct Coeff.: 23,000
+* Quantum Yield: 0.70 
+<cite>GFP</cite>
+||  
+* ''pH Sensitivity'': 7-11.5, decreases btw. 7-4.5, drops sharply > 11.5 <cite>GFP</cite>
+* ''Temp Sensitivity'': Little difference in fluorescence at 25&deg;C or 37&deg;C. <cite>GFP</cite>
+* ''Protein Solubility'': 90% in soluble form; forms inclusion bodies<cite>Andersen</cite>
+|| ~8 min <cite>Andersen</cite> || 8-12 h <cite>AcGFP1</cite> || 35-fold <cite>Andersen</cite> <br /> 0.8-fold excited under UV <cite>Andersen</cite> || Est. > 24 h ''in vivo''<cite>Valdivia</cite>
+|- style="background:#d5e9d7"
+| style="background:#a4d4b0" | ''AcGFP1''
+|| 94% a/a homology <br /> Optimized for mammalian cells <cite>AcGFP1</cite> || 
+* Excitation Max: 475nm 
+* Emission Max: 505nm 
+* Extinct Coeff.: 32,500
+*  Quantum Yield: 0.82 <cite>AcGFP1</cite>
+||  
+* ''pH Sensitivity'': Not determined <br />
+* ''Protein Solubility'': True green monomer; presumed soluble <cite>AcGFP1</cite> <br />
+|| ?? || 8-12 h <cite>AcGFP1</cite> || Comparable to EGFP <cite>AcGFP1</cite> || Not determined yet <cite>AcGFP1</cite> ||
+|}
+<br>
+'''Advantages'''<br>
+* Major advantages in monitoring gene expression in single cells as compared to luciferase and &beta;-galactosidase, eg. repeated readings under fluorometric assay.
+* Fixation and sampling preparation techniques not necessary.
+* Well-characterized and readily available in Registry.
+
+'''Disadvantages'''<br>
+* Nonlinearity of fluorescent signals that can be partially solved with calibration curve.
+* Variability in temperature sensitivity. Non-linear dynamics wrt. temperature.
+* Signal cannot be amplified in a controlled manner, ie. based on promoter strength.
+* Long maturation time.
+* Photobleaching.
+
+'''Conclusion'''<br>
+* Several restrictions observed for the GFP reporter means it is not superior per se to other reporter assays in terms of quantitative measurement of gene expression.
+* It is however an excellent candidate as an all-or-none expression assay; except for the requirement of a dark room with UV scanning devices.
+
+'''References'''<br>
+<biblio>
+#Andersen pmid=9603842
+#Valdivia pmid=8707053
+#AcGFP1 [http://www.clontech.com/images/brochures/AcGFP1.pdf Clontech Living Colours AcGFP1 Fluorescent Protein Flyer]
+#GFP [http://www.clontech.com/images/pt/PT2040-1.pdf Clontech Living Colors Protocol and User Manual]
+#GFP1 pmid=9335045
+
+</biblio>
+
+<br clear="all">
+
+=== RFP (Red Fluorescent Protein) ===
+* Gene name: ''DsRed''
+* Organism: ''Discosoma sp.''
+* Gene sequence: [http://www.ebi.uniprot.org/entry/Q9U6Y8 SwissProt Q9U6Y8]
+* Availability in Registry: [http://parts.mit.edu/registry/index.php/Part:BBa_E1010 BBa_E1010] as mRFP1(True RFP monomer with restriction sites removed)
+
+'''Characteristics'''<br>
+{| style="background:#F5FAFF; border: 1px solid #aabadd; color:Black"
+|- style="background:#a4d4b0; color:Black" align="center"
+| style="background:#a4d4b0" | '''DsRed Variants'''
+|| '''Sequence Comparison''' || '''Spectral Properties''' || '''Physical Properties''' || '''Detection Half-Time''' || '''Maturation Time''' || '''Relative Fluorescent Intensity''' || '''Degradation (Half-Life)'''
+|- style="background:#d5e9d7" 
+| style="background:#a4d4b0" | ''DsRed1''
+|| Identical to wt except *2V insertion after Start codon || 
+* Excitation Max: 558 nm
+* Emission Max: 583 nm
+* Extinct Coeff.: 52,000 M<sup>-1</sup>cm<sup>-1</sup>
+* Quantum Yield: 0.68<br />
+|| 
+* ''pH Sensitivity'': 5.5-9.5, deviation from either end drastically reduces folding.
+* ''Thermostability'': ??
+* ''Protein Solubility'': Tetramer, tends to aggregate. 
+
+|| 11 h || > 24 h || 1-fold || ??
+|- style="background:#d5e9d7" 
+| style="background:#a4d4b0" | ''DsRed2''
+|| R2A, K5E, K9T, V105A, I161T, S197A  || 
+* Excitation Max: 561 nm
+* Emission Max: 587 nm
+* Extinct Coeff.: 43,800 M<sup>-1</sup>cm<sup>-1</sup>
+* Quantum Yield: 0.55 <br />
+|| 
+* ''pH Sensitivity'': Same as DsRed1
+* ''Thermostability'': ??
+* ''Protein Solubility'': Tetramer, less tendency to aggregate
+
+|| 6.5 h || 24 h || 0.68 || Est. longer than EGFP
+|- style="background:#d5e9d7" 
+| style="background:#a4d4b0" | ''DsRed-Express(T4)''
+|| R2A, K5E, N6D, T21S, H41T, N42Q, V44A, C117S, T217A ||
+* Excitation Max: 555 nm<br /> 
+* Emission Max: 586 nm
+* Extinct Coeff.: 30,300 M<sup>-1</sup>cm<sup>-1</sup>
+* Quantum Yield: 0.44 <br />
+|| 
+* ''pH Sensitivity'': Same as DsRed1
+* ''Thermostability'': 20-45&deg;C wrt. fluorescence levels
+* ''Protein Solubility'': Tetramer, less tendency to aggregate
+
+|| 0.71 h || 8-12 h || 0.38 || Est. 3 weeks in ''Xenopus'' embryos
+|- style="background:#d5e9d7" 
+| style="background:#a4d4b0" | ''DsRed Monomer (mRFP1)''
+|| 45 a/a substitutions + A28G, A76G, A349G, G337A to remove restriction sites ||
+* Excitation Max:584 nm
+* Emission Max: 607 nm
+* Extinct Coeff.: 44,000 M<sup>-1</sup>cm<sup>-1</sup>
+* Quantum Yield: 0.25 <br />
+|| 
+* ''pH Sensitivity'': Same as DsRed1
+* ''Thermostability'': ??
+* ''Protein Solubility'': Monomer; soluble
+|| < 1 h  || ~12 h || ~0.27 (30% less cf. DsRed-Express) || ??
+|}
+<br>
+'''Advantages'''<br>
+* More resistant to photobleaching than EGFP (although mRFP1 photobleaches 10x more than its variants and is comparable to EGFP).
+* Reasonable detection periods.
+* More resistant to degradation.
+
+'''Disadvantages'''<br>
+* Generally more prone to aggregate due to multimeric structures.
+* Slower maturation time compared to GFP.
+
+'''Conclusion'''<br>
+* Not recommended for fusion tagging, except mRFP1.
+* Better indicator for quantitative monitoring of gene expression cf. GFP.
+
+'''References'''<br>
+<biblio>
+# Campbell pmid=12060735
+# clontech-red [http://www.clontech.com/images/pt/PT3404-1.pdf Living Colors Volume II: Reef Coral Fluorescent Proteins]
+# bevis pmid=11753367
+</biblio>
+
+<br clear="all">
+
+===Yellow Fluorescent Protein===
+*Gene name: ''yfp''
+*Part: [http://parts.mit.edu/registry/index.php/Part:BBa_E0030 BBa_E0030]
+*'''Description''': Fluorescent protein which can be excited under 529 nm, releasing emission at 539 nm that is detected as yellow light.
+*Response Time: ~8 hours
+*Steady State Time: ???
+*Concentration sensitivity: Moderate
+*Advantages:
+**Gives off a true yellow emission, allows colour variation
+*Disadvantages:
+**Less intense than other fluorescent molecules
+
+<br clear="all">
+
+== Bioluminescent Reporters ==
+
+These reporters code for an enzyme which cleaves an added substrate, giving off light which is observed as luminescence.<br>
+'''''Advantages''''':
+*More sensitive than other spectroscopy reporters, since there is often neglectable background bioluminescence (not naturally found in cells).
+*Relatively fast response
+'''''Disadvantages''''':
+*Generally metabolically stressing, since key metabolic compounds are required in the generation of light.
+*Usually requires the addition of substrates to be oxidized, which can limit the luminescence signal.
+
+===Firefly luciferase===
+*Gene name: ''lucff''
+*Gene sequence: 1781 bp, [http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nuccore&id=9526 GenBank]
+*'''Description''': Oxidizes luciferin with the help of oxygen, releases light as a product of oxidation.
+*Enzyme: [http://www.expasy.org/enzyme/1.13.12.7 EC 1.13.12.7]
+*Reaction: Photinus luciferin + O<sub>2</sub> + ATP <=> oxidized Photinus luciferin + CO<sub>2</sub> + AMP + diphosphate + light
+*Response Time: ~30 minutes
+*Steady State Time: 4 hours
+*Concentration sensitivity: Moderate
+*Advantages:
+**Fast response
+**Can be initiated by addition of luciferin
+*Disadvantages:
+**Metabolic stress, ATP is consumed
+**Substrate limiting
+
+===Bacterial luciferase===
+*Gene name: ''luxCDABE''
+*'''Description''': 5 subunit protein which oxidizes FMN with the help of oxygen to generate FMN and H<sub>2</sub> complex.  This complex breaks down to form light.
+*Enzyme: [http://www.expasy.org/enzyme/1.14.14.3 EC 1.14.14.3]
+*Reaction: RCHO + reduced FMN + O<sub>2</sub> <=> RCOOH + FMN + H<sub>2</sub>O + light
+*Response Time: ~30 minutes
+*Steady State Time: 8 hours
+*Concentration sensitivity: Moderate
+*Advantages:
+**Fast response
+**Can be initiated by addition of substrate
+*Disadvantages:
+**Five subunits required
+**Metabolic stress, FMN is consumed
+**Substrate limiting
+Questions: What substrate does this need?
+
+===Renilla luciferase===
+*Gene name: ''luci''
+*Part: [http://parts.mit.edu/registry/index.php/Part:BBa_J52008 BBa_J52008]
+*'''Description''': Requires renilla luciferin, which is oxidized by oxygen to genrate light. The only luciferase part in the registry.
+*Enzyme: [http://www.expasy.org/enzyme/1.13.12.5 EC 1.13.12.5]
+*Reaction: Renilla luciferin + O<sub>2</sub> <=> oxidized Renilla luciferin + CO<sub>2</sub> + light
+*Response Time: ???
+*Steady State Time: ???
+*Concentration sensitivity: Moderate
+*Advantages:
+**Yields higher signal than firefly luciferase
+*Disadvantages:
+**Substrate limiting
+
+
+
+
+
+
+===Enzymic Reporters===
+These reporters code for a specific enzyme, which can metabolize an added substrate to give a chromophore.<br>
+'''''Advantages''''':
+*Usually colourmetric and visible under light
+*Generally fast expression times
+*Assay after expression allows for much higher concentration sensitivity
+'''''Disadvantages''''':
+*Requires the addition of extra substrates
+*Enzyme concentration is generally assayed after expression (sample is taken from cell culture and assayed)
+*Enzymes are generally already found in many strains of ''E. coli''
+
+====Alkaline Phosphatase====
+*Gene name: ''ppb''
+*Part: [http://parts.mit.edu/registry/index.php/Part:BBa_J61032 BBa_J61032]
+*'''Description''': Enzyme which functions optimally in alkaline environments (periplasm), breaks down para-nitrophenol phosphate to form compound which absorbs at 405 nm. Sometimes known as SEAP (secreted akaline phosphatase).
+*Enzyme: [http://www.expasy.org/enzyme/3.1.3.1 EC 3.1.3.1]
+*Reaction: Phosphate monoester + H<sub>2</sub>O <=> an alcohol + phosphate
+*Response Time: ??? (possibly within minutes)
+*Steady State Time: ???
+*Concentration sensitivity: High
+*Advantages:
+**High concentration sensitivity
+*Disadvantages:
+**Enzymatic reaction is slow
+
+====&beta;-D-Galactosidase====
+*Gene name: ''lacZ''
+*Part: [http://parts.mit.edu/registry/index.php/Part:BBa_E0033 BBa_E0033] Note: This part is special and works only when both fragments of ''lacZ'' are present.
+*'''Description''': &beta;-galactosidase cleaves a synthetic lactose homologue, o-nitrophenyl-&beta;-D-galactoside (ONPG) to give a yellow compound, o-nitrophenol, which has a peak absorbance at 420 nm.  Using [[Beta-Galactosidase_Assay_(A_better_Miller)| Miller's equation]], the amount of &beta;-galactosidase can be determined.<br>Alternatively, 5-bromo-4-chloro-3-indolyl- beta-D-galactopyranoside (X-gal) or variants (such as S-gal) can be also be cleaved into a coloured compound absorbing at 420 nm.
+*Enzyme: [http://www.expasy.org/enzyme/3.2.1.23 EC 3.2.1.23]
+*Reaction: o-nitrophenyl-&beta;-D-galactoside + H<sub>2</sub>O <=> galactose + o-nitrophenol 
+*Response Time: Within minutes
+*Steady State Time: 2-3 hours
+*Concentration sensitivity: Very high (with Miller)
+*Advantages:
+**Visible under white light, good for selection purposes
+**Very high concentration sensitivity
+**Enzyme reaction can be stopped during assay
+*Disadvantages:
+**Must use lacZ<sup>-</sup> strain of ''E. coli'' to prevent cross-talking
+**Requires cells to be killed to release enzymes for Miller's assay
+
+====&beta;-D-Glucuronidase====
+*Gene name: ''gus''
+*'''Description''': Acts similarly to &beta;-galactosidase, can hydrolyze 5-bromo-4-chloro-3-indolyl glucuronide (X-Gluc) into a coloured compound, which absorbs at ??? nm. Alternatively, 4-Methylumbelliferyl-β-D-glucuronide (MUG) can be hydrolyzed into a fluorescent compound, which absorbs at 390 nm and emits at 480 nm.
+*Enzyme: [http://www.expasy.org/enzyme/3.2.1.31 EC 3.2.1.31]
+*Reaction: A beta-D-glucuronoside + H<sub>2</sub>O <=> D-glucuronate + an alcohol
+*Response Time: ??? (possibly within minutes)
+*Steady State Time: ???
+*Concentration sensitivity: ???
+*Advantages:
+**Visible under white light
+*Disadvantages:
+**&beta;-glucuronidase naturally in ''E. coli'' might interfere with expression of recombinant gene
+
+===Other Possible Reporters===
+*Chloramphenicol Acetyltransferase (CAT)
+*Human Growth Hormone (hGH)
+
+==Detecting Reporters==
+*Spectrometric Assays
+*Enzyme Activity Assays
+*Immunology Assays

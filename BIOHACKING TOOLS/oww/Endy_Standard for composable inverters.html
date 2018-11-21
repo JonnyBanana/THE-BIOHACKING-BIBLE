@@ -1,0 +1,29 @@
+==Steps==
+#Set the PoPS_Low_min based on the detection level of GFP with a strong promoter. Should we use different reporters (lacZ and luciferase are more sensitive than GFP)?
+#Set the PoPS_High_min based on Reshma’s model (w/ elowitz GRF data providing the worst-case noise) given a desired reliability for X inverters in series and the PoPS_Low_min specified previously.
+#*how many in series?  Do we have enough play to have x => ∞?
+#Set the PoPS_High_max based on load limits.  These load limits will be determined by the kinetic parameters of the repressor proteins (e.g. how many molecules you need to get repression), the strength of the RBS (tunable, though within some limits), and the total demand that the cell can experience without effecting growth rate.
+#*What is the demand that the cell can tolerate before having a (>1%?) growth hit?
+#**In polymerase or nucleotides sequestered / sec?
+#**In ribosomes or AAs sequested / sec?
+#*what are the boundaries on using a strong RBS to amplify a weak PoPS signal?
+#*[[Endy:Standard for composable inverters/Repressor kinetics|what are the kinetic parameters for the natural repressor proteins]]?
+#Evaluate how much breathing room we have between PoPS_High_max and min.  If we have a lot of play that’s a good sign going forward, if not we could be in trouble.
+#Choose a target PoPS_High and PoPS_Low within the acceptable range from (1)-(4), and that hopefully matches the [[Endy:Standard for composable inverters/PoPS range of induction systems|range output by available induction systems]].  
+#*What is the PoPS_out range for F2620?  (really F2621 is the more important one).
+#Once we have these targets then we need to evaluate how amenable the repressors and their target promoters will be to tuning to meet the PoPS_High and PoPS_Low.
+#*e.g. what are the [[Endy:Standard for composable inverters/Promoter strengths|native promoter strengths]]?
+
+==Sub-pages==
+*[[Endy:Standard for composable inverters/Repressor kinetics]]
+*[[Endy:Standard for composable inverters/Promoter strengths]]
+*[[Endy:Standard for composable inverters/PoPS range of induction systems]]
+
+==Inverters in the Registry==
+*[http://parts.mit.edu/r/parts/partsdb/pgroup.cgi?pgroup=inverter full listing]
+*[[Endy:Screening plasmid/Inverter characterization]]
+==References==
+<biblio>
+#Weiss-2005 pmid=15738412
+#vanO-2005 pmid=15790857 
+</biblio>

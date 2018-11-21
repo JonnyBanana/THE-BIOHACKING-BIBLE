@@ -1,0 +1,104 @@
+==General information==
+
+===Stringent vs. relaxed replication===
+Plasmid replication control is usually controlled by balancing the levels of a positive and a negative regulator of replication.  For some plasmids (pMB1/colE1 replicons) the positive regulator is an RNA and in others (e.g. pSC101) it is a protein.  Plasmids with a protein positive regulator will not replicate in the abscence of protein production - ''stringent control'' (although not the same as the stringent response due to a shortage of loaded tRNAs).  Plasmids with an RNA positive regulator will continue to replicate in the  abscence of protein production.  This is termed ''relaxed control''.  High yields of plasmid may be obtained by halting protein production (via chloroamphenicol) when the culture reaches a high density and then continuing incubation for a number of hours.  This might be of practical relevance when prepping the 1 and 3 series of Synthetic Biology plasmids.--[[User:Bcanton|BC]] 19:05, 3 Sep 2005 (EDT)
+
+===Nomenclature===
+<biblio>
+#Novick-BacteriolRev-1976 pmid=1267736
+</biblio>
+
+==Common vectors==
+{|border="1"
+|-
+|Plasmid
+|Replicon
+|Copy number
+|-
+|pBR322<cite>Bolivar-Gene-1977</cite> and its derivatives
+|pMB1
+|15-20
+|-
+|pUC vectors
+|pMB1
+|500-700
+|-
+|pACYC and its derivatives
+|p15A<cite>Chang-JBacteriol-1978</cite>
+|10-12
+|-
+|pSC101 and its derivatives
+|pSC101<cite>Cohen-JBacteriol-1977</cite>
+|5
+|-
+|ColE1
+|ColE1<cite>Bazaral-J-Mol-Biol-1968,Hershfield-Proc-Natl-Acad-Sci-USA-1974</cite>
+|15-20
+|}
+
+==Replicon compatibility== 
+{| border="1" cellpadding="4" cellspacing="0" style="border:#c9c9c9 1px solid; margin: 1em 1em 1em 0; border-collapse: collapse; width:710px" <!-- This line here formats your table for you.  Change the code to change the formatting of your table.-->
+| align="center" style="background:#f0f0f0;"|'''Incompatibility group'''
+| align="center" style="background:#f0f0f0;"|'''Negative control element'''
+| align="center" style="background:#f0f0f0;"|'''Comment'''
+|-
+| colE1<cite>Bazaral-J-Mol-Biol-1968,Hershfield-Proc-Natl-Acad-Sci-USA-1974</cite>, pMB1
+| RNAI
+| controls processing of pre-RNAII into primer.  pUC is derived from pBR322 (a single mutation in the pBR322 Primer RNA and deletion of the rop gene) which is derived from a pMB1 replicon, and cannot co-reside with the colE1 incompatibility group.
+|-
+| IncFII, pT181
+| RNA
+| controls synthesis of RepA protein
+|-
+| P1, F, R6K, pSC101<cite>Cohen-JBacteriol-1977</cite>, p15A<cite>Chang-JBacteriol-1978</cite>
+| iterons
+| sequesters RepA protein
+|}
+
+Replication origins in different incompatibility groups are compatible.  Replication origins in the same incompatibility group are not.
+
+Some sets of vectors with compatible origins are available as a part of the  [http://www.emdbiosciences.com/html/NVG/DuetTable.html Novagen Duet system]. (from [[User:Tk | TK]])
+
+==Individual vector links==
+''Note: searching for cloning vector <insert vector name> when looking for vector sequences in NCBI Entrez Nucleotide search.  It helps to cut down on the number of hits.''
+
+*[http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&val=6691170 pUC19]
+*[http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&val=1817728 pBeloBAC11]
+*[http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&val=4878025 pBACe3.6]
+*[http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&val=9507713 F plasmid]
+*pSCANS [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=Nucleotide&cmd=Retrieve&list_uids=6689911&dopt=GenBank genbank] [http://genome.bnl.gov/Vectors/pscans.php vector info] [http://www.genome.bnl.gov/Protocols/pscans.shtml cookbook]
+*[http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&val=42704 pSC101 replication origin]
+
+==References==
+<biblio>
+#MolecularCloning isbn=0-87969-577-3
+#Anderson-Annu-Rev-Microbiol-1968 pmid=4879515
+// Discusses transferable drug resistance in ''Escherichia coli'' (i.e. plasmids with resistance markers)
+#Cohen-Proc-Natl-Acad-Sci-USA-1973a pmid=4576014
+// Discusses generation of plasmids by shearing DNA, their transformation and replication.
+#Cohen-Proc-Natl-Acad-Sci-USA-1973b pmid=4594039
+// Discusses use of vector to propagate other DNA fragments
+#Chang-JBacteriol-1978 pmid=149110
+// p15A origin
+#Cohen-JBacteriol-1977 pmid=334752
+// pSC101 origin
+#Bolivar-Gene-1977 pmid=344137
+// vector pBR322
+#Bazaral-J-Mol-Biol-1968 pmid=4939624
+//original discovery of ColE1 plasmid
+#Hershfield-Proc-Natl-Acad-Sci-USA-1974 pmid=4610576
+// use of ColEI as a vector
+</biblio>
+
+==External links==
+*[http://www.emdbiosciences.com/g.asp?f=NVG/pETtable.html Novagen pET vector table]
+**table with links to properties/sequences of pET vectors
+**note: slow to load
+
+==See also==
+*[[Bacterial artificial chromosomes]]
+*[[F plasmids]]
+*[[Synthetic Biology:Vectors | Synthetic Biology vectors]]
+*[[Vectors]]
+
+[[Category:Escherichia coli]] [[Category:DNA]]

@@ -1,0 +1,14 @@
+Notes from reinstalling the computer attached to the MJ Opticon and the Nanodrop: [[User:Austin|Austin]] 16:35, 8 Dec 2005 (EST)
+
+* Did fresh install of Windows XP SP2 (over original of Windows 2000). 
+* 'biolab' user created with limited privileges for normal use.
+* 'bioadmin' user has full privileges. Don't use unless you really know what you're doing. I don't want to have to reinstall the machine again. Ask [[User:Austin | Austin]] if you can't figure out the password.
+* The Nanodrop software just worked after reinstalling. However, to allow a limited user to run it:
+** Under Explorer->Tools->Folder Options->View, uncheck Use simple file sharing (last option)
+** Right click the C:\Nanodrop Data folder and add the biolab user and give it full write access so that it can write into the directory.
+* The newest Opticon Monitor software was downloaded and installed. The S/N and download key required for this is on the Opticon.
+** The Opticon was ''not'' detected properly.
+** The firmware could be updated to the newest version (currently 3.3G) so the serial connection worked (machine is connected through COM2)
+** The PCI card inside the computer led to a unknown device by Windows.
+** The card was discovered to be a NI 6035E card, with drivers from [http://www.ni.com/support/daq/versions_pci_pxi.htm NI]. The installation of the 8.0mx version allowed Windows to be happy with the PCI card but the software still didn't seem to recognize the Opticon. So the 7.4.1 (legacy) version was also installed alongside with the mx version. The Opticon was still not recognized. But then, after some jiggling of cables, the Opticon was recognized. It is not clear which version of the NI software is sufficient, but they are now both installed.
+* All install files for rebuilding this machine were stored in the c:\software directory.

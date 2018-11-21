@@ -1,0 +1,69 @@
+This is a wonderful package that is very hard to install. It allows you to generate webpages and images from
+a continuously running R process and serve them through Apache without the overhead of starting and stopping R.
+It is totally sweet and super hard to install.
+
+I needed many prerequisites. I installed the main RApache but it didn't tell me that I was missing
+the following packages:
+  openldap2-devel
+  gd-devel
+Next it didn't tell me that I needed to change some lines in RApache.c. It used some
+retired macros. Two times the following line appears:
+
+        APR_BRIGADE_FOREACH(bucket, MR_bbin) {
+
+and it should be replaced with the following three lines:
+        for(bucket = APR_BRIGADE_FIRST(MR_bbin);
+            bucket != APR_BRIGADE_SENTINEL(MR_bbin);
+            bucket = APR_BUCKET_NEXT(bucket)) {
+
+Next there are problems with getting Apache to recognize it. You can follow the directions of
+how to change httpd.config, but Apache still couldn't find some R libraries. By the way, did I mention
+that you need to recompile R with the shared-libs options so that libR.so exists?
+
+Anyway to get it to find those libraries you need to add the path to libR.so
+to /etc/ld.so.conf and run ldconfig. In my case the path I needed to add
+was /usr/local/lib64/R/lib/, and in general it should be $R_HOME/lib or something
+like that.
+
+By now the toy examples should work, but sometimes it
+seemed like I needed to stop and start the web server to get it
+recognize changes I made to the R code. This may have been my
+imagination, and sometimes the changes ''were'' recognized without
+restarting the server. In any case, this can be done with
+  sudo /usr/sbin/apache2ctl restart
+
+Next problem I tried to get RApache to serve R-generated
+images. This is lots of fun. You can try the toy example
+in the RApache guide, but actually you will first need to
+install the patch for GDD:
+* Download the patch from the RApache webpage
+* Download the source for GDD
+* Apply the patch using unix patch utility
+* R CMD INSTALL /path/to/GDD
+
+Next problem was that GDD didn't know anything about fonts. None of the
+fonts were coming up. The fix, according to GDD README, is to install
+ttmscorefont package. However, this doesn't exist for SuSE. Find 
+msttcorefonts-2.0-1.spec and instructions to install it. This packages
+requires another program called ttmkfdir to install, which
+of course I didn't have. So I had to get that. That one doesn't
+know how to find another package called freetype-1.1, which I
+had to find using rpm -q freetype -l | grep libttf.so and | grep freetype.h
+and modify its Makefile. Then I had to move the binary
+into /usr/bin/ttmkfdir where the msttcorefont expects
+to find it. Then rpmbuild -bb msttcorefont-2.0-1.spec
+still complains it isn't there, so I have to comment
+out the line in that file where it looks for ttmkfdir.
+Finally it finishes "building" these fonts, whatever
+that means,
+and you can
+install them into any directory, and finally you have to either
+modify $R_LIBS/library/GDD/fonts/baseline.fonts to point to that
+directory, or else move your TrueType fonts into 
+/usr/share/fonts/truetype/msttcorefonts/.
+
+Now finally everything worked. But it is really useful because now
+I can use R to generate images for my web pages on the fly, and it
+is really fast because the web server keeps an R process running
+in the background so there is (1) no time needed for starting up
+R and (2) no need to write images to disk.

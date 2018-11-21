@@ -1,0 +1,99 @@
+=Module 1, Day 3 For Next Time=
+
+==Transformation Math==
+First Transformation:<br>
+<math>
+10^9\ \frac{\mbox{colony forming units}}{\mu g} * \frac{1\ \mu g}{10^3\ ng} 
+* 10^{-3}\ \mbox{dilution} * 1\ ng = 10^3 \mbox{colonies}
+</math><br><br>
+
+Second Transformation:<br>
+<math>
+50\ \mbox{colonies} * \frac{\mu g}{10^9\ \mbox{colony forming units}} = 5 \times 10^{-8}\ \mu g
+</math><br>
+<math>
+\frac{5 \times 10^{-8}\ \mu g}{2\ \mu L} = 2.5 \times 10^{-8} \frac{\mu g}{\mu L}
+</math>
+
+==Control Interpretations==
+
+{|border=1px
+!Ligation !! No Colonies !! Thousands of Colonies
+|-
+!Positive Control
+| Bacteria not competent || Worked Well
+|-
+!bkb -ligase
+| bkb is linear || bkb was not digested
+|-
+!bkb +ligase
+| killcut worked|| killcut did not work
+|-
+!bkb + insert
+| insert recreated BamH1 site || insert was ligated into bkb
+|}
+
+==Diagnostic Digests==
+{| border="1"
+! Diagnostic digest 1
+| plasmid with insert
+| plasmid no insert
+|-
+| Enzyme(s) used 
+| BamH1 & XhoI
+| BamH1 & XhoI
+|-
+| Buffer used
+| 2
+| 2
+|-
+| Temperature
+| 37 C
+| 37 C
+|-
+| Predicted fragments		
+| 8701
+| 5702 & 2967
+|-
+| 
+|
+|
+|-
+! Diagnostic digest 2	 	
+| 
+|
+|-
+| Enzyme(s) used		
+| EcoRV & DraIII
+| EcoRV & DraIII
+|-
+| Buffer used		
+| 3
+| 3
+|-
+| Temperature		
+| 37 C
+| 37 C
+|-
+| Predicted fragments		
+| 3501, 2831, & 2337
+| 6332, & 2337
+|}
+
+==Phage Titer==
+===Collected Data===
+{|border=1px
+!Phage !! Quarter-Plate Count !! x4
+|-
+|E4 || 343 || 1327
+|-
+|M14|| 69 || 276
+|}
+===Analysis===
+E4 Titer:
+<math>1327\ \mbox{plaques} \div 10^{-6}\ \mbox{dilution} = 1.3 \times 10^9</math>
+<br><br>
+M13 Titer:
+<math>276\ \mbox{plaques} \div 10^{-6}\ \mbox{dilution} = 2.8 \times 10^8</math>
+<br><br>
+The E4 Titer was 4.6 times larger than the M13 Titer.  The extra glutamic acids on the E4 Phage may allow it to diffuse faster and therefore infect more bacteria.

@@ -1,0 +1,88 @@
+=Linking evolution of protein structures through fragments=
+
+'''Author(s): [http://www.stats.ox.ac.uk/~abeln Sanne Abeln], [http://www.stats.ox.ac.uk/~deane Charlotte M. Deane]'''<br> 
+'''Affiliations:''' University of Oxford  <br>
+'''Contact:'''email: abeln@stats.ox.ac.uk <br>
+'''Keywords:''' 'protein structure' 'evolution'  'fragments' 'completed genomes' 'networks'
+
+[[Category:BioSysBio Keywords Protein Structure]]
+[[Category:BioSysBio Keywords Structural Genomics]]
+[[Category:BioSysBio Keywords Fragment Library]]
+[[Category:BioSysBio Keywords Evolution]]
+[[Category:BioSysBio Keywords Networks]]
+
+<center>
+====Summary====
+<blockquote style="background: white; width: 800px;border: 1px solid rgb(154, 153, 153); padding: 1em;">
+Here we use a structural fragment library to investigate evolutionary links between protein folds. We show that 'older' folds have relatively more such links than 'younger' folds.
+</blockquote>
+</center>
+
+==Motivation==
+At present there is no universal understanding of how proteins can change topology during evolution, and how such pathways can be determined in a systematic way. <!-- Previously several mechanisms for topology evolution have been proposed, inculding ....... -->
+The ability to create links between fold topologies would have important consequences for structural classification, structure prediction and homology modeling. Several methods based on geometrical measures have been proposed to create links between topologies, e.g.  <cite>Taylor-2002 Friedberg-2005 </cite>.
+It has proven difficult, however, to show the evolutionary relevance of such links. Here we use our previously developped age measure for protein superfamilies <cite>Winstanley-2005 </cite> to investigate the relationship between structural fragments and protein structure evolution.
+
+==Results & Discussion==
+
+We used a set of pairwise fragments to create a network of structural links between superfamilies. In total 1.2e-8, 1.5e-7, 2.7e-6 and 1.1e-5 fragments were generated of lengths 10, 15, 20 and 30 respectively.
+
+When comparing the number of fragment-links that young and old superfamilies make with other superfamilies, it becomes clear that the distribution of younger folds is skewed towards fewer links (Figure 1). Similarly we can compare the number of links that each superfamily has with a set of young and a set of old superfamilies. Again most superfamilies share significantly fewer links with the group of young superfamilies (Figure 2).
+
+New proteins are thought to be created through duplication and point mutations of structural domains. Here we show (the first) evidence that this might also occur on a scale below the domain level: fragments are shared more often with older superfamilies, which is expected in a model where new topologies can be built through an assembly of, or multiple insertions of, fragments from existing proteins. 
+
+A little care has to be taken here as these results could also be caused by a scenario of convergent evolution, which would drive the inclusion of more stable fragments. However, the differences between age groups become stronger, with increased fragment length (Figure 2). When increasing the fragment length the probability of convergence should decrease contradicting the above argument.
+
+These results have important implications for structure prediction, as it may explain why current 'fragment based' modelling approaches are so successful.
+ 
+[[Image:hist.jpg|thumb|400px|left|Figure 1: Density chart showing the distribution of links between superfamilies based on fragment-pairs  of length 30. The distributions for 'young' and 'old' superfamilies are shown separately, with younger fold having significantly fewer links (Wilcoxon unpaired test: p-value = 1.2e-09). Note that the distribution of links per superfamily is not normally distributed.]]
+[[Image:wilcox.jpg|thumb|400px|left|Figure 2: Fragment length versus W score of Wilcoxon's signed-rank test. Wilcoxon singed-rank tests was performed on data for each fragment length: for each superfamily the number of links it makes with a set of young superfamilies and a set of old superfamilies is compared. The values are normalised for the size of the age groups. Since the number of compared superfamilies in each test set are identical, the W scores can be compared directly.]]
+<br style="clear:both;"/>
+
+<!-- this correlation becomes stronger when we use larger fragment lengths in our test set (Figure 2), possibly indicating stronger evolutionary links.
+Structural similarity has long been linked with evolutionary relatedness, but is as a sole measure not satisfactory to establish an evolutionary link between two proteins, due to the possibility of convergent evolution of structures or topologies. With these results we show that the age of a superfamily can divide the abundancy of fragment based structural similarity in two different distributions. 
+, in which case the probabibility of convergence should decrease.
+-->
+
+<!-- Figure 2 shows that the difference in links becomes stronger when we consider larger fragment lengths., show figure with links between set of old folds and new folds, need brief discussion of evolutionary model -->
+
+==Methods==
+==== Fragments ====
+
+The fragment library generated for this study, contains fragment-pairs of length 10, 15, 20 and 30, with a maximum allowed gap-lengths of 2, 3, 4 and 6 respectively. All fragments are based on pairwise comparisons between structural domain as defined by SCOP. The pairs are scored for similarity purely on structural grounds, using the coordinates of the c-alpha atoms. This is to avoid bias, based on sequence similarity. <!--This is in order to avoid dependencies between fragments and age estimates, which are generated through fold recognition techniques using sequence similarity.-->
+
+All possible pairwise fragments between two domains of the given lengths are first screened and aligned using a method similar to the pre-filter used by MAMMOTH <cite>Ortiz-2002</cite>. Each fragment pair with an alignment score above a threshold is then superimposed giving the c-alpha RMSD score for the fragment pair.
+
+==== Age estimates ====
+
+Age estimates for protein folds or superfamilies are generated using fold recognition of structural domains on a set of completed genomes. The occurrence patterns of such predictions, are analysed with a parsimony algorithm to estimate an age for a superfamily, for more details see <cite>Winstanley-2005</cite>. 
+
+The age of a superfamily is based on a score between [0.0,1.0], with 1.0 indicating the superfamily was estimated to be present at the root of the species tree (oldest), and 0.0 estimating that the superfamily was created at the leaf level (youngest). Here an 'old' fold is defined as a fold with an age of 1.0, and a 'young' fold with an age < 0.5
+
+==== Linking Folds ====
+
+Some fragments might be over-represented (e.g. secondary structure is not considered) therefore the number of shared fragments needs to be normalised for the number of times a fragment occurs. Friedberg and Godzik (2005) used a superfamily based normalisation to overcome this problem <cite>Friedberg-2005</cite>. We use a similar approach, although the fragment-pairs in this study are based on structural similarity only. (whereas Friedberg and Godzik (2005) used a combination of sequence and structural similarity).  
+
+
+A link between two superfamilies (I and J) is established when <math> f(I,J) > 0.1</math>, which is calculated as:
+
+<math>	f(I,J) = \frac{Sim(I,J)}{min(Sim(A-I,I),Sim(A-J,J))} \mbox{ if }\ I \neq  J </math> 
+
+Here <math> Sim(A,B) </math> is the number of shared fragments between two set of domains (e.g. superfamilies), and A is the set of all domains. In this study we do not consider self-similarity of superfamilies. 
+
+
+<!-- in order not to bias the results for fold recognition techniques.-->
+
+<!-- <math>	f(I,J) = \begin{cases} \frac{Sim(I,J)}{min(Sim(I,A),Sim(J,A))} & \mbox{if }\ I \neq  J\\ 3n+1 & \mbox{if }\ I = J \end{cases}</math> -->
+
+==Conclusion==
+We show that younger folds have relatively fewer shared fragments with other folds, than old protein folds. This may indicate that evolutionary links above superfamily or fold level could be established, through such shared fragments.
+
+==References==
+<biblio>
+#Taylor-2002 pmid=11948354
+#Winstanley-2005 pmid=15961490
+#Ortiz-2002 pmid=12381844
+#Friedberg-2005 pmid=15980462
+</biblio>
+__NOTOC__

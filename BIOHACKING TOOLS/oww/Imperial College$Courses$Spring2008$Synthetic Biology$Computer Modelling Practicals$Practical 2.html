@@ -1,0 +1,294 @@
+{{Template:ImperialCollege Spring2008 SyntheticBiologyCourse ComputerModellingPractical‎}}
+<div style="padding: 10px; width: 720px; border: 5px solid #B3CD4E;">
+<div style="padding: 10px; width: 680px; border: 5px solid #B3CD4E; color: #2171B7; background-color: #FFFFFF">
+<font face="trebuchet ms" style="color:#2171B7" size="2">
+<div style="padding: 0px; width: 680px; color: #2171B7; background-color: #B3CD4E">
+<center><font face="trebuchet ms" style="color:#2171B7" size="5">
+'''Practical 2'''
+</font><br></center>
+</div>
+<div style="padding: 0px; width: 680px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">'''Objectives:'''</font><br>
+</div>
+
+* To explore computationally some simple genetic motifs:  
+** Constitutive gene expression.
+** Activated and Repressed gene expression.
+** Positive and Negative feedback gene expression.
+
+<div style="padding: 0px; width: 680px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">Deliverables</font><br>
+</div>
+
+* A [[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/Practical 2/Report |report]] is expected.
+* When you find in the text '''(illustration needed)''', it means that you will have to provide an image export of your simulation results in your report.
+
+* '''Instructors:'''[[User:Vincent Rouilly| Vincent Rouilly]], Geoff Baldwin.
+</font><br>
+</div>
+
+<div style="padding: 0px; width: 710px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">
+'''Part I: Constitutive Gene Expression '''
+</font><br>
+</div>
+
+
+In this section, we explore a computational model to describe a constitutively expressed gene. The model is based on a simple interpretation of the central dogma: '''Gene -(transcription)-> mRNA -(translation)-> Protein''', with both the mRNA molecules and the protein molecules being naturally degraded. If you need a quick refresh on the Central Dogma, look at the 'additional resources' section.
+
+The modelling parameters, used throughout this practical, will be characteristic of the E.Coli bacteria. 
+
+
+
+{| border="1"  cellpadding="10" cellspacing="2" style="width:700px; border:3px green"
+!Model
+!CellDesigner Instructions
+|-
+| 
+<center><math> Gene \rightarrow mRNA \rightarrow Protein </math></center>
+| 
+'''Define the topology of the reaction network''':
+* Download this [[Media:Constitutive_Gene_Expression_No_Kinetics.xml| File]], and Open it with CellDesigner.
+* This file contains the network topology describing a simple constitutively expressed gene model. No kinetics information is yet described.
+[[Image:CellDesigner Constitutive Gene Expression Network.png|300px|Constitutive Gene Expression]]
+|-
+| 
+Following the law of mass action, we can write: 
+<center><math>
+\begin{alignat}{1}
+\frac{d[mRNA]}{dt} & = k_{1} - d_{1}[mRNA] \\
+\frac{d[Protein]}{dt} & =  k_{2}[mRNA] - d_{2}[Protein] \\
+\end{alignat}
+</math></center>
+| 
+* <math>k_1</math> is the transcription rate. It is considered to be constant, and it represents the number of mRNA molecules produced per gene, and per unit of time.
+* <math>d_1</math> is the mRNA degradation rate of the mRNA molecule. The typical half-life for the mRNAs, in E.Coli, has been measured to be between 2min and 8min (average 5min).
+* <math>k_2</math> is the translation rate. It is considered to be constant, and it represents the number of protein molecules produced per mRNA molecule, and per unit of time.
+* <math>d_2</math> is the protein degradation rate. In this practical, we will only consider very stable proteins, i.e. not engaged in any active degradation pathways. In that case, we can approximate the degradation of the protein to be only due to the dilution effect caused by the cell division. Cell division will be 40min.
+|}
+
+'''Questions:'''
+* From the ODE system given, write down the steady-state expression of [mRNA] concentration and [Protein] concentration, with regards to <math> k_1, k_2, d_1, d_2</math>.
+* Knowing that average number of mRNA molecules per gene is 2.5 in E.Coli, what is the average transcription rate ?
+* Knowing that the average number of proteins per gene is 1000 in E.Coli, what is the average translation rate ?
+* In CellDesigner, define all the necessary kinetics laws for the model, and create all the appropriate parameters.
+* Run a simulation, and comment on the simulation outputs.
+* From a Synthetic Biology point of view, this motif can be seen as a 'Protein Generator'. One might be interested in controlling the protein level output of this device, at steady-state. Using the 'parameter scan' function, run a simple sensitivity analysis on each of the 4 parameters, within a 10% range of their default value. Describe how each parameter impacts the protein steady state.
+
+
+Next, we want to explore the quasi-steady-state assumption on the mRNA molecule expression. From the previous simulations, you might have noticed that the concentration of mRNA reaches steady-state very quickly, compared to the protein concentration. In that case, we want to explore a model where we would consider that the [mRNA] concentration is at steady state from the start, i.e. <math>\frac{d[mRNA]}{dt}=0</math>. This model means that we want to apply a quasi-steady-state assumption on the [mRNA] molecules.
+
+{| border="1"  cellpadding="10" cellspacing="2" style="width:700px; border:3px green"
+!Model
+!CellDesigner Instructions
+|-
+| 
+<center><math> Gene \rightarrow  Protein </math></center>
+| 
+* Within the same CellDesigner file, build a new network.
+* Create a network that will allow you to directly synthesis a Protein from a Gene.
+[[Image:CellDesigner QSS Constitutive Gene Expression Network.png|300px|Quasi-Steady-State Constitutive Gene Expression]]
+|-
+| 
+Following the law of mass action, we can write: 
+<center><math>
+\begin{alignat}{2}
+\frac{d[Protein]}{dt} =  s - d[Protein] \\
+\end{alignat}
+</math></center>
+| 
+* Create the appropriate parameters and reaction kinetics laws.
+|}
+
+
+'''Questions:'''
+* Taking into account the quasi-steady-state assumption on the [mRNA], work-out the value of 's', and 'd' with regards to <math> k_1, k_2, d_1, d_2 </math>.
+* Simulate the full model, along with the quasi-steady state approximation. When using the default parameters, comment on how good this approximation seems to be. Why such a model would be useful ?
+
+'''Additional Resources:'''
+* [http://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology Central Dogma in Molecular Biology (from Wikipedia)]
+* [http://en.wikipedia.org/wiki/Gene_expression Gene Expression (from Wikipedia)]
+* [http://redpoll.pharmacy.ualberta.ca/CCDB/cgi-bin/STAT_NEW.cgi E.Coli Statistics]
+
+
+
+<div style="padding: 0px; width: 710px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">
+'''Part II: Activated and Repressed Gene Expression
+</font><br>
+</div>
+
+
+
+Very few genes are known to have a purely constitutive expression, most genes have their expression controlled by some outside signals (DNA-binding proteins, Temperature, metabolites, RNA molecules ...). In this section, we will particularly focus on the study of DNA-binding proteins, called transcription factors. These proteins, when binding to a promoter region, can either have an activation effect on the gene (positive control), or a repression effect (negative control). In prokaryotes, control of transcriptional initiation is considered to be the major point of regulation.
+In this part of the tutorial, we investigate one of the most common model used to describe this type of interactions.
+
+
+Let's first consider the case of a transcription factor acting as a '''repressor'''. A repressor will bind to the DNA so that it prevents the initiation of transcription. Typically, we expect the transcription rate to decrease as the concentration of repressor increases. A very useful family of functions to describe this effect is the Hill function: 
+<math>f(R)=\frac{\beta.{K_m}^n}{{K_m}^n+R^n}</math>. 
+The Hill function can be derived from considering the transcription factor binding/unbinding to the promoter region to be at equilibrium (similar to the enzyme-substrate assumption in the Michaelis-Menten formula). 
+This function has 3 parameters: <math> \beta, n, K_m </math>:
+* <math>\beta</math> is the maximal expression rate when there is no repressor, i.e. <math>f(R=0)=\beta</math>.
+* K_m is the repression coefficient (units of concentration), it is equal to the concentration of repressor needed to repressed by 50% the overall expression, i.e <math>f(K_m)=\frac{\beta}{2}</math> 
+* <math>n</math> is the Hill Coefficient. It controls the steepness of the switch between no-repression to full-repression.
+
+
+{| border="1"  cellpadding="10" cellspacing="2" style="width:700px; border:3px green"
+!Model
+!CellDesigner Instructions
+|-
+| 
+<center><math>
+\begin{align}
+& Repressor \\
+& \bot \\
+Gene &\rightarrow mRNA \rightarrow Protein 
+\end{align}
+</math></center>
+| 
+'''Define the topology of the reaction network''':
+* From the previous constitutive expression model, create a new 'simple molecule' for the repressor.
+* Create an inhibitory link between the repressor, and the transcription reaction.
+* Save your file under a new name. 
+|-
+|
+Hill function for transcriptional repression:
+<center><math> 
+transcriptionRate=\frac{k_1.{K_m}^n}{{K_m}^n+R^n}
+</math></center>
+
+* <math>k_1</math>: maximal transcription rate
+* <math>K_m</math>: repression coefficient
+* <math>n</math>: Hill coefficient
+
+|
+[[Image:Repressed_Hill_Function.png|300px|Hill Function (Repressor)]]
+|-
+| 
+Following the law of mass action, we can write: 
+<center><math>
+\begin{alignat}{1}
+\frac{d[mRNA]}{dt} & = \frac{k_{1}.{K_m}^n}{{K_m}^n+R^n} - d_{1}[mRNA] \\
+\frac{d[Protein]}{dt} & =  k_{2}[mRNA] - d_{2}[Protein] \\
+\end{alignat}
+</math></center>
+| 
+[[Image:CellDesigner_Repressed_Gene_Expression_Network.png|300px|Repressed Gene Expression]]
+* Create all the necessary kinetics laws and parameters.
+* take K_m=100, n=2. k_1, k_2, d_1, d_2 as found previously.
+|}
+
+'''Questions:'''
+* Compute the transfer function between the repressor concentration and the steady-state protein concentration. 
+* Use the 'interactive simulation' feature to understand the effect of the parameters 'Km' and 'n'.
+* Imagine an application where this genetic circuit might be useful.
+* '''Bonus''': Derive the Hill Equation in the case of a single binding of the repressor on the promoter site. (use the Michaelis-Menten derivation to guide you)
+
+
+Now, let's consider the case of a transcription factor acting as an '''activator'''. An activator will bind to the DNA so that it promotes the initiation of transcription. Typically, we expect the transcription rate to increase as the concentration of activator increases. Once again, the Hill type function will be useful to describe the interaction effect. It is slightly different from the previous one: <math>f(R)=\frac{\beta.{A}^n}{{K_m}^n+A^n}</math>. 
+The Hill function can be derived from considering the transcription factor binding/unbinding on the promoter region to be at equilibrium (similar to the enzyme-substrate assumption in the Michaelis-Menten formula). 
+This function has 3 parameters: <math> \beta, n, K_m </math>:
+* <math>\beta</math> is the maximal expression rate when there is a lot of activators, i.e. <math>f(A \gg K_m)=\beta</math>.
+* K_m is the activation coefficient (units of concentration), it is equal to the concentration of activator needed to activate by 50% the overall expression, i.e <math>f(K_m)=\frac{\beta}{2}</math> 
+* <math>n</math> is the Hill Coefficient. It controls the steepness of the switch between no-repression to full-repression.
+
+
+{| border="1"  cellpadding="10" cellspacing="2" style="width:700px; border:3px green"
+!Model
+!CellDesigner Instructions
+|-
+| 
+<center><math> 
+\begin{align}
+& Activator \\
+& \downarrow \\
+Gene & \rightarrow mRNA \rightarrow Protein 
+\end{align}
+</math></center>
+| 
+'''Define the topology of the reaction network''':
+* From the previous constitutive expression model, create a new 'simple molecule' for the activator.
+* Create an catalytic reaction link between the repressor, and the transcription reaction.
+* Save your file under a new name. 
+|-
+|
+Hill function for transcriptional activation:
+<center><math> 
+transcriptionRate=\frac{k_1.{A}^n}{{K_m}^n+A^n}
+</math></center>
+
+* <math>k_1</math>: maximal transcription rate
+* <math>K_m</math>: activation coefficient
+* <math>n</math>: Hill coefficient
+
+|
+[[Image:Activated_Hill_Function.png|300px|Hill Function (Activator)]]
+* Create all the necessary kinetics laws and parameters.
+* take K_m=100, n=2. k_1, k_2, d_1, d_2 as found previously.
+|-
+| 
+Following the law of mass action, we can write: 
+<center><math>
+\begin{alignat}{1}
+\frac{d[mRNA]}{dt} & = \frac{k_{1}.A^n}{{K_m}^n+A^n} - d_{1}[mRNA] \\
+\frac{d[Protein]}{dt} & =  k_{2}[mRNA] - d_{2}[Protein] \\
+\end{alignat}
+</math></center>
+| 
+[[Image:CellDesigner_Activated_Gene_Expression_Network.png|300px|Activated Gene Expression]]
+|}
+
+* Compute the transfer function between the activator concentration and the steady-state protein concentration. 
+* Use the 'interactive simulation' feature to understand the effect of the parameters 'Km' and 'n'.
+* Imagine an application where this genetic circuit might be useful.
+* '''Bonus''': Derive the Hill Equation in the case of a single binding of the activator on the promoter site. (use the Michaelis-Menten derivation to guide you)
+
+
+'''Additional Resources''':
+* [http://en.wikipedia.org/wiki/Transcription_factor Transcriptional Factors (from Wikipedia)]
+* [http://math.jccc.net:8180/webMathematica/MSP/mmartin/hill Hill function simulator]
+* [http://en.wikipedia.org/wiki/Hill_function Hill Function (from Wikipedia)]
+* [http://books.google.co.uk/books?id=pAUdPQlCZ54C Book:"Introduction to Systems Biology", Uri Alon]
+
+
+<div style="padding: 0px; width: 710px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">
+'''Part III: Positive and Negative Feedbacks
+</font><br>
+</div>
+
+
+We have just seen that some genes can be controlled by DNA-binding proteins. This type of interactions will enable the construction of genetic networks, called transcription networks. One gene produces a protein, which then binds to one or more other genes, and control them (positively or negatively), and so on. During the practical 3, we will explore some of those circuits.
+
+At the same time, it has been observed that some genes can also regulate themselves (positively or negatively). When a gene is regulated by the very same protein it produces, the motif is called a feedback. It can be a positive feedback, or a negative, depending on the type of interaction there is between the protein and the promoter region. In this section, we will explore those 2 options. 
+
+{| border="1"  cellpadding="10" cellspacing="2" style="width:700px; border:3px green"
+!Model
+!CellDesigner Instructions
+|-
+| 
+* do not consider this graph ...
+<center><math> 
+\begin{align}
+Gene & \rightarrow mRNA \rightarrow Protein \\
+& \bot \\
+Gene & \rightarrow mRNA \rightarrow Protein \\
+& \downarrow \\
+Gene & \rightarrow mRNA \rightarrow Protein 
+\end{align}
+</math></center>
+* '''bonus''': make a nice latex graph :)
+| 
+* '''Define the topology of the reaction network''':
+[[Image:CellDesigner_FeedBack_Gene_Expression_Network.png|300px|Activated Gene Expression]] 
+* Create a new CellDesigner Project where you will build 3 independent genetic motif:
+** Constitutive expression
+** Negative feedback
+** Positive feedback
+* Save your file.
+|}
+
+'''Questions:'''
+* Provide the 3 ODE systems used to describe your 3 different motifs.
+* Update all the kinetics laws of your networks accordingly. Keep the default parameters previously used.(Advice: declare your parameters as 'global' so you will be able to re-use them in each model without always creating new ones.)
+* Compare the different models with regards to their protein steady-state level, and also with regards to how fast each model is reaching its steady-state.

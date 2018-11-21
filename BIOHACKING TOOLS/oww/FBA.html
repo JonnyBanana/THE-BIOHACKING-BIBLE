@@ -1,0 +1,52 @@
+=Flux Balance Analysis=
+FBA has been shown to be a very useful technique for analysis of metabolic capabilities of cellular systems. FBA involves carrying out a steady state analysis, using the stoichiometric matrix for the system in question. The system is assumed to be optimised with respect to functions such as maximisation of biomass production or minimisation of nutrient utilisation, following which it is solved to obtain a steady state flux distribution. This flux distribution is then used to interpret the metabolic capabilities of the system. The dynamic mass balance of the metabolic system is described using the stoichiometric matrix, relating the flux rates of enzymatic reactions, <math>\mathbf{v}_{n\times 1}</math> to time derivatives of metabolite concentrations, <math>\mathbf{x}_{m\times 1}</math> as 
+
+<math> 
+\frac{d\mathbf{x}}{dt} = \mathbf{S}\,\mathbf{v}
+</math>
+
+<math> 
+\mathbf{v}=[v_1 \  v_2 \  ... \  v_{n}\  b_1\   b_2\  ...\  	b_{n_{ext}} ]^T
+</math> 
+
+where <math>v_i</math>   signifies the internal fluxes, <math> b_i</math>  represents the exchange fluxes in the system and <math> n_{ext}</math>  is the number of external metabolites in the system. At steady state, 
+
+<math> 
+\frac{d\mathbf{x}}{dt} = \mathbf{S}\,\mathbf{v} = 0
+</math> 
+
+Therefore, the required flux distribution belongs to the null space of <math> \mathbf{S}</math> . Since <math> m < n</math> , the system is under-determined and may be solved for <math> \mathbf{v}</math>  fixing an optimisation criterion, following which, the system translates into a linear programming problem: 
+ 
+<math> 
+\min_{\mathbf{v}}\ \mathbf{c}^T\mathbf{v} \qquad \textrm{s. t.} \quad \mathbf{S}\,\mathbf{v}=0
+</math> 
+
+where <math>c</math>  represents the objective function composition, in terms of the fluxes. Further, we can constrain: 
+ 
+<math> 
+0 <  v_i < \infty 
+</math> 
+
+<math> 
+-\infty <  b_i < \infty
+</math> 
+
+which necessitates all internal irreversible reactions to have a flux in the positive direction and allows exchange fluxes to be in either direction. Practically, a finite upper bound can be imposed, so that the problem does not become unbounded. This upper bound may also be decided based on the knowledge of cellular physiology. 
+
+==Perturbations==
+
+FBA also has the capabilities to address effect of gene deletions and other types of perturbations on the system. Gene deletion studies can be performed by constraining the reaction flux(es) corresponding to the gene(s) (and therefore, of their corresponding proteins(s)), to zero. Effects of inhibitors of particular proteins can also be studied in a similar way, by constraining the upper bounds of their fluxes to any defined fraction of the normal flux, corresponding to the extents of inhibition.
+
+
+=References=
+*Bonarius HPJ, Schmid G, Tramper J (1997) Flux analysis of underdetermined metabolic networks: The quest for the missing constraints. ''Trends Biotech'' '''15''': 308–314.
+*Forster J, Famili I, Fu P, Palsson BO, Nielsen J (2003) Genome-scale reconstruction of the ''Saccharomyces cerevisiae'' metabolic network. ''Genome Res'' '''13''': 244–253.
+*Edwards JS, Palsson BO (2000) The ''Escherichia coli'' MG1655 in silico metabolic genotype: Its definition, characteristics, and capabilities. ''Proc Natl Acad Sci U S A'' '''97''': 5528–5533.
+*Edwards JS, Covert M, Palsson BO (2002) Metabolic modelling of microbes: The flux-balance approach. ''Environ Microbiol'' '''4''': 133–133.
+*Kauffman KJ, Prakash P, Edwards JS (2003) Advances in flux balance analysis. ''Curr Opin Biotech'' '''14''': 491–496.
+*Alvarez-Vasquez F, Sims K, Cowart L, Okamoto Y, Voit E, et al. (2005) Simulation and validation of modelled sphingolipid metabolism in Saccharomyces cerevisiae. ''Nature'' '''433''': 425–430. 
+*Edwards JS, Ibarra RU, Palsson BO (2001) ''In silico'' predictions of Escherichia coli metabolic capabilities are consistent with experimental data. ''Nat Biotechnol'' '''19''': 125–130. 
+*Raman K, Rajagopalan P, Chandra N (2005) Flux Balance Analysis of Mycolic Acid Pathway: Targets for Anti-Tubercular Drugs. ''PLoS Comput Biol'' '''1(5)''': e46
+
+[[Category:Protocol]]
+[[Category:In silico]]

@@ -1,0 +1,80 @@
+=='''NehaSuperM13: Genome Re-engineering'''==
+{|border="7"
+|align="center" |'''Gene'''
+|align="center" |'''Location in Genome'''
+|align="center" |'''Function'''
+|align="center" |'''Overlap/Modification Advantage/Disadvantage'''
+|align="center" |'''Re-engineering Ideas'''
+|-align="center" 
+|gI
+|3196-4242
+|Assembly, Channels for Exit
+|align="left" |g11 is inside g1, g4 starts at the end of g1's sequence<br> A: Since g1 and g11 have same function, if I wanted to affect assembly overall, I would modify g11 and affect g1<br> D: If I only want to change g11, I would change g1 anyway
+|align="left" |I would want to change some function that would modify the channel for exit, perhaps making the channel larger or smaller and seeing what is affected
+|-align="center" 
+|gII
+|8268-831
+|Replication of DNA
+|align="left" |g10 is inside of g2<br> A: Since g2and g10 have same function, if I wanted to affect DNA Rep, I would modify g10 and affect g2<br> D: If I only want to change g10, I would change g2 anyway
+|align="left" |I would probably stay away from this but if I wanted to add a GFP protein, I could watch both proteins or label g2 and g10 different fluorescence colors and see how they differ
+|-align="center" 
+|gIII
+|1579-2853
+|Phage end, exits first
+|g3 does not overlap anything making it a good protein to modify
+|align="left" |g3 is usually modified to have some extra binding site so that the phage will make multiple copies of itself and then we will have multiple binding sites which we can use for other experiments. It would be risky because we still want the phage to exit the cell. Perhaps, if we make this smaller, phage will exit easier
+|-align="center" 
+|gIV
+|4220-5500
+|Assembly, Channels for Exit
+|align="left" |g4 starts at the ending of the g1/g11 sequence, M13 ori starts at the end of g4 sequence<br> A: For the portion that g1, g4, and g11 overlap, the modification of all 3 could provide information on how they are all effected by the same change<br> D: changing anything by the ori could be dangerous
+|align="left" |I might want to add or delete something in the place where g1, g4, and g11 overlap to see what happens. Maybe they will be affected differently.
+|-align="center" 
+|gV
+|843-1106
+|Binds to ssDNA so it isn't made into dsDNA again
+|g5 does not overlap anything making it a good protein to modify
+|I would like to see the effects of making this protein longer or shorter; maybe the shorter p5 will still work and therefore, show that a shorter sequence is still sufficient
+|-align="center" 
+|gVI
+|2856-3194
+|Phage end, assists p3
+|g6 does not overlap anything making it a good protein to modify
+|If I were to alter this, I'd probably want to modify it in a way that it has assists p3 less and I'd like to see what happens accordingly. This would provide insight as to how important p6 is in assisting p3
+|-align="center" 
+|gVII
+|1108-1209
+|Phage end, assists p9
+|align="left" |g7's ending overlaps p9's starting<br> A: The overlap is not large so we don't need to worry too much<br> D: we need to be careful because p7 and p9 go on opposite ends, modifying both may have consequences
+|If I were to alter this, I'd probably want to modify it in a way that p7 assists p9 less and I'd like to see what happens accordingly. This would provide insight as to how important p7 is in assisting p9
+|-align="center" 
+|gVIII
+|1304-1522
+|Phage capsid
+|align="left" |g8's starting overlaps g9's ending<br> A: The overlap is not large so we don't need to worry too much<br> D: we need to be careful because p8 and p9 have two separate functions; altering one may alter the other causing the phage to be functionless
+|align="left" |We already know we can alter the size of the phage by modifying this protein. We could possibly add something to the genome that would be a binding site for something of our desire because p8 has the most surface area and be affected the most
+|-align="center" 
+|gIX
+|1206-1304
+|Phage end
+|align="left" |g9 is overlapped by g7 and g8 (on either end, g7 at starting, g8 at end)<br> A: The overlap is not large so we don't need to worry too much<br> D: we need to be especially careful because modifying too much can affect p7 or p8; g7, g8, and g9 code for different functions and we might not want multiple functions to be affected
+|align="left" |It's be interesting to see what were to happen if p9 were enlarged. I'd imagine it would have trouble leaving the bacteria membrane but you never know
+|-align="center" 
+|gX
+|496-831
+|Replication of DNA
+|align="left" |g10 is inside g2<br> Please see g2 for advantages/disadvantages
+|align="left" |Please see g2 for modification ideas
+|-align="center" 
+|gXI
+|3916-4242
+|Assembly, Channels for exit
+|align="left" |g11 is inside of g2<br> Please see g1 for advantages/disadvantages
+|align="left" |Please see g1 for modification ideas
+|}
+
+=='''M13's Family'''==
+M13 is a phage of the Ff family which are E. Coli Filamentous phages. Its other members of the family are fd and f1. They all have circular ssDNA and a very similar structure (5 major protein types, capsid, 4 end proteins - 2 for each side). They do have minor differences. M13 differs from f1 by 52 nucleotides (5 amino acid substitutions). M13 differs from fd in p8 by one amino acid (m13 has a negatively charged aspartate and fd has a neutral asparagine).
+
+=='''"BBa_M1307 is not a standard biological part and does not belong in the registry"'''==
+The traditional biological parts on this site are binding sites, terminators, and regulators. BBa_M1307, on the other hand, is a modified version of the M13 genome. So it seems that BBa_M1307 would not be a standard biological part. BBa_M1307 is a modified M13 genome with the p15a origin of replication and a kanamycin reistance gene. This gene can be utilized in many ways since it can replicate itself using a host without affecting the host itself. In fact, if a certain plasmid were to be inserted, we could use BBa_M1307 to take it in and replicate it many times. In essence, this would be a nice, efficient "copy machine" for us. When looking at it this way, BBa_M1307 is more like a copying "device" than a "part".

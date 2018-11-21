@@ -1,0 +1,33 @@
+Info from Barry Canton (MIT):
+
+[[Media:Use_of_T7.pdf | Paper on T7 by Studier]]
+
+[[Media: More_Use_of_T7.pdf | Another paper on T7 by Studier]]
+
+Hey Tito,
+
+The T7 promoter has a low background if you can keep the expression of
+T7 RNAP relatively low, in which case it will be rare that it will
+find its promoter.  So you need a promoter that you can turn
+relatively off, hook that up to T7 RNAP and then use a T7 promoter to
+control the gene you want to have tightly off.
+
+Warning: T7 RNAP is highly active so if you make a lot of it, your
+cells are likely to stop growing assuming there is a T7 promoter for
+the RNAP to bind to.
+
+The two key papers on using T7 RNA polymerase and promoter for the
+expression of cloned genes are attached.
+
+There are E. coli strains that have T7 RNAP integrated into the
+chromosome (BL21(DE3)).  Novagen sell plasmids that have T7 promoters
+in them.
+
+The relevant BioBricks are -
+
+I2032 - sequence verified by me, not yet tested.
+R0085 - consensus T7 promoter sequence.  Tested by me and working.
+
+Hope this gets you started,
+
+Barry

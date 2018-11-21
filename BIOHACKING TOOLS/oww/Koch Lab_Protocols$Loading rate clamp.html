@@ -1,0 +1,21 @@
+==Calculation of instantaneous stiffness correction factor (G)==
+The key to the "loading rate clamp" that Steve implemented for the [http://en.wikipedia.org/wiki/Force_spectroscopy dynamic force spectroscopy] (DFS) of protein-DNA interactions by unzipping DNA (see PMID 12906513) was the ability to analyze the point-by-point data and calculate the instantaneous stiffness of the system.  This was possible due to the good agreement between the force-extension curve of ssDNA and the extensible freely-jointed chain model (Smith, Bustamante et al. 1996).
+
+The piezo (or AOD) stretch rate is scaled by the value of the instantaneous stiffness of the system.
+===Picture of LabVIEW code===
+[[Image:Calculate G Values.png|250px]]
+===LabVIEW VI===
+[[Media:Calculate G values.vi]]
+===Code documentation from early 2003===
+Here is the documentation from my LabVIEW sub-VI which calculates the "G" value, which is used in the loading rate clamp for unzipping DNA:
+<blockquote>G is defined as "inverse of compliance per nm of ssDNA"...uh?  say what?
+
+G is basically stiffness multiplied by contour length, so that it has units of pN, and is independent of length of ssDNA.
+
+The model is Smith, et al. FJC with stretch modulus.
+
+I solved the equations by hand, but verified numerically that they are correct (to within a very small percentage, which is as careful as i was about numerical derivative)
+
+I have added code so that it works above F = 5000 pN, but I'm not sure it's correct (who cares?)</blockquote>
+[[Category:Protocol]] [[Category:Biophysics]] [[Category:DNA]]
+[[Category:Koch Lab Page]]

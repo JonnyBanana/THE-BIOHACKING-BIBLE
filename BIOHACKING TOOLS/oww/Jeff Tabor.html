@@ -1,0 +1,73 @@
+== Background ==
+*I received my B.A. studying Biology and [http://www.cm.utexas.edu/ Biochemistry] from the [http://www.utexas.edu/ University of Texas] in 2001.  I studied evolutionary biology in the lab of [http://www.zo.utexas.edu/faculty/antisense/ Jim Bull] for two years during that time.  
+
+*I received my Ph.D. in May 2006 from the University of Texas, studying the design and evolution of synthetic biological systems under [http://ellingtonlab.org/ Andy Ellington].  
+
+*I am currently a postdoc in the [http://www.voigtlab.ucsf.edu/ Voigt lab] at [http://www.ucsf.edu/ UCSF].
+
+
+== Research Interests == 
+
+===Synthetic Biology===
+My primary interests include the forward design and programming of novel cellular behaviors ([http://en.wikipedia.org/wiki/Synthetic_biology synthetic biology]) using genetic regulation strategies at both the canonical protein/DNA interaction level (e.g. controlling [http://openwetware.org/wiki/Adventures POPS]; Endy, ''Nature'', 2005) and at the level of riboregulation (e.g. [http://openwetware.org/images/b/b7/Bayer.pdf Bayer and Smolke], ''Nature Biotechnology'' 2005).
+
+====Bacterial Photography====
+I was heavily involved with a group at the University of Texas which has designed and built a "[http://www.nature.com/nature/journal/v438/n7067/abs/nature04405.html bacterial photography]" system in which a community of ''E.coli'' act as a biological film capable of capturing and permanently recapitulating any light image (see figure below).  This work was enabled by the design of an incredible chimeric light responsive genetic element from the [http://www.voigtlab.ucsf.edu/ Voigt lab] at [http://www.ucsf.edu/ UCSF].  Basically, Anselm Levskaya and Chris Voigt rewired a phytochrome protein from ''Synechocystis'' which normally changes conformation in response to light and transduces this into a change in gene expression in that organism to control an osmo-responsive genetic regulatory system in ''E.coli''.  In order to retain the functionality of the phytochrome protein, the metabolism of ''E.coli'' had to be re-engineered to produce a ringed organic compound, phycocyanobilin (PCB).  This work had previously been done in the [http://www.mcb.ucdavis.edu/faculty-labs/lagarias/main.html Lagarias lab] at [http://www.ucdavis.edu/index.html UC-Davis] (Gambetta and Lagarias, ''PNAS'', 2001).  The result is a synthetic genetic signal transduction cascade in E.coli that is strongly responsive to light in the 660nm (red) range.  The applications of the fine spatial control in gene expression afforded by light approach boundless.  Also, check out Nature's [http://openwetware.org/images/9/9d/Year_in_photos_2005.pdf 2005 Year in Pictures]
+
+
+If you'd like to take your own pictures, check out the page on [http://openwetware.org/wiki/LightCannon how to build a light cannon].
+
+[[Image:Darwin.JPG|thumb|left|250px|Real intelligent designers use evolution.     Bacterial photo: Aaron Chevalier]]
+
+====Edge Detector====
+We are currently making use of this novel behavior to build a biological edge detector.  In this system, each ''E.coli'' on the lawn would compute whether it were in the light, the dark, or at the boundary of light and dark.  Those cells at the light/dark boundary will express a LacZ reporter, and the result would not be a recapitulated image, but the outline of such an image.  Interestingly, edge detection is an expensive serial computational problem, wherein the computation time increases quadratically with the size of the image.  In our massively parallel E.coli edge detector, the edge detection problem is solved in constant time as the size of the image increases.  We undertook this effort to demonstrate a scenario in which biology holds some sort of potential advantage over silicon-based computation.
+
+====[http://parts.mit.edu/wiki/index.php/University_of_Texas_2006 2006 UT-Austin iGEM team]====
+
+   
+===Noise===
+I am also interested in the quantitative characteristics of natural mechanisms of gene regulation and expression.  Uncontrollable fluctuations in gene expression in populations of genetically identical individuals can lead to quantifiably diverse (even opposite) phenotypes within that population.  It is becoming more and more obvious that biology, being evolutionarily adept as it is, has taken advantage of the noise inherent in gene expression to encode complex population level behaviors using simple genetic level specifications.  For example, the virus HIV encodes a genetic amplifier in its genome, wherein a protein product of a gene results in higher transcription levels of that gene.  Upon infection of a host cell, the levels of that protein product usually tend about some mean.  Uncontrollable fluctuations below that mean at some critical time point result in the HIV genomes in that invaded cell going lysogenic.  Fluctuations above that mean at some critical time point result in the HIV genomes in that cell going lytic.  There are fitness advantages to such a bifuracted reproductive strategy, and this virus has used noise as opposed to hard-wired genetic to encode this behavior.  Clearly, noise can sometimes be detrimental to cellular survival, and in certain instances biology has evolved ways to insulate, buffer or engineer away noise in gene expression as well.
+
+
+
+My recent efforts have focused on elucidating sources of noise generation and mechanisms of noise insulation in gene expression.  Check out my [http://esmane.physics.lsa.umich.edu/wl/external/ICSB/2005/20051020-umwlap001-04-tabor/real/f001.htm talk] from [http://csbi.mit.edu/icsb-2005/program/program.htm ICSB 2005].
+
+
+
+
+==Publications==
+*Jeffrey J. Tabor, Travis S. Bayer, Zachary B. Simpson, Matthew Levy and Andrew D. Ellington.  Operons are genetic noise insulators.  (Submitted), 1/2006. <br>
+
+*Jeffrey J. Tabor, Matthew Levy, Zachary B. Simpson and Andrew D. Ellington (In press).	Parasitism and protocells: The tragedy of the molecular commons. In ''Protocells: Bridging Nonliving and Living Matter'', eds. S. Rasmussen, M.A. Bedau, L.Chen, D.Deamer, D.C. Krakauer, N. Packer and P.F. Stadler, MIT Press, 2006. <br>
+
+*Matthew Levy, Jeffrey J. Tabor and Stephen Wong. Taking pictures with ''E.coli'': Signal processing using synthetic biology (2006). ''IEEE Signal Processing Magazine'', '''23''' (3), 142-144. [http://openwetware.org/images/c/cc/Levy_Tabor_Wong.pdf pdf] <br>
+
+*Jeffrey J. Tabor, Matthew Levy, and Andrew D. Ellington (2006). Deoxyribozymes that recode sequence information. ''Nucleic Acids Research'', '''34''' (8):2166-2172. [http://openwetware.org/images/b/be/Tabor_nar_2006.pdf pdf] <br>
+
+*Jeffrey J. Tabor, Eric A. Davidson and Andrew D. Ellington (2006). Developing RNA tools for engineered regulatory systems. In ''Biotechnology and Genetic Engineering Reviews'', ed. S.E. Harding, Intercept, Ltd., '''22''', 21-44. [http://openwetware.org/images/8/89/Tabor_BGER_2006.pdf pdf] <br>
+
+*A. Levskaya, A.A. Chevalier, J.J. Tabor, Z.B. Simpson, L.A. Lavery, M.Levy, E.A. Davidson, A.Scouras, A.D. Ellington, E.M. Marcotte, and C.A. Voigt (2005).  Engineering Escherichia coli to see light. ''Nature'', '''438''' (7067), 441-442.  [http://openwetware.org/images/5/54/Levskaya_2005.pdf pdf] <br>
+
+*Jeffrey J. Tabor and Andrew D. Ellington (2003).  Playing to Win at DNA computation.  ''Nature Biotechnology'', '''21'''(9):1013-5. [http://openwetware.org/images/a/ab/Tabor_ellington_2003.pdf pdf] <br>
+
+
+==Contact==
+
+'''email:''' <br>
+account: jeff.tabor <br>
+server: gmail.com <br>
+
+'''Shipping and mailing address:'''<br>
+Byer's Hall Room 409 <br>
+1700 4th Street <br>
+San Francisco, CA 94158-2330 <br>
+
+===[[Jeff Tabor/archive|archive]]===
+===[[Jeff Tabor/protocols|protocols]]===
+===[[Jeff Tabor/Pics|other]]===
+===[[Jeff Tabor/Synthetic Biology Team Challenge|Synthetic Biology Team Challenge]]===
+
+<html>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://openwetware.org/wiki/User:JTabor" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://openwetware.org/wiki/User:JTabor" border=1 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</html>

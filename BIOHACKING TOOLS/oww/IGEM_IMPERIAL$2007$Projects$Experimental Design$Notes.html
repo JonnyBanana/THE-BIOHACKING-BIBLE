@@ -1,0 +1,289 @@
+__NOTOC__
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Experimental Design|Introduction]]</li>
+<li >[[IGEM:IMPERIAL/2007/Experimental Design/Phase1|Phase 1]]</li>
+<li >[[IGEM:IMPERIAL/2007/Experimental Design/Phase2|Phase 2]]</li>
+<li>[[IGEM:IMPERIAL/2007/Experimental Design/Phase3|Phase 3]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Experimental Design/Notes|Notes]]</li>
+</ul>
+</div>
+<br style="clear:both">
+<br>
+
+==Purification of LuxR==
+*Through our modeling it has become clear that in order to get the most effective Infecter detector system we will need LuxR to be at steady state. This is a fundamental problem with our initial construct because it is unlikely that LuxR will reach steady state under control of the pTet promoter. We are therefore are pursuing an alternative where by we will add purified LuxR to the in vitro system.
+*The [[IGEM:IMPERIAL/2007/Projects/Biofilm_Detector/Modelling| Modeling Section]] on the infecter detector describes the initial modeling of both infecter detector constructs.
+*Through literature a protocol that we can use to purify LuxR. We are planning to use this as a basis and modify it to suit our needs.
+*For purification of LuxR we require a plasmid that can over express LuxR, we have identified two suitable plasmids and we are currently trying to obtain both. Depending on which one we choose we will have to vary the protocol.
+<br>
+==Protocols==
+<br>
+
+===Initial Testing for LuxR solubility===
+*Add 0.5 litre of cells (grown to OD 0.5 and induced with AHL) to centrifuge tubes and spin them down at 8000g. 
+*Remove the supernatant and dissolve the pellet in 10ml of Buffer A
+*Sonicate the mixture
+*Centrifuge them again at 100 000g and separate the supernatant from the pellet. Keep the supernatant (Tube A).
+*Resuspend the pellet in water (Tube B)to make up approximately the same volume as in Tube A.
+*Remove 100ul of each solution into another two tubes and add SDS page gel loading buffer to them.
+*Add 2ul of each of the solution to the SDS PAGE gell and run for 2 hours.
+===Reagents Stock Solutions===
+{{hide|1=
+<br>
+KCL
+*MW: 74.55
+*Form: Powder
+Guanidine Hydroxide
+*MW: 95.53 (anhydrous)
+*Form: Powder
+Glycerol
+*100%
+*92.10g/mol
+*Form: Liquid
+Triton X-100
+*100%
+*Form: Solution
+NaCl
+*MW: 58.442
+*Form: Powder
+EDTA
+*MW: 372.24
+*Form: Powder
+Tween-20
+*100%
+*Form: Solution
+DTT
+*MW: 154.3
+*Form: Powder
+Tris
+*MW: 131.4
+*Form: Powder
+AHL
+*1mM
+}}
+
+===Purification Protocol 1===
+{{hide|1=
+The principle of the experiment is to over express Lux R and isolate this from the E.coli Cells. When LuxR is over expressed in E.coli it forms inclusion bodies, which are aggregates of insoluble misfolded proteins. Our aim is to isolate the LuxR inclusion bodies, and to re-solubalise the inclusion body and then to cause the refolding of the LuxR, to end up with highly concentrated and active sample of LuxR.
+
+This protocol is based on the following protocol from the paper <cite>Synbio</cite>
+It is dependent on the plasmid phk724 kindly provided by James Slock
+<br>
+
+'''Reagents'''
+<br>
+*pHK724
+*R buffer (50 mM Tris, pH 7.8 at 5°C/200 mM NaCl/0.1 mM EDTA/0.1 mM dithiothreitol/5%
+glycerol)
+*0.24mlx 50mM EDTA in 10% X-100
+*6M Guanidine Hydrochloride 
+*Fresh solution of lysozyme
+
+'''Equipment'''
+*Dialysis tube
+*Polyacrylamide electrophoresis
+
+'''Buffer Preparation''' <br>
+<br>
+''R BUFFER'' <br>
+Total Volume: 1 litre <br>
+*Tris: 50 x 10-3 x 131.4= 6.57g
+Add 6.57g to just enough dH2O so that it dissolves, equilibrate it to pH 7.8 with concentrated HCl, then top it up to 950ul with dH2O.
+*NaCl: 0.2 x 58.442= 11.6884g
+Add 11.6884g of NaCl to the existing solution.
+*EDTA: 0.1 x 10-3 x 372.24= 0.037224g
+Add 0.037224g of EDTA to the existing mixture.
+*DTT: 0.1 x 10-3 x 154.3= 0.01543g
+Add 0.01543g of DTT to to the existing mixture.
+*5% glycerol
+Add 50ml to the mixture. 
+*Give it a good mix.  
+
+<br>
+''R BUFFER WITH GUANIDINE HYDROCHLORIDE''
+Total Volume: 1 litre <br>
+Using the above R buffer made, remove 500ul from it.
+*Guanidine Hydrochloride: 6 x 95.53= 573.18g
+Add 573.18g of Guanidine Hydrochloride to the mixture and mix well. 
+
+<br>
+''RS BUFFER''<br>
+Total volume: 1 litre <br>
+*Tris: 50 x 10-3 x 131.4= 6.57g
+Add 6.57g to just enough dH2O so that it dissolves, equilibrate it to pH 7.8 with concentrated HCl, then top it up to 500ul with dH2O.
+*NaCl: 1 x 58.442= 58.442g
+Add 58.442g of NaCl to the existing solution.
+*EDTA: 0.1 x 10-3 x 372.24= 0.037224g
+Add 0.037224g of EDTA to the existing mixture.
+*DTT: 0.1 x 10-3 x 154.3= 0.01543g
+Add 0.01543g of DTT to to the existing mixture.
+*50% glycerol
+Add 500ml to the mixture. 
+*Give it a good mix. 
+*Guanidine Hydrochloride: 
+**0.25 x 95.53= 23.8825g (0.25M)
+**0.5 x 95.53= 47.765g (0.5M) 
+Add the appropriate amount of Guanidine Hydrochloride to the mixture, depending on what concentration is required. 
+
+<br>
+''50mM EDTA IN 10% TRITON X-100''<br>
+Total volume: 10ml
+*Triton X-100: Remove 1ml and place it in an eppendorf tube
+*Add 9ml ddH2O to the same tube.
+*EDTA: 50 x 10-3 x 10-3 x 372.24= 0.018612g
+Add 0.018612g of EDTA to the tube and mix well. 
+
+
+'''Protocol'''
+
+#BL21 Cells containing the phk724 plasmid are grown in LB supplemented with ampicillin (300ug/ml)   at 37 &deg;C to an OD<sub>600</sub>of  0.6. Then 1mM of IPTG and 25uM of AHL are added to the cells, which are then chilled to 27 &deg;C.
+#After 4 hours of growth these cells are centrifuged at 8000xg for 10 minutes at 4 &deg;C. 
+#The supernatant is carefully removed and discarded to leave the pellet which is frozen overnight at -80 &deg;C.
+#The next the pellet slowly on ice.
+
+#Then the pellets should be resuspended in 2.4ml R buffer. 
+#Then add the following to the supernatant: 0.24ml of 50mM EDTA in 10% X-100 and a fresh solution of lysozyme (to give a final concentration of 150jg/ml). This solution should be incubated for 45 mins. <font color=green>The lysozymes will cause lysis of the Cells and the X-100 is to solubalise the membrane proteins, which would otherwise form inclusion bodies.</font>
+#After incubation the sample should be sonicated and centrifuged at 100,000 x g for 30 min. <font color=green>This second sonication step is to lyse any unlysed cell.</font>
+#From the sample the supernatant is again carefully removed and discarded, leaving just the pellet. <font color=green> This pellet is composed of insoluble proteins from the cell</font>
+#The pellet should then be suspended in 2.4 ml R buffer containing 6 M guanidine hydrochloride. This solution should then be incubated for 20 min. <font color=green>This solution of 6 M guanidine hydrochloride will cause certain proteins such as LuxR to become soluble.</font>
+# After incubation remove the supernatant and place in a new tube. The supernatant should then be centrifuged for 30 min at 100,000 x g. 
+#The supernatant is again removed into a new tube, this supernatant contains the soluble luxR proteins. 
+#The supernatant needs to then be diluted back to 1M guanidine hydrochloride by dropwise addition of RS buffer. By slowly neutralizing the guanidine hydrochloride the LuxR is brought out of solubility and refolds back into a functional protein.
+#Finally the dilution of LuxR sample in 1M guanidine hydrochloride is dialyzed first against RS buffer containing 0.5M guanidine hydrochloride and then dialyzed against an RS buffer containing 0.25M guanidine hydrochloride
+#To check for purity of LuxR a SDS-Polyacrylamide gel should be run out. We should see a strong band at 27kDa
+
+}}
+
+===Purification 2===
+*This protocol is based on the following protocol from the paper <cite>Synbio2</cite>
+*It requires the plasmid pMLU117 
+'''Reagents'''
+*A Buffer - 50mM Tris-HCL [pH 7.0 at 22&deg;C]  100mM KCL, 50mM NaCl, 2mM EDTA, 2mM dithiothreitol, 10% glycerol, 0.5% Tween 20
+*B Buffer - 50mM Tris-HCL [pH 7.0 at 22&deg;C]  50mM KCL, 25mM NaCl, 2mM EDTA, 2mM dithiothreitol, 10% glycerol, 0.5% Tween 20
+*25uM solution AHL
+*1 Litre LB-amp
+*NaCl gradients
+'''Equipment'''
+*Temp controlled Centrifuge
+*SP column
+*LB amp plates
+====Protocol====
+'''Making up Buffers''' <br>
+General Buffer <br>
+Total Volume: 1 litre
+*Tris-HCl: 0.05 x 131.4= 6.57g
+Add 6.57g of Tris-HCl to a minimum amount of distilled water to dissolve it. Then add enough concentrated HCL to bring it to pH 7.0. Then top it up to 870ml with distilled water.
+*EDTA: 0.002 x 372.24= 0.744g
+Add 0.744g of EDTA to the mixture.
+*DTT: 0002 x 154.3= 0.309g
+*10% glycerol
+Add 100ml of 100% glycerol to the mixture. 
+*0.5% of Tween-20
+Add 5 ml of 100% Tween-20 to the mixture.
+*AHL stock 1mM
+C1V1= C2V2
+1 x V1= 0.025 x 1000ml
+Add 25ml of the stock solution to the mixture.
+*Give the mixture a good shake.
+
+BUFFER A <br>
+Add NaCl and KCl to 1 liter of the general buffer.
+*NaCl: 0.05 x 58.442= 2.922g
+Add 2.922g of NaCl to the mixture.
+*KCl: 0.1 x 74.55= 7.455g
+Add 7.455g of KCl to the mixture.
+*Give it a good shake.
+
+BUFFER A with 1M of NaCl<br>
+Add NaCl and KCl to 1 liter of the general buffer
+*NaCl: 1 x 58.442= 5.8442g
+Add 5.8442g of NaCl to the mixture.
+*KCl: 0.1 x 74.55= 7.455g
+Add 7.455g of KCl to the mixture.
+*Give it a good shake.
+
+
+Buffer B <br>
+Add NaCl and KCl to 1 liter of the general buffer
+*NaCl: 0.025x 58.442= 1.4611g
+Add 1.4611g of NaCl to the mixture.
+*KCl: 0.05 x 74.55= 3.7275g
+Add 3.7275g KCl to the mixture.
+*Give it a good shake.
+
+
+'''Prepare Cell Lysate'''
+#Colonies of BL21 with over expressing LuxR plasmid  should be streaked onto LB-ampicillin plates and grown over night at 37 &deg;C
+#Colonies were used to inoculate a liter of LB-ampicillin prewarmed at 37 &deg;C, this is grown until an OD<sub>600</sub> of 0.5 is reached, this is then chilled to 28 &deg;C.
+#AHL 25uM and IPTG to final concentration of 1mM is then added with additional ampicillin (200ug/ml) and the culture continued to grown at 28 &deg;C for 4 hours, this step is when we want to express the LuxR protein and so we need to first induce with IPTG, then add AHL for correct LuxR protein folding and finally a lower temperature to try to prevent inclusion body formation
+#Cells were harvested by centrifugation at 8000 x g for 10mins at 4 &deg;C and were frozen overnight at -80&deg;C
+*The following steps were performed at 4 &deg;C:
+#The Cell pellet should be resuspended in 16ml of '''A buffer''' and 25uM AHL. This cell suspension should then be sonicated.
+#After sonication the lysate was centrifuged at 20,000 x g for 10 min. After this, remove the supernatant and centrifuge again at 100,000 x g for 1.5h.
+
+'''Chromatography'''
+#The cell extract from 100,000 x g is passed through a 5ml HiTrap herparin column and equilibrated with A buffer and 25uM AHL. Bound proteins are then eluted with a 25ml NaCL step gradient from 0.15 to 1M.
+#The fractions collected need to see if they contain LuxR. This can be done using SDS-PAGE electrophoresis
+#Now we need to remove the high levels of NaCl from our cell extract. Fractions containing LuxR are then pooled and dialyzed against 500ml of A buffer containing 25uM AHL and 20% (wt/vol) polyethylene glycerol(mw 8000)for four hours.
+#After dialysis the sample was diluted 1:1 with a KCL and NaCL free version of A buffer plus 25uM AHL, this gives a final salt concentration of 75mM.
+#Now we need to prepare a SP column, this needs to be equilibrated with buffer B and 25uM AHL.Then the sample can be run through and washed with B buffer. 
+#Finally, to remove the bound protein the SP column can be eluted with 100ml linear NaCl gradients of 0.075 to 0.5M. To test fraction content and purity of LuxR, SDS-PAGE can be carried out.
+
+===References===
+<biblio>
+#SynBio pmid=16578817
+#synbio2 pmid=14729687 
+#synbio3 pmid=6330051
+#synbio4 pmid=3539017
+</biblio>
+
+==Comparison of Batch mode and Plate mode==
+
+{| style="background:#F5FAFF; border: 1px solid #aabadd; color:Black"
+|- style="background:#aabadd; color:Black"
+|  || Batch Mode || Plates
+|- style="background:#d5dcef"
+| style="background:#aabadd" | [[#Pros|Pros]]
+||Minimises evaporation || Less samples used 
+|- style="background:#d5dcef"
+| style="background:#aabadd" | 
+|| No temperature fluctuations|| No pipetting involved from stock solution
+|- style="background:#d5dcef"
+| style="background:#aabadd" | 
+|| || 
+|- style="background:#d5dcef"
+| style="background:#aabadd" | [[#Cons|Cons]]
+|| A lot of cell extract is needed|| Problem with evaporation   
+|- style="background:#d5dcef"
+| style="background:#aabadd" | 
+|| Home-made cell extracts (by virtue of its large quantity) must be used|| Fluctuation of temperature
+|- style="background:#d5dcef"
+| style="background:#aabadd" | 
+|| Home made cell extracts might not be reliable|| Only 50µL is used per well, and this amount is less than the optimum amount for measurement by the fluorometer
+|}
+
+
+Evaporation Problem: With volumes of 0.5 ~1.0 or less and incubation times longer than 30 minutes, each sample is covered with a 3 to 5 mm column of redistilled hexane. [http://www.jbc.org/cgi/reprint/222/1/97.pdf link] The amount of samples we are looking at is about 100µl, so evaporation would not be a problem.
+
+===Meeting to sort the GFP crisis!===
+====Options====
+#'''GFP'''
+#*AcGFP - 
+#*GFP mut3b - need to get the purified form
+#**Ask around!
+#'''RFP'''
+#*DsRed - wild type
+#*DsRed2 - can be visualied but has a long response time ~ 24hrs
+#*DsRed express - can be visualised with UV, has response time of ~ 7-8hrs
+
+====Proposed plan of action====
+#'''DsRed express''' - prioritise cloning and testing the constructs with DsRed Express
+#*Currently testing DsRed Express in-vitro (Calibration curve)
+#'''GFP mut 3b''' - carry on looking for purified form so calibration and degradation curves can be derived
+#*Do research to find degradation and calibration data in literature
+#DesRed 2 will be cloned just in case the other options don't work out
+
+====Flurometer====
+*Might get access to 24hr fluorometer - programmed data collection (biochem lab, level 6)
+**Can carry out only the experiments at room temperature and degradation experiments

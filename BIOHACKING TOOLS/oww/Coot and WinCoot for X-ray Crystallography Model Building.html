@@ -1,0 +1,39 @@
+==Overview==
+
+Coot (Linux) is a free (for academics) model-building software used in x-ray crystallography. I found Coot to be easy to learn and  more user-friendly than other model-building programs such as O or XtalView.
+
+Coot is '''NOT''' a molecular graphics program (ie programs for making pretty pictures for publications). There are plenty of programs for that purpose eg. Pymol, SwissPDB Viewer, or Molscript/Raster3D. 
+
+Coot is '''NOT''' a crystallographic refinement program. For that check out CNS and CCP4.
+
+==Materials==
+
+You need to download either Coot (in Linux) or WinCoot (in Windows) and install these.
+
+Follow the links below on how to download and install these programs.
+
+==Various Procedures in Model Building using Coot==
+
+'''Using Skeletons in Model Building'''
+# Open pdb file of model using File-->Open Coordinates...
+# Open an mtz file with File -->Open MTZ, CIF or phs... This will pop up a dialogue window for map calculation. To make a 2Fo-Fc map, use the FWT and PHWT. To make an Fo-Fc map, use DELFWT and DELPHWT
+# Now you should see both model and map in the Canvas. The 2Fo-Fc map is usually colored blue and the Fo-Fc map is colored green (positive density) and red (negative density).
+# Click on Calculate-->Map Skeleton. In the Skeleton Dialog window, turn skeleton mode On (this will display the skeleton). You can "Color and Prune", to delete possible side chain points so your skeleton looks cleaner. This procedure creates a skeleton (points and connection) in the map. The skeleton will serve as a guide of where to build atoms.
+# Put the crosshair in the Canvas to a skeleton point where a continous polypeptide chain could be observed in the map
+# Open Model/Fit/Refine-->Ca Baton Mode. This builds a Ca atom at the crosshair and connects that to another point 3.8A (distance of Ca-Ca) away. You can change where the 2nd Ca is by choosing "Try Another" in the Baton window. You can also lengthen/shorten the baton with the appropriate options. When you're satisfied with the baton, click "Accept". If you make a mistake, click "Undo".
+# Keep building the Ca frame until there is no clear direction on where to add Ca atom.
+# In Model/Fit/Refine, choose Ca Zone-->Mainchain. Click on the range of Ca frame e.g. residue#2 and #10 that you want to have converted in mainchain atoms. Coot will process this request (takes a while, ~3min) and spits out a mainchain configuration if it can. Sometimes, the connection you make violate the geometry of mainchain atoms, in this case, nothing will be built.
+
+==External Links==
+#[http://www.ysbl.york.ac.uk/%7Eemsley/coot/ Paul Emsley's FAQ on Coot]   (Download the Linux version here)
+#[http://www.ysbl.york.ac.uk/%7Eemsley/coot/doc/chapters/user-manual_toc.html Coot Online Manual]
+#[http://www.ysbl.york.ac.uk/%7Eemsley/coot/tutorial.pdf Coot Tutorial in PDF]
+#[http://www.chem.gla.ac.uk/~bernhard/coot/wincoot.html WinCoot Download Site]
+
+==Contact==
+[[User:Sehat| Sehat Nauli]]
+
+
+[[Category:Protocol]]
+[[Category:In silico]]
+[[Category:Protein]]

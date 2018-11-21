@@ -1,0 +1,205 @@
+{{Synthetic biology top}}
+<div style="padding: 10px; color: #000000; background-color: #ccccff; width:730px" >
+
+==Main components==
+*[[Synthetic_Biology:Semantic_web_ontology/RDF|RDF/XML]]: '''statements of facts''' or '''assertions about resources''' in the form of triples, e.g.: doc.html ''has'' author Jeremy and ''is about'' Genetics
+*[[Synthetic_Biology:Semantic_web_ontology/RDF_Schema|RDF Schema]]:
+**definition of the '''vocabulary''' or '''ontology''' used in the triples, e.g. author, first name, article, etc.
+**description of '''hierarchies''' of concepts and relations, e.g.:
+***article ''is a kind of'' document
+***firstname ''is a kind of'' designation
+***firstname ''applies to'' persons
+*[[Synthetic_Biology:Semantic_web_ontology/OWL|OWL]]:
+**provides formal characterisation of types and relations, e.g.:
+***hasSpouse ''is a symmetric relation'' 
+***hasChild ''is the inverse of'' hasParent
+***a Mother ''is a'' woman ''with at least one'' child 
+**allows data merging
+*[[Synthetic_Biology:Semantic_web_ontology/SWRL|SWRL]]: semantic web rule language
+
+==Definition==
+"an extension of the current web with metadata for machines" (Fabien Gandon)
+
+"an initiative to enable cross-platform data exchange and reuse through well-defined ontologies and a common XML-based framework."
+
+"The goal of the Semantic Web initiative is to create a universal medium for the exchange of data where data can be shared and processed by automated tools as well as by people." [11]
+
+*allows to model real things, not just documents or database tables (knowledge representation)
+*consists of statements about resources in the form of triples:
+ SUBJECT -> PROPERTY -> VALUE
+ -OR-
+ SUBJECT -> PREDICATE -> OBJECT
+*identifies every resource with a globally unique URI: don't say "color", say <http://example.com/2005/std6#col>
+*allows “serendipitous reuse”: integration with data sources in other fields (“web join”)
+
+''A semantic Web will not require proof generation to be useful: proof validation will be enough.''<br/>
+The first uses, such as access control on web sites, involve validation of a previously prepared proof, not a requirement to answer an arbitrary question, find the path the construct a valid proof. It is well known that to search for and generate a proof for an arbitrary question is typically an intractable process for many real world problems, and RDF does not require this (unsolvable) problem to be solved to be useful.<br/>
+from http://www.w3.org/DesignIssues/RDFnot.html
+
+==Levels==
+(from [http://www.w3.org/DesignIssues/Semantic.html Semantic Web roadmap])
+*Basic model contains just the concept of an '''assertion''', and the concept of '''quotation''' - making assertions about assertions.
+*Schema layer makes simple assertions about permitted combinations
+*Conversion language contains rules for converting a document in one RDF schema into another one (which presumably one has an innate understanding of how to process).
+*Logical layer - ways of writing logic into documents to allow such things as rules the deduction of one type of document from a document of another type; the checking of a document against a set of rules of self-consistency; and the resolution of a query by conversion from terms unknown into terms known. A simple example of the application of this layer is when two databases, constructed independently and then put on the web, are linked by semantic links which allow queries on one to converted into queries on another.
+Annotation problem (evolvability)
+*In the case of a program which finds a version 2 document and wants to find the rules to convert it into a version 1 document, then the version 2 schema would naturally contain or point to the rules.
+*In the case of retrospective documentation of the relationship between two independently invented schemas, then of course pointers to the rules could be added to either schema, but if that is not (socially) practical, then we have another example of the the annotation problem. This can be solved by third party indexes which can be searched for connections between two schemata. In practice of course search engines provide this function very effectively - you would just have to ask a search engine for all references to one schema and check the results for rules which like the two.
+
+==Engines==
+*If an engine of the future combines a reasoning engine with a search engine, it may be able to get the best of both worlds, and actually be able to construct proofs in a certain number of cases of very real impact. It will be able to reach out to indexes which contain very complete lists of all occurrences of a given term, and then use logic to weed out all but those which can be of use in solving the given problem.
+*Many real life problems can be solved using just a few (say two) steps of inference out on the wild web.
+*Engines and algorithms which will efficiently tackle specific types of problem.
+Semantic Web and Entity-Relationship models (from http://www.w3.org/DesignIssues/RDFnot.html)
+*RDF is more general than ER and can be a basis for it.
+*The mapping is very direct:
+** a record is an RDF node;
+** the field (column) name is RDF propertyType; and
+** the record field (table cell) is a value.
+
+==Trust==
+(access control, user authentication, etc)
+*[http://www.w3.org/2001/04/20-ACLs W3C ACL System]
+*[http://www.intellidimension.com/pages/rdfgateway/dev-guide/security/auth.rsp Authentication schemes] used by Intellidimension RDF Gateway
+*[http://opensource.nokia.com/projects/sws-uriqa/index.html URIQA] from Nokia has a web form based, ontology driven metadata editor with validation and user authentication & access control
+*[http://www.mindswap.org/webai/2002/fall/Authentication_20for_20Semantic_20Web.html Authentication for Semantic Web]
+**use metadata for access control
+*[http://www.wiwiss.fu-berlin.de/suhl/bizer/SWTSGuide/ Trust and Security Resource Guide]
+
+==Critique==
+*[http://slashdot.org/askslashdot/01/03/21/0739222.shtml Is The Semantic Web A Pipe Dream?]
+*[http://dx.doi.org/10.1109/MIC.2005.133 Rethinking the semantic Web. Part I]
+*[http://slashdot.org/articles/06/07/19/038237.shtml Challenging the Ideas Behind the Semantic Web]
+
+===Lowercase semantic web===
+*[http://microformats.org/ microformats.org], [[Wikipedia:Microformats|microformats]] @ Wikipedia - humans first, machines second
+*[http://evan.prodromou.name/RDFa_vs_microformats RDFa vs microformats]
+*[http://structuredblogging.org/ Structured Blogging] plugins to create and syndicate structured information, such as reviews and events
+*[[Wikipedia:Ontology|Ontology]] vs [[Wikipedia:Taxonomy|Taxonomy]] vs [[Wikipedia:Folksonomy|Folksonomy]] vs [[Wikipedia:Collabulary|Collabulary]]
+**Taxonomy - concepts and relationships but no attributes
+**Controlled vocabulary - only concepts
+*[http://www.biowisdom.com/ontology/faq_q1.htm Ontology vs taxonomy vs thesaurus vs list]
+*[http://novaspivack.typepad.com/nova_spivacks_weblog/2005/01/whats_after_fol.html "Folktologies"] - beyond folksonomy vs ontology.
+
+==Resources==
+*[http://www.iswsa.org/ Semantic Web Science Association (SWSA)]
+*[http://www.webscience.org/ Web Science Research Initiative (WSRI)]
+*[http://swui.semanticweb.org/ Semantic Web User Interaction (SWUI)]: mailing list and workshop series
+*[http://ebiquity.umbc.edu/resource/html/id/94/ UMBC Semantic Web Reference Card - v2]
+*[http://www.getsemantic.com/ Get Semantic] - Semantic Web for web developers
+*[http://esw.w3.org/topic/FrontPage ESW Wiki]
+**[http://esw.w3.org/topic/SemanticWebArchitecture Semantic Web Architecture]
+*A No-Nonsense Guide to Semantic Web Specs for XML People [http://www.betaversion.org/~stefano/linotype/news/57/ Part I] and [http://www.betaversion.org/~stefano/linotype/news/78/ Part II] - good intro for those familiar with XML
+*[http://logicerror.com/semanticWeb-webdev Semantic Web (for Web Developers)]
+*[http://logicerror.com/semanticWeb-long Semantic Web In Breadth]
+*[http://infomesh.net/2001/swintro/ The Semantic Web: An Introduction] - overview of many topics based on "Semantic Web In Breadth"
+*[http://www.scientificamerican.com/article.cfm?articleID=00048144-10D2-1C70-84A9809EC588EF21&catID=2 The Semantic Web] Intro article in Scientific American
+*[http://www.w3.org/2001/sw/ W3C Semantic Web Activity] (links to RDF, OWL, etc)
+**[http://www.w3.org/2001/sw/SW-FAQ W3C Semantic Web FAQ]
+*[http://www.xml.com/lpt/a/2000/11/01/semanticweb/index.html Semantic Web primer] from 2000 at xml.com
+*[http://www.w3.org/2003/Talks/05-gartner-tbl/ Web Services - Semantic Web by Tim-Berners Lee]
+*[http://www.amk.ca/talks/2004-12-02/ Introduction to the Semantic Web and RDF by A.M. Kuchling]
+*[[Wikipedia:Semantic_web | Wikipedia article on Semantic Web]]
+*[http://www.w3.org/2001/sw/BestPractices/Tutorials Semantic Web tutorials from W3C]
+*[http://www.w3.org/2000/10/swap/doc/ Semantic Web tutorial using N3]
+*[http://www.w3.org/2000/10/swap/Primer Primer: Getting into RDF & Semantic Web using N3]
+*[http://www.consortiuminfo.org/bulletins/semanticweb.php Semantic Web: interview with Tim Berners-Lee]
+*[http://www.w3.org/2004/01/sws-pressrelease W3C press release]
+*[http://www.w3.org/DesignIssues/ Design Issues @ W3C] - web architecture and metadata
+*[http://groups.csail.mit.edu/dig/2005/09/6.898/ Notions & Notations of the Semantic Web] - MIT 6.898 Fall Seminar Course
+*[http://www.rundom.com/extensibility/?feed=96 Semantic Web news aggregator]
+*[http://www.wiwiss.fu-berlin.de/suhl/bizer/SWTSGuide/ Semantic Web Trust and Security Resource Guide]
+*[http://directory.google.com/Top/Reference/Knowledge_Management/Knowledge_Representation/Semantic_Web/ Semantic Web links in Google Directory]
+*[http://www.w3.org/DesignIssues/Semantic.html Semantic Web Road map] An attempt to give a high-level plan of the architecture of the Semantic WWW
+*[http://www.wiwiss.fu-berlin.de/suhl/bizer/SWTSGuide/ Semantic Web Trust and Security Resource Guide]
+*[http://www.w3.org/TR/daml+oil-reference DAML+OIL] (March 2001) Reference Description
+*[http://ksl.stanford.edu/sns.shtml KSL Software and Network Services]
+*[http://www.altova.com/semantic_web.html What is Semantic Web?] - very light intro with examples from Altova
+*[http://semanticweb.org/ semanticweb.org] - Semantic Web Community Portal
+*[http://www.w3.org/2001/sw/BestPractices/ W3C Semantic Web Best Practices and Deployment Working Group]
+*[http://www.websemanticsjournal.org/ Journal of Web Semantics]
+*[http://dig.csail.mit.edu/ Decentralized Information Group] @ CSAIL
+*[http://www.connotea.org/tag/semantic%20web "semantic web" tag] on Connotea
+*[http://dynamo.man.ac.uk/links.html Links] from DynamO project
+*[http://www.cs.man.ac.uk/~ezolin/logic/rus_transl.html Collection] of some Semantic Web related resourses translated to Russian.
+*[http://www.ibm.com/developerworks/web/library/wa-semweb/ The future of the Web is Semantic] - from IBM
+
+===Books===
+*[http://www.amazon.com/Owl-Representing-Information-Ontology-Language/dp/1412034485/ Owl: Representing Information Using the Web Ontology Language]
+**Author: Lee W. Lacy
+**ISBN: 1412034485
+**Published: January 1, 2005
+
+===Periodicals===
+*[http://www.idea-group.com/journals/details.asp?id=4625 International Journal on Semantic Web and Information Systems]
+*[http://www.biologicalknowledge.com/ Biological Knowledge] is an open access, peer-reviewed, online journal.  The fields covered by the journal include, but are not limited to: ontologies, knowledge representation, and knowledge bases; reasoning, discovery, and machine learning; natural language processing and linguistics; history, philosophy, sociology, and anthropology; cognitive science, including cognitive and social psychology; education; and system design and software for knowledge creation, extraction, and manipulation.
+
+===Articles===
+*Web 3.0
+**[http://www.nytimes.com/2006/11/12/business/12web.html?_r=1&oref=slogin Entrepreneurs See a Web Guided by Common Sense]
+**[http://www.iht.com/articles/2006/05/23/business/web.php  A 'more revolutionary' Web]
+**[http://evolvingtrends.wordpress.com/web-30/ Web 3.0 (and the Semantic Web)]
+*[http://ebiquity.umbc.edu/_file_directory_/papers/268.pdf Search Engines for Semantic Web Knowledge] from umbc.edu (PDF)
+*[http://dx.doi.org/10.1126/stke.2832005pe22 A Life Science Semantic Web: Are We There Yet?] from Sanofi-Aventis Pharmaceuticals
+*[http://www.pcpro.co.uk/realworld/79124/semantically-speaking/page1.html Semantically speaking] from PC Pro magazine (mSpace as a semantic web browser)
+*[http://novaspivack.typepad.com/nova_spivacks_weblog/2005/10/towards_a_world.html Towards a World Wide Database (WWDB)]: "The Semantic Web solves the problem of data interoperability by providing open standards for defining and integrating data schemas using formal ontologies."
+*[http://www.oreillynet.com/xml/blog/2006/06/the_7_flaws_of_the_semantic_we.html The 7 (f)laws of the Semantic Web]
+*[[doi:10.1186/gb-2002-3-4-comment1006|Ontology recapitulates philology]] by Sydney Brenner
+*[http://www.businessweek.com/magazine/content/07_28/b4042066.htm A Web That Thinks Like You]
+
+===Blogs===
+*[http://dig.csail.mit.edu/breadcrumbs/blog/4 TimBL's blog]
+*[http://dig.csail.mit.edu/breadcrumbs/blog/2 Connoly's blog]
+*[http://www.bnode.org/semweblog semantic weblog] by benjamin nowack
+*[http://www.thefigtrees.net/lee/blog/semantic_web/ TechnicaLee Speaking: semantic web archives]
+*[http://journal.dajobe.org/journal/ Dave Beckett] - semantic web blog
+*[http://weblog.burningbird.net/ Burningbird] (formerly practicalrdf.info)
+*[http://dannyayers.com/ Raw] - Danny Ayers
+*[http://www.mindswap.org/blog/author/hendler James A. Hendler] - University of Maryland
+*[http://www.semanticwave.com/blog/ Semantic Wave]
+*[http://planetrdf.com/ Planet RDF]
+*[http://seaborne.blogspot.com/ ARQtick]: related to SPARQL, RDF, ARQ, Jena, Joseki
+
+===People===
+*[http://www.w3.org/people/em/ Eric Miller] Semantic Web Activity Lead @ W3C
+*Eric Neumann - semantic web for life sciences
+*John Wilbanks - Creative Commons
+*[http://www.cs.umd.edu/~hendler/ James A. Hendler] University of Maryland
+*[http://baclawski.com/talks/index.html Ken Baclawski] - Northeastern University, presentations
+*[http://bizer.de/ Chris Bizer] - D2R Map, etc
+*[http://theory.csail.mit.edu/~dquan/ Dennis Quan]
+*[http://www.lassila.org/ Ora Lassila]
+*[http://www-db.research.bell-labs.com/user/pfps/talks/ Peter F. Patel-Schneider's talks] (OWL, knowledge representation, SWRL, ontology, etc)
+*[[User:Raik|Raik Grünberg]]
+*[[User:JeremyZucker|Jeremy Zucker]]
+*[http://dannyayers.com/misc/about/biog.htm Danny Ayers]
+*[http://www.cs.man.ac.uk/~carole/ Carole Goble] - Semantic Web and e-Science/Grids
+
+===Semantic Web for Life Sciences===
+"Browsers that can automatically identify entities such as protein and gene names, molecular processes, diseases, types of tissue, etc. and the relationships between them, in any Web document, collect these entities and then apply further analyses to them using applicable Web and Grid services." (Fabien Gandon)
+*[http://esw.w3.org/topic/SemanticWebForLifeSciences Semantic Web For Life Sciences] - ESW Wiki
+*BioIT World
+**[http://www.w3.org/2005/Talks/0517-boit-tbl/ Berners-Lee - Semantic Web Life Sciences] - BioIT World Expo 2005 (May 2005)
+**[http://www.bio-itworld.com/issues/2005/oct/cover-story-semantic-web/ Masters of the Semantic Web] - Oct 2005
+**[http://www.bio-itworld.com/issues/2006/march/rdf RDF — The Web’s Missing Link] by Eric Neumann (Mar 2006)
+**:"Many suggest that ontologies will be the key to integrate data properly. Although I see clear value in defining and using ontologies, there is nothing intrinsic to them that will make data integration any easier for scientists. Ontologies will require a lot of consensus building between community members (see BioPAX.org), and a common enterprise architecture that validates and connects data using ontologies is still lacking (though OWL makes this tractable). I for one see connecting existing data first through RDF’s triple model as a way to greatly facilitate the building of ontologies in a practical bottom-up approach."
+***[http://neurodaedalus.blogspot.com/2006_04_01_neurodaedalus_archive.html XML, RDF, Ontologies and Bioinformatic Data Mining] - comment on article
+***:"I would argue without '''both''' the '''bottom up''' and the '''top down''' approach to semantic mapping of biomedical data (raw, reduced, analyzed and the research literature), we will not be able to capture the labyrinthine interactions complemented by subtle, real-world detail critical to understanding complex phenotype and disease."
+*[http://www.w3.org/2004/07/swls-agenda.html W3C Workshop on Semantic Web for Life Sciences]
+*[http://www.biomedcentral.com/1471-2105/6/142 Which gene did you mean?] BMC Bioinformatics
+*[http://www.w3.org/2001/sw/hcls/ W3C Semantic Web Health Care and Life Sciences Interest Group]
+*[http://lists.w3.org/Archives/Public/public-semweb-lifesci/ public-semweb-lifesci@w3.org] - mail archives
+*[http://www.nature.com/nature/debates/e-access/Articles/bernerslee.htm Scientific publishing on the 'semantic web'] - nature.com
+*[http://www.cs.man.ac.uk/~horrocks/Publications/download/2005/WBHL05.pdf A Little Semantic Web Goes a Long Way in Biology]
+*[[doi:10.1186/gb-2005-6-5-r46|Relations in biomedical ontologies]]
+*[http://www.biosemantics.org/ Biosemantics Group] at the University Medical Center Rotterdam (Netherlands) aims at developing and validating advanced techniques for the processing and analysis of large, complex, and heterogeneous medical and biological data sets
+
+====nodalpoint.org====
+*[http://www.nodalpoint.org/node/1704 The semantic web for life sciences now] - getting started guide/UniProt RDF tutorial (Redland RDF, LSID, Uniprot, data integration, etc)
+*[http://www.nodalpoint.org/node/1716 The biological ontolgy backlash] - [[doi:10.1038/nbt0905-1095|"Are the current ontologies in biology good ontologies?"]] article by Larisa Soldatova and Ross King
+**[http://www.nodalpoint.org/2006/01/17/wrestling_with_bio_ontologies Wrestling with Bio-ontologies] - discussion
+*[http://www.nodalpoint.org/taxonomy/term/70 Semantic Web] term @ nodalpoint.org
+*[http://www.nodalpoint.org/node/1663 BioDASH Demo] - Semantic Web prototype of a Drug Development Dashboard built on Haystack
+
+</div>
+{{Synthetic biology bottom}}

@@ -1,0 +1,32 @@
+===Assembly Plan===
+
+Construct everything ourselves (do not use plasmid pSB1A3 because cut sites are not in predicted area and the terminator is not 100%)
+
+
+Use the plasmid vector that we have purified: plasmid pSB1A2
+
+''Promoter'': See Missouri Western as they are designing the Promoter Primers
+
+''Terminator'':  part BBa_B0015 forward terminator is the most efficient (.984 compared with .6 and .4 something). 
+
+''Reporters'': Tet Resistance, Cm Resistance, and Kan Resistance
+
+	'''''Template DNA''''': 
+
+'''TetR''': pSB1AT3, BBa_SO3410 well 23J, Plate DNA-2
+
+'''CmR''': pSB1AC3, BBa_JO7022 well 3B, Plate DNA-2
+
+'''KanR''': pSB1AK3, BBa_JO4630 well 1F, Plate DNA-2
+
+	Using the primers that we have designed and these DNA templates, we will generate backwards and forward coding resistance genes.
+
+'''Hin Recombinase''':  Using an inducible promoter, the Hin recombinase gene will be inserted into the part most likely somewhere upstream of the pancake.  It will have its own copy of terminator BBa_B0015.  Because the Hin gene is much larger than a terminator, we will purify the Hin and insert into a plasmid containing the terminator.  By cutting the Hin’s SpeI site and the terminator’s Xba site, the two will permanently join.  We can then cut out this part with EcoRI and PstI, gel purify it, and transform the purified Hin/terminator complex into JM109 cells.
+
+'''Recombinational Enhancer''':  Using prior research and possibly mathematical modeling, we need to determine how far away to place the RE from the pancake.  Possibly the RE will be put up stream of the Hin recombinase gene.  Putting the RE sequence there will provide space between the pancake and the enhancer like is normally seen in nature.  Also the RE will be anchored because it can form a mixed site with its SpeI site and the Hin’s Xba site.
+
+'''Hix Sites''':  Hix sites are very small (26 bp).  For our first plan, we need to place Hix C sites on both sides of the promoter.  Small molecules do not show up very brightly on Gels because the marker like ethidium bromide has a harder time getting between the two strands.  Gel purifying the promoter would be the easiest first step.  We can then take the purified promoter, which will have been cut with Xba and PstI, and combine it with a plasmid containing a Hix C site that has been cut with SpeI and PstI.  We can then cut the Hix C and promoter out of the plasmids with EcoRI and PstI and run gel purification to get the new HixC/promoter insert.  We can then repeat the steps above but cut the complex with EcoRI and SpeI while the HixC is cut with EcoRI and Xba.  The end result should be a HixC/promoter/HixC complex.  This can later be purified and inserted into the final plasmid upstream of the antibiotic resistance gene and downstream of the Hin recombinase gene.
+
+
+[[Western Assembly Plan]]
+http://parts2.mit.edu/wiki/index.php/SuperParts

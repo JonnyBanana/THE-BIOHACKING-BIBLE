@@ -1,0 +1,560 @@
+== Preliminary product ==
+
+After so many long hours of hard work, something to show for all that trouble. Codenamed "Rosencrantz", an alpha (very, very alpha) version of the project can be [http://snp.med.harvard.edu/rosencrantz/ found here]. This code integrates the final code [[Harvard:Biophysics_101/2007/Notebook:Katie_Fifer/2007-5-3|posted by Katie]] earlier this morning/yesterday evening, as I have subsequently edited and amended it (see below), as well as documentation by Hetmann and my own contributions. Katie's final code, of course, incorporates many contributions from Zach, Chris, Deniz, Kay, Michael, Tiffany, Resmi, and Cynthia.
+
+New contributions from myself specifically this time round include new interface elements and new Python code to glue the Django framework output to the script itself. An archive of the majority of the files (lightly sanitized to remove passwords and such) can be [http://people.fas.harvard.edu/~xwu/rosencrantz.zip found here]. The file containing the bulk of the actual lookup and calculation code is given below (at the end of this document) in full, and largely resembles Katie's earlier posting.
+
+== A proposal ==
+
+Having acquired a hard-to-find but now easily-updatable source for local data on genes and their loci, it's now possible to work around the problem of not being able to read images off of blast output. All we need from blast is a locus, which Katie's script does elegantly. Then, with this data:
+
+* Query our local database to ask what genes are in the locus (a simple MySQL query), and very very quick, I hope
+* Find the reference sequence (we also have a local copy of the genome, and know the exact locus--from which bp to which bp--from the blast query)
+* Compare (we've all written scripts for that)
+* Translate into protein if a coding sequence, otherwise come up with some other way of expressing this
+* Output the mutations (we also get an alignment back from blast...this is wonderful) using OMIM's notation, like this: [BRIP1, MET299ILE] (basically, [{gene name}, {amino acid}{position}{amino acid}]) and search in OMIM (we already have code for that, obviously)
+* Reap the benefits! (Also, compare it to dbSNP data.)
+
+Does this sound like a clear and workable plan to people? Are there other considerations to be factored in?
+
+== A request ==
+
+Related to what Katie has asked for in class, I've focused a lot on the first few stages of things, getting from sequence to OMIM. Regarding the 'reaping the benefits' part above, could people who've worked on the subsequent steps outline on their wiki page, and then link to their page from the class tasks list page, a sort of step-by-step accounting of what happens to this data after OMIM, and what sort of results we get, just like we started doing in class? There's a lot of code and work that's evidently be poured into this effort, but it's still somewhat unclear to me what exactly it all does...
+
+== A random thought ==
+
+How is the idea of putting bioinformatics data into a database and then running a query on the database considered interesting enough for a paper in '''2005'''? [http://bioinformatics.oxfordjournals.org/cgi/content/full/21/17/3469 How?]
+
+
+Very good question!! So for example of less-than-competent publications, check out the 'application notes' section of this journal. Someone did an analysis of how much of the applications were still functioning after a year, after two years etc. and the results are dismal. Here is the link:
+
+http://www.ghastlyfop.com/blog/2007/03/software-availabilty-quick-survey-using.html
+
+Also, note that the article you linked to seems not be cited by anyone / no-one seems to be doing anything with it. Although citations can be a crude method for analyzing impact, in this case it seems to be accurate: zero impact.
+
+== Appendix I: full code from file execute.py ==
+<syntax type='python'>
+# Code copyright (C) 2007 Prez + Fellas
+
+# This code takes the input from the user (a codon sequence) which is searched against the human
+# database to look for SNPs (Single Nucleotide Polymorphisms). This codon sequence is found in BLAST
+# SNP, and any SNPs are reported as an RS number.* The query is compared against the sequence in
+# dbSNP to determine if the sequence is really a mutation; if this test passes, the RS number is
+# then is used to generate mesh terms from PubMed, and determines which mesh terms are the most
+# relevant. The potential disease and the prevalence of this disease (derived from the California
+# State Prevalence data) are extracted from the most pertinent mesh terms. These mesh terms are then
+# used to provide updated news regarding the disease.
+
+# * Aside: one portion of the code accesses BLAST SNP without using RS numbers. The information
+# acquired through this the BLAST SNP website is queried in OMIM, and the output is as follows:
+# disease name, mutation, and name of the mutation. The disease name is then used to search
+# different websites for drugs, procedure, and experts regarding the disease, and is used to provide
+# a list of web pages with the disease name searched.
+
+import time, sys
+import xml.dom.minidom
+import pickle, os, string, urllib
+import feedparser
+from xml.dom.minidom import parse, parseString
+
+from Bio import PubMed, Medline, SeqIO
+from Bio.Blast import NCBIWWW
+from Bio.EUtils import DBIdsClient
+
+# C-style struct to pass parameters
+class AllelicVariant:
+	pass
+
+class FeedOutput:
+	pass
+
+# basic function to open fasta file and get sequence
+def get_sequence_from_fasta(file):
+	file_handle = open(file)
+	records = SeqIO.parse(file_handle, format="fasta")
+	record = records.next()
+	return record.seq.data
+
+# lookup blast snp data
+def blast_snp_lookup(seq):
+	result_handle = NCBIWWW.qblast("blastn", "snp/human_9606/human_9606", seq)
+	return result_handle.read()
+ 
+# basic text extraction from XML; based on http://docs.python.org/lib/dom-example.html
+def get_text(node_list):
+    rc = ""
+    for node in node_list:
+        if node.nodeType == node.TEXT_NODE:
+            rc = rc + node.data
+    return rc
+
+# extracts snp data
+def extract_snp_data(str):
+     dom = parseString(str)
+     variants = dom.getElementsByTagName("Hit")
+     if len(variants) == 0:
+          return
+     parsed = []
+     for v in variants:
+          # now populate the struct
+          hit_def = get_text(v.getElementsByTagName("Hit_def")[0].childNodes)
+          id_query = get_text(v.getElementsByTagName("Hsp_hseq")[0].childNodes)
+          id_hit = get_text(v.getElementsByTagName("Hsp_qseq")[0].childNodes)
+          score = get_text(v.getElementsByTagName("Hsp_score")[0].childNodes)
+          id = get_text(v.getElementsByTagName("Hit_accession")[0].childNodes)
+          # extract position of the SNP from hit definition      
+          lower_bound = hit_def.find("pos=") + 4
+          upper_bound = hit_def.find("len=") - 1
+          position = int(hit_def[lower_bound:upper_bound])
+          # only consider it a genuine snp if the hit score is above 100,
+          # the query/hit sequences are longer than the position of the SNP
+          # and the query sequence matches the hit sequence at the SNP position
+          if int(score) > 100 and position < len(id_hit) and id_query[position] == id_hit[position]:
+                  parsed.append(id)
+     return parsed
+ 
+# queries the database and returns all info in an XML format
+def omim_snp_search(dnsnp_id):
+	client = DBIdsClient.DBIdsClient()
+	query = client.search(dnsnp_id, "omim")
+	records = [i.efetch(rettype="xml") for i in query]
+	return records
+ 
+# extracts allelic variant data, as the name implies, using the struct above
+def extract_allelic_variant_data(str):
+	dom = parseString(str)
+	variants = dom.getElementsByTagName("Mim-allelic-variant")
+	if len(variants) == 0:
+		return
+	parsed = []
+	for v in variants:
+		a = AllelicVariant() # create empty instance of struct
+		# now populate the struct
+		a.name = get_text(v.getElementsByTagName("Mim-allelic-variant_name")[0].childNodes)
+		a.mutation = get_text(v.getElementsByTagName("Mim-allelic-variant_mutation")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+		a.description = get_text(v.getElementsByTagName("Mim-allelic-variant_description")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+		parsed.append(a)
+	return parsed
+ 
+# Kay's stuff - OMIM stuff
+# queries the SNP database and returns geneID tag as a string
+# Currently, DBIdsClient does not support snp parsing - so it's not used.
+# A future update should correct this when possible, for ease of reading.
+def parse_geneID_tag(snp_id):
+	try:
+		SNP_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp'
+		url = SNP_URL + '&id=' + snp_id + '&mode=xml'
+		dom = minidom.parse(urllib.urlopen(url))
+		symbol = dom.getElementsByTagName("FxnSet_symbol")
+		return symbol[0].toxml().split('>')[1].split('<')[0]
+	except:
+		return ""
+ 
+## Note: This code is a temporary solution to a dbSNP formatting issue.
+## Older entries are best searched directly by ID#.
+##  -> this case is the first covered
+## Newer entries are not indexed in this fashion, although SNP ID data is
+##  available on the individual entry.  These contain Allelic Variant data
+##  which is located and extracted by the script
+##  -> this case is the second covered
+ 
+# takes SNP ID and gets search results from OMIM in XML format
+def snp_to_omim(snp_id):
+    records = omim_snp_search(snp_id)
+    if records == list():
+        tag_id = parse_geneID_tag(snp_id)
+	if len(tag_id) == 0:
+		return ""
+        records = omim_tag_search(tag_id)
+    return records
+
+# Cynthia's stuff
+ 
+# parses a mesh term to remove * and /
+def parse_term(str, bool):
+    parsed_term = str
+    if(bool):
+        parsed_term = parsed_term.replace('*', '')
+    if str.find('/') != -1:
+       parsed_term = parsed_term.replace('/', ' ')
+    return parsed_term
+ 
+# parses list of mesh terms
+# returns embedded list, one with all terms and one major terms
+def parse_mesh(list):
+    all_mesh_terms = []
+    major_mesh_terms = []
+    mesh_term = ''
+    for i in range(len(list)):
+        major = False
+        if list[i].find('*') == -1:
+            mesh_term = parse_term(list[i], major)
+            all_mesh_terms.append(mesh_term)
+        else:
+            major = True
+            mesh_term = parse_term(list[i], major)
+            major_mesh_terms.append(mesh_term)
+            all_mesh_terms.append(mesh_term)
+    all_mesh = [all_mesh_terms, major_mesh_terms]
+    return all_mesh
+
+# Deniz's stuff
+#I want a single string as input. This should be done as often as needed for multiple strings
+def outputzilla(inputstring):
+	#This will parse the blogs we want
+	blogresults = inputstring.replace(' ', '+')
+ 
+	medstory_results = inputstring.replace(' ', '%20')
+	medstory_root = 'http://www.medstory.com/rss?q=' + medstory_results
+ 
+	medstory_web = medstory_root + '&af=true&c=true&s=Web&i='
+	medstory_news = medstory_root + '&af=false&c=true&s=NewsFeed&i='
+	medstory_multimedia = medstory_root + '&af=true&c=true&s=AudioVideo&i='
+	medstory_clinical = medstory_root + '&af=true&c=true&s=ClinicalTrial&i='
+	medstory_research = medstory_root + '&af=false&c=true&s=Research&i='
+	technorati_blog = 'http://feeds.technorati.com/search/' + blogresults + '?authority=a7'	
+ 
+	#The feeds
+	output = FeedOutput()	
+	output.web_feed = feedparser.parse(medstory_web)
+	output.news_feed = feedparser.parse(medstory_news)
+	output.multimedia_feed = feedparser.parse(medstory_multimedia)
+	output.clinical_feed = feedparser.parse(medstory_clinical)
+	output.research_feed = feedparser.parse(medstory_research)
+	output.blog_feed = feedparser.parse(technorati_blog)
+ 
+	return output	
+ 
+# output.web_feed.entries[0].title
+# output.web_feed.entries[0].description
+# output.web_feed.entries[0].link
+# output.news_feed.entries[0].title
+
+def execute(sequence):
+	return_data = []
+	# look up data
+	b = blast_snp_lookup(sequence)
+	# extract data
+	e = extract_snp_data(b)
+	if len(e) == 0:
+		sys.exit()
+	# do an omim search on each snp
+	for snp_id in e:
+		o = omim_snp_search(snp_id)
+		if len(o) == 0:
+			a = AllelicVariant()
+			a.name = snp_id
+			a.mutation = None
+			a.description = None
+			return_data.append(a)
+			continue # nothing more to be done if no records can be found
+		for i in o:
+			v = extract_allelic_variant_data(i.read())
+			if v == None:
+				continue
+			for a in v:
+				return_data.append(a)
+	# return data
+	return return_data
+
+def execute_it(sequence):
+	return_data = []
+	joiner = '\n'
+	# look up data
+	b = blast_snp_lookup(sequence)
+	# extract data
+	e = extract_snp_data(b)
+	return_data.append(str(len(e)) + " single nucleotide polymorphism(s) found:")
+	if len(e) > 0:
+		for snp_id in e:
+			return_data.append(snp_id)
+	else:
+		return_data.append("[none]")
+		sys.exit() # nothing more to be done if no snp found
+	return_data.append(" ")
+	 
+	# do an omim search on each snp
+	for snp_id in e:
+		o = omim_snp_search(snp_id)
+		if len(o) == 0:
+			return_data.append("No information found for " + snp_id)
+			continue # nothing more to be done if no records can be found
+		# otherwise, find the allelic variant data
+		return_data.append(snp_id + " details:")
+		for i in o:
+			v = extract_allelic_variant_data(i.read())
+			if v != None:
+				for a in v:
+					return_data.append(a.name)
+					return_data.append(a.mutation)
+					return_data.append(a.description)
+		return_data.append(" ")
+	
+	return joiner.join(return_data)
+	
+
+def execute_supremely_with_file(input_file):
+#	output_file = file('.out.txt', 'w')
+	output_list = []
+
+
+	sequence = get_sequence_from_fasta(input_file)
+#	print "Sequence received; please wait."
+	 
+	# look up data
+	b = blast_snp_lookup(sequence)
+	# extract data
+	e = extract_snp_data(b)
+#	print e
+
+	output_list.append("<strong>" + str(len(e)) + " single nucleotide polymorphism(s) found:</strong>\n")
+	if len(e) > 0:
+		for snp_id in e:
+			output_list.append(snp_id + "\n")
+	else:
+		output_list.append("[none]\n")
+#		print "Found no single nucleotide polymorphisms.\n"
+		return output_list # nothing more to be done if no snp found
+#	print "got a snp... still thinking..."
+
+	# do an omim search on each snp
+	for snp_id in e:
+		o = snp_to_omim(snp_id)
+		if len(o) == 0:
+			# there was some problem with this way of doing the omim lookup for this rs number.
+			# so try xiaodi's way. 
+			o = omim_snp_search(snp_id)
+		if len(o) == 0:
+			output_list.append("<hr><strong>No information found for " + snp_id + "</strong>\n")
+			# nothing more to be done if no records can be found
+		else:
+			output_list.append("<hr><strong>" + snp_id + " details:</strong>\n")
+			# otherwise, find the allelic variant data
+		for i in o:
+			v = extract_allelic_variant_data(i.read())
+			if v != None:
+				for a in v:
+					output_list.append(a.name + "\n")
+					output_list.append(a.mutation + "\n")
+					output_list.append(a.description + "\n")
+
+		# mesh terms
+		article_ids = PubMed.search_for(snp_id)
+		rec_parser = Medline.RecordParser()
+		medline_dict = PubMed.Dictionary(parser = rec_parser)
+		
+		all_mesh = []
+		all_mesh_terms = []
+		major_mesh_terms = []
+		for did in article_ids[0:5]:
+			cur_record = medline_dict[did]
+#			print '\n', cur_record.title, cur_record.authors, cur_record.source
+			mesh_headings = cur_record.mesh_headings
+			if len(mesh_headings) != 0:
+				all_mesh = parse_mesh(mesh_headings)
+				all_mesh_terms.extend(all_mesh[0])
+				major_mesh_terms.extend(all_mesh[1])
+				
+				# add to output
+#				output_list.append("\n")
+#				output_list.append("MeSH terms:\n")
+#				for term in all_mesh_terms:
+#					output_list.append(term + "\n")
+				output_list.append("\n<strong>Major MeSH terms:</strong>\n")
+				for term in major_mesh_terms:
+					output_list.append(term + "\n")
+#				print "ALL MESH TERMS", '\n', all_mesh_terms, '\n', major_mesh_terms
+	 
+				# Problem to solve: Although Cynthia's output parses out the
+				# major mesh terms from the paper, each mesh term can give a hit
+				# i.e.: it does not figure out which is really the "major" major mesh term.
+				# I intend to solve it by hitting against the title to see if there are matches
+				# and by removing connecting words from the mesh terms --
+				# modifying Cynthia's output
+	
+				new_term = []
+				for term in major_mesh_terms:
+					test = term.split(" ") # split by " "
+					temp = ""
+					for test_term in test:
+						if len(test_term) <= 3: #if it is a small connecting word
+							pass
+						else:
+							if temp != "":
+								temp = temp + "+"
+								temp = temp + test_term
+							else:
+								temp = test_term
+						new_term.append(temp)
+				titles = []
+
+				# create list of article id's
+				for did in article_ids:
+					cur_record = medline_dict[did]
+					titles.append(cur_record.title)
+	 
+				# titles: a list of all titles returned by PubMed
+				count = 0 # counter
+				bestterm = [0, "ERROR"]
+				for term in new_term:
+					count = 0
+					test = term.split("+") # split by "+"
+					for test_term in test: # hit each word in term against title
+						for title in titles:
+							if str.upper(title).find(str.upper(test_term)) != -1: # if found the term in title
+								count += 1
+					if count > bestterm[0]:
+						bestterm[0] = count
+						bestterm[1] = term
+						# print bestterm[1] # bestterm[1] is the main disease name
+	 
+				if(bestterm[1] == "ERROR"): # if not hit
+					output_list.append("No relevant mesh terms for the above rs numbers.\n")
+					return output_list
+
+				output_list.append("\n<strong>Best MeSH terms:</strong>\n")
+				output_list.append(bestterm[1] + "\n")
+				
+				fh = open("/data/dx05.txt") # data file
+				line = fh.readline()
+				disease_name = bestterm[1] #INSERT DISEASE NAME HERE FOR TESTING
+				ICD9code = []
+				ICD9dName = []
+				found = 0
+
+				# queue http://icd9cm.chrisendres.com for code lookup
+				queue_name = 'http://icd9cm.chrisendres.com/index.php?action=search&srchtype=diseases&srchtext='
+				queue_name = queue_name + disease_name
+	 
+				code_lookup = urllib.urlopen(queue_name).read() # send queue request to site, returns dirty html
+				out = open("/tmp/dirty.txt", "w") # write dirty html to file
+				out.write(code_lookup)
+				out.close()
+	 
+				tempName = ""
+				readCode = open("/tmp/dirty.txt", "r") # read dirty html
+				lookup_line = readCode.readline()
+				
+#				print "***ICD9 and hits, arranged by importance***\n"
+#				output_list.append("\n<strong>ICD9 and hits arranged by relevance:</strong>\n")				
+				
+				while lookup_line:
+					w = lookup_line.find("<div class=dlvl>") # the unique marker before the disease
+					if w != -1: # if it is found
+						tempCode = lookup_line[32:40] # code in this section
+						tempCode = string.split(tempCode, ' ') # split into number
+						print tempCode
+						ICD9code.append(tempCode[0])
+						w = lookup_line.find("</div>")
+						if w != -1: #if there is a </div> marker (junk html)
+							tempName = lookup_line[32:w]
+							tempName = tempName[tempName.find(" ")+1:]
+							print tempName
+							ICD9dName.append(tempName)
+						else:
+							tempName = lookup_line[32:len(lookup_line)-7]
+							tempName = tempName[tempName.find(" ")+1:]
+							#print tempName
+							ICD9dName.append(tempName)
+					lookup_line = readCode.readline()
+
+				# searching incidence data	
+#				print "\n\n***Prevalance data per IDC9 above***"
+#				print "Note: returns incidence data/yr, including subclasses\n"
+#	 			output_list.append("Prevalence data (ICD9) -- data/year, including subclasses\n")
+				fh = open("/data/dx05.txt") # data file
+	 
+				# new data structure: [0] = code, [1] = name, [2] = incidence
+				ICD9_prev_output= [[],[],[]]
+	 
+				for (code,name) in zip(ICD9code,ICD9dName):
+					fh.seek(0)
+					line = fh.readline()
+					totalIncidence = 0
+					sumCount = 0
+					while line: # for every line in the data
+						line = line[:-1] # remove /n
+						lineVector = string.split(line, ',') # split to vector
+						if lineVector[0].find(code) != -1: # if disease hit
+							totalIncidence += int(lineVector[1])
+							sumCount += 1
+						else:
+							if sumCount > 0:
+#								output_list.append("ID: ")
+#								output_list.append(code + "; ")
+#								output_list.append("name: ")
+#								output_list.append(name + "; ")
+#								output_list.append("incidence: ")
+#								output_list.append(str(totalIncidence) + "\n")
+#								print "ID: ", code, "name: ", name, "incidence: ", totalIncidence
+								ICD9_prev_output[0].append(code)
+								ICD9_prev_output[1].append(name)
+								ICD9_prev_output[2].append(totalIncidence)
+								totalIncidence = 0
+								sumCount = 0
+						line = fh.readline()
+				fh.close()
+	 
+				# returns the most relevant ICD9 information
+				# THIS IS THE DATA YOU PROBABLY WANT
+				mainCode = 0
+				mainName = 0
+				mainIncidence = 0
+	 
+				counter = 0
+				for (c,n,incid) in zip(ICD9_prev_output[0], ICD9_prev_output[1], ICD9_prev_output[2]):
+					if incid > counter:
+						counter = incid
+						mainCode = c
+						mainName = n
+						mainIncidence = incid
+
+				output_list.append("\n<strong>Most relevant disease:</strong>\n")
+				output_list.append("CDC CODE: ")
+				output_list.append(mainCode + "; ")
+				output_list.append("NAME: ")
+				output_list.append(mainName + "; ")
+				output_list.append("INCIDENCE PER YEAR IN CALIFORNIA: ")
+				output_list.append(str(mainIncidence) + "\n")
+				
+#				print "THE MOST RELEVANT HIT:\n"
+#				print "CDC CODE: ", mainCode
+#				print "Disease Name: ", mainName
+#				print "Incidence/yr in CA: " , mainIncidence
+	 
+				# call Deniz's function
+				# use the best term that was figured out before
+				temp_terms = str(bestterm[1]).split('+')
+				for term in temp_terms:
+					oz = outputzilla(str(term))
+					output_list.append("\n<strong>Some relevant links:</strong>\n")
+					output_list.append("<a href=\"")
+					output_list.append(oz.web_feed.entries[0].link)
+					output_list.append("\">")
+					output_list.append(oz.web_feed.entries[0].title)
+					output_list.append("</a>\n")
+					output_list.append("<a href=\"")
+					output_list.append(oz.web_feed.entries[1].link)
+					output_list.append("\">")
+					output_list.append(oz.web_feed.entries[1].title)
+					output_list.append("</a>\n")
+					output_list.append("<a href=\"")
+					output_list.append(oz.news_feed.entries[0].link)
+					output_list.append("\">")
+					output_list.append(oz.news_feed.entries[0].title)
+					output_list.append("</a>\n")
+					output_list.append("<a href=\"")
+					output_list.append(oz.news_feed.entries[1].link)
+					output_list.append("\">")
+					output_list.append(oz.news_feed.entries[1].title)
+					output_list.append("</a>\n")
+					
+	# Some of the output stuff
+#	for item in output_list:
+#		print item
+#	pickle.dump(output_list, output_file)
+#	print "wrote pickled version to file"
+	 
+#	output_file.close()
+	return ''.join(output_list)
+</syntax>

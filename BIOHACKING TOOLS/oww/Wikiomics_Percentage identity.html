@@ -1,0 +1,65 @@
+== How to compute the percentage identity between a pair of sequences? ==
+
+The percentage identity for two sequences may take many different values. It
+is dependent on:
+# The method  used to align the sequences. e.g. [[BLAST]], [[Wikipedia:FASTA|FASTA]], [[Wikipedia:Smith-Waterman|Smith-Waterman]] implemented in different programs, Global alignment (implemented in different programs), structural alignment from 3D comparison. etc. etc. etc.
+# The parameters used by the alignment method. Local vs global alignment and all variations on this. Pair-score matrix used: e.g. BLOSUM62, PET91 etc. gap-penalty:  e.g. functional form and constants.
+# Having got the alignment by some method above, there are many different ways of calculating percentage identity (PID).  For example divide the number of identities by:
+## length of shortest sequence.
+## length of alignment.
+## mean length of sequence.
+## number of non-gap positions.
+## number of equivalenced positions excluding overhangs.
+# PID is also strongly length dependent, so, the shorter a pair of sequences is, the higher the PID you might expect by chance.
+
+Clearly, factors 1-3 can affect the final number reported as "percentage
+identity", so it is very important that anyone who quotes a percentage
+identity says how it is calculated.  Unfortunately, this is rarely done.
+
+A few years ago (1997), G.P.S Raghava and I looked systematically at the
+effect of calculating PID in different ways (some of the options shown in 3)
+for a large set of structurally aligned protein pairs.  We found that the
+reported PID could differ by up to 11.5% depending on the method used to
+calculate it, and by up to 14.6% depending on the algorithm used to
+calculate the alignment.  Combining these two effects gave a PID variation
+of up to 22%.  We also looked at the difference in PID seen between
+structural alignments and sequence alignments of the same pair of sequences.
+PID for structural alignments is almost always lower than for sequence
+alignment since when doing sequence alignment one is optimising the
+alignment against a score (the BLOSUM matrix) that has a benefit in aligning
+identical residues.
+
+In [http://astral.berkeley.edu/ ASTRAL] <cite>astral2004</cite>, the sequences will have been aligned pair-wise, PID calculated,
+then some form of clustering applied to group sequences together that
+share PID above some threshold.   Representative sequences from each group
+are then provided as a set.  This is a way of removing obvious redundancy
+from a large set of sequences, but redundancy at some level will always
+remain.  Whether the redundancy filtering in ASTRAL is good enough for what
+you are doing, will depend on the use you plan for the set of sequences.  We
+use the ASTRAL sets for some things and also those from Ronald Dunbrack,
+both are very useful resources.
+
+Overall, the message about PID is that it is a very crude method for scoring
+sequence similarity.  It is much better to use a method that takes account
+of the length and composition of the sequences as well as including scores
+for non-identical amino acids.  I normally use Z-scores as calculated by my
+old AMPS package of programs for pair-wise clustering of sequences.  In my
+experience on hundreds of protein families, this approach appears quite
+robust.  If necessary, the Z-scores can be converted to probabilities by
+following the work of Webber and Barton <cite>webber2001</cite>, though for clustering this is not necessary.
+
+== References ==
+
+<biblio>
+#astral2004 pmid=14681391
+#webber2001 pmid=11751224
+#may2004 pmid=15130466
+</biblio>
+
+== Credits ==
+{{credits}}
+* [http://www.compbio.dundee.ac.uk Geoff Barton] wrote most of the text as a [http://www-iphicles.rcsb.org/pdb/lists/pdb-l/200512/003093.html message to the PDB mailing-list]
+* the original formatting for the wiki was done by [[User:Martin Jambon|Martin Jambon]]
+
+[[Category:Sequence]]
+[[Category:Protein]]

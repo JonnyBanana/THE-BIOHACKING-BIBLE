@@ -1,0 +1,122 @@
+== Websites ==
+
+General FAQ http://www.nanodrop.com/nd-1000-faq.html
+
+User Manual http://www.nanodrop.com/pdf/nd-1000-users-manual.pdf
+
+Performance data http://www.nanodrop.com/nd-1000-performance.html
+
+== Procedure ==
+
+#Before starting the software module, clean the sample surfaces with DI water to remove any dried sample that might be present.
+#*Alternatively, you can clean the sample surfaces with a Kimwipe moistened with 70% ethanol.
+#Open the Nanodrop program and the appropriate module (e.g., DNA).
+#Wipe off the top and bottom sensors of the instrument with a Kimwipe.  These are just the polished ends of fiber optic cable, so wiping is sufficient to prevent carryover.
+#Pipette 2 &mu;L of DD water (stored in a blue microtube) onto the sensor.  Bring down the lever arm.
+#Follow the onscreen prompts to calibrate.
+#Wipe the sensors and pipette on 2 &mu;L of the corresponding blank (Buffer EB or whatever solution your prep is in).  Bring down the lever arm.
+#Follow the onscreen prompts to blank.
+#Wipe the sensors and pipette on 2 &mu;L of your sample.  Bring down the lever arm.
+#Click Measure and record the concentration measured.
+#For DNA, the peak should be at 260 nm, and as a general rule, the 260/280 ratio should be between 1.8 and 2.0.
+#*A typical DNA peak can be found [[:Image:DNANanodropExample1.PNG|here]].
+#To test multiple samples, just wipe the sensor in between measurements with a Kimwipe.  Recalibration or re-blanking is not necessary.
+#Clean the sample surfaces once more after you are finished.
+
+== Notes ==
+*If you see that a liquid column is not being formed, the surfaces may have been un-conditioned by protein or surfactants.  Rub each surface 15-20 times with a dry Kimwipe to buff.  Using 2 &mu;L samples should ensure the formation of a column.
+*Occasionally, the Nanodrop can give strange readings.  One method to help prevent against this is (after you blank the instrument and wipe the sensor) to pipette on 2 &mu;L of your blank once more and click measure.  Then verify that the absorbance is at or near 0 for all wavelengths.  If it is not, reclean the sensor and start again.  Perhaps this effect is due to a liquid column not being formed?
+*We had issues of the Nanodrop freezing up sporadically during measurement such that the software became completely unresponsive and the machine was stuck in a measurement state. Tech support responded and said that static discharge  can interfere with the computer/machine connection. They had previously sent out a batch of cables which were defective. ''The USB cable should be white not black.'' If your USB cable is black, you should probably call them up and ask for a replacement. --[[User:Austin|Austin]] 15:17, 18 April 2006 (EDT)
+
+==Lab Nanodrop pages==
+[[Paulsson:Nanodrop]]
+
+== FAQ ==
+
+===''Question''<br>===
+
+How does the Nanodrop convert A260 to concentration in ng/uL?
+
+===''Answer''<br>===
+
+''From the nanodrop user manual'' (download at http://www.nanodrop.com/nd-1000-overview.html)
+
+*General <br>
+The Beer-Lambert equation is used to correlate the calculated absorbance with concentration: <br>
+A = E * b * c <br>
+Where A is the absorbance represented in absorbance units (A), E is the wavelength-dependent molar absorptivity coefficient (or extinction coefficient) with units of liter/mol-cm, b is the path length in cm, and c is the analyte concentration in moles/liter or molarity (M). <br>
+*For nucleic acid quantification, the Beer-Lambert equation is manipulated to give:<br>
+c = (A * e)/b <br>
+Where c is the nucleic acid concentration in ng/microliter, A is the absorbance in AU, e is the wavelength-dependent extinction coefficient in ng-cm/microliter and b is the path length in cm. The generally accepted extinction coefficients for nucleic acids are:<br>
+• Double-stranded DNA: 50 <br>
+• Single-stranded DNA: 33 <br>
+• RNA: 40 <br>
+For the NanoDrop® ND-1000 Spectrophotometer,paths of 1.0 mm and 0.2 mm are used compared to a standard spectrophotometer using a 10.0 mm path. Thus, the NanoDrop® ND-1000 Spectrophotometer is capable of measuring samples that are 50 times more concentrated than can be measured in a standard spectrophotometer. <br>
+
+Note: absorbance data shown in archive files are represented as displayed on the software screen. For Nucleic Acid, Protein A280 and Proteins and Labels modules, data are normalized to a 1.0 cm (10.0 mm) path. For MicroArray, UV-Vis, Protein BCA, Protein Bradford, Protein Lowry and Cell Culture modules the data are normalized to a 0.1 cm (1.0 mm) path. For high absorbance UV-Vis samples, data are normalized to a 0.1mm path.
+
+''Other References''
+
+*The Biopolymer Calculator (http://paris.chem.yale.edu/extinct.html) calculates the extinction coefficient of nucleic acid sequences using an established base composition and nearest neighbor algorithm.
+
+Comparing concentrations obtained with the calculated extinction coefficient vs. the nanodrop constant: <br>
+Calculated concentration was ~20% lower for two RNA sequences (subtillis pheB and BBa_I7101 mRNA) ~~[[User:Cconboy|cmc]] 11:13, 2 Jun 2005 (EDT)
+
+*http://www.owczarzy.net/extinct.htm For more information on algorithms for calculating extinction coefficients.
+
+*Warshaw, Ph.D. Thesis, University of California, Berkeley, 1965
+*Warshaw and Tinoco, J. Mol. Biol., 20, 29 (1966)
+*Cantor and Warshaw, Biopolymers, 9, 1059 (1970)
+
+*Molecular Cloning, Third Edition, A8.19 on Quantitation of Nucleic Acids: <Br>
+Suggests that for short oligos it is important to calculate the extinction coefficient of a sequence of interest, but that for large molecules the following average extinction coefficients should be used:
+dsDNA: 50 (uG/ml)-1 <br>
+ssDNA or RNA: 38 (uG/ml)-1
+
+===''Question''<br>===
+
+When you are measuring the concentration of DNA at 260 nm, the software
+automatically compensates for the fact that you are measuring your sample at a 1 mm path length instead of the standard 1 cm pathlength.  For cell culture at OD 600 nm, the software does not do the same thing.  Instead it displays the 1mm absorbance.  Why?
+
+===''Answer''<br>===
+
+This answer was received in an email response from an Application Scientist at Nanodrop Technologies, Inc. 
+
+"Yes, the Cell Cultures module is currently displayed at 1 mm and not 10 mm.
+
+Note: absorbance data shown in archive files are represented as displayed on
+the software screen.  For Nucleic Acid, Protein A280 and Proteins and Labels
+modules, data are normalized to a 1.0 cm (10.0 mm) path.  For MicroArray,
+UV-Vis, Protein BCA, Protein Bradford, Protein Lowry and Cell Culture
+modules the data are normalized to a 0.1 cm (1.0 mm) path.  For high
+absorbance UV-Vis samples, data are normalized to a 0.1mm path.
+
+Regarding microbial cell cultures in suspension:
+
+The short answer:  The ND-1000 can be used to estimate bacterial growth
+cultures, and any limitations will be similar to limitations of other
+spectrophotometers.
+
+The long answer:  The fundamental issue surrounding bacterial culture growth
+measurements is that an absorbance spectrophotometer is being asked to
+determine light scattering caused by particulates in suspension.  In this
+case, transmittance is not related to absorbance in the classical sense.
+Under normal true absorbance conditions, spectrophotometers can be
+comparable to one another because the sample actually absorbs
+electromagnetic energy.  In the case of a reduction of transmittance caused
+by light scattering, readings are very dependent on the optics of a specific
+spectrophotometer as well as the cell type in suspension.  For bacterial
+growth determination, even 1cm path length systems can vary greatly due to
+the variability of the optics of each system.  The ND-1000 will display an
+'absorbance' value approximately 10 fold less than 1cm systems due to the
+fact that the instrument is utilizing a 1mm path length.  However, the
+difference will not be exactly 10 fold due to the reasons I've described
+above.  The point is that the differences between the ND-1000 and a
+'conventional' spec (apart from the 10 fold difference due to path length),
+will be similar to differences found between spectrophotometers that utilize
+a 1cm path length."
+
+==Videos==
+*[http://youtube.com/watch?v=aUZD8sj5c4w Nanodrop it like it's hot!] by Brown iGEM
+
+[[Category:Equipment]]

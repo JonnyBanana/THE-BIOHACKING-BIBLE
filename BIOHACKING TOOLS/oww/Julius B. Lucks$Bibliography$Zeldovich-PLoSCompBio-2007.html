@@ -1,0 +1,21 @@
+== Notes on <cite>Zeldovich-PLoSCompBio-2007</cite> ==
+* Have T_opt = optimal growing temperature for a variety of organisms
+* for every possible set of amino acids, labeled by a 20-element vector full of 1's and 0's (membership), fill the 1's with the actual frequency of that amino acid in the genome - do for each of 83 genomes
+** take these vectors with frequency information and sum elements to get an F-value for that combination of aa's
+** regress the F-values against the T_opts - calculate r2
+** search over all possible aa combination vectors - find the combination that gives the best r2
+* this combination is IVRWREL
+* control to verify this is not due to biased nucleotide content
+** shuffle the nucleotides of the genomes, and recompute translated protein sequences
+** observe that pattern of amino acids that predict T_opt change in shuffled genomes
+*** therefore reason that amino acid usage independant of nucleotide patterns (if they were the same, then nucleotide patters could be said to 'explain' the amino acid patterns)
+** '''something funny about this test'''
+* find that GC content not related to T_opt, or fraction of IVYWREL in the genome ([http://dx.doi.org/doi:10.1371/journal.pcbi.0030005.g006 F6])
+* is correlation between A+G content and T_opt
+** if take sequences, and reverse translate with no codon bias, get A+G content that correlates with T_opt ([http://dx.doi.org/doi:10.1371/journal.pcbi.0030005.g007 F7]) almost as strongly as what get with observed DNA sequences (r = 0.48 vs. r = 0.60)
+
+== References ==
+
+<biblio force=false>
+#[[Julius B. Lucks/Bibliography]]
+</biblio>

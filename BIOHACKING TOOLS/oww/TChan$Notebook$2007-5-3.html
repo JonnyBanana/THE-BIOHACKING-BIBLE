@@ -1,0 +1,337 @@
+=Presentation=
+==Stuff done==
+===1. General output===
+'''INPUT''': Disease name
+
+'''OUTPUT''': Targeted URLs and lists of data that would be of interest to the patient
+
+====Targeted data (from MedStory)====
+* Drugs
+* Experts
+* Drugs in clinical trials
+* Procedures
+
+====Targeted URL outputs====
+* MedStory
+* eMedicine
+* Google (general)
+* Google (treatment)
+* Wikipedia
+* WHO
+* GeneCards
+
+===2. Allelic frequency===
+'''INPUT''': RS#
+
+'''OUTPUT''': parsed allelic frequency data from dbSNP
+
+* Though started by looking at GeneCards, saw that GeneCards takes its data from dbSNP, so decided to go to the source.
+
+# Download dbSNP HTML file targeted to the RS#
+# Extract the line of HTML describing allelic frequency
+## Provision: if no allelic frequency data, will tell user
+# Break it down into HTML table-row chunks, convenient because the different rows stand for different population groups
+# Extract the categories of data
+# Extract all the data from the populations
+## ss#
+### Provisions: if no ss# in that row (because multiple population groups are combined under one ss#), will return '' in the ss# position in the list
+## Population Name - technical name of the population 
+## Individual Group - race of people in population
+## Chromosome Sample Count - number of chromosomes analyzed in the population
+## Source - ?
+## Allele Combinations - SNP means that there will be differing nucleotides in the population
+### Provisions: allows for empty allele combinations
+## HWP - ?
+## Alleles - frequency of the individual alleles
+### Provisions: allows for empty allele combinations
+
+==Lessons learned==
+* In order to build something in a large group like this one:
+** (visually, if possible) plot out:
+***general framework
+***what needs to be done
+***what is being done, and
+***by whom. 
+**(This was also an iGEM lesson.)
+* Scientific foresight
+** We're pretty darn near-sighted, in general.
+* Don't bite off more than you can chew.
+* (Corollary) Don't let tasks go by you.
+* IDLE is useful.
+* Front end is more fun than back end.
+* Programming is fun for the brain - much more so than writing papers.
+
+
+===Things I now know how to do===
+* Use BioPython to program simple stuff
+* Use Python to access search sites
+** URL (cheap way)
+* Parse XML, the nice way
+* Parse HTML, the brute force way
+* Read HTML forms 
+* Look at installed code to figure out how to program my own tasks
+* Write functions
+
+* Do research online to figure out how to complete a programming task
+* (Related) How to decide whether or not and how to complete a programming task
+* Break programs down
+
+
+===Things I now know exist===
+* BioPython! (And its API.)
+* IDLE
+* Help sites for Python 
+** Especially for interfaces with other data
+* Python: __init__, XML parsers, installed code
+* NCBI: multiple forms of BLAST, GenBank, OMIM
+* GeneCards, HapMap, PolyPhenk, MeSH Terms
+* POST and GET
+* Locally-kept databases
+* Interesting methods for strings
+
+
+
+
+
+=Allelic Frequency=
+* '''Input''': rs# (string)
+* '''Output''': allelic frequency data (list of lists (of lists, in some cases))
+
+==Sample Input==
+<pre>"rs11200538"</pre>
+
+==Code==
+<pre>
+import urllib
+
+# Definitions of functions
+
+# Returns the dbSNP URL for the search term
+def parse_for_dbSNP_search(search_term):
+    #search_term will be initial input, the RS# in a string (ie. "rs11200538" or "11200538")
+    parsed_term = search_term.replace("rs", "")
+    return "http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?rs=%s" % parsed_term
+    
+# Grabs the dbSNP HTML search_file
+def get_dbSNP_search_file(URL, genl_search_file):
+    URL_stream_genl = urllib.urlopen(URL)
+    page = URL_stream_genl.read()
+    URL_stream_genl.close()
+    genl_search_file.write(page)
+
+# Extracts out the relevant allelic frequency line from the dbSNP HTML search file
+def extract_allelic_freq_line(dbSNP_file):
+    for line in dbSNP_file:
+        if line.find('''Alleles</TH></TR><TR ><TH  bgcolor="silver">ss''') != -1:
+            return line
+        elif line.find('''There is no frequency data.''') != -1:
+            better_luck_next_time = ''
+            return better_luck_next_time
+
+# Divides the relevant allelic frequency line into separate HTML-table 'rows', which delineate the populations
+def divide_freq_line_into_TRs(freq_line):
+    TR_list = []
+    while freq_line.rfind("<TR") != -1:
+        TR_instance = freq_line.rfind("<TR")
+        TR_list.insert(0, freq_line[TR_instance:(len(freq_line))])
+        freq_line = freq_line[0:TR_instance]
+    TR_list.insert(0, freq_line)
+    return TR_list
+
+# Parses out (1) categories, and (2) population rows
+def extract_categories_and_population_TRs(categories, population_list, TR_list):
+    for element in TR_list:
+        if element.find('''ss#''') != -1:
+            categories = element
+        elif element.find('''<td ><a href="snp_viewTable.cgi?pop=''') != -1:
+            population_list.append(element)
+    return categories, population_list
+
+def parse_IMG_tags_out_of_category(category):
+    if "<IMG" in category:
+        category = category[0:category.find("<IMG")]
+    return category
+
+def parse_BR_tags_out_of_category(category):
+    br = "<BR>", "<br>"
+    if category.endswith(br):
+        category = category[0:len(category)-4]
+    category = category.replace("<BR>", ' ')
+    category = category.replace("<br>", ' ')
+    return category
+
+# Returns cleaned-up categories (ie. ss#, Population, etc.)
+def parse_categories(categories):
+    categories_list = []
+    while categories.rfind('''<TH  bgcolor="silver">''') != -1:
+        category_instance = categories.rfind('''<TH  bgcolor="silver">''')
+        end_tag_instance = categories.rfind('''</TH>''')
+        categories_list.insert(0, categories[(category_instance+22):end_tag_instance])
+        categories = categories[0:category_instance]
+    
+    for index in range(len(categories_list)):
+        categories_list[index] = parse_IMG_tags_out_of_category(categories_list[index])
+        categories_list[index] = parse_BR_tags_out_of_category(categories_list[index])
+    return categories_list
+
+
+# Extraction functions to parse allelic frequency data from populations
+
+# Returns whether or not the particular population in population_list has an ss_numb
+def ss_numb_in_population(population):
+    if '''<a href="snp_ss.cgi?ss=''' in population:
+        return True
+    else:
+        return False
+
+def extract_ss_numb(population):
+    #SS_numb START: after '''<a href="snp_ss.cgi?ss='''
+    #SS_numb END: before the '''">''' immediately after '''<a href="snp_ss.cgi?ss=''' 
+    if ss_numb_in_population(population):
+        ss_numb = population[population.find('''<a href="snp_ss.cgi?ss=''')+23:population.find('''">''',
+                             population.find('''<a href="snp_ss.cgi?ss='''))]
+        last_index = population.find('''">''', population.find('''<a href="snp_ss.cgi?ss=''')) + 2
+    else:
+        ss_numb = ''
+        last_index = 0
+    return ss_numb, last_index
+
+def extract_population_name(population, last_index):
+    #population_name START: after the '''">''' immediately after '''<a href="snp_viewTable.cgi?pop='''
+    #population_name END: before the '''</a>''' that occurs after '''<a href="snp_viewTable.cgi?pop='''
+    population_name = population[population.find('''">''', population.find('''<a href="snp_viewTable.cgi?pop='''))+2:
+                                     population.find('''</a>''', population.find('''<a href="snp_viewTable.cgi?pop='''))]
+    last_index = population.find('''</a>''', population.find('''<a href="snp_viewTable.cgi?pop=''')) + 5
+    return population_name, last_index
+
+def extract_group(population, last_index):
+    start_point = population.find('''<td >''', last_index) + 5
+    group = population[start_point:population.find('''</td>''', start_point)]
+    last_index = population.find('''</td>''', start_point) + 5
+    return group, last_index
+
+def extract_chrom_cnt(population, last_index):
+    start_point = population.find('''<td >''', last_index) + 5
+    chrom_cnt = population[start_point:population.find('''</td>''', start_point)]
+    chrom_cnt = chrom_cnt.strip()
+    last_index = population.find('''</td>''', start_point)
+    return chrom_cnt, last_index
+
+def extract_source(population, last_index):
+    start_point = population.find('''<td >''', last_index) + 5
+    source = population[start_point:population.find('''</td>''', start_point)]
+    source = source.strip()
+    last_index = population.find('''</td>''', start_point)
+    return source, last_index
+
+def extract_allele_combos(num_of_allele_combos, population, last_index):
+    # This function works even if there are identical allele combos
+    allele_combos = []
+    start_point = population.find('''<FONT  size="-1">''', last_index) + 17
+    for i in range(num_of_allele_combos):
+        allele_combo = population[start_point:population.find('''</FONT>''', start_point)]
+        allele_combos.append(allele_combo)
+        last_index = start_point + 5
+        start_point = population.find('''<FONT  size="-1">''', population.find('''</FONT>''', start_point)) + 17
+    for j in range(num_of_allele_combos):
+        allele_combos[j] = allele_combos[j].strip()
+    return allele_combos, last_index
+
+def extract_HWP(population, last_index):
+    # This function works even if the last allele_combo was ''
+    start_point = population.find('''<FONT  size="-1">''', last_index) + 17
+    HWP = population[start_point:population.find('''</FONT>''', start_point)]
+    HWP = HWP.strip()
+    last_index = population.find('''</FONT>''', start_point)
+    return HWP, last_index
+    
+def extract_alleles(num_of_alleles, population, last_index):
+    alleles = []
+    start_point = population.find('''<FONT  size="-1">''', last_index) + 17
+    for i in range(num_of_alleles):
+        if start_point != 16:   #ie. if the population.find returned -1 because no more '''<FONT  size="-1">'''s were found, + 17
+            allele = population[start_point:population.find('''</FONT>''', start_point)]
+            alleles.append(allele)
+            last_index = start_point + 5
+            start_point = population.find('''<FONT  size="-1">''', population.find('''</FONT>''', start_point)) + 17
+        else:
+            alleles.append('')
+    for j in range(num_of_alleles):
+        alleles[j] = alleles[j].strip()
+    return alleles, last_index
+
+# Master function to compile the list of lists (of lists) that holds all the interesting allelic frequency data
+def parse_population_list(num_of_allele_combos, num_of_alleles, population_list, master_data_list):
+    for index in range(len(population_list)):
+        last_index = 0
+        ss_numb = ''
+        ss_numb, last_index = extract_ss_numb(population_list[index])
+        population_name, last_index = extract_population_name(population_list[index], last_index)
+        group, last_index = extract_group(population_list[index], last_index)
+        chrom_cnt, last_index = extract_chrom_cnt(population_list[index], last_index)
+        source, last_index = extract_source(population_list[index], last_index)
+        allele_combos, last_index = extract_allele_combos(num_of_allele_combos, population_list[index], last_index)
+        HWP, last_index = extract_HWP(population_list[index], last_index)
+        alleles, last_index = extract_alleles(num_of_alleles, population_list[index], last_index)
+            
+        master_data_list.append([ss_numb, population_name, group, chrom_cnt, source, allele_combos, HWP, alleles])
+    return master_data_list
+
+
+#BEGIN ACTUAL PROGRAM
+search_term = "rs185079"     # example search_term for now; will be returned by rest of program when finished    
+search_file_name = "%s_dbSNP.html" % search_term
+
+dbSNP_file = open(search_file_name, 'w')
+URL = parse_for_dbSNP_search(search_term)
+get_dbSNP_search_file(URL, dbSNP_file)
+dbSNP_file.close()
+
+dbSNP_file = open(search_file_name, 'r')
+freq_line = extract_allelic_freq_line(dbSNP_file)
+dbSNP_file.close()
+
+if freq_line != '':
+    TR_list = divide_freq_line_into_TRs(freq_line)
+    categories = ''
+    population_list = []
+
+    categories, population_list = extract_categories_and_population_TRs(categories, population_list, TR_list)
+
+    categories_list = []
+    categories_list = parse_categories(categories)
+    num_of_categories = len(categories_list)
+    num_of_allele_combos = categories_list.count('A/A') + categories_list.count('A/T') + categories_list.count('A/C') + categories_list.count('A/G') + categories_list.count('T/A') + categories_list.count('T/T') +categories_list.count('T/C') + categories_list.count('T/G') + categories_list.count('C/A') + categories_list.count('C/T') + categories_list.count('C/C') + categories_list.count('C/G') + categories_list.count('G/A') + categories_list.count('G/T') + categories_list.count('G/C') + categories_list.count('G/G')
+    num_of_alleles = categories_list.count('A') + categories_list.count('T') + categories_list.count('C') + categories_list.count('G')
+
+    master_data_list = []
+    master_data_list.append(categories_list)
+
+    master_data_list = parse_population_list(num_of_allele_combos, num_of_alleles, population_list, master_data_list)
+
+    for row in master_data_list:
+        print row
+else:
+    print '''Sorry, there is no frequency data.'''
+</pre>
+
+==Sample Output==
+<pre>
+['ss#', 'Population', 'Individual Group', 'Chrom. Sample Cnt.', 'Source', 'A/A', 'A/G', 'G/G', 'HWP', 'A', 'G']
+['ss16081968', 'HapMap-CEU', 'European', '118', 'IG', ['0.983', '0.017', ''], '1.000', ['0.992', '0.008']]
+['', 'HapMap-HCB', 'Asian', '90', 'IG', ['0.556', '0.356', '0.089'], '0.584', ['0.733', '0.267']]
+['', 'HapMap-JPT', 'Asian', '90', 'IG', ['0.533', '0.356', '0.111'], '0.371', ['0.711', '0.289']]
+['', 'HapMap-YRI', 'Sub-Saharan African', '120', 'IG', ['1.000', '', ''], '1.000', ['', '']]
+['', 'CHMJ', 'Asian', '74', 'IG', ['', '', ''], '0.757', ['0.243', '']]
+['ss24106683', 'AFD_EUR_PANEL', 'European', '48', 'IG', ['0.917', '0.083', ''], '1.000', ['0.958', '0.042']]
+['', 'AFD_AFR_PANEL', 'African American', '44', 'IG', ['1.000', '', ''], '1.000', ['', '']]
+['', 'AFD_CHN_PANEL', 'Asian', '48', 'IG', ['0.583', '0.333', '0.083'], '0.655', ['0.750', '0.250']]
+</pre>
+
+*The categories in master_data_list[0] correspond to the data items in each of the following rows.  
+*For convenience, the allele_combos frequencies and the allele frequencies were collected in to their own lists.
+
+If no frequency data is given by dbSNP, the following will be output:
+<pre>
+Sorry, there is no frequency data.
+</pre>

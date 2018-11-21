@@ -1,0 +1,148 @@
+{{Template:ImperialCollege Spring2008 SyntheticBiologyCourse ComputerModellingPractical‎}}
+<font color=red>...UNDER DEVELOPMENT...</font>
+<div style="padding: 10px; width: 720px; border: 5px solid #B3CD4E;">
+<div style="padding: 10px; width: 680px; border: 5px solid #B3CD4E; color: #2171B7; background-color: #FFFFFF">
+<font face="trebuchet ms" style="color:#2171B7" size="2">
+<div style="padding: 0px; width: 680px; color: #2171B7; background-color: #B3CD4E">
+<center><font face="trebuchet ms" style="color:#2171B7" size="5">
+'''Practical 3'''
+</font><br></center>
+</div>
+<div style="padding: 0px; width: 680px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">'''Objectives:'''</font><br>
+</div>
+
+* To explore computationally some simple genetic circuits:  
+** Genetic Cascade To Be Tuned.
+** A genetic oscillator: the Repressilator.
+** A mystery device.
+
+<div style="padding: 0px; width: 680px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">Deliverables</font><br>
+</div>
+
+* A report is expected by ... (Word or PDF format, sent to XXX@XXX)
+* When you find in the text '''(illustration needed)''', it means that you will have to provide an image export of your simulation results in your report.
+
+* '''Instructors:'''[[User:Vincent Rouilly| Vincent Rouilly]], Geoff Baldwin.
+</font><br>
+</div>
+
+<div style="padding: 0px; width: 710px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">
+'''Part I: Genetic Cascade To Be Tuned '''
+</font><br>
+</div>
+
+
+In [[...|Practical 2]], we have explored how gene expression can be controlled (positively or negatively) by other proteins. Here, we start to assemble genetic circuit by connecting genes. The model studied here is a simple genetic cascade, where a Gene_1 produces a protein which repressed the expression of Gene_2. Additionally, you are able to induce the expression of Gene_1 thanks to an inducer.
+ 
+To start, launch the CellDesigner Application: Double Click on the Icon found on your Desktop.
+Then follow the instructions below to build the model.
+
+
+{| border="1"  cellpadding="10" cellspacing="2" style="width:700px; border:3px green"
+!Model
+!CellDesigner Instructions
+|-
+| <center><math>
+Gene \xrightarrow{k_{1}} mRNA \xrightarrow{k_{2}} Protein
+</math></center>
+| 
+'''Define the topology of the reaction network''':
+* Open a NEW document: File -> New.
+*
+[[Image:CellDesigner_Simple_Genetic_Cascade_Network.png|300px|Genetic Cascade]]
+|-
+| 
+Following the Law of Mass action, the dynamic of the system is described as: 
+<center><math>
+...
+</math></center>
+| 
+* ....
+|}
+
+'''Questions:'''
+* Using the default kinetics parameters, build the following 3 transfer functions:
+** first, between the [inducer] concentration, and the Protein_1 steady-state expression level. Take the inducer level to vary between [0, 10000]. Comment on the behaviour observed (Illustrations)
+** second, between the Protein_1 concentration (to be kept constant during the simulations), and the Protein_2 steady-state expression level. Make sure that the range covered by the concentration of Protein_1 helps to explore the full dynamic range of system behaviour.
+** third, between the [inducer] concentration, and the Protein_2 steady-state expression level. Take the inducer level to vary between [0, 10000]. Comment on the behaviour observed (Illustrations)
+* We want to tune this cascade so that when using our maximal [inducer] concentration we are able to completely shut-down the expression of Protein_2. Suggest 2 independent strategies to achieve that result.
+
+'''Additional Resources:'''
+* [http://genomicsgtl.energy.gov/science/generegulatorynetwork.shtml Gene Regulatory Networks]
+* [http://en.wikipedia.org/wiki/Gene_regulatory_network Genetic Networks (from Wikipedia)]
+
+<div style="padding: 0px; width: 710px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">
+'''Part II: Genetic Oscillator: The Repressilator
+</font><br>
+</div>
+
+...
+
+<biblio>
+#Elowitz2000 pmid=10659856
+</biblio>
+
+{| border="1"  cellpadding="10" cellspacing="2" style="width:700px; border:3px green"
+!Model
+!CellDesigner Instructions
+|-
+|
+[[Image:Repressilator_Elowitz_Plasmids.png|300px|Repressilator Elowitz Plasmids]]
+| 
+[[Image:CellDesigner_Repressilator_Network.png|300px|Repressilator Genetic Circuit]]
+|-
+|
+[[Image:Repressilator_Elowitz_Observations.png|300px|Repressilator Elowitz Experimental Observations]]
+| 
+[[Image:Repressilator Elowitz Deterministic Simulations.png|300px|Repressilator Deterministic Simulations]]
+|}
+
+
+
+
+'''Questions:'''
+* Focus on the modelling section of the published paper, and build your own 'Repressilator' model in CellDesigner.
+* Run a simple sensitivity analysis on each parameter, and suggest some strategies to control the amplitude of the oscillations.
+* Do the same to suggest ways to control the frequency of the oscillations.
+* '''Bonus''': Could you explain the drift observed on the experimental data ? Provide a simulation supporting your hypothesis.
+
+'''Additional Resources:'''
+* [http://electronics.howstuffworks.com/oscillator.htm How Stuff Works on Oscillators]
+
+
+<div style="padding: 0px; width: 710px; color: #2171B7; background-color: #B3CD4E">
+<font face="trebuchet ms" style="color:#2171B7" size="3">
+'''Part III: A mystery device
+</font><br>
+</div>
+
+...
+
+{| border="1"  cellpadding="10" cellspacing="2" style="width:700px; border:3px green"
+!Model
+!CellDesigner Instructions
+|-
+| <center><math>
+Gene \xrightarrow{k_{1}} mRNA \xrightarrow{k_{2}} Protein
+</math></center>
+| 
+'''Define the topology of the reaction network''':
+* Open a NEW document: File -> New.
+*
+[[Image:CellDesigner_Mystery_Device_Network.png|300px|Mystery Device Network]]
+|}
+
+</div>
+
+'''Questions:'''
+* Suggest a strategy to characterise this model (Establish clear simulation scenarii to illustrate the properties of this genetic circuit. Tip: The cell designer function related to 'Change Amount' might be handy)
+* From your characterisation, how would you call this device ? 
+* Imagine an application where this genetic device would be useful. 
+
+
+'''Additional Resources:'''
+* ...

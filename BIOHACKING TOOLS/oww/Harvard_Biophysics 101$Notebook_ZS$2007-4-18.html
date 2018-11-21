@@ -1,0 +1,133 @@
+Back in business! No more M-CRAP :D
+==What I plan to do in the near future==
+
+We've established that there is a demand to classify rs#'s based on clinical importance - one way to go about doing this relatively painlessly is to determine how many people are diagnosed with the disorder when given a disease name. With that in mind, I found a excel file from California which has disease names linked to the CDC naming convention, along with number diagnosed; if I can mine this file given a disease ID, or better yet just an rs#, then we have a basis by which to judge clinical importance.
+
+''Note:'' I'm really sorry guys, but I won't be able to work on this until after the 16th - I have the MCAT on the morning of, but afterwards I'll get to it. Hopefully it won't be too complicated though.
+==Resources for disease frequency==
+
+*CDC Database of morbidity: http://www.cdc.gov/nchs/icd9.htm , in text files which can be parsed
+*Diagnosis Frequency data from state of California: http://www.oshpd.ca.gov/hqad/PatientLevel/ICD9_Codes/index.htm
+*CDC information for causes of death (in pdf) http://www.cdc.gov/nchs/fastats/lcod.htm
+
+==Progress==
+4.18.07: Building off the discussion on 4.17.07, completed a module which takes as input OMIM keywords supplied by Resmi and co. and gives as output ICD9 IDs and prevalence information, based on data from the state of California.
+
+To do: Make it more legible, conglomerate statistics, figure out a way to rank prevalence.
+Extension required: Find a dB which has ICD9 ID's and genetic prevalance - that would be a gold mine. literally.
+
+Useful links (my own ref:)
+*http://wonder.cdc.gov/ CDC data, server was down
+*http://icd9cm.chrisendres.com/ ICD9 lookup
+*http://www.webservicemart.com/icd9code.asmx?op=ICD9Codes field lookup i might use later
+*http://www.oshpd.ca.gov/hqad/PatientLevel/ICD9_Codes/index.htm CA data source
+
+<pre>
+#ICD9_prevalance.py
+#Zachary Sun
+#4.18.07, Biophysics 101
+
+#This code does a couple of things:
+#1) Enables lookup of ICD9 ID numbers when given a search term
+#    *This is particularly useful as all data (WHO, CDC) is based
+#    *on the ICD9 ID, which is a method of classifying all known
+#    *diseases. This code is able to queue a website, http://icd9cm.chrisendres.com
+#    *which has the database of diseases - it returns the best hits
+#    *in dirty HTML, which can then be parsed to obtain ICD9 #'s and description.
+#2) Enables lookup of prevalance data in databased
+#    *Currently, I only have it hooked up to the State of CA prevalance data from
+#    *http://www.oshpd.ca.gov/hqad/PatientLevel/ICD9_Codes/index.htm, it does a
+#    *lookup based on #1 and returns prevalance data. As soon as I find more databases
+#    *I can extend the search; I haven't found much good though save the main CDC db
+#    *at http://wonder.cdc.gov/.
+
+#To do: clean up output
+
+import os
+import string
+import urllib
+
+fh = open(os.path.join(os.curdir, "dx05.txt")) #the CA data file
+line = fh.readline()
+disease_name = "asthma" #INSERT DISEASE NAME HERE FOR TESTING
+ICD9code = []
+found = 0
+
+
+####
+#queueing http://icd9cm.chrisendres.com for code lookup
+####
+queue_name = 'http://icd9cm.chrisendres.com/index.php?action=search&srchtype=diseases&srchtext='
+queue_name = queue_name + disease_name
+
+    
+code_lookup = urllib.urlopen(queue_name).read() #send queue request to site, returns dirty html
+out = open("index.txt", "w") #write dirty html to file
+out.write(code_lookup)
+out.close()
+
+readCode = open("index.txt", "r") #read dirty html
+lookup_line = readCode.readline()
+print "***ICD9 and hits, arranged by importance***\n"
+while lookup_line:
+    w= lookup_line.find("<div class=dlvl>") #the unique marker before the disease
+    if w != -1: #if it is found
+        tempCode = lookup_line[32:40] #code in this section
+        tempCode = string.split(tempCode, ' ') #split into number
+        ICD9code.append(tempCode[0])
+        print lookup_line[32:len(lookup_line)-7] #disable in final version - shows the hits found
+    lookup_line = readCode.readline()
+
+
+####
+#searching incidence data in CA data file
+####
+print "\n\n***Prevalance data per IDC9 above***\n"
+while line: #for every line in the data
+    line = line[:-1] #remove /n
+    lineVector = string.split(line, ',') #split to vector
+    for code in ICD9code:
+        if lineVector[0].find(code) != -1: #if disease hit
+            print "Found ID ",code," , incidence: " , lineVector[1]
+            break
+    line = fh.readline()
+
+</pre>
+
+output:
+<pre>
+***ICD9 and hits, arranged by importance***
+
+493.0 Extrinsic asthma
+493.1 Intrinsic asthma
+493.9 Asthma, unspecified
+495.8 Other specified allergic alveolitis and pneumonitis
+493.2 Chronic obstructive asthma
+V17.5 Asthma</div>
+493.8 Other forms of asthma</div>
+493.82 Cough variant asthma</div>
+507.8 Due to other solids and liquids
+786.07 Wheezing
+
+
+***Prevalance data per IDC9 above***
+
+Found ID  493.0  , incidence:  7033
+Found ID  493.0  , incidence:  2354
+Found ID  493.0  , incidence:  4307
+Found ID  493.1  , incidence:  69
+Found ID  493.1  , incidence:  27
+Found ID  493.1  , incidence:  52
+Found ID  493.2  , incidence:  29291
+Found ID  493.2  , incidence:  1447
+Found ID  493.2  , incidence:  20240
+Found ID  493.8  , incidence:  332
+Found ID  493.8  , incidence:  36
+Found ID  493.9  , incidence:  123688
+Found ID  493.9  , incidence:  4839
+Found ID  493.9  , incidence:  21918
+Found ID  495.8  , incidence:  38
+Found ID  507.8  , incidence:  232
+Found ID  786.07  , incidence:  932
+Found ID  V17.5  , incidence:  1766
+</pre>

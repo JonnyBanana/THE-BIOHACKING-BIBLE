@@ -1,0 +1,31 @@
+[http://subversion.tigris.org/ Subversion project page]
+
+==Reference==
+*[http://www.redhat.com/magazine/010aug05/features/subversion/ CVS is out, Subversion is in] - a RedHat article
+*[http://svnbook.red-bean.com/ Version Control with Subversion] - ebook
+*[http://tovid.wikia.com/wiki/SVN_crash_course SVN crash course]
+*[http://centerstageproject.com/wiki/index.php/SVN_Tutorial SVN Tutorial]
+
+==GUI==
+*[http://rapidsvn.tigris.org/ RapidSVN] - Windows, Linux, Mac
+*[http://www.lachoseinteractive.net/en/community/subversion/svnx/features/ SvnX] - Mac only
+*[http://esvn.umputun.com/ eSvn] - Linux only, an RPM available
+*[http://kafana.org/SvnExplorer/ Svn Explorer] - Windows only
+
+==Instructions==
+*Create repository
+ svnadmin create --fs-type fsfs $HOME/svnrepo
+*Checkout file
+ svn checkout file://$HOME/svnrepo $HOME/checkout
+*to check the status of a file
+ svn status [PATH]
+*'?' means no file named README is in HEAD of the repository, which is what we expect as this is an empty repository
+*'A' means the file has been added to our working copy, but not yet checked in. In general, svn status will only show us lines of output for changes in our working copy
+*to add a file to the working copy
+ svn add README
+*commit the changes from working copy to repository
+ svn commit -m 'my first file!'
+*bring changes from repository to the working copy
+ svn update
+*view history
+ svn log

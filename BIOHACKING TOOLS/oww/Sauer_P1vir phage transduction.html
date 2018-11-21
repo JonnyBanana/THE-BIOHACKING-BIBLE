@@ -1,0 +1,76 @@
+{{Sauer lab sidebar}}
+
+[[P1vir phage transduction|Back to P1vir phage transduction]]
+
+contributed by [[Sean Moore]]
+
+==Background==
+
+Phage transduction is used to move selectable genetic markers from one "donor" strain to another "recipient" strain.  Nat Sternberg, among others, pioneered the use of phage P1 to move genetic elements in <i>E. coli</i> and the use of the Cre/Lox system from P1 for controlled recombination.  Today, phage P1 is commonly used as a transducing agent because it is a generalized tranducer (it can package random sections of the host chromosome instead of its own genome) giving rise to "transducing particles".  P1<i>vir</i> is a mutant phage that enters the lytic cycle upon infection (ensuring replication and lysis).  During the replication and lysis of the phage in a culture of bacteria, a small percentage of the phage particles will contain a genome segment that contains your gene of interest.  P1 packages approximately 90 kb of DNA, so you can transduce genes that are linked to a selectable marker.
+
+Once a phage population has been generated from a donor host, the phage are used to infect a recipient host.  Most of the bacteria are lysed by phage that packaged P1 genomes, but a fraction of the phage inject a genome segment derived from the donor host. Homologous recombination then allows the incoming genomic segment to replace the existing homolgous segment.   The infected recipient bacteria are plated on a medium that selects for the genome segment of the donor bacteria (antibiotic resistance, prototrophy, etc.)
+
+All of this would not work if the infectivity of the phage could not be controlled.  Otherwise, phage released from neighboring cells would infect and lyse the bacteria that had been infected with transducing particles.  Someone really smart discovered that phage P1 requires calcium for infectivity.  Therefore, you can control P1 infectivity by growing in the presence and absence of calcium.  The calcium chelator citrate is usually used because it lowers the concentration of free calcium (by forming Ca-citrate) low enough to prevent P1 infection, but not so low as to starve the cells for calcium.
+
+==Lysate preparation==
+
+1. Dilute an overnight culture (LB medium) of donor strain 1:100 in fresh LB + 5 mM CaCl2 and 0.2% glucose (2.5 mL should be enough). Grow with aeration at 37 ˚C for 1 hr. Add 100 µL of P1 phage lysate to the culture, continue growing at 37 ˚C. Monitor for 1–3 hr until the culture has lysed completely.
+
+2. Add several drops of chloroform to the lysate and vortex. Centrifuge away the debris (14,000 rpm, 1–2 min) and transfer the supernatant to a fresh tube. Add a few drops of chloroform and store at 4 ˚C.
+
+==Transduction==
+
+1. Grow recipient strain overnight in LB medium (2 mL culture is plenty).
+
+2. On the next day, harvest the cells by centrifugation (6000 rpm, 2 min) and resuspend in original culture volume in fresh LB + 100 mM MgSO4 + 5 mM CaCl2. (note: 10 mM MgSO4 works fine, too, so you can use the 0.1 M MgSO4 the kitchen makes.)
+
+3. Set up four "reactions":
+
+A. 100 µL undiluted P1 lysate + 100 µL recipient cells
+B. 100 µL 1:10 diluted P1 lysate + 100 µL recipient cells
+C. 100 µL LB + 100 µL recipient cells
+D. 100 µL undiluted P1 lysate + 100 µL LB
+
+(note for step 3: LB = LB + 100 mM MgSO4 + 5 mM CaCl2; dilute your P1 lysate in this as well)
+
+4. Incubate tubes at 37 ˚C for 30 min.
+
+5. Add 200 µL 1 M Na-Citrate (pH 5.5), then add 1 mL LB (the real thing this time) and incubate at 37 ˚C for 1 hr to allow expression of the antibiotic resistance marker.
+
+6. Spin cells at 6000 rpm for 2-3 min.
+
+7. Resuspend each in 100 µL LB + 100 mM Na-Citrate (pH 5.5) and plate all of it on an appropriate antibiotic-containing plate.
+
+8. You should get anywhere from ~ 10 to 2000 colonies.  These colonies are growing on a plate that is covered with P1 phage.  If you simply pick a colony from this plate and prepare a freezer stock, you will most likely have phage contamination that will manifest when a culture is grown up in the absence of a calcium chelator.  Therefore, prepare a plate spread with the selection antibiotic and 100 µL of 100 mM citrate (pH 5.5).  Then, use a toothpick to touch the top of a few colonies and re-streak on the new plate for isoalted colonies.
+
+9.  Test a colony from each re-streak for the presence of the mutant gene you intended to transduce using diagnostic PCR or Southern blotting.
+
+==Anecdotes==
+
+*The chloroform used to sterilize the phage lysates, well, sterilizes.  If you have visible chloroform drops in the lysate stock, don't add this to your recipient cells directly because you can kill a decent number of bacteria.  Instead, aliquot your phage into microfuge tubes and incubate with the caps open at 37 ˚C for about 30 minutes to allow the chloroform to evaporate.  Then add the recipient cells to the tubes with the phage.
+
+*When preparing the donor phage lysate, there is a huge variability in the titer of phage obtained at this step which makes transduction performance unpredictable.  Some donor cells are slow "wake up" from stationary phase and 3 hours will not be enough.  If it is obvious that there was no culture development in the tube, let it shake overnight.  The next morning, you will have a culture of cells and, perhaps, noticeable cell debris.  Treating this with chloroform and preparing it as a phage lysate usually works well.
+
+*P1 lysis is accelerated under reducing conditions (Ryland Young's Lab).  Adding 1 mM DTT to the top agar allows P1 to develope better plaques.  It follows that reducing agents may help the donor lysate develope and help the recipients infecected with infectious P1 to lyse before plating.  If you're having trouble getting a high titer of donor phage, try &beta;-mercaptoethanol at 1/1000 culture volume.
+
+*P1 replicates poorly in <i>recA</i>- hosts.  Moreover, RecA is required for the homologous recombination needed to integrate the donor DNA.  Therefore, I have not been able to transduce into <i>recA</i> bacteria.  In cases that I needed to have <i>recA</i>- bacteria following a transduction, I first transduced my desired marker into a <i>recA</i>+ recipient, then subsequently transduced <i>recA::kan</i> from a specialized <i>recA+</i> donor strain generated by Barry Wanner (BW 26,547 <i>recA::kan</i> Lambda <i>recA</i>+).
+
+*As mentioned above, P1 packages ~90 kb of DNA.  This means that genes in the vicinity of your target gene in the recipient will most likely be replaced with copies of the neighboring genes from the donor.  Therefore, you can't easily transduce a marker close to an existing marker in the recipient unless you have good selection for both markers and there is enough space between the genes to allow significant recombination between them. It is a good idea to be aware of the relative distances of genes of interest in your strains when transducing to avoid accidental curing of relevent markers.
+
+
+==References==
+Reference <cite>1</cite> is the first report of allelic exchange by "transduction" in enteric bacteria.  Ref. <cite>2</cite> is the earliest report I know of bacteriophage-dependent transduction in E. coli. This report is notable because it describes the K12-infective variant of P1 that has since been considered the "wild-type" P1.  Ref. <cite>3</cite> is a beautiful and detailed experimental demonstration that the transducing particles responsible for transduction co-elute with infecting particles in ultracentrifugation, and thus are fully-formed, intact virions, but carry DNA exclusively of bacterial origin. It also is an early (first?) report of the use of virulent mutant of P1, which is defective for lysogeny (i.e. P1vir). Ref. <cite>4</cite> Describes transduction across species boundaries.  Refs <cite>5 6</cite> provide additional reading about the development of the modern protocol.  Refs. <cite>7,8</cite> give good overviews of the molecular biology of P1 and practical protocols for use in transduction.  However, the agar plate method for preparation of phage lysates given in <cite>8</cite> is more laborious than the simple liquid culture method given in this protocol.  Resulting phage titers are often higher with the plate based protocol, but liquid lysate preparations also given sufficient titer to effect transduction.
+
+<biblio>
+#1 pmid=12999698
+#2 pmid=13267987
+#3 pmid=5883909
+#4 pmid=3494
+#5 pmid=4598005
+#6 pmid=4598709
+#7 pmid=6364958
+#8 [[A Short Course in Bacterial Genetics]]
+
+
+
+</biblio>

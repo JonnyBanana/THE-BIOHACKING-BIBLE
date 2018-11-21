@@ -1,0 +1,111 @@
+== Folding ==
+===Design 5===
+Realized that lid oligos were accidentally added in folding of c5.0.A on [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-20|8-20]]. Refolding c5.0.A to be just barrel oligos. Will use in PEG fractionation.
+
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Working Stocks'''
+| align="center" style="background:#f0f0f0;"|'''Description'''
+| align="center" style="background:#f0f0f0;"|'''Pre-Working Stocks''' 
+| align="center" style="background:#f0f0f0;"|'''Water'''
+| align="center" style="background:#f0f0f0;"|'''Total'''
+|-
+|c5.0A||no latches, no aptamers, no lids||1 (86 {{ul}}), 4 (2.5 {{ul}}), 5 (2.5 {{ul}}), 6 (1.5 {{ul}}), 7 (1.5 {{ul}})||106 {{ul}}||200 {{ul}}
+|}
+
+==Streptavidin Depletion Assay==
+===Protocol===
+'''Testing Conditions:'''
+*''(A) Unbeaded''
+*''(B) Beaded''
+*''(C) Free-streptavidin incubated''
+*''(D) Free-streptavidin incubated, then beaded''
+'''Test Solutions:'''
+*(1) c5.0.A (lidless barrel, no biotinylation)
+*(2) c5.0.Eb (lidless, outside biotinylation)
+*(3) c5.0.Fb (lidless, inside biotinylation)
+'''Mix:'''
+*''(B) Beaded''
+<pre>
+28uL agarose streptavidin beads
+40uL of each test solution rxn
+
+Spin down; remove supernatant to new tube.
+Speedvac to ~40uL
+Load 40uL in gel
+</pre>
+
+*''(C) Free-streptavidin incubated''
+****Free-streptavidin concentration needed
+*****1680pmoles on biotinylated boxes + 36pmoles of free biotinylated oligos = 1716pmoles = 1.7nmoles
+*****free streptavidin @ 2uM = 2nmol/uL
+*****thus, for safety, include 2uL of streptavidin
+<pre>
+2uL of 2uM streptavidin
+40uL of test solution
+26uL of H2O
+
+Speedvac to ~40uL
+Load 40uL in gel
+</pre>
+
+*''(D) Free-streptavidin incubated, then beaded''
+<pre>
+2uL of 2uM streptavidin
+40uL of test solution
+
+Wait 15 minutes
+
+Add 28uL of agarose streptavidin beads
+Wait 5 minutes
+
+Spin down; remove supernatant to new tube.
+Speedvac to ~40uL
+Load 40uL in gel
+</pre>
+
+===Gel===
+* Gel was 2% agarose in 0.5xTBE, 5uL EtBr, 10mM MgCl2.  Ran for 1.5hr @ 80V in 0.5xTBE supplemented to 10mM MgCl2.
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Lane'''
+| align="center" style="background:#f0f0f0;"|'''Component'''
+| align="center" style="background:#f0f0f0;"|'''Amount'''
+|-
+| 1||1kb+ ladder||10uL
+|-
+| 2||p7308 (~42nM)||9uL
+|-
+| 3||untreated c5.0 barrel (lidless)||~38uL
+|-
+| 4||untreated outside-biotinylated c5.0 barrel||~38uL
+|-
+| 5||untreated inside-biotinylated c5.0 barrel||~38uL
+|-
+| 6||agarose-beaded c5.0 barrel||~38uL
+|-
+| 7||agarose-beaded outside-biotinylated c5.0 barrel||~38uL
+|-
+| 8||agarose-beaded inside-biotinylated c5.0 barrel||~38uL
+|-
+| 9||free-streptavidin-treated c5.0 barrel||~38uL
+|-
+| 10||free-streptavidin-treated outside-biotinylated c5.0 barrel||~38uL
+|-
+| 11||free-streptavidin-treated inside-biotinylated c5.0 barrel||~38uL
+|-
+| 12||free-strep, then bead-treated c5.0 barrel||~38uL
+|-
+| 13||free-strep, then bead-treated outside-biotinylated c5.0 barrel||~38uL
+|-
+| 14||free-strep, then bead-treated inside-biotinylated c5.0 barrel||~28uL
+|}
+
+<gallery>
+Image:TC-20060822-strepdeplet-2h.jpg
+</gallery>
+
+*'''Preliminary Conclusions''':
+**no difference seen after adding free-streptavidin, and then beading to the outside biotinylated box (lane 13)
+***possible not enough free-streptavidin used
+**also, no difference in gel band brightness from untreated to beaded - agarose beads either do not work as well as expected (maybe should use magnetic beads), or the amount used was too low

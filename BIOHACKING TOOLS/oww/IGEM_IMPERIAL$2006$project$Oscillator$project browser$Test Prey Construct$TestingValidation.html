@@ -1,0 +1,116 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|-
+!height="25pt" width="80pt"| Super Parts
+!colspan="3" | [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Prey_Construct | Prey Construct]]
+|-
+!height="25pt" width="80pt"|Actual Part
+!colspan="3"|[[Image:J37015page.JPG‎|360px]]
+|-
+!height="25pt" width="80pt"|Sub Parts
+! [http://parts.mit.edu/registry/index.php/Part:BBa_F2620 F2620]
+! [http://parts.mit.edu/registry/index.php/Part:BBa_C0261 C0261]
+! [http://parts.mit.edu/registry/index.php/Part:BBa_I13401 I13401]
+|}
+<div class="tabs-blue">
+<ul>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Prey_Construct |Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Prey_Construct/Design|Design]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Prey_Construct/Modelling|Modelling]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Prey_Construct/Implementation|Implementation]]</li>
+<li id="current">[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Prey_Construct/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Protocols==
+
+[[IGEM:IMPERIAL/2006/Protocols/J37015|J37015 Standard Protocol]]
+
+[[IGEM:IMPERIAL/Protocols/J37015sevenhour|J37015 Chemostat Protocol]]
+
+==Results==
+
+==24/8/06==
+
+None of the positive feedback loops were activated including the ones we expected to be activated, don't know weather this is good or bad
+[[Image:John 14aug 1226 J27015 GFP results.xls]]
+
+==16/8/06==
+
+===Aims===
+
+Due to the protocol dilution after the overnight culture, it was thought that any AHL could have been diluted away. Here we have skipped dilution steps, and measured the AHL content of the supernatent directly from the overnight culture.
+
+===Results===
+
+*Graph
+
+{|
+|-
+| valign="top"|
+[[Image:J370153.JPG|thumb|left|500px|J37015 overnight supernatent resuspending T9002 cells for 3h5 (Error bars = 2xSD)]]
+|}
+
+*Data File:
+**[http://openwetware.org/images/1/1f/J370153a.xls GFP and Absorbance@490] after 3h5
+
+===Comments===
+
+*The levels of AHL displayed from the overnight culture relate to the maximum sensitivity of the AHL assay.
+**Therefore we cannot determine AHL levels
+
+===Conclusions===
+
+*AHL can be produced in both M9 and LB
+*J37015 is functional
+
+==15/8/06==
+
+===Aims===
+
+The aim of this experiment was to reassess this part. This was done with a set of spun down control cells. We are also assessing the initial state of the postive feedback loop by measuring GFP at time 0h.
+
+===Results===
+
+*Data Files:
+**[http://openwetware.org/images/1/1c/J37015GFP2a.xls GFP] and [http://openwetware.org/images/4/48/J37015OD2a.xls Abs490] after 0h
+**[http://openwetware.org/images/d/da/J37015GFP2b.xls GFP] and [http://openwetware.org/images/8/89/J37015OD2b.xls Abs490] after 3h
+**[http://openwetware.org/images/4/48/J37015GFP2c.xls GFP] and [http://openwetware.org/images/e/ee/J37015OD2c.xls Abs490] after 3h20
+
+===Comment===
+
+*The results show no noticeable increase in either:
+**GFP levels
+**AHL levels
+*This could suggest no AHL is being made, however the dilution steps after the overnight culture could have decreased the levels of AHL to non-measurable levels.
+
+===Conclusions===
+
+*Repeat the experiment but with no dilution steps after the overnight culture
+
+==11/8/06==
+
+===Aims===
+
+Due to difficulty in both the PCR screen and Mini-preping of the final J37015 construct it was decided to test the cells for production of AHL, which should be produced in large quantities if the ligations had been successful.
+
+===Results===
+
+*Data File:
+**[http://openwetware.org/images/3/36/J370151.xls GFP and OD490 Results]
+
+===Comment===
+
+*From the results the T9002 Control actually has a greater Fluorescence/OD490 than the T9002 resuspended in J37015 supernatent
+**This could be due to the fact that the T9002 cells that were used in the J37015 assay had to be spun down whereas the control cells were not
+**The T9002 J37015 assay cells were also in the fridge for a period of around 2 hours due to a protocol error. This could have effected the cells ability to produce GFP.
+*The results do not indicate any AHL at all in the supernatent of J37015 culture
+**This possibily indicates the ligation wasn not successful
+**However, due to the reasons above, it may simply be that being in the fridge/spun prevented the T9002 cells from responding to AHL
+*In order for J37015 to work, we have presumed a level of leakiness in pLuxR. If this level were too low no AHL would be produced.
+
+===Conclusions===
+
+*The experiment to determine whether the ligation was successful was inconclusive
+*The protocol should be changed to make sure both assay and control T9002 cells are spun and resuspended

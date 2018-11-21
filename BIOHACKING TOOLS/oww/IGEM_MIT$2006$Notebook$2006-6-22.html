@@ -1,0 +1,111 @@
+==Thin Layer Chromatography... Oh yeah!==
+Looks like a pretty simple process... Here's the link:
+
+http://orgchem.colorado.edu/hndbksupport/TLC/TLC.html
+
+Be sure to check out the illustrated description of the process.
+
+==Stationary Phase Promoter Research==
+The uspA promoter is only activated in stationary phase.
+
+See this paper:
+
+http://www.pubmedcentral.gov/articlerender.fcgi?tool=pubmed&pubmedid=8932299
+
+The osmY promoter is another one.
+
+See these papers:
+
+http://www.pubmedcentral.gov/articlerender.fcgi?artid=203352
+
+and 
+
+http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=8282684&dopt=Abstract
+
+==Results from Smelling Experiment from Yesterday==
+Faint smell from -TRP media.  Poor growth in -TRP media.  BSMT cells did not smell.  SAMT cells smelled the best at either 300 uM or 350 uM (2 people said 300, 2 people said 350).
+
+==Transformation==
+#Repeat failed transformations- see protocol [http://openwetware.org/wiki/Transforming_chemically_competent_cells_%28Inoue%29 here]
+#*use flat bottom tubes
+#*heat shock 50 seconds
+#*vortex control sample before transforming
+
+==Applications==
+#Looked again into the possibility of transforming Streptococcus mutans, which has been tweaked to be used as anti-cavity
+#Papers suggest some aerobic properties in certain strains that we could use: PMID 2134860, PMID 3965391, PMID 3793228, PMID 6746577, PMID 6432951
+#We should talk to someone that works with Streptococcus mutans
+#Also, we should look at also a port to S. epidermidis
+#Hook up to stationary phase
+
+==to do==
+#debug lack of transformants
+#run gel of SAMT and BAMT re-pcr reactions
+#grow liquid cultures in rich non-smelling bacteria media from Barry
+#codon optimize and place order for the synthesis of JAMT enzyme
+#look into getting a 3714 mutant e. coli strain
+#GC??
+
+==repeat restriction cut reaction==
+#this time we are cutting backbone and pcr product in the same volume with the same cut enzymes (E and P)
+#we are also running a control cut reaction with the part 3k3.I7101 from Barry
+#the total volume desired is about 50 &mu;L and amounts of dna desired is about 400 nanograms
+#*pSBIAC3 backbone at 30 ng/&mu;L -----add 14 &mu;L backbone
+#*BSMT pcr product at 90 ng/&mu;L -----add 4 &mu;L
+#*control part 3k3.I7101 at 44 ng/&mu;L ----add 10 &mu;L
+#we are also going to use Dpn1 to destroy all dna that is not a pcr product (i.e. get rid of extra template)
+#BSMT cut reaction (in order added, w/ mixing along the way):
+#*25 &mu;L water
+#*5 &mu;L NEB buffer 2
+#*.5 &mu;L BSA
+#*14 &mu;L backbone plasmid
+#*4 &mu;L BSMT pcr product
+#*.5 &mu;L Pst1
+#*.5 &mu;L EcoR1
+#*.5 &mu;L Dpn 1
+#CONTROL cut reaction (in order added, w/ mixing along the way):
+#*19 &mu;L water
+#*5 &mu;L NEB buffer 2
+#*.5 &mu;L BSA
+#*14 &mu;L backbone plasmid
+#*10 &mu;L part 3k3.I7101
+#*.5 &mu;L Pst1
+#*.5 &mu;L EcoR1
+#*.5 &mu;L Dpn 1
+#Incubate both tubes in 37c room for 4 hours
+
+==purification of cut reaction==
+#remove BSMT and CONTROL part tubes from incubation in 37c room
+#do a column purification and spec the end volume
+#*make sure to elute in less volume (i.e. 30 &mu;L)
+#store overnight at -20c and do ligation reaction tomorrow morning
+
+==make overnight cultures in Barry's EZ media==
+#general plan: will let uninduced cells grow overnight, then dilute them into EZ media + Kan + SA and LB + Kan + SA tomorrow morning.  Tomorrow, we will induce the cultures at both 4 hours and 8 hours of growth.
+
+Tonight, we will grow up the following cultures to be diluted tomorrow morning:
+
+LB + Kan + BSMT (glycerol stock D)
+
+LB + Kan + SAMT (glycerol stock D)
+
+EZ + Kan + BSMT (glycerol stock D)
+
+EZ + Kan + SAMT (glycerol stock D)
+
+==Paragraph summarizing what we're doing (in progress)==
+This summer, we (MIT's iGEM 2006 team) are trying to develop bacteria that smell pleasant.  We are working to isolate several genes that we can insert into bacteria in order to make these bacteria smell like wintergreen, jasmine, flowers, or bananas.  But why do we want to make bacteria smell good?  Well, one reason is that bacteria are responsible for producing many of the body's foul odors, and replacing these bacteria with wintergreen-oil producing bacteria would be pretty cool.  Additionally, scented bacteria might prove to be useful in the lab, since many biology researchers do not relish the fecal smell of indole-producing bacteria.  Finally, making scented bacteria is just plain awesome!  We feel like this is a really intriguing project, and we're excited to be working on it together this summer.
+
+==PCR...one last try, for everyone!==
+#Prepare the following tubes:
+#*1) 1μL "BSMT for pcr" + 49μL of Tom's PCR mix + .6μL of each BSMT primer
+#*2) 1μL "BAMT for pcr" + 49μL of Tom's PCR mix + .6μL of each BAMT primer
+#*3) 1μL "SAMT for pcr" + 49μL of Tom's PCR mix + .6μL of each SAMT primer
+#*4) 1μL yeast genomic DNA + 49μL of Tom's PCR mix + .6μL of each ATF1 primer
+#*5) 1μL "BSMT for pcr" + 49μL of Tom's PCR mix + .6μL of each T7 primer
+#*6) 1μL "BAMT for pcr" + 49μL of Tom's PCR mix + .6μL of each T7 primer
+#*7) 1μL "SAMT for pcr" + 49μL of Tom's PCR mix + .6μL of each T7 primer
+#*8) +PT control (Samantha's)
+#**NOTE: all primers (specific and T7 are at about 25 &mu;M -- and .6 &mu;L yields roughly 300 nM final concentration of each primer in each tube)
+#**NOTE: new T7 forward promoter is slightly different: 5'- GAA ATT AAT ACG ACT CAC TAT A - 3', and we also diluted 10 μL of it from 100 μM to 25 μM by adding 30 μL of water to tube
+#Run them at: 95deg for 3:00, then cycle through: (a) 94deg for :30 (b) 55deg for :30 (c)68deg for 2:15, then 72deg for 10:00

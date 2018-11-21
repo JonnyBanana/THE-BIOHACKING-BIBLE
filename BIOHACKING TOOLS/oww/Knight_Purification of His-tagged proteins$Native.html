@@ -1,0 +1,99 @@
+==Overview==
+Native purifications permit purification of the folded protein potentially at the cost of protein purity.
+
+==Materials==
+*Lysozyme
+*Sonicator
+
+===Lysis and column equilibration buffer===
+*50mM NaH<sub>2</sub>PO<sub>4</sub>
+*300mM NaCl
+*10mM imidazole
+**can vary between 1mM and 20mM
+*pH8.0
+
+===Wash buffer===
+*50mM NaH<sub>2</sub>PO<sub>4</sub>
+*300mM NaCl
+*20mM imidazole
+*pH8.0
+
+===Elution buffer===
+*50mM NaH<sub>2</sub>PO<sub>4</sub>
+*300mM NaCl
+*250mM imidazole
+*pH8.0
+
+===Notes===
+*Do not use 5X phosphate buffer solution supplied with the kit to make these buffers.  It contains Tris.
+
+==Procedure==
+#Grow up an overnight 5mL culture in LB plus the appropriate antibiotic.
+#The following morning, dilute back the culture 1:60 to the appropriate culture volume (which depends on the expected yield of the protein).
+#*''Maybe try 100mL cultures.  100mL was too much.  I think 50mL might be preferable.''
+#Harvest the cells by centrifugation at 4000 x ''g'' for 15 mins at 4&deg;C.
+#Decant supernatant.
+#The cell pellet can be stored at -70&deg;C or processed immediately.
+#Chill the following on ice ...
+#*lysis buffer
+#*wash buffer 
+#*elution buffer
+#*2mL eppendorf tube
+#Thaw for 15 mins on ice.
+#*''May take longer than 15 mins.''
+#Transferred to 2mL eppendorf tube.
+#Resuspend in 1mL lysis buffer (see above).
+#*''The lysis buffer contains 10mM imidazole to reduce untagged, contaminating proteins.  The imidazole concentration can be reduced to either 1-5 mM or increased to 20 mM as appropriate.''
+#Add 10 &mu;L 100 mg/mL lysozyme to 1 mg/mL final concentration.
+#Add a protease inhibitor here?
+#*''Trying 1/4 of a mini, EDTA-free protease inhibitor cocktail tablet from Roche.''
+#Incubate cells on ice for 30 mins.
+#Freeze the cells at -80&deg;C and thaw for 3 cycles.
+#*''To speed things up, try quick freezing in an ethanol-dry ice bath and thaw on slushy ice.''
+#*''The Qiagen protocols calls for you to sonicate or homogenize on ice to lyse cells six times for 10s each time with 5s pauses in between.  However sonication is difficult in small volumes and tends to heat up your sample.  Freeze thaw cycles should be sufficient to lyse the cells.''
+#*''It may be that the thaw process needs to take place at 37&deg;C rather than in slushy ice.''<cite>PierceCellLysis</cite>
+#*''An alternative option is to use the bead beater to mechanically lyse the cells.''
+#Centrifuge lysate at 10000 x ''g'' for 30 mins at 4&deg;C to pellet cellular debris.  Collect supernatant.
+#*''20 mins may be enough.''
+#Add 600 &mu;L lysis buffer to Ni-NTA column to equilibrate.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid to remove equilibration buffer at 4&deg;C.
+#Save 20&mu;L cleared lysate. 
+#Load 600 &mu;L cleared lysate to Ni-NTA column.
+#Centrifuge Ni-NTA column 5 mins at 700 x ''g'' with closed lid at 4&deg;C.
+#*''The closed lid increases binding time.''
+#*''Repeat this step to load the rest of my cleared lysate?''
+#*''Save flow through.''
+#Add 600 &mu;L wash buffer to Ni-NTA column.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid at 4&deg;C.
+#*''Save flow through.''
+#Add 600 &mu;L wash buffer to Ni-NTA column.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid  at 4&deg;C.
+#*''Save flow through.''
+#Tranfer to clean 1.5mL eppendorf tube.
+#Add 200&mu;L elution buffer.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid at 4&deg;C.
+#*''Most of the protein should elute in this elution step.''
+#Tranfer to clean 1.5mL eppendorf tube.
+#Add 200&mu;L elution buffer.
+#Centrifuge Ni-NTA column 2 mins at 700 x ''g'' with open lid at 4&deg;C.
+#*''Just in case.''
+
+==Notes==
+*Sauer lab uses a Qiagen Ni-NTA resin but this protocol uses spin columns.  (Smaller scale purification).
+*Using the Qiagen Ni-NTA resin may be preferable for proteins with low yields.  
+*Contaminating proteins tend to be less of an issue in bacteria because there are few proteins with neighboring histidines that tend to bind to the column.  However, consider using a SlyD knockout strain.  SlyD is a 20-25 kDa protein that has several histidines near each other and can often contaminate Ni column purifications from ''Escherichia coli''.
+*20 year old spin columns don't work.  :)
+*The Sauer lab tends to use a higher salt concentration in the lysis, wash and elution buffers.  It may give a better wash and may be useful with DNA binding proteins.
+*Can lyse cells by doing repeated freeze-thaw cycles at -80&deg;C or sonication also works.
+
+==Safety==
+
+==References==
+<biblio>
+#QiagenNTAManual [http://www1.qiagen.com/literature/handbooks/PDF/Protein/Purification/NiNTA_Spin/1023679HBNINTA_022003WW.pdf Qiagen Ni NTA Spin Kit manual]
+#PierceCellLysis [http://www.piercenet.com/Proteomics/browse.cfm?fldID=72F377CD-2581-438C-9B27-5360226EA128 Cell lysis technical information from Pierce]
+</biblio>
+
+[[Category:Protocol]]
+[[Category:In vitro]]
+[[Category:Protein]]

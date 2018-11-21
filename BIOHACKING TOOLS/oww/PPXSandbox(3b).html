@@ -1,0 +1,103 @@
+'''Aims''': 
+*To determine which constructs for cell by date expresses ''in vitro''
+*To test if <font color=blue>'''pTet-GFP ([http://parts.mit.edu/registry/index.php/Part:BBa_I13522 BBa_I13522])'''</font> and <font color=blue>'''pT7-GFP ([http://parts.mit.edu/registry/index.php/Part:BBa_E7104 BBa_E7104])'''</font> works in commercially bought S30 E.coli cell extract for circular DNA, and S30 T7 e.coli cell extract for circular DNA respectively.
+
+====Equipment====
+*Fluorometer + Connected PC '''Turn on before beginning'''
+*96 well plate x1 + Plate lid
+*1.5ml eppendorf tube x7
+*eppendorf rack
+*Gilson p20,p200,p1000
+*Stop watch
+
+====Reagents====
+*Commercial S30 E.coli extract. Including:
+**175µl Amino Acid Mixture Minus Cysteine, 1mM
+**175µl Amino Acid Mixture Minus Methionine, 1mM
+**175µl Amino Acid Mixture Minus Leucine, 1mM
+**450µl S30 Extract, Circular (3 × 150µl)
+**750µl S30 Premix Without Amino Acids
+*Commercial S30 T7 extract. Including:
+**175µl Amino Acid Mixture Minus Cysteine, 1mM
+**175µl Amino Acid Mixture Minus Methionine, 1mM
+**175µl Amino Acid Mixture Minus Leucine, 1mM
+**450µl T7 S30 Extract, Circular (3 × 150µl)
+**750µl S30 Premix Without Amino Acids
+*MiiA water x1ml
+*GFP solution (For this initial experiment does not need to be purified GFP, we just want to know we have the right filter and that our settings are adjusted to measuring GFP)
+
+====Protocols====
+#First collect all equipment and reagents and ensure that the fluorometer and that the PC connected has a data collection protocol installed. 
+#''Commercial E.coli Cell Extract'': First prepare a complete amino acid mixture for both extract solutions: Add the 7.5μl volume of two amino acid minus mixtures into an labeled eppendorf to give a volume of 15μl. Each amino acid minus mixture is missing one type of amino acid, and so by combining two solutions we are complementing each solution for the missing amino acid. Place eppendorf in a rack on bench.
+#''Commercial T7 Cell Extract'':Carry out procedure above for the T7 amino acid minus mixtures.
+#''Commercial E.coli Cell Extact'':Take a eppendorf tube and add 5µl of the E.coli complete amino acid mixture. Then add add 20µl of S30 Premix Without Amino Acid. Then add 15µl of S30 Extract Circular. Finally add nuclease-Free Water to bring final volume (inc.DNA vol) to 60µl, the volume of DNA added will be determined in experiment 1 and the volume of the nuclease free water adjusted accordingly. Place the eppendorf tube in a rack on the bench
+#Carry out step above twice more so that we end up with three eppendorf tubes of prepared commercial E.coli extract.
+#''Commercial T7 Cell Extract'':Repeat step 3 and 4 again three times however use the T7 cell extract reagents and the T7 prepare complete amino acid mixture. We will now have three eppendorf tubes of prepared commercial T7 cell extract.
+#Vortex the tubes to mix thoroughly and place the 5x eppendorf tubes in the incubator at 37<sup>o</sup>C
+
+'''Loading Plate'''
+#Follow the schematic for the plate and begin by loading the in vitro expression system into the correct wells. Before loading in the samples vortex the tubes for a few seconds to mix the solution.
+#Place the lid on the 96well plate and tape up the edges of the lid. This should be put into the incubator at 37<sup>o</sup>C for 10 minutes to allow temperature to equilibrate
+#Remove from 37<sup>o</sup>C incubator and spin-down in centrifuge in plate centrifuge at 2000rpm for a few seconds. Spin down is the process of bringing down any solution on lid or side of well into the base of the well. Alternatively can tap the top of the lid to bring down any solution to bottom of the well.
+#Remove lid off th e 96well plate and place in the fluorometer. Create a file name protocol 2-1 under:  D:\IGEM\'''INSERT DATE'''\CBD\ protocol 2-1. Export the data here. If repeated measurements change the second number to suit repeat number, e.g. 2nd repeat protocol 2-2, 5th repeat protocol 2-5. Once the data collection is set up then initiate the measurements.
+#This measurement will give a back ground fluorescence measurement and can be used as our time zero data. 
+#Then to begin the reaction add required volume of purified DNA sample to give 2µg to the wells indicated on the schematic. Be careful not to add to wells that DO NOT NEED DNA. 
+#Place lid back on and place back in the incubator at 37<sup>o</sup>C <br><br>
+#After 30 minutes of incubation measure the fluorescence by repeating procedure 3-4 above. This initial measurement of 30 minutes is to find out how fast GFP is being produced. After this initial measurement, the intervals should be reassessed and adjusted accordingly
+#Before each measurement be careful to remember to either spin down or tap down the solution and to remove the lid before placing in the fluorometer
+
+'''Schematic'''
+{| border="1" cellpadding="1"
+|
+{| border="1" cellpadding="2"
+!<u>Well </u> || <u>Test Construct</u> !! <u>In vitro chassis</u> !! <u>Vol of in <br> vitro chassis (ul)</u>
+|-
+|<font color=blue> A1 
+|<font color=blue> pTet
+|<font color=blue>Commercial E.coli extract 
+|<font color=blue>20-DNA volume
+|-
+|<font color=blue>A2
+|<font color=blue>pTet
+|<font color=blue>Commercial E.coli extract 
+|<font color=blue>20-DNA volume
+|-
+|<font color=blue>A3
+|<font color=blue>pTet
+|<font color=blue>Commercial E.coli extract 
+|<font color=blue>20-DNA volume
+|-
+|<font color=red>A4
+|<font color=red>pTet
+|<font color=red>Commercial E.coli extract 
+|<font color=red>0 (control)
+|-
+|<font color=purple>C1
+|<font color=purple>pT7
+|<font color=purple>Commercial T7 extract
+|<font color=purple>20-DNA volume
+|-
+|<font color=purple>C2
+|<font color=purple>pT7
+|<font color=purple>Commercial T7 extract
+|<font color=purple>20-DNA volume
+|-
+|<font color=purple>C3
+|<font color=purple>pT7
+|<font color=purple>Commercial T7 extract
+|<font color=purple>20-DNA volume
+|-
+|<font color=pink>C4
+|<font color=pink>pT7
+|<font color=pink>Commercial T7 extract
+|<font color=pink>0 (control)
+|-
+|<font color=green>G1
+|<font color=green>None
+|<font color=green>GFP sample
+|<font color=green>None
+|
+[[Image:Working4|450px|top|In vitro Testing 96 well plate]]
+|
+|}
+<br>

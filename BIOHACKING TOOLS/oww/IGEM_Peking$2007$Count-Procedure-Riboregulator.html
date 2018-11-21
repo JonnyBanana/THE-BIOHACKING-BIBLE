@@ -1,0 +1,102 @@
+==taRNA&crRNA Testing==
+
+'''Important Note''':In assembly step titles, parts names are positioned as in the product vectors (5' part on  the left). The A->B and B<-A means inserting A into B, indicating A is the fragment and B is the vector. Thus when using ->, the digestion enzymes will be EcoRI/XbaI for the vector and EcoRI/SpeI for the fragment; when using <-, the digestion enzymes will be SpeI/PstI for the vector and XbaI/PstI for the fragment. Refer to [http://parts.mit.edu/registry/index.php/Assembly:Standard_assembly the standard assembly method] for explanation.
+
+===Step 0: pre-Exp===
+#Get PARTS：pSB1A2, pSB3K3, pSB1AK3, R0010, R0040(from BioBricks)
+#Dissolution with 15ul d<math>H_2O</math>；1ul for transformation ,14ul stored in -20℃.
+#<Transformation STANDARD PROTOCOL> 
+#Screen positive colonies from plate ,Culture in liquid LB and mini-prep, stored in -20℃
+
+===Step 1:taRNA & crRNA synthesize===
+#Synthesize taRNA and crRNA (TaKaRa): Parts with BioBrick prefix and suffix flanked. Designing Primers: two primers covering 5' and 3' of the desired fragment respectively .
+#Order the primers from TaKaRa.
+#5 cycle PCR to synthesize dsDNA.
+#Optional:Enzymatic Digestion with the proper enzyme and cloning into vector (pSB1A2).
+#For some taRNAs, assemble them into double taRNAs with Standard Method (''"2 primer strategy"''').;
+
+===Step 2:E0040 -> pSB3K3===
+#Get E0040，pSB3K3 plasmid from refrigerator.
+#<Restriction Enzymes Digestion STANDARD PROTOCOL>，Vectors pSB3K3：EcoRI/XbaI. Fragment E0040：EcoRI/SpeI (0.5uL for each enzyme)
+#<Electrophoresis STANDARD PROTOCOL>,<DNA Gel Extraction STANDARD PROTOCOL>
+#<DNA ligation STANDARD PROTOCOL>
+#<Transformation STANDARD PROTOCOL>
+#Screen Positive Colonies from Plate ,Culture in liquid LB and mini-prep, stored in -20℃
+#Test with <restriction enzymes Digestion STANDARD PROTOCOL> ，if Positive , Go next step.
+#Update Product State on WIKI
+
+===Step 3:E0040(pSB3K3) <- B0015===
+#Get B0015，E0040(pSB3K3) plasmid from refrigerator.
+#<Restriction Enzymes Digestion STANDARD PROTOCOL>，Vectors E0040(pSB3K3)：SpeI/PstI. Fragment B0015：XbaI/PstI (0.5uL for each enzyme)
+#<Electrophoresis STANDARD PROTOCOL>,<DNA Gel Extraction STANDARD PROTOCOL>
+#<DNA ligation STANDARD PROTOCOL>
+#<Transformation STANDARD PROTOCOL>
+#Screen Positive Colonies from Plate ,Culture in liquid LB and mini-prep, stored in -20℃
+#Test with <restriction enzymes Digestion STANDARD PROTOCOL> ，if Positive , Go next step.
+#Update Product State on WIKI
+
+
+'''*Note: Step 2,3 are only needed in the construction of the first lock-efficiency-test plasmid. The product of Step 2,3 can be stored and remains useful in the following constructions of the other 2 lock-efficiency-test plasmids.'''
+
+
+===Step 4:R0040 <- crRNA===
+#Get R0040 plasmid from refrigerator, crRNA from Step1 PCR.
+#<Restriction Enzymes Digestion STANDARD PROTOCOL>，Vectors R0040：SpeI/PstI. Fragment crRNA: XbaI/PstI (0.5uL for each enzyme)
+#<Electrophoresis STANDARD PROTOCOL>,<DNA Gel Extraction STANDARD PROTOCOL>
+#<DNA ligation STANDARD PROTOCOL>
+#<Transformation STANDARD PROTOCOL>
+#Screen Positive Colonies from Plate ,Culture in liquid LB and mini-prep, stored in -20℃
+#Test with <restriction enzymes Digestion STANDARD PROTOCOL> ，if Positive , Go next step.
+#Update Product State on WIKI
+#Sequencing 
+ 
+===Step 5:Step4 -> Step3===
+#Get Step3，Step2 positive plasmid from refrigerator.
+#<Restriction Enzymes Digestion STANDARD PROTOCOL>，Vectors Step3: EcoRI/XbaI，fragment Step4：EcoRI/SpeI  (0.5uL for each enzyme)
+#<Electrophoresis STANDARD PROTOCOL>,<DNA Gel Extraction STANDARD PROTOCOL>
+#<DNA ligation STANDARD PROTOCOL>
+#<Transformation STANDARD PROTOCOL>
+#Screen Positive Colonies from Plate ,Culture in liquid LB and mini-prep, stored in -20℃
+#Test with <restriction enzymes Digestion STANDARD PROTOCOL> ，if Positive , Go next step.
+#Update Product State on WIKI
+#Sequencing
+
+===Step 6:R0010 <- taRNA ===
+#Get R0010，taRNA positive plasmid from refrigerator.
+#<Restriction Enzymes Digestion STANDARD PROTOCOL>，Vectors R0010: SpeI/PstI，fragment taRNA：XbaI/PstI (0.5uL for each enzyme)
+#<Electrophoresis STANDARD PROTOCOL>,<DNA Gel Extraction STANDARD PROTOCOL>
+#<DNA ligation STANDARD PROTOCOL>
+#<Transformation STANDARD PROTOCOL>
+#Screen Positive Colonies from Plate ,Culture in liquid LB and mini-prep, stored in -20℃
+#Test with <restriction enzymes Digestion STANDARD PROTOCOL> ，if Positive , Go next step.
+#update Product State on WIKI
+#Sequencing
+
+===Step 7:Step5 <- B0015===
+#Get Step5，B0015 plasmid from refrigerator.
+#<Restriction Enzymes Digestion STANDARD PROTOCOL>，Vectors Step6：SpeI/PstI. Fragment B0015：XbaI/PstI.(0.5uL for each enzyme)
+#<Electrophoresis STANDARD PROTOCOL>,<DNA Gel Extraction STANDARD PROTOCOL>
+#<DNA ligation STANDARD PROTOCOL>
+#<Transformation STANDARD PROTOCOL>
+#Screen Positive Colonies from Plate ,Culture in liquid LB and mini-prep, stored in -20℃
+#Test with <restriction enzymes Digestion STANDARD PROTOCOL> ，if Positive , Go next step.
+#Step6 competent cell.
+#Update Product State on WIKI
+
+
+'''*Note: Step 2,3, Step 4 and Step 6,7 can be parallel.'''
+
+
+===Step 8: Step5 and Step7 Cotransformation===
+#Get step4 positive plasmid and step5 competent cell from refrigerator.
+#transform step4 plasmid into step5 cells. <transformation STANDARD PROTOCOL> 
+#Screen Positive Colonies from Plate ,Culture in liquid LB.
+
+===Step 9: Induction and Measure the Fluorescence Intensity===
+#Culture until OD = 0.4 ,diluted to 1:1000. 
+#Three Groups are divided;
+##Group A Control group, with nothing add. ;
+##Group B Add IPTG (concentration should be 0.01mmol/L,0.1mmol/L,1mmol/L);
+##Group C Add IPTG (concentration should be 0.01mmol/L,0.1mmol/L,1mmol/L) and aTc (30ng/mL), induced separately.;
+#Incubate at 28℃
+#<Measure the Fluorescence Intensity STANDARD PROTOCOL>

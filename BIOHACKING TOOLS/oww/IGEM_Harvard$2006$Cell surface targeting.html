@@ -1,0 +1,82 @@
+<div class="tabs">
+<ul>
+<li id="current">[[IGEM:Harvard/2006/Cell Surface Targeting|1. Main Page]]</li>
+</ul>
+</div>
+<br style="clear:both">
+<div class="tabcontent">
+
+__TOC__
+
+=Intro=
+We are interested in the mostly equivalent problems of targeting substrates to cells and cells to substrates. In the former case, targeting a substrate to the cell would facilitate uptake and a subsequent cellular response, important in fields such as drug delivery. Directing cells to particular places, for instance, a column, could be used to isolate cells and perform diagnostics. 
+
+Briefly, we are pursuing two methods to attack this problem. In one route, we will express streptavidin on the E. coli cell surface, hence providing a target for any biotinylated molecule. In the second, we will build on the work of Tahiri-Alaoui et al. (2002) in developing bi-specific DNA "adaptamers" that can bind a cell surface and a substrate. 
+
+
+==Express monomeric streptavidin on E. coli cell surface==
+
+'''Scaffold 1: GPI anchor'''
+
+'''Scaffold 2: Beta autotransporter'''
+
+'''Scaffold 3: Lpp-OmpA'''
+
+<u>Major questions/concerns</u>
+#Where can we get the DNA expressing the scaffold protein. I need to look more into this, but I don't think we can just order it.
+#Where do we get streptavidin DNA (smaller problem)
+#What constraints do we have to worry about with streptavidin? In the original and later autotransporter papers, the passenger protein was mutated to lack cysteines in order to prevent disulfide bond formation in the periplasm: tertiary structure prevents passage of the protein through the beta barrel. 
+#How much time to get a first experiment up and running? This depends on how much work we have to do with the scaffold protein sequence and how fast we can get them (likely a long time).
+#Will we be able to correspond with experts on this system? The founder of autodisplay, Joachim Jose, has not responded to some intial questions about autotransporter.
+
+==Demonstrate control of a nucleic acid interface between proteins and the cell surface==
+'''Notes'''
+
+(Maybe Un-, but more likely..) fortunately, another group has done work like this. We'll expand on the "adaptamer" concept of Tahiri-Alaoui et al. (12000850). In this paper, the group evolved one aptamer which bound streptavidin, then spliced it to a CopA RNA. Then they spliced a complementary CopT RNA to a CD4 aptamer. Following CopA/CopT binding, the resulting construct could bind both CD4 and streptavidin. Neato. CopA and CopT bind each other by a kissing complex between two loops; mutations have been introduced before, so looking at those studies might be a good starting places for adjusting the dissociation rate (16199086).
+
+The reason they go through the trouble of using CopA and CopT is that they maintain stable secondary structures; the group reports that when you just have any old complementary strands, the binding affinities of the aptamers goes down considerably. We may be able to design our own RNA-RNA interfaces to have well-defined secondary structure, enhancing our ability to control dissociation rate.
+
+Additionally, we want to make one of these aptamers bind to the E. coli cell surface. There is a serious dearth of known aptamers that do this. The only report about one is 15541352; their aptamer binds LPS, a major component of the E. coli outer membrane, so it has a lot of targets. They don't give a Kd value, maybe because it didn't matter too much with so much LPS. Hope we can get our hands on the sequence..
+
+One thing to consider: in the absence of aptamers that bind to the cell surface, we might as well try it with aptamers that bind proteins in vitro as done in 12000850. Why worry about cells for now? We're interested in a proof of principle. 
+
+'''Initial experiment'''
+
+We'll attempt to build an adaptamer that can bind thrombin and streptavidin simultaneously. More details to come. Oligos to be used [[/thrombstrepadapt/|here]]
+
+<u>Major Questions/concerns</u>
+
+#What aptamers exist that bind the E. coli cell surface??? (and have public sequences! The sequence of the aptamer that binds LPS is not reported in the paper.)
+#Is there any chance that we'll be able to evolve our own aptamer this summer? Online resources point toward 'no' but see last question.
+#What other secondary structures might work as interfaces? If we design our own, the online programs mfold and Vienna RNA may be useful. Otherwise, we'll have to go with known complementary structures. Do the faculty members have any suggestions for structures?
+#Time and reliability: Hopefully short! Aptamer sequences are relatively short, so we'll likely be able to order them instead of asking groups for them. Then we'd try tons of intermediate interfaces, which is just a matter of ordering more oligos.
+#Will people respond to email? I've emailed David Liu about evolving aptamers and Sulatha Dwarakanath (author of 15541352) about aptamers that target the E. coli cell surface to no response. It would be quite helpful to hear their thoughts.
+
+=Presentations=
+
+[[Media:Protein_domain_biobricks_presentation,_june_19_2006.ppt|Protein domain BioBricks presentation]]
+
+[[Media:Targeting.ppt|Cell surface targeting Week 1]]
+
+[[Media:Cell_Surface_Targeting_7-10.ppt|Cell surface targeting Week 4]]
+
+[[Media:7-17-06_presentation.ppt|Cell surface targeting Week 5]]
+
+[[Media:7-24-06_presentation_cell_surface_targeting.ppt|Cell surface targeting week 6]]
+
+[[Media:7-28-06_cst_friday.ppt|Friday presentation]]
+
+[[Media:7-31-06_presentation_cell_surface_targeting.ppt|Cell surface targeting week 7]]
+
+[[Media:8-07-06_presentation_cell_surface_targeting.ppt|Cell surface targeting week 8]]
+
+[[Media:8-14-06_presentation_cell_surface_targeting.ppt|Cell surface targeting week 9]]
+
+[[Media:8-21-06_presentation_cell_surface_targeting.ppt|Cell surface targeting week 10]]
+
+=Working Team Members=
+*[[User:Perry/Summer_2006_Harvard_iGEM_work |Perry Tsai]] ([[User_talk:Perry|talk]])
+*[[User:Lhahn|Lewis Hahn]] ([[User_talk:Lhahn|talk]])
+
+=Recent Changes=
+{{Special:Recentchanges/b=IGEM:Harvard/2006/Cell surface targeting&limit=25}}

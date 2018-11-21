@@ -1,0 +1,98 @@
+==To Do==
+#troubleshoot bad atf1 PCR with advisors and possibly repeat with exhaustive temperature controls
+#smell methyl salicylate, methyl benzoate, indole (if order arrives) -- how much does it take to make a culture smell??
+#hopefully do tests with minimal media/plating/etc using the BL21 transformants from overnight weekend cultures
+#do test gels of BAMT, SAMT, BSMT pcr products to ensure that pcr was successful and that we have our enzyme DNA
+#do a gel extraction or a pcr cleanup of the enzyme DNA
+#do a restriction enzyme/ligation reaction to put the enzyme DNA into biobrick plasmids (i.e. make biobrick parts)
+
+==Repeat ATF1 PCR==
+#8 sample tubes, 4 controls
+#*(-): no template, (-): no primer, (+): same template, (+): new primer template
+#*Sample master mix 9x, control master mix 5x, [[../2006-6-15 | from here]]
+#*Temperature gradient from 40-50
+
+==Yeast Incorporation==
+Farhi et al. (including Dudareva) have been able to express the ''A. majus'' (snapdragon) BAMT in ''S. cerevisiae'' and produce methyl benzoate.  The following are what I think were major procedural points and general conclusions that came out of the work.  Just to note, all of this information, unless otherwise noted, came from this reference (the one below) <cite>Dudareva</cite>.
+*Procedural Points
+**They used a citrate buffered minimal medium (pH 4.5 or 6) for BA treatment. (This was presumably NOT in order to achieve a better smelling culture.
+**The volme they used for GC analysis was generally 10mL (I'm pretty sure everyone figured out that it really wasn't 25L; I was mistaken, obviously).
+**They grew the culture overnight to OD<sub>600</sub> of 0.5, added the BA and other necessary inducing agents, and checked the methyl benzoate production after '''6''' hours of growth.
+*General Points/Conclusions
+**"'''BA is a known retardant of yeast growth at concentrations above 2mM...'''"
+**Methyl benzoate production was relatively linear over the first 24 hours after substrate addition (without leveling).
+**They used two different BAMT "inducing systems": constitutive expression from the TPI promoter and a Cu-inducible expression system.  The inducible expression system led to at least one order of magnitude '''greater''' methyl benzoate production.
+**They showed that 85% of the methyl benzoate produced is able to escape into the culture medium.
+**When speculating on the relatively low efficiency of their methyl benzoate production system (~1%), they noted that Pdr12 is a yeast membrane pump that has been reported to pump benzoic acid ''out'' of the cell.
+
+<biblio>
+#Dudareva pmid=16442655
+</biblio>
+
+==GC/MS==
+#Contacted [http://www.separationsnow.com/coi/cda/detail.cda?id=11661&type=Feature&chId=3&page=1 Janusz Pawliszyn] about GC/MS use with methyl benzoate
+#Yea! We have the documentation on the appropriate instrumentation and procedure for GC with methyl benzoate [http://web.mit.edu/boyuan/Public/J_Sep_Sci_2005_mold.pdf here]
+
+==New SAMT Sequencing primer (on hold)==
+Choose and order a new sequencing primer forward on the SAMT construct.   We hope to sequence into the region where
+sequencing failed at the transition from pET28a backbone to the insert at the BamHI site.
+
+==Smell Test of new transformants==
+{| border="1" cellpadding="5"
+!|Control
+!|BAMT/BA
+!|SAMT/SA
+!|BSMT/BA
+!|BSMT/SA
+|-
+|10mL LB + 20&mu;L BL21 cells + 8.2&mu;L BA [in a tube]
+|10mL LB Kan + 20&mu;L BAMT cells + 8.2&mu;L BA [in a tube]
+|10mL LB Kan + 20&mu;L SAMT cells + 6.2&mu;L SA [in a tube]
+|10mL LB Kan + 20&mu;L BSMT cells + 8.2&mu;L BA [in a tube]
+|10mL LB Kan + 20&mu;L BSMT cells + 6.2&mu;L SA [in a tube]
+|-
+|10mL minimal media + 20&mu;L BL21 cells + 8.2&mu;L BA [in a tube]
+|10mL minimal media Kan + 20&mu;L BAMT cells + 8.2&mu;L BA [in a tube]
+|10mL minimal media Kan + 20&mu;L SAMT cells + 6.2&mu;L SA [in a tube]
+|10mL minimal media Kan + 20&mu;L BSMT cells + 8.2&mu;L BA [in a tube]
+|10mL minimal media Kan + 20&mu;L BSMT cells + 6.2&mu;L SA [in a tube]
+|-
+|}
+
+
+==Indole: Making a working stock==
+According to <cite>smell</cite>, indole was resuspended at 1M in ethanol.  They did a test to determine if ethanol had any ill effects on the ''E. coli'' and observed none.  Also, according to <cite>smell</cite>, the reported concentration of indole produced by ''E. coli'' in minimal media is 150&mu;M, but Wang et al. found LB cultures to have indole at a concentration of 340&mu;M <cite>smell2</cite>.
+
+Therefore, what we did is the following:
+
+*Make a 1M stock solution of indole (117.15 g/mol).   
+*Made 10-1mL aliquots of 1M indole;
+
+Note: For testing, we should add indole at two different concentrations: 150 &mu;M and 300 &mu;M.  This turns out to be 1.5 &mu;L and 3.0 &mu;L, respectively, of 1M indole for a 10 mL culture.
+
+==Indole: the ''Test''==
+
+Well...
+
+The pure indole (like a kilogram, at least, of it) smells '''exactly''' like an ''E. coli'' culture: '''horrible'''.  After making the 1M stock solution of indole, though, we smelled it and it did not smell bad at all.  According to wikipedia, indole at low concentrations smells "flowery".  1M indole smelled rather flowery.  And as indicated above, the purported concentration of indole that ''E. coli'' produces is max 340 &mu;M.  
+
+
+I (André) added the 1.5 and 3 &mu;L indole to LB.  According to several noses, the 300 &mu;M indole LB smells (way) worse than the plain LB.  In fact, it smells like ''E. coli''.
+
+
+Our noses are overworked, so we will do more experimenting tomorrow...  We'll see what happens.
+
+
+<biblio>
+#smell pmid=10648109
+#smell2 pmid=11418561
+</biblio>
+
+check table 2: http://www.pubmedcentral.gov/picrender.fcgi?artid=1243473&blobtype=pdf
+
+==enzyme test gels==
+test 1: BSMT successful, positive control successful
+#used 5 microL loading dye + 5 microL sample dna in 10 test wells
+#used a 1 kb dna ladder in 2 control wells
+
+test2: ATF1 gradient PCR unsuccessful

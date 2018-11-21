@@ -1,0 +1,38 @@
+==Assignment for 20th==
+
+Xiaodi's discussion page has most of the interesting stuff... I found code from the biopython cookbook which retrieves a BLAST ID, and then based on http://biopython.org/DIST/docs/api/public/Bio.Blast.Record-module.html one can get interesting information. For a CDS, the GI# can be fed into dbSNP which will then find the SNP in question... if not a CDS though the chromosome position doesn't come up for the hit in any useable form...
+
+<pre>
+from Bio import SeqIO
+from Bio.Blast import NCBIWWW
+from Bio.Blast import NCBIXML
+
+file_handle = open("070313_smd.fasta")#put sequence here
+records = SeqIO.parse(file_handle, format="fasta")
+record = records.next()
+
+sequence = record.seq.data
+
+print sequence
+result_handle = NCBIWWW.qblast("blastn", "nr",sequence)
+
+blast_results = result_handle.read()
+save_file = open("my_blast.xml","w")
+save_file.write(blast_results)
+save_file.close()
+
+result_handle = open("my_blast.xml")
+blast_records = NCBIXML.parse(result_handle)
+    
+for blast_record in blast_records:
+    for alignment in blast_record.alignments:
+        for hsp in alignment.hsps:
+            if hsp.expect < 0.04:
+                print '**allign***'
+                print 'seq', alignment.title
+                print 'leng', alignment.length
+                print 'e value:', hsp.expect
+                print hsp.query[0:75] + '...'
+                print hsp.match[0:75] + '...'
+                print hsp.sbjct[0:75] + '...'
+</pre>

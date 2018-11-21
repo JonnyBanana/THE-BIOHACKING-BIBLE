@@ -1,0 +1,13 @@
+<nowiki>function A = Dmatrix(N)
+%Diffusion Matrix
+D = 1;
+A = zeros(N,N);
+A(1,1) = -2*D; A(1,2) = D; A(1,N) = D;
+A(N,N) = -2*D; A(N,N-1) = D; A(N,1) = D;
+for i=2:N-1
+   A(i,i) = -2*D;
+   A(i,i+1) = D;
+   A(i,i-1) = D;
+end
+A = (N-1)*(N-1)*A;
+A = sparse(A);</nowiki>

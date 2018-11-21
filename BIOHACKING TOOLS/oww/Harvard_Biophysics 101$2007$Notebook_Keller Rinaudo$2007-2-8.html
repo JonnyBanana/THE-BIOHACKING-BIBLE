@@ -1,0 +1,64 @@
+==The Script==
+<pre>
+#!/usr/bin/env python
+
+# Create an empty list to store the strings
+import random
+List = []
+s = []
+All_Strings = []
+
+# Generate 10,000 strings using a for loop and add those to the list
+print "Generating Strings..."
+for i in range(10000):
+   s = ''.join([random.choice('HT') for n in range(10)])
+   List.append(s)
+print '='*70
+
+# Iterate through the list and count up the stretches of H's and T's
+tally = [0 for i in range(10)]
+
+variables = ['H','T']
+print "Counting repeat stretches of H and T..."
+for j in variables:
+    for i in range (10):
+        substr = ''.join([j for n in range(i+1)])
+        for k in range (10000):
+            All_Strings = List[k]
+            count = 0
+            pos = All_Strings.find(substr,0)
+            while not pos == -1:
+                count = count + 1
+                pos = All_Strings.find(substr,pos+1)
+            tally[i] = tally[i] + count
+
+ #We must then print i and the number of times that i occurs (tally[i])
+for i in range(len(tally)):
+    print "%2d: %6d" % (i+1, tally[i])
+print '='*70
+print "Calculation Complete"
+
+</pre>
+
+==Output==
+<pre>
+
+>>> 
+Generating Strings...
+======================================================================
+Counting repeat stretches of H and T...
+ 1: 100000
+ 2:  44902
+ 3:  19947
+ 4:   8716
+ 5:   3745
+ 6:   1554
+ 7:    604
+ 8:    212
+ 9:     61
+10:     15
+======================================================================
+Calculation Complete
+>>>
+
+</pre>

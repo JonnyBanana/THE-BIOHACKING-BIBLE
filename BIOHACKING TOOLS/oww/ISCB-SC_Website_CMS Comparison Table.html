@@ -1,0 +1,127 @@
+== About this document ==
+
+This document is an appendix of [[ISCB-SC:Website]].
+
+WCT team members, please add functional and non-functional requirements from [[ISCB-SC:Website:Requirements]] to the comparison table.
+
+We could make a judged decision on CMS software then.
+
+
+WCT team members responsible for CMS comparison:
+
+* [[User:Neksa|Alexander]]
+* Thomas
+* Abhishek
+* (add your name here)
+
+== Trial/Evaluation installations ==
+
+Playgrounds:
+
+* [http://bioinformatics.psb.ugent.be/webtools/sandbox/thabe/sc/ Drupal] (maintained by Thomas)
+* [http://iscbsc.neksa.net/ Joomla 1.5] (maintained by [[User:Neksa|Alexander]])
+
+Should we have minimum requirements for the playgrounds? As a basis to test?
+* a forum that uses the same login credential as the login for the web site
+* some basic content, copied from the current iscb site to play with
+* 4 groups of users:
+** anonymous, can only read content
+** authenticated, can post in the forum
+** sc-leader, can add and edit content on the main site
+** admin, can modify all content of the site, can change the layout of the site.
+--[[User:Thomas Abeel|Thomas Abeel]]
+
+== Comparison Table ==
+
+{| class="wikitable" border="1"
+|+CMS
+|-
+! Requirement !! Importance (0--5) !! Drupal !! Joomla 1.5 !! Plone (?)
+|-
+| Granular permissions system
+| 5
+| yes, full ACL control
+| no, you have different admin levels, but it is level based and except from contributing content you can give very little rights to users.
+|
+|-
+| WYSIWYG content editor
+| 3
+| yes (both have exactly the same WYSIWYG editors available)
+| yes
+|
+|-
+| Integration with LDAP or other login systems
+| 3
+| Drupal has it's own centralized login system, but can also work with ldap or openID.
+| LDAP and openID only for Joomla 1.0.x, centralized login support is only commercially available
+|
+|-
+| Exhaustive and concise documentation
+| 5
+| yes, even more than Joomla
+| yes
+|
+|-
+| SEO optimization out of the box (clean urls, meta tags, keywords, page description, etc.)
+| 3
+| yes
+| no
+|
+|-
+| Extensive, clean mechanism for extensions
+| 3
+| yes
+| no
+|
+|-
+| Additional modules (calendar, chat, paper submission, polls, etc. )
+| 4
+| yes, plenty and well maintained
+| yes, lots for Joomla 1.0.x, but far less for 1.5.x and not easy to upgrade
+|
+|-
+| Integrated forum
+| 5 
+| yes
+| no
+|
+|-
+| Secure
+| 5++ 
+| yes
+| yes, but has some holes that allow the installation of a php shell on your server.
+|
+|-
+| Elected by the ISCB
+| 1 
+| no
+| yes
+|
+|}
+
+== Discussion ==
+
+Other week/strong points not included into the comparison table should be '''discussed here'''.
+
+
+: ('''+Joomla''') Joomla 1.5 is the choice of ISCB for the new ISCB portal. With the integration and possible portal merging in the future, I find it a very strong point --[[User:Neksa|Alexander]]
+:: As you stated on the other pages, merging is not straighforward, even when using the same sofware. Using the same software does not ease the transition, so I do not agree that the ISCB's choice is a strong point. I think we should find out '''why''' ISCB picked Joomla. Maybe those reasons are a strong point, but the choice on its own says very little. --[[User:Thomas Abeel|Thomas Abeel]]
+
+
+: ('''+Joomla''') [http://www.joomla-portal.com/home/45-Joomla-2006-Open-Source-CMS-Award-Winner Joomla! 2006 Open Source CMS Award Winner] --[[User:Neksa|Alexander]]
+:: ('''~Joomla''') ('''~Drupal''') This should really be place in perspective. From the website of the company that gave the award: "The final result, as voted for by judges from The Open Source Collective, MySQL, the Eclipse Foundation, and 16,000 users on www.PacktPub.com saw a tie for first place between Joomla! and Drupal. In the event of a tie, a fourth independent judge would be brought in. This was Apoorv Durga who is a member of CM Pros and runs his own blog [http://apoorv.info/] on portals and content management. This crucial vote ended up with Joomla! triumphing over Drupal by one point." From that I gather that the margin is actually quite small and that we should look at what functionality we need and which CMS offers those features. --[[User:Thomas Abeel|Thomas Abeel]] 
+::: I should also mention that 2006 was so far the only year the award was given and the voting process is not transparant. And the company (it is a company, not some big organization) that gave the award is a recently (2004) started publishing company. For the 2007 award, the finalists are Elgg, Drupal, Moodle, LifeType and Wordpress, but Joomla is nowhere to be seen this year.
+
+: ('''-Joomla''') ('''+Drupal''') Have a look at some other overviews of the strenghts and weaknesses of both Joomla and Drupal. [http://forum.joomla.org/index.php?topic=4364.msg35306] [http://forums.digitalpoint.com/showpost.php?p=251737&postcount=8] Using the current list of requirement we really need Drupal for the fine-grained access right alone. --[[User:Thomas Abeel|Thomas Abeel]]
+
+== Comparison Results ==
+
+When comparison table is discussion is complete, WCT should have a voting.
+
+'''Total votes''':
+
+* Drupal: '''tbd'''
+* Joomla 1.5: '''tbd'''
+* reserved (Plone): '''tbd'''
+
+  CMS selected: '''tbd'''

@@ -1,0 +1,88 @@
+* ''NB: Linked from [http://openwetware.org/wiki/Talk:Harvard:Biophysics_101/2007/02/13 Talk] for Biophysics 101 Notebook 2.20.07''
+
+==Silent and Non-Silent Mutations due to Wobble Position Point Mutations==
+
+* I ([[User:TChan|Tiff]]) thought it'd be interesting to be able to tell when point mutations at the third "wobble" position in a codon resulted - or did not result, thus making the point mutation a '''silent''' one - in a change in the amino acid.
+** Sadly, at this time, my computer is dead and I had to use a comp lab computer to code this.  Since the comp lab computer did not want to give me administrator access to allow changes to the path variables for ClustalW to work, and I for some reason couldn't figure out how to work it by importing a path, I just coded this without actually being able to check to see if it would run.  Sorry :(.  I'll change it once I get my own computer up and running again.
+** Also, sorry for the non-conciseness of this program, I will revise when my comp decides to work again.
+
+<pre>
+#!/usr/bin/env python
+
+import os
+from Bio import Clustalw
+
+#import sys
+#sys.path.append("/nfs/home/c/h/chan2/")
+
+cline = Clustalw.MultipleAlignCL(os.path.join(os.curdir, 'apoe.fasta'))
+cline.set_output('test.aln')
+alignment = Clustalw.do_alignment(cline)
+
+summary_align = AlignInfo.SummaryInfo(alignment)
+consensus = summary_align.dumb_consensus()
+my_pssm = summary_align.pos_specific_score_matrix(consensus,
+                                                  chars_to_ignore = ['N'])
+
+num_of_seqs = my_pssm[0]['A'] + my_pssm[0]['C'] + my_pssm[0]['G'] + my_pssm[0]['T'] + my_pssm[0]['N']
+codon_holder = ''
+
+non_silent_mut = 0
+silent_mut = 0
+
+for i in range(len(consensus)):
+    codon_holder.join(consensus[i])
+    # if on a wobble-position
+    if pseudo_codon %3 == 0:
+        # if any of the sequences does not match the consensus sequence at that position (ie. if there is a mutation in any of the sequences)
+        if my_pssm[i]['A'] < num_of_seqs or my_pssm[i]['C'] < num_of_seqs or my_pssm[i]['G'] < num_of_seqs or my_pssm[i]['T'] < num_of_seqs:
+            pseudo_codon_seq = Seq(pseudo_codon)
+            pseudo_codon_prot = translate(pseudo_codon_seq)
+            # print the number of occurences of As, Cs, Gs, and Ts at the wobble position
+            print '%4d -> %s: %d, %s: %d, %s: %d, %s: %d' % (i, 'A', my_pssm[i]['A'], 'C', my_pssm[i]['C'], 'G', my_pssm[i]['G'], 'T', my_pssm[i]['T'])
+
+            # The following code translates the pseudo-codon into the amino acid it'd code for if another base had been in the wobble position 
+            pseudo_codon_minus = pseudo_codon[0:1]
+
+            pseudo_codon_A = pseudo_codon_minus + 'A'
+            pseudo_codon_Aseq = Seq(pseudo_codon_A)
+            pseudo_codon_Aprot = translate(pseudo_codon_Aseq)
+            if pseudo_codon == pseudo_codon_A and my_pssm[i]['A'] != 0:
+                silent_mut += 1
+            elif pseudo_codon != pseudo_codon_A and my_pssm[i]['A'] != 0:
+                non_silent_mut +=1
+
+            pseudo_codon_C = pseudo_codon_minus + 'C'
+            pseudo_codon_Cseq = Seq(pseudo_codon_C)
+            pseudo_codon_Cprot = translate(pseudo_codon_Cseq)
+            if pseudo_codon == pseudo_codon_C and my_pssm[i]['C'] != 0:
+                silent_mut += 1
+            elif pseudo_codon != pseudo_codon_C and my_pssm[i]['C'] != 0:
+                non_silent_mut +=1
+
+            pseudo_codon_G = pseudo_codon_minus + 'G'
+            pseudo_codon_Gseq = Seq(pseudo_codon_G)
+            pseudo_codon_Gprot = translate(pseudo_codon_Gseq)
+            if pseudo_codon == pseudo_codon_G and my_pssm[i]['G'] != 0:
+                silent_mut += 1
+            elif pseudo_codon != pseudo_codon_G and my_pssm[i]['G'] != 0:
+                non_silent_mut +=1
+
+            pseudo_codon_T = pseudo_codon_minus + 'T'
+            pseudo_codon_Tseq = Seq(pseudo_codon_T)
+            pseudo_codon_Tprot = translate(pseudo_codon_Tseq)
+            if pseudo_codon == pseudo_codon_T and my_pssm[i]['T'] != 0:
+                silent_mut += 1
+            elif pseudo_codon != pseudo_codon_T and my_pssm[i]['T'] != 0:
+                non_silent_mut +=1
+
+            # Directly under the As, Cs, Gs, or Ts at the wobble position, print the amino acid that results from the point mutation
+            print '%4s -> %s: %s, %s: %s, %s: %s, %s: %s'(pseudo_codon_prot, 'A', pseudo_codon_Aprot, 'C', pseudo_codon_Cprot, 'G', pseudo_codon_Gprot,
+                                                              'T', pseudo_codon_Tprot)
+         codon_holder = ''
+    pseudo_codon += 1
+     
+
+print 'Total silent mutations due to wobble position mutations: ', silent_mut
+print 'Total non-silent mutations at wobble position mutations: ', non_silent_mut
+</pre>

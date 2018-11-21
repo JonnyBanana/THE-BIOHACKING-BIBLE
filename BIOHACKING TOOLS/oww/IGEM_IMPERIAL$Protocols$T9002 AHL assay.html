@@ -1,0 +1,73 @@
+==AHL assay from T9002 characterization==
+
+<font color=red> UNFINISHED !!!! </font>
+
+ This is to clarify the protocol
+ -The Bacteria are measuring the concentration of AHL in the medium
+ -eg.
+    If ''([http://openwetware.org/wiki/IGEM:IMPERIAL/Protocols/T9002 as in the characterisation assay])''you add 20ul of 1uM AHL to 1.98 ml of LB then
+    you get a '''10nM''' AHL solution The Bacteria will produce a GFP in response
+    to this AHL concentration
+ -It is likely that the oscillations will be within the same order of magnitude as 
+  the AHL assay. So to avoid the dilution problem of adding supernatant from the sample
+  we wish to test, to an assay culture, thereby diluting the AHL to an undetectable
+  concentration it makes much more sense to re-suspend the T9002 cells in the test supernatant,
+  thereby solving the dilution problem. '''This is what this protocol tries to achive'''
+  [[User:JohnChattaway|JohnChattaway]] 08:15, 22 August 2006 (EDT)
+
+
+===Motivation===
+
+This protocols is designed to measure an unknown concentration of AHL in a medium. 
+
+===Materials & Equipment===
+
+*Equipment
+**Wallac Victor 3 Multi-Well Fluorimeter
+**Ependorf Tubes
+**Gilson Pippettes
+**37oC Shaker
+
+*Materials
+**Solution to assay
+**GFP Standard Solution
+**E.coli Growth Medium w/Ampicilin (LB/M9)
+**E.coli Culture Containing T9002
+
+===Protocol===
+Prepare T9002 cells:
+*Inoculate a culture from 10ul of stored T9002 in 2ml LB/M9 growth medium containing 50ug/ml Ampicilin.
+*Incubate at 37oC for overnight in a shaker.
+*Following day, prewarm LB/M9 to 37oC by placing in the 37oC incubator
+*Measure and record OD600_1 in report sheet
+*Inoculate a 8ml fresh culture from the o/n to bring back the OD600 to 0.1, use prewarmed LB/M9 + Ampicilin.
+**Volume used to inoculate new culture = (0.1/OD600_1)*8ml
+*Return LB/M9 to incubator
+*Incubate new culture at 37oC for 2 hours in a shaker - '''<font color = green>This returns cells to exponential phase</font>'''
+*Measure and record the OD600_2 in report sheet
+*Dilute again for an OD of 0.1 in a new culture of 15ml of a prewarmed LB/M9 + Ampicilin. 
+**Volume used to inoculate new culture = (0.1/OD600_2)*15ml
+*Vortex new T9002 culture.
+
+Prepare medium to assay:
+*Spin down solution to assay and retreive supernatant
+*Spin down T9002 solution and get rid of the supernatant - <font color=green>'''This avoids a dilution effect when measuring AHL'''</font>
+*Resuspend T9002 cells into solution to be measured.
+
+AHL incubation and GFP reading
+*Pipette samples into a 96 well plate
+*Add 200uL of growth medium to a well to act as a control
+*Incubate 96 well plate in a 37oC shaker for 4 hours - <font color=green>'''Allows GFP expression can reach steady state'''</font>
+*After the 4 hours add 200uL of 200x diluted GFP standard solution
+*Take a reading 
+*Taking readings
+**Take the plate from the water bath
+**Use the Victor3 to measure flourescence and absorbance
+**Return the plate to the water bath
+*Take 3 further readings every 20 minutes - <font color=green>'''This is to assess whether GFP has in fact reached steady state'''</font>
+
+
+Any questions, see [[User:TomH|Tom]].
+
+
+Many thanks to Drew Endy and Barry Canton from MIT for providing the protocol on which this is based.

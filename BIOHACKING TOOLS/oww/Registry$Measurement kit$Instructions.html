@@ -1,0 +1,45 @@
+=Promoter Measurement Kit Instructions=
+The steps for using the Promoter Measurement Kit for testing a promoter.
+
+==Oligo design==
+We recommend building your promoter from oligo annealing.  If you are testing a part or device larger than ~80bp you can use miniprep and digest in place of oligo annealing.  Just be sure to gel purify the part from the plasmid it was on if that plasmid has KanR -- if it doesn't contain KanR a purification step should probably be skipped (due to the inefficiency of a typical gel isolation). 
+
+Oligos should be designed to attach a BioBrick prefix and suffix to your promoter, and to create an EcoR1 overhang on the 5' end and a SpeI overhand on the 3' end.  You should order your oligos with a 5' phosphate or [[PNK Treatment of DNA Ends|add one with PNK]].
+
+===Example of typical promoter===
+Promoter sequence:
+
+Desired final construct:
+
+Both are given 5'->3':
+PromoterXFWD Primer:
+PromoterXREV Primer
+
+==Oligo annealing==
+*Used this protocol: [[Endy:Annealing complementary primers]]
+
+==Ligation==
+We have been playing around with the conditions here a bit, and the best so far is:
+*3K3 (<10ng/uL) + I13401 (<10ng/uL) + I20258 (6.4ng/uL)
+**The I20258 was a 1/100 dilution from the product of oligo annealing.
+
+==Transformation==
+[[Image:RBS tester colony PCR.JPG|thumb|10 of 15 colonies yielded a PCR product of the correct length; The rightmost lane is the positive control]]
+*We recommend testing your part in TOP10 cells to best mimic the conditions of previously characterized promoters in the Registry.
+*The ligation conditions above yielded 140 colonies which was 10X greater than samples where 3K3 and I13401 were added in (1/10) concentrations.  Based on length verification via colony PCR 66% of the colonies appear to have had the primer inserted properly.  (see fig)
+
+=RBS Measurement Kit Instructions=
+
+=Old Notes=
+Just posting notes here from going through the process of building the 16 test constructs.  Since this is essentially the process that a user of the kit would be doing when they inserted their RBS or Promoter.
+
+==Example miniprep of measurement kit components==
+*GFP Promoter Tester Version 1 E/S <BBpart> I20244</BBpart> - 27.2
+*GFP Promoter Tester Version 2 E/X <BBpart> I20245</BBpart> - 29.8
+*RFP Promoter Tester Version 1 E/S <BBpart> I20246</BBpart> - 23.2
+*RFP Promoter Tester Version 2 E/X <BBpart> I20247</BBpart> - 23.1
+
+*GFP RBS Tester Version 1 E/X <BBpart> I20248</BBpart> - 31.5
+*GFP RBS Tester Version 2 S/X <BBpart> I20249</BBpart> - N/A
+*RFP RBS Tester Version 1 E/X <BBpart> I20250</BBpart> - 25.4
+*RFP RBS Tester Version 2 S/X <BBpart> I20251</BBpart> - 30.2

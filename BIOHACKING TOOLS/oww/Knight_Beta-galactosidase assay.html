@@ -1,0 +1,88 @@
+This protocol is directly derived from [[User:Smoore|Sean Moore's]] [[Beta-Galactosidase Assay (A better Miller)]].  Please go there for the original protocol.  This protocol just contains specifics regarding stock solutions I've made.
+
+==Materials==
+*500mM dibasic sodium phosphate (Na<sub>2</sub>HPO<sub>4</sub>)
+**1M Na<sub>2</sub>HPO<sub>4</sub> seems to come out of solution in my hands.
+*4M potassium chloride (KCl)
+*1M magnesium sulfate (MgSO<sub>4</sub>)
+*1% hexadecyltrimethylammonium bromide (CTAB)
+*10% sodium deoxcholate (light-sensitive, stored at 4&deg;C)
+*1M NaH<sub>2</sub>PO<sub>4</sub>
+*o-nitrophenyl-&beta;-D-Galactoside ONPG (solid)
+*1M sodium carbonate (Na<sub>2</sub>CO<sub>3</sub>)
+
+See [[Talk:Knight:Beta-galacosidase assay]] for stock solution recipes.
+
+===Permeabilization Solution===
+For 2mL:
+*400 &mu;L 500 mM Na<sub>2</sub>HPO<sub>4</sub>
+*10&mu;L 4M KCl
+*4&mu;L 1M MgSO<sub>4</sub>
+*160&mu;L 1% CTAB
+*8&mu;L 10% sodium deoxycholate
+*10.8 &mu;L beta-mercaptoethanol
+
+(You need 80 &mu;L per sample.)
+
+===Substrate solution===
+For 10mL
+*1.2mL 500mM Na<sub>2</sub>HPO<sub>4</sub>
+*400&mu;L 1M NaH<sub>2</sub>PO<sub>4</sub>
+*10 mg ONPG
+*27 &mu;L &beta;-mercaptoethanol
+
+(You need 600 &mu;L per sample.)
+
+==Protocol==
+#Grow cultures under whatever conditions you wish to test.
+#During growth
+##Make permeabilization solution.
+##Pre-measure 80 &mu;L aliquots of permeabilization solution into 1.5 mL microfuge tubes and close them.
+#Measure Abs<sub>600</sub> of cultures and RECORD IT!
+#Remove a 20 &mu;L aliquot of the culture and add it to the 80 &mu;L of permeabilization solution.
+#*The sample is now stable for several hours.  This allows you to perform time-course experiments.
+#*Also include a blank (solutions-only) sample for zero'ing the spec later.
+#Make substrate solution.
+#Warm samples and substrate solution to 30&deg;C
+#Start timer counting up.
+#Every 15 secs, add 600 &mu;L of substrate solution to a sample tube.
+#Note the time of addition.
+#After sufficient color has developed, add 700 &mu;L of 1M Na<sub>2</sub>CO<sub>3</sub>, mix well.  
+#Note the stop time.
+#Once all reactions are complete, transfer the tubes to a microfuge and spin for 10 minutes at full speed.
+#Gently remove tubes from centrifuge.
+#Measure the absorbance at 420nm and 550nm.  (Use UV-Vis protocol on [[Nanodrop]]).
+
+Calculate Miller Units as:
+
+<math>1000 * \frac{(Abs_{420})}{((Abs_{600} \text{ of culture sampled})*(\text{volume } [0.02 \text{ mL}])*(\text{reaction time}))}</math>
+
+or
+
+<math>1000 * \frac{(Abs_{420} - 1.75*Abs_{550})}{((Abs_{600} \text{ of culture sampled})*(\text{volume } [0.02 \text{ mL}])*(\text{reaction time}))}</math>
+
+where:
+
+*Abs<sub>420</sub> is the absorbance of the yellow o-nitrophenol,
+*Abs<sub>550</sub> is the scatter from cell debris, which, when multiplied by 1.75 approximates the scatter observed at 420nm,
+*''t'' = reaction time in minutes,
+*''v'' = volume of culture assayed in milliliters,
+*Abs<sub>600</sub>&dagger; reflects cell density.
+
+==Comments on the assay==
+*'''[[User:Reshma P. Shetty|Reshma]] 11:28, 15 October 2007 (CDT)''': Miller recommends a culture with OD600 = 0.28 to 0.70.  However, he claims that overnight cultures can also be used but that exponentially growing cells give more precise assays <cite>Miller-1992</cite>.
+
+* When is the reaction done?  I never found a good answer for this in the literature.  If I let a reaction go to completion, I measured an Abs<sub>420</sub> of ~2-3.  Of course, this is out of the reliable range of the spectrophotometer, but it gives an indication of how far the reaction can go.  I got reproducible data when the yellow color was just detectable before adding the stop solution up to about the color of LB broth before stopping.  Remember, you need the substrate to saturate the enzyme during the course of the reaction, so don't let them go too far.  I routinely make three separate measurements for each culture and average them.
+**'''[[User:Reshma P. Shetty|Reshma]] 11:28, 15 October 2007 (CDT)''': Miller recommends that the OD420nm reading should ideally be 0.6-0.9 <cite>Miller-1992</cite>.
+
+==References==
+<biblio>
+#Zhang-JBC-1995 pmid=7538113
+// (from which this assay was derived)
+#Miller-1972 isbn=0879691069 
+// (original Miller assay)
+#Miller-1992 isbn=0879693495
+</biblio>
+
+[[Category:Protocol]]
+[[Category:Escherichia coli]]

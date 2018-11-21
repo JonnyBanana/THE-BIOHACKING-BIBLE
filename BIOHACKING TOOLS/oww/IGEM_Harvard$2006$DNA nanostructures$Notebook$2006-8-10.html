@@ -1,0 +1,342 @@
+==Gel purifications for Perry==
+
+==First attempt at a protection assay==
+
+(and, in the process, more Microcon trials)
+
+* add ligand, add latches, then Microcon, OR Microcon, add ligand, add latches
+* digest
+* gel analysis (PAGE)
+
+* ''('''Note from Tiff:''' Maybe it might be worth it to Microcon after the adding of ligand and latches as well, because then the excess ligand and latches then can't possibly be mistaken for the digested ligand-attachment-oligo complex.''
+
+
+
+==Mg2+, Oligo-Concentration Titration, Cont.==
+
+''('''Note from Tiff:''' A remaining 20uL of each of the [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-3#Titration_of_.5BMgCl2.5D_and_.5Boligos.5D_in_Folding_Rxns|six reactions]] is in a PCR strip in one of the purple pipette-tip-box racks in the fridge, from the work on [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-7#Mg2.2B.2C_1:6x_Titrations_for_Folding|Monday]].  They're marked on the tube part of the strip with something like "10M 1X," all the way up to "30M 6X".  However, you'll probably want to not use those and just refold two reactions each of the six reactions, so that you'll have one for PEG precipitation and one for Microcon.)''
+
+====Overview====
+
+'''Goals'''
+* to vary folding conditions by varying both {{mgcl2}} concentration and oligo concentration in order to determine which folding conditions yield the most robust and structurally sound nanostructures
+* recovery yields from PEG precipitations of the products and Microcon filtration of the products will determine a) the most efficient purification protocol, as well as b) suggest which nanostructures are most robust (higher yields indicate better nanostructures)
+
+'''Assumptions'''
+* 10% PEG is a reasonable starting point for PEG precipitation trials, so we'll perform all trials with 10% PEG
+* Previous results imply that the most successful Microcon trials (at least in terms of getting rid of old oligos) occur from successive spins and dilutions, since a single spin leaves many oligos. This, however, may decrease nanostructure yields. We'll use a protocol that spins and dilutes four times (the maximum the manufacture suggests) for 6 min. each (the maximum the manufacturer suggests).
+
+'''Protocol overview'''
+# Create/choose a working stock
+# Concentrate working stock to various concentrations
+# Fold six different reactions (varying {{mgcl2}} concentration and oligo concentration)
+# Split each of the six reactions into two aliquots, and perform PEG precipitations on one and Microcon filtration on the other
+# Run all purification products on 2% agarose gels
+
+===Detailed protocol===
+
+====1. Create/choose a working stock====
+
+Although Dr. Shih's emails indicated that we try the c5.0 barrel, we'd like to try one with a hopefully-function lid design so we can get moving on a protection assay sooner. Val and Matt chose c4.0.
+
+====2. Concentrate working stock to various concentrations====
+
+* concentrated 600 {{ul}} each of: 4.0.Fo (+latch1, +inward), 4.0.Ho (+latch2, +inward), and 4.0.Io (+latch2, +outward) in the Vacufuge until approximately 100 {{ul}} of water remained
+** ''each has oligo-ligand and all latches included in the working stock''
+** oligo concentration is now 250 nM * 6 = 1.5 {{um}}
+** this took several hours at 45{{c}}
+* Io was used in the folding reactions below
+** Fo and Ho were retained for future experiments
+
+====3. Fold six different reactions (varying {{mgcl2}} concentration and oligo concentration)====
+
+* used three different [[IGEM:Harvard/2006/Folding_buffers|folding buffers]] with varying {{mgcl2}} concentrations
+* used two different oligo concentrations: 250 nM from the unconcentrated working stock, and 1.5 {{um}} from the Vacufuge step above
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''trial'''
+| align="center" style="background:#f0f0f0;"|'''oligos'''
+| align="center" style="background:#f0f0f0;"|'''p7308 (44 nM)'''
+| align="center" style="background:#f0f0f0;"|'''folding buffer (10x)'''
+| align="center" style="background:#f0f0f0;"|'''water'''
+|-
+| 1a,b||16 {{ul}} 250 nM||9 {{ul}}||4 {{ul}} 100 mM {{mgcl2}}||11 {{ul}}
+|-
+| 2a,b||16 {{ul}} 1.5 {{um}}||9 {{ul}}||4 {{ul}} 100 mM {{mgcl2}}||11 {{ul}}
+|-
+| 3a,b||16 {{ul}} 250 nM||9 {{ul}}||4 {{ul}} 200 mM {{mgcl2}}||11 {{ul}}
+|-
+| 4a,b||16 {{ul}} 1.5 {{um}}||9 {{ul}}||4 {{ul}} 200 mM {{mgcl2}}||11 {{ul}}
+|-
+| 5a,b||16 {{ul}} 250 nM||9 {{ul}}||4 {{ul}} 300 mM {{mgcl2}}||11 {{ul}}
+|-
+| 6a,b||16 {{ul}} 1.5 {{um}}||9 {{ul}}||4 {{ul}} 300 mM {{mgcl2}}||11 {{ul}}
+|} 
+
+Folding conditions: 80{{c}} for 2 min., decrease 1{{c}} every 2 min. 59 more times
+
+====4. PEG precipitations and Microcon filtrations====
+
+PEG precipitation:
+
+* label six 1.5 mL microcentrifuge tubes 1, 2, etc.
+** use 1.5 mL tubes, and not anything smaller, so that we don't break the centrifuge
+* in each one, mix (total volume is 50 {{ul}}):
+** 10 {{ul}} of the respective folded nanostructure
+** 25 {{ul}} 20% PEG (final concentration: 10%)
+** 5 {{ul}} 5 M NaCl (final concentration: 0.5 M)
+** 10 {{ul}} water
+* PEG precipitation protocol:
+** incubate samples on ice for 15 min.
+** spin at 4{{c}} at 16k rcf for 10 min.
+** carefully pipet away supernatant
+** reconstitute pellet in 20 {{ul}} of appropriate 1x folding buffer
+
+Microcon filtration:
+
+* label six Microcon microcentrifuge tubes 1, 2, etc.
+* pipet 10 {{ul}} folded nanostructures into six different YM-50 Microcon filters and place the filters into their respective microcentrifuge tubes
+* add 490 {{ul}} water to each filter
+* spin at 14k rcf for 6 min.
+** this should leave ~50 {{ul}} remaining (according to [[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-9#More_Microcon_trials|yesterday's experiments]])
+* add 440 {{ul}} water, spin, add water, spin, add water, spin (total of four spins)
+* retentate recovery: invert filter into a clean, labeled Microcon microcentrifuge tube and spin at 1k rcf for 3 min.
+
+====5. Gel analysis====
+
+Depending on Microcon retentate volumes, it may be necessary to normalize the volumes run in the gel. If that's the case, then run half of all the volumes listed.
+
+To save time, space, and sanity, we won't run the supernatants and flow-throughs, since they don't give us much information about yield and purity, and since they'll require lots of Vacufuging in order to obtain normalized samples that will fit in a gel.
+
+On a 2% agarose gel run in TBE, with both the gel and buffer supplemented to 10 mM {{mgcl2}}, at 60V for 1 h:
+
+[[Image:Igemharv06_20060811_mg-oligo.jpg|thumb| 2% agarose gel run in TBE, with both the gel and buffer supplemented to 10 mM {{mgcl2}}, at 60V for 1 h]]
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Lane'''
+| align="center" style="background:#f0f0f0;"|'''Trial'''
+| align="center" style="background:#f0f0f0;"|'''Purification'''
+| align="center" style="background:#f0f0f0;"|'''Amount'''
+|-
+| 1||30 nM oligos, 10 mM {{mgcl2}}||unpurified||10 {{ul}}
+|-
+| 2||30 nM oligos, 10 mM {{mgcl2}}||PEG pellet||all (20 {{ul}})
+|-
+| 3||30 nM oligos, 10 mM {{mgcl2}}||Microcon retentate||all
+|-
+| 4||30 nM oligos, 20 mM {{mgcl2}}||unpurified||10 {{ul}}
+|-
+| 5||30 nM oligos, 20 mM {{mgcl2}}||PEG pellet||all (20 {{ul}})
+|-
+| 6||30 nM oligos, 20 mM {{mgcl2}}||Microcon retentate||all
+|-
+| 7||30 nM oligos, 30 mM {{mgcl2}}||unpurified||10 {{ul}}
+|-
+| 8||30 nM oligos, 30 mM {{mgcl2}}||PEG pellet||all (20 {{ul}})
+|-
+| 9||30 nM oligos, 30 mM {{mgcl2}}||Microcon retentate||all
+|-
+| 10||1 Kb+ ladder||n/a||10 {{ul}}
+|-
+| 11||p7308 (44 nM)||n/a||4.5 {{ul}}
+|-
+| 12||600 nM oligos, 10 mM {{mgcl2}}||unpurified||10 {{ul}}
+|-
+| 13||600 nM oligos, 10 mM {{mgcl2}}||PEG pellet||all (20 {{ul}})
+|-
+| 14||600 nM oligos, 10 mM {{mgcl2}}||Microcon retentate||all
+|-
+| 15||600 nM oligos, 20 mM {{mgcl2}}||unpurified||10 {{ul}}
+|-
+| 16||600 nM oligos, 20 mM {{mgcl2}}||PEG pellet||all (20 {{ul}})
+|-
+| 17||600 nM oligos, 20 mM {{mgcl2}}||Microcon retentate||all
+|-
+| 18||600 nM oligos, 30 mM {{mgcl2}}||unpurified||10 {{ul}}
+|-
+| 19||600 nM oligos, 30 mM {{mgcl2}}||PEG pellet||all (20 {{ul}})
+|-
+| 20||600 nM oligos, 30 mM {{mgcl2}}||Microcon retentate||all
+|}
+
+====Results/discussion====
+
+* both PEG precipitation and Microcon filtration appear to effectively remove free oligos
+* smearing of nanostructure bands indicates that PEG precipitation appears to damage nanostructures independently of oligo and {{mgcl2}} concentration
+* Microcon filtration continues to afford low nanostructure yields
+
+===Earlier protocol guidelines===
+
+'''(1) Concentrate enough 6x oligos for 6 samples.'''
+
+*In other words, make up 3 tubes of c5.0A without lids.  
+** 36 reactions-worth of oligos are needed.  
+** Each tube of working stock that we make has enough for 12.5 reactions (200uL/16uL of oligos per folding reaction = 12.5)
+** This should be done without the oligos for the lids because Prof Shih said to do this only on the c5.0 barrel.  (However, I might be misinterpreting the descriptions of the pre-working stocks, so please check the following table before you go ahead and mix up the working stocks.)
+
+{| {{table}}
+| Stock ID||Experiment||1||2||3||4||4L||5||5L||6||7||8||9||10+11||12||13+14||15||16+17||18||19||20||21||'''Total'''||H2O Needed
+|-
+| c5.0A||no latches, no aptamers||172uL||-||-||5uL||-||5uL||-||3uL||3uL||-||-||-||-||-||-||-||-||-||-||-||188uL||12uL
+|-
+|}
+
+* Concentrate 6 tubes of 6-reactions-worth-of-oligos in each tube.
+** Pipette 96uL (6 x 16uL = 96uL) of the working stock you made up into each of 6 tubes. 
+** Speedvac for approximately 45 minutes, or until dry.  (Don't worry, drying oligos isn't bad - just nanoboxes.)
+** Reconstitute in 16uL of dH2O.
+
+
+
+'''(2) Fold two of each of the 6 reactions.'''
+** Tubes labeled "10x folding buffer" (which is the normal kind, with 100mM of MgCl2 in it), "10x folding buffer 200mM MgCl2, and "10x folding buffer 300mM MgCl2" should be in the fridge somewhere.  The 200mM and 300mM should be in the same rack.  
+*** Into each of the six tubes you've just Speedvaced, add:
+****9uL of p7308 (44nM)
+****4uL of the appropriate 10x folding buffer ([[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-3#Titration_of_.5BMgCl2.5D_and_.5Boligos.5D_in_Folding_Rxns|see table]]).
+****11uL of H2O
+*** Pipette each of these 40uL of reaction into PCR tubes.
+
+** Into six other PCR tubes, mix:
+****9uL of p7308 (44nM)
+****4uL of the appropriate 10x folding buffer ([[IGEM:Harvard/2006/DNA_nanostructures/Notebook/2006-8-3#Titration_of_.5BMgCl2.5D_and_.5Boligos.5D_in_Folding_Rxns|see table]]).
+****11uL of H2O
+****16ul of c5.0 A, without lids.  The two tubes in the c5.0 rack labelled "c5.0 A (no lids)" should be fine.
+
+** Fold using FOLDINGD program in thermocycler.
+
+
+
+'''(3) Purify using (A)PEG precipitation, and (B)Microcon tubes.'''
+
+* (A) For PEG purification:
+** Use 30uL from each of the six types of reactions.
+<pre>
+In a 1.5mL tube (so that you'll be able to spin in a centrifuge without damage later), add:
+   20uL 20% PEG
+   10uL 2.5M NaCl
+Ice for 15 min
+Spin at 4 deg C for 10 min
+Remove supernatant (50uL) to a separate tube
+Reconstitute pellet in 30uL H2O
+</pre>
+
+* (B) For Microcon purification:
+** Use 30uL from each of the six types of reactions.
+** Use the Microcon protocol that is yielding the best results - 4 washes, spin for 6min each time seems to be the best so far.
+** After the recovery, assess the amount of liquid you've recovered; if below 30uL, add H2O till you reach 30uL.  This will allow equal comparisons in the gel later.
+
+
+
+
+'''(4) Run ''two'' 20-lane 2% 10mM MgCl2 agarose gels (everything won't fit on just one).''' 
+
+* Only 10uL of each of the 30uL PEG-pellet or 30uL of Microcon "elute" will be used in the gel, so that 20uL will be left for EM or whatever other final use they might be useful for.  
+* 10uL of each of the original reactions will be used in the gels.  
+** This is to try to keep equivalent nanobox-concentrations with the other 10uL used for the PEG-pellet and Microcon "elute" lanes.  
+** Because the pellet and elute were reconsistuted to the original 30uL taken from the reactions before they were purified, 10uL of the original = 10uL of the purified form, theoretically.
+
+* The following two gels should be run at 60V for 1hr:
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''lane'''
+| align="center" style="background:#f0f0f0;"|'''component'''
+| align="center" style="background:#f0f0f0;"|'''[component]'''
+| align="center" style="background:#f0f0f0;"|'''amount'''
+|-
+| 0||1kb ladder||1x||10uL
+|-
+| 1||p7308||44nM||7.5uL
+|-
+| 2||10mM Mg, 1x unpurified||99fM||10uL
+|-
+| 3||10mM Mg, 1x PEG-pellet||~99fM||10uL
+|-
+| 4||10mM Mg, 1x PEG-supernatant||-||~40uL
+|-
+| 5||10mM Mg, 1x Microcon "elute"||~99fM||10uL
+|-
+| 6||10mM Mg, 1x Microcon flowthrough||-||~40uL
+|-
+| 7||20mM Mg, 1x unpurified||99fM||10uL
+|-
+| 8||20mM Mg, 1x PEG-pellet||~99fM||10uL
+|-
+| 9||20mM Mg, 1x PEG-supernatant||-||~40uL
+|-
+| 10||20mM Mg, 1x Microcon "elute"||~99fM||10uL
+|-
+| 11||20mM Mg, 1x Microcon flowthrough||-||~40uL
+|-
+| 12||30mM Mg, 1x unpurified||99fM||10uL
+|-
+| 13||30mM Mg, 1x PEG-pellet||~99fM||10uL
+|-
+| 14||30mM Mg, 1x PEG-supernatant||-||~40uL
+|-
+| 15||30mM Mg, 1x Microcon "elute"||~99fM||10uL
+|-
+| 16||30mM Mg, 1x Microcon flowthrough||-||~40uL
+|-
+| 17||||||
+|-
+| 18||||||
+|-
+| 19||||||
+|-
+| 
+|}
+
+And,
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''lane'''
+| align="center" style="background:#f0f0f0;"|'''component'''
+| align="center" style="background:#f0f0f0;"|'''[component]'''
+| align="center" style="background:#f0f0f0;"|'''amount'''
+|-
+| 0||1kb ladder||1x||10uL
+|-
+| 1||p7308||44nM||7.5uL
+|-
+| 2||10mM Mg, 6x unpurified||99fM||10uL
+|-
+| 3||10mM Mg, 6x PEG-pellet||~99fM||10uL
+|-
+| 4||10mM Mg, 6x PEG-supernatant||-||~40uL
+|-
+| 5||10mM Mg, 6x Microcon \"elute\"||~99fM||10uL
+|-
+| 6||10mM Mg, 6x Microcon flowthrough||-||~40uL
+|-
+| 7||20mM Mg, 6x unpurified||99fM||10uL
+|-
+| 8||20mM Mg, 6x PEG-pellet||~99fM||10uL
+|-
+| 9||20mM Mg, 6x PEG-supernatant||-||~40uL
+|-
+| 10||20mM Mg, 6x Microcon \"elute\"||~99fM||10uL
+|-
+| 11||20mM Mg, 6x Microcon flowthrough||-||~40uL
+|-
+| 12||30mM Mg, 6x unpurified||99fM||10uL
+|-
+| 13||30mM Mg, 6x PEG-pellet||~99fM||10uL
+|-
+| 14||30mM Mg, 6x PEG-supernatant||-||~40uL
+|-
+| 15||30mM Mg, 6x Microcon \"elute\"||~99fM||10uL
+|-
+| 16||30mM Mg, 6x Microcon flowthrough||-||~40uL
+|-
+| 17||||||
+|-
+| 18||||||
+|-
+| 19||||||
+|-
+| 
+|}
+
+=Thrombin bead assay=
+
+Folded design 3.2.E (aptamers outside, no latches) for use in a future assay in which we test whether the nanostructures are capable of binding thrombin beads.

@@ -1,0 +1,39 @@
+{{discussion}}
+
+''This is an area to flesh out some rough ideas around design rules related to mRNA that would helpful in designing standard parts.  Please add your thoughts, and feel free to add other problems you have encountered that aren't listed.''
+
+
+==Problem== 
+'''How do you insulate parts so that mRNA structure doesn't unpredictably effect performance when they are combined?'''
+*'''[[Austin Che]]''': Perhaps we should limit to specific cases where we care about. For example, RBS and coding sequence seems to be the main junction we care about and inside this junction, we can't really insert any buffering sequence. Transcriptional terminators and other RNA signals are another category of things we care about.
+*Things with structure we might want to protect: RBS, Terminators, Stability elements, RNAse sites, Ribozymes, Riboswitches, aptamers, etc.
+
+==Clean up of previous discussions==
+#'''Specification''' of mRNA structure and '''detection''' of possible junction problems
+#*BioBrick submissions would include an option for defining the bp pairings (or unpairings) that were essential for proper function.
+#*When two parts were combined the new sequence would be folded using Sfold and the result compared to the folding of the parts individually.  The difference in likelihood of folding for user defined bp pairing could be quantified and if it crosses a threshold value the user could be alterted to a possible junction problem.
+#'''Design''' rules for making new parts that are likely to behave well when combined
+##Buffer Sequence
+##*Custom Buffer
+##**If you're making a new RBS, it checks the sequence of all existing CDSs in the Registry and returns the Xbp buffer sequence which leads to the least change in RBS structure.  Specifically, you combine RBS + a random Xbp buffer + each CDS from the Registry and run Sfold.  Repeat for as many random Xbp buffers as you can tolerate.
+##*Standard buffer collection
+##**Are there Xbp buffers that are just better at buffering than others for combining two random parts?  Austin doesn't think so, he'l talk about his results around that questions. 
+##Strong binding structures
+##*Can we choose parts that are unlikely to be effected by flanking sequences in the first place?  We could give a part a stability rating by placing random sequences next to it (repeated many times), running Sfold and checking the effect on the bp pairings.  If a designer had a choice from a few different RBSs or Terminators they could choose the one which was most stable.
+
+==Previous discussion==
+#Flanking buffer sequences
+#*add flanking regions of "meaningless" sequence that will buffer parts from each other and reduce likelihood of secondary structure at the part junction.
+#*how long should this sequence be?  should it have no structure?
+#*'''[[Austin Che]]''': One of the papers from last lunch I had picked had shown that RNAs fold locally within about 50 nt and that going any further out actually decreases predictive ability. "no structure" is a structure. It seems you want a buffer region that's the most unlikely to occur in a normal sequence. If normal sequences have "no structure" then "no structure" buffer may pair with the "no structure" sequence. Conversely if the normal sequence has lots of structure, making a buffer with high structure may cause high structure between the buffer and target sequence. Thus, it seems that it depends on what we expect our target sequence to look like.
+#Automatic screen for possible junction problems
+#*look at the secondary structure at the part junction and predict whether it's going to be a problem, if it is put up a flag for the user.
+#*how would we do this exactly -- Sfold the entire part and then looks at the structure of the junction?  what are our cutoffs likelihoods on the folding, etc?  If we ran every BB part against every other one what fraction end up with some structure accorss junctions?
+#*'''[[Austin Che]]''':It's nice in principle but not clear whether this is any use in practice. I'll wager you'll always find some structure across the junction, probably from really far apart sequences which may not get the chance to actually come together in the cell.
+#**'''[[User:Jasonk|Jasonk]] 08:53, 22 January 2007 (EST)''': Sure, but can we assign some threshold likelihood that would help improve the signal to noise?
+#others?
+#*'''[[Austin Che]]''':You should take a look at this paper from Burge's lab. I didn't add it to list of articles for last lunch because it isn't about the accuracy of computational prediction but it is very interesting in that it finds that mRNAs have more local structure than non-coding regions. They don't really explain it satisfactorily (in my opinion) but it could be that increased structure in coding regions decreases the chance that surrounding sequences can affect its structure. So we can perhaps increase insulation by choosing codons that increase structure in coding regions (or use my algorithm of finding the codons most immune to insertion of random flanking sequences).
+
+   Katz L and Burge CB. Widespread selection for local RNA secondary
+   structure in coding regions of bacterial genes. Genome Res 2003
+   Sep; 13(9) 2042-51. doi:10.1101/gr.1257503 pmid:12952875

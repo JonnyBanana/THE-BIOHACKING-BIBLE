@@ -1,0 +1,157 @@
+==Why THIS Antithrombotic?==
+'''How is this better than existing antithrombotics (heparin, warfarin, and thrombolitics)?'''
+
+*'''Heparin:''' may induce immunological thrombocytopenia (we don't know if ours will or not), tends to bind to plasma proteins (ours won't - see PMID: 8107090 below).
+
+*'''Warfarin (Coumadin):''' small therapeutic window (ours will work molarly, thus we'll have to worry about not having ENOUGH, rather than having too much, once "we" (ie. pharmaceuticals) get a baseline curve in the human), and thus constant clinical supervision (the oligo keys will clear so fast, it shouldn't be a problem).
+
+*'''Both:''' food and drug interactions (ours probably won't - aptamer has been tested against some other control proteins, and it doesn't bind them much - again, see PMID: 8107090)
+
+All of this info is from:
+
+<biblio>
+anti1 pmid=16218489
+</biblio>
+
+
+'''Why not just naked aptamers?'''
+*clearance too quick, but ours will be hidden until the box is opened - hopefully it'll bind fast enough to not make its easy clearance a problem
+
+*"Thrombin is the most obvious target for the generation of both anticoagulant and antithrombotic compounds. Bock et al. (19) generated a 15 nucleotide DNA-based thrombin aptamer that binds thrombin with moderate affinity (apparent Kd ~10–7 M) and can prolong the clotting time of human plasma. To take advantage of its rapid clearance (in vivo half-life of approximately 1–2 minutes), the thrombin DNA aptamer was developed largely as an anticoagulant for use in surgical indications requiring regional anticoagulation of an extracorporeal circuit. When administered by constant infusion, this molecule was successfully used to maintain the patency of an extracorporeal circuit in sheep and was substituted for heparin in a canine cardiopulmonary bypass model (20, 21). Furthermore, because of its rapid clearance, once infusion of the aptamer was stopped, no reversal of the anticoagulant activity of this molecule was required. Based on its ability to inhibit clot-bound thrombin and platelet thrombus formation in an ex vivo whole artery angioplasty model, this aptamer also exhibited potential as a novel antithrombotic (22). However, for this thrombin aptamer to be successfully tested in animal models of arterial thrombosis, it would probably be necessary to modify it to improve its circulating half-life." --- White et al., 2000
+
+<biblio>
+napt1 pmid=11032851
+</biblio>
+
+
+==Roadblocks and Solutions==
+#Big Concept
+#*Is this really better than currently available antithrombins?
+#**Not in efficacy, necessarily.  But it's more generalizable, engineerable, and whether or not the triggerability and the bioavailability features work in our favor is something drug companies spend years testing.  In essence, the thrombin problem is just an example application of the greater idea of a triggerable drug box - it is our proof of concept.
+
+#Nitty-Gritty Details
+#*How is this going to stay in the body?
+#**The "lock," or the box structure, will be covered in a non-immunologic polymer, such as PEG (REFERENCE) or PLGA (REFERENCE), allowing it to traverse the bloodstream, or perhaps eventually enter the cell (REFERENCE) and drop cargo.  <br>Part of the functionality of the "key," or the oligo clasp-opening strand, is that it will be quickly cleared if it does not bind the lock within the time that naked DNA is cleared, approximately 5-10 minutes.  This allows a quick pulse-controlled attack against thrombin, though the possibility of a constant stream of key time-released or released by IV is not impossible.  <br>And the opened structures will be cleared, thrombin attached, thus permanently and immediately lowering the levels of that protein from the blood.
+
+#*How big is this stuff going to be anyway?  And how much thrombin will it bind?
+#**The thrombin-aptamer is approximately 3nm long, 2nm wide.  If the open-faced tetrahedron is used, it could be designed to be big enough to just fit one aptamer within, or four aptamers, one on each side.  The limiting factor here is the need to keep the aptamer within the confines of the structure.  However, my personal preference is for a closed-face structure because, w/ an open-faced one which needs to be constrained based on geometry, the odds of difficulty folding are higher.  
+
+#*Is there a chance that the aptamer sequence will mistakenly bind the scaffold or oligos?
+#**ClustalW says chances are not that great.
+
+==Presentation Outline==
+*'''Specific goal(s) of the project'''
+**Proof of concept.  The idea of a generalizable, injectable, triggerable, clearable, simple-to-engineer protein manipulation system is a goal well worth working towards, as is building a useful DNA nanostructure.  
+**'''state an existing problem and the impact if we solve it'''
+***Anti-thrombotics are needed for patients who have a tendency towards thrombosis, embolisms, and stroke - a highly-molar-controlled, triggerable form could be extremely helpful for patients that demand fast action and close regulation.
+
+*'''Initial ideas for how to solve the problem'''
+**'''Unique/interesting features of our approach'''
+***Generalizability: Because DNA aptamer designed to bind a protein in the bloodstream can be easily engineered into the structure, the design can be generalized simply.
+***Molar-Triggerability: Because the strand-replacement-clasp system functions as a "lock and key" on a 1:1 molar level, tight control of thrombin inactivation and pulse-inactivation (due to the quick 5-10 min clearance of "key" strand) are obtainable.
+***Coolness Factor: Because it's iGEM, and it'll look awesome.
+***Novelness: Even if we fail on further levels, simply building a box is novel
+
+**'''What pieces of the project do you already have a good idea that they can & will work?  what is novel?'''
+***Jack-able:
+****Tetrahedron concept, and possibly sequence, if we go w/ the open-surface model (a la http://www.sciencemag.org.ezp1.harvard.edu/cgi/content/full/310/5754/1661/FIG1)
+****Thrombin-aptamer sequence 
+****Endo-incorporation of aptamer into oligo sequences (a la http://www3.interscience.wiley.com.ezp1.harvard.edu/cgi-bin/fulltext/110526995/PDFSTART)
+****DNA tweezer strand-replacement sequence - though we can easily create one ourselves to hold a vertex of the tetrahedron together
+***Novel:
+****Design and sequence, if not going with the open-tetrahedron
+
+*'''Logistics'''
+**'''outline of project milestones and suggestions for division of labor'''
+#Design a box with strand-displaced clasp (group) - we should design at least two different kinds of boxes.
+#Write code to design box with oligo staples without aptamers, for testing, and with aptamers; (4 people at least, 2 per box)
+#Test closed box w/o aptamers to see if it actually opens (gel studies should be good enough to show this).
+##Simultaneously, test closed box w/ aptamers to see if it still opens (2 people at least).
+#Test closed box w/o aptamers to see if it opens in presence of thrombin. (2 people at least)
+##Simultaneously, test open box to see if aptamers on inner box surface actually bind thrombin (again, gel studies - or perhaps Western blot) (1 person).
+#Test closed boxes w/ aptamers in in vitro system with thrombin, adding strand-displacement oligo after.  See if it sequesters (1 person)
+#PEG-enclosure?
+
+*'''Costs'''
+**$$$
+**Time
+*'''Potential iGEM problems'''
+**articulating how this fits into iGEM
+**BioBricks
+*'''Brief Summary'''
+
+**We are trying to solve problem X with approach'''
+**'''if we are successful, what will we be able to deliver in November'''
+***Openable, triggerable box that binds thrombin and has a chance of being biostable
+**'''if we are unsuccessful, what will we be able to deliver in November'''
+***Box designs, possibly a non-opening box
+
+==Tasks/agenda==
+
+*design boxes with strand-displaced clasp
+**design = determine oligo sequences
+**several different models of boxes
+**for each box, make a design that includes aptamers and one that doesn't
+**try to keep designs modular, so that same set of oligos could create different structures in different combinations
+**Nick's idea: closed-face tetrahedron
+**other ideas: closed-face cube, capped honeycomb hexagon
+**Shawn's recommendation: stick to modifications of honeycombs
+*test boxes to see if they open and close
+**gel studies
+**imaging studies
+**test aptamer/non-aptamer boxes in parallel
+*test boxes to see if they close (and entrap) thrombin
+**test aptamer/non-aptamer boxes in parallel
+**simultaneously, test open box to see if aptamers on inner box surface actually bind thrombin
+***again, gel studies, or perhaps Western blot
+*test closed boxes w/ aptamers in ''in vitro'' system with thrombin, adding strand-displacement oligo after, see if it sequesters (1 person)
+*engineer boxes with PEG, repeat tests
+*possibility of incorporation with cells that present displacement DNA strands
+
+==Bibliography==
+
+===Thrombin===
+<biblio>
+# thr1 pmid=15170395
+# thr2 pmid=6996572  
+# thr3 pmid=1931959
+# thr4 pmid=11032851
+</biblio>
+<br>
+
+===Thrombin-Aptamer===
+''More complete [[IGEM:Harvard/2006/DNA_nanostructures#Bibliography|thrombin-aptamer bibliography]]''
+<biblio>
+# tha1 pmid=8107090
+# tha2 pmid=15945116 
+# tha3 pmid=8298130 
+</biblio>
+<br>
+
+===DNA Bioavailability===
+<biblio>
+# bioa1 pmid=16146351
+# bioa2 pmid=11336355
+# bioa3 pmid=7667185
+</biblio>
+<br>
+
+===PEG Covering===
+<biblio>
+# peg1 pmid=15771224
+# peg2 pmid=12922153
+</biblio>
+<br>
+
+===Tetrahedral Structure===
+<biblio>
+# tet1 pmid=16339440
+# tet2 pmid=2017259
+</biblio>
+<br>
+
+===Strand Displacement Clasp===
+<biblio>
+# sdc1 pmid=11308883
+# sdc2 pmid=10949296
+</biblio>

@@ -1,0 +1,80 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|-
+!height="25pt" width="80pt"| Super Parts
+!colspan="4" | [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Predator_Construct | Predator Construct]]
+|-
+!height="25pt" width="80pt"|Actual Part
+!colspan="4"| [[Image:J37016 logo.png|300px]] 
+|-
+!height="25pt" width="80pt"|Sub Parts
+! <bbpart>R0062</bbpart>
+! <bbpart>B0034</bbpart> 
+! <bbpart>C0062</bbpart> 
+! <bbpart>I13504</bbpart> 
+|}
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct |Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct/Design|Design]]</li>
+<li id="current">[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct/Modelling|Modelling]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct/Implementation|Implementation]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Predator_Construct/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+__NOTOC__
+==Model assumptions and relevance==
+
+*General assumptions on gene expression modelling:
+**Quasi-steady state hypothesis on mRNA expression.
+**Gene activation can be approximated by [http://en.wikipedia.org/wiki/Hill_equation Hill equations].
+
+*Assumptions linked to the quorum sensing:
+**As a first approximation, we assume that luxR and AHL molecules form a heterodimer (even if it has been found that the complex formed is more complicated).
+**The degradation rate of luxR and aiiA is mainly due to the growth dilution.
+
+==Model description of the oscillator==
+
+'''[http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/Modelling Full derivation of the above equations.]'''
+
+==Model description of the growth of the predator==
+*mathematical description of the predator growth and death:
+**<math>\frac{d[luxR]}{dt} = \frac{c * [AHL] * [luxR]}{(c0 + [AHL] * [luxR])} - gd * [luxR]</math>
+**<math>\frac{d[aiiA]}{dt} = \frac{c * [AHL] * [luxR]}{(c0 + [AHL] * [luxR])} - gd * [aiiA]</math>
+
+*insert a graphical representation if possible (e.g. CellDesigner display)
+*link to SBML file or matlab.
+
+==Model variables and parameters for the growth of the predator==
+
+(list all the variables and parameters of the model in a table, specifying if their values are known, unknown, to be measured.)
+
+{| border="1" width="100%"
+| style="background:lightblue" colspan="5"| '''Variables'''
+|- style="background:lightgrey"
+!Name !! Description !! Initial Value !! Confidence !! Reference
+|-
+|width="100"| AHL || homoserine lactone acting as the prey-molecule || 0|| depends how good is the control of the prey positive feedback || links
+|-
+|width="100"| luxR || molecule acting as the sensing module for the predator || 0|| to be measured as we might have to deal with some leakage of the promoter || links
+|-
+|width="100"| aiiA || molecule acting as the killing module of the prey for the predator  || 0 || to be measured as we might have to deal with some leakage of the promoter || links
+|}
+
+{| border="1" width="100%" 
+| style="background:lightblue" colspan="5"| '''Parameters'''
+|- style="background:lightgrey"
+! Name !! Description !! Value !! Confidence !! Reference
+|-
+|width="100"| c || maximum synthesis rate of the pLux promoter || to be characterized || to be measured || links
+|-
+|width="100"| c0 || dissociation constant according to Hill eq || to be characterized|| to be measured || links
+|-
+|width="100"| gd || growth dilution  || to be characterized || to be measured || links
+|}
+
+==Characterization==
+
+*Parameters c & c0 for characterization have to be extracted.
+*gd[luxR] and gd[aiiA] can be controlled by the chemostat.

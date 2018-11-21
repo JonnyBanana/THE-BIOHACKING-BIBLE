@@ -1,0 +1,93 @@
+==ID: Ribosome Binding Site (RBS)==
+
+{| border="1"
+|
+*'''Description''': RBS promoting translation rate
+*'''Hypothesis''': 
+**Continuous and constant translation rate 
+**Unlimited resource for translation (ribosome, tRNA ...)
+*'''Inputs''':
+**[mRNA]
+*'''Outputs''':
+**protein-synthesis-rate
+*'''Characteristic parameters''':
+**translation-rate-per-mRNA
+| align= "center" | [[Image:VBB_RBS.png|thumb|left|400px|RBS Brick Architecture]]
+|}
+
+==CellML structure (CellML 1.1 spec)==
+*'''Component''': RBS
+*'''Units''': 
+**Imported from Environment component
+*'''Variables''':
+**mRNA (public interface= in )
+**translationRatePermRNA (public interface = none / init value = XXX)
+**protein-synthesis-rate (public interface = out / init value = XXX)
+
+*'''MathML'''
+**<amsmath> proteinSynthesisRate =  translationRatePermRNA*[mRNA]</amsmath>
+
+==CellML File==
+
+<syntax type='xml'>
+<?xml version="1.0"?>
+
+<model xmlns="http://www.cellml.org/cellml/1.0#"
+       xmlns:cmeta="http://www.cellml.org/metadata/1.0#" 
+       xml:base="file:///C:/CellML_models/RBS.cml"
+       cmeta:id="RBS"
+       name="RBS">
+  
+<!-- LIST OF COMPONENTS -->
+
+<component name="RBS">
+
+<variable name="proteinSynthesisRate"        initial_value=""   public_interface="out"  units="moles_per_second"/>
+<variable name="nb_mRNA"                     initial_value=""   public_interface="in"   units="mole"/>
+<variable name="proteinSynthesisRatePermRNA" initial_value="1"  public_interface="none" units="per_second"/>
+	
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="protein synthesis rate">
+
+  <apply id="proteinSynthesisRate">
+   <eq/>
+   <ci>proteinSynthesisRate</ci>
+  <apply>
+   <times/>
+   <ci>proteinSynthesisRatePermRNA</ci>
+   <ci>nb_mRNA</ci>
+   </apply>
+   </apply>
+	
+</math>
+
+</component>
+
+
+<!-- END LIST OF COMPONENTS -->
+
+
+
+<!-- LIST OF IMPORTS -->
+
+<import xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="file://C:\CellML_models\units.cml">
+
+      <units name="moles_per_second" units_ref="moles_per_second"/>
+      <units name="per_second"       units_ref="per_second"/>
+</import>
+
+<!-- END LIST OF IMPORTS -->
+
+
+<!-- LIST OF CONNECTIONS -->
+
+
+<!-- END LIST OF CONNECTIONS -->
+
+</model>
+</syntax>
+
+
+==Comments==
+*this component provides the synthesis rate of downstream proteins based on [mRNA] and RBS translation rate.
+*don't know if it is possible to characterize experimentally the translationRatePermRNA?

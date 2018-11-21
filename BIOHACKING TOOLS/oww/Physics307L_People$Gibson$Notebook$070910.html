@@ -1,0 +1,121 @@
+==Setting Up==
+To begin this lab we first observed three pieces of equipment; a voltmeter, a mercury vapor lamp, and the h/e apparatus.  Setting this up was quite confusing and both Matt and I had several ways to hook up the voltmeter, but we finally found out how to actually hook it up using the volt cable (red cable and red input) to the positive terminal of the h/e apparatus.  The grounding cable (black went from the volt ground to the negative terminal of the h/e apparatus.
+
+==Experiment 1 - The Photon Theory of Light==
+The purpose of this was to determine the stopping voltage (where electrons stop leaving the material due to the photoelectric effect) of the material from the mercury lamps spectrum.  In addition to this, we used a transparency filter (100%, 80%, 60%... 20%) and began recording those values.  Certain values of wavelength (green, yellow) require a filter to rid the results of surrounding light.
+
+
+
+'''NOTE''': DVM reads incorrectly for producing a 0 potential through the h/e apparatus.  It reads at a (+) .04V 
+
+All measurements are using the first order spectral lines with the Variable transmission filter.
+----
+     '''Ultra-violet maxima stopping voltage readings''' - (NON TRANSMISSION LENS - 2.15)
+     2.09V in 3.06 seconds at 100%
+     2.09V in 4.89 seconds at 80%
+     2.09V in 5.49 seconds at 60%
+     2.09V in 6.99 seconds at 40%
+     2.09V in 9.69 seconds at 20%
+
+     '''Violet maxima stopping voltage readings''' - (NO TRANSMISSION LENS - 1.78)
+     ''Previously we calculated these values:''
+     1.73V in 5.91 seconds at 100%
+     1.73V in 3.83 seconds at 80%
+     1.73V in 3.53 seconds at 60%
+     1.73V in 4.18 seconds at 40%
+     1.73V in 8.70 seconds at 20%
+     -These values do not follow a predicted pattern, however we kept the data and re-measured new data.
+     ''NEW VALUES:''
+     1.74V in 3.63 seconds at 100%
+     1.74V in 5.37 seconds at 80%
+     1.74V in 5.58 seconds at 60%
+     1.74V in 7.71 seconds at 40%
+     1.74V in 14.90 seconds at 20%
+
+     '''Blue maxima stopping voltage readings''' - (NO TRANSMISSION LENS - 1.57V)
+     1.53V 4.71 seconds - new trial 1.97 100%
+     1.53V 3.70 seconds - new trial 3.13 80%
+     1.54V 2.70 seconds - new trial 4.03 60%
+     1.54V 3.50 seconds - new trial 5.76 40%
+     1.54V 6.69 seconds - new trial 6.60 20%
+
+     '''Green maxima stopping voltage readings''' - (NO TRANSMISSION LENS .91V W/O GREEN FILTER 1.05V)
+     0.91V 6.91 seconds at 100%
+     0.90V 8.15 seconds at 80%
+     0.90V 10.90 seconds at 60%
+     0.90V 16.99 seconds at 40%
+     0.90V 26.77 seconds at 20%
+
+     '''Yellow maxima stopping voltage readings''' - (NO TRANSMISSION LENS .77V W/0 YELLOW FILTER 1.11V)
+     0.76V 5.62 seconds at 100%
+     0.76V 6.17 seconds at 80%
+     0.76V 8.73 seconds at 60%
+     0.76V 15.03 seconds at 40%
+     0.76V 30.65 seconds at 20%
+
+==Experiment #2 : Planks Constant==
+* for this part we are suppose to once again determine the stopping potential for each color in the mercury spectrum. However we must do this for second order spectral lines also. Doing each of these two things twice to test for reproducibility, and then plot all four sets of data and perform a least squares fit and determine h and Wo. Where Wo is the work function for the cathode inside the h/e apparatus.
+
+
+    '''Ultraviolet -1st order'''             '''Ultraviolet -2nd order'''
+       - Measurement 1: 2.12V                   - Measurement 1: 2.10V
+       - Measurement 2: 2.12V                   - Measurement 2: 2.10V
+    '''Violet -1st order'''                  '''Violet -2nd order'''
+       - Measurement 1: 1.76V                   - Measurement 1: 1.76V
+       - Measurement 2: 1.77V                   - Measurement 2: 1.76V
+    '''Blue -1st order'''                    '''Blue -2nd order'''
+       - Measurement 1: 1.56V                   - Measurement 1: 1.57V
+       - Measurement 2: 1.55V                   - Measurement 2: 1.58V
+    '''Yellow -1sr order'''                  '''Yellow -2nd order'''
+       - Measurement 1: 0.77V                   - Measurement 1: 0.78V
+       - Measurement 2: 0.76V                   - Measurement 2: 0.78V
+    '''Green -1st order'''                   '''Green -2nd order'''
+       - Measurement 1: 0.91V                   - Measurement 1: 1.10V
+       - Measurement 2: 0.90V                   - Measurement 2: 1.10V
+
+In our search for determining how to figure out the frequency order of the color spectrum we (Matt G and I) found a wiki website: [http://en.wikipedia.org/wiki/Color_spectrum Color spectrum] and [http://en.wikipedia.org/wiki/Electromagnetic_spectrum for EM spectrum] where we obtained most of our formulas and the actual value of Planck's constant.
+
+:<math>\lambda = \frac{c}{f}  \,\!</math>
+
+and
+
+:<math>E=hf \,\!</math>
+
+or 
+
+:<math>E=\frac{hc}{\lambda} \,\!</math>
+
+==Data Analysis==
+This section is made to analyze the four sets of data by plotting the data and performing linear least squares fits. We will be plotting electric charge e*V where V is the measured stopping potential vs the frequency of the light.  
+
+Below is a graph we expect to receive for graphing KE vs Frequency in experiment 1.
+
+[[Image:KEvsFreq.jpg]]
+[http://dev.physicslab.org/Document.aspx?doctype=3&filename=AtomicNuclear_PhotoelectricEffect.xml Website for Stopping Potential relation to KE of the electron]
+
+Experiment 2 required the use of least square fit to determine <math>h</math>, we also used outside programs on our data to see what we predict <math>h</math> to be.
+
+To do this, we used two programs; Microsoft Excel and MatLab.  In Excel, we used =index(linest(y1:y5,x1:x5)) to determine the slope of our lines which are not too far off from the expected value of h (Plank's constant).  These results are displayed below:
+
+*From the least squares data fitting we find a result for planks constant h for each data set and the work function for the material Wo,where the first two results correspond to the 1st-order measurements 1 and 2 and then the second two results correspond with the 2nd-order measurements 1 and 2. :
+   h=7.17107E-34,         Wo=2.475e-19
+   h=7.24797E-34,         Wo=2.475e-19
+   h=6.53185E-34,         Wo=1.9862e-19
+   h=6.53787E-34.         Wo=1.9904e-19
+
+*These are the plots of the data and the least squares lines for each data set. The plots are made as eV vs. frequency, where eV is the electron charge times the voltage. The plots are in order of data set from left to right.
+
+[[Image:Lab1.jpg]]
+
+
+
+'''Mean Value of Plank's Constant and work function'''
+*The mean value we find for plank's constant using the four values above and the work function is
+   h= 6.87219E-34           Wo=2.8003e-20
+
+Using the MEAN function in Excel, we determined our <s>deviation</s> mean to be <math>h=6.87219*10^-34</math>
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 00:35, 18 September 2007 (EDT):This is excellent work!  Not perfect, but that's OK, because there is still a lot to learn, and you're very close here.  Here is some food for thought:<br><br>(1)That is indeed the standard deviation of your data set.  However, you are interested in estimating the standard deviation of the ''parent distribution''.  It's a subtle point (that I can't derive off the top of my head), but since you're estimating the mean of the parent distribution from the same data set, then you need to use a factor of  <math>\frac{1}{N-1}</math> in the root.  See: [http://en.wikipedia.org/wiki/Standard_deviation#Estimating_population_standard_deviation_from_sample_standard_deviation estimating standard deviation].<br><br>(2)Now you know how to estimate the standard deviation of your parent distribution.  However, the standard deviation of the parent distribution isn't the limit on your ability to estimate the mean.  The ''spread'' in your measurements doesn't change depending on the number you take (unless of course, you get better at it).  But your precision in estimating the mean does.  So, you need another <math>\frac {1}{sqrt(N)}</math> factor.  See http://en.wikipedia.org/wiki/Standard_error_of_the_mean#Standard_error_of_the_mean}}
+
+From this, we then calculated the Standard deviation using 
+:<math>\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \overline{x})^2}.</math>
+From this our deviation was <math> 3.907*10^-35</math> so, to record our findings we (Matt and I) submit that our value of <math>h</math> determined from this experiment is h=6.87219*10^-34  +/- .3907*10^-34.

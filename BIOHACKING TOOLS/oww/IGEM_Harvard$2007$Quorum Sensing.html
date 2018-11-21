@@ -1,0 +1,72 @@
+=Quorum Sensing=
+== Planned Work ==
+Past plans/archives here: [[http://openwetware.org/wiki/IGEM:Harvard/2007/Quorum_Sensing/archives Archives]]
+=== Short Term ===
+====Week 4====
+Issue: only one set of wavelengths can be used on our plate reader, so RFP is probably out of the question ...<br>
+*7/9: Colony PCR of all constructs/parts from Friday of last week
+**Run E-Gel
+**Grow up liquid cultures of
+***F2620-E0240
+***F2620-I13507
+***J23039-T9002
+***J37015
+***I13273
+***I13263
+***T9002
+***J04450
+***I5311
+***I13522
+***OmpA without lux
+*7/10: Plate Reader 
+**7 samples
+**triplicates of 2 concentrations of OHHL (10nM, 100nM)
+**21 experimental samples
+**Positive controls
+***Constitutive GFP (I13522)
+***Constitutive YFP (I5311)
+***Constitutive RFP (J04450)
+**Negative controls
+***OmpA1 without lux 
+***Non-induced samples (just one of each; no triplicates)
+*7/11: FACS appointment
+
+=== Long Term ===
+*Find out what kind of access we have to HSL proteins so we can test the response of the receiver construct at different levels of HSL concentration.
+*Transform the signal and receiver into two OmpA+His constructs. Mix these two constructs with large nickel beads as a test
+*Do something similar to the above idea, except with other OmpA+something constructs
+=== Things to Figure Out ===
+*Read papers and figure out what people did to control the levels of expression of LuxI/LuxR
+*What promoter should we stick in front of LuxI?
+
+== Completed Work ==
+
+See the [[IGEM:Harvard/2007/Laboratory Notebooks/Quorum Sensing|Quorum Sensing]] protocol page.
+
+== Brainstorming ==
+=== Additional Ideas (6/26/07) ===
+This is a pretty awesome paper: [http://www.ncbi.nlm.nih.gov.ezp1.harvard.edu/sites/entrez?Db=pubmed&Cmd=ShowDetailView&TermToSearch=17184133&ordinalpos=4&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_RVDocSum Constructuion and engineering of positive feedback loops]<br>
+*Mentions making LuxR mutants to make them hypersensitive, which would minimize crosstalk ... directed evolution could also be potentially used to enhance the activities of LuxR or alter specificity for a cognate signal molecule.
+
+=== Initial Plan (6/25/07) ===
+Basically all of the parts that are available are derived from the [http://www.che.caltech.edu/groups/fha/quorum.html LuxI/LuxR system] found in ''V. fishcheri''. The Voigt paper that we read a long time ago used this system to demonstrate a cell-density dependent expression of invasin in E. Coli ([[Media:Voigt.pdf]]). 
+
+The basic idea that Perry and I discussed requires two basic parts which Perry transformed into three separate tubes of Top10 cells this afternoon: 
+# An HSL signal sender ([[F1610]])
+# An HSL signal receiver attached to a reporter ([[I13263]] or [[I13272]])
+The only difference between the two signal receivers is a different YFP reporter protein.
+
+A quick rundown of how it will work: we will stick some sort of promoter in front of the [[BBa_F1610]] in order to produce  constitutive expression of HSL. We can play around with which promoter we want to use in order to tweak the sensitivity of the system. This HSL will normally diffuse quickly. Meanwhile, there is constitutive expression of the protein produced after transcription and translation of luxR (called R from now on) is continually going on in the bacteria with the receiver. The HSL will bind to the R and these bound complexes will dimerize and activate transcription of the YFP reporter. However, normally the concentration of HSL is too low and the equilibrium highly favors unbound HSL and R. In areas of high cell concentration, the concentration of HSL will be great enough to shift the equilibrium toward the bound complex. This bound complex will then activate the transcription of the reporter gene. An interesting note is that the bound complex supposedly also represses the luxR gene according to the Biobricks parts list. However, I haven't found any confirmation of this. If it is true, then it means that along with the activation of transcription of the reporter gene the amount of luxR will decrease and transcription of the YFP reporter would probably decrease. 
+
+There are a few ways we could approach this:
+# Have both the signaller and receiver+reporter parts in the same plasmid
+# Have the signaller part in one plasmid and the receiver+reporter part in another plasmid, both in the same bacterium
+# Have two different bacteria: one with the signaller part and one with the receiver+reporter part
+
+Perry asked Mike about the first two possibilities and confirmed that both should be doable. The last possibility was demonstrated in the Voigt paper.
+
+I'm not completely sure what the advantages/disadvantages of each system is, but I think we should try all three possibilities.
+
+Also, if we can get this to work, we could potentially build more complex systems that involve logical gates. One example paper ([[Media:Pulse.pdf]]) used two bacteria and five separate parts controlled by inducible/repressible promoters two create a pulse of fluorescence.
+
+==Readings==

@@ -1,0 +1,71 @@
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:Harvard/2006/DNA nanostructures|Project Overview]]</li>
+<li id = "current">[[IGEM:Harvard/2006/DNA_nanostructures/Designs|Designs]]</li>
+<li>[[IGEM:Harvard/2006/DNA_nanostructures/Notebook|Notebook]]</li>
+<li>[[IGEM:Harvard/2006/DNA_nanostructures/Protocols|Protocols]]</li>
+<li>[[IGEM:Harvard/2006/DNA_nanostructures/Presentations|Presentations]]</li>
+<li>[[IGEM:Harvard/2006/DNA_nanostructures/Literature|Literature]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+<div class = "tabs-blue">
+<ul>
+<li>[[IGEM:Harvard/2006/Container Design 1|Design 1]]</li>
+<li>[[IGEM:Harvard/2006/Container Design 2|Design 2]]</li>
+<li>[[IGEM:Harvard/2006/Container Design 3|Design 3]]</li>
+<li>[[IGEM:Harvard/2006/Container Design 4|Design 4]]</li>
+<li>[[IGEM:Harvard/2006/Container Design 5|Design 5]]</li>
+<li id = "current">[[IGEM:Harvard/2006/Container Design 6|Design 6]]</li>
+</ul>
+</div>
+<br style = "clear:both">
+
+==Overview==
+This design is intended as a control and a back-up.  Essentially, it is a small, hollow, doubly thick tube with no lids. The intention is to trouble shoot our other designs with this one.  We may be able to prevent protease from entering the tube and chewing up protein, thus creating a modified drug delivery model.
+
+== Top Down View ==
+<gallery>
+Image:design6_basic_schem_TC.gif|Small Double-Ply Barrel Schematic<br>([[Media:design6_basic_schem_TC.ai|ai file]])<br>
+Image:design6_apt_schem_TC.gif|Small Double-Ply Barrel Aptamer Site Schematic<br>([[Media:design6_apt_schem_TC.ai|ai file]])
+</gallery>
+
+== Oligo List ==
+[[Media:IGEM_Harv_design6_oligo_positions1|Oligo positions]]<br>
+[[Media:IGEM_Harv_design6_oligo_list1|Numbered List]]
+
+[[Design_6_Oligo_Form]]
+
+[[Table of c6.0 Working Stocks]]
+
+== 2D schematic ==
+<gallery>
+Image:Design6-2.JPG
+</gallery>
+
+[[Media:design6.jpg|Schematic]]
+
+[[Media:Design6-2.JPG|Schematic v.2]]
+
+
+Here's a link to a python file that automatically creates a schematic. Call maked(inf,outf) where inf is a token list and outf is the file you'd like to output to (should be .bmp). It uses a nifty module called pygame. I haven't tried it out on Macs yet. Still, it gives fairly colorful results.
+
+[[makeschematic.py| Code]]
+
+[[Media:design6.jpg|Design 6 schematic]]
+
+Update: v.1.1 is smart enough to create an appropriately sized bitmap, attempts to avoid the overlapping strand problem of v.1, and has slightly better colors. Unfortunately, it runs slower due to a large bitmap size and some exponentiation that's in there for kicks.
+
+[[v11.py| v.1.1]]
+
+[[Media:design6-1-1.jpg|Design 6 schematic v.1.1]]
+
+== To Order ==
+[[Media:design6_oligo_list.txt|Oligo List]]<br>
+* The following adjustments must be made for those oligos to be placed in the order form:
+** The out-facing aptamers are 52, 57, 62, 67, 72, 82, 87, 95, 100, 110, 115, 120, 125, 130, 165
+** The in-facing aptamers are 54, 59, 74, 84, 107, 122
+
+The out-facing aptamers can be added, as usual to the end of those oligos (3 prime end)
+The in-facing aptamers, however, need the last token on their 3 prime end to be removed before adding the aptamer.  That token should then be added to the beginning of the next oligo (the 5prime end).

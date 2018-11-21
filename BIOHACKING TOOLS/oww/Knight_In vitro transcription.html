@@ -1,0 +1,81 @@
+==Purpose==
+''In vitro'' transcription using ''Escherichia coli'' RNA polymerase.
+
+==Materials==
+*[http://www.epibio.com/item.asp?id=275 E. coli RNA Polymerase Sigma-Saturated Holoenzyme from Epicentre] - ([http://www.epibio.com/pdftechlit/014pl026.pdf protocol])
+*Linearized template DNA
+*NTPs
+*DTT
+
+==Procedure==
+
+===Prepare template DNA===
+#Generate linearized template via PCR.  Do a 100 &mu;L reaction using VF2 and VR.
+#*''Can be done once, frozen and reused.''
+
+===Option 1: Preincubate repressor and DNA===
+#Mix
+#*20 &mu;L repressor
+#*2 &mu;L of PCR template
+#**''Do the same for relevant controls.''
+#Incubate 2 hours on benchtop.
+#Make up 50 &mu;L reaction
+#*22 &mu;L repressor-DNA mixture
+#*10 &mu;L 5X ''E. coli'' RNA polymerase transcription buffer
+#*0.5 &mu;L of 500 mM TCEP since DTT chelates zinc
+#*10 &mu;L of 2.5 mM each NTP
+#*5 &mu;L RNase free H<sub>2</sub>O
+#*2.5 &mu;L ''E. coli'' RNA polymerase holoenzyme
+#Incubate at 37&deg;C for 1 hr.
+
+===Option 2: Set up transcription reaction===
+#Make up 50 &mu;L reaction
+#*25 &mu;L RNase free H<sub>2</sub>O
+#*10 &mu;L 5X ''E. coli'' RNA polymerase transcription buffer
+#*0.5 &mu;L of 500 mM TCEP (since DTT chelates zinc)
+#*10 &mu;L of 2.5 mM each NTP
+#*2 &mu;L of PCR template <-perhaps cut this down?  DNA is a pretty bright band?
+#*2.5 &mu;L ''E. coli'' RNA polymerase holoenzyme
+#Incubate at 37&deg;C for 1 hr.
+
+===DNase treatment (optional)===
+''This step hasn't been tried.''
+
+An optional step is to treat the reaction with [http://www.neb.com/nebecomm/products/productM0303.asp RNase free DNaseI] to remove the template DNA.
+
+#Add 6 &mu;L DNaseI buffer
+#Add 3 &mu;L H<sub>2</sub>O
+#Add 1&mu;L DNaseI  
+#Incubate 1 hr at 37&deg;C
+#Heat inactivate for 10 mins at 75&deg;C
+
+====Notes====
+*EDTA should be added to a final concentration of 5 mM to protect RNA from being degraded during enzyme inactivation.  But EDTA can chelate magnesium which is needed for DNaseI activity.  So the EDTA may need to be added just prior to inactivation.
+*DNase I is not active on DNA bound to proteins.
+*DTT which is typically included in ''in vitro'' transcription reactions can chelate zinc.  Therefore, replace DTT with TCEP when the presence of zinc is necessary.
+
+===Analyze transcription products===
+Then analyze via [[Knight:RNA electrophoresis/Native|native agarose gel electrophoresis]].
+
+==Controls==
+There are a few controls that can help to ascertain that the assay is working properly.
+
+#Template without RNAP
+#*To see what just the DNA template looks like when run on a gel.
+#Template with RNAP
+#*To ensure that the linearized template is transcribed by RNAP.
+#Template with RNAP and the buffer that the repressor is resuspended in
+#*To verify that any repression seen is not due to altered salt or pH conditions.
+
+==Notes==
+#If using either plasmid DNA or DNA template has been linearized by restriction enzyme digestion, Ambion recommends a Proteinase K treatment followed by a phenol:chloroform extraction to eliminate all traces of RNase prior to subsequent reactions. This treatment is necessary because most plasmid DNA has been subjected to RNaseA during purification and restriction enzymes may be contaminated with RNases.
+#However, in the case of PCR generated templates, Ambion adds amplified DNA directly to the transcription reaction with no purification. 5 &mu;l of a 100 &mu;l PCR reaction (or about 0.05 - 0.2 &mu;g of double-stranded DNA) is used as template.  However, with shorter templates or low yields, the concentration of template in a 5 &mu;l aliquot of the crude PCR reaction may be suboptimal. In that case, it may be desirable to concentrate the PCR product by alcohol precipitation.  We do not generally find it necessary to phenol/chloroform extract the PCR reaction before precipitation, although in some cases it may be advisable to do so. <cite>AmbionTemplate</cite>
+
+==References==
+<biblio>
+#AmbionTemplate [http://www.ambion.com/techlib/tb/tb_154.html A PCR Strategy for Rapid Generation of Template DNA for Synthesis of Labeled RNA Probes] (contains lots of useful info about generating transcription templates via PCR)
+</biblio>
+
+[[Category:Protocol]]
+[[Category:RNA]]
+[[Category:In vitro]]

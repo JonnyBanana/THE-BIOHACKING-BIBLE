@@ -1,0 +1,211 @@
+OMIM workaround - in its final, nicely documented form.
+
+Previous version has been [[Harvard:Biophysics_101/2007/Notebook:Kaull/2007-5-2|redirected]] to previous day's page, in case it's still needed.
+
+Specs are the same:
+* Accepts rs ID#
+* Returns AllelicVariant struct with name, mutation, and description parameters
+
+<pre>
+from Bio import SeqIO
+from Bio.Blast import NCBIWWW
+from Bio.EUtils import DBIdsClient
+
+from xml.dom import minidom
+from xml.dom.minidom import parse, parseString
+from threading import Thread
+
+import pickle, sys, time, urllib
+
+#########################################
+#### Code taken from elsewhere, unedited
+
+outputlist = []
+
+# C-style struct to pass parameters
+class AllelicVariant:
+	pass
+
+# basic text extraction from XML; based on http://docs.python.org/lib/dom-example.html
+def get_text(node_list):
+    rc = ""
+    for node in node_list:
+        if node.nodeType == node.TEXT_NODE:
+            rc = rc + node.data
+    return rc
+
+def get_any_data(node):
+    return node.toxml().split('>')[1].split('<')[0]
+
+# queries the database and returns all info in an XML format
+def omim_snp_search(dnsnp_id):
+	client = DBIdsClient.DBIdsClient()
+	query = client.search(dnsnp_id, "omim")
+	records = [i.efetch(rettype="xml") for i in query]
+	return records
+
+#########################################
+#### Code taken from elsewhere, edited
+
+## Note: This is different from earlier versions!
+#  shell / helper function, replaces earlier function with one parameter
+#  uses XML record from OMIM, and corresponding SNP, to create AllelicVariant struct
+def extract_allelic_variant_data(records, snp_id, record_type):
+    if record_type == 'old':
+        return extract_omim_data_old(records)
+    if record_type == 'new':
+        return extract_omim_data_new(records, snp_id)
+
+    return "Incorrect type in function extract_allelic_variant_data"
+
+
+#########################################
+#### New code - from Kay
+
+## Note: This code is a temporary solution to a dbSNP formatting issue.
+## Older entries are best searched directly by ID #.
+##  - > this case is the first covered
+## Newer entries are not indexed in this fashion, although SNP ID data is
+##  available on the individual entry.  These contain Allelic Variant data
+##  which is located and extracted by the script
+##  - > this case is the second covered
+
+
+## **** TEST DATA **** (enable for testing! then delete me!)
+#snp_id = 'rs11200638'
+#snp_id = 'rs28937310'
+
+
+## **** SUPPORT FOR NEW-STYLE PARSER ****
+
+# queries the SNP database and returns the annotation tag for that region
+# of the genome - a short, unique alphanumeric string
+## Currently, DBIdsClient does not support snp parsing.  So it's not used.
+## A future update should correct this when possible, for ease of reading.
+def parse_geneID_tag(snp_id):
+    SNP_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=snp'
+    snp_id_number = snp_id.strip('rs')
+    url = SNP_URL + '&id=' + snp_id_number + '&mode=xml'
+    
+    dom = minidom.parse(urllib.urlopen(url))
+    
+    symbol_data = dom.getElementsByTagName('FxnSet_symbol')
+    symbol = get_any_data(symbol_data[0])
+    
+    return symbol
+
+# queries the database and returns all info in an XML format
+def omim_tag_search(tag_id):
+	client = DBIdsClient.DBIdsClient()
+	query = client.search(tag_id, "omim")
+	records = [i.efetch(rettype="xml") for i in query]
+	return records
+
+
+## **** OMIM DATA EXTRACTION ****
+# Records are first sent to extract_allelic_variant_data, which takes
+# a list of XML entries and the parse type ('old' or 'new').  This is a
+# shell function, designed for later ease of replacement - its sole function
+# is to funnel the records to the appropriate extract_omim_data function.
+
+# The extract_omim_data functions return an AllelicVariant struct.
+# Currently, this struct has name, mutation, and description entries.
+
+# sends data in OMIM entry list to AllelicVariant struct
+# configured for XML entries, in old format
+def extract_omim_data_old(records):
+    dom = parseString(records)
+    variants = dom.getElementsByTagName("Mim-allelic-variant")
+
+    parsed = []
+    for v in variants:
+	a = AllelicVariant() # create empty instance of struct
+	# now populate the struct
+	a.name = get_text(v.getElementsByTagName("Mim-allelic-variant_name")[0].childNodes)
+	a.mutation = get_text(v.getElementsByTagName("Mim-allelic-variant_mutation")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+	a.description = get_text(v.getElementsByTagName("Mim-allelic-variant_description")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+	parsed.append(a)
+
+    return parsed
+        
+# sends data in OMIM entry list to AllelicVariant struct
+# configured for XML entries, in new format
+def extract_omim_data_new(records, snp_id):
+    dom = parseString(records)
+    variants = dom.getElementsByTagName("Mim-allelic-variant")
+
+    # convert SNP ID into number format
+    snp_id = snp_id.strip('rs')
+    
+    parsed = []
+    for v in variants:
+	a = AllelicVariant() # create empty instance of struct
+	# now populate the struct
+
+	variant_snp_tag = v.getElementsByTagName("Mim-allelic-variant_snpLinks")
+
+	# additional code checks for SNPs linked to allelic variant
+	# if SNPs are present, it searches for the correct SNP - if found,
+	# the variant is added to results list
+	if variant_snp_tag != list():
+	    isLinked = False
+	    for i in variant_snp_tag:
+                variant_snp = get_text(i.getElementsByTagName("Mim-link_uids")[0].childNodes)
+                variant_snp = str(variant_snp)
+                if variant_snp == snp_id:
+                    isLinked = True
+
+            if isLinked:
+	        a.name = get_text(v.getElementsByTagName("Mim-allelic-variant_name")[0].childNodes)
+	        a.mutation = get_text(v.getElementsByTagName("Mim-allelic-variant_mutation")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+	        a.description = get_text(v.getElementsByTagName("Mim-allelic-variant_description")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+	        parsed.append(a)
+    
+    return parsed
+
+
+## **** MAIN FUNCTIONS ****
+
+# takes SNP ID and gets search results from OMIM in XML format
+def snp_to_omim(snp_id):
+    records = omim_snp_search(snp_id)
+
+    # if records are found, then search is complete
+    # use old parser - SNP was directly in search text
+    if records != list():
+        return records, 'old'
+
+    # otherwise, find geneID tag for the region, and search that
+    tag_id = parse_geneID_tag(snp_id)
+    records = omim_tag_search(tag_id)
+
+    # use new parser - SNP was hidden in XML markup
+    return records, 'new'
+
+
+# takes list of XML records from OMIM, and the corresponding SNP ID
+# generates desired output as a list of text entries
+def omim_to_output(records, snp_id, record_type):
+    output = list()
+    
+    if records == list():
+        output.append("No information found for " + snp_id + "\n")
+        return output
+
+    for i in records:
+        variants = extract_allelic_variant_data(i.read(), snp_id, record_type)
+        
+        if variants != None:
+            for a in variants:
+                output.append(a.name + "\n")
+                output.append(a.mutation + "\n")
+                output.append(a.description + "\n")
+
+    return output
+
+omim_records, record_type = snp_to_omim(snp_id)
+output_list = omim_to_output(omim_records, snp_id, record_type)
+
+for item in output_list:
+        print item
+</pre>

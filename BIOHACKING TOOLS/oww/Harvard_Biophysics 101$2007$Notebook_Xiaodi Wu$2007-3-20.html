@@ -1,0 +1,239 @@
+=Progress thus far=
+* Please post a subsection here with a quick explanation of what you've done so far and links to any scripts. Please explicitly write what the I/O of your scripts is or what sort of interface we are dealing with. I think it will be easiest to combine everything and see how everything's coming if it's all together here. - Katie
+* Also if you're script's buried in the wiki somewhere (either down below or on your own page) please still put the link here and please explain in as much detail as possible the contract for what you wrote - how do you envision it being used? what should be passed in? (what format should this be in?) what is the output? (again, what format?). I know a lot of this is on here somewhere else, but we'll save lots of time if we write quick explicit contracts in this section of the discussion I think. Thanks! - Katie
+
+=List of "Who's doing what" from class=
+#Resmi and Cynthia and Hetmann
+#*OMIM Parsing
+#Zach and Mike and Tiffany
+#*seq--> BlastSNP --> rs# (former hard, latter easy)
+#**modifying BioPython BLAST
+#Deniz
+#*parsing XMP from #2 in python
+#Katie
+#*integration PM / encourage documentation
+#Xiaodi
+#*rs-->OMIM XML parse -> phenotype text
+#Chris
+#*if one gets multiple SNPs, which is revelant?
+#*linking to PubMED after finding disease
+#Kay
+#Tiffany, Resmi, Deniz, Xiaodi, Mike ''note: ask if API exists''
+#*beyond OMIM
+#**wikipedia (Mike) http://meta.wikimedia.org/wiki/API
+#**webmd (Tiff)
+#**emedicine (Resmi)
+#**google (Deniz)
+#**linking out of XML (Xiaodi)
+#**MedStory (?)
+Unassigned:
+#not in SNP db... then what?
+#OMIM DOA
+#systematically nonsyn. -> mutation not in OMIM or dbSNP?
+#other dbs: genecard (spec. conservation, pop. freq)
+#looking into linking gene expression w/ GEO?
+
+=Who's Doing What?=
+* Hey guys, I'm sorry I've been so quiet thus far - I've been on an interview trip without internet for about 36 hours... So even after reading this and surfing individuals' pages, I'm unclear on exactly what people are doing, and it seems some people are quasi-repeating each other. I'm happy to do whatever, but it seems the most logical thing at this stage would be to combine people's scripts into one program with a single input/output format.  I'm will do this, if it seems reasonable, but I can't find people's completeed scripts... either give me a heads up or we can sort it out in class and I can do it for thursday. --[[User:Kfifer|Katie Fifer]]
+
+This is getting a bit messy... if you could, put what you are doing (as of now) here so someone doesn't repeat it...--[[User:Zsun|Zsun]] 23:19, 19 March 2007 (EDT)
+
+Keep us posted on the input/output formats of your scripts so that the non-cgi-skilled can hopefully jump in! --[[User:Cchi|Cchi]] 23:42, 19 March 2007 (EDT)
+
+*Zach: Looking into writing a BLAST link script... feed file with script, gives revelant info to feed into dBSNP or other.--[[User:Zsun|Zsun]] 23:24, 19 March 2007 (EDT)
+*Xiaodi: Writing the OMIM lookup script (almost completed!) --[[User:Wuxiaodi|wuxiaodi]] 23:31, 19 March 2007 (EDT)
+*Kay: I've got BLAST search working...now to figure out what data needs to come out of it. --[[User:Kaull|Kay]] 23:35, 19 March 2007 (EDT)
+**My script right now can take in FASTA and return a BLAST record, which gives such useful things as region type and GeneID number
+**I'm trying to figure out how to set the parameters such that I get only sequences I want (human only, etc)
+**Anybody who has requests for output format (for feeding to their scripts), speak now! 
+***Kay: Im working on this too now... can you screen based on <pre> blast_record.alignment.hsps.title </pre>?--[[User:Zsun|Zsun]] 00:03, 20 March 2007 (EDT)
+--[[User:Kaull|Kay]] 23:53, 19 March 2007 (EDT)
+*Tiff: Working on SNP BLAST xml -> OMIM 
+** I'm assuming someone else's script can give me the xml from SNP BLAST  --[[User:TChan|TChan]] 2:00, 19 March 2007 (EDT)
+** I failed to figure out how to get XML from BLAST SNP, so I decided to use the start-text of "gn1|dbSNP|" to get the rsID numbers.  The code, templated on Xiaodi's existing parser - and then uses his parser for rsID number -> OMIM - is [[TChan/Notebook/2007-3-20|here]]. --[[User:TChan|TChan]] 3:20, 19 March 2007 (EDT)
+
+
+There's a chat room attached to this page, guys - I'm going in.  Join me.  We'll have a LAN party. --[[User:Kaull|Kay]] 00:11, 20 March 2007 (EDT)
+
+Okay.  Still no go on the SNP BLAST - it's not finding anything, and since it works when done manually, the problem must be in the web synchup.   Database 'snp' exists under the list of parameters on NCBI, and there's no error messages.  Manually parsing the XML gives '\n'.   Regular BLAST works just fine. 
+Part of the problem may be that NCBIWWW returns a StringI object, which is write-only and otherwise difficult.  Anybody with more haxor cred want to take a shot?
+--[[User:Kaull|Kay]] 06:52, 20 March 2007 (EDT)
+
+=Discussion=
+*Okay... looking at all the low-level sequence, blast, chromosome, and SNP parsing you guys have planned, I'm a little worried that you guys are making this too difficult.  You can certainly stick with your original plans, but here is what I would do.  First, recall that NCBI already hooked up blast with dbSNP at [http://www.ncbi.nlm.nih.gov/projects/SNP/snp_blastByOrg.cgi SNP BLAST]. This allows you to perform blastn or tblastn and get SNP ids directly out of your query.  I ran the March 13 example with all the default settings, which you can retrieve by inputing this request ID into the [http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?CMD=Web&LAYOUT=TwoWindows&AUTO_FORMAT=Semiauto&PAGE=Formating&NCBI_GI=yes&SHOW_OVERVIEW=yes&AUTO_FORMAT=yes&SHOW_LINKOUT=yes&ALIGNMENT_VIEW=PairwiseWithIdentities Retrieve results] page.
+:<pre>1174240596-3341-64945077497.BLASTQ2</pre>
+:<pre> The above reference has expired (I think), use 1174371218-19204-83357324442.BLASTQ2 --TChan, 2:21, 20 March 07</pre>
+:This gets you directly to the SNP id [http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?db=human_9606&na=1&gnl=gnl%7CdbSNP%7Crs11200638&RID=1174240596-3341-64945077497.BLASTQ2&QUERY_NUMBER=1 rs11200638] that you found in your previous homework with a single step. The tricky part may be figuring out how to interact with [http://www.ncbi.nlm.nih.gov/projects/SNP/snp_blastByOrg.cgi SNP BLAST] from your scripts.  I would recommend looking at the source of that page, specifically the hidden input tags, e.g. <nowiki><INPUT TYPE="hidden" NAME="WWW_BLAST_TYPE" VALUE="SNP"></nowiki>.  Those of you with cgi skills should sign up for this part and do it as early as possible. Once you can retrieve SNP ids, they can be passed to an OMIM module.  Make sure everyone sychronizes on the input and output formats at each step so you can modularize everything and split up the tasks efficiently.  '''—[[User:ShawnDouglas|smd]] 14:39, 18 March 2007 (EDT)'''
+
+
+*I'm going to start pseudocoding a bit with links to individual modules so people can start working on it.  Primarily, I would like to start hammering down the specs so that when we write these, we can interface.  '''--[[User:Mdwang|Mike]] 12:41, 18 March 2007 (EDT)'''
+
+*I cleaned up this page a little.  Please sign your comments with <nowiki>--~~~~</nowiki>.  '''--[[User:ShawnDouglas|smd]] 11:47, 18 March 2007 (EDT)'''
+
+*Hey all, here's a sketch of the algo/pseudocode I propose for this...feel free to flesh it out and modify/edit/discuss
+
+===Blast original query===
+*Take sequence: look up on Blast (see http://www.dalkescientific.com/writings/NBN/blast_searching.html);
+*Perhaps call this function sequence_lookup(str), returning some sort of object.
+*For now, let's say the object includes best_gene_hit and best_genomic_position_hit, which includes chr (chromosome) and chrpos (position on chromosome), and the p-values for each match (or whatever they call them -- I think it might be called 'expected value')
+
+:Maybe we should call the object a blastcomparison.  It would consist of a list of Match objects which each in turn contain the chromosome, chrpos, adjacent_genes (maybe itself a list) and p-values.  Calling sequence_lookup(str) will then return a blastcomparison.  (Yeah...I'm a C/java guy too...I want to call everything a vector...) --'''[[User:Mdwang|Mike]] 00:27, 18 March 2007 (EDT)'''
+
+<Pre>
+class BlastMatch
+    chromosome (an integer)
+    chrpos (a list where chrpos[0] is the start and chrpos[1] is the end)
+    genes (a list of genes which span the sequence, if any)
+    adjacentfeatures (a list of nearby features, if any)
+    p (the p-value)
+    def gene_match
+       if(length(gene) > 0)
+           return true (or alternately return the first match with highest p)
+       else
+           return false (or alternately -1 or something.  I think bool is easier)
+    def feature_match
+       same idea as the gene_match
+
+class BlastComparison 
+    all_comparisons (a list of BlastMatch types)
+    def __init__()
+          self.all_comparisons = []
+    def populate (string):
+       Query blast
+       Parse results
+       list_position = 0
+       for i in all_blast_matches:
+           self.all_comparisons[list_position].chromosome = i.chromosome
+           Repeat to populate all features of BlastMatch
+</Pre>
+
+Notes:
+*The output of initializing and then populating a blast comparison with a string will return a list of matches.  It probably makes most sense to just go with the match with the highest p-value (the first one), but maybe we want to think of some other criterion to figure out which one to pursue in dbSNP/OMIM --'''[[User:Mdwang|Mike]] 12:57, 18 March 2007
+
+===Parse blast results===
+Has anyone gotten the snp search code zach has the link to in case 2 working?  I'm assuming we can plug anything into the snps = GenBank.search_for('rs8192602', 'snp') segment to search by CHRPOS, gene name, etc.  --'''[[User:Mdwang|Mike]] 13:22, 18 March 2007<BR>
+*So, this code is wonderful... if you have the SNP ID # :D I can get BLAST info, but finding the SNP ID # is not trivial... if anyone has any ideas of how to automate this, from the BLAST result the only useful info I can determine is the reference ID (which should be cross platform?) and some info. ID'ing the gene in question, but dbSNP doesnt take that as a input (though I may not be trying hard enough there...)--[[User:Zsun|Zsun]] 00:28, 20 March 2007 (EDT)
+'''Case 1: Direct gene hits'''
+*If there is a gene hit (i.e. if sequence_lookup(str).best_gene_hit exists and has a p-value (expected value) above some threshold, then consider the given sequence to be part of a gene. Then...
+
+*Translate gene (call this function translate_in_frame(str); I have an algo that goes through all the frames and finds the most likely ORF; works beautifully but a little slowly, but it will do -- we don't have to write this part of the algo), and locate mutations (locate_mutations(str, ref_str), returning a list (what in C would be an array -- I might slip into C lingo every so often so this is what I mean) containing the type of mutation (point mutation, insertion, deletion) in both a.a. and DNA sequence; again, I think we all have an algo for this)
+
+:*I have something that searches for orfs and then returns an object orf_list which specifies their positions in the original search string and parses into codons.  In other words, each orf is a list of codon objects which in turn contain the sequence and Aa translation of that codon.  My mutation detection function does pairwise comparisons of strings to identify types of mutations when one is considered a refseq.  It then returns a list of Mutation objects (...I went object crazy...) --'''[[User:Mdwang|Mike]]00:27, 18 March 2007 (EDT)'''
+::*I also have code that can take a sequence compare it against a reference and then return the found mutations (of the type of interest for the March 13th assignment) within the nucleic acid seuence as well as the protein sequence.  The code could also be easily modified to determine whether a given amino acid change is 'significant' (hydrophilic->hydrophobic, etc.) --'''[[User:RCharalel|Resmi]] 08:54, 18 March 2007 (EDT)'''
+:::*As GMC mentioned in class, [http://genetics.bwh.harvard.edu/pph/ PolyPhen] already scores the significance of amino acid changes (see [http://genetics.bwh.harvard.edu/pph/examples.html examples]).  Consider figuring out ways to use existing resources, rather than re-implementing those tools. '''—[[User:ShawnDouglas|smd]] 15:59, 18 March 2007 (EDT)'''
+
+'''Case 2: non-gene Blast hits'''
+*If there is no gene hit (like the example of 13 March, which was non-coding, supposedly), take the best_genomic_position
+
+*Again, locate mutations, but only in the nucleotide sequence (locate_noncoding_mutations(str, ref_str)) and also maybe do a tblastx (or just blastx) [hrm...is this too much?]
+
+*Look up the chromosome position in dbSNP and also this database, potentially: http://projects.tcag.ca/variation/
+
+:*This is looking better: At http://lists.open-bio.org/pipermail/biopython/2006-March/002971.html there is a modified biopython script to deal with SNP lookup... directly gives us the code, which is good.--'''[[User:Zsun|Zsun]] 00:06, 18 March 2007 (EDT)'''
+
+*Fnd the IDs of known SNPs and CNVs, compare to what we have about our own sequence, and then search OMIM with this info (call the function omim_noncoding_search, with parameters TBD)
+:*I think this would be an easier way to deal with OMIM since presumably if we parse the OMIM database into entries, they will be organized in this fashion &rarr; so less searching through entries until we find the specific one we are interested in.  --'''[[User:RCharalel|Resmi]] 08:54, 18 March 2007 (EDT)'''
+
+===Perform OMIM search===
+*Look up these mutations for the gene on OMIM (call this function omim_gene_search(genbank_id, muts), where muts is a list of mutations from 2a to look for; for genes they are listed in OMIM in the format {amino acid}{position}{amino acid} instead of {nucleotide}{position}{nucleotide}; see http://eutils.ncbi.nlm.nih.gov/entrez/query/static/eutils_help.html for info on how to search all NCBI db's)
+
+:*This is not trivial; I could not find any way to program a link to OMIM, and there are no references online. The best I could find was the ability to download the OMIM database at: ftp://ftp.ncbi.nih.gov/repository/OMIM/ , thereby creating a 50MB text file which can then be parsed (that would be '''painful'''). Otherwise, there is a MySQL script which does the same, but that requires we know MySQL... http://search.cpan.org/~BIRNEY/bioperl-1.2.3/Bio/Phenotype/OMIM/OMIMparser.pm . --'''[[User:Zsun|Zsun]] 00:00, 18 March 2007 (EDT)'''
+::*Yeah....I'm pretty against working with OMIM unless we can get a fast server to run this on and just let it sit...  I still have to look at the eutils but that looks promising (Zach, you said it was already implemented in Biopython?) --'''[[User:Mdwang|Mike]] 00:27, 18 March 2007 (EDT)'''
+:::*Well, EUtils does look like the most promising path. I'm sorry for not highlighting that earlier, but the link that I pointed to above (http://eutils.ncbi.nlm.nih.gov/entrez/query/static/eutils_help.html) has a good amount of info on how this works, though I can't say that I've looked at it closely yet --'''[[User:Wuxiaodi|wuxiaodi]] 03:12, 18 March 2007 (EDT)'''
+:::*EUtils is indeed implemented in Biopython.  I got their example case working on my computer; unfortunately, that's all the documentation they have!  Interestingly, EUtils seems to have a class equivalent to the "Links" button.  This could be a nicer way to move from the geneID to all the other stuff we want.  Could be.  I'm going to have to go source-code diving to figure out the syntax/what it actually does...will report back. --'''[[User:Kaull|Kay]] 12:22, 18 March 2007 (EDT)'''
+
+Here's what I've been able to do with OMIM in python over the past little while (yeah, very few lines, and even this took several hours to come up with, mainly because there's almost *no* documentation):
+<pre>
+from Bio.EUtils import HistoryClient
+def omim_snp_search(dnsnp_id):
+	client = HistoryClient.HistoryClient()
+	articles = client.search(dnsnp_id, "omim")
+	result = articles.efetch("summary")
+	# how to parse the result??
+	return result
+
+print omim_snp_search("rs11200638").read()
+</pre>
+It simply spits out the results it gets at this point; supposedly, it comes in an XML file, but I can't figure out how to feed it into a parser correctly. --[[User:Wuxiaodi|wuxiaodi]] 21:58, 18 March 2007 (EDT)
+:This actually searches omim with the default return type (asn.1), not xml.  To get xml, see below. '''—[[User:ShawnDouglas|smd]] 01:18, 19 March 2007 (EDT)'''
+
+<pre>
+from Bio import EUtils
+from Bio.EUtils import DBIdsClient
+
+client = DBIdsClient.DBIdsClient()
+query = client.search("rs11200638", "omim")
+record = query[0].efetch(rettype="xml")
+xmlresults = record.read()
+print xmlresults
+</pre>
+*I used DBIDsClient instead of the history client, since I'm not interested in performing multiple searches with a server-stored history.
+*I store the search results in "query", which is a list of multple results all returned by the same search string "rs11200638".  You can iterate through these if necessary.
+*I just grab the first query result and stick it in record. I end up with a string containing the xml results.  Note that when you efetch a "summary", you will get html-formatted results, with pre tags and the html lt and rt angle-bracket symbols, etc.  
+*The next step is to parse the xml and extract the interesting fields...
+*I found the best documentation for biopython EUtils is in Bio.Eutils.ThinClient.py.  It also helps to read through all the EUtils online resources to understand what EUtils is actually doing, i.e. building up a URL to post (or rather, HTTP GET) to the NCBI server, and then retrieve the results.
+*Keep posting code and questions if you want more help! '''—[[User:ShawnDouglas|smd]] 01:18, 19 March 2007 (EDT)'''
+
+
+OK, I think I've got this down; this should work completely (--[[User:Wuxiaodi|wuxiaodi]] 23:32, 19 March 2007 (EDT)):
+<pre>
+from Bio.EUtils import DBIdsClient
+import xml.dom.minidom
+from xml.dom.minidom import parse, parseString
+
+# C-style struct to pass parameters
+class AllelicVariant:
+	pass
+
+# queries the database and returns all info in an XML format
+def omim_snp_search(dnsnp_id):
+	client = DBIdsClient.DBIdsClient()
+	query = client.search(dnsnp_id, "omim")
+	records = [i.efetch(rettype="xml") for i in query]
+	return records
+
+# basic text extraction from XML; based on http://docs.python.org/lib/dom-example.html
+def get_text(node_list):
+    rc = ""
+    for node in node_list:
+        if node.nodeType == node.TEXT_NODE:
+            rc = rc + node.data
+    return rc
+
+# extracts allelic variant data, as the name implies, using the struct above
+def extract_allelic_variant_data(str):
+	dom = parseString(str)
+	variants = dom.getElementsByTagName("Mim-allelic-variant")
+	if len(variants) == 0:
+		return
+	parsed = []
+	for v in variants:
+		a = AllelicVariant() # create empty instance of struct
+		# now populate the struct
+		a.name = get_text(v.getElementsByTagName("Mim-allelic-variant_name")[0].childNodes)
+		a.mutation = get_text(v.getElementsByTagName("Mim-allelic-variant_mutation")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+		a.description = get_text(v.getElementsByTagName("Mim-allelic-variant_description")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+		parsed.append(a)
+	return parsed
+	
+for i in omim_snp_search("rs11200638"):
+	v = extract_allelic_variant_data(i.read())
+	if v != None:
+		for a in v:
+			print a.name
+			print a.mutation
+			print a.description
+</pre>
+
+
+====Pubmed?====
+Besides (or I guess as part of the Entrez Utilities), BioPython allows us to search pubmed.  While OMIM is nice in that it gives us reported allelic variants, OMIM isn't the full story.  It only represents those sequences that have been posted online.  Assuming that BLAST yields a likely gene candidate (or a contig containing several genes), and that this entry is linked to some set of publications, we should be able to parse out (note: you all have a much better idea of what is or isn't possible with programming, so please interject):
+* the name of the gene
+* the direct citations of this gene in the literature
+From here, we could call up PubMed and search either by gene name or by the citations.  Having the literature available paints a bigger picture for the physician who has to decide what do tell the patient.  I don't know how much flexibility we have when searching through Pubmed, but there is even a "Medical Genetics Search" parameter they mention in the section [http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=helppubmed.section.pubmedhelp.Searching_PubMed#pubmedhelp.Using_Clinical_Queri Clinical Queries].  When we were assigned the search of the previous sequence, I conducted a PubMed search which returned papers implicating the gene in ovarian cancer.  Since little data had been collected in that field, though, no other data was to be found.  This could better inform the physician and, if the patient is tracked over time, allow the physician to confirm or deny the less tenable claims made in primary literature.
+
+But I digress.  Is it possible to parse out a gene name/reference/publication citation?  If so, do we think that a PubMed module is worth our time? '''—[[User:ChristopherNabel|CSN]] 16:54, 19 March 2007 (EDT)'''
+
+:Relevant pubmed citations are returned with OMIM results.  Look in the XML output for for the <Mim-reference_pubmedUID> tags.  That's a PMID, which you can feed to the biopython module for querying pubmed (which is well-documented, I think).  However, when you think about scaling this up to hundreds or thousands of automated queries, a long list of PMIDs probably won't be too useful.  It may be more useful to think of ways of creating high-level summary reports, rather than expanding queries to bring in more (often non-uniform) low-level data. '''—[[User:ShawnDouglas|smd]] 22:40, 19 March 2007 (EDT)'''
+
+* I was wondering what functionality people would like in the OMIM search script that is getting written? -- [[User:Denizkural|Deniz]]

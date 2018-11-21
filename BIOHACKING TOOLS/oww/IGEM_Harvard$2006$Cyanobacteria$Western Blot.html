@@ -1,0 +1,97 @@
+==Cyanobacteria Western Blot Outline==
+
+===Growing Cultures===
+We want to get a reproducible absolute amount of protein between experiments, 
+and thus must start with a reproducible absolute amount of bacteria.  We do 
+this by using a set volume of bacteria from a culture of known bacterial concentration.
+This concentration is measured by it's optical density (OD)--the percentage of light
+absorbed the culture absorbs.  The task, therefore, is to determine the easiest/fastest
+method to grow cultures to a specified OD.
+
+#Start an overnight LB culture from a single colony on a streaked plate.  Overnight the culture will reach stationary phase.
+#Take an aliquot (amount to be determined empirically or from Alain's experience) and add it to fresh LB culture.  Since we are starting with an enormous number of bacteria, the OD of this culture will increase rapidly.  
+#Check the OD of the sample at regular intervals until the desired OD is reached (OD =  ~.4)
+
+===Storing Time Points===
+We need to obtain our protein mix such that it can be stored frozen until we are ready to run it on a gel.  The extract can be frozen either before lysis as an E. coli pellet or after lysis frozen in lysis buffer. We'll do the former, as it is easier to lyse all samples at once.
+
+#Spin down 1mL of your correct-OD culture at 13K for two minutes to pellet.
+#Resuspend cells in lysis buffer such that the final concentration is 2x10^6 cells/uL (use OD/cfu curve).  This concentration has been verified by the Endy lab as correct for the MC4100-pSB4A3.I7101 plasmid.  Adjust the spin volume or resuspension volume if required.
+#Freeze lysates at -20C.
+
+===Preparing Extracts for Gel===
+Here we will lyse the cells to release the desired protein.
+#Unfreeze the samples and boil them for 10 minutes (the heat block at 95 should be sufficient)
+#Spin down lysate at 13K for 10 minutes.
+#Add lysate to sample buffer (generally 2X) into PCR tubes at a concentration of ~1x107 cells/sample (adjust volumes as necessary).
+#Boil for another 10 minutes.
+#Immediately spin down at 13K and load into the gel.
+#Use pre-cast tris-glycine acrylamide gel from fridge--use the gel that will get us the most separation (as phosphorylation is subtle)
+##Pre-cast gradient is best... 10-20%, 10%, and 18%
+#Make sure to load marker to tell when gel is finished running (Cea Blue 2, 3uL, in fridge, and load it so it is asymmetrical)
+##You know when to stop when: take off the white tape, and when the blue line gets to where the tape gets off stop it. 1h-1h30. 125V.
+
+OR Alain's method (which we have been using:)
+At Alain's recommendation, I prepared the samples differently from the procedure in the [[IGEM:Harvard/2006/Cyanobacteria/Western Blot|Endy protocol]].
+
+# Spin down 1 mL of culture at 13K for 2 minutes, freeze pellet
+# Resuspend pellet in 100 uL PBS. You can freeze this for future Western blots if you wish.
+# Make a 20 uL mixture containing the following:
+#* 5 uL PBS-suspended sample 
+#* 11 uL H<sub>2</sub>O
+#* 4 uL 5x sample buffer
+# Boil for 2 minutes
+# Spin down briefly to get condensation off the top of the tube
+# Insert into lanes
+
+===Run Gel===
+Run until sufficient separation is observed in markers.  The blue line should run to the absolute bottom; for higher resolution you may want to run it further. See below image for % of gel to use.
+
+[[Image: gel_resolution_zs.jpg|thumb|left|rez.]]
+
+===Transferring to Nitrocellulose===
+The inside of an acrylimide gel is an inconvenient environment to handle protein.  First of all, the protein is relative mobile and we'd like it stationary so the spatial separation we established running the gel in the previous step don't change.  Second of all, we can't easily get antibody into the inside of a gel.  To solve these problems, we will transfer the protein out of the gel onto the surface of a Nitrocellulose sheet.  Fortunately, protein sticks to this surface in an effectively permanent interaction. 
+
+
+The transfer is performed by running the protein vertically off the gel setting up a voltage potential vertically out of the flat surface of the gel.  Basically, after separating protein by running it across the gel, we have the protein make a right turn vertically up and out of the gel.
+
+
+#Cut away stacking gel, cut corner to mark orientation, and soak in transfer buffer for 15 minutes, shaking on the orbital shaker. This equilibrates the gel to the new solution.  
+#Obtain a nitrocellulose sheet and f ourpieces of thick filter paper.  We have two types, thick and thin.  Use the thick sheets. Cut off a corner of each so you can tell their orientation. Let them soak in transfer buffer for 5 minutes. Roll over the submerged filter paper with the blotting roller to remove any air bubbles.  Air bubbles will block protein transfer, so we need to get rid of them.
+#Place two piece of filter paper on the blotting machine surface.  Remove any air bubbles using the blotter.  
+#Place the nitrocellulose membrane on top of the filter paper on the blotting machine.  Roll out any air bubbles.
+#Place the gel on top of the nitrocellulose membrane.  Roll out any air bubbles.  If you're frightened rolling your gel, you can use your gloved finger.  Be careful here; the gel can easily break.  There are a variety of strategies that can be employed here to support the gel as you move it.
+#Place the remaining two pieces of filter paper on top.  Roll out any air bubbles.  Admire your new nitrocellulose and acrylimide sandwich.
+#Put the top on the blotting machine/  Plug everything in.
+#Run the machine at 20V for 30-60minutes.
+
+===Processing Nitrocellulose===
+
+You can do a Pontineau (red stuff) stain beforehand to see if the transfer succeeded. To do so, cover the nitrocellulose with pontineau, stain for ~5 min, pour the pontineau back into the bottle, and rinse in the dH20 until you see protein bands.
+
+Next:
+
+Remember that the Nitrocellulose binds protein.  We don't want to bind our antibody to the sheet, and so we must "block" the sheet by coat all the free sheet surface with protein.  "Blocking" the sheet blocks any further protein binding to it.  Traditionally, milk is used to do this.  We, however, have a special buffer for this (which most likely is expensive, diluted milk)
+
+Once we've blocked the buffer, we incubate with our primary antibody.  Once the antibody is bound, we then wash with the second, fluorescent antibody.  The complex of anigen<-primary antibody<-secondary antibody will fluoresce in our machine.
+
+
+#The sheet can be stored by letting it air dry and storing in an air-tight plastic bag at room temperature, 4C or -80C.
+#Block the sheet for 2 hours @ RT or O/N @ 4C by letting it soak in blocking buffer, on the orbital shaker.
+#Wash the sheet with Blocking/PBS-Tween buffer.
+#Incubate with appropriate dilution of your primary antibody in Blocking/TBS-Tween buffer for O/N @ 4C or 2 hours @ RT.
+#Recycle your antibody in Blocking/PBS-Tween buffer by pouring it into a new tube in the fridge.
+#Wash the sheet 3x with Blocking/PBS-Tween buffer for 10 minutes.
+#Incubate with appropriate dilution of your secondary antibody in Blocking/TBS-Tween buffer for half an hour.
+#Wash the sheet 3x with Blocking/PBS-Tween buffer for 10 minutes.
+
+==Rehydrating primary==
+We are using 1:5000 dilution; in other words, 5mL Blocking buffer, 5mL PBS(T? not sure... check with Alain), and 2uL primary in the case of anti-KaiC.
+
+===Visualizing the Nitrocellulose===
+#Over to the Science Center!
+
+References 
+
+*[http://openwetware.org/wiki/Endy:E._coli_Western_Blot Endy's Open Wetware Western Blot]
+*Novex(R) Semi-Dry Blotter User Manual

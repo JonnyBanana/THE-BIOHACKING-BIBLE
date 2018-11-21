@@ -1,0 +1,92 @@
+Back to [[Silver:_Protocols|Protocols]]
+
+== Verifying Genomic Integration == 
+
+=='''Lysing cells and setting up reactions'''==
+*Single colony PCR is used to identify transformants which have the gene of interest integrated at the genomic locus. One set of PCR primers is designed to identify whether the prototrophic or auxotrophic allele is at the genomic locus. In this case, one primer binds to the genomic DNA and the second primer binds to the coding sequence of the auxotrophic gene. The second set of PCR primers is designed to identify whether the Sikorski vector is at the genomic locus. In this case, one primer binds to the genomic DNA and the second primer binds to the Sikorski vector.
+* Typically, 3 transformants are screened per desired strain. Re-streak each colony onto the appropriate selection plate.
+==Lyse-and-go==
+* Pick a colony at least 2 mm in diameter using a wooden toothpick. Resuspend it into 11 uL Lyse-N-Go (Pierce) in a thick-walled PCR tube. Transfer 5.5 uL of the mixture into a second PCR tube.
+* Load all the tubes into the PCR machine and run the Lyse N Go PCR protocol.<br>
+**65 C for 0.5 min 
+**8 C  for 0.5 min
+**65 C for 1.5 min
+**97 C for 3 min
+**8 C  for 1 min
+**65 C for 3 min
+**97 C for 1 min
+**65 C for 1 min
+**80 C forever
+* DO NOT remove the tubes from the pcr block for the next step.
+* Add 45 uL PCR mix to each tube, while in the pcr block. Pipet up and down to mix. For each colony, you will have two PCR reactions corresponding to the two sets of PCR primers. The PCR mix is composed of:
+** 5 uL 10x Thermopol buffer
+** 1 uL 10 mM dNTPs
+** 0.25 uL 100 uM forward primer
+** 0.25 uL 100 uM reverse primer
+** 0.5 uL NEB Vent polymerase
+** 38 uL water (to 45 uL total)
+
+== Zymo ==
+*Alternatively you can use the zymolyase/epitaq protocol which usually works better
+* Pick a colony at least 2 mm in diameter using a wooden toothpick. Resuspend it into 15 uL Zymolyase in a thick-walled PCR tube. 
+* Load all the tubes into the PCR machine and run the Zymo protocol.<br>
+**37 for 15 minutes
+**95 for 5 minutes
+**10 forever
+* The PCR mix is composed of:
+**5 uL 1:5 dilution of lysed cell mix
+** 5 uL 10x Eppendorf buffer A
+** 1 uL 10 mM dNTPs
+** 0.5 uL 100 uM forward primer
+** 0.5 uL 100 uM reverse primer
+** 0.25 uL NEB EpiTaq polymerase
+** 37.75 uL water (to 50 uL total)
+
+=='''PCR'''==
+*Primer sets for each locus:
+<table border=1 align=center>
+<tr><td> Sikorski vector to be integrated </td><td> allele primers (positive) </td><td> vector primers (negative)</td></tr>
+<tr><td> pRS304*(TRP1) </td><td>DL11, DL17</td><td>DL11, DL22</td></tr>
+<tr><td> pRS305 (LEU2)</td><td>DL28, DL29</td><td>DL28, DL30</td></tr>
+<tr><td> pRS306 (URA3)</td><td>IP108, IP111</td><td>IP108, DL18</td></tr>
+</table>
+
+* Run the following PCR cycle:
+** 95C for 2 min
+** 95C for 30s
+** 53C for 30s
+** 72C for (URA = 1:00; TRP = 1:30, LEU = 2:00)
+** repeat 35 times
+** 8C forever
+
+* Run the PCR products on an agarose gel. Since the bands are typically rather faint, pour the gel as thick as possible, and load 35 uL PCR + dye in the 5 mm-wide lanes.
+* Use the following table to determine whether the integration was successful.
+
+<table border=1 align=center>
+<tr><td rowspan=2>gene at locus </td><td colspan=2 align=center><b>pcr product size</b></td></tr>
+<tr><td>allele primers </td><td> vector primers </td></tr>
+<tr><td> TRP1 </td><td>435</td><td>1031</td></tr>
+<tr><td> trpD63</td><td>none</td><td>none</td></tr>
+<tr><td> LEU2</td><td>1168</td><td>1464</td></tr>
+<tr><td> leu2D1</td><td>none</td><td>979</td></tr>
+<tr><td> URA3</td><td>670</td><td>none</td></tr>
+<tr><td> ura3-52</td><td>699</td><td>651</td></tr>
+</table>
+
+== Primer Sequences ==
+*DL11: 5'- AGA CCA ATC AGT AAA AAT CAA CGG -3'
+*DL17: 5'- TCT ATT GGG CAC ACA TAT AAT ACC C -3'
+*DL22: 5'- TCT CCT TAC GCA TCT GTG CGG -3'
+
+*DL28: 5'- AAA CGC AAG GAT TGA TAA TGT AAT AGG -3'
+*DL29: 5'- ACA ACA ACG AAG TCA GTA CCT TTA GC -3'
+*DL30: 5'- TCT TAA CTA GGA TCA TGG CGG C -3'
+
+*DL18: 5'- AAA TAT GTG AAT GTT GAG ATA ATT GTT GG -3'
+*IP108: 5'- GGC AAC GGT TCA TCA TCT CAT GG -3'
+*IP111: 5'- GGG ACC TAA TGC TTC AAC TAA CTC C -3'
+
+== Archiving Yeast Strains ==
+* Inoculate YEP media with a single yeast colony.
+* Grow overnight at 30C in a roller drum.
+* Mix 50% glycerol and yeast culture in a 2 mL screw-top vial to give a final glycerol concentration of 15%(v/v), e.g. 300 uL 50% glycerol and 700 uL yeast culture.

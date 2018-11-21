@@ -1,0 +1,86 @@
+'''B'''asic '''L'''ocal '''A'''lignment '''S'''earch '''T'''ool rapily identifies similar sequences. For a modification of the algorithm see [[PSI-BLAST]]. For other sequence similarity search tools see also [[FASTA]] and [[HMMER]].  Also see [[Wikipedia:BLAST]].
+
+==Overview of the algorithm==
+
+The algorithms apply several heuristics - shortcuts - that allow it to provide very fast searches at reasonable accuracy. Most notably, it starts by searching for regions of high, uninterrupted similarity and only later connects them through low-similarity, gapped alignments. Other tricks include a statistically sound way of defining what's "similar enough", or the use of an approximated (and often wrong!) way of calculated how likely is an observed similarity to have occurred by chance.
+
+==Software availability==
+
+There are two main flavors and distributions of BLAST.  One is provided through the [http://www.ncbi.nih.gov NCBI] called NCBI-BLAST and the other through [http://blast.wustl.edu Warren Gish] at [http://www.wustl.edu Washington University at St. Louis].
+
+NCBI-BLAST is available as a [ftp://ftp.ncbi.nih.gov/blast/executables/LATEST/ binary] as well as part of the [ftp://ftp.ncbi.nih.gov/toolbox/ NCBI toolbox].  Note that much of the code is being ported over to a C++ version of the toolbox.  Several optimized versions of NCBI exist as RPMs at [http://www.biolinux.org/ncbi.html Biolinux] and [http://downloads.scalableinformatics.com/downloads/ncbi/ Scalable Informatics].  Under [http://www.debian.org Debian] the [http://packages.debian.org/stable/science/ncbi-tools-bin ncbi-tools-bin] provides the necessary tools. 
+
+WU-BLAST is freely available to academic labs but a license agreement must be filled out.  The source code is not available for WU-BLAST.  More information can be found at the [http://blast.wustl.edu/ WU-BLAST site].
+
+If you plan to do a moderate to large amount of sequence analysis with BLAST it makes the most sense to download the tool to run locally.  This assumes you have sufficient compute resources and disk space - the non-redundant protein database NR is 600+ Mb '''compressed'''.   See the tips below on ways to speed up your searches.
+
+If you're not looking for homology between distant related genes / proteins, there's also a [http://www.genomeblat.com/genomeblat/index.asp BLAST Like Alignment Tool] (BLAT). The main difference with BLAST is that BLAST was designed to be faster than the Smith-Waterman (SW) algorithm but optimized for finding relatively weak homology. BLAT is optimized for speed at the expense of abandoning weak homology.
+
+==Online BLAST Tools and Webservices==
+
+BLAST is available through several online services to allow quick and simple access to the tools.  In addition with corresponding scripts for automating submission and retrieval.
+
+===NCBI BLAST===
+[http://www.ncbi.nih.gov/BLAST/ NCBI BLAST] - [ftp://ftp.ncbi.nih.gov/blast/executables/ Download binaries]
+
+<b>blastcl3</b> (BLAST client which accesses the newest NCBI BLAST search engine)
+
+[[BioPerl:BLAST | BioPerl Remote BLAST]]
+
+===PISE===
+
+[http://bioweb.pasteur.fr/intro-uk.html PISE site]
+
+BioPerl PISE script [http://www.pasteur.fr/recherche/unites/sis/Pise/#pisebioperl pise doc] and (link to BioPerl site).
+
+I just don't have much to say lately.
+Eh. Not much on my mind lately.  
+
+[http://tylka.extra.hu/mature-anal.html mature anal] | 
+[http://tylka.extra.hu/mature-women.html mature women] | 
+[http://tylka.extra.hu/mature-sluts.html old mature sluts] | 
+[http://tylka.extra.hu/milf-porn.html milf porn]
+
+== Tips and FAQs ==
+
+<ol>
+<li>
+'''STRAP is a front-end for BLAST: '''
+
+The program [http://www.strapjava.de STRAP] contains a comfortable front end for local BLAST programs WU-BLAST and NCBI-BLAST 
+as well as for the BLAST server at EBI. 
+The user can submit several proteins at once which are processed one after the other by the program.
+The results are permanently stored in a cache located in the local file system.
+When the same query is requested a second time then the BLAST result comes up immediately because it is found in the cache. --[[User:Christo|Christo]] 14:38, 12 January 2006 (PST)
+</li>
+</ol>
+
+<ol>
+<li>
+'''KoriBlast, graphical platform to mine Blast data: '''
+
+[http://www.korilog.com/products KoriBlast] is a reliable graphical environment dedicated to sequence data mining. KoriBlast combines Blast searches with advanced data management capabilities and a state-of-the-art graphical user interface.
+</li>
+<li>
+'''Bioedit: '''
+
+the famous Bioedit for Windows also has an interface to BLAST
+</li>
+
+</ol>
+
+== See also ==
+
+* [[Protein function prediction]]
+
+==References==
+<biblio>
+#Altschul1990 pmid=2231712
+#Altschul1997 pmid=9254694
+#McGinnis2004 pmid=15215342
+#BLASTbook Korf I, Yandell M, and Bedell J, ''BLAST'' O'Reilly & Associates, 2003. [[isbn:0-596-00299-8]]
+#wikipedia [[Wikipedia:BLAST|BLAST]] Wikipedia article
+#BlastTutorial [http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/information3.html NCBI's Blast tutorial]
+</biblio>
+
+[[Category:Sequence]]

@@ -1,0 +1,173 @@
+[http://www.csse.monash.edu.au/~damian/ Damian Conway] has <tt>bounce</tt> utility online for checking CGI scripts
+
+==Modules==
+
+===CGI===
+*[http://search.cpan.org/dist/CGI.pm/ CGI.pm] @ CPAN
+*[http://perldoc.perl.org/CGI.html CGI] @ perldoc.perl.org
+
+===CGI::Application===
+*builds upon CGI adding a structure for writing truly reusable Web-applications
+*"run-mode" - single screen of an application
+*"Mode Parameter" is used to store (and retrieve) the current run-mode of your application
+*maps each run-mode to a specific Perl subroutine ("Run-Mode Method") that implements the behavior of a single run-mode
+*an "abstract class", and is only used via inheritance
+ package Your::Web::Application;
+ use base 'CGI::Application';
+*setup() method defines a map between run-modes and run-mode methods
+*run-mode methods are responsible for setting up the HTTP and HTML output
+*run-mode methods should never print() anything to STDOUT
+*run() method is singularly responsible for actually sending all HTTP headers and HTML content to the Web browser
+*your run-mode method is called by the run() method, and your code is expected to return a scalar containing all your HTML content
+*header_type() and header_props() allow to change the default HTTP headers
+*"Instance Script" manages a single "instance" of your "Application Module"
+*widgetview.cgi - instance script
+ #!/usr/bin/perl -w
+ use WidgetView;
+ my $app = WidgetView->new();
+ $app->run();
+*WidgetView.pm - application module, must be in Perl's search path (@INC)
+<pre><nowiki>
+   package WidgetView;
+   use base 'CGI::Application';
+   use strict;
+
+   # Needed for our database connection
+   use DBI;
+
+   sub setup {
+	my $self = shift;
+	$self->start_mode('mode1');
+	$self->run_modes(
+		'mode1' => 'showform',
+		'mode2' => 'showlist',
+		'mode3' => 'showdetail'
+	);
+
+	# Connect to DBI database
+	$self->param('mydbh' => DBI->connect());
+   }
+
+   sub teardown {
+	my $self = shift;
+
+	# Disconnect when we're done
+	$self->param('mydbh')->disconnect();
+   }
+
+   sub showform {
+	my $self = shift;
+
+	# Get CGI query object
+	my $q = $self->query();
+
+	my $output = '';
+	$output .= $q->start_html(-title => 'Widget Search Form');
+	$output .= $q->start_form();
+	$output .= $q->textfield(-name => 'widgetcode');
+	$output .= $q->hidden(-name => 'rm', -value => 'mode2');
+	$output .= $q->submit();
+	$output .= $q->end_form();
+	$output .= $q->end_html();
+
+	return $output;
+   }
+
+   sub showlist {
+	my $self = shift;
+
+	# Get our database connection
+	my $dbh = $self->param('mydbh');
+
+	# Get CGI query object
+	my $q = $self->query();
+	my $widgetcode = $q->param("widgetcode");
+
+	my $output = '';
+	$output .= $q->start_html(-title => 'List of Matching Widgets');
+
+	## Do a bunch of stuff to select "widgets" from a DBI-connected
+	## database which match the user-supplied value of "widgetcode"
+	## which has been supplied from the previous HTML form via a 
+	## CGI.pm query object.
+	##
+	## Each row will contain a link to a "Widget Detail" which 
+	## provides an anchor tag, as follows:
+	##
+	##   "widgetview.cgi?rm=mode3&widgetid=XXX"
+	##
+	##  ...Where "XXX" is a unique value referencing the ID of
+	## the particular "widget" upon which the user has clicked.
+
+	$output .= $q->end_html();
+
+	return $output;
+   }
+
+   sub showdetail {
+	my $self = shift;
+
+	# Get our database connection
+	my $dbh = $self->param('mydbh');
+
+	# Get CGI query object
+	my $q = $self->query();
+	my $widgetid = $q->param("widgetid");
+
+	my $output = '';
+	$output .= $q->start_html(-title => 'Widget Detail');
+
+	## Do a bunch of things to select all the properties of  
+	## the particular "widget" upon which the user has
+	## clicked.  The key id value of this widget is provided 
+	## via the "widgetid" property, accessed via the CGI.pm
+	## query object.
+
+	$output .= $q->end_html();
+
+	return $output;
+   }
+
+   1;  # Perl requires this at the end of all modules
+</nowiki></pre>
+References
+*[http://www.perl.com/pub/a/2001/06/05/cgi.html Using CGI::Application]
+*[http://search.cpan.org/~markstos/CGI-Application-4.05/lib/CGI/Application.pm CPAN]
+*[http://cgiapp.erlbaum.net/cgi-bin/cgi-app/index.cgi Wiki]
+
+===CGI::Builder===
+*[http://search.cpan.org/~domizio/CGI-Builder-1.35/lib/CGI/Builder.pm CPAN]
+
+==Cookies==
+A cookie is a name=value pair much like the named parameters in a CGI query string. CGI scripts create one or more cookies and send them to the browser in the HTTP header.
+
+To set a cookie:
+ $cookie = $query->cookie(-name=>'sessionID',
+                          -value=>'xyzzy',
+                          -expires=>'+1h',
+                          -path=>'/cgi-bin/database',
+                          -domain=>'.capricorn.org',
+                          -secure=>1);
+ print $query->header(-cookie=>$cookie);
+
+To retrieve cookie (call without -value parameter):
+ $riddle = $query->cookie('riddle_name');
+ %answers = $query->cookie('answers');  
+
+To clear cookie:
+You can do this in Perl with -EXPIRES set to "now".
+
+In addition to the required name=value pair, each cookie has several optional attributes:
+
+1. an expiration time
+:This is a time/date string (in a special GMT format) that indicates when a cookie expires. The cookie will be saved and returned to your script until this expiration date is reached if the user exits the browser and restarts it. If an expiration date isn't specified, the cookie will remain active until the user quits the browser. 
+2. a domain
+:This is a partial or complete domain name for which the cookie is valid. The browser will return the cookie to any host that matches the partial domain name. For example, if you specify a domain name of ".capricorn.com", then the browser will return the cookie to Web servers running on any of the machines "www.capricorn.com", "www2.capricorn.com", "feckless.capricorn.com", etc. Domain names must contain at least two periods to prevent attempts to match on top level domains like ".edu". If no domain is specified, then the browser will only return the cookie to servers on the host the cookie originated from. 
+3. a path
+:If you provide a cookie path attribute, the browser will check it against your script's URL before returning the cookie. For example, if you specify the path "/cgi-bin", then the cookie will be returned to each of the scripts "/cgi-bin/tally.pl", "/cgi-bin/order.pl", and "/cgi-bin/customer_service/complain.pl", but not to the script "/cgi-private/site_admin.pl". By default, path is set to "/", which causes the cookie to be sent to any CGI script on your site. 
+4. a "secure" flag
+:If the "secure" attribute is set, the cookie will only be sent to your script if the CGI request is occurring on a secure channel, such as SSL.
+
+==CSS==
+*[http://sedition.com/perl/cgi-style.html CGI with stylesheet]
+*[http://querylog.com/q/perl+css+cgi Perl CSS CGI]

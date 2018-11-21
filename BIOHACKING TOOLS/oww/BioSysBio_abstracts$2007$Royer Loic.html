@@ -1,0 +1,157 @@
+=Visualising Protein Interaction Networks with Power Graphs=
+'''Author(s): '''Loïc Royer, Matthias Reimann, Bill Andreopoulos, Michael Schroeder<br> 
+'''Affiliations:''' TU Dresden  <br>
+'''Contact:'''email: royer@biotec.tu-dresden.de <br>
+'''Keywords:''' 'protein interaction networks' 'visualization' 'scale-free' 'power graphs' 
+
+[[Category:BioSysBio Keywords Protein Protein Interactions]]
+[[Category:BioSysBio Keywords Visualization]] 
+[[Category:BioSysBio Keywords Networks]]
+
+
+==Introduction==
+
+Currently, much research is devoted to the study of protein interaction networks. Novel high-throughput technologies produce large networks, which are complemented by interactions manually or automatically extracted from scientific articles. While the structure of these networks has been widely studied, their visualization remains an unsolved problem. Here, we combine both. Through an understanding of the modular nature of the networks we are able to define a novel visualization and layout. The key idea of the approach is the identification of modules, which form the complex core of these networks and which share many interaction partners. The corresponding edges to these partners are aggregated and lead to a reduction of edges to be laid out.
+
+==Idea==
+
+Our approach is based on two new symbols: power nodes and power edges. A power node stands for a set of nodes, and a power edge connects two sets of nodes and signifies that all nodes of the first set are connected to all nodes of the second set. Using these language primitives it is possible to succinctly represent two recurrent patterns in biological networks: cliques (complete graph) and bicliques (complete bipartite graph). As shown in the following figure, a biclique is represented as two power nodes connected by a power edge, whereas a clique is a power node connected to itself by a power edge. In the first case the power graph representation reduces the number of edges from 70 edges to one power edge, in the second case from 21 edges to one power edge. 
+
+[[Image:PowerEdge.png]]
+
+Power nodes are visualized by discs delineated by a circle, they are interpreted as usual Euler diagrams on sets of nodes. Euler diagrams use circles to represent sets, with the position and overlap of the circles indicating the relationships between the sets. Power edges are represented as segments connecting the circles that delineate the power nodes. Moreover no circles intersect. Reflexive edges are allowed in power graphs, they are represented using a loop edge.
+
+==Visualization Examples==
+
+In most visualisations of compexe networks, and in particular for protein interaction networks,
+the great number of egdes and edge crossings is the main hindrance for the typical cognitive 
+tasks required for understanding these networks. These tasks are for example determining
+the neighboors of a node, the possible paths between two nodes, and the existence of cliques and bicliques within the networks.
+Power Graph Visualization is a lossless method for representing graphs that acheives greater clarity through the reduction in the number of edges needed to represent the networks. 
+
+
+<table>
+<tr><td colspan=3>
+<b>Example 1</b><br>
+Source of dataset: [http://www.ebi.ac.uk/intact/site/ IntAct Project], [ftp://ftp.ebi.ac.uk/pub/databases/intact/current/psi1/species/orysa-1_small.xml orysa-1_small.xml]<br>
+</td></tr>
+
+<tr>
+<td>[[Image:Orysa-1_small.xml_organic.png]]</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>[[Image:Orysa-1_small.xml.pgf_s.png]]</td>
+</tr>
+
+<tr>
+<td>[http://www.mattlab.de/files/images/biosysbio/orysa-1_small.xml_organic.png High resolution image]</td>
+<td></td>
+<td>[http://www.mattlab.de/files/images/biosysbio/orysa-1_small.xml.pgf.png High resolution image]</td>
+</tr>
+</table>
+
+
+<table>
+<tr><td colspan=3>
+<b>Example 1</b><br>
+Source of dataset: [http://www.ebi.ac.uk/intact/search/do/search?searchString=16713569 IntAct Project, Lim et al. 2006]<br>
+The Power Graph shows a significant edge and edge crossing reduction<br>
+</td></tr>
+
+<tr>
+<td>[[Image:16713569_200607_Lim-01.xml_springemb_s.png]]</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>[[Image:16713569_200607_Lim-01.xml.pgf_s.png]]</td>
+</tr>
+
+<tr>
+<td>[http://www.mattlab.de/files/images/biosysbio/16713569_200607_Lim-01.xml_springemb.png High resolution image]</td>
+<td></td>
+<td>[http://www.mattlab.de/files/images/biosysbio/16713569_200607_Lim-01.xml.pgf.png High resolution image]</td>
+</tr>
+</table>
+
+
+<table>
+<tr><td colspan=3>
+<b>Example 1</b><br>
+Source of dataset: [http://www.ebi.ac.uk/intact/search/do/search?searchString=16713569 IntAct Project, Lim et al. 2006]<br>
+</td></tr>
+
+<tr>
+<td>[[Image:16713569_200607_Lim-02.xml_organic_s.png]]</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>[[Image:16713569_200607_Lim-02.xml.pgf_s.png]]</td>
+</tr>
+
+<tr>
+<td>[http://www.mattlab.de/files/images/biosysbio/16713569_200607_Lim-02.xml_organic.png High resolution image]</td>
+<td></td>
+<td>[http://www.mattlab.de/files/images/biosysbio/16713569_200607_Lim-02.xml.pgf.png High resolution image]</td>
+</tr>
+</table>
+
+
+<table>
+<tr><td colspan=3>
+<b>Example 4</b><br>
+Source of dataset: [http://www.ebi.ac.uk/intact/search/do/search?searchString=16189514 IntAct Project, Rual et al. 2006]<br>
+<br>
+Power node and power edge can be used as substructures in a graph which layout should be kept. This usage emphasizes larger clusters of nodes with similar neighborhood not only by similar position in the layout but also through the surrounding circle.<br>
+</td></tr>
+
+<tr>
+<td>[[Image:16189514_rual-2005-2_02.xml_organic_s.png]]</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>[[Image:16189514_rual-2005-2_02.xml_organic.gml.pgf_s.png]]</td>
+</tr>
+
+<tr>
+<td>[http://www.mattlab.de/files/images/biosysbio/16189514_rual-2005-2_02.xml_organic.png High resolution image]</td>
+<td></td>
+<td>[http://www.mattlab.de/files/images/biosysbio/16189514_rual-2005-2_02.xml_organic.gml.pgf.png High resolution image]</td>
+</tr>
+</table>
+
+
+
+
+<table>
+<tr><td colspan=3>
+<b>Example 2</b><br>
+Source of dataset: [http://www.ebi.ac.uk/intact/search/do/search?searchString=16236029 IntAct Project, Collins et al. 2006]<br>
+</td></tr>
+
+<tr>
+<td>[[Image:16236029_200601_Collins.xml_springemb_s.png]]</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>[[Image:16236029_200601_Collins.xml_version3greedy.pgf_s.png]]</td>
+</tr>
+
+<tr>
+<td>[http://www.mattlab.de/files/images/biosysbio/16236029_200601_Collins.xml_springemb.png High resolution image]</td>
+<td></td>
+<td>[http://www.mattlab.de/files/images/biosysbio/16236029_200601_Collins.xml_version3greedy.pgf.png High resolution image]</td>
+</tr>
+
+<tr>
+<td>[[Image:16236029_200601_Collins.xml_version2.pgf_s.png]]</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>[[Image:16236029_200601_Collins.xml_version1.pgf_s.png]]</td>
+</tr>
+
+<tr>
+<td>[http://www.mattlab.de/files/images/biosysbio/16236029_200601_Collins.xml_version2.pgf.png High resolution image]</td>
+<td></td>
+<td>[http://www.mattlab.de/files/images/biosysbio/16236029_200601_Collins.xml_version1.pgf.png High resolution image]</td>
+</tr>
+</table>
+
+==Results== 
+We have evaluated the approach on databases such as DIP, HPRD, BioGrid, and Intact covering various experimental methods and species. We achieve an edge reduction of up to 82%.
+Besides an improved visualization of the networks, the method reveals the networks’ underlying structure arising from domain-domain interactions, covering complexes, and re-occuring network motifs.
+
+
+==References==
+[1] [http://www.ebi.ac.uk/intact/site/ IntAct Project] from European Bioinformatics Institute
+
+__NOTOC__

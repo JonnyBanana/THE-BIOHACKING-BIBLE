@@ -1,0 +1,270 @@
+<math>Insert formula here</math>
+===Data Analysis===
+{{SJK comment|l=01:17, 13 November 2007 (CST)|c=Great data and glad to see you got good analysis in Matlab.  As I wrote in Cary's notebook, graphs of the data would add a lot to the presentation of the data.  Particularly (a) data versus time to show any possible heating effect and (b) data in such a way that the slope of the line will be the e/m ratio, so you can do a linear fit to obtain it.}}
+On my lab page from last week, I derived a formula to find the ratio of e/m. Now, I will take the values of each set and plug them into the formula
+
+<math>\frac{q}{m} = \frac{2V}{B^2 r^2}</math>
+
+where <math>B=7.8 x 10^{-4} \frac{weber}{amp-meter^2} x I </math>
+
+Note: written in MatLab, had trouble sending it over to the wiki
+
+====Set 1====
+
+V=[246,246,246,246,246,246,246,246,246,246,246,246,246];
+
+I=[1.02,1.04,1.06,1.08,1.10,1.12,1.14,1.16,1.18,1.20,1.22,1.24,1.26];
+
+r=[4.7,4.6,4.5,4.5,4.5,4.45,4.45,4.45,4.4,4.35,4.25,4.2,4.1];
+
+B=7.8e-4.*I;
+
+e_m=(2.*V)./((B.^2).*(r.^2))
+
+avg=mean(e_m)
+
+
+e_m =
+
+  1.0e+011 * C/kg
+
+  Columns 1 through 5 
+
+    3.5187    3.5334    3.5542    3.4238    3.3004
+
+  Columns 6 through 10 
+
+    3.2555    3.1423    3.0349    2.9999    2.9678
+
+  Columns 11 through 13 
+
+    3.0080    2.9815    3.0302
+
+avg =
+
+  3.2116e+011 C/kg
+
+====Set 2====
+
+close all;clear all;
+
+V=[246,246,246,246,246,246,246,246,246,246,246,246,246];
+
+I=[1.02,1.04,1.06,1.08,1.10,1.12,1.14,1.16,1.18,1.20,1.22,1.24,1.26];
+
+r=[4.55,4.55,4.5,4.5,4.5,4.5,4.45,4.4,4.35,4.35,4.3,4.25,4.15];
+
+B=7.8e-4.*I;
+
+e_m=(2.*V)./((B.^2).*(r.^2))
+
+avg=mean(e_m)
+
+
+e_m =
+
+  1.0e+011 * C/kg
+
+  Columns 1 through 5 
+
+    3.7545    3.6115    3.5542    3.4238    3.3004
+
+  Columns 6 through 10 
+
+    3.1836    3.1423    3.1042    3.0693    2.9678
+
+  Columns 11 through 13 
+
+    2.9385    2.9118    2.9576
+
+avg =
+
+  3.2246e+011C/kg
+
+====Set 3====
+
+close all; clear all;
+
+V=[246,246,246,246,246,246,246];
+
+I=[1.02,1.04,1.06,1.08,1.10,1.12,1.14];
+
+r=[3.95,3.95,3.9,3.9,3.9,3.9,3.9];
+
+B=7.8e-4.*I;
+
+e_m=(2.*V)./((B.^2).*(r.^2))
+
+avg=mean(e_m)
+
+
+e_m =
+
+  1.0e+011 * C/kg
+
+  Columns 1 through 5 
+
+    4.9817    4.7920    4.7319    4.5583    4.3940
+
+  Columns 6 through 7 
+
+  4.2385	4.0911
+
+avg =
+
+  4.5411e+011 C/kg
+
+====Set 4====
+
+close all;clear all;
+
+V=[250,255,260,265,270,275,280,285,290,295,300];
+
+I=[1.31,1.31,1.31,1.31,1.31,1.31,1.31,1.31,1.31,1.31,1.31];
+
+r=[4.15,4.2,4.26,4.35,4.35,4.4,4.4,4.45,4.5,4.55,4.55];
+
+B=7.8e-4.*I;
+
+e_m=(2.*V)./((B.^2).*(r.^2))
+
+avg=mean(e_m)
+
+
+e_m =
+
+  1.0e+011 * C/kg
+
+  Columns 1 through 5 
+
+    2.7806    2.7691    2.7444    2.6827    2.7333
+
+  Columns 6 through 10 
+
+    2.7210    2.7705    2.7569    2.7433    2.7296
+
+  Column 11 
+
+    2.7759
+
+avg =
+
+  2.7461e+011 C/kg
+
+===Error Analysis===
+
+Since I had all the data still in MatLab, I went ahead and calculated the Standard Error and the Standard Error of the mean
+
+Standard Error :<math>
+s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}
+</math>
+
+Standard Error of the Mean:<math>SE = \frac{s}{\sqrt{N}}
+</math>
+
+
+====Set 1====
+standard_error=std(e_m)
+
+SE_mean=standard_error/(sqrt(length(e_m)))
+
+
+standard_error =
+
+  2.3052e+010
+
+
+SE_mean =
+
+  6.3934e+009
+
+====Set 2====
+standard_error=std(e_m)
+
+SE_mean=standard_error/(sqrt(length(e_m)))
+
+
+
+standard_error =
+
+  2.8116e+010
+
+
+SE_mean =
+
+  7.7978e+009
+
+====Set 3====
+standard_error=std(e_m)
+
+SE_mean=standard_error/(sqrt(length(e_m)))
+
+standard_error =
+
+  3.1873e+010
+
+
+SE_mean =
+
+  1.2047e+010
+
+====Set 4====
+standard_error=std(e_m)
+
+SE_mean=standard_error/(sqrt(length(e_m)))
+
+standard_error =
+
+  2.9017e+009
+
+
+SE_mean =
+
+  8.7489e+008
+
+====Deviation From Accepted====
+
+The accepted value for the e/m ratio is 
+<math>1.76x10^{11} C/kg</math>
+
+Let's see how well our numbers compare
+
+<math>%error= \frac{|Actual-Experimental|}{|Actual|}x100</math>
+
+%error set 1=82.5%
+
+%error set 2=83.2%
+
+%error set 3=158%
+
+%error set 4=56.03%
+
+====Possible Sources of Error====
+{{SJK comment|l=01:16, 13 November 2007 (CST)|c=Great discussion here!  This should be put into your informal lab summary (and the "conclusions" if you were writing it up for a formal report.)}}
+*As seen in set 3, when you lower the voltage in the heating apparatus, the electrons lose alot of energy. 
+**This seems a bit odd that they would lose that much energy since the heating element just produces them whilst there is a seperate potential voltage that accelerates them (discussed with Dr. Koch, determined the energy gained by accelerating volage >>> heating element)
+*The tube in which the electrons travel is not a vacuum. 
+**The gasses inside light up because they absorb some of the electrons. This "robs" the electrons of their energy, therefore the energy of the electrons that was found by measuring the voltage across the accelerator is greater than the actual energy of the ones in the tube
+*The annode for the electron gun has a hole in it (to allow the electrons through). Unfortunantly, this causes the field to be non uniform, thus possibly accelerating each electron differently
+*It is assumed that the B-field inside the coils is constant
+**It is also assumed it is large enough to "ignore" outside fields. If there is a flux in the current, the magnetic field changes, which would skew our results. Also, there is the Earths magnetism and possibles magnetic influences from the other electronic equipment in the room.
+*Measuring the beam is tricky
+**The beam itself has a width that is unaccounted for. When measuring, we tried to get the center of the beam on the ruler. 
+**As stated in the lab manual, to measure the beam, you have to align it with its reflection off the ruler to minimize paralax. It is still possible, however, to get paralax and skew our readings. Also, the image of the beam looks a bit different from the original, so lining them up is not perfect.
+*The bulb itself, is old and does not fit perfectly in the apparatus. 
+**This could cause it to not be level and not be centered
+*Heat could be a problem
+**As discussed with Dr. Koch, there seemed to be a systematic error over time with the other people doing this experiment.
+This could have resulted from the apparatus getting hotter. 
+**The lab manual does ask us to warm up the heating unit before starting. It is possible that after some time, the heating unit starts to overheat and the electron production decays.
+**Also, the wiring throughout the whole system is not perfect. As it all gets hotter, the resistances in the wires change, changing current, b fields, ect.
+
+'''Possible "fixes"'''
+*There are only 2 fixes I can think of
+**Increasing the accelerating voltage seemed to inprove our results (as set 4 shows with the lowest %error) but the apparatus can't support such a high voltages
+**Adjusting the apparatus to be parallel to the Earth's magnetic field. We did not try this since space was much too limited to move any equipment
+
+===Error Conclusion===
+The standard deviations of our data sets were about 1% off of the mean. This tells me that our data is precise. Now, comparing it with the accepted value, we see we are 50-80% off. 
+
+The lab manual warned that the data would be off. We can see that it is consistent within its own bounds, but far from the accepted value. The apparatus has a fundamental flaw that causes the results to be high (discussed above), but constructed well enough to have consistent data.

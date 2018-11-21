@@ -1,0 +1,204 @@
+{{IGEM:/Harvard/2006/Cyanobacteria}}
+
+<div class="tabs">
+<ul>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-18 | Previous Entry]]</li>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-19 | Current Entry]]</li>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-20 | Next Entry]]</li>
+</ul>
+</div>
+<br style="clear:both">
+<div class="tabcontent">
+
+
+==Site Specific Mutagenesis Attempt 4==
+Dave and Peng are going to beat this thing until it works.
+
+'''Vials'''
+8-5, 3-9, 6-4, 10-7, -t for each (dave), cat gene as a positive control.
+
+For cat gene, pbc_ks+, kt_b, kt_bb primers - expected size ~1.1kb
+
+'''New protocol, based on the Silver protocol on OpenWetWare:'''
+
+  5 µL 10x ThermoPol buffer (Vent)
+  1.0 µL 10 mM dNTPs 
+  2.5 µL 20 µM forward primer 
+  2.5 µL 20 µM reverse primer 
+  1 µL plasmid DNA
+  1 µL Vent DNA polymerase 
+  37 uL dH20
+
+
+'''PCR Time for 3-9, 6-4, 10-7, cat gene  (peng), negative for each'''
+
+ #*95 °C for 2 min. (melt) 
+ #*95 °C for 0.5 min (melt) 
+ #*57 °C for 0.5 min. (anneal) 
+ #*74 °C for 1.5 min. (extension)
+ #* Go to step 2 (30x)
+ #*74 °C for 5 min. (final extension; ''modified'' from Silver protocol)
+ #* Keep at 4 °C forever
+
+ Total time:  82 minutes +/- some = 90 min
+
+'''PCR Time for 8-5, cat gene (dave), negative'''
+
+ #*95 °C for 2 min. (melt) 
+ #*95 °C for 0.5 min (melt) 
+ #*57 °C for 0.5 min. (anneal) 
+ #*74 °C for 2.5 min. (extension)
+ #* Go to step 2 (30x)
+ #*74 °C for 5 min. (final extension; ''modified'' from Silver protocol)
+ #* Keep at 4 °C forever
+
+ Total time: 111 minutes +/- some = 120min
+
+[[Image:2006-07-19 sitemuta4ZSDR.jpg|right|thumb|200px|1: ladder<br>
+2: 3-9 ZS<br>
+3: 3-9 DR<br>
+4: 8-5 ZS<br>
+5: 8-5 DR<br>
+6:10-7 ZS<br>
+7:10-7 DR<br>
+8: 6-4 ZS<br>
+9: 6-4 DR<br>
+10:cat ZS<br>
+11:cat DR<br>
+12:ladder<br>]]
+
+
+'''Results'''
+Expected:
+3-9: 209bp <br>
+10-7: 370bp <br>
+8-5: 2402bp <br>
+6-4: 80bp <br>
+
+
+Contamination again in my bands... something went very wrong, and the products are missing. Definately worth discussion tomorrow.
+
+[[Image:2006-07-19_21hr_43mineg.jpg|left|thumb|200px|Same as top w/o last lane]]
+<br style="clear:both"/>
+
+==Miniprep==
+
+*The Hetmann Six incubations from yesterday were miniprepped with help from Mingming.
+*There were two mistakes with the miniprep:
+**Pipetting the supernatant into the waste when the DNA was in the supernatant
+***Mingming helped correct the mistake by re-centrifuging the Eppendorf tube with the DNA and extracting more of the supernatant
+**Centrifuging for 1 minute instead of 10 minutes before transferring the supernatants to the spin column
+***We fixed this by pipetting the liquids from the spin column back into Eppendorf tubes and re-centrifuging
+
+==Sequencing==
+We sent off 14 reactions for sequencing. Peng designed the sequencing primers such that we only need to use the primers in one direction (seq_Ax or seq_Ax_RC). There are 5 such primers, plus 2 for M13 forward and M13 reverse (we don't know which direction KaiABC was inserted into Topo, so we'll try both).
+
+Thus there are 7 total primers, which makes 7 reactions per sample. We sent 2 samples for sequencing: Hetmann's 6th culture (which turned out well on the [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-18#Digest_of_the_topo.2Bkaiabc_clones_and_the_one_we_were_using_the_past_week|digest from 2006-7-18]]), and our original KaiABC + Topo plasmid that was transformed on 2006-7-12.
+
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Name'''
+| align="center" style="background:#f0f0f0;"|'''Strain'''
+| align="center" style="background:#f0f0f0;"|'''Primer'''
+|-
+| CY001||Hetmann #6||seq_A1
+|-
+| CY002||Hetmann #6||seq_A2
+|-
+| CY003||Hetmann #6||seq_A3
+|-
+| CY004||Hetmann #6||seq_A4
+|-
+| CY005||Hetmann #6||seq_A5
+|-
+| CY006||Hetmann #6||M13 forward (to be added by Genewiz)
+|-
+| CY007||Hetmann #6||M13 reverse (to be added by Genewiz)
+|-
+| CY008||TP (from 2006-7-11)||seq_A1
+|-
+| CY009||TP (from 2006-7-11)||seq_A2
+|-
+| CY010||TP (from 2006-7-11)||seq_A3
+|-
+| CY011||TP (from 2006-7-11)||seq_A4
+|-
+| CY012||TP (from 2006-7-11)||seq_A5
+|-
+| CY013||TP (from 2006-7-11)||M13 forward (to be added by Genewiz)
+|-
+| CY014||TP (from 2006-7-11)||M13 reverse (to be added by Genewiz)
+|}
+
+==PCR extraction #5==
+We attempted to extract KaiABC yet again from cyanobacteria, because so far we've only been succesful once (reaction 21 from [[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-14#Another_PCR_attempt|PCR extraction #3 on 2006-7-14]]).
+
+===Samples===
+*Liquid culture #1 raw (LC1RAW), 50 µL from PCC 7942 flask (2006-7-16) + 100 µL H2O
+*Liquid culture #1 purified (LC1PUR), 1 ml from PCC 7942 flask (2006-7-16), spun down for 1 minute at 14k rpm, resuspended in 150 µL H2O
+*Liquid culture #2 raw (LC2RAW), 50 µL from PCC 7942 flask (2006-7-7) + 100 µL H2O
+*Liquid culture #2 purified (LC2PUR), 1 ml from PCC 7942 flask (2006-7-7), spun down for 1 minute at 14k rpm, resuspended in 150 µL H2O
+*Plate #1 (PL1), 1 colony from PCC 7842 streak #1, suspended in 10 µL H2O
+*Plate #2 (PL2), 1 colony from PCC 7842 streak #2, suspended in 10 µL H2O
+
+Lyse all samples at 95C for 5 minutes.
+
+===Reactions===
+All reactions are 100 µL.
+
+*LC1RAW and LC2RAW: basically the same as the mega-PCR on 2007-7-10.
+**10 µL template
+**10 µL 10x buffer
+**2 µL 10 mM dNTP
+**2 µL extF
+**2 µL extR
+**1 µL Vent Taq
+**73 µL H2O
+
+*LC1PUR1 and LC2PUR1: 1 µL of LC1PUR
+**1 µL template
+**10 µL 10x buffer
+**2 µL 10 mM dNTP
+**2 µL extF
+**2 µL extR
+**1 µL Vent Taq
+**82 µL H2O
+
+*LC1PUR10 and LC2PUR10: 10 µL LC1PUR
+**10 µL template
+**10 µL 10x buffer
+**2 µL 10 mM dNTP
+**2 µL extF
+**2 µL extR
+**1 µL Vent Taq
+**73 µL H2O
+
+*PL1 and PL2
+**5 µL template
+**10 µL 10x buffer
+**2 µL 10 mM dNTP
+**2 µL extF
+**2 µL extR
+**1 µL Vent Taq
+**78 µL H2O
+
+*-: negative control
+**10 µL 10x buffer
+**2 µL 10 mM dNTP
+**2 µL extF
+**2 µL extR
+**1 µL Vent Taq
+**83 µL H2O
+
+===PCR schedule===
+
+#94C, 5' ''note: changed from previous (Hotstar) protocol, from 15' to 5', to adapt for Vent''
+#94C, 30"
+#56C, 30"
+#72C, 3'30"
+#Cycle to step 2, 7x
+#94C, 30"
+#55C, 30"
+#72C, 3'30"
+#Cycle to step 6, 30x
+#72C, 5'
+#4C hold

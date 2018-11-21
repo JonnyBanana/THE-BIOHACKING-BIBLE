@@ -1,0 +1,279 @@
+==Information==
+*[http://bbid.grc.nia.nih.gov/cgi-bin/pathwaysearch.pl Cell Membrane Pathways]
+*[http://www.genome.ad.jp/kegg/metabolism.html#environmental KEGG Pathway Database]
+*[http://www.genome.jp/kegg/kegg4.html Links to Collections of Pathways]
+*[http://crf.medic.kumamoto-u.ac.jp/CSP/Receptor.html Different Types of Cytokine Receptor]
+*[http://www.biocarta.com/pathfiles/h_integrinPathway.asp BioCarta]
+*[http://72.14.207.104/search?q=cache:79JNOEAfDvwJ:redpoll.pharmacy.ualberta.ca/CCDB/cgi-bin/STAT_NEW.cgi+thickness+of+E.Coli+periplasm+&hl=en Statistics about E.Coli]
+*[http://www.bioinf.org.uk/abs/kabatman.html Kabat Database for Antibodies]
+*[http://www.ncbi.nlm.nih.gov/igblast/ Ig BLAST]
+
+==ToxR==
+===Papers===
+
+
+http://www.wzw.tum.de/biopolymere/Possyccat2.jpg
+*[http://openwetware.org/images/d/d7/Kolmar95.pdf Kolmar paper (1995)]
+**explore ToxR using modular replacement of various substructures. 
+**aa's 1-182 => cytosol. 183-198 => spans i.m. 199-210 => in periplasm, usually present in subsitutions. 211-294 => typical deletions when substituting other dimerizers.
+***address ToxR' as aa's 1-210
+**"aa's 183-198 is necassary but not sufficent for membrane localization
+**lots of crazy data! 
+***ToxR'PhoA hella-trancribes. 
+***ToxR'MalE hella-doesn't (MalE is sooooo monomeric ...)
+***ToxR'MalE/ZIP trancribes. (ZIP + magic makes MalE monomer homo-dimerize.)
+
+*[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=9987131 ToxR/lambda phage]
+**<b>Background of lambda phage system:</b>
+***Operator sites are OR1, OR2 and OR3 (i'll talk about only 2)
+***There is a cI "repressor" protein that sits on these sites. Also called lambda repressor
+***When OR1 and OR2 are integral number of turns apart (they are on same face of DNA)--> the cI repressors on both sites are able to bind to each other (act cooperatively) and fold the DNA --> no transcription occurs --> repression
+***When OR1 and OR2 are nonintegral turns apart (they face opposite sides of the DNA molecule) --> cI repressors on both sites face the opposite way and can't cooperate --> DNA stays linear and transcription occurs --> activation
+***The C-terminus of the cI repressor is responsible for cooperative interaction --> if you remove this piece, then no cooperation will happen even with OR1 and OR2 integral turns apart (thus no repression will happen)
+**<b>Experiment:</b>
+::*They removed the lambda C-terminus, then they made fusion proteins with ToxR (now if any cooperation (i.e. repression) happens, it must be due to ToxR cooperating with another ToxR, cos cI can't cooperate without its C-terminus)
+
+::*Fusion proteins made in this paper and in Kolmar et al. 1995 (click on picture to see caption)
+[[Image:Mmi 1173 f1.gif |center]]
+
+::*
+{| border="1" align="center"
+|+Results (1x = background expression level)
+! Protein !! Strain 5.5 (nonintegral) !! Strain 5.9 (integral) !! Conclusion
+|-
+|wild-type lambda repressor || 7x || 1x || Positive control (ensures that system works natively)
+|-
+|lambda-ToxR + ToxS || 2x || 1x || Proves ToxR acts cooperatively (cos lambda C-term is not there, and therefore can't cause repression)
+|-
+|lambda-ToxR-PhoA || 2.5x || 1x || Proves cytosplasmic domain (N-terminus) of ToxR is responsible for cooperative interaction
+|}
+
+
+::*In V.cholerae, with only OR1 present, no dimerization occured (predictable as no two lambda sites are present, so no cooperative interaction can take place)
+::*But with OR1OR2OR3 (i.e. all operator sites) present in V.cholerae:
+
+{| border="1" align="center"
+|+Results (100 = full repression; 0 = no repression)
+! Protein !! pH 7.0 (permissive) !! pH 8.8 (restrictive) !! Conclusion
+|-
+|wild-type lambda repressor || 100 || 100 || repression of lacZ
+|-
+|no cI repressor || 0 || 0 || no repression of lacZ
+|-
+|lambda-ToxR + ToxS || 89 || 81
+|-
+|lambda-ToxR || 77 || 96 || Proves cI::lacZ is unresponsive to pH changes in V.cholerae (but other exp show that the ctx is somehow still responsive)
+|-
+|lambda-ToxR-PhoA || 71 || 80 || Proves periplasmic sequences not essential for dimerization
+|-
+|lambda-ToxR-Cterm || 23 || 9 || No dimerization in absence of cytoplasmic domain
+|-
+|lambda-ToxR-Cterm + ToxS || 85 || 80 || ToxS promotes dimerization even in absence of cytoplasmic domain
+|}
+
+
+::*Thus in V.cholerae, pH and osmolarity did not regulate cI::lacZ constructs, but they did continue to regulate ctx
+::*Conflicting results: Otteman and Mekalanos (1995) saw ToxR dimerize when fused with periplasmic Bla (beta-lactamase), which is a monomer --> but now evidence that Bla may not act completely as a monomer
+::*Monomeric MalE-ToxR results in no ctx::lacZ activity
+
+:*<b>References:</b>
+::*PhoA can be substituted for carboxy terminus (periplasmic) of ToxR (Dirita and Mekalanos, 1991)
+::*ToxR sequences propagate dimerization of amino terminal domain of lambda phage (Dziejman and Mekalanos, 1994)
+::*
+{| border="1" align="center"
+|-
+! !! Yes !! No
+|-
+! ToxR needs dimerization
+| Kolmar, 1995 || Otteman and Mekalanos, 1995
+|-
+! ToxR needs to be membrane bound
+| Otteman and Mekalanos, 1995 || Kolmar, 1995
+|}
+
+
+*[http://info.bio.cmu.edu/Courses/03441/TermPapers/99TermPapers/ChoTox/coreg.html Co-regulation of cholera toxin genes]
+**ToxR’s role is signal transduction through the membrane. It’s mechanism of action is thought to be the dimerization of ToxR (DiRita & Mekalanos, 1991). This mechanism of an extracellular protein causing a transmembrane protein to complex and activate transcription is fairly novel among bacterial transcriptional regulation systems.
+**Summary:
+***ToxR found in regulation of ctx operon (normally in Vibrio cholerae), which includes a gene for the toxin itself (ctx)
+***3 regulator proteins are involved in the pathway:
+****ToxS: TM protein, only in periplasm
+****ToxR: TM protein, 1/3rd in periplasm, 2/3rds in cytoplasm
+****ToxT: inside cell (cytoplasm)
+*** ToxS detects external environment (temp, pH, O2, osmolarity) via unknown mechanism. ToxR also does this in a limited way.
+***When activated, ToxS helps dimerize ToxR (mechanism does NOT include phosphorylation). ToxR's TM region winds up around each monomer (like a zipper)
+***When dimerized, ToxR's DNA binding domain causes transcription of ctx operon and also of ToxT gene
+***ToxT gene (along with ToxR) activates transcription of other proteins.
+***Structure of ToxR:
+****294 aa (mw: 32,527 Da --> Miller et al. 1987)
+****Carboxy terminus: periplasm
+****Amino terminus: cytoplasm
+****TM region: Leu 183-Glu 198 (surrounded by Arg 182 on N-terminus and 3 uncharged aa on C terminus
+****Binding site known (Pfau & Taylor, 1996): TTTTGAT is tandemly repeated 8 times at -56 and once at -20 --> but these sequences are NOT enough! lacZ with these sequences will not produce B-gal.
+
+*[http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&pubmedid=6374658 Synthesis of cholera toxin is positively regulated at the transcriptional level by toxR.]
+**1984 paper, mostly stuff we know, but in being sensitive to manipulating cells that can have negative human affects: "Southern blot analysis suggests that all V. chokrae, including nontoxinogenic strains, have the toxR gene. Moreover, nontoxinogenic strains not only lack the structural genes for cholera toxin but also sequences associated with the larger 7-kilobase ctx genetic element." No, We Don't Have to Work With Virulent Cholera To Use ToxR.
+*[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=13129945&query_hl=4 Invivo evidence for TonB dimerization with ToxR]
+**I've only read the abstract, but TonB is a protein on the surface of E.Coli
+**Dimerization of ToxR causes ctx to be produced. But in E.Coli, this dimerization is studied by placing a lacZ (or other reporter gene) under the ctx promoter. So we don't need to be concerned about virulence factors.
+*[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=retrieve&db=pubmed&list_uids=1560773&dopt=Abstract Co-ordinate expression of virulence genes by ToxR in Vibrio cholerae.]
+**take home message: ToxR directly promotes some stuff (which includes production of ToxT). ToxT then directly promotes other stuff. ToxR can be a stand alone transcriptional factor.
+*[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=9515742&query_hl=4 Changes in the periplasmic linker and in the expression level affect the activity of ToxR and lambda-ToxR fusion proteins in Escherichia coli.]
+**Only read the abstract
+**These guys used ToxR-lambda phage repressor as a dimerization reporter
+**they constructed plasmids for various transmembrane fusion proteins.
+**Current status: reading it to summarize
+**Uh oh, problem: this article says: "the authors suggested that dimerization is not a requirement for ToxR activity in E. coli [http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T1G-3P4TCYV-383&_user=501045&_coverDate=01%2F01%2F1900&_fmt=summary&_orig=search&_qd=1&_cdi=4890&view=c&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=92b99b72d5c7a2e827f7ef6008e3f2fa&ref=full 10]. Someone should get on the referenced paper right now and find out why this is a problem.
+*** best I can tell, the reference claims that the ToxR periplasmic domain could be replaced with a few other dimers and a toxR-like monomer. Further analysis showed that this substitution only sort of worked. The "correct" ToxR conformation may be more important for function says the paper. This point is worth remembering, but likely not a game-breaker. It may be necassary to eliminate the possible substitutions in lab, but it would be better to know if this study manipulated the toxR itself significantly to use these substitutions. I'm inclined to think they did manipulate the protein significantly...
+*[http://www.pubmedcentral.nih.gov/picrender.fcgi?artid=415678&blobtype=pdf The Vibrio cholerae ToxR-Regulated Porin OmpU Confers Resistance to Antimicrobial Peptides]
+**i'm all about this paper for its reference list ...
+
+===Linker===
+*What’s the distance b/t om and im? Distance of periplasm
+*A little about the conditions of periplasm --> stabilizing the linker
+*Characteristics of linker & why they are designed a specific way
+*IMPORTANT: Linker cannot contain seq. that signals inner membrane localization 
+*Build our own linker library & screen 
+*Look up other people who has built and screen linker similarly to the UCSF
+
+==Chemotaxis==
+http://www.rowland.harvard.edu/labs/bacteria/images/fret1.jpg
+*Information
+**MCPs: 
+:MCPs are primary receptors for amino acids and secondary receptors for other attractants. They're not involved in transport and their genes are within the ''tar'' and ''tapE'' genes or in ''tsr'' and ''trg'' in region II (region II and III are coding regions contain the motility and chemotaxis genes). 
+:There are 4 types of MCPs. 
+::1)''tsr'' has ''tsrE'' and ''tsrS'', primary receptor and transducer for Serine, external pH, weak acid repellents, temperature, hydrophobic amino acids, and indole.
+::2)''tar'' has ''tarE'' and ''tarS'', primary receptor and transducer for aspartate, Co ion, Ni ion; secondary receptor and transducer for maltose.
+::3)''trg'' has ''trgE'' and ''trgS'', receptor and transducer for ribose and galactose
+::4)''tap'' has ''tapE'', receptor for dipeptides
+::5)''tip'' has ''tipS'', mediates responds
+**Sensory transduction components: 
+:Communication between MCP receptors/transducers and the motor is done through ''CheA, CheB, CheR, CheW, CheY,'' and ''CheZ''. All fall in region II.  
+:Motility genes: there are 2 involved - ''motA'' and ''motB''
+Chemosensory system
+:::Chemotactic signals detected by chemoreceptors (methyl-accepting chemotaxis proteins - MCPs)
+:::Through CheW, adapter protein, MCPs link to CheA and phosphorylate it
+:::CheA-P phosphorylate either CheY or CheB
+:::CheY-P binds to Flim and causes turning of ecoli
+:::If [attractant] decreases, MCPs phosphorylate CheA --> CheA-P phosphorylates CheY: as [CheY-P] increases see cell tumbling
+:::CheY-P dephosphorylated by CheZ: responds to increasing [CheY-P]
+:::When CheY-dephosphorylated, Che-B phosphorylated by CheA-P: CheB-P demethylates MCP and resets the sensor of attractant
+:::If [attractant] increases, CheA phosphorylation inhibited and [CheY-P] decreases and motor switching decreases: smooth swimming
+Papers on Chemotaxis/Dimerization:
+
+[http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6VRT-4CVV17N-1H&_user=501045&_coverDate=07%2F31%2F1996&_alid=290866072&_rdoc=1&_fmt=full&_orig=search&_qd=1&_cdi=6243&_sort=d&_docanchor=&view=c&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=7930010e5dc75fe53f8fa0f174d0d081&artImgPref=F Receptor signaling: Dimerization and beyond] 
+:[[../TarSummary1/]]
+
+[http://www.jbc.org/cgi/content/full/271/30/17966 Role of alpha -Helical Coiled-coil Interactions in Receptor Dimerization, Signaling, and Adaptation during Bacterial Chemotaxis*]
+
+[http://www.jstor.org/cgi-bin/jstor/printpage/00368075/ap003654/00a00310/0?frame=noframe&userID=124f01ae@mit.edu/01cce44035005019298a6&dpi=3&backcontext=table-of-contents&backurl=/cgi-bin/jstor/listjournal/00368075/ap003654%3fframe%3dframe%26dpi%3d3%26userID%3d124f01ae@mit.edu/01cce44035005019298a6%26config%3djstor&config=jstor Activation of Bacterial Porin Gene Expression by a Chimeric Signal Transducer in Response to Aspartate]
+
+[http://www.jbc.org/cgi/content/full/271/2/939 Dimerization is required for the activity of the protein histidine kinase CheA that mediates signal transduction in bacterial chemotaxis]
+
+[http://www.nature.com/nrm/journal/v5/n12/full/nrm1524_fs.html MAKING SENSE OF IT ALL: BACTERIAL CHEMOTAXIS]
+:Summary
+::CheA is the chemotaxis histidine protein kinase (HPK) however, it is cytoplasmic and senses through transmembrane receptors
+:The Chemoreceptors (MCPs)
+::Ecoli has 4 MCPs which form homodimers that are membrane spanning
+::Ligands bind to the periplasmic domain of MCPs between the 2 monomers of the dimer
+::Ligand binding alters the interactions between the periplasmic domains of the MCPs and change the interations in the MCP dimer
+::a 1.4Angstrom 'piston-like movement' of one of the helices
+:: change of the periplasmic domains on ligand binding also alters the packing of the highly conserved cytoplasmic domains to cause signalling
+::signalling domain contains two adaptation regions 
+::Tar recruits the methyltransferase CheR 
+::it has been indicated in vivo that different receptors must be close enough to interact
+:Localization of methyl-accepting chemotaxis proteins
+::MCPs cluster in patches
+::MCPS might pack as trimers of dimers
+::Packing pattern would allow the necessary CheW and CheA interactions at the base of the MCPs
+::Receptors cluster are composed of signalling teams, a mixed trimers of MCP homodimers with different MCPs  to regulate CheA
+::Max kinase activity seems to occur around 3.4 MCP to 1 CheW and 2 CheA
+:Variation in EColi
+::other MCP-like proteins exist: Aer--> senses for oxygen concentrations
+:Other Proteins in this pathway
+::CheW has 2 SH3 like subdomains and is both signallind for MCP and CheA
+::Forms the MCP-CheW-CheA complex
+::CheA works as a dimer
+::CheA shows increased autophosphorylation in response to a decrease in attractant binding or an increase in repellent binding
+::CheZ is a phosphatase and signal termination
+
+==Omp==
+e. coli
+
+[http://www.uwm.edu/Dept/Biology/Microbiology/image25.gif OmpR picture from 2004 UT project ]
+
+==Cytokine==
+Mammalian, S. Cerevisiae
+
+Cytokines are small protein molecules that are the core of communication between immune system cells, and even between these cells and cells belonging to other tissue types.  Cytokines act by binding to their cell-specific receptors.  These receptors are located in the CELL MEMBRANE and each allows a distinct signal transduction cascade to start in the cell, that eventually will lead to biochemical and phenotypical changes in the target cell. 
+
+Most cytokine receptors lack intrinsic kinase activity. They are thought to transmit their regulatory signals primarily by the receptor-associated JAK (Janus kinase) family of tyrosine kinases. Ligand-binding to the receptor leads to JAK activation that phosphorylates cytoplasmic STAT (signal transducer and activator of transcription) proteins. Following phosphorylation on tyrosine residues, STATs are dimerized (resulting from phosphotyrosine - SH2 domain association). This dimerization is accompanied by translocation of STAT to the nucleus that results in DNA binding to specific response elements, and stimulation of gene transcription.
+
+<table>
+<tr>
+<td valign="top">
+
+http://bio.winona.edu/bates/Immunology/images/12_07.gif
+
+</td>
+
+<td valign = "top">
+
+http://bbid.grc.nia.nih.gov/geneimages/2.Cytokine_Receptors.jpeg
+</td>
+</tr>
+
+<tr>
+</tr>
+
+</table>
+
+==Fec==
+===Papers===
+[[Image:FecA.jpg|center]]
+
+*[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=9148773&query_hl=3 Surface signaling: novel transcription initiation mechanism starting from the cell surface]    
+:Summary: 
+::-"Gene FecA encodes the outer membrane receptor protein to which ferric citrate binds. Gene FecB encodes a periplasmic protein that serves as a binding protein for ferric citrate." 
+::-"Ferric citrate protects the FecB protein from degradation by proteinase K, which implies that ferric citrate is takend up into the periplasm."
+::-"TonB, ExbB, and ExbD proteins are thought to serve as an energy-coupling device between the cytoplasmic membrane and the outer membrane." The electrochemical potential induces an energized TonB. TonB binds to FecA, causes dissociation of ferric citrate bound to FecA and opening FecA channel through which ferric citrate crosses the outer membrane and enters the periplasm."
+::-FecI helps recruits the RNA polymerase. 
+::-Minimal requirements for induction of fecABCDE are: FecA, FecI, FecR, TonB, ExbB, and ExbD.
+
+*[http://web.mit.edu/aanniev/Public/Document1.pdf Signal transfer through three compartments: transcription initiation of the E.Coli ferric citrate transport system from the cell surface]  
+:Summary: 
+::-The paper demonstrates that ferric citrate uptake into the periplasm is not required for fec gene induction. 
+::-A table of fecA point mutants that uncouples induction and transport. Each mutant is grown in 1 mM and 10 mM citrate. Measurements of induction under 2 conditions Cit- and Cit+ and growth under each citrate concentration were taken. Mutated FecA proteins have the '''same size''' as the WT protein. Candidates that fit our purpose are fecA27, fecA4b, fecA30 and fecA38. fecA38 gives 5-fold higher induction than WT without growth and transport. fecA27 has the strongest induction but moves slower than the other FecA proteins, could be due to conformational change.
+::-The paper also has a mutant that bypass the repression of loaded Fur protein. fecA30 has a mutation in the promoter region of fecA that seems to be the binding site for the repressor protein. 
+::-The authors hypothesized that the altered FecA proteins assume conformations which are close to the inducing conformation of WT FecA. FecA4 partially assumes a conformation which WT FecA4 adopts by interaction with TonB.   
+*[http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6VS2-4834NW4-1&_coverDate=04%2F30%2F2003&_alid=292296139&_rdoc=1&_fmt=&_orig=search&_qd=1&_cdi=6250&_sort=d&view=c&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=7cd3516b059677eaa03a5c40882221be Regulation of the FecI-type ECF sigma factor by transmembrane signalling]
+
+*[http://www.sciencemag.org/cgi/content/full/295/5560/1715 Structural Basis of Gating by the Outer Membrane Transporter FecA]
+:Summary: paper is about crystal structure of FecA protein done by X-ray crystallography
+::-Full length FecA (741aa) is composed of three domains - Beta-barrel,
+::-Beta-barrel is monomeric 22 stranded, formed by residues 222 to 741. Antiparallel strands traverse the outer membrane. 
+
+*[http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6WK7-49C4YGH-8&_coverDate=09%2F12%2F2003&_alid=292297227&_rdoc=1&_fmt=&_orig=search&_qd=1&_cdi=6899&_sort=d&view=c&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=520f0bc3b3b8c748e36442c913d521a6 Structural Evidence for Iron-free Citrate and Ferric Citrate Binding to the TonB-dependent Outer Membrane Transporter FecA]
+
+*[http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&pubmedid=15292131 Defined Inactive FecA Derivatives Mutated in Functional Domains of the Outer Membrane Transport and Signaling Protein of Escherichia coli K-12]
+:Summary:
+::-Paper has topology and structure of FecA protein. Diagram on second page.
+::-Loops 3,5,7,8,9,10,11 were each deleted. Small loops 1,2,4,6 were untouched.
+::-Deletion of loops 7 & 8 give NO transport and induction activities. Loop 7 needs residues 516-135 for proper structure and function. 
+::-Deletion of loops 3 & 11 INACTIVATES FecA.
+::-Deletion of loops 9 & 10 RETAINS activities.
+::-Point mutations in R365, R380, Q570 (binding sites for dinuclear ferric citrate) give NO activities. Point mutations in T138 and R438 give HALF of normal activities. 
+::-R150,R196, E541, and E587 are residues that are at the interface b/t globular domain and Beta-barrel. Point mutations in E541R or E541A give almost normal induction adn transport. . Induction by point mutations individually and double mutations in other residues REDUCE activities.   
+
+*[http://web.mit.edu/aanniev/Public/Document2.pdf Transcription indution of the ferric citrate transport genes via the N-terminus of the FecA outer membrane protein, the Ton system and the electrochemical potential of the cytoplasmic membrane]
+===Make FecA-===
+[http://www.pnas.org/cgi/content/full/100/26/15748 Enhanced levels of lambda Red-mediated recombinants in mismatch repair mutants]
+
+==Others==
+*2004 UT Texas Light Receptor Paper (conformation)
+:[http://rosalind.csail.mit.edu/r/parts/htdocs/SBC04/austin.cgi Overview of the System]
+::Summary: They made a chimeric gene with Cph1 which responds to light and EnvZ which is already present in the OmpR regulatory system. This chimeric gene is regulated by light and its protein phosphorylates OmpR through a histidine kinase domain. The active form of OmpR then promotes the transcription of LacZ. Note that the conditions are: red light inhibits the transcription of the chimeric gene and no light/total darkness promotes it. This system is based on '''conformational change'''.   
+*Antibody/receptor Chimera --> cross linking 
+*Antibody outermembrane display in E.Coli
+:[http://peds.oxfordjournals.org/cgi/reprint/11/9/825 Antibody affinity maturation using bacterial surface display]
+::Summary: N-terminus of high-affinity scFv specific for digoxin, derived from a well-characterized monoclonal antibody, is fused to a chimera termed Lpp-OmpA' that consists of E.Coli lipoprotein and aa sequence of OmpA. OmpA is a major outer membrane protein in E.Coli. A surface display vector is constructed with OmpA-VH-linker-VL under Promoter lpp/lac. The chloraphenicol acetyl transferase gene is introduced downstream of the scFv fragment. FACS is used to screen for cells with surface display. Gene fusion is done at '''DNA level'''.

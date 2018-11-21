@@ -1,0 +1,155 @@
+= Cell by Date =
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Fabrication|Fabrication]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Cell By Date/Testing|Testing]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/DataAnalysis|DataAnalysis]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Validation|Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+--[[User:Anthony Lazzaro|Anthony Lazzaro]] 11:51, 11 October 2007 (CDT)Dudes writing up in progress nearly at stage where i can confidently plan out next set of experiments
+
+==Files for the following graphs==
+
+*Isothermal Data
+
+[[Image:CBD Isothermal.xls]]
+
+[[Media:CBD Isothermal.xls|CBD Isothermal]]
+
+*Step Data
+
+[[Image:CBD steps.xls]]
+
+[[Media:CBD steps.xls|CBD steps]]
+
+*DNA concentrations
+
+[[Image:CBD DNA Concentration.xls]]
+
+[[Media:CBD DNA Concentration.xls|CBD DNA Concentration]]
+
+*Packaging Data
+
+[[Image:CBD Packaging.xls]]
+
+[[Media:CBD Packaging.xls|CBD Packaging]]
+
+==1.Determining System Capabilities==
+
+[[Image : IGEM07 PTETGFPmut3BFDiffTempvsTime.JPG]]<br = clear all >
+
+Having determined that our construct works in cell extract we set out to determine our system's expression level has as a function of temperature and time.
+
+As can be seen in the above plot our results showed that for isothermal conditions the level of fluoresence and hence expression increased linearly with time.  When comparing different expression levels at different temperatures we see that our sytem produces more at higher temperatures which was expected.
+
+By linearly approximating the rate of fluoresence we have been to look at whether we can use an arrhenius type relationship to show how the rate of fluoresence increase with temperature.  Doing so has shown that an arrhenius type relationship seems to fit and also our system seems to have an activation energy of 1.5kJ/mol
+
+==2.Determining Effect of sampling time on system capabilities==
+
+[[Image:PTETGFPmut3BFat6HoursatDiffTempforDiffSampling.jpg]]<br = clear all>
+
+asdf
+
+==3.Determining Effect of DNA concentration on system capabilities==
+
+[[Image:DNAConcentrationpTETGFPmut3BFat360mins.JPG]]
+
+==4.Determining effect of packaging on system capabilities==
+
+[[Image:ComparisonOfDifferentPackagingMethods.JPG]]<br=clear all>
+
+asdf
+
+[[Image:ComparisonOfDifferentPackagingMethodsExcludingPipette.JPG]]<br=clear all>
+
+asdf
+
+==5. Step experiments to determine response time of system==
+
+[[Image:CellByDateSteps.JPG]]
+
+These last experiments for cell by date will hopefully give us enough data to wrap up the project.
+
+For the cold chain breakdown scenario we will use this data like this : we consider our system to be off at four degrees C and that evaporation ofthe system in the cold chain is negligible.  According to Koutsoumanis temperatures higher than 10 degrees C are common during transport and so a step from our off temperature 4 degrees to a high one common during transport eg. 20 degrees C will allow us to see if what our sytems response time is and whether if could be used to effectively report a breakdown.
+
+For the TTI beef/pork proof of principle i have data for aerobically stored ground/minced beef and pork at 4 & 20 isothermal and for porks steps between 5 and 20.  So that data collected in these experiments will allow us to determine how slow our system is in terms of responding to a change in temperature in relation to the bacteria responsible for spoiling beef/pork.
+
+==5.Determining System Capabilities in Vivo==
+
+Mr.Chappell you need to get yer but over here and populate this section !
+
+
+dirka dirka
+
+I have tried to calculate the Ea of our system, pTET linked to Mut3BGFP, and have got a value of 1.5kJmol^-1.  If we take the Leak's Ea of the spoilage rxn to be 30kJmol^-1 then our TTI will be accurate to 2 Degrees.  However if we take the Giannuzzi's highest value of 220kJmol^-1 and assuming Taoukis estimation rule to be linear, our TTI will be accurate to 10 degrees C when considering the thermal history of the beef.
+
+The only thing we can change with our system is the DNA concentration and we are currently researching the effect this will have on our system.  My guess is that it will not change the activation energy of our system but merely the extent to which our system's output is visible.
+
+==Where to take Cell by Date==
+
+--[[User:Anthony Lazzaro|Anthony Lazzaro]] 11:53, 11 October 2007 (CDT) Right so had a meeting with F & advisors yesterday and decided that best way forward was to do all of the below options for cell by date, do some steps so i can complete the proof of principle idea, do some further experiments so i can use cell by date as a means of characterising a chassis.  So right now I'm trying to sift through everything we've done and also some models for other types of meat, eg the paper that had pork spoilage on an hour basis to come up with a set of 3/4 experiments that will finish off Cell by Date
+
+==Characterisation idea:==
+
+We're probably not going to present both projects so can use cell by date as a means to characterise the cell extract as a chassis.  This would involve:
+
+More experiments to determine the effect DNA concentration effects expression levels
+
+More expreiments to determine the effect of temperature on the effect of expression eg. where does it turn off.
+
+The logic behind this is that because we are using a constituitive promoter which is widely used this characterisation will prove useful to many other people when deciding whether to use cell extract as a chassis.
+
+So for example in vivio 37 may be optimal (need to do literature research) but in may be optimal there may be a polynomail relationship in vitro but a different one in vivo
+
+'''Proof of Principle TTI for beef spoilage'''
+
+We can't do experiments for more than a day because of this coupling our system to the spoilge of meat is not possible.  Our only hope for doing this is to not use the fluorometer and have a visible reporter, DsRed is proving to be problematic so another plan is needed.
+
+This plan would be a proof of principle in which we only do experiments over the course of 6 hours using the fluorometer.  In these six hours would could characterise the system and try to show it could be use for beef spoilage.  There would be four experiements : 
+
+1.Isothermal for 6 hours at 10 C
+
+2.Isothermal for 6 hours at 20 C
+
+3.Step up from 10 to 20 to capture response time
+ 
+4.Step down from 20 to 10 to capture positive history effect
+
+We are using these temperatures because I have found the spoilge time for beef at these temperatures.  Further computational work needs to be done to show how beef spoilge will occour in the step scenarios.  I have found a paper that does just this and have contacted the author asking for his computer code, i have recieved no response yet so we will proably have to develope our own code.
+
+'''Forget the Beef idea :'''
+
+An alternative route would be to forget about beef and just focus on a break in the cold chain eg. product independant.
+
+This would involve looking up the specifications of a generic cold chain or look at what our system can do and pick a cold chain that is similar so for example we know our system is off at 4 degrees C (need to tripple check) .
+
+With this done we could then hypothesise that evaporation won't be a problem with perfect packagaing and that our system will only express when is taken out of the cold chain eg. above 4 degrees C.  so our system is no longer a TTI but merely a switch which tell us if there has been a breakdown in the cold chain.
+
+==Long Awaited Koutsoumanis,2005 Paper==
+
+Finally got around to seriously reading this paper.  I discarded it initially because it didn't show it's data for ground beef but for ground pork.  However considering that i haven't been able to find a step scenario for ground beef and that it seems like generalisations can be made for ground meats the results of this paper may be useful.
+
+Key results of this paper:
+#In this paper they studies 'fresh' ground meat under aerobic conditions and found Pseudomonas to be the dominant spoilage organism.
+#Pork : Isothermal Conditions : Considered to be spoiled when Pseudomonas levels reached 10^9CFU/g
+#Meat Cuts vs Ground Meat : Meat Cuts are considered spoiled when Pseudomonas levels reach 10^7 CFU/g and for ground meat considered spoiled when Pseudomonas levels reach 10^9 CFU/g.  Difference is probably attributed to weight to surface area ratio.
+#Ea of Pseudomonas in ground meat is around 69.3kJ/Mol
+#pH affects Pseudomonas growth
+#Lag of adaptation work is the ratio "between the amount of “work” that a cell has to perform in order to adapt to its new environment and the rate at which it is able to perform that work".  This ratio has been shown to be independant of temperature but not independant for pH wrt Pseudomonas
+#Dynamic Temperature Conditions: "For growth predictions the numerical solution of the model of Baranyi and Roberts (2) was used based on the procedure used by Baranyi et al. (3). As in the case of the latter study, it was assumed that during exponential growth in a dynamic temperature environment, the specific growth rate defined by temperature is adopted instantaneously" Takeaway message is that response time of spoilage bacteria is very very small.
+#Initial remark on dyanamic temperature conditions is that the data seems to suggest a positive history effect in which although the temperature drops the growth rate doesn't-need to double check this without raw data it's very hard to make this conclusion
+#For two of the temperature scenarios studied T1&T4 eg. Figures 6&9 the model developed in this paper seems to work well.  However in the other two scenarios there seem to be some problems arises from the overcompenstaion of the model.
+#I think the takeaway message of this paper is that the response time of the spoilge bacteria is very small and so over a 6 hour period it would be very good, having already calculated the Ea of our system, to determine the response time of our system.
+#The story of such an experiment would have to follow either T1/T4 as much as possible because those are the experiements I'm taking the reponse time of spoilage bacteria from
+#T1 : 24hrs at 0C then 24hrs at 10C        T4 : 18hrs at 5 degrees , 6hrs at 20degrees.

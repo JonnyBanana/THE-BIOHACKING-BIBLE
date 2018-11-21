@@ -1,0 +1,92 @@
+__NOTOC__
+==Engineering a synthetic molecular oscillator based on the Lotka-Volterra dynamic.==
+'''Author(s): '''[[IGEM:IMPERIAL/2006|I. CoLi Team 2006]] - Christin Sander, Farah Vohra, John Chattaway, Tom Hinson, John Sy, Jiongjun Bai, Jonathan Wells, Deepti Aswani, Vincent Rouilly, Chueh-Loo Poh, Matthieu Bultelle, Kirsten Jensen, David Mann, Paul Freemont, Richard Kitney. <br>
+'''Affiliations:''' Imperial College London, UK<br>
+'''Contact:'''email: r.kitney(_at_)imperial.ac.uk <br>
+'''Keywords:''' 'Biological Oscillator' 'Lotka Volterra' 'iGEM 2006' 
+
+[[Category:BioSysBio Keywords iGEM]] 
+[[Category:BioSysBio Keywords Synthetic Biology]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+=Abstract=
+
+
+==Background==
+Oscillators are a fundamental building block in many engineering fields, as they provide the basis for counting, timing and synchronisation. Oscillators are found in many everyday devices such as clocks, computers or radios. Similarly, oscillations are an essential part of biological systems - providing the basis for, for example, rhythmic patterns and regulatory networks. The ability to build a stable, controllable biological oscillator would be a major step towards reliable synthetic biology based circuits.
+Elowitz et. al. were part of the first ones to try to build an oscillator. Their oscillator was based on genetic network at the single cell level. However, due to the stochastic behaviour inherent at the gene expression level, the oscillations were not stable or persistent([http://www.openwetware.org/wiki/IGEM:IMPERIAL/2006/Bibliography_%26_Papers#Oscillators refs.]). In this paper, we present an original oscillator design produced during the iGEM-2006 competition at Imperial College. The project addressed stability and reliability issues by defining an oscillator at the population level and by applying strict engineering rules to the system development process.
+
+
+
+==Methods==
+[[Image:iGEM_IMPERIAL_Methodology.png|thumb|right|150px|Fig. 1: Illustration of the Methodology]]
+This iGEM project combined genetic engineering methods with a clearly defined development cycle, copied from the traditional engineering approach - a cycle of specification, [http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/Design design], [http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/Modelling modelling], [http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/parts testing] and [http://www.openwetware.org/wiki/IGEM:IMPERIAL/2006/Ligation_Page implementation] - with biological processes to produce a synthetic biological oscillator.<br>
+
+The overall specification aim was to build a biological oscillator in E.Coli based on the Lotka-Volterra population dynamics. This approach was used to design a synthetic quorum sensing & quenching mechanism, made of BioBricks ([http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/Design design page]). In order to satisfy the requirements for the Lotka-Volterra predator-prey dynamics BioBricks were constructed to show properties such as exponential growth of a prey molecule (Acyl Homoserine Lactone) ([http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/Parts parts page]). 
+In order to reduce the complexity of the overall assembly, test constructs were built to characterise the different system components. Because the design comprises BioBricks in a two population system, the parameters of the oscillations can be controlled to achieve synchronised oscillations. Furthermore, since the system uses population wide oscillations, it enables other devices to synchronise the oscillator. 
+
+It is important to determine the component properties and their impact on the overall system. Hence, the modelling of the pure and modified Lotka-Volterra dynamics, along with the test constructs, were carried out. Because BioBricks were used in the design, the implementation was carried out with standard [http://www.openwetware.org/wiki/IGEM:IMPERIAL/2006/Ligation_Page assembly]. At the testing stage, the test constructs were characterised ([http://openwetware.org/wiki/IGEM:IMPERIAL/2006/Protocols protocols page]). Consequently, the properties and constraints on the full system could be extracted. (See a summary of the method below.)
+
+
+==Results==
+BioBricks composing the test constructs and the final oscillator were engineered and a number of important results were extracted from the modelling and testing stages: i) The test constructs/BioBricks representing the different parts of the oscillator were characterised from testing in E.Coli (DH5α) ([http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/parts testing page]). ii) The model of the test constructs, which included experimental data, predicted stable oscillations as output of the full system ([http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/Modelling modelling pages]). iii) The influence of specific system parameters on the frequency, amplitude and stability of the oscillations was investigated with the Lotka-Volterra model ([http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/Modelling/LV LV model]). 
+
+
+==Conclusion==
+In the project, fundamental units of the system were fabricated and characterised. These have been added to the Registry of Standard Biological Parts ([http://openwetware.org/wiki/IGEM:IMPERIAL/2006/Contributions Contributions page]). The modelling exercise was highly successful and we fully expect to complete a stable synthetic biology based oscillator to be completed in the near future. 
+
+
+
+For full details visit our openwetware project site ([http://openwetware.org/wiki/IGEM:IMPERIAL/2006 OWW]).
+
+
+
+==A Summary of Our Methods==
+{| border="1" cellpadding="5" cellspacing="0" align="left" style="width:100%"
+|-
+| colspan="2" style="background:#efefef;" | '''SPECIFICATIONS'''
+|-
+| [[Image:Designdocfig4.png|thumb|200px|center|Fig. 2: Biological oscillator]]
+|  
+* Deliver a stable biological oscillator.
+* Measurable output.
+* Frequency and amplitude tunable.
+* Produce documentation at each step for quality control and traceability purposes.
+|-
+| colspan="2" style="background:#efefef;" | '''DESIGN'''
+|-
+| [[Image:PreyPredatorCellsmall.PNG|thumb|200px|center|Fig. 3: Design showing the two-population system and the BioBricks within each cell]]
+|  
+* Based on Lotka-Volterra dynamic.
+* Use of Quorum sensing-quenching BioBricks from MIT Registry.
+* Population wide oscillations of AHL.
+* Two cell population system defined to be able to tune frequency and amplitude.
+* Definition of test constructs to break down complexity and to allow fine characterization.
+|-
+| colspan="2" style="background:#efefef;" | '''MODELLING'''
+|-
+| [[Image:FullSystemModel.PNG|thumb|200px|center|Fig. 4: Full system model in cell designer and its output, showing oscillations]]
+|  
+* Test construct modelling.
+* Investigation of the Lotka-Volterra dynamic.
+* Full system modelling.
+|-
+| colspan="2" style="background:#efefef;" | '''IMPLEMENTATION'''
+|-
+| [[Image:Ligation chart 10 aug.JPG|thumb|160px|center|Fig. 5: Overview of the ligations]]
+|  
+* Based on BioBricks.
+* Use of the Standard Assembly.
+* Quality control procedure based on sequencing.
+|-
+| colspan="2" style="background:#efefef;" | '''TESTING-VALIDATION'''
+|-
+| [[Image:J37016graph2.PNG|thumb|200px|center|Fig. 6: Representative testing result for one of the testing constructs]]
+|  
+* Definition of testing protocols to satisfy specifications.
+* Characterisation of the different test construts.
+* Characterisation of the two-cell population oscillator
+|}
+
+<br>

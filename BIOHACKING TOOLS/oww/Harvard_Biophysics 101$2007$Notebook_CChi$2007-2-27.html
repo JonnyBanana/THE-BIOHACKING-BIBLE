@@ -1,0 +1,166 @@
+== Assignments due 2/20 and 2/27 ==
+
+This script compares an input sequences to a reference sequence and reports:
+
+'''ORFs'''
+* gives start and end index in terms of reference sequence
+* does not give nested ORFs
+'''Deletions and Insertions'''
+* index and nucleotide of deletion or insertion
+* whether deletion or insertion caused a frameshift
+'''Mutations'''
+* index and nucleotide of mutation
+* amino acids involved
+* whether mutation was silent or not
+
+
+Problems I ran into (and how I may have attempted to solve them):
+* insertions make the reference sequence different in the .aln output.  This causes trouble when comparing pretty much any codon back to the reference, so I had to create a separate, running consensus sequence to reference.
+* I did not like the idea of a nested ORF, so I didn't use them.
+* indexes given for deletions, insertions, and mutations represent the index of the input sequence, not the representative index from the reference sequence.
+* have not yet addressed the specifics of the amino acid changes (hydro philic/phobic, etc.)
+
+
+===Code===
+
+<pre>
+#!/usr/bin/env python
+
+import os
+from Bio import Clustalw, GenBank, Seq
+from Bio.Align import AlignInfo
+from sets import Set
+from Bio.Seq import Seq,translate
+
+cline = Clustalw.MultipleAlignCL(os.path.join(os.curdir, 'Apoe2.fasta'))
+cline.set_output('test.aln') 
+alignment = Clustalw.do_alignment(cline)
+
+deletions = []  # list of deletion indices
+insertions = [] # list of insertion indices
+mutations = []  # list of mutation indices
+mutcodon = ''   # temp codon with mutation of interest
+mutconsAA = []  # consensus amino acid where mutation of interest occurred
+mutAA = []      # amino acid after mutation
+ORFstarts = []  # list of ORF start sites
+ORFends = []    # list of ORF end sites
+ORF = 0         # boolean for whether we are currently in an ORF
+mut = 0         # boolean for whether the current codon contains a mutation
+codon = ''      # temp codon variable
+consensus = []  # consensus sequence without the pain of insertion '-'s
+nucwithindex = []# nested list within consensus list [index, nucleotide]
+
+for i in range(alignment.get_alignment_length()):
+    col = alignment.get_column(i)
+    s = Set() # create a new set
+    for c in range(len(col)):
+        s.add(col[c]) # add each column element to the set
+    if col[0] != '-': # add to consensus whenever there's no insertion
+        nucwithindex = [i, col[0]]
+        consensus.append(nucwithindex) 
+    if len(s) > 1: # multiple elements in s indicate a mismatch
+        if col[1] == '-': # deletions
+            deletions.append(i)
+        else:
+            if col[0] == '-': # insertions
+                insertions.append(i)
+            else: # mutations
+                mutations.append(i)
+                if ORF == 1 and mut != 1:
+                # if there are 2 mutations in one codon, we only need to consider 1 codon unit
+                    mut = 1
+                else:
+                # append dummy '-' to amino acids to avoid later confusion with indices
+                    mutAA.append('-')
+                    mutconsAA.append('-')
+        
+    # When not in ORF, we scan triplets for ATG, when in ORF, we look at codons
+    if ORF == 0 and i>1 and col[0] != '-': # look for ORF's
+        # attempt to look beyond insertions at the consensus
+        if len(consensus) >=2:
+            codon = consensus[len(consensus)-3][1] + consensus[len(consensus)-2][1] + col[0]
+        if codon=='ATG':
+            ORFstarts.append(consensus[len(consensus)-3][0])
+            ORF = 1
+            codon = ''
+            print "ORF start", consensus[len(consensus)-3][0]
+    else: # ORF's
+        if len(codon) != 3:
+            if col[0] != '-':
+                codon = codon + col[0]        
+        else:
+            if mut == 1: # add consensus and mutated amino acids to list
+                mutcodon = alignment.get_column(i-1)[1] + alignment.get_column(i-2)[1] + alignment.get_column(i-1)[1]
+                mutAA.append(translate(mutcodon))
+                mutconsAA.append(translate(codon))
+                mut = 0
+            if codon=='TAG' or codon=='TGA' or codon=='TAA': # end ORF
+                ORFends.append(consensus[len(consensus)-3][0])
+                ORF = 0
+                print "ORF end", consensus[len(consensus)-3][0]
+            codon = ''
+    
+inORF = 0 # boolean for whether it's in ORF to help with printing
+
+print "\nDELETIONS"
+for i in range(len(deletions)):
+    col = alignment.get_column(deletions[i])
+    for j in range(len(ORFends)): # check whether the deletion was in an ORF
+        if deletions[i] <= ORFends[j] and deletions[i] >= ORFstarts[j]:
+            print "Index: ", deletions[i], col[0], "Frameshift!"
+            inORF = 1
+    if inORF == 0:
+        print "Index: ", deletions[i], col[0], "deletion in intron"
+    inORF = 0
+
+print "\nINSERTIONS"
+for i in range(len(insertions)):
+    col = alignment.get_column(insertions[i])
+    for j in range(len(ORFends)): # check whether the insertion was in an ORF
+        if insertions[i] <= ORFends[j] and insertions[i] >= ORFstarts[j]:
+            print "Index: ", insertions[i], col[1], "Frameshift!"
+            inORF = 1
+    if inORF == 0:
+        print "Index: ", insertions[i], col[1], "insertion in intron"
+    inORF = 0
+    
+print "\nMUTATIONS"
+for i in range(len(mutations)):
+    col = alignment.get_column(mutations[i])
+    if mutAA[i] == '-':
+        print "Index: ", mutations[i], col[0], "to", col[1]
+    else:
+        if mutAA[i] == mutconsAA[i]: # check whether mutation was silent
+            print "Index: ", mutations[i], col[0], "to", col[1], "silent mutation, amino acid remains", mutAA[i]
+        else:
+            print "Index: ", mutations[i], col[0], "to", col[1], "changed amino acid", mutconsAA[i], "to", mutAA[i]
+</pre>
+
+===Output===
+
+<pre>
+ORF start 61
+ORF end 1014
+ORF start 1034
+
+DELETIONS
+Index:  17 A deletion in intron
+Index:  236 A Frameshift!
+Index:  1108 C deletion in intron
+
+INSERTIONS
+Index:  34 T insertion in intron
+Index:  380 G Frameshift!
+Index:  1093 A insertion in intron
+
+MUTATIONS
+Index:  534 A to C
+Index:  535 C to A changed amino acid H to T
+Index:  537 T to C
+Index:  538 G to T changed amino acid C to L
+Index:  549 G to A changed amino acid V to I
+Index:  660 G to A changed amino acid W to G
+Index:  797 C to T silent mutation, amino acid remains R
+Index:  804 A to C changed amino acid W to G
+Index:  1077 T to A changed amino acid C to R
+</pre>

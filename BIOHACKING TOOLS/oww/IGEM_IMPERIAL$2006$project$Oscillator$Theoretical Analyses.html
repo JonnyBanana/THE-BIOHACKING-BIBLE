@@ -1,0 +1,57 @@
+{{Template:IGEM:IMPERIAL/2006/project/Oscillator/Theoretical Analysis}}
+<br><br>
+<font size="6"><center>'''Welcome to the Analysis Page '''</center></font size="6">
+<br><br><br>
+
+=='''Introduction'''==
+:*The present part of the i-coli Reporter deals with the analysis of a complex 3 dimensional dynamical system that model the dynamic of the Molecular Predation System
+:* Since the analysis was long and complex, we have split its results in different sections that are accessible with the blue tabs above.
+:* These different sections present the logical progression in our analysis
+:* We suggest you browse them in the order shown above
+:* We hope you enjoy your reading 
+
+ 
+=='''Presentation of our Dynamical System'''==
+
+:*The molecular predator-prey system has been modelled by the following 3D Dynamical System <br>
+
+[[Image:biological model.png|center]]
+<br>
+:* As is often the case in Mathematics, we renamed the parameters in order to make the system more symmetric and easier to interprete. We formalised the dynamical system  as follows
+<center><font size="3">'''Formalised Model''' </font size="3">[[Image:3Dmodel.png]]</center>
+<br><br>
+
+== '''How to read the model (the basics)'''==
+:*The variables U,V and W respectively stand for the concentrations of AHL, aiiA and LuxR.
+:*The time derivatives of U,V  and W stand for their growth rates. 
+:*Their bounded growth terms is due to gene expression.
+:*Degradation of the prey (AHL) is partly due to an enzymatic reaction 
+:*Finally The model comprises dissipative terms of the model (eU,d1V,d2W) due to the washout in the chemostat.
+:* '''Different types of parameters'''
+::- ao,bo and co are assumed constant (that is '''without our control''') 
+::- The washout parameters (d1,d2 and e) are assumed '''within our control'''. However, experimental contraints prevent them from getting very small or very large
+::- a, b and c are '''within our control'''. Out of design (2 cell system) they vary accordingly to the concentrations of cells.
+    
+<br>
+[[Image:block diagram.jpg|thumb|600px|center|the block diagram for the 3D model]]
+<br><br>
+
+=='''General Remarks on the Model of Interest'''==
+
+:*In the analysis part we only deal with the model presented above. 
+:*We do not consider its possible (and natural) extensions with an exponent in the model and with leakage terms. 
+:*From an experimental point of view, restricting our analysis makes sense. We have built test constructs to measure the growth of AHL, aiiA and LuxR as well as the degradation of AHL by aiiA. Our experimental results generally showed that our model was valid. 
+:*However, we are very aware of the pitfalls of limiting our analysis, but due to the time constrain, we will not tackle them this year.
+
+<html>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1999441; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="18996820"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c19.statcounter.com/counter.php?sc_project=1999441&amp;java=0&amp;security=18996820&amp;invisible=1" alt="website statistics" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</html>

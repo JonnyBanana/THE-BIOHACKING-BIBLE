@@ -1,0 +1,171 @@
+<font color="red">NOTE: This wiki page is a draft of a research manuscript being prepared for submission to a peer reviewed journal.  Unless you are one of the authors listsed below, please do not edit this page or construe the work here as publication of peer-reviewed research. </font> [[User:Endy|Endy]] 15:10, 24 March 2006 (EST)
+
+===Title===
+Characterization of BBa_F2620, an engineered cell-cell communication receiver device
+
+===Authors===
+Anna Labno[1], Barry Canton[2], Drew Endy[2]<br>
+1. MIT Biology & Physics<br>
+2. MIT Biological Engineering<br>
+
+===Abstract (3 sentences, 70 words)===
+The capacity to quickly and reliably engineer many-component systems from libraries of standard interchangeable parts is one hallmark of modern technologies.  Standard descriptions for the performance and operation of biological parts are needed to evaluate if the engineering of biology would benefit from the development of such a capacity.  Here, we use a generic framework for describing the performance and operation of genetic devices to develop an initial description of BBa_F2620, an engineered cell-cell communication receiver device.
+
+===Body===
+====Para 1====
+The design and construction of new, useful biological systems is currently best described as an ad hoc research process for which costs, times to completion, and probabilities of success are difficult to estimate [Endy, 2005].  While many useful biotechnology applications have been invented and deployed, the scope and scale of imaginable applications remains well beyond our current abilities [Dyson; Rucker].  One simple, foundational technology that might improve the process of engineering biological systems is a framework that supports unfettered access to structured information describing the function, performance and operation of standard biological parts.  Such a framework would enable the engineering and testing of many-component systems and allow progress on foundational research questions such as if and how to best enable reliable functional composition from libraries of parts.  Here, we develop a general framework for describing the operation and performance of genetic devices, design and build an exemplar genetic device, and apply our framework to describe the behavior of the device, resulting in a "datasheet" that summarizes the device and its operation (Figure 1).
+
+===Para 2===
+A prerequisite for describing any device is to specify the inputs and outputs of the device.  The first essential device characteristic is the transfer function, which describes the dependence of the device outputs on device inputs.  A second device characteristic is the expected variation in the transfer function in different members of a genetically identical population.  All engineering devices exhibit latency, which can be defined as the lag time between a change in the device inputs and the subsequent change in device outputs.  Fourthly, device performance can change over time, implying a change in the device transfer function.  This property can be described by a stability characteristic which measures the length of time the device can be operated with a given input without the output of the device changing.  Finally, certain classes of devices, such as our exemplar device, can respond to input signals other than the intended device input in which case it is necessary to measure the response of the device to each of these input signals.
+
+====What is our solution to the problem====
+ 
+
+
+We apply this framework to characterize and describe the performance of BBa_F2620, a cell-cell signall
+
+
+We describe a set of characteristics that specify the performance of a simple biological device.  Furthermore, we have measured these characteristics for a cell-cell signaling reciever device, F2620. A fluorescent reporter device was used to measure the output of the receiver device.  by applying a similar approach to other devices, a library of well-characterized and composable devices could be generated.
+
+SCRAP
+
+We engineered and systematically characterized a cell-cell communication device, BBa_F2620 by measuring the transfer function (including switch point, latency, and variation), the input signal specificity, and the device stability.
+
+====Background on F2620====
+Cell-cell communication allows individual cells to coordinate their behavior with the rest
+of the population and as such is a powerful technology for engineering complex biological
+systems. F2620 is a receiver device that responds to the concentration of a small signaling
+molecule (an acyl-homoserine lactone or AHL molecule) in the extracellular media by
+modulating the transcription rate from a promoter. Hence, we define the input to the
+device to be extracellular concentration of AHL and the output to be transcription rate.
+The device is based on elements of the quorum sensing system of Vibrio fischeri. The
+quorum sensing system includes an enzyme, LuxI, that synthesizes an AHL molecule (N-(Bketocaproyl)
+homoserine Lactone). LuxR is a transcriptional activator protein that is active
+when bound to AHL. When active, it binds to the Lux box and recruits RNA polymerase to
+the operator region [5-8]. F2620 consist of six standard parts (Figure 1). A tet repressible
+promoter (R0040), followed by ribosome binding site (B0034), drives production of LuxR
+from the luxR coding region (C0062). Transcription from TetR promoter is terminated by
+two transcription terminators (B0010, B0012) to ensure 100% termination. The sixth part
+is a LuxpR promoter (R0062) that contains a LuxR binding site. This promoter is the right4
+most part of the V. fischeri Lux operator. To measure the output from F2620 we connected
+a GFP reporter device E0240 downstream of F2620 (not shown on Fig. 1).
+
+====Choice of relevant device characteristics; Choice of methods for characterization;==== 
+The transfer function relating device input to output is the primary characteristic for any
+device. For the receiver device, we measured the input by adding a known concentration
+of AHL to the culture media. We measured the output by calculating the rate of GFP
+accumulation per optical density (OD). We derived certain parameters that capture the
+key characteristics of the transfer curve - Hi/Lo input and output values, switch point,
+performance variability between genetically identical clones, input signal specificity, latency,
+and device stability (genetic and performance). The GFP reporter device was chosen because
+it allowed reliable, high time-resolution measurements to be made via multiwell fluorimetry
+and flow cytometry.
+
+====Brief narrative on experimental work; Comments on specific experimental results;====
+The maximum output level, Hi value, was determined to be 247 GFPs−1/OD ± 23% and
+was observed above an input of 10E-7M AHL. The device was considered to be off (Lo value)
+when GFP accumulation rate was below 5% of the maximum output, which occurred below
+10E-10M AHL. The switch point for the device, the input concentration at which output is
+at 50% of the maximum, is 10E-9M AHL.
+We measured the performance variation between genetically identical colonies taken from
+long-term storage using multiwell fluorimetry. The average performance of cultures grown
+from 6 colonies is 312 GFPs−1/OD. The coefficient of variation in the Hi value among the
+6 colonies is 8.3% and is evenly distributed above and below the mean. Other tested AHL
+concentrations above the switch point show a coefficient of variation below 25% (see Fig.
+1).
+
+We sought to quantify the ability of the device to distinguish between its cognate inducer
+AHL (N-(-Ketocaproyl)-DL-homoserine lactone) and a range of chemically similar
+inducers with varying length side chain (N-Hexanoyl-DL-homoserine lactone, N-Butyryl-
+DL-homoserine lactone, N-Heptanoyl-DL-homoserine lactoneN-Octanoyl-DL-homoserine
+lactoneN-Decanoyl-DL-homoserine lactone , N-Dodecanoyl-DL-homoserine lactone , NTetradecanoyl-
+DL-homoserine lactone ). Fig. 1 shows transfer curves obtained using the
+different AHL molecules as inputs. The maximal output of the device (Hi level) shows strong dependence on the specific inducer. The cognate AHL produces the highest output level of
+261 GFPs−1/OD. A similar inducer lacking a carbonyl group and having chain length intact
+or extended to 7, 8 or 10 carbon atoms shows response decreased by less than 16% of cognate
+response at the highest tested AHL concentration (1E-5M). When the AHL molecules
+have their side chains extended further to 12 or 14 carbon atoms or shortened to 4 carbon
+atoms, activation is visible, but its maximum level is less than 18% of the cognate inducer at
+maximum output. It can be seen that the switch point for each of AHL variants is constant
+at 10E-9M.
+
+Latency is defined as the time delay between the change in input concentration and the
+output level reaching 95% of its final value. These values were obtained by measuring the
+rate of GFP accumulation per second per OD at a high induction level in one minute intervals
+using multiwell fluorimeter until a constant accumulation rate characteristic for steady state
+receiver operation was obtained (data not shown). The rate reaches Hi value defined as
+95% of a steady state plateau of 215 GFPs−1/OD after 7min. Subsequently, transcription
+was stopped using Rifampicin and the output of the device decreased to reach a Lo value
+(defined as 5% of steady state level) after 86 min. This implies off/on latency of 7min and
+on/off latency of 86 min for the receiver-reporter construct.
+
+Device stability was investigated under different operating conditions by propagating the
+culture through 92 doublings over the course of 5 days to asses how fast evolutionary pressure
+will induce mutations in the device in order to relief additional load imposed by GFP
+production. Performance under low input conditions, assayed using multi well fluorimetry,
+shows slight variations in GFP accumulation rate over the course of the experiment (coef-
+ficient of variation being 12%). The performance of the device working under high input
+conditions shows similar variations during first three days of the experiment; however, in the
+fourth day, after 74 doublings, the high output level dropped to approximately 1% of the
+original level and on the fifth day the high output had fallen further to less than 0.9% (data
+not shown). In order to gain more insight into the mechanism of failure, single-cell performance
+was investigated using flow cytometry and showed that the population of cells split
+on day 4 after 74 doublings into two groups: a more populous one, which was not-activated
+(82%) and a less populated one (18%), which still retained fluorescence (Figure 1, bottom).
+On the last day only a few visibly fluorescent cells remained. The DNA sequence of the
+receiver and reporter device remained unchanged over the course of the experiment when
+6
+the device was operated with low input. This suggests the evolutionary stability of composed
+receiver-reporter device to be around 74 doublings and the receiver device alone to be
+over 92 doublings. When operated with a high input, approximately 82% of cells acquired a
+mutation in the receiver sequence that completely prevented GFP production. This is due
+to a mutation leading to complete removal of the GFP reporter device. This mutation is
+most likely due to recombination between homologues transcription terminator regions of
+the receiver and reporter device. Experiments to validate this hypothesis are pending.
+
+====Comments on specific experimental results====
+
+[likely given one page article, we should embed discussion points with results directly]
+
+====All this information is in the RoSBP (expand a bit)==== 
+====Significance and Future directions====
+
+This work presents the first attempt to comprehensively characterize a standard biological
+part, which has a multi-fold importance. In the process of characterizing BB F2620 we laid
+the foundations of an engineering methodology for the future characterization of biological
+parts and populated a first-generation datasheet that describes the use and operation of
+BB F2620.
+
+===References===
+[1] Registry of Standard Biological Parts (parts.mit.edu).
+
+[2] Garcia-Ojalvo, J., Elowitz, M. B., Strogatz, S. H., “Modeling a synthetic multicellular clock:
+Repressilators coupled by quorum sensing.” Proc. Natl. Acad. Sci. 101 (30), p. 10955 - 10960,
+(2004 Jul 27).
+
+[3] Levskaya, A., et al., “Engineering Escherichia coli to see light.”
+
+[4] Subhayu Basu, et al., “A synthetic multicellular system for programmed pattern formation.”
+
+[5] Bassler, B., “How bacteria talk to each other: Regulation of gene expression by quorum sensing.”
+Current Opinion in Microbiology, 2 (6), p. 58 - 587, (1999).
+
+[6] Nealson, K., “Cell-Cell Signaling in Bacteria, chapter Early Observations Defining Quorum-
+Dependent Gene Expression.” American Society for Microbiology, Washington, D.C., (1999).
+
+[7] Nilsson, P., Olofsson, A., Fagerlind, M., Fagerstrom, T., Rice, S., Kjelleberg, S., Steinberg,
+P., “Kinetics of the AHL regulatory system in a model biofilm system: How many bacteria
+constitute a quorum?” Journal of Molecular Biology, (309), p. 631 - 640, 2001.
+
+[8] James, J., Nilsson, P., James, G., Kjelleberg, S., Fagerstrom, T., “Luminescence control in
+marine bacterium Vibrio Fisheri: An analysis of the dynamics of lux regulation.” Journal of
+Molecular Biology, (296), p. 1127 - 1137, (1999).
+
+[9] Engebrecht, J., Nealson, K., Silverman, M., “Bacterial bioluminescence: isolation and genetic
+analysis of functions from Vibrio Fischeri.” Cell, (32), p. 773 - 781, (1983).
+
+===Datasheet===
+
+
+===SupMat===
+(note, we can develop this stuff here but everything should end up on the RoSBP)

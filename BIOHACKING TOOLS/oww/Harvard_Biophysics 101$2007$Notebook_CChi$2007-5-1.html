@@ -1,0 +1,64 @@
+==Goals==
+*Write working script for rs# to PubMed to Mesh Terms
+**Rs to PubMed done last week
+**Modify Resmi's code for the OMIM->Pubmed reviews->PMID->MeshTerms for this pathway
+**Look into the error Resmi got and how to fix 
+*Document for Katie 
+
+==Progress==
+'''Mesh Terms'''
+*Resmi had been working on parsing the XML of PubMed output for mesh terms [[Harvard:Biophysics_101/2007/Notebook:Resmi_Charalel/2007-5-1|here]]
+**The error doesn't look fun, and I couldn't fix it
+**But...
+*With some poking around online, I think we may have overcomplicated this.  Just as we were using the title, source, ... attributes of the object returned from PubMed, we can use the mesh_headings object to get (surprise, surprise) mesh headings/terms.
+*So, I added to the code I had from last week, and now my program takes the rs#, outputs the top 5 article hits in PubMed (no omim, not reviews), and returns (and prints) a list of all of the (published) mesh terms associated with these articles, including duplicates.
+*This will be incorporated into the OMIM->PubMed Reviews->Mesh Terms on Resmi's page
+
+'''Code'''
+*Input: rs# (from BlastSNP)
+*Output: list of mesh terms (Mesh_Terms)
+**prints: top 5 PubMed hits from rs# search
+**prints: the actual list of mesh terms
+
+'''Script'''
+<pre>
+from Bio import PubMed
+from Bio import Medline
+import string
+
+article_ids = PubMed.search_for("rs11200638")
+
+rec_parser = Medline.RecordParser()
+medline_dict = PubMed.Dictionary(parser = rec_parser)
+
+count = 1
+mesh_terms = []
+for did in article_ids[0:5]:
+    cur_record = medline_dict[did]
+    print '\n', count, ')  ', cur_record.title, cur_record.authors, cur_record.source
+    mesh_headings = cur_record.mesh_headings
+    for i in range(len(mesh_headings)):
+        mesh_terms.append(mesh_headings[i])
+    count=count+1
+
+print '\n', "Mesh Terms:", '\n', mesh_terms
+</pre>
+
+'''Output (for macular degeneration again, of course)'''
+<pre>
+1 )   HTRA1 promoter polymorphism predisposes Japanese to age-related macular
+degeneration. ['Yoshida T', 'DeWan A', 'Zhang H', 'Sakamoto R', 'Okamoto H', 'Minami M', 'Obazawa M', 'Mizota A', 'Tanaka M', 'Saito Y', 'Takagi I', 'Hoh J', 'Iwata T'] Mol Vis. 2007 Apr 4;13:545-8.
+
+2 )   HTRA1 Variant Confers Similar Risks to Geographic Atrophy and Neovascular
+Age-related Macular Degeneration. ['Cameron DJ', 'Yang Z', 'Gibbs D', 'Chen H', 'Kaminoh Y', 'Jorgensen A', 'Zeng J', 'Luo L', 'Brinton E', 'Brinton G', 'Brand JM', 'Bernstein PS', 'Zabriskie NA', 'Tang S', 'Constantine R', 'Tong Z', 'Zhang K'] Cell Cycle. 2007 May 16;6(9).
+
+3 )   A variant of the HTRA1 gene increases susceptibility to age-related
+macular degeneration. ['Yang Z', 'Camp NJ', 'Sun H', 'Tong Z', 'Gibbs D', 'Cameron DJ', 'Chen H', 'Zhao Y', 'Pearson E', 'Li X', 'Chien J', 'Dewan A', 'Harmon J', 'Bernstein PS', 'Shridhar V', 'Zabriskie NA', 'Hoh J', 'Howes K', 'Zhang K'] Science. 2006 Nov 10;314(5801):992-3. Epub 2006 Oct 19.
+
+Mesh Terms: 
+['Aged', 'Aging', 'Alleles', 'Case-Control Studies', 'Chromosomes, Human, Pair 10/genetics', 'Cohort Studies', 'European Continental Ancestry Group/genetics', 'Female', '*Genetic Predisposition to Disease', 'Genotype', 'Homozygote', 'Humans', 'Lymphocytes/enzymology', 'Macular Degeneration/*genetics', 'Male', 'Middle Aged', 'Pigment Epithelium of Eye/enzymology', '*Polymorphism, Single Nucleotide', '*Promoter Regions (Genetics)', 'RNA, Messenger/genetics/metabolism', 'Retinal Drusen/metabolism', 'Reverse Transcriptase Polymerase Chain Reaction', 'Serine Endopeptidases/analysis/*genetics/metabolism']
+</pre>
+
+==Questions, Concerns==
+*Is this the format of output that we want, a list?
+*Some mesh terms come with qualifiers, like 'Lymphocytes/enzymology,' so take note when using

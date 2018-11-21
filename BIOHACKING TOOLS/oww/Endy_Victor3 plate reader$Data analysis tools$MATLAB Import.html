@@ -1,0 +1,9 @@
+'''View''' [http://openwetware.org/images/6/61/Platereaderread.m '''MATLAB Import''']
+
+==Usage==
+This code reads a results text file that is output by the Victor 3 plate reader.  It expects that there are only two labels    being measured, the first of which is absorbance, the second is fluorescence. the start of the text file should look like  this- 
+ Plate	Repeat	Well	Type	Time        OD600 (A)	Time            GFP-separated (Counts)
+ 1      1       F01     M	00:00:26.27     0.076       00:00:51.68     977
+ 1      1       F02     M	00:00:26.59     0.069       00:00:52.04     914
+
+There is extra data at the bottom of the results text file but once the format is no longer as that shown above, this code will stop reading.

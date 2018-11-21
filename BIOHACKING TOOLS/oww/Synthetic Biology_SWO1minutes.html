@@ -1,0 +1,55 @@
+Held on Tuesday (9/20/05) at 3pm, room 68-674
+==Participants==
+*[[User:Ilya|IS]]
+*[[User:Jasonk|JK]]
+*[[Sriram Kosuri|SK]]
+*[[Reshma Shetty|RS]]
+*[[User:Randy|Randy Rettberg]]
+==Agenda==
+*[[BioBricks_abstraction_hierarchy | BioBricks abstraction hierarchy]]
+*List of questions that the Registry should be able to handle (use cases)
+==Notes==
+''Revised and extended Ilya's notes.  Feel free to add/edit further.'' --[[User:Rshetty|Reshma]] 14:45, 23 Sep 2005 (EDT)
+
+One of the lessons I took away from the first meeting is that there is not a one-size-fits-all ontology that we can use for the registry.  Depending on your perspective or what your goal is, there are different pieces of information that you care about and more importantly likely a different way of organizing the information.  For instance, if you are fabricating a system, then you likely care about basic parts and composite parts.  If I am assembling something then I would like to know what parts of my systems have already been assembled previously so that I can take advantage of those.  Now if instead I am a system designer, then I might care about getting the list of devices that meet certain performance characteristics.  I don't necessarily care whether these devices are made up of basic parts or composite parts.  If instead you are the person in charge of the Registry inventory, then you don't care just about part BBa_B0015, but rather every physical copy of BBa_B0015 and where it is located.  Thus, for each particular application, there is likely a slightly different hierarchy that makes it easy to ask your particular question of interest.  So for the registry semantic web ontology, we don't envision a single hierarchy but rather multiple parallel hierarchies each of which might be tailored for a different application space.  
+
+Inevitably, we won't be able to predict every possible thing that someone will want to do with the registry.  Therefore, the best we can do is try to design the semantic web ontology in such a way that it makes it as easy as possible for other people to use the information in our registry.  The example Randy presented is that someone develops a method for computing mRNA stability.  They go and crawl the registry and predict the stability of every mRNA in the registry and list it somewhere.  Later, we could crawl the web and notice that someone has all this new information that points to our parts and point from our parts to their data.  In order to facilitate situations like these, we want to make the mapping of new ontologies onto our existing ontology as easy as possible so that others can make use of our information and we can make use of theirs.  
+
+So how do the design decisions we make now affect the ease with which different ontologies can be mapped onto each other.  Well, you could imagine that you might run into problems if the lowest level of our ontology is not low enough.  For instance, if the lowest level (or most fundamental unit) of the registry ontology is a BioBrick part and its associated part number.  If someone later wanted to come along and create an inventory system, well then their job would be quite difficult because a single BioBrick part could have multiple physical instantiations.  There could be a copy in the Endy lab and one in the Knight lab and one at Caltech.  Thus, the group making the inventory system would have to figure out some way of mapping a single BioBrick part to multiple locations.  Perhaps this is doable.  But what happens if there is a mutation in the Knight lab copy of the part.  Do you associate that information with the BioBrick part or do you associate it with a particular location?  The answer that we came up with is that that information should be associated with a physical instance of a part.  That physical instance of a part has a property of a location and a particular sequence etc.
+
+Our conclusion from this example is that in order to make the mapping of one ontology onto another as easy as possible is that we need to make the lowest level of the registry ontology as fundamental and basic as possible.  Thus our plan of action was to develop a list of primitives or atomic classes between which we could define relationships and move from the bottom to the top.  
+
+'''Some of the parallel ontologies/hierarchies that might be useful are'''
+*Physical ontology 
+**Basic parts: piece of DNA, has a sequence associated with it
+**Composite parts: a series of basic parts and an assembly scheme
+*Design ontology
+**Parts: something with a particular molecular function
+**Devices: something that can be composed with other devices
+**Systems: something that can't be composed with other devices
+*Assembly standards
+**BioBricks standard assembly
+**BioBricks++
+**De novo synthesis
+*Performance standards
+**PoPS 1.0 standard (for instance)
+*Inventory
+
+'''Other related questions we had are ...'''
+*How many classes of standards can you imagine: assembly standards, performance standards, other?
+*Is a part restricted to one piece of DNA or can it span two?  Is it independent of the assembly scheme?  Probably yes.
+*A composite parts is defined not only by the list of basic parts but also the assembly method.  Are two composite parts the same if they contain the same basic parts?  Probably only if they were assembled under the same standard.
+*How should we define devices?
+*Is there a usefulness to the device-system distinction?
+
+'''Separate spaces or sets of hierarchies'''
+
+Physical (DNA sequence, assembly methods):
+ #BioBrick rdf:type rdfs:Class .
+ #Composite rdf:type #BioBrick .
+ #Basic rdf:type #BioBrick .
+ #Composite #contains #Basic .
+Design (performance characteristics):
+ #Parts rdf:type rdfs:Class .
+ #Devices rdf:type rdfs:Class .
+ #Systems rdf:type rdfs:Class .

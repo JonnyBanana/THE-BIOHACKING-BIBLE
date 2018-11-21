@@ -1,0 +1,32 @@
+'''Download''' [http://openwetware.org/images/6/62/PlateReader.xla '''Excel macro''']
+
+==Introduction==
+This  [[:image:PlateReader.xla | macro]] can be used to rearrange the results file from a [[Endy:Victor3 plate reader | plate reader]] experiment.  It only works on a mac.  A similar PC version can be obtained from [[User:Hkeller | Heather Keller]] or [[User:Jasonk | Jason Kelly]].  This macro creates a separate sheet for Absorbance and Fluorescence data.  It then gives each well its own column on each sheet and puts the time points in the first column.  It finally converts the time points to minutes format.  The original version of this code was written by [[Heather Keller | Heather]].  There are further enhancements that could be made to the macro so please feel free to contribute to the code.
+
+==Installation==
+#Download the macro linked to above
+#If necessary change the file extension to .xla (some browsers will add a .txt to the end of the file).
+#Optimally, save it in your Office directory in the applications folder.  If your office folder is call MSOffice, for example, save it here MSOffice/Office/Add-Ins
+#Open Excel, go to Tools>Add-Ins>Select.
+#Browse to and select PlateReader.xla.  Hit open.
+#Make sure the blue tick box beside PlateReader.xla is ticked.  Hit ok.
+#Go to Tools>Customize>Commands.
+#Under Categories, browse to macros.
+#You should see on smiley face button in the field on the right.
+#Click and drag this button up to one of your toolbars and release the mouse button.
+#Hit Ok.
+#Control-click on the smiley face and select "Assign macro".
+#Under Macro Name, enter "RAW_SORT" without the exclamation marks.
+#Hit Ok.
+#The macro should now be installed for use whenever you open Excel.
+#If you open Excel, try to use the macro and receive a message saying the macro can't be found, go to the Add-Ins window and tick the box beside PlateReader.xla, this has fixed problems in the past.
+
+==Usage==
+#Click on the tab of the worksheet with your data in it to make it the "active" sheet.
+#Hit the smiley face macro button
+#The macro will operate and may take several minutes to run depending on the size of the results file.
+#*Since the macro executes many copy and paste commands, you won't be able to perform copy and paste commands in other applications either.
+#*This highlights the need for orthogonality of sub-system function in a complex system.
+#Two sheets will be created  - Absorbance Data and Fluorescence data.
+#Each sheet will have time in the first column, converted into minutes.
+#Each well will get a column of its own on both sheets.

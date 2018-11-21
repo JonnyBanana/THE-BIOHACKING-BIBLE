@@ -1,0 +1,21 @@
+things to think about for checkup #2 !!
+
+#  Consider the carbon chain C1-C2-C3-C4 and the dihedral angle positioning C4.
+#*if C2-C3 is a single-bond, approximately how many (energetically reasonable) values would the dihedral take on?
+#*what if C2=C3 was a double bond?
+#*looking down the C2-C3 bond, you're looking in the x direction. y is up and z is to your right. When you're rotating about C2-C3, which coordinate of C4 remains constant?
+#  Improper dihedrals...
+#*why are CB's (the first sidechain atom) defined by an improper dihedral? name the atoms that you would use to define one
+#*why go through the trouble of defining improper dihedrals?  why not just use proper dihedrals everywhere? 
+# Consider the partial molecule -CRH2 (where R is not H).  what values do you expect the improper dihedral describing either H to take?   how about for =CRH?
+#Imagine that you're god (hard right?) and that you're flooding a landscape of hills and valleys.  the reason why you're doing this is to coax a fish into swimming into the lowest valley.  As the fish swims, you can adjust the floodwaters; how would you do so?  what does this have to do with the metropolis algorithm?  [hint: what does the water level represent?]
+#the code in hw9 pre-computes all pair-wise energies between rotamers at each residue.  why?  when is this not a good strategy?  can you think of a better strategy?
+#Consider a protein k residues long, and say each residue has n rotamers. Whenever a new rotamer is selected during optimization, how many pairwise energies need to be reconsidered? How does this compare to the number of pairwise energies needed to calculate the total energy? (What are some other ways we're saving computation in the latest codebase?)
+#When doing protein design, why don't we change several residues at once? Couldn't we cover more of the space this way?
+#consider a 2D vector V.  consider 2 sets of orthonormal reference frames: the first is defined by the vectors x1 and y1, the second is defined by the vectors x2 and y2.
+#*how could you use dot products and vector addition to describe V in either reference frame?  (assume V is given to you in reference frame 1.)
+#*if you were only given V (in reference frame 1) and x1, can you think of a way to define 2 more vectors, each perpendicular to each other and to x1?  can you do it without the dot product?
+#Cartman is impatient to get a Nintendo Wii (he heard the superior graphics are great for rendering proteins!). He decides to freeze himself so the future comes more quickly. Upon thawing, he asks his robot dog for directions to the New New Hampshire Museum. "Bark bark. Go 2 miles towards the otter clam fields, then turn left and go half a mile up the 30 degree slope. bark bark." But Cartman, being a tad impatient, steals a United Atheist League hovercraft so he can fly straight there. The otter clam fields are directly northEast from the UAL headquarters... so what vector (miles east, miles north, altitude) should he put into the hovercraft GPS ? (do with vector notation :)
+
+
+( if you have a organic chemistry set, could you bring it to recitation in the morning?)

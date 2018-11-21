@@ -1,0 +1,107 @@
+{{Koch_Lab}}
+<div style="padding: 10px; width: 720px; border: 5px solid #008;">
+This is the specific protocol for producing 4,411 base pair PCR fragments having a biotin label on the 5' end of one strand and a digoxigenin (dig) label on the 5' end of the other strand.
+
+==References==
+Credits:  Perfect match PCR recipe (below) developed by [[Richard C Yeh|Richard Yeh]].  Plasmid pRL574 from the [http://www.bact.wisc.edu/landick/ Landick Lab].  Primers probably designed by someone in the [http://www.stanford.edu/group/blocklab/ Block Lab] or Landick lab in the 1990s.
+References: Unsure of the first reference to use this technique.
+==Materials==
+===Primers===
+====Forward Primer====
+5'-dig-GTAAAACGACGGCCAGTGAATTC (The Koch Lab calls this "pRL574-F853-dig")
+* Should hybridize to the forward strand starting at basepair 853
+====Reverse Primer====
+5'-bio-GGAAACAGCTATGACCATGATTAC (The Koch Lab calls this "pRL574-R5263-bio")
+* Should hyrbridize to the reverse strand starting at basepair 5263
+====Control Primers====
+It is not too expensive to purchase non-labeled primers to use as controls in case the PCR reaction doesn't work.  Also sometimes it is convenient to perform PCR with only one label.
+====Primer Vendor====
+[[User:Skoch3|Steve]] endorses [http://www.alphadna.com/index.html Alpha DNA] for oligonucleotides.  There are many other vendors--it's a good idea to go with a recommendation for a good digoxigenin-labeled oligo vendor.  We have used 200 nanomol scale with OPC purification.
+====Alternative Primers====
+These particular primer sequences are probably not ideal but can work for this particular length.  An alternate forward primer is:
+:pRL574-F834: dig-TTTTCCCAGTCACGACGTTG (mfold melting temperature of 59.7 (50 mM NaCl, 10 uM oligo), no hairpins detected)
+Also, we have used many other primer pairs on the pRL574 plasmid to make various sized constructs and also to make singly-tagged constructs for further processing (as in unzipping DNA experiments and transcription experiments).
+
+===Plasmid===
+Plasmid pRL574, developed by the [http://www.bact.wisc.edu/landick/ Landick Lab].  This plasmid was developed for E. coli RNA Polymerase transcription assays and has a promoter, an ORF for the beta subunit of RNAP, and a terminator.  For many single-molecule DNA stretching assays, these genetics are not important and use of this plasmid is for legacy reasons.
+===PCR Materials===
+====Standard PCR mixes and taq polymerase====
+====[http://www.stratagene.com/products/displayproduct.aspx?pid=419 Perfect Match] PCR enhancer from Strategene====
+We have used this in the past to reduce smearing (presumably variable product lengths) in the PCR reaction.  However, a gut feeling says that the reaction could be optimized without this expensive reagent, either by simply tweaking the reaction, or by using better primers.
+===Reaction clean-up===
+One of our favorites is [http://www1.qiagen.com/Products/DnaCleanup/GelPcrSiCleanupSystems/MinElutePCRPurificationKit.aspx?rp=1000131&rpg=0 PCR Cleanup Kits] from QIAGEN.
+==Reaction Mixture==
+Typically, you will either do a larger volume than 100 µl or you will do several different 100 µl reactions and make a "master mix."  Steve was lazy with master mixes and added the Perfect Match and Taq Polymerase to the master mix--he never did hot starts.
+{| border="1" cellpadding="4" cellspacing="0" style="border:#c9c9c9 1px solid; margin: 1em 1em 1em 0; border-collapse: collapse;" <!-- This line here formats your table for you.  Change the code to change the formatting of your table.-->
+| align="center" style="background:#f0f0f0;"|'''Component'''
+| align="center" style="background:#f0f0f0;"|'''Amount (µl) to add to 100 µl reaction'''
+<!-- Copy and paste one of the lines above to create a new column in the schedule table.  Alternatively, you can also delete lines to reduce the number of columns.-->
+|--
+| Nanopure Water		
+| 70
+|--
+| 10X PCR Buffer, No Mg		
+| 10
+|--
+| pRL574 miniprep, 1.5 ng / µl (in our case a 1:100 dilution of stock)
+| 1
+|--
+|25 mM complete dNTP mix (July 2004 Invitrogen)
+| 1
+|--
+| pRL574-F853-dig 10 µM stock 	
+|5
+|--
+|pRL574-R5263-bio 10 µM	stock
+|5
+|--	
+|50 mM MgCl2
+|6.5
+|--
+|Perfect Match (1U / µl)
+|1
+|--
+|Taq (5U/µl)
+|0.50
+<!-- To add another row to the table copy and paste everything from the |-- line to just above this line.-->
+|}
+
+==Thermal Cycler Program==
+{| border="1" cellpadding="4" cellspacing="0" style="border:#c9c9c9 1px solid; margin: 1em 1em 1em 0; border-collapse: collapse;" <!-- This line here formats your table for you.  Change the code to change the formatting of your table.-->
+| align="center" style="background:#f0f0f0;"|'''Stage'''
+| align="center" style="background:#f0f0f0;"|'''Temp (C)'''
+| align="center" style="background:#f0f0f0;"|'''Time (mm:ss)'''
+| align="center" style="background:#f0f0f0;"|'''Reps'''
+|--
+| 1		
+| 94
+| 4:00
+| 1
+|--
+| 2
+| 94
+| 1:00
+|
+|--
+| 
+| 60
+| 1:00
+|
+|--
+| 
+| 72
+| 2:00
+|35
+|--
+| 3
+| 72
+| 9:00
+|1
+|}
+==Example Results (prior to cleanup)==
+[[Image:051108 PCR Gel annotated.png|right]]This gel shows the result of the above reaction on 10/24/2005 at Sandia National Labs by [[User:Skoch3|Steve]].  The 4411 bp reaction is marked by orange arrow.  There are also three other reactions of product length 1192, 1211, and 4430, whose recipes differ slightly.  Details will be added or available by request.<br style="clear:both;"/>
+==Reaction Cleanup==
+Follow instructions from: [http://www1.qiagen.com/Products/DnaCleanup/GelPcrSiCleanupSystems/MinElutePCRPurificationKit.aspx?rp=1000131&rpg=0 QIAGEN PCR Cleanup Kit].
+[[Category:Protocol]] [[Category:DNA]] 
+[[Category:Koch Lab Page]]
+</div>

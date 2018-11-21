@@ -1,0 +1,338 @@
+== Introduction ==
+
+This document aims to describe how to set git repositories in a distributed
+mode of development. As such, it draws heavily on [1], with extra notes for
+project-specific configuration. Specifically, we want to create a repository
+structure/flow cycle modeled after [2], where there are two developers, each
+with a personal (private) repo, and a public (shared) repo.
+
+For more information about working with git, including viewing logs, diffs,
+making patches. etc. - see [1].
+
+=== Distributed SCM Structure with 2 developers ===
+
+Unlike centralized SCM (cvs,svn) in distributed SCM, there are more than one
+repository, each no more special than another. In centralized SCM, there is
+one master repository which people sync with, ofter only permitting write
+access to special users. Below we will outline how to work with a distributed
+system shared by two developers, each with a local and public repo
+
+ you  (Developer A): local repo, public repo
+ them (Developer B): local repo, public repo
+
+The general practice is that the developers work with their local
+repositories, much like working with a locally checkout out copy in cvs. When
+changes are worth reporting, they sync this local repository with their public
+repository. The public repository is accessible by the other developer which
+then updates their local repository with changes from your public repository.
+
+The main difference is that you are dealing with whole repositories, not just
+checked out copies. This lets you have, locally, all the power of committing,
+branching, merging, etc., without having to be in communication with a central
+server. This is not only extremely beneficial when developing without an
+internet connection, it also allows you to try out code and make progress
+without conflicting with others. You can also perform many incremental commits
+as we will see later, without worrying about corrupting the main repository.
+
+The distributed nature of the repositories also means that the repo is in many
+places causing increased speed and automatic data redundancy.
+
+=== Distributed SCM Project Flow with 2 developers ===
+
+Below we describe the steps necessary to setup and interact with this repo
+structure. A typical project flow consists of you making changes, pushing
+(updating) them to your public repo, the other developer pulling those changes
+from your public repo, and merging them into their local repo, according to
+the following diagram [1]:
+
+                       you push
+ 
+ your local repo ----------------------> your public repo
+ 
+       ^                                     |
+ 
+       |                                     |
+ 
+       | you pull                            | they pull
+ 
+       |                                     |
+ 
+       |                                     |
+ 
+       |               they push             V
+ 
+ their public repo <------------------- their local repo
+
+We also discuss why this particular setup makes a lot of sense.
+
+== Repository setup ==
+
+Each developer is assumed to have
+* git installed on a local development machine
+* access to a machine accessible via http and ssh with git installed
+
+Below we outline the steps necessary to setup the configuration of repos noted
+in 1.1 above.
+
+=== Setup the first local git repo ===
+
+At this point, Developer B is not involved. Developer A follows the standard
+git repo setup on their machine [3]:
+
+ $ mkdir dev_a
+ $ cd dev_a
+ $ git init
+
+Now either files are imported or created into dev_a, and the initial commit is
+created
+
+ $ #add some files
+ $ git add .  # Add the new files to the git index
+ $ git commit # Commit the changes to the index to the object database
+              # Specify a commmit message (usually "initial import" at 
+              # this point)
+
+If you execute
+
+ $ git branch
+
+You should see only one branch (* master - the star indicating that you are in
+the master branch). Even though there is minimal content in the repo, we have
+enough to set up Developer A's public repo.
+
+=== Setup the public version of the first repo ===
+
+Now we need to make a public version of this repo to put on a web-accessible
+server. Outside of the dev_a repo, make a cloned, bare repo [4] (a bare repo
+is just the contents of the .git directory, with none of the project files
+checked out):
+
+ $ git clone --bare dev_a/ dev_a.git
+ $ touch dev_a.git/git-daemon-export-ok
+
+Now package this up and put in on the server. We will use tar and scp to do
+this. To make things easier, now and for development, put your id_rsa.pub
+public key inside of .ssh/authorized_keys on the server so you don't have to
+type your ssh password each time you login. Also make sure that
+'PermitUserEnvironment yes' is enabled in /etc/sshd_config, and you have the
+correct PATH variable set in .ssh/environment (with PATH=$PATH:path/to/git) so
+that git will be found when ssh is used. Once this is setup
+
+ $ tar czvf repo.tar.gz dev_a.git/
+ $ scp repo.tar.gz you@server.domain:
+
+Now put the repo in a web-accessible location
+
+ $ ssh you@server.domain
+ $ cd ~/public_html #(~/Sites on a Mac)
+ $ mkdir git
+ $ cd git
+ $ tar xzvf ~/repo.tar.gz
+
+You should now see the repo dev_a.git unpacked.  Now tell git about it
+
+ $ cd dev_a.git
+ $ git --bare update-server-info
+ $ chmod a+x hooks/post-update
+
+You are now ready to begin using the public repo.
+
+=== Developer B clones the public repo for their local repo ===
+
+Now Developer B enters the story. We want Developer B to clone the public
+repository of Developer A initially so they are on the same page. Developer B
+should then execute
+
+ $ git clone http://server.domain/~developer_a/git/dev_a.git dev_b
+ $ cd dev_b
+ $ ls
+
+Developer b should now see the full repo.  Doing
+
+ $ git branch
+
+Should show one branch (* master) as before.
+
+=== Developer B creates a public repo ===
+
+Developer B creates a public repo in the exact same way as in 2.2. We should
+now have the repo structure as depicted in 1.1.
+
+== Project Workflow ==
+
+To carry out the workflow depicted in 1.2., we will need a few more git
+commands. To start out, we will play around with our local git repo, assuming
+we are just a solo developer. From there it will be a small step to having a
+the workflow between Developer A and Developer B.
+
+=== Using Git as a Solo Developer ===
+
+Git makes creating and merging branches really simple, so the recommended
+practice is to create a new local branch for any work you want to do. To see
+the branches we have, we do
+
+ $ git branch
+  * master
+
+There is only one line of output indicating that we only have the single
+(default) branch, master. The * beside it indicates that we are in the master
+branch. Let's create a branch called add-new-feature (remember this is a local
+branch, so we don't need to worry about other people understanding the branch
+names, or branch name conflicts. No one can see them but us!)
+
+ $ git branch add-new-feature
+ $ git branch
+  * master
+    add-new-feature
+
+We now see another branch, but we are still in the master branch. To move into
+the other branch we do
+
+ $ git checkout add-new-feature
+ $ git branch
+    master
+  * add-new-feature
+
+We can now work in this local branch. Let's say we want to add a file called
+TODO.txt. We first create the file, then add it to git's index using git add
+
+ $ echo 'Feature TODO file' > TODO.txt
+ $ git add TODO.txt
+
+To commit this change, we do
+
+ $ git commit
+
+And add a commit message [5].  Suppose we now want to add a line to TODO.txt:
+
+ $ echo 'Write documentation' >> TODO.txt
+
+We need to tell git about this by using git add again.
+
+ $ git add TODO.txt
+
+Unlike cvs or svn, the add command is used to add ANY changes, not just new
+files. This is because git does not track files, it tracks content. By using
+git add, we are telling git we have added content. Now we need to commit this
+content in the same way
+
+ $ git commit
+
+If this seems like a lot of commands, there are many shortcuts which we will
+go over later. Now suppose we are done with our new feature, and it works, so
+we are ready to merge it into our master branch. Once all changes are
+committed, we can switch to the master branch, and merge in our changes from
+the add-new-feature branch
+
+ $ git checkout master
+ $ git merge add-new-feature
+
+If all went well, there will be no conflicts. If there were conflics, we can
+resolve them and commit - see [6]. We can be done with the add-new-feature
+branch, so we delete it with
+
+ $ git branch -d add-new-feature
+ $ git branch
+  * master
+
+Branches are so easy and convenient that we can create a bunch of them for all
+the aspects we are working on - sub projects, documentation, etc. In this way,
+git's fine-grained control over commits and branches allows us to keep
+relevant work in a series of commits with many things going on at once.
+
+=== Communicating your changes with Developer B with git push ===
+
+Suppose we want Developer B to see this new feature. We need to push our new
+master branch into our public repo. We can do this with the git push command
+
+ $ git push ssh://server.domain/~developer_a/git/dev_a.git master:master
+
+The url after git push gives the location of our public repo. The last part
+indicates that we want to push changes in our master branch, onto the master
+branch of our public repo.
+
+Now Developer B needs a way to get those changes.
+
+=== Getting changes from Developer B with git fetch ===
+
+This step is very similar to that in 3.1., except instead of creating a branch
+from the HEAD of our master branch, we will create a branch from the public
+repo of Developer B
+
+ $ git fetch http://devb_machine.domain/~developer_b/git/dev_b.git master:dev_b_changes
+ $ git branch
+  * master
+    dev_b_changes
+
+The last part of git fetch tells us to create a branch called dev_b_changes
+from the master branch of Developer b's public git repo. We can then checkout
+dev_b_changes in the same way to see what they have been up to, or we can
+merge the changes with
+
+ $ git merge dev_b_changes
+
+Once we are done, we can remove this new branch with git branch -d
+
+=== The 2 Developer Development Cycle ===
+
+The development cycle outlined in 1.2. then consists of
+
+* making local changes with git branch, checkout, add, commit, merge
+* publishing changes to the public repo with git push
+* fetching changes from Developer B with git fetch
+** merging these changes with git merge
+
+=== Multi-Developer Distributed SCM ===
+
+Adding another developer just means that developer then has local and public
+repos. When changes are ready to be fetched, Developer C just notifies
+Developer's A and B that they should check out the updates. Alternatively, a
+developer can periodically check out what the other two are doing with
+repeated git fetch calls. This can be done by greating branches for the two
+other devolopers. Suppose we are Developer A
+
+ $ git fetch http://dev_b_repo_path master:dev_b_master
+ $ git fetch http://dev_c_repo_path master:dev_r_master
+
+After sometime, to check for updates, Developer A can do
+
+ $ git fetch --all
+
+Which will update these branches. We can then git checkout and git diff to see
+what has been going on. Of course you don't need to keep track of what
+everyone is doing. You can make git work like svn or cvs by having some
+acknowledged master copy with only certain developers having write (push)
+access. The cool thing about git is that in principle no repo is more special
+than any other - it is up to the community to decide which repo to trust. This
+could mean that someone is considered the project maintainer in which case
+their repo might be the one to trust. In this case, the maintainer pulls from
+developers when they want to submit changes to the main line of code.
+
+The distributed structure of git allows teams to work on different aspects of
+the project without interfering and coordinating with eachother. For example,
+one team might be bug fixing for a release, while others are experimenting
+with new features. Each team pushes and pulls within eachother so that they
+don't have to worry about conflicts. The maintainer can decide when larger
+project coordination should happen.
+
+== Git Shortcuts ==
+
+It is recommended that you use the long form of the commmands as stated above
+until you understand what git is doing, and how it is different from an SCM
+system you may be used to. Once you are comfortable, you can use the command
+short forms below to save some typing.
+
+
+== References ==
+
+^1 http://www.kernel.org/pub/software/scm/git/docs/user-manual.html
+
+^2 http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#public-repositories
+
+^3 http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#creating-a-new-repository
+
+^4 http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#setting-up-a-public-repository
+
+^5 http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#creating-good-commit-messages
+
+^6 http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#resolving-a-merge

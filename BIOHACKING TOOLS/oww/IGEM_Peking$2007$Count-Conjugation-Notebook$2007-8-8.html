@@ -1,0 +1,100 @@
+=OriT by Qu Mingzhi=
+
+==Conjugation Test:R751_pSC101 X Dh5α_psb1A2==
+*Donor: C600-R751_psc101 (Tc+)
+*Recipient: Dh5α+ psb1A2 (Amp+)
+*Control: 
+#donnor：C600_R751
+#donnor：Dh5α_pSC101
+*mixing condition: 220rpm vs. 60rpm; 60min vs. 120min
+
+*'''Day1:'''
+#Get the plates from -4 fridge：C600-R751_psc101(Tc+), Dh5α_psb1A2(Amp+), C600_R751, Dh5α_psc101
+#Amplification Culture in liquid LB for 12 hours.
+*'''day 2:'''
+#put 2mL of culture into 20mL of LB with antibiotics, sub-culturing.
+===Donor===
+*According to the '''''conjugation protocol'''''
+*final OD600:
+<pre>
+#C600_R751+psc101    1.750
+#C600_R751           2.274
+#Dh5α+psc101    1.883
+</pre>
+
+===Recipient===
+#According to the '''''conjugation protocol'''''
+*final OD:
+#Dh5α+pSB1A2    2.066
+===mix condition===
+<pre>
+No   Donor                          rpm        time(min)
+1    R751+psc101_stationary         220        120
+2    R751+psc101_stationary         220        60
+3    R751+psc101_stationary         60         120
+4    R751+psc101_log                220        120
+5    R751                           220        120
+6    Dh5α+psc101                    220        120
+</pre>
+===Plating the conjugant mix ===
+*All mix were set up serial dilutions:original, 10-1, 10-2. 
+*culture on Tc+/Amp+ plate.
+===result===
+*'''NEXT day:'''
+<pre>
+No Donor                   X   recipient  time rpm  clones(original)  clones(e-1)   clones(e-2)
+1  R751+psc101_stationary  X  Dh5α_pSB1A2  120  220     2000+              300+        <5
+2  R751+psc101_stationary  X  Dh5α_pSB1A2   60  220     2000+              200+        <5
+3  R751+psc101_stationary  X  Dh5α_pSB1A2  120  100     2000+              500+        <20      
+4  R751+psc101_log         X  Dh5α_pSB1A2               2000+              <100        <10
+5  R751                    X  Dh5α_pSB1A2  120  220     50+                 <10        <3
+6  Dh5α+psc101             X  Dh5α_pSB1A2  120  220    2000+               200+        0   
+</pre>
+*test failed because control received clones....they thould not grown on Tc+/Amp+ plate!!
+
+==Amplification Culture of OriT_J23066_OriT_pSB1A2(normal T4 ligase)==
+*select Positive OriT_J23066_OriT_pSB1A2 Colonies from Plate, Culture in liquid LB,waiting for mini-prep.
+
+
+=Lock & Key by Yu Tao=
+==PCR R0010<-J23066==
+*vr and vf2 primer (standard sequencing primer): stored as 100uM.
+*PCR system contains:
+
+<pre>
+0.5 µL    Template
+1 µL      Primer pf1
+1 µL      Primer pr1
+4 µL      dNTP
+0.5 µL    Taq
+5µL       10 X buffer
+38µL      ddH20
+--------------------------
+50 µl      Total
+</pre>
+
+*Primer final concentration 1uM.
+*PCR program setting:
+
+<pre>
+Step1     94℃ 5min
+Step2     94℃ 30s 
+Step3     60℃/62℃ 30s
+Step4     72℃ 90s 
+Step5     Go to step 2 for 29 times 
+Step6     72℃ 10min
+End
+</pre>
+
+===Electrophorsis Result===
+*from ''left'' to ''right'':
+#
+#marker
+[[Image:Example.jpg]]
+
+==Key1 & Lock1 Efficiency Test==
+*Preculture the following 4 groups of DH5a overnight.
+#I7100-DH5a
+#R0010.J23066(Key)-DH5a
+#R0010.J23066(Key)+R0040.J23078.E0040.B0015(Lock) -DH5a
+#DH5a negative control.

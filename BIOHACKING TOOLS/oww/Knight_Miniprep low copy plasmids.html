@@ -1,0 +1,63 @@
+==Purpose==
+When sequencing miniprepped DNA of low copy plasmids, I see a pretty high sequence failure rate despite my submitting what I think is sufficient amounts of DNA (based on [[Nanodrop]] readings and confirmed by gel electrophoresis).
+
+Based on conversations with Tom, here is a revised miniprep protocol designed to both increase yields and reduce potential contaminants in the resulting DNA sample.  I've only tried this once, but my yields were at least 50% higher.  (i.e. Rather than 20-40 ng/&mu;L yield, I got 50-60 ng/&mu;L yield.  
+
+*After submitting some of this miniprepped DNA for sequencing (~250-300ng in 12 &mu;L), I got some sequence data back (as opposed to the failures I was seeing before) but the runs were short.  I did not get the 800 bp read that you frequently see ... rather more like 200-500 bp.  I am not sure if there are contaminants present or if I need to submit more DNA.
+
+==Materials==
+*[http://www1.qiagen.com/Products/Plasmid/QIAprepMiniprepSystem/QIAprepSpinMiniprepKit.aspx Qiagen Spin Miniprep Kit]
+*10-12 mL of Escherichia coli culture to be miniprepped
+
+==Protocol==
+Note: All protocol steps should be carried out at room temperature.
+
+#Pellet bacterial cells.
+#Resuspend pelleted bacterial cells in 250 &mu;L Buffer P1 (kept at 4 &deg;C) and transfer to a microcentrifuge tube.
+#*Ensure that RNase A has been added to Buffer P1. No cell clumps should be visible after resuspension of the pellet.
+#Add 250 &mu;L Buffer P2 and gently invert the tube 4–6 times to mix.
+#*Mix gently by inverting the tube. Do not vortex, as this will result in shearing of genomic DNA. If necessary, continue inverting the tube until the solution becomes viscous and slightly clear. Do not allow the lysis reaction to proceed for more than 5 min.
+#Add 350 &mu;l Buffer N3 and invert the tube immediately but gently 4–6 times. 
+#*To avoid localized precipitation, mix the solution gently but thoroughly, immediately after addition of Buffer N3. The solution should become cloudy.
+#Centrifuge for 10 min at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge.
+#*A compact white pellet will form.
+#Apply 800 &mu;L supernatant from step 5 to the QIAprep spin column by pipetting.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s. 
+#Decant the flow through into the column for a second spin through.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s.
+#Discard the flow through. 
+#Apply the remaining supernatant from step 5 (usually about 200 &mu;L) to the QIAprep spin column by pipetting.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s. 
+#Decant the flow through into the column for a second spin through.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s.
+#Discard the flow through.
+#Wash the QIAprep spin column by adding 0.5 ml Buffer PB.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s.
+#Discard the flow through.
+#Heat the elution buffer (either water or buffer EB) to 55&deg;C.
+#Wash QIAprep spin column by adding 750 &mu;L Buffer PE.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s.
+#Discard the flow through. 
+#Wash QIAprep spin column a second time by adding 750 &mu;L Buffer PE.
+#*This can help to reduce residual salts from Buffer PB.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s.
+#Discard the flow through.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s.
+#*IMPORTANT: This spin step is necessary to get rid of any residual ethanol from Buffer PE.  Residual wash buffer will not be completely removed unless the flow-through is discarded before this additional centrifugation. Residual ethanol from Buffer PE may inhibit subsequent enzymatic reactions.
+#Place the QIAprep column in a clean 1.5 ml microcentrifuge tube.
+#Add 20 &mu;L of heated elution buffer (buffer EB) to center of column.
+#Let stand 1 min.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s.
+#Add 10 &mu;L of heated elution buffer (buffer EB) to center of column.
+#Let stand 1 min.
+#Centrifuge at 13,000 rpm (~17,900 x g) in a table-top microcentrifuge for 60 s.
+
+==Notes==
+*See [http://www1.qiagen.com/literature/handbooks/PDF/PlasmidDNAPurification/PLS_QP_Miniprep/1027678_HB_QP_0504_WW_LR.pdf here] or [http://www1.qiagen.com/literature/protocols/QIAprepMiniprep.aspx here] for the handbook for the Qiagen Spin Miniprep Kit.  If you have never done this protocol before, read the the background information in the handbook (like the Important Notes section).  It contains useful information.  The following has been reproduced from the handbook and annotated based on experience with the kit.
+*I recently tried eluting in buffer EB and got great sequencing results.  Whereas the new protocol with eluting in water gave me some (but short) sequence reads.  I am going to try this again and see if buffer EB gives me systematically better results.  Update: I just got back sequencing data on a second batch of samples eluted in buffer EB.  I again got better sequencing results although some of them had to be repeated by the sequencing center to get a better read.
+
+
+[[Category:Protocol]]
+[[Category:DNA]]
+[[Category:Escherichia coli]]
+[[Category:In vitro]]

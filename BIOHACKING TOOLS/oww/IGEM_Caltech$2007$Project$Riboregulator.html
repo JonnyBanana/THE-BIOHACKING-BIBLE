@@ -1,0 +1,111 @@
+<div id="mainpage">
+<hr width="750px">
+<div id="about">
+{{Caltech_iGEM}}
+</div>
+<hr width="750px">
+__NOTOC__
+{|cellspacing="5" cellpadding="10" style="background:#ffffff; width: 750px;"
+|-valign="top"
+|style="background:#ffffff"|
+=<center>Riboregulator</center>=
+
+==RNA Background==
+RNA has traditionally been considered a carrier of information between the gene and the final protein product. However, recent evidence is accumulating for alternate functions for RNA - namely, the use of RNA molecules as regulatory elements in the cell. Examples include ribozymes, siRNA, and riboswitches.  
+
+
+[[Image:Cis trans diagram.JPG|left|thumb|500px|Figure adopted from: Isaacs FJ, Dwyer DJ, Ding C, Pervouchine DD, Cantor CR, and Collins JJ. Engineered riboregulators enable post-transcriptional control of gene expression. Nat Biotechnol 2004 Jul; 22(7) 841-7.]]
+
+
+
+==Riboregulators==
+New insights into this regulatory role of RNA have allowed for engineering new RNA molecules which control cell behavior interactions with other RNAs or with small molecule ligands. One such engineering approach which enables post-transcriptional control of gene expression is the riboregulator developed by Collins and coworkers. The riboregulator is composed of two interacting parts, a cis-repressive sequence and a trans-activating sequence. The cis sequence is placed directly upstream of the ribosome binding site (RBS) of the gene regulated by the riboregulator and is complimentary to the RBS. This sequence forms a stem-loop structure in the 5’-untranslated region of the mRNA which prevents ribosome binding and thus translation. The trans RNA is complementary to the cis sequence. When the trans RNA is present, it binds to the cis sequence, the RBS site becomes exposed, and the ribosome can bind and translate the mRNA. 
+
+
+
+
+
+
+
+
+
+
+==Riboregulator Integration in Our Phage/''E. coli'' System==
+The riboregulator determines what happens to the cell once it is infected by phage. We aimed to design three types of riboregulated systems (one for each protein N, Q, and Cro). For instance, for the N protein-regulated system, the phage genome would have a mutant version of the N gene as well as an N gene suppressed with a cis-repressive sequence would be additionally integrated into the genome. When the phage infects a wild-type E.coli cell, nothing should happen. However, when it infects a cell with the trans-activating noncoding RNA, the cell should lyse because the RBS of the N gene is no longer sequestered by the cis-repressed RNA loop.
+
+
+
+
+
+
+
+
+
+==Riboregulator Design==
+
+'''Design Background'''
+
+Our riboregulators consist of two interacting parts: cis and trans. The cis sequence is located downstream from the promoter to a gene of interest and upstream of the ribosome binding site (RBS). This cis sequence is complementary to the RBS and forms a stem-loop at the 5’ end of the mRNA after transcription, thus blocking ribosome binding and translation. Gene expression is turned on with a trans noncoding RNA. This trans sequence is produced from another promoter in a different plasmid and targets the cis-repressed RNA with high specificity. When the trans transcript is available, it binds to the cis region and thus opens the RBS for ribosome docking and subsequent translation.
+The cis repressive sequences are approximately 50 base pairs and do not alter the reading frame of the native gene. The trans RNA is approximately 90 base pairs and contains a nucleotide sequence that is complementary to the cis RNA. RNAstructure3 software was used to predict the secondary structure as well as the free energy of the cis and trans elements and their interactions. 
+
+
+[[Image:Wiki overview1.JPG|left|thumb|500px|The general structure of a cis-repressive element for the YFP gene in our inducible Ptet/TetR system.]]
+
+
+'''Cis Repression''' 
+
+	In order to find a riboregulator with the necessary dynamic range, a total of eight cis repressive elements were designed (cr1-cr8). These consisted of the same overall stem-loop structure, but had varying strengths of complementarity within the stem, as seen by their free energies. The designs of cr1-cr4 were based on previous work done by Collins et. al. and those for cr5-cr8 were based on work done by the University of California Berkeley 2006 International Genetically Engineered Machines team. 
+In order to determine the optimal level of repression, various aspects of RNA secondary structure were considered, including inner loops, single base pair bulges, and varying loop sizes. Higher free energies (i.e. less complementarity due to base pair mismatches) favor activation by taRNA because they destabilize the stem and facilitate the open RBS form upon addition of taRNA. The cis elements were inserted downstream of the Ptet promoter. The stem consisted of approximately 20-nt and the loop ranged from 6 to 10-nt. The YFP gene was inserted directly downstream of the cis sequence. Flow cytometry measurements were taken to quantify the expression of the cis riboregulated YFP gene. 
+
+
+
+[[Image:Wiki overview2.JPG|right|thumb|500px|The general structure of a trans-activating element in our inducible Pbad/araC system.]]
+
+'''Trans Activation''' 
+
+	To initiate translation, five trans-activating elements (ta1-ta5) were designed. Each sequence binds to the cis-repressive elements and opens up the RBS. For ta1-ta4, part of the sequence was complementary to the hairpin loop of the cr element and extending in the 5’ direction. Element ta5 was designed to bind to the 5’ end of the cis regulator and open up the hairpin in the 3’ direction. ta1 and ta2 were complimentary to cr1-4; ta3-5 were complimentary to cr5-8. The activation with these ta elements is currently being determined.
+
+
+
+
+
+
+
+
+
+
+[[Image:Cis1 4 and trans1 2.JPG|left|thumb|500px|The cis1-cis4 repressive riboregulators are shown with their corresponding activators, trans1 and trans2. All structures differ in the number of base-pairs in end-loops, number of bulges, and number of base pairs on the 5' toe-hold. They were designed this way to find the optimal dynamic range in repression/activation of protein expression.]]
+
+[[Image: Cis568 trans3.JPG|left|thumb|500px|The cis5,6 and 8 repressive riboregulators are shown with their corresponding activators, trans3.]]
+
+[[Image:Cis7 trans4.JPG|left|thumb|500px|The cis7 repressor was the only structure that gave an unfavorable activating structure with trans3 from the cis5-8 set; thus, a separate trans structure was designed to specifically target cis7.]]
+
+[[Image: Cis5678 trans5.JPG|left|thumb|500px|The trans5 riboregulator was designed differently from trans1-4 in that it should bind to the 5’ end of the cis regulator and open up the hairpin in the 3’ direction. Bimolecular structures with cis5-8 all showed favorable activation in terms of free energies.]]
+
+[[Image:Cis trans compliments.JPG|left|thumb|500px|A schematic diagram showing the parts of cis1 repressor and trans1 activator that are complimentary to each other. Note that the RBS is now open.]]
+
+
+
+
+
+
+==Experiments with Riboregulators==
+In order to have a working system in which phage infection outcome is controlled, the expression of genes under the control of a riboregulator must be determined. Once the amount of N, Q, or Cro necessary to switch the system from lysis to lysogeny (or nothing) is determined, an appropriate riboregulator can be integrated into the system which allows for the correct amount of protein to be made in the trans-activating cells. 
+
+Before combining the phage protein expression with the riboregulator part of the system, it is necessary to engineer various riboregulators and determine the percent of protein (yellow fluorescent protein or YFP) in the presence and absence of trans RNA. By quantifying the riboregulated YFP system, we could then apply the results to each protein.
+
+==Status and Future Plans==
+
+'''Initial Results with Cis Repressors'''
+
+Control plasmids with no cis repressive elements showed increased YFP fluorescence with no aTc (2.5%) and with 1ug/mL aTc (71.7%). The YFP gene under TetR control was used as the 100% marker. Plasmids with cis-repressive elements were grown in cells under the same conditions. The cis7 cultures showed repression of YFP fluorescence at 0.1ug/mL aTc(1.1%) and at 1ug/mL aTC (3.7%). The cis3 repressor showed 2.9% fluorescence and cis4 showed 0.84% fluorescence at 1ug/mL aTc. Repression was observed for all variants measured. 
+
+'''Future Plans'''
+
+Testing with all combinations of cis/trans elements is currently on-going with YFP. In addition, recent work with cis3 plus trans1 and trans2 has shown a significant increase in fluorescence (from ~1% of unregulated to ~15%). In the near future, the cis3 construct will be transferred to regulate Q expression. Successful repression and activation of Q at threshold levels for the switch from lysis to lysogeny will allow for integration of teh riboregulated Q gene to be inserted into lambda phage. 
+
+<biblio>
+#isaacs pmid=15208640
+</biblio>
+|}
+</div>

@@ -1,0 +1,28 @@
+__NOTOC__
+
+==The problem: You have two separate measurements with different uncertainties.  How do you combine them?==
+
+===Example #1: Brian's Planck's Constant===
+====1st order was found to be (7.23 +/- 0.02) E-34 (J s).====
+====2nd order was found to be (5.94 +/- 0.03) E-34 (J s)====
+
+===Example #2: [[Physics307L:People/Gibson/Formal_Lab_Report#Results_and_Discussion|Zane's Speed of Light]]===
+
+==[[/Derivation|Derivation]]==
+===First let's think about what we expect===
+
+==The formula==
+===[http://en.wikipedia.org/w/index.php?title=Weighted_mean&oldid=168172133 Wikipedia article]===
+
+:<math>\bar{x} = \frac{ \sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i},
+</math>
+
+which means:
+
+:<math>
+\bar{x} = \frac{w_1 x_1 + w_2 x_2 + \cdots + w_n x_n}{w_1 + w_2 + \cdots + w_n}.
+</math>
+
+:<math>
+w_i = \frac{1}{\sigma_i^2}.
+</math>

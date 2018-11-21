@@ -1,0 +1,60 @@
+==Balmer Series==
+*[http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf Balmer Series Lab Manual]
+{{SJK comment|l=02:01, 13 November 2007 (CST)|c=Am I correct in assuming that all of your raw data were taken in Excel?}}
+==Goal==
+*Calibrate an optical spectrometer using mercury spectrum (calculate systematic error)
+*Measure Balmer lines of hydrogen and use measured values to
+*Calculate Rydberg constant for hydrogen
+*Compare deuterium and hydrogen spectra and
+*(Bonus!) Using the yellow deuterium lines, test the resolving power of the spectrometer
+
+==Theory==
+{{SJK comment|l=02:02, 13 November 2007 (CST)|c=Is this really the theory?  Is more like the plan...}}
+We were provided the Balmer line wavelengths in the mercury spectrum in our lab manual to use in calibrating the spectrometer.  The accuracy of measurements taken on the spectrometer relies on the position of the prism, so we calibrate the instrument manually by positioning the prism in front of the excited material, setting the dial to a known Hg wavelength, and then rotating the prism until the Balmer line appears to be precisely behind the crosshairs in our eyepiece.  Our calibration will be more accurate if we make sure our crosshairs are in focus and our spectral lines are narrowed.
+
+Once we calibrate the instrument on a spectral line, we can take multiple measurements of the other lines we see in the spectrum and compare those values with the given values to determine the average error produced by the instrument itself (and ourselves).
+
+Once we know how accurately we can take measurements, we can try measuring the Balmer lines of other elements and plug those values into the Rydberg formula in order to empirically determine their Rydberg constants.
+
+Finally, we will try to describe the resolving power of the instrument we are using by attempting to measure the three green Balmer lines in Krypton.
+
+==Equipment==
+*optical spectrometer
+*light box
+*tubes of mercury, hydrogen, deuterium
+
+==Setup==
+The spectrometer consists of two perpendicular tubes with a Pellin-Broca constant deviation prism at the axis.  There is an aperture at the end of the tube closest to the light source which can be adjusted to allow different amounts of light in (when we narrow the slit, the intensity, thickness, and fuzziness of the Balmer line each decrease).  We place the light source in front of this tube with the aperture fully opened and rotate it until the spectra we see are the brightest.  At the end of the other tube is our eyepiece.  The focus can be adjusted by either pulling out or pushing in the ocular.  A knob located on the side of the prism rotates the prism very slightly to allow us to scan the spectra in smaller increments and take more precise measurements.  The spectrometer is designed so that rotating the knob a fixed amount shifts the spectral line we observe in the eyepiece by a fixed amount, and that distance corresponds to a fixed amount of wavelength difference.  We focus the crosshairs, located within the tube, so that we have a sharper edge on which to measure the passage of spectral lines.  
+
+==The Procedure==
+To '''calibrate the spectrometer''', we set up the system as described above, and insert a mercury tube into the light box.  When we have rotated the bulb to make sure we have maximum intensity, we remove the cover on the prism and loosen the prism from the rotating platform.  We set the knob to read one of the given wavelengths of the Balmer series for mercury and manually rotate the prism until the corresponding colored spectral line lies on our crosshairs.  We then fix the prism to the platform, return the cover (which reduces ambient light), and take readings on the knob of the other spectral lines we observe as they pass our crosshairs.  Because angles and distances in the spectrometer system are related by real gears, we are careful to reduce any error caused by gear shift by taking measurements in the same direction each time.
+
+Once we take multiple measurements of the wavelengths of the spectral lines we see by reading corresponding wavelengths off the knob, we can calculate, on average, how much our measured values deviate from the exact values we want to read, and take that percentage into consideration when we take measurements of spectral lines of unknown elements.
+
+After we calibrate the spectrometer, we replace the mercury bulb with a hydrogen bulb, and '''take measurements of hydrogen's spectral lines'''.  We take multiple measurements in order to get the best average values of Balmer line wavelengths and use our calculated error from our calibration in order to better fit the Rydberg equation for quantum states. (The wavelength of a photon in the emission spectrum is related to the energy of the photon by E=hc/lambda, and that energy corresponds to the difference in energy between the Hydrogen atom's electrons' states.  When an electron gains energy- in this case, mostly kinetic energy from the heating of the gas in the tube- it can transition into an excited state, and when it falls back down to its ground state, it releases energy in the form of one or more photons of specific wavelengths, depending on which transitions are made, governed by the Rydberg relationship.)
+
+{{SJK comment|l=02:06, 13 November 2007 (CST)|c=You can read up about why Deuterium should be different, and also by how much it should differ.  Then you can talk about whether you have enough resolving power in your instrument to be able to measure the difference.  What the heck is the orange line, though?  That is really funny, and I would like to see it!}}
+Because '''deuterium''' (hydrogen with a neutron in the nucleus) is only more massive than hydrogen, but doesn't add any charge to the system, I wouldn't really expect the Balmer lines to be different.  If they were different, I would expect they would all be different.  This is not what we observed.  All the deuterium lines were almost exactly the same, with the addition of an orange Balmer line.  Because the relationships between wavelength and state transitions were the same as hydrogen for all the other deuterium lines we observed, I'd guess that the Rydberg constant for deuterium would be the same as for hydrogen, but we wouldn't use the exact same relationship.  Or, if the Rydberg constant was different, I'd assume it would affect differences in energy level differently: similar to an index of refraction, for certain wavelengths, the change in wavelength might not be detectable, but for others, it might be be very noticeable.  But in this case, because every other line didn't noticeably shift, I would think that our spectrum would be affected at either extreme (say, an IR line would shift into the red, or a UV would shift into the blue), but this, alas!, is not what we observe.
+
+Lastly, we decided the '''resolving power''' of our instrument could only be described qualitatively.  We were able to resolve three green spectral lines in krypton as our limit.  The distance between the edge of each spectral line was about half the width of one of our crosshairs.  If we knew the real width of our crosshair, we'd know the real distance between spectral lines at our eye, corresponding to some angular spread achieved by the prism. (distance from eye to prism)sin(theta)
+
+==Data==
+Please see the excel spreadsheet of our data and calculations here:
+[[Media:REAL BALMER.xlsx]]
+
+==Calculations==
+1/{\lambda}=R(1/4-1/n^2)
+
+Because the fraction (1/4-1/n^2) gets bigger as n grows, and I want to keep 1/R constant, I will match increasing n with decreasing lambda.   
+
+
+==Error Analysis==
+{{SJK comment|l=02:00, 13 November 2007 (CST)|c=You have the most important parts, namely the final result, the uncertainty, and the units.  Those are all critical and allow the reader to understand everything.  Less critical is to tweak it to have the right amount of significant figures and make it easy to read.  For example, you don't need so many sig figs on your uncertainty.  One way to write it would be: (1.098 +/- 0.004) * 10^7 (1/m), which I think is better.  Very precise measurements!!!}}
+I calculated R for hydrogen to be 1.098X10^7 +/- 4091. m^-1.  Compared to the real value of 1.09677X10^7, my calculation based on my measurements was, on average, .11% off.
+
+==Lab Critique==
+This lab made me feel like a Victorian drylabscientistphilosopher...minus the ether.  A+!
+{{SJK comment|l=02:00, 13 November 2007 (CST)|c=I don't know what that is, but I tend to agree :)}}
+
+==<font color="orange">Koch Comments</font>==
+Excellent summary, fun to read, and very nice data!  I will email some other comments.

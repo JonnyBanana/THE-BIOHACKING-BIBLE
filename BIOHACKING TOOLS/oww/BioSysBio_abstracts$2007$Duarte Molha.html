@@ -1,0 +1,52 @@
+* Add or delete the sections that you require.
+
+=The Complete Denitrification Pathway of Geobacillus thermoleovorans=
+'''Author(s): '''[[User:duartemolha|Duarte Molha, Catherine Hack annd Roger Marchant]]<br> 
+'''Affiliations:''' University of Ulster  <br>
+'''Contact:'''email: molha-d1@ulster.ac.uk <br>
+'''Keywords:''' 'denitrification pathway' 'genome analysis' 'Metabolic pathways' 'blast' 'Pathway analysis'
+
+[[Category:BioSysBio Keywords denitrification pathway]] 
+[[Category:BioSysBio Keywords genome analysis]]
+[[Category:BioSysBio Keywords Metabolic pathways]]
+[[Category:BioSysBio Keywords blast]]
+[[Category:BioSysBio Keywords Pathway analysis]]
+
+==Background/Introduction==
+
+Denitrification is part of the global nitrogen cycle. It is an alternative process for respiration used by bacteria under low oxygen conditions, through which they can reduce nitrate and/or nitrite to dinitrogen gas through the production of the intermediates nitric oxide and nitrous oxide.  In recent unpublished studies, the thermophilic bacterium ''Geobacillus thermoleovorans'' was shown to reduce nitrate to nitrogen gas, indicating the presence of a denitrication pathway. 
+
+The first catalytic step of this pathway can be achieved two alternative enzymes; a membrane bound (NAR) or periplasmic-bound reductase (NAP). The second step can be catalyzed by a CD1 nitrite reductase (nirS) or, in some species, a copper nitrite reductase (nirK). The third step catalyzes the conversion of nitrite oxide to nitrous oxide by two different types of nitric oxide reductase.  Finally the last step the catalization of nitrous oxide into dinitrogen gas completes the denitrification pathway and is done by the enzyme nosZ.
+
+The aim of this study was to identify the key proteins involved in this pathway in the recently sequenced ''Geobacillus thermoleovorans''genome, using standard bioinformatics tools.
+
+==Materials/Methods==
+
+=== Data Gathering and Database Creation ===
+ 
+A database of all the published denitrification genes was assembled and each of them was blasted against our genome assembly of Geobacillus thermoleovorans using BLASTP and BLASTX <ref>Altschul, S.F., Gish, W., Miller, W., Myers, E.W. and Lipman, D.J. (1990) Basic local alignment search tool, J Mol Biol, 215, 403-410</ref>.  If no relevant hits were found, the collected sequences were blasted against the non-redundant sequence database (nr) in NCBi and all relevant hits where collected and again blasted against our genome assembly. If still no hits were found, the published sequences were blasted against the nr database using the psi-blast algorithm <ref>Altschul, S.F., Madden, T.L., Schaffer, A.A., Zhang, J., Zhang, Z., Miller, W. and Lipman, D.J. (1997) Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res, 25, 3389-3402</ref> in an effort to find more distant related sequences. Finally the ortholog sequences collected until then were aligned against each other and hmm profiles where produced and searched against our genome assembly. 
+
+=== Phylogenetic Analysis ===
+	
+The amino acid sequences of each denitrification gene  were multiply aligned using ClustalX <ref>Jeanmougin, F., Thompson, J.D., Gouy, M., Higgins, D.G. and Gibson, T.J. (1998) Multiple sequence alignment with Clustal X, Trends Biochem Sci, 23, 403-405.</ref>.A neighbour-joining tree was calculated for each <ref>Saitou, N. and Nei, M. (1987) The neighbor-joining method: a new method for reconstructing phylogenetic trees, Mol Biol Evol, 4, 406-425.</ref> using MEGA3 software <ref> Kumar, S., Tamura, K. and Nei, M. (2004) MEGA3: Integrated software for Molecular Evolutionary Genetics Analysis and sequence alignment, Brief Bioinform, 5, 150-163. </ref>. Numbers of amino acid substitutions were computed for both Poisson correction
+
+==Results and Discussion==
+In Geobacillus thermoleovorans, for the first step on the denitrification pathway we were able to determine the presence of narGHJI gene cluster the narXL two components regulatory system and a possible nitrate/nitrite transporter similar to nark. We also verified the presence of the periplasmic nitrate reductase napA although no other homologs of enzymes related to this alternative nitrate reductase were found.  
+For the second step of the pathway, although no homologs for cd1-nitrite reductase were found, nirM, the physiological electron donor for this enzyme is present together with nirE, an enzyme involved in the heme d1 biosynthetic pathway. 
+No other nitrite reductase was found although in a closely related organism, Geobacillus kaustophilus, a copper nitrite reductase has been identified in its genome.
+The third step of the pathway is represented by a homolog of the R. eutropha nitric oxide reductase. This is a dehydrogenase enzyme that accepts electrons from quinol.
+No enzymes where found related to the forth and final step of the pathway. However, in addition to the above proteins, several important regulatory proteins where also identified such as the fhp (flavohomeprotein) and the rpoN (sigma factor s54), dnrN, norR and norQ.
+
+
+==Conclusion==
+The main objective of this paper was to give an overview of the genes involved in the denitrification pathway of Geobacillus thermoleovorans. This was accomplished partially. 
+The first step has most of the enzymes related to the membrane bound nitrate reductase pathway identified in other organisms and its operon organization is similar to what has been found in most other denitrifiers.  We where also able to identify the periplasmic nitrate reductase gene although none of the related proteins to this alternative pathway where found. 
+The second step reductase of the pathway seems to be missing although we have identified enzymes related to the biosynthesis if the heme D1 required for the function of this reductase.
+For the third step of the denitrification, G. thermoleovorans has shown to possess an unusual reductase seen in just a few beta-proteobacteria and the related enzymes are present although not clustered together has seen in A. eutropha.
+Further studies are required to assess if G. thermoleovorans is a complete denitrifier. According to our genome assembly we could not identify any candidates for the last step of the denitrification process which indicates that this step might be absent in this organism. 
+The main focus of discussion is the lack of the nitrite reductase. Unpublished results have shown us that this organism reduces nitrate and nitrite. This means that it does have a nitrite reductase and we have failed to identify it.
+
+==References==
+
+
+__NOTOC__

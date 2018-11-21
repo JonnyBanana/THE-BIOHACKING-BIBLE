@@ -1,0 +1,59 @@
+{{KeatingLabToolbar}}
+[[Keating:Experimental Protocols|back to Experimental Protocols]]
+
+== Instructions for using Beckman PACE MDQ capillary electrophoresis ==
+
+*written by [[user:ziz|Nora]] 4/21/05
+
+#Prepare buffers and samples
+#*choose a buffer or set of buffers to use as the running and sample buffers, ideally ~2 pH units above pI of protein (if known)
+#*when in doubt, start with borate buffer pH 8.0
+#*concentration 20-200mM (start with 50mM)
+#*salt in buffer will interfere with conductivity and separation
+#*need 3 vials of each buffer (~1.5ml each) – top with orange caps
+#*don't fill past the shoulder of the vial
+#*samples should be approximately 50uM in a minimum volume of 50ul of sample buffer (same as running buffer)
+#*not much of the sample will be injected and the majority of the sample can be recovered at the end of the experiment
+#*place samples in PCR tubes in plastic vials with springs, topped with gray caps
+#*also prepare water, 0.1M HCl, 0.1M NaOH, methanol, and waste vials
+#*filter all samples and buffers with 0.22um filters
+#*make fresh buffer aliquots for every ~10-20 runs / 2-3 weeks
+#Open PACE MDQ software program - 32Karat
+#*software is very similar to the HPLC software
+#*instrument should already be on
+#Turn on UV lamp to warm up for at least 15 min
+#Make a directory for yourself in D:\Users\CE
+#Sign in the log book
+#Change cartridge and/or capillary if desired.
+#*in software, manual control – press load to move vial trays forward
+#*open tray and cartridge cover
+#*unscrew the insertion bar keeping the cartridge in place and remove the cartridge
+#*follow instructions in the installation and maintenance manual to change the capillary
+#*reverse instructions to replace
+#Place sample and buffer vials in buffer and sample trays
+#*pay attention to where the tray positions for writing the methods
+#*below is the standard positions for the minimum buffers needed
+#*samples placed in the back sample trays can be kept at particular temperature, but can also be placed in buffer trays (only RT)
+#Methods
+#*use examples in D:\Users\CE\General Methods\
+#*if it's the first time using the capillary ever or in several months, start with condition.met capillary to go through extensive rinsing
+#*otherwise use wash.met to do a quick rinse
+#*for separation methods, use bufferXaYb.met where Xa is position of rinse buffer vial and Yb is position of separation buffer vial
+#*separation methods include a few washes, injection of the sample, and separatation of the sample under voltage
+#*method files assume injection of buffer as the sample (baseline)
+#*after all runs have been performed, use shutdown.met to give the capillary a final rinse, includes turning off the lamp
+#*any of methods can be modified, including absorbance wavelenth, sample/buffer positions, length of time for separation or washes, etc, but please save in your directory's methods folder
+#*to run a single method, press the blue arrow
+#*save the data file in your directory's data folder
+#Sequences
+#*to run multiple samples, use a sequence file to specify the method, data file, and sample position of each sample
+#*for examples, look in D:\Users\CE\Nora\Sequences
+#*you need to name the data files by typing in the sample, including the entire path with your directory
+#*press the green arrow to start the sequence
+#*sequence can be modified in the later steps and saved while running
+#Notes
+#*if window pops that coolant is low, refill coolant
+#**open bottom panel
+#**connect tube attached to syringe
+#**pour in coolant in 5ml increments, just let flow in
+#**until level of coolant in viewing tube is between the black lines

@@ -1,0 +1,80 @@
+== Script ==
+
+  #!/usr/bin/env python
+  
+  from random import *
+   
+  mx=10
+  countH=[0,0,0,0,0,0,0,0,0]
+  countT=[0,0,0,0,0,0,0,0,0]
+   
+  #Generation of list of 10,000 strings of 10 random coinflips and tally of stretches of H's and T's
+  for x in range(10000):
+      s=[]
+      for i in range(mx):
+          random = choice(range(0,2,1))
+   
+          if random==0:
+              s.append('H')
+   
+          if random==1:
+              s.append('T')
+          substr=''.join(s)
+            
+      for i in range(9):
+          substH = ''.join(['H' for n in range(i+2)])
+          pos = substr.find(substH,0)
+           
+          while not pos == -1:
+              countH[i] = countH[i] + 1
+              pos = substr.find(substH,pos+1)
+                    
+      for i in range(9):
+          substT = ''.join(['T' for n in range(i+2)])
+       
+          pos = substr.find(substT,0)
+          while not pos == -1:
+              countT[i] = countT[i] + 1
+              pos = substr.find(substT,pos+1)
+     
+  print "10,000 strings of 10 random coinflips were generated.  The following tallies of H's and T's were recorded." 
+  print "Occurence(s) of HH:", countH[0]
+  print "Occurence(s) of HHH:", countH[1]
+  print "Occurence(s) of HHHH:", countH[2]
+  print "Occurence(s) of HHHHH:", countH[3]
+  print "Occurence(s) of HHHHHH:", countH[4]
+  print "Occurence(s) of HHHHHHH:", countH[5]
+  print "Occurence(s) of HHHHHHHH:", countH[6]
+  print "Occurence(s) of HHHHHHHHH:", countH[7]
+  print "Occurence(s) of HHHHHHHHHH:", countH[8]
+  print "Occurence(s) of TT:", countT[0]
+  print "Occurence(s) of TTT:", countT[1]
+  print "Occurence(s) of TTTT:", countT[2]
+  print "Occurence(s) of TTTTT:", countT[3]
+  print "Occurence(s) of TTTTTT:", countT[4]
+  print "Occurence(s) of TTTTTTT:", countT[5]
+  print "Occurence(s) of TTTTTTTT:", countT[6]
+  print "Occurence(s) of TTTTTTTTT:", countT[7]
+  print "Occurence(s) of TTTTTTTTTT:", countT[8]
+
+== Output ==
+
+  10,000 strings of 10 random coinflips were generated.  The following tallies of H's and T's were recorded. 
+  Occurence(s) of HH: 22483
+  Occurence(s) of HHH: 9995
+  Occurence(s) of HHHH: 4404
+  Occurence(s) of HHHHH: 1894
+  Occurence(s) of HHHHHH: 818
+  Occurence(s) of HHHHHHH: 342
+  Occurence(s) of HHHHHHHH: 136
+  Occurence(s) of HHHHHHHHH: 48
+  Occurence(s) of HHHHHHHHHH: 14
+  Occurence(s) of TT: 22591
+  Occurence(s) of TTT: 10146
+  Occurence(s) of TTTT: 4492
+  Occurence(s) of TTTTT: 1905
+  Occurence(s) of TTTTTT: 771
+  Occurence(s) of TTTTTTT: 291
+  Occurence(s) of TTTTTTTT: 108
+  Occurence(s) of TTTTTTTTT: 36
+  Occurence(s) of TTTTTTTTTT: 8

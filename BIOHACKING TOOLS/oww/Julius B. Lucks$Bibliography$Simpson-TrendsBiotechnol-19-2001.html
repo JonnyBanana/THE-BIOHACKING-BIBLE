@@ -1,0 +1,59 @@
+= Notes on <cite>Simpson-TrendsBiotechnol-19-2001</cite> =
+
+* complex tasks performed by cells: sensing, navigation, communication, cooperation, nano-fabrication
+* review on mimicing man-made information processing inside cells
+* to accomplish tasks, need memory, sensing, feedback, communication
+* E. coli - 2 micrometer^2 cross section - 4.6 x 10^6 bp chromosome - equiv 9.2 megabit memory
+** how arrive at this number?
+** 4300 diff polypeptides produced from several hundred diff promoters
+* compare to semiconductors [http://www.sematech.org International Technology Roadmap for Semiconductors]
+** by 2014, memory density 24.5 Gbits/cm^2 and logic transistor density 664 M/cm^2
+*** assuming 4 transistors per logic function (how get this?), 2 micrometer^2 Si could contain 490-bit memory with 3 simple logic gates
+* bacterial cells, viewed as 'devices' - tolerate a wide array of conditions
+* can integrate them in 3D structures
+* biofilm formation an alternative to lithography and other manufacturing techniques neccesary for Si integrated circuits
+* BBIC - bioluminescent bioreporter integrated circuit (4-8)
+* present 3 examples of sensing/information processing/actuation that occurs in natural cells
+*# directed motility (chemotaxis, phototaxis, magnetotaxis (12-14))
+*# symbiotic collonization as a communications system, esp. to initially establish the relationship
+*#* Hawaiian squid Euprymna scolopes with lumincescent Vibrio fisheri (24)
+*#** Upon colonization V. fischeri looses flagella, reduces cell size, decreases growth rate, enhances luminescence (25,26)
+*# group formation (biofilms) - members have some protection from phage, biocides, antibiotics
+* 'silicon mimetic' approach to engineering cell information processing
+** engineered genetic regulatory functions emulate the functionality of silicon semiconductor devices
+** silicon paradigm - three terminal device in which transport between 2 of the terminals controlled by a signal at the third ([http://en.wikipedia.org/wiki/Field_effect_transistor FET])
+*** biochemical analogy - substrate-enzyme-product controlled by some effector acting on the enzyme (bipolar junction transistor) (32,33)
+**** hardware interconnects not needed
+*** Fig 2 shows the lux system in V. fischerei used in the BBIC that implements this design - control of light production by O2 and FMNH2 modulation of luciferase activity
+** realizing logic gates with genetic machinery
+*** the key to logic gates is interconnectivity
+*** constructing gene transcription modules for biochemical devices that are logic circuits (Knight's group - 9,10)
+*** this group working on AND, OR and XOR
+*** implementing OR
+***# use 2 promoters that behave same as transcription factors, but are affected by 2 diff effectors
+***# use 1 promoter that respots same way to 2 diff inhibitors - tod-lux fusion in P. putida TVA8 (induced by trichloroethylene and toluene)
+*** '''combinations of AND, OR and XOR can implement any combinatorial logic function - but CANNOT be used for sequential circuits that require memory of past logic states and clock signal synchronization'''
+*** Gardner, Cantor, Collins - one-bit memory using double repressor toggle switch (uses lamba cI and part of Lac operon -  ('Construction of a Genetic toggle switch in E. coli' 35) (see also <cite>Kobayashi-PNAS-101-2004</cite>)
+*** 'challenge - develop genetic circuit that makes more eff use of cells DNA memory capacity'''
+*** Elowitz and Liebler repressilator can be used as clock (36) (why not also cell cycle?)
+** interconnecting
+*** needed for even moderate complexity
+*** suggest using cell-to-cell signals to connect - isolating single gate inside a cell
+*** quorum sensing via N-acyl-homoseine lactones (AHLs) - diffusable cell-to-cell signals present in many Gram-negative bacteria (37)
+*** V. fischeri - luxI encodes AHL synthetase, luxR encodes AHL-dependant transcriptional activator
+*** primary consideration is number of molecules in circuits and the amoun of cross-talk
+**** (39) - P. aeruginosa and V. fischerei AHL systems don't interact
+** Input/Output
+*** review on EMF and electric current pulses in living cells (43) - little data on how effects gene expression - need to know this for hybrid systems - Fig 6 describes their experiment towars this investigation
+** noise
+*** finite period of time necc for an effector to reach operational concentration, certain time needed for it to decay below operational concentration as well
+*** outcomes of genetic networks not deterministic (44,45)
+**** problem for non-linear circuits with bifurcations since can cause non-boolean, probabilistic responses
+*** simulating such circuits - Gillespi algorithm - see Adam's paper on Bio-SPICE (48)
+
+= References =
+<biblio force=false>
+
+#[[Julius B. Lucks/Bibliography]]
+#
+</biblio>

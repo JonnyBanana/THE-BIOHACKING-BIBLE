@@ -1,0 +1,774 @@
+* Add or delete the sections that you require.
+
+=PROJECT REPORT ON IN SILICO APPROACH TOWARDS DISCOVERY OF EFFECTIVE ANTI-HIV DRUG=
+
+
+[AUTHOR             :-          NANDINI ANANT JOSHI
+
+AFFILATION  :-      ( PANDIT RAVISHANKAR UNIVERSITY RAIPUR)
+
+CONTACT            :-         trupti_bioinfo@sify.com
+
+BACKGROUND   :-
+
+
+INTRODUCTION
+Bioinformatics can be described as the science of collecting, modeling, storing, searching, annotating and analyzing biological information. It involves a range of activities from data handling, publication, to data mining and analysis. An essential part of bioinformatics is to create new algorithms for the analysis of
+complex and/or large data sets.The National Center for Biotechnology Information (NCBI 2001) defines bioinformatics as:
+"Bioinformatics is the field of science in which biology, computer science, and information technology merge into a single discipline.”
+There are three important sub-disciplines within bioinformatics
+1. The development of new algorithms and statistics with which to assess relationships among members of large data sets;
+2. The analysis and interpretation of various types of data including nucleotide and amino acid  sequences, protein domains, and protein structures and 
+3. The development and implementation of tools that enable efficient access and management of different types of information.The mathematical, statistical and computing methods that aim to solve biological problems using DNA and amino acid sequences and related information is called bioinformatics. In simple bioinformatics mean "computational molecular biology"- the use of computers to characterize the molecular components of living things. Bioinformatics is a rapidly developing branch of biology and is highly interdisciplinary, using techniques and concepts from informatics, statistics, mathematics, chemistry, biochemistry, physics, and linguistics. It has many practical applications in different areas of biology and medicine. One of the main areas of bioinformatics is the data mining and analysis of the data gathered by the various genome projects. Other areas are sequence alignment, protein structure prediction, systems biology, protein-protein interactions, virtual evolution, gene expression, drug discovery and etc. Bioinformatics involves the integration of computers, software tools, and databases in an effort to address biological questions. Bioinformatics approaches are often used for major initiatives that generate large data sets. Two important large-scale activities that use bioinformatics are Genomics and Proteomics. Genomics refers to the analysis of genomes. A genome can be thought of as the complete set of DNA sequences that codes for the hereditary material that is passed on from generation to generation. These DNA sequences include all of the genes (the functional and physical unit of heredity passed from parent to
+offspring) and transcripts (the RNA copies that are the initial step in decoding the genetic information) included within the genome. Thus, genomics refers to the sequencing and analysis of all of these genomic entities, including genes and transcripts, in an organism. Proteomics, on the other hand, refers to the analysis of the complete set of proteins or proteome. In addition to genomics and proteomics, there are many more areas of biology where bioinformatics is being applied (i.e., metabolomics, transcriptomics). Each of these important areas in bioinformatics aims to understand complex biological systems.Bioinformatics is the study of information content and information flow in biological systems and
+processes. It has evolved to serve as the bridge between observations (data) in diverse biologically related disciplines and the derivations of understanding (information) about how the systems or processes function, and subsequently the application (knowledge). In the case of diseases are the understanding of
+dysfunction (diagnostics) and the subsequent applications of the knowledge for therapeutics and prognosis. The first bioinformatics/biological databases were constructed a few years after the first protein sequences began to become available. The first protein sequence reported was that of bovine insulin in 1956,
+consisting of 51 residues. Nearly a decade later, the first nucleic acid sequence was reported, that of yeast alanine tRNA with 77 bases. Just a year later, Dayhoff gathered all the available sequence data to create the first bioinformatics database. Bioinformatics was fuelled by the need to create huge databases, such as GenBank and EMBL and DNA Database of Japan to store and compare the DNA sequence data erupting from the human genome and other genome sequencing projects.Today, bioinformatics embraces protein structure analysis, gene and protein functional information, data from patients, pre-clinical and clinical trials, and the metabolic pathways of numerous species. This
+protein information lead to the development of many databases like PIR, SWISSPROT, TREMBL, SCOP,CATH, PDB. All of the original databases were organized in a very simple way with data entries being stored in flat files, either one per entry, or as a single large text file. Later on lookup indexes were added to allow convenient keyword searching of header information.The greatest achievement of bioinformatics is the completion of the Human Genome Project and many other organisms’ genome, which leads to the development of the new field, called comparative genomics, and many other fields like gene expression analysis and gene polymorphism using microarrays, and largely on determining the functions of the genes through functional genomics. Thus in total Genomics is any attempt to analyze or compare the entire genetic complement of a species or species. Now there is a general shift in emphasis from genes themselves to gene products. This led to catalogue the activities and characterize interactions between all gene products called proteomics and attempts to crystallize and or
+predict the structures of all proteins by structural genomics. Proteomics is the study of the function of all expressed proteins. The study of the proteome, called proteomics, now evokes not only all the proteins in any given cell, but also the set of all protein isoforms and modifications, the interactions between them,
+the structural description of proteins and their higher-order complexes.
+Pharmacogenomics is the application of genomic approaches and technologies to the identification of drug targets. In Short, pharmacogenomics is using genetic information to predict whether a drug will help make a patient well or sick. It Studies how genes influence the response of humans to drugs, from the population to the molecular level. Pharmacogenetics is the study of how the actions of and reactions to drugs vary with the patient’s genes. Pharmacogenetics is a subset of pharmacogenomics, which uses
+genomic/bioinformatics methods to identify genomic, correlates, likes SNPs (Single Nucleotide Polymorphisms), characteristic of particular patient response profiles and use those markers to inform the administration and development of therapies. Biomedical Informatics is an emerging discipline that has been defined as the study, invention, and implementation of structures and algorithms to improve communication, understanding and management of medical information. Agro informatics concentrates on the aspects of bioinformatics dealing with plant
+genomes. Now a days bioinformatics is being applied in drug discovery and drug designing, so as to obtain the best drug with less cost investment and with less or no side effects and with improved efficiency over traditional drugs .New approaches are aimed at understanding basic molecular mechanisms of drug action and at designing new pharmaceutical which include structure comparison and analysis, molecular dynamics simulations of how drugs bind receptors, chemical genetic approaches to understand macromolecular function in cells, and structural studies to elucidate how ligands bind their targets.
+Bioinformatics is being used in following fields:
+• Molecular medicine,
+• Personalized medicine,
+• Preventative medicine,
+• Gene therapy,
+• Microbial genome applications,
+• Waste cleanup,
+• Climate change Studies,
+• Alternative energy sources,
+• Biotechnology,
+• Antibiotic resistance,
+• Forensic analysis of microbes,
+• Bio-weapon creation,
+• Evolutionary studies,
+• Crop improvement,
+• Insect resistance,
+• Improve nutritional quality,
+• Development of Drought resistance varieties,
+• Vetinary Science.
+DISEASE iNTRODUCTION
+
+
+
+
+HIV
+HIV is the abbreviation used for the Human Immunodeficiency Virus. HIV attacks the body's immune system. Normally, the immune system produces white blood cells and antibodies that attack viruses and bacteria. The infection fighting cells are called T-cell lymphocytes. Months to years after a person is infected with HIV, the virus destroys all the T-cell lymphocytes. This disables the immune system to defend the body against diseases and tumors. Various infections will be able to develop, these opportunistic infections take advantage of the body's weakened immune system. These infection which normally won't cause severe or fatal health problems will eventually cause the death of the HIV patient.
+(Rombauts B., 1997)
+
+THE ORIGIN OF AIDS
+At this time, most evidence suggest that AIDS has it roots in Africa. This is believed because certain Simian Immunodeficiency Viruses (SIVs) are closely related to HIV and HIV-2, for instance, has an almost exact counterpart in a virus of the sooty-mangabey, a type of African monkey. The HIV-2's connection to the sooty mangabey is probably the most compelling evidence for animal to man transfer of HIV. A likely source of HIV-1 has been more difficult to pin down. The closest simian virus to HIV-1 discovered to date exists in certain chimpanzees.. Scientists have long recognized the ability of certain viruses and other diseases to pass from animals to humans. This process is referred to as zoonosis. Once
+an animal disease has infected people, it may then be passed from human to human. Although it has not been proven that HIV came from primates, an SIV has been known to infect humans (Zhu, Tuofu, et al. 1998). The earliest and most compelling evidence of HIV infection is that of an adult male who lived in what is now the Democratic Republic of Congo. Scientists recently succeeded in isolating the virus from a plasma sample taken from the man in 1959. Researchers believe that the ancestor of this strain may date to the 1940s or 50s and was introduced into humans a decade or more earlier. In June and July of 1981, cases of an extremely uncommon opportunistic infection, Pneumocystis carinii Pneumonia, and a very rare skin tumor of endothelial cell origin, Kaposi's sarcoma, were first reported in New York and California in epidemic proportions among previously healthy young homosexual and bisexual men who were not previously known to be predisposed to these diseases. With the rapidly I I increasing number of cases, it was soon recognized that other life threatening infections and neoplastic diseases were also observed and found to be associated with an unexplained defect in cell mediated immunity, common to each of these patients. By early 1982 the group of disease entities was named the acquired immune deficiency syndrome (AIDS) by the Center for Disease Control (CDC). (6) The term "syndrome" has been used because AIDS does not constitute a single illness, but rather encompasses a
+wide range of clinical diseases including specific life threatening infections and neoplasm's associated with a profound and irreversible unexplained acquired disorder of cell mediated immunity. Since the appearance of the original definition in September of 1982, the CDC has subsequently revised this
+definition to accommodate additional syndromes recognized as manifestations of advanced HIV disease.(Centers for Disease Control, 1993) When the first cases of AIDS were reported, many hypotheses were proposed to explain the possible cause(s) of the newly recognized syndrome, but it is now widely accepted that AIDS is caused by a previously unknown human retrovirus, which was initially discovered and isolated in 1983 from patients with persistent generalized lymphadenopathy at the "Institut Pasteur" in Paris.
+All the related viruses, which were discovered, were named the human immunodeficiency virus (HIV) by the International Committee on the Taxonomy of Viruses in 1986.
+
+TERMINOLOGY
+
+Untreated HIV disease is a chronic progressive process that begins with infection, is often followed by a "primary HIV syndrome," and progresses in adults over a median period of more than 10 years to the late stage: AIDS. From the time of infection, the virus continuously and rapidly replicates, mutates, and as a result diversifies and evolves in response to selective pressure. Immune system damage also begins upon infection. The burden of virus and the bulk of this process occurs in lymphoid tissue, and the immune system struggles to hold the process in check. Slowly, but relentlessly, the process destroys essential
+components of the host immune system. Progression is often accelerated in infants with prenatal HIV infection. Eventually the host becomes increasingly susceptible to and eventually dies as a result of complications of opportunistic infections and malignancies resulting from immune system dysfunction.
+1. AIDS: The syndrome called AIDS (Acquired Immuno Deficiency Syndrome) is the late stage of HIV disease. (see classification)
+2. ARC: The term AIDS Related Complex has been abandoned, because the signs labeled with this term are manifestations of the middle stage of HIV disease.
+3. PGL: The Progressive Generalized Lymphadenopathy syndrome is a common manifestation of early and middle stage HIV disease but it has no prognostic significance.
+
+CLASSIFICATION
+The CDC classification of HIV disease was first put forth as a categorization of HIV related symptoms into four groups and was explicitly for "public health purposes" and not "intended as a staging system,"although it was frequently treated as if it were a staging system in the AIDS literature. Staging is disease
+classification that aims primarily to make groupings that have different prognosis and can be used in guiding treatment decisions. Stages attempt to classify disease in a progressive sequence from least to most severe, each higher stage having a poorer prognosis or different medical management than the preceding stage. The current CDC classification system (see annex 1), from the revision in 1993, combines three categories of the CD4 count with three symptom categories and is closer to a staging system but is still not described as such. The CDC, however, proposed that it be used to "guide clinical and therapeutic actions in the management of HIV infected adolescents and adults." This description of its intended use is close to the use of a staging system. (Osmond Dennis H., 1998)
+
+DISEASE PROGRESSION
+
+HIV disease is a continuum of progressive damage to the immune system from the time of infection to the manifestation of severe immunologic damage by opportunistic infections, neoplasm's, wasting, or low CD4 lymphocyte count that define AIDS. Nearly all infected persons have a CD4 lymphocyte count below the mean for seronegative persons and show a a progressive loss of these cells over time. Most HIV positive persons, even with near normal CD4 lymphocyte counts, show functional lymphocyte abnormalities that suggest their long term immune functioning will be impaired. Rates of progression to AIDS are very low in the first 2 years after infection and increase thereafter. The median incubation period from HIV infection until development of AIDS is estimated at approximately 10 years for young adults. (Bacchetti P, Moss AR, 1989 ) The incubation period is known as the period from infection to development of AIDS. The estimate varies with the age at which infection occurs and is significantly shorter in infants and in older adults and varies even between infection at age 20 and infection at age 40.
+The time from first diagnosis of AIDS to death has been characterized separately from the incubation time from infection to AIDS as AIDS survival time. In the Multicenter Hemophilia Cohort Study median survival after a single AIDS defining condition ranged from 3 to 51 months for the 10 most common conditions. The addition of a CD4 lymphocyte count less than 200/μl as an AIDS defining condition in 1993 further broadened the range of AIDS survival times because most of the AIDS defining disease diagnoses occur at lower CD4 lymphocyte counts. The time from HIV infection to a CD4 lymphocyte count less than 200/μl is on average nearly 2 years less than to manifestation of an AIDS defining
+opportunistic infections. (Longini Jr IM, 1991)
+
+TRANSMISSION
+ Sexual transmission
+
+The current worldwide expansion of the AIDS epidemic is primarily driven by the sexual transmission of human immunodeficiency virus type 1 (HIV-1), and its future will be determined largely by the degree to which sexual transmission can be reduced. Although sexual transmission among homosexual males is still
+a significant part of epidemic spread, in the most populous regions of the world, sexual transmission among heterosexuals is the dominant mode of spread. (Mann J, et al., 1988) HIV-2 is thought to be less infectious than HIV-1, although few data are available. HIV-2 infected individuals generally have a lower viral titer in peripheral blood samples than those infected with HIV-1, and incidence rates of infection appear lower in cohorts at risk for HIV-2 than among comparable populations at risk for HIV-1. (Donnelly C, et al., 1993) HIV is commonly transmitted sexually by penile anal intercourse and penile vaginal intercourse and infrequently by fellatio. Vaginal intercourse can transmit HIV to either the male or the female partner, but a number of studies have shown that the risk is higher to the female partner. Studies of homosexual men have shown consistently that the receptive partner in anal intercourse is at the highest risk of HIV infection and that risk is strongly related to the number of male sexual partners. Anal intercourse has also been shown to be a risk factor for the female partner in heterosexual studies. (Moss A, et al., 1987) Presumably, fellatio would pose the same risk to the female partner as to the receptive oral partner in male homosexual couples, but data are lacking on the risk in heterosexuals. There is a theoretic potential of transmission from cunnilingus, but no well-documented cases have been reported. Condom use has been shown to reduce sexual transmission of HIV. A meta-analysis of several studies of HIV transmission found that condom efficacy was 69% overall. Condom efficacy is greatly increased by proper use. The female condom has been approved by the Food and Drug Administration to provide a method of contraception that is more under the woman's control that should also protect against HIV. In a laboratory study, use of zidovudine was associated with decreased detection of HIV-1 in semen, and in a prospective study of male-to-female transmission, controlling for disease stage, men taking zidovudine were less likely to transmit HIV to their female partner than were men not receiving antiretroviral therapy. (Musicco M, et al., 1994) Antiretroviral therapy thus may reduce infectiousness.
+
+INJECTION DRUG USE RELATED HIV INFECTION
+
+Transmission of HIV among injection drug users occurs primarily through HIV infected blood contamination of injection paraphernalia, which is re-used by uninfected injection drug users. Behaviors that increase the likelihood, frequency, and magnitude of exposure to infected blood increase the risk of infection. Among injection drug users, several demographic and behavioral characteristics are associated with greater risk of acquiring HIV. Foremost among risk factors is the sharing of needles, syringes, and other injection equipment. Sharing is a common practice among injection drug users worldwide. (Burack Jeffrey H., Bangsberg D. 1998)
+
+TRANSMISSION OF HIV BY BLOOD, BLOOD PRODUCTS, TISSUE
+TRANSPLANTATION AND ARTIFICIAL INSEMINATION
+
+Transmission of HIV-1 and some other viruses can occur following transfusion of a blood product derived from an infected person's blood and processed into a blood component (i.e., whole blood, packed red cells, fresh frozen plasma, cryoprecipitate, and platelets). Plasma derived blood products, which are
+manufactured from pooled plasma can transmit HIV-1 and other viruses depending on the production process. HIV has been transmitted through transplantation of kidney, liver, heart, pancreas, bone, and  skin: all blood containing organs or highly vascular tissues. There are no reports of HIV tissue
+transmission from HIV-seropositive donors of cornea, ethanol treated and lyophilized bone, fresh frozen bone without marrow, lyophilized tendon or fascia, or lyophilized and irradiated dura mater. (Simonds R.J. 1993) Both intrauterine insemination and cervical insemination result in HIV transmission.
+Vertical Transmission
+Perinatal transmission of human immunodeficiency virus accounts for virtually all new HIV infections in children. The relative contributions of in utero and intrapartum HIV transmission are unknown. One proposed scheme for differentiating these 2 modes of transmission suggest that the virus was transmitted early or in utero if HIV is detected in the infant within the first 48 hours of live. Late or intrapartum transmission is said to have occurred if virologic evaluations are negative during the first week of life but there is subsequent HIV detection between 7 and 90 days of age. Applying these admittedly speculative
+definitions to published studies suggest that 50% to 70% of HIV vertical transmission occurs intrapartum.If true, this finding has important implications for designing strategies to interrupt transmission. Breastfeeding substantially increases the risk of HIV vertical transmission, therefore bottle-feeding is currently recommended for all infants born to HIV infected mothers. (Kline Mark K. 1996)
+
+HIV TESTING
+Testing serum for antibodies to HIV with a standard ELISA (followed by a confirmatory Western Blot) is currently the most common, cost effective, and accurate method of screening for infection. Rapid serum HIV antibody tests, saliva- and urine- based antibody tests, and home HIV antibody testing kits have been approved by the Food and Drug Administration (FDA) and are being marketed. HIV RNA tests are being used in research and clinical settings to diagnose primary HIV infection before the formation of detectable
+antibodies. (Constantine N. 1998) . Although HIV antibody tests are the most appropriate for identifying infection, alternate technologies can contribute to an accurate diagnosis, assist in monitoring the response to therapy, and can be used to effectively predict disease outcome. The p24 antigen assay measures the viral capsid (core) p24 protein in blood that is detectable earlier than HIV antibody during acute infection. It occurs early after infection due to the initial burst of virus replication and is associated with high levels of viremia during which the individual is highly infectious. (Dailey P.J., Hayden D. 1998)
+The last 5 years has seen an enormous revolution in the clinical virology laboratory: the development and rapid application of widely available, sensitive, and precise nucleic acid amplification assays for the measurement of "viral load" (i.e., plasma HIV-1 RNA) in HIV1 infected patients. Quantitative laboratory
+methods that measure HIV-1 "viral load" or "viral burden" can best be described as assays that assess the level of overall virus replication activity that is reflective of the underlying disease process in the infected patient, usually by quantification of plasma HIV-1 RNA. 
+THE REPLICATION CYCLE OF HIV-1
+VIRUS ENTRY
+Several independent lines of evidence demonstrated that CD4 serves as a binding receptor for HIV-1, which bind with high affinity to gp120. (40) Gp120 is a viral surface envelope protein. The post binding events required for HIV-1 and cell membrane fusion are not well understood. HIV-1, like most other retroviruses, infects cells in a pH-independent manner that is consistent with direct fusion between viral and cell surface membranes. (Capon D.J., Ward R.H. 1991)
+REVERSE TRANSCRIPTION
+The reverse transcription pathway generates a linear DNA copy of the viral RNA genome. This step takes place within a viral nucleoprotein complex and requires the coordinated activities of reverse transcriptase,   RNA- and DNA dependent DNA polymerase, and RNaseH, which degrades the RNA component of
+RNA-DNA hybrid molecules. Because the viral nucleoprotein complexes are rapidly transported to the host cell nucleus, the majority of viral DNA synthesis occurs within the nuclear compartment (Katz R.A.,Skalka A.M."1990).
+Integration of the viral DNA into cellular genomic DNA
+The nuclear viral complexes serve as the machines that integrate viral DNA into host cell chromosomal DNA to form a provirus. This step is critically dependent on the activity of the viral integrase protein and is essential for viral gene expression. (Lewis P.,et al., 1992)
+ 
+Viral protein expression
+The expression of viral genes requires the collaborative activities of the host cell transcription machinery (RNA polymerase and transcription factors Sp1 and NFkB) and viral regulatory proteins (tat and rev).
+ Virus assembly
+ The MA gag protein seems to specify the site of viral assembly. Membrane attachment of viral gag and gag-pol precursor proteins requires N-terminal cotranslational addition of myristic acid to viral MA proteins. Although MA contains the membrane-binding domain and can induce membrane budding, the
+incorporation of gag and gag-pol precursor proteins into functional viral particles requires the presence of interaction domains of gag and a late acting L-domain of the p6 gag protein. In retroviruses, viral genomic RNA is selectively taken up from the pool of cytoplasmic RNAs because the NC gag protein recognizes
+specific cis-acting RNA packaging signals (Parent L.J., et al., 1995).
+Expression of viral envelope proteins
+Retroviral envelope proteins are synthesized in the endoplasmic reticulum (ER) of infected cells and are transported to the cell surface by the host cell secretory pathway. Within the endoplasmatic reticulum, monomers of gp160, the precursor HIV envelope protein, associate with BiP, a molecular chaperone, before folding and oligomerization. Oligomeric gp160 complexes are transported from the endoplasmatic reticulum to the Golgi apparatus, where gp160 is cleaved by a cellular proteinase to produce the surface gp120 and transmembrane gp41 sub units before transport to the cell surface. During or shortly after budding, retroviral particles mature when the gag and gag-pol poly proteins are cleaved to mature protein products by the viral PR. The mature virions that are released from the virus producer cells are then competent to begin the replication cycle again in other target cells (Earl P.LL, et al., 1991).
+
+STRUCTURE OF THE HIV VIRUS
+
+The integrated form of HIV-1, also known as the provirus, is approximately 9.8 kilobases in length. The genes of HIV are located in the central region of the proviral DNA and encode at least nine proteins.
+
+STRUCTURAL PROTEINS
+Gag proteins:
+The gag gene gives rise to the 55 kilodalton Gag precursor protein, also called p55, which is expressed from the unspliced viral mRNA. After budding, p55 is cleaved by the virally encoded protease during the process of viral maturation into four smaller proteins designated MA (matrix [p17]), CA (capsid [p24]),
+NC (nucleocapsid [p9]), and p6. Most MA molecules remain attached to the inner surface of the virion lipid bilayer, stabilizing the particle. A small percentage of MA, however, binds integrase, and is thereby recruited inside the deeper layers of  the virion. These MA molecules subsequently facilitate the nuclear transport of the viral genome because a karyophillic signal on MA is recognized by the cellular nuclear import machinery. This phenomenon allows HIV to infect non dividing cells, an unusual property for a retrovirus.The p24 (CA) protein forms the conical core of viral particles. Cyclophilin A has been demonstrated to interact with the p24 region of p55 leading to its incorporation into HIV particles.The NC region of Gag is responsible for specifically recognizing the so-called packaging signal of HIV.The packaging signal consists of four stem loop structures located near the 5' end of the viral RNA, and is sufficient to mediate the incorporation of a heterologous RNA into HIV-1 virions, NC also facilitates reverse transcription. (Poznansky M., et al., 1991)
+
+Gag-Pol precursor:
+The viral protease, integrase, RNAse H, and reverse transcriptase are always expressed within the context of a Gag-Pol fusion protein. During viral maturation, the virally encoded protease cleaves the Pol polypeptide away from Gag and further digests it to separate the protease (p10), RT (p50), RNAse H
+(p15), and integrase (p31) activities.
+
+HIV-1 protease:
+The HIV-1 protease is an aspartyl protease (54) that acts as a dimer. Protease activity is required for cleavage of the Gag and Gag-Pol polyprotein precursors during virion maturation.
+
+
+
+Reverse transcriptase:
+The pol gene encodes reverse transcriptase. During the process of reverse transcription, the polymerase makes a double stranded DNA copy of the dimer of single stranded genomic RNA present in the virion.
+Integrase:
+The integrase protein mediates the insertion of the HIV proviral DNA into the genomic DNA of an infected cell.
+Envelope proteins:
+The 160 kD Env (gp160) is expressed from singly spliced mRNA. A cellular protease cleaves gp160 to generate gp41 and gp120. Gp41 contains the transmembrane domain of Env, while gp120 is located on the surface of the infected cell and of the virion through non covalent interactions with gp41. Env exists as a  multimer, most likely a trimer, on the surface of the cell of the virion. (Bernstein H.B., et al., 1995) Interactions between HIV and the virion receptor, CD4, are mediated through specific domains of gp120.
+REGULATOR PROTEINS
+Tat:
+Tat is a transcriptional transactivator that is essential for HIV-1 replication.Tat is an RNA binding protein, unlike conventional transcription factors that interact with DNA. The mechanism of Tat function remains controversial. From some studies, it appears that Tat acts principally to promote the elongation phase of
+HIV-1 transcription, other studies indicate that Tat may be involved in the phosphorylation of the carboxyl terminal domain (CTD) of RNA polymerase II (Feinberg M.B., et al., 1991).
+Rev:
+Rev is a 13-kD sequence-specific RNA binding protein. Rev acts to induce the transition from the early to the late phase of HIV gene expression.
+ACCESSORY PROTEINS
+Nef:
+Nef has been shown to have multiple activities, including the down regulation of the cell surface expression of CD4, the perturbation of T-cell activation, and the stimulation of HIV infectivity. (Miller M.D., et al., 1994)
+Vpr:
+The Vpr protein is incorporated into viral particles. Vpr plays a role in the ability of HIV to infect non dividing cells by facilitating the nuclear localization of the preintegration complex. Vpr can also block cell division (Sato A., et al., 1997)
+Vpu:
+HIV-2 does not contain vpu, but instead harbors another gene, vpx. The 16-kD Vpu polypeptide is an integral membrane phosphoprotein that is primarily localized in the internal membranes of the cell. In HIV infected cells, complexes are formed between the viral receptor, CD4, and the viral envelope protein
+in the endoplasmic reticulum causing the trapping of both proteins to within this compartment. The formation of intracellular Env-CD4 complexes thus interferes with virion assembly. Vpu liberates the viral envelope by triggering the degradation of CD4 molecules complexed with Env. Vpu also increases the
+release of HIV from the surface of an infected cell. (Klimkait T., et al., 1990)
+Vif:
+Vif is a 23-kD polypeptide that is essential for the replication of HIV in peripheral blood lymphocytes, macrophages, and certain cell lines.
+THE REGULATION OF HIV GEN EXPRESSION
+The regulation of HIV gene expression is accomplished by a combination of both cellular and viral factors. HIV gene expression is regulated at both the transcriptional and post-transcriptional levels. The HIV genes can be divided into the early genes and the late genes. The early genes, Tat, Rev, and Nef, are
+expressed in a Rev independent manner. The mRNAs encoding the late genes, Gag, Pol, Env, Vpr, Vpu, and Vif require Rev to be cytoplasmically localized and expressed.
+CLINICAL COURSE OF UNTREATED HIV DISEASE
+Primary infection Transmission:
+Aborted HIV Infection
+There is evidence that some individuals may successfully ward of infection after inoculation. Three somewhat different mechanisms are suggested by published reports:
+• Defective co-receptor needed by HIV to infect cells
+• Immune response capable of preventing HIV from establishing infection
+• Mutation in the SDF-1 gene
+Establishing Infection:
+• Spread of HIV to tissues and cells that ultimately may represent hard to eradicate viral reservoirs
+• Extensive damage to lymph node cellular architecture
+• Stimulation of an immune response against HIV
+• Loss of HIV specific CD4+ and possibly CD8+ cell clones that may be effective in controlling HIV infection
+• Rapid HIV replication and mutation creating a more genetically diverse population of HIV genomes, some perhaps more virulent, or more fit for replication in other micro environments such as in the presence of particular drugs or particular anti-HIV cytotoxic lymphocyte clones . Early Impact on T Cell Clones, T Cell Diversity, and Loss of Members of the T Cell .
+Repertoire:
+CD4+ and CD8+ T cells are immunologically effective not just because of their numbers, as reflected in CD4+ and CD8+ T cell counts, but also because of their diversity. One factor probably determining ultimate disease progression is the extent of very early destruction of the subpopulation of CD4+ T cell clones capable of recognizing HIV antigens. Loss of these clones means loss of the CD4+ T cell component of the natural anti-HIV immune response, which is crucial in controlling HIV replication.
+The Syndrome of Primary HIV Infection:
+Many, perhaps most, patients experience an acute syndrome within weeks of primary HIV infection and immune response. The syndrome commonly persists for several weeks.
+
+EARLY AND MIDDLE STAGES OF HIV DISEASE
+Following the HIV antibody rise, levels of detectable virus, HIV RNA, and viral antigens in peripheral blood drop dramatically. This lower range, which is called "set point", is relatively stable for months, perhaps years. Typically noted over this period is a drop in the CD4+ count, from normal levels to 200 to 300 cells/mm3. The frequently observed generalized lymphadenopathy syndrome is probably a manifestation of this process, although why lymphadenopathy is prominent only in some patients remains uncertain. The baseline clinical state for many patients until late in the middle stage is minimal or no symptoms; other individuals, however, have subjective systemic symptoms, such as fatigue, and a few have fevers. Against the baseline of relative clinical wellness, common episodic conditions during these stages of disease include herpes zoster, thrush, seborrheic dermatitis, skin and nail infections and bacterial infections (Cohen O.J.,et al., 1995).
+Advanced HIV Disease
+Untreated patients with manifestations of advanced HIV disease typically have CD4+ counts below 200 cells/mm3, increased plasma HIV RNA levels, and clinical manifestations indicative of severe immunocompromise, including conditions qualifying as CDC-defined AIDS. Opportunistic infections commonly occur.
+Late-Stage HIV Disease
+As the disease advances further and the CD4+ count drops below 50 cells/mm3, additional opportunistic infections as well as central nervous system non-Hodgkin's lymphoma occur commonly, and, in homosexual males, existing kaposi's sarcoma may become extensive and cause disfigurement and
+clinically significant edema. Death eventually results from extensive disease of vital organs, most commonly the lungs, and presumably from effects of circulating toxins, electrolyte abnormalities, hematopoietic and circulatory failure, and autonomic nervous system damage. 
+CLINICAL MANIFESTATIONS OF HIV DISEASE
+Fever
+The fever can last from a few days to longer than a month, with no other symptoms or disease present and no other obvious cause.
+Wasting
+The Centers for Disease Control recognized wasting as an AIDS defining condition in 1987, defining the "wasting syndrome" as a weight loss of at least 10% in the presence of diarrhea or chronic weakness and documented fever for at least 30 days that is not attributable to a concurrent condition other than HIV
+infection itself. A significant relationship between weight loss and survival and/or disease progression has been demonstrated in numerous prospective and retrospective studies. Weight loss in HIV infection features depletion of both fat and lean tissue. Among the factors that have been demonstrated or hypothesized to contribute to wasting are metabolic alterations, anorexia, malabsorptive disorders, hypogonadism, and excessive cytokine production.
+
+
+Oral manifestations of HIV disease
+Oral manifestations of HIV disease are common and include oral lesions and novel presentations of previously known opportunistic diseases.
+Dermatologic manifestations of HIV infection
+HIV infected persons commonly have cutaneous abnormalities; the prevalence approaches 100%. (75) .Some of the conditions are unique and virtually pathognomonic for HIV disease, for example, Kaposi’s sarcoma.
+Neurological dysfunction's
+HIV is classified among the lentiviruses, a family of viruses characterized in part by their tendency to cause chronic neurologic disease in their animal hosts. Neurologic disease is the first manifestation of symptomatic HIV infection in roughly 10 to 20% of persons, while about 30 to 40% of patients with advanced HIV disease will have clinically evident neurologic dysfunction during the course of their illness. The incidence of subclinical neurologic disease is even higher: autopsy studies of patients with advanced HIV disease have demonstrated pathologic abnormalities of the nervous system in 75 to 90% of cases. (Levy R.M., et al., 1985)
+Entry into the central nervous system
+The initial "seeding" of the nervous system by HIV-1 is usually asymptomatic, although acute aseptic meningitis, encephalitis, and inflammatory polyneuropathy have all occurred in this setting.
+Pathogenesis of AIDS Dementia Complex (ADC)
+The AIDS Dementia Complex (ADC) is one of the most common and clinically important central nervous system complications of late HIV-1 infection. It is a source of great morbidity and, when severe, is associated with limited survival. While its pathogenesis remains enigmatic in several important aspects, ADC is generally thought to be caused by HIV-1 itself, rather than to another (pportunistic infection.) Although the severity and relative prominence of some symptoms and signs compared to others may vary among individual patients, the general character of ADC involves three functional categories: cognition,
+motor performance, and behavior. (Navia B., et al., 1986)
+Cerebral symptoms and signs
+Apart from dementia, HIV infected patients are at risk for a wide range of neurologic diseases. Cerebral signs and symptoms are the most common. Global cerebral disease can present with altered mental status or generalized seizures, while focal disease often produces hemiparesis, hemisensory loss, visual field cuts, or disturbances in language use.
+Symptoms affecting cord, nerve roots and muscle
+Below the foramen magnum, viral and, rarely, fungal and parasitic opportunistic infections can affect the spinal cord. Systemic lymphoma can infiltrate nerve roots and meninges, occasionally causing a mass lesion within the cord. In addition, HIV itself is associated with a spastic paraparesis similar to that seen
+with vitamin B12 deficiency.
+Pain in AIDS
+There is growing awareness that pain from a variety of etiologies commonly complicates HIV disease. In general, AIDS patients have pain comparable in prevalence and intensity to patients with cancer pain, with similar mixtures of neuropathic and visceral-somatic etiologies. However, while efforts to improve
+malignant pain management have benefited many cancer pain patients, pain in AIDS is dramatically undertreated.
+Respiratory syndromes in HIV Disease
+Respiratory symptoms are a frequent complaint in HIV infected individuals. The Pulmonary Complications of HIV Infection Study demonstrated that respiratory symptoms are a frequent complaint in HIV infected individuals and increase in frequency as the CD4 cell count declines below 200. Respiratory symptoms may be due to a wide spectrum of pulmonary illnesses that includes both HIV and non-HIV related conditions. The HIV related conditions include both opportunistic infections and neoplasm's. The opportunistic infections include bacterial, mycobacterial, fungal, viral, and parasitic pathogens.
+Cardiac involvement in HIV disease
+Since HIV disease was first recognized in 1981, case reports have described both clinical and autopsy evidence of cardiac abnormalities. The most obvious of these abnormalities has been pericarditis, at times with large effusions and often with cardiac tamponade. (82)
+Endocrine abnormalities
+A number of endocrine abnormalities develop in patients with HIV infection, although many are likely to be nonspecific responses to infection, stress, and malnutrition. Others are due to infiltration of endocrine glands by tumor or infection.
+Hematologic abnormalities
+Anemia is a very common finding in patients with HIV infection, particularly in individuals with more advanced HIV disease. Zidovudine therapy is probably the most common cause of anemia in HIV infected patients. Thrombocytopenia is also frequently associated with HIV infection. Granulocytopenia is a problem commonly encountered in patients with HIV infection. Although low
+granulocyte counts usually reflect the toxicity of therapies for HIV infection (mostly zidovudine therapy) or associated conditions, studies of untreated patients have also shown a high incidence of granulocytopenia, particularly in patients with more profound immunodeficiency.
+Renal manifestations in HIV infection
+There is a broad spectrum of renal manifestations in human immunodeficiency virus infection , and these disorders are commonly encountered in patients in all stages of HIV infection. Although fluid and electrolyte disorders and acute renal failure are commonly found in hospitalized HIV infected patients, HIV associated nephropathy is the most clinically relevant and devastating renal disorder with patients progressing to end-stage renal disease rapidly. (Winston J, et al,1996)
+Gastrointestinal manifestations in HIV infection
+Gastrointestinal and hepatobiliary disorders are among the most frequent complaints of patients with HIV disease. Advances in antiretroviral therapy are changing the nature of HIV disease and affecting many of the gastrointestinal manifestations. Before combination antiretroviral therapy, the best estimates suggested that 50 to 93% of all patients with HIV disease had marked gastrointestinal symptoms during the course of their illness. Recent clinical experience suggests that effective anti-HIV therapy and chemoprophylaxis
+may delay/prevent the occurrence of gastrointestinal opportunistic infections. Gastrointestinal manifestations of HIV disease include diarrhea, dysphagia and odynophagia, nausea, vomiting, weight loss, abdominal pain, anorectal disease, jaundice and hepatomegaly, gastrointestinal bleeding, interactions of HIV and hepatotropic viruses, and gastrointestinal tumors (Kaposi's sarcoma and non-Hodgkin's lymphoma). 
+Ophthalmic manifestations in HIV infection
+Numerous ophthalmic manifestations of HIV infection may involve the anterior or posterior segment of the eye. Anterior segment findings include tumors of the periocular tissues and a variety of external infections. Posterior segment changes include an HIV-associated retinopathy and a number of opportunistic infections of the retina and choroid.
+Otolaryngologic manifestations in HIV infection
+HIV disease is associated with a variety of problems in the head and neck region; as many as 70% of HIV infected patients eventually develop such conditions. The causes of most otolaryngologic manifestations of HIV disease fall into the following three categories: infections, neoplasm's, and primary neurologic
+damage caused by HIV. The infections of the head and neck are usually caused by the common expected pathogens in patients with a normal immune system, and the majority of patients respond to standard medical management. Unusual organisms, the pathogens frequently associated with HIV infection, have
+been isolated in the later stages of their disease. Kaposi's sarcoma and non-Hodgkin's lymphoma, the neoplasm's associated with HIV disease, can occur in the head and neck.
+INFECTIONS AND MALIGNANCIES ASSOCIATED WITH HIV DISEASE
+The patient with HIV infection is at risk for a wide spectrum of disease both common and exotic. To equally consider all of these processes in the differential diagnosis of any HIV infected patient can be overwhelming for the clinician and very expensive. HIV patients can be grouped into stages of HIV infection, AIDS itself representing only the very last stages of this infection. Using the CD4 count,
+patients can be generally grouped into four stages of HIV infection. When the CD4 count is over 500 cells/mm3, most patients are essentially asymptomatic. As the CD4 count drops to 200 to 500 cells/mm3, the early manifestations of HIV infection start to appear. As the CD4 count drops below 200 cells/mm3, patients become vulnerable to many of the processes associated with AIDS. As the CD4 count drops below 50 cells/mm3, patients become increasingly at risk for the unusual opportunistic infections highlighted in the medical literature. (Lee K.C., Tami A.A. 1998)
+Infections Bacterial
+Streptococcus pneumoniae, Haemophilus influenzae, Pseudomonas aeruginosa,
+Rhodococcus equi, Salomellae, Bartonella henselae, Mycobacterium aviumintracellulare (MAI), Mycobacterium tuberculosis
+
+Fungal
+Asperillus species, Candidiasis species, Cryptococcosis neoformans,
+Hisplasmosis capsulatum, Coccidioides immitis
+
+Viral Varicella-zoster virus, Herpes simplex virus, Cytomegalovirus
+
+Protozoan
+Pneumocystis carinii, Coccidia species, Microsporidia species, Toxoplasma
+gondii
+
+Malignancies
+Three cancers are significantly more common among persons infected with HIV: Kaposi's sarcoma, non-
+Hodgkin's lymphoma , and Hodgkin's disease In addition, there is epidemiologic evidence to suggest that
+cervical and anal dysplasia are associated with HIV. (Meyer J.M. &Rodvold K.A., 1996)
+
+
+RESULTS/MATERIALS AND METHODS
+Nucleotide Composition:
+
+DNA molecule: gi|4034005|emb|AJ011406.1|HIM011406 Human immunodeficiency virus type 1
+partial protease gene, isolate BI-97234
+Length = 297 base pairs
+Molecular Weight = 90023.00 Daltons, single stranded
+Molecular Weight = 180046.00 Daltons, double stranded
+G+C content = 39.06%
+A+T content = 60.61%
+Nucleotide Number Mol%
+A 106 35.69
+C 48 16.16
+G 68 22.90
+T 74 24.92
+S 1 0.34
+
+Restriction Mapping
+gi|4034005|emb|AJ011406.1|HIM011406 Human immunodeficiency virus type 1 partial protease gene,
+isolate BI-97234
+Restriction Map
+297 base pairs
+Translations: none
+Restriction Enzyme Map:
+1 CCTCASATCACTCTTTGGCAACGACCCATCGTCACAATAAAGATAGGGGGGCAACTAAAAGAAGCTCTATTAGATACAGG 80
+1 GGAGTSTAGTGAGAAACCGTTGCTGGGTAGCAGTGTTATTTCTATCCCCCCGTTGATTTTCTTCGAGATAATCTATGTCC 80
+Hin4I AhdI Hin4I
+Hin4I Hin4I
+81 AGCAGATGATACAGTATTAGAAGACGTGGATTTGCCAGGAAGATGGAAACCAAAAATGATAGTGGGAATTGGAGGTTTTG 160
+81 TCGTCTACTATGTCATAATCTTCTGCACCTAAACGGTCCTTCTACCTTTGGTTTTTACTATCACCCTTAACCTCCAAAAC 160
+BmgBI MboII BstXI MboII Hin4I
+BbsI BsaXI
+MnlI
+161 TCAAAGTAAGACAGTATGAAGAGGTACCCATAGAAATCTGTGGACATAAAGTTATAGGTACAGTATTAATAGGACCTACA 240
+161
+AGTTTCATTCTGTCATACTTCTCCATGGGTATCTTTAGACACCTGTATTTCAATATCCATGTCA
+TAATTATCCTGGATGT 240
+BsaXI Acc65I TspDTI Hpy8I AseI EcoO109I
+EarI BanI MboII PpuMI
+MnlI NlaIV
+Hin4I KpnI
+241 CCTGCCAATGTAATTGGAAGAAATCTGTTAACTCAGCTTGGCTGCACTTTAAATTTT 297
+241 GGACGGTTACATTAACCTTCTTTAGACAATTGAGTCGAACCGACGTGAAATTTAAAA 297
+AarI BsgI BspCNI
+BspMI BbvI BseMII
+MboII DraI
+HincII ApoI
+HpaI
+Hpy8I
+Restriction table:
+Enzyme Recognition frequency Positions
+__________________________________________________________________________
+AarI CACCTGCnnnn'nnnn_ 1 250
+Acc65I G'GTAC_C 1 184
+AhdI GACnn_n'nnGTC 1 29
+ApoI r'AATT_y 1 292
+AseI AT'TA_AT 1 227
+BanI G'GyrC_C 1 184
+BbsI GAAGACnn'nnnn_ 1 108
+BbvI GCAGCnnnnnnnn'nnnn_ 1 269
+BmgBI CAC'GTC 1 106
+BsaXI ACnnnnnCTCCnnnnnnn_nnn' 1 144
+BsaXI GGAGnnnnnGTnnnnnnnnn_nnn' 1 174
+BseMII CTCAGnnnnnnnn_nn' 1 287
+BsgI GTGCAGnnnnnnnnnnnnnn_nn' 1 268
+BspCNI CTCAGnnnnnnn_nn' 1 286
+BspMI ACCTGCnnnn'nnnn_ 1 250
+BstXI CCAn_nnnn'nTGG 1 123
+DraI TTT'AAA 1 291
+EarI CTCTTCn'nnn_ 1 174
+EcoO109I rG'GnC_Cy 1 233
+Hin4I GAynnnnnvTCnnnnnnnn_nnnnn' 3 15, 47, 144
+Hin4I GAbnnnnnrTCnnnnnnnn_nnnnn' 3 15, 47, 176
+HincII GTy'rAC 1 270
+HpaI GTT'AAC 1 270
+Hpy8I GTn'nAC 2 203, 270
+KpnI G_GTAC'C 1 188
+MboII GAAGAnnnnnnn_n' 4 113, 132, 191, 270
+MnlI CCTCnnnnnn_n' 2 146, 175
+NlaIV GGn'nCC 1 186
+PpuMI rG'GwC_Cy 1 233
+TspDTI ATGAAnnnnnnnnn_nn' 1 192
+Enzymes that cut five or fewer times
+Enzyme Recognition frequency Positions
+__________________________________________________________________________
+AarI CACCTGCnnnn'nnnn_ 1 250
+Acc65I G'GTAC_C 1 184
+AhdI GACnn_n'nnGTC 1 29
+ApoI r'AATT_y 1 292
+AseI AT'TA_AT 1 227
+BanI G'GyrC_C 1 184
+BbsI GAAGACnn'nnnn_ 1 108
+BbvI GCAGCnnnnnnnn'nnnn_ 1 269
+BmgBI CAC'GTC 1 106
+BsaXI ACnnnnnCTCCnnnnnnn_nnn' 1 144
+BsaXI GGAGnnnnnGTnnnnnnnnn_nnn' 1 174
+BseMII CTCAGnnnnnnnn_nn' 1 287
+BsgI GTGCAGnnnnnnnnnnnnnn_nn' 1 268
+BspCNI CTCAGnnnnnnn_nn' 1 286
+BspMI ACCTGCnnnn'nnnn_ 1 250
+BstXI CCAn_nnnn'nTGG 1 123
+DraI TTT'AAA 1 291
+EarI CTCTTCn'nnn_ 1 174
+EcoO109I rG'GnC_Cy 1 233
+Hin4I GAynnnnnvTCnnnnnnnn_nnnnn' 3 15, 47, 144
+Hin4I GAbnnnnnrTCnnnnnnnn_nnnnn' 3 15, 47, 176
+HincII GTy'rAC 1 270
+HpaI GTT'AAC 1 270
+Hpy8I GTn'nAC 2 203, 270
+KpnI G_GTAC'C 1 188
+MboII GAAGAnnnnnnn_n' 4 113, 132, 191, 270
+MnlI CCTCnnnnnn_n' 2 146, 175
+NlaIV GGn'nCC 1 186
+PpuMI rG'GwC_Cy 1 233
+TspDTI ATGAAnnnnnnnnn_nn' 1 192
+Position Enzyme(s)
+__________________________________________________________________________
+15 Hin4I GAynnnnnvTCnnnnnnnn_nnnnn'
+15 Hin4I GAbnnnnnrTCnnnnnnnn_nnnnn'
+29 AhdI GACnn_n'nnGTC
+47 Hin4I GAynnnnnvTCnnnnnnnn_nnnnn'
+47 Hin4I GAbnnnnnrTCnnnnnnnn_nnnnn'
+106 BmgBI CAC'GTC
+108 BbsI GAAGACnn'nnnn_
+113 MboII GAAGAnnnnnnn_n'
+123 BstXI CCAn_nnnn'nTGG
+132 MboII GAAGAnnnnnnn_n'
+144 Hin4I GAynnnnnvTCnnnnnnnn_nnnnn'
+144 BsaXI ACnnnnnCTCCnnnnnnn_nnn'
+146 MnlI CCTCnnnnnn_n'
+174 BsaXI GGAGnnnnnGTnnnnnnnnn_nnn'
+174 EarI CTCTTCn'nnn_
+175 MnlI CCTCnnnnnn_n'
+176 Hin4I GAbnnnnnrTCnnnnnnnn_nnnnn'
+184 Acc65I G'GTAC_C
+184 BanI G'GyrC_C
+186 NlaIV GGn'nCC
+188 KpnI G_GTAC'C
+191 MboII GAAGAnnnnnnn_n'
+192 TspDTI ATGAAnnnnnnnnn_nn'
+203 Hpy8I GTn'nAC
+227 AseI AT'TA_AT
+233 EcoO109I rG'GnC_Cy
+233 PpuMI rG'GwC_Cy
+250 AarI CACCTGCnnnn'nnnn_
+250 BspMI ACCTGCnnnn'nnnn_
+268 BsgI GTGCAGnnnnnnnnnnnnnn_nn'
+269 BbvI GCAGCnnnnnnnn'nnnn_
+270 MboII GAAGAnnnnnnn_n'
+270 HincII GTy'rAC
+270 HpaI GTT'AAC
+270 Hpy8I GTn'nAC
+286 BspCNI CTCAGnnnnnnn_nn'
+287 BseMII CTCAGnnnnnnnn_nn'
+291 DraI TTT'AAA
+292 ApoI r'AATT_y
+ORF Finder:
+191 atgggtacctcttcatactgtcttactttgacaaaacctccaatt
+M G T S S Y C L T L T K P P I
+146 cccactatcatttttggtttccatcttcctggcaaatccacgtct
+P T I I F G F H L P G K S T S
+101 tctaatactgtatcatctgctcctgtatctaatagagcttctttt
+S N T V S S A P V S N R A S F
+56 agttgcccccctatctttattgtgacgatgggtcgttgccaaaga
+S C P P I F I V T M G R C Q R
+11 gtgatstga 3
+V X *__
+
+Proteomics Results
+
+Physico-Chemical Properties
+
+ProtParam
+1 11 21 31 41 51
+| | | | | |
+1 PQITLWQRPL VTIKIGGQLK EALLDTGADD TVLEEMSLPG RWKPKMIGGI GGFIKVRQYD 60
+61 QILIEICGHK AIGTVLVGPT PVNIIGRNLL TQIGCTLNFP QITLWQRPLV TIKIGGQLKE 120
+121 ALLDTGADDT VLEEMSLPGR WKPKMIGGIG GFIKVRQYDQ ILIEICGHKA IGTVLVGPTP 180
+181 VNIIGRNLLT QIGCTLNF
+Number of amino acids: 198
+Molecular weight: 21567.5
+Theoretical pI: 8.98
+Amino acid composition:
+Ala (A) 6 3.0%
+Arg (R) 8 4.0%
+Asn (N) 6 3.0%
+Asp (D) 8 4.0%
+Cys (C) 4 2.0%
+Gln (Q) 12 6.1%
+Glu (E) 8 4.0%
+Gly (G) 26 13.1%
+His (H) 2 1.0%
+Ile (I) 26 13.1%
+Leu (L) 24 12.1%
+Lys (K) 12 6.1%
+Met (M) 4 2.0%
+Phe (F) 4 2.0%
+Pro (P) 12 6.1%
+Ser (S) 2 1.0%
+Thr (T) 16 8.1%
+Trp (W) 4 2.0%
+Tyr (Y) 2 1.0%
+Val (V) 12 6.1%
+Asx (B) 0 0.0%
+Glx (Z) 0 0.0%
+Xaa (X) 0 0.0%
+Total number of negatively charged residues (Asp + Glu): 16
+Total number of positively charged residues (Arg + Lys): 20
+Atomic composition:
+Carbon C 978
+Hydrogen H 1606
+Nitrogen N 260
+Oxygen O 269
+Sulfur S 8
+Formula: C978H1606N260O269S8
+Total number of atoms: 3121
+Extinction coefficients:
+Conditions: 6.0 M guanidium hydrochloride
+0.02 M phosphate buffer
+pH 6.5
+Extinction coefficients are in units of M-1 cm-1, at 280 nm.
+Ext. coefficient 25230
+Abs 0.1% (=1 g/l) 1.170, assuming ALL Cys residues appear as half
+cystines
+Ext. coefficient 24980
+Abs 0.1% (=1 g/l) 1.158, assuming NO Cys residues appear as half
+cystines
+Estimated half-life:
+The N-terminal of the sequence considered is P (Pro).
+The estimated half-life is: >20 hours (mammalian reticulocytes, in
+vitro).
+>20 hours (yeast, in vivo).
+? (Escherichia coli, in vivo).
+Instability index:
+The instability index (II) is computed to be 48.55. This classifies the
+protein as unstable.
+Aliphatic index: 119.09
+Grand average of hydropathicity (GRAVY): 0.209
+
+ProtScale
+Using the scale Hphob. / Kyte & Doolittle, the individual values for the 20 amino
+acids are:
+Ala: 1.800 Arg: -4.500 Asn: -3.500 Asp: -3.500 Cys: 2.500 Gln: -3.500
+Glu: -3.500 Gly: -0.400 His: -3.200 Ile: 4.500 Leu: 3.800 Lys: -3.900
+Met: 1.900 Phe: 2.800 Pro: -1.600 Ser: -0.800 Thr: -0.700 Trp: -0.900
+Tyr: -1.300 Val: 4.200 Asx: -3.500 Glx: -3.500 Xaa: -0.490
+_
+Secondary Structure Prediction
+GOR4
+10 20 30 40 50 60 70
+| | | | | | |
+PQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMSLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHK
+ccccccccceeeeeccchhhhhhhhccccchhhhhhcccccceeeeeeeccceeeeeccceeeeeecccc
+AIGTVLVGPTPVNIIGRNLLTQIGCTLNFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMSLPGR
+cceeeeeccccceeeceeeeeecccccccccccccccceeeeeccchhhhhhhhccccchhhhhhccccc
+WKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNF
+ceeeeeeeccceeeeeccceeeeeecccccceeeeeccccceeeceeeeeeecceeec
+Sequence length : 198
+GOR4 :
+Alpha helix (Hh) : 28 is 14.14%
+310 helix (Gg) : 0 is 0.00%
+Pi helix (Ii) : 0 is 0.00%
+Beta bridge (Bb) : 0 is 0.00%
+Extended strand (Ee) : 78 is 39.39%
+Beta turn (Tt) : 0 is 0.00%
+Bend region (Ss) : 0 is 0.00%
+Random coil (Cc) : 92 is 46.46%
+Ambigous states (?) : 0 is 0.00%
+Other states : 0 is 0.00%
+_
+_
+SOPMA
+10 20 30 40 50 60 70
+| | | | | | |
+PQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMSLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHK
+teeeecccceeeeeccchhhhhhhhttccchhhhhhcccccccceeetcctteeeeetthheeeeecccc
+AIGTVLVGPTPVNIIGRNLLTQIGCTLNFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMSLPGR
+ceeeeeecccccceecchhhhhtcccccccceeecccceeeeeettchhhheehttccceeeeeeccccc
+WKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNF
+ccceeetcccceeeecccceeeeeehtccceeeeeecccceeeechhhhhhhtccccc
+Sequence length : 198
+SOPMA :
+Alpha helix (Hh) : 34 is 17.17%
+310 helix (Gg) : 0 is 0.00%
+Pi helix (Ii) : 0 is 0.00%
+Beta bridge (Bb) : 0 is 0.00%
+Extended strand (Ee) : 70 is 35.35%
+Beta turn (Tt) : 16 is 8.08%
+Bend region (Ss) : 0 is 0.00%
+Random coil (Cc) : 78 is 39.39%
+Ambigous states (?) : 0 is 0.00%
+Other states : 0 is 0.00%
+_
+_
+_
+Parameters:
+Window width : 17
+Similarity threshold : 8
+Number of states : 4
+
+Protein Modeling Using SPDBV
+
+Loading the raw sequence
+Loading the Raw Sequence
+Modeled Protein
+Verification using Ramachandran Plot
+Interpretation
+1. Homology modeling for protease was modeled using SPDBV.
+2. The protein model evaluation was done using Ramachandran Plot.
+3. Molecular cavities were performed and were have consider the ten potential    amino acids surrounding the active site
+
+
+
+
+Protein Visualization using Rasmol
+
+Active Site Prediction Using Q-Site Finder
+
+Position
+71 Ala 81
+197 Asp 34
+384 Cys 94
+966 Glu 33
+970 Gly 77
+976 Met 45
+983 Ile 49
+1002 Ile76 76
+1112 Pro 78
+1117 Val 35
+
+Protein Ligand Interaction
+
+RESULT FOR PROTEIN LIGAND DOCKING
+DRUGS
+Ala 81 Asp34 Cys94 Glu33 Gly77 Met45 Ile 49 Ile76 Pro 78 Val35
+AMPRENAVIR -7.64604 -8.40646 -7.5369 -8.40646 -9.0608 -8.1299 -7.7171 -7.75 -8.406
+APTIVAS -7.95314 -6.322 -5.61077 -7.0236 -8.1077 -6.322 -5.819 -5.708
+INVIRASE -7.49986 -6.4124 -5.61067 -7.0102 -8.6221 -7.269 -5.682 -5.917
+Settings for the docking run
+Number of Ligand torsions = 13
+Number of Target torsions = 0
+Precision = Regular Precision
+Augment root node with inner torsions = false
+Maximum number of poses = 150
+Start the docking
+Ligand extended root node radii: primary = 3.46399, secondary = 2.87752, tertiary = 5.48461e-005
+217 search points from a total of 274 grid points
+Root node configuration 0
+Number of candidate poses found = 48, 3 sec. to complete the initial search.
+pose 0 fitness = -6.0938
+pose 1 fitness = -5.99332
+pose 2 fitness = -5.98972
+pose 3 fitness = -5.94591
+pose 4 fitness = -5.92053
+pose 5 fitness = -5.9135
+pose 6 fitness = -5.86236
+pose 7 fitness = -5.67783
+pose 8 fitness = -5.67744
+pose 9 fitness = -5.49248
+pose 10 fitness = -5.49184
+pose 11 fitness = -5.33702
+pose 12 fitness = -5.33205
+pose 13 fitness = -5.32245
+pose 14 fitness = -5.32205
+pose 15 fitness = -5.22168
+pose 16 fitness = -5.21426
+pose 17 fitness = -5.02354
+pose 18 fitness = -4.99619
+pose 19 fitness = -4.83526
+pose 20 fitness = -4.82759
+pose 21 fitness = -4.81856
+pose 22 fitness = -4.81844
+pose 23 fitness = -4.74573
+pose 24 fitness = -4.74558
+pose 25 fitness = -4.5039
+pose 26 fitness = -4.50173
+pose 27 fitness = -3.17466
+pose 28 fitness = -3.06268
+pose 29 fitness = -1.82458
+pose 30 fitness = -1.569
+pose 31 fitness = -1.56193
+pose 32 fitness = -1.51251
+pose 33 fitness = -1.46677
+pose 34 fitness = -1.46364
+pose 35 fitness = -1.38103
+pose 36 fitness = -1.12677
+pose 37 fitness = -1.12255
+pose 38 fitness = -0.601697
+pose 39 fitness = -0.601091
+pose 40 fitness = -0.39126
+pose 41 fitness = -0.383174
+pose 42 fitness = -0.234589
+pose 43 fitness = -0.227125
+pose 44 fitness = 0.472609
+pose 45 fitness = 0.476945
+pose 46 fitness = 0.925123
+pose 47 fitness = 0.929651
+Refining candidate poses
+Clustering the final poses : 42 final unique configurations
+Number of local searches that succeeded in locating new minima = 1
+Re-clustering the final poses : 42 final unique configurations
+Best Ligand Pose : energy = -7.83715 kcal/mol
+
+
+
+Interpretation
+1. Using the active site amino acids the ligands were docked with all the protease inhibitor.
+2. Among the three-protease inhibitor Agenerase show high binding affinity with protease when
+compared with Aptivus and Invirase.
+
+3. Molecular Modeling
+
+Aptivus Agenerase
+
+Geometry Optimization
+Drug Molecule Steepest Descent
+Energy Gradient
+Agenerase 39.45762 0.09758
+Aptivas 561.8585 0.099802
+Invirase 219.3901 0.099894
+
+QSAR Properties
+Properties Agenerase Aptivus Invirase
+Partial charges (e) 0.00 0.00 0.00
+Surface
+Area(Approx)
+592.59 1047.932 1033.21
+Surface Area (Grid) 708.93 838.21 899.23
+Hydration Energy
+(kcal/mol)
+-12.90 -6.99 -8.53
+Log P 2.52 3.47 5.16
+Refractivity 132.76 132.41 122.97
+Polarizability 46.69 43.23 54.63
+Mass(amu) 496.58 596.41 620.45
+
+CONCLUSION
+Current targets for antiretroviral therapy (ART) include the viral enzymes reverse transcriptase and protease. The use of a combination of inhibitors targeting these enzymes can reduce viral load for a prolonged period and delay disease progression. However, complications of ART, including the emergence of viruses resistant to current drugs, are driving the development of new antiretroviral agents targeting not only the reverse transcriptase and protease enzymes but novel targets as well. In our study we have performed, Homology modeling for Protease using SPDBV was the RMSD shows 0.49 with structural similarity. The molecular cavities were performed using SPDBV, which shows two potential active site. Then Molecular modeling was performed for the protease inhibitor drugs (Agenerase, Aptivus and Invirase). The Protein Ligand interaction was performed using ArgusLab, were Agenerase shows high binding affinity, and low free energy to all the active site amino acids. So Agenerase can be effectively used to inhibit the action of Protease, thereby inactivating the viral replication. The results demonstrate that investigational compounds in which protease is blocked, displays strong activity, low toxicity and excellent bioavailability, making them suitable for further exploration. Further the ADME\T property, the pharmacophore analysis and activity has to be performed for the ligands to get a potential drug for HIV.
+REFERENCE
+1. Bacchetti P, Moss AR. "Incubation period of AIDS in San Francisco." Nature 1989;338:251-253.
+2. Bernstein H.B., Tucker S.P., Kar S.R., et. al. "Oligomerization of the hydrophobic heptad repeat of
+gp41." J Virol 1995;69:2745-2750.
+3. Burack Jeffrey H., Bangsberg D. "Epidemiology and Transmission of HIV Among Injection Drug
+Users" The AIDS knowledge base http://hivinsite.ucsf.edu/akb/1997/01idu/index.html, may 1998.
+4. Capon D.J., Ward R.H. "The CD4-gp120 interaction and AIDS pathogenesis". Annu Rev Immunol
+1991;9:649-678.
+5. Centers for Disease Control. "1993 revised classification system for HIV infection and expanded
+surveillance case definition for AIDS among adolescents and adults." MMWR 1992;41:1-19.
+6. Cohen O.J., Pantaleo G., Schwartzentruber D.J., et al. "Pathogenic insights from studies of
+lymphoid tissue from HIV-infected individuals." J Acquir Immune Defic Syndr Hum Retrovirol
+1995;10(Suppl 1):S6-S14.
+7. Constantine N. "HIV Antibody Testing." The AIDS knowledge base
+http://hivinsite.ucsf.edu/akb/1997/02abtest/index.html, February 1998.
+8. Dailey P.J., Hayden D. "Viral Load Assays: Methodologies, Variables, and Interpretation." The
+AIDS knowledge base April 1998.
+9. Donnelly C, Leisenring W, Kanki P, et al. "Comparison of transmission rates of HIV-1 and HIV-2
+in a cohort of prostitutes in Senegal." Bull Math Biol 1993;55:731-743.
+10. Earl P.LL, Moss B., Doms R.W. "Folding, interaction with GRP78-BiP, assembly, and transport of
+the human immunodeficiency virus type 1 envelope protein." J Virol 1991;65:2047-2055.
+11. Feinberg M.B., Baltimore D., Frankel A.D. "The role of Tat in the human immunodeficiency virus
+life cycle indicates a primary effect on transcriptional elongation." Proc Natl Acad Sci USA
+1991;88:4045-4049.
+12. Katz R.A., Skalka A.M." Generation of diversity in retroviruses." Annu Rev Genetics
+1990;24:409-445.
+13. Klimkait T., Strebel K., Hoggan M..A., et al. "The human immunodeficiency virus type 1-specific
+protein vpu is required for efficient virus maturation and release." J Virol 1990;64:621-629.
+14. Kline Mark K. "Prevention of HIV Vertical Transmission." The AIDS Reader 1996;6(1):5.
+15. Lee K.C., Tami A.A. "Ottolaryngologic manifestations of HIV infection" The AIDS knowledge
+base http://hivinsite.ucsf.edu/akb/1997/05ent/index.html, August 1998.
+16. Levy R.M., Bredesen D.E. & Rosenblum M.L. "Neurological manifestations of the acquired
+immunodeficiency syndrome (AIDS): Experience at UCSF and review of the literature." J
+Neurosurg 1985;62:475-95.
+17. Lewis P., Hensel M. & Emerman M. "Human immunodeficiency virus infection of cells arrested in
+the cell cycle." EMBO J 1992; 11:3053-3058.
+18. Longini Jr IM, Clark WS, Gardner LI, et al. "The dynamics of CD4+ T-lymphocyte decline in
+HIV-infected individuals: A Markov modeling approach." J Acquir Immune Defic Syndr Hum
+Retrovirol 1991;4:1141-1147.
+19. Mann J, Chin J, Piot P, et al. "The international epidemiology of AIDS." Sci Am 1988;259:82-89
+20. Meyer J.M. &Rodvold K.A. "Drug biotransformation by the cytochrome P-450 enzyme system"
+Infect Med 1996;13(6):452,459,463-464,523.
+21. Miller M.D., Warmerdam M.T., Gaston I., et al." The human immunodeficiency virus-1 nef gene
+product: A positive factorfor viral infection and replication in primary lymphocytes and
+macrophages." J Exp Med 1994;179:101-113.
+22. Moss A, Osmond D, Bacchetti P, et al. "Risk factors for AIDS and HIV seropositivity in
+homosexual men." Am J Epidemiol 1987;125:35-47.
+23. Musicco M, Lazzarin A, Nicolosi A, et al. "Antiretroviral treatment of men infected with human
+immunodeficiency virus type 1 reduces the incidence of heterosexual transmission. Italian Study
+Group on HIV Heterosexual Transmission." Arch Intern Med 1994;154:1971-1976.
+24. Navia B., Jordan B. & Price R. "The AIDS dementia complex. I. Clinical Features." Ann Neurol
+1986;19:517-524.
+25. Osmond Dennis H. "Classification, Staging and surveillance of HIV disease" The AIDS
+knowledge base http://hivinsite.ucsf.edu/akb/1997/01class, 1998
+26. Parent L.J., Bennett R.P., Craven RC.., et al. "Positionally independent and exchangeable late
+budding functions of the Rous sarcoma virus and human immunodeficiency virus Gag proteins." J
+Virol 1995;69:5455-5460.
+27. Poznansky M., Lever A., Bergeron L., et al. "Gene transfer into human lymphocytes by a defective
+human immunodeficiency virus type 1 vector." J Virol 1991;65:532-536.
+28. Rombauts B. "Farmaceutische Microbiologie (met inbegrip van de farmaceutische technologie van
+steriele geneesmiddelen)." Cursus 1ste graad apotheker VUB 1997;11:14-16.
+29. Sato A., Igarashi H., Adachi A., et al. "Identification and localization of vpr gene product of
+human immunodeficiency virus type 1." Virus Genes 1990;4:303-312
+30. Simonds R.J. "HIV transmission by organ and tissue transplantation." AIDS 1993;7(Suppl 2):S35-
+S38.
+31. Winston J, Klotman P. Are we missing an epidemic of HIV-associated nephropathy. J Am Soc
+Nephrol 1996;7:1-7.
+32. Zhu, Tuofu, Bette Korber, Andre J Nahinias. "An African HIV-1 Sequence from 1959 and
+Implications for the Origin of the Epidemic." Nature, 1998; 391: 594.

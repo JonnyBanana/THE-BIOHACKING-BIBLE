@@ -1,0 +1,88 @@
+=Hrp Characterisation: Design (Required Parts)=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Specifications|Specifications]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Hrp System/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Implementation|Implementation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/TestingValidation|Testing/Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Hrp System/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+This is the list of required parts that can be obtained from the registry and are needed for the project.
+
+===Promoters===
+List input promoters, find/measure PoPS in of the following promoters:
+*'''LuxR Promoter'''
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_F2620 BBa_F2620]
+
+Short description: A transcription factor [LuxR] (''[http://parts.mit.edu/registry/index.php/Part:BBa_C0062 C0062]'') that is active in the presence of cell-cell signaling molecule [http://parts.mit.edu/registry/index.php/3OC6HSL 3OC<sub>6</sub>HSL] is controlled by a tetR regulatable operator (''[http://parts.mit.edu/registry/index.php/Part:BBa_R0040 BBa_R0040]'').  ''Device input'' is [http://parts.mit.edu/registry/index.php/3OC6HSL 3OC<sub>6</sub>HSL].  ''Device output'' is [http://parts.mit.edu/registry/index.php/PoPS PoPS] from a LuxR-regulated operator.  If used in a cell containing TetR then a second input signal such as [[ATc|aTc]] can be used to produce a logical AND function.
+
+*'''Constitutive promoter family'''
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_J23119 BBa_J23119 ]
+
+Short desccription: Parts J23100 through J23119 are a family of constitutive promoter parts isolated from a small combinatorial library. J23119 is the "consensus" promoter sequence and the strongest member of the family. Part J23119 is present in pSB1A2. 
+
+*'''Promoter P(Lac) IQ'''
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_I14032 BBa_I14032 ]
+
+Short description: Constitutive Promoter, High Transcription 
+
+*'''Promoter (tetR, negative)'''
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_R0040 BBa_R0040 ]
+
+Short description: Medium strength promoter. Sequence for pTet inverting regulator driven by the TetR protein. Action is inhibited by the addition of tetracycline or its analog, aTc. 
+
+*'''Promoter (lambda cI regulated)''' 
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_R0051 BBa_R0051]
+
+Short description: The cI regulated promoter is based on the pR promoter from bacteriophage lambda. The promoter has two DNA binding sites for lambda cI repressor BBa_C0051. cI binding results in repression of transcription. The specific sequence used here is based on the cI repressible promoter used in the Elowitz repressilator (and references therein). 
+
+*'''CMV promoter''' 
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_J52034 BBa_J52034]
+
+Short description: CMV promoter with RBS region, used for testing of our reporter constructs. CMV promotor is a constitutive promotor. 
+
+
+===Ribosome Binding Sites===
+
+*'''RBS (Elowitz)'''
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_B0034 BBa_B0034]
+
+Short description: This is the most efficient RBS in the registry, and sets the 1.0 efficiency standard. It is based on the Elowitz repressilator.
+
+===Terminators===
+
+*'''Double terminator (B0010-B0012)'''
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_B0015 BBa_B0015]
+
+Short description: Double terminator consisting of BBa_B0010 and BBa_B0012. This is the most commonly used terminator. It seems to be reliable.
+forward_efficiency: 0.984  
+reverse_efficiency: 0.295
+
+
+===Parts Not in the Registry (To Characterize)===
+
+*'''HrpR'''
+*'''HrpS'''
+*'''HrpV'''
+*'''''pHrpL'''''
+
+Further parts:
+
+*'''&sigma;<sub>L</sub> (HrpL)'''
+*'''Hrp Box'''

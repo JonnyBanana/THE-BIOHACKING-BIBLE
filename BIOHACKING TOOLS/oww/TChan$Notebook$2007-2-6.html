@@ -1,0 +1,62 @@
+* Full disclosure: This was posted 2.19.07
+
+<pre>
+#!/usr/bin/env python
+
+from Bio import GenBank, Seq
+# Tiff: in order to translate the DNA seq to a protein seq
+from Bio.Seq import Seq,translate
+ 
+
+# We can create a GenBank object that will parse a raw record
+# This facilitates extracting specific information from the sequences
+record_parser = GenBank.FeatureParser()
+
+# NCBIDictionary is an interface to Genbank
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+
+# If you pass NCBIDictionary a GenBank id, it will download that record
+# Tiff: changed it from 116496646 to 116496647 
+parsed_record = ncbi_dict['178850']
+
+print "GenBank id:", parsed_record.id
+
+# Extract the sequence from the parsed_record
+s = parsed_record.seq.tostring()
+print "total sequence length:", len(s)
+
+# Tiff: my_seq is a Seq version of the GenBank DNA sequence, and thus my_Protein is the protein sequence translated from this
+my_seq = Seq(s)
+my_protein = translate(my_seq)
+print 'protein translation is %s' % my_protein.tostring()
+print 'protein amino acid length is %i' % len(my_protein.tostring())
+
+max_repeat = 9
+
+print "method 1"
+for i in range(max_repeat):
+    # Tiff: changed from 'A' to 'T' to get count of poly-Ts
+    substr = ''.join(['T' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\nmethod 2"
+for i in range(max_repeat):
+    # Tiff: changed from 'A' to 'T' to get count of poly-Ts 
+    substr = ''.join(['T' for n in range(i+1)])
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+
+gi_list = GenBank.search_for("Yersinia enterocolitica AND YopH")
+print gi_list
+
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank')
+
+for j in ncbi_dict[gi_list]:
+    gb_record = ncbi_dict[gi_list[j]]
+    print gb_record
+
+</pre>

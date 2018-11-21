@@ -1,0 +1,82 @@
+1.
+{|border="1"    '''Re-engineering the M13K07 Genome'''
+|-style="background:lightgray; color:black"
+|align="center" |Gene
+|align="center" |Base Pairs
+|align="center" |Overlaps(bp's)
+|align="center" |Function
+|align="center" |Suggested Changes
+|-style="background:beige; color:black"
+|align="center" |I
+|3196-4242
+|IV(4220-4242), XI(3916-4242)
+|assembly
+|* Alter channel proteins to only let out phages following certain environmental triggers, allowing us to control spread of virus.
+|-style="background:beige; color:black"
+|align="center" |II
+|8268-831
+|X(496-831)
+|replication of DNA+strand
+|* Engineer to nick both strands of viral dsDNA in unfavorable situations, so virus will not reproduce, * Engineer to nick host dsDNA, so it kills cell as it leaves (may be useful if you are using phage to fight a bacterial infection)
+|-style="background:beige; color:black"
+|align="center" |III
+|1579-2853
+|BamHI(2220-2225)
+|phage tail protein (5 copies), N-terminus mediates host recognition and infection, C-terminus required for release from the host cell phage (the last part of phage in contact with host) and helps provide structural stability
+|* Simplify sequence encoding for C-terminus to only produce critical proteins, making room to add sequences to other parts of the genome, * Modify C-terminus so it will not detach from the host, eventually having viruses coat the surface of the host, * Engineer N-terminus to recognize and bind to hosts other than e.coli (such as infectious cells in an organism), and fuse an antibody tag to pIX so that the organism will recognize and destroy the infectious cell. * Modify pIII and pVI to increase rate of detachment from host.
+|-style="background:beige; color:black"
+|align="center" |IV
+|4220-5500
+|I(4220-4242), XI(4220-4242)
+|assembly
+|* See gene I
+|-style="background:beige; color:black"
+|align="center" |V
+|843-1106
+|
+|binds ssDNA, preventing it from becoming double-stranded; replaced by pVIII as phage exits cell
+|* Lower efficiency of gene V so that extra viral DNA will be produced, but not packaged into the phage. Therefore, it may be incorporated into the host genome. * Modify pV to bind only to dsDNA, making phages with dsDNA instead of ssDNA
+|-style="background:beige; color:black"
+|align="center" |VI
+|2856-3194
+|
+|phage tail protein (5 copies), minor surface protein behind pIII
+|* See gene III
+|-style="background:beige; color:black"
+|align="center" |VII
+|1108-1209
+|IX(1207-1208)
+|phage head protein (5 copies), minor surface protein behind pIX
+|* See gene IX
+|-style="background:beige; color:black"
+|align="center" |VIII
+|1304-1522
+|IX(1302-1303)
+|phage coat protein (2700 copies)
+|* Add fluorescent tag to protein to make phage easier to image, * Modify protein to increaes affinity to a surface composed of a specific material. Phages will bind to a surface, where they can be further manipulated with greater ease. * Fuse pVIII with proteins with magnetic particles, so we can keep track of bacteria that are being infected at each instant since they will allign in a magnetic field when pVIII is produced along its membrane.
+|-style="background:beige; color:black"
+|align="center" |IX
+|1206-1304
+|VII(1207-1208), VIII(1302-1303)
+|phage head protein (5 copies)
+|* Modify pIX to bind to a surface. This will anchor the host cell to the surface as well when it binds with pIII-N
+|-style="background:beige; color:black"
+|align="center" |X
+|496-831
+|II(496-831)
+|DNA replication
+|* Separate gene X from gene II by inserting its sequence somewhere else in the genome. This will make it possible to modify X without modifying II. 
+|-style="background:beige; color:black"
+|align="center" |XI (I*)
+|3916-4242
+|I(3916-4242), IV(4220-4242)
+|assembly
+|* Se gene I
+|}
+
+
+2. M13's closest evolutionary relative is the bacteriophage fd. Their genomes are about the same length, around 6400 bases, and their nucleotide sequences differ by only about 3.0%. Because their differences occur most frequently in some genes rather than others, it is less risky to re-engineer those genes that the differences occur on, since they are probably less critical to the virus.
+
+
+3. "BBa_M1307 is not a standard biological part and does not belong in the registry."
+:::*Response: Because BBa_M1307 is the entire genome of the M13K07 phage, it is more like a system than just a single part. According to the abstraction hierarchy, a "part" is a basic biological function that can be encoded as genetic material. BBa_M1307 is composed of numerous parts, such as the promoters, ribosome binding sites, and terminators for each gene. These parts come together to form devices that serve certain functions in the virus, such as proteins that enclose the system. Together, these devices sustain the virus and help it reproduce. However, the genome could be far more useful if its individual parts were broken down and biobricked, so that they could be studied individually or rearranged to create new systems.

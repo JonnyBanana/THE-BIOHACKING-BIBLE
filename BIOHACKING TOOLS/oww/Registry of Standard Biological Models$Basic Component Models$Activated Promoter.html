@@ -1,0 +1,120 @@
+==Activated Promoter Architecture==
+
+{| border="1"
+|
+*'''Description''': Promoter activated by an activator molecule
+*'''Hypothesis''': 
+**Binding of the activator on the promoter (Hill-function-type equation)
+**Continuous transcription rate with an existing maximum rate of transcription
+**Transcription rate depends on number of gene copies
+*'''Inputs''':
+**activator
+**nb-gene-copies
+*'''Outputs''':
+**PoPs_OUT
+*'''Internal parameters''':
+**max-transcription-rate-per-gene
+**dissociation-constant
+**Hill-coefficient
+| align= "center" | [[Image:VBB_ActivatedPromoter.png|thumb|left|400px|Activated Promoter Brick Architecture]]
+|}
+
+==CellML structure (CellML 1.1 spec)==
+*'''Component''': ActivatedPromoter
+*'''Units''': 
+**Imported from Environment component
+*'''Variables''':
+**nbGeneCopies (public interface = in / init value = 1.0)
+**maxTranscriptionRate (public interface = none / init value = XXX)
+**K (dissociation-constant) (public interface = none / init value = XXX)
+**n (Hill-coefficient) (public interface = none / init value = XXX)
+**activator (public interface = in )
+**PoPsOUT (public interface = out / init value = 0.)
+*'''MathML'''
+**<amsmath>PoPsOUT = \frac{nbGenesCopies*maxTranscriptionRate*[activator]^{n}}{K^{n} + [activator]^{n}}</amsmath>
+
+==CellML File==
+
+<syntax type='xml'>
+<?xml version="1.0"?>
+
+<model xmlns="http://www.cellml.org/cellml/1.0#" 
+       xmlns:cmeta="http://www.cellml.org/metadata/1.0#"
+       xml:base="file:///C:/CellML_models/activated_promoter.cml" 
+       cmeta:id="activated_promoter" 
+       name="activated_promoter">
+  
+<!-- LIST OF COMPONENTS -->
+
+<component name="activated_promoter">
+ 
+<variable name="mRNAsynthesisRate"         initial_value=""   public_interface="out"  units="moles_per_second"/>
+<variable name="nb_gene"                   initial_value="1"  public_interface="none" units="dimensionless"/>
+<variable name="mRNAsynthesisRatePerGene"  initial_value="1"  public_interface="none" units="moles_per_second"/>
+<variable name="dissociation_constant"     initial_value="1"  public_interface="none" units="dimensionless"/>
+<variable name="hill_coefficient"          initial_value="2"  public_interface="none" units="dimensionless"/>
+<variable name="nb_activator"              initial_value=""   public_interface="in"   units="mole"/>
+
+	
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="mRNA synthesis rate">
+
+  <apply id="mRNAsynthesisRate">
+   <eq/>
+   <ci>mRNAsynthesisRate</ci>
+  <apply>
+   <divide/>
+  <apply>
+   <times/>
+   <ci>mRNAsynthesisRatePerGene</ci>
+   <ci>nb_gene</ci>
+  <apply>
+   <power/>
+   <ci>nb_activator</ci>
+   <ci>hill_coefficient</ci>
+  </apply>
+   </apply><apply><plus/>
+  <apply>
+   <power/>
+   <ci>dissociation_constant</ci>
+   <ci>hill_coefficient</ci>
+  </apply>
+  <apply>
+   <power/>
+   <ci>nb_activator</ci>
+   <ci>hill_coefficient</ci>
+  </apply>
+  </apply>
+  </apply>
+  </apply>
+	
+</math>
+
+</component>
+
+
+<!-- END LIST OF COMPONENTS -->
+
+
+
+<!-- LIST OF IMPORTS -->
+
+<import xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="file://C:\CellML_models\units.cml">
+
+      <units name="moles_per_second" units_ref="moles_per_second"/>
+      <units name="per_second"       units_ref="per_second"/>
+</import>
+
+<!-- END LIST OF IMPORTS -->
+
+
+<!-- LIST OF CONNECTIONS -->
+
+
+<!-- END LIST OF CONNECTIONS -->
+
+</model>
+</syntax>
+
+
+==Comments==

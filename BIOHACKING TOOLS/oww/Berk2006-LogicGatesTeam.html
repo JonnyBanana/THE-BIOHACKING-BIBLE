@@ -1,0 +1,432 @@
+Return to [http://www.openwetware.org/wiki/IGEM:UC_Berkeley/2006 main page]
+<br>
+''' wrb 09/30/06''' <br>
+* i have been bad with record keeping. i will try to log whats been up below.
+i performed some colony pcr on 4 colonies of each plate (j23039+J01003, T9002+J01003), using ca998 and G01001. I had to put those on ice for a few days, and ran a gel friday afternoon. The gel did not come out at all. There were a few bans of something, but even my ladder did not show. This was very fristrating. 
+So, my first task today is making new ladder / dye. I may not be using my stuff often enough to leave my aliquots out at room temperature, so i will take care of this dye and ladder by keeping it dark and in the refrigerator. I am running a gel of just ladder, in an attempt to win a small battle and ain momentum again. 
+
+Generally, work since transitioning to the endy lab has been a struggle. I was not aware of the support structure I had at berkeley until i left.
+
+* ok, for now, gels will just have to be made 20 minutes before i need them and that's that.
+* i guess dye really does have to be kept cold and dark
+* 
+
+
+  
+'''wrb 09/25/06'''<br>
+* things grew on both transformations. i find that rather curious. 
+* need to devise a way to screen for j01003 + part in the constructions.
+* miniprepping some j01003 and j023039 
+* possibly sequencing alot of these constructs, though hmm...
+
+
+ 
+'''wrb 09/24/06'''<br>
+* in the past week bryan and i made competent TG1 and Rlambda cell
+* gel purifying through transformation today on the parts from last week. I think i messed up the digestion of one of the parts (it looks like i cut j23039 xba/bgl and not xba alwan1. not cool. hopefully t9002+j01003 will turn out...
+* school is hard
+* growing more j23039 and j01003 in LBamp. miniprep + digest + purify tomorrow?
+
+
+'''dlk 09/17/06'''<br>
+I spent almost a week on a network design for unsupervised learning based off the concept of a self organizing map. It ended up very messy annnd it’s pretty much wrong, not gonnna post it. The key difficulty is that a self organizing map needs to be able to examine other nodes in the network and compare its output values to their output values, so it needs ‘comparison’ hardware. 
+
+I’m going back to the supervised learning network, as machinery wise it’s simpler, even if the ‘process’ is more complicated.
+
+The key points I’m looking at:
+
+Graded response – the claim is that the graded response can be achieved as an emergent property of the aggregate liquid culture, based on the concentration of specific cell types. This should be verified by the conjugation simulation.
+
+Too many plasmids – both from the standpoint of the origin of replication and killing cells with too many plasmids stuffed inside, something needs to be done about the many plasmids problem. I think using prof arkin’s suggestion about deactivating cell surface proteins, the network design can be done in such a way that each cell needs to only produce a _single_ output key in the down stream direction, and a _single_ output ket in the upstream direction. (Essentially, adding in another layer of cells that do some mapping within the node, and the network diagram becomes more complicated, with lots of nodes doing many-to-one mappings)
+
+So then, if there is a way to digest/cut open/ruin the plasmids that are passed into a cell, but don’t match one of the locks, then each cell only needs two distinct oriR’s, one for upstream, and one for downstream. Plasmids that enter the cell but don’t match the lock get destroyed inside the cell. I’ll venture down to lab this week and see if chris has any thoughts on ways to destroy plasmids.
+
+
+'''wrb 09/15/06'''
+* re-digesting j23039. 
+* figuring out how to make competent cells. (rlambda and ec100d)
+* left out some plates last time. which reminds me i need to make glycerol stocks of things. it would be embarrassing to lose parts. 
+* need to get parts to the registry. 
+* gel purify+ligating the digests from  091206
+
+i'm tired of opening my email clietn to read this:
+ BW20767 has not markers, it is an oriT mutant of RP4 plasmid strain (it is
+ for sending oriT plasmids)
+ DH10B has a streptomycin marker, but it doesn't need to be maintained as
+ there are no plasmids in the cell
+ Ec100D::pir+ is trimethoprim resistant, but again, it is genomic so doesn't
+ need to be maintained
+ Rlambda is Kanamycin resistant
+ J01003 is indeed pSB1A2, I don't know what strain it is in (it's from
+ iGEM2005)
+
+'''wrb 09/12/06'''
+* digested and geled j01003, j23029, j23040. NEED TO MAKE CONSTRUCTION FILES of putting these parts together (oriT onto 23039 and 23040).
+* j23039 gel showed poorly.
+
+'''dlk 09/07/06'''<br>
+A cool demo for the logic gates if we get two working locks and keys would be the following two NAND gates connected to an AND gate:
+[[Image:Berk_nand2.PNG]]
+
+The inputs (A B C D) can be anything that we can control (small molecules, but then we'd need a second small molecule nand gate, so A and B would be the lux nand gate and C and D would be some other gate, or if we get that many locks and keys, just 4 lock keys) The output is GFP.
+
+The output from this should be like the below truth table:<br>
+[[Image:Berk_nand3.PNG]]
+
+Which is the boolean expression !B!D + !B!C + !A!D + !A!C. ( (not B and not D) OR (not B and not C) OR (not a and not d) OR (not A and not C) ) This would be a swell example because we can likely get it to actually work, (2 specially designed NAND gates, one of which we've already got, and one lock/key AND gate) and it's a fairly complicated boolean expression that would be hard to do without logic gates. So using GFP as the output, it can be a convincing example that the lock keys can be chained together. Will, drop me a line, lemme know your thoughts.
+
+
+'''wrb 09/06/06'''<br>
+@ mit, day one
+safety training squared away.
+
+* plated all pSB-1A2 agar stabs recieved from UCB-LBL. pSB-3C6 and others will be plated tomorrow. 
+* made some plain LB plates
+
+
+'''dlk 08/28/06'''<br>
+Met with prof arkin and john to discuss the graded response and negitive signal open issues.
+
+prof arkin suggested:
+* he can do something with lasers and gels I didn't quite follow to put specific cells in an exact spot on a 3d latice, which is really cool, but then we wouldn't need locks&keys
+* suggested using quorum sensing to do the negitive signal, except hard to keep it confined to a small area
+* having the negitive signal activate surface proteins that prevent other cell pili from binding, then break/digest/degrade the output plasmid. In this case, the cell would receive a negitive error signal, and no longer accept input conjugations from other cells. It would destroy its output plasmid, so it is no longer accepting input or producing downstream and is functionally the same as a dead cell. But, it can still propagate the error signal upstream, so it gets around the problem of trying to use conditional cell death.
+* both john and prof arkin really like using the anti-sense RNA strands for graded response, the trick is getting it to propagate downstream for the negs. john suggested a cool trick where the anti-sense RNA is in two seperate RNA strands, and the both have to be present to form the whole anti-sense strand.
+* the limited origin of replication is the biggest problem to the design (not the origin of _transfer_ which is fine, my mistake)
+* a large number of plasmids in a cell causes the cell to die.
+how many? ~2?, ~10? --[[User:Bosworth|Bosworth]] 14:37, 7 September 2006 (EDT)
+* I'm going to look into the effects of using the surface proteins&downstream plasmid degredation and if that would acheive the desired behavior and move ahead with the conjugation simulation
+* maybe think harder about doing an unsupervised learning method since that might be simpler
+
+'''dlk 08/28/06'''<br>
+I talked with prof narayan who suggested more thought go into the negitive/inhibition signals.
+
+The idea behind the explicit negative is if a + key input is received, a
+positive key output is sent, if a neg input is received, a neg key
+output is sent, if both a pos and neg key input are received, nothing is
+sent.
+
+So I was thinking something like: either a + or a - key 'activates' the
+cell to start conjugation<br>
+PTet-lock(-)-Tra<br>
+PTet-lock(+)-Tra<br>
+
+And if both are received, repress conjugation<br>
+Pcon-lock(-)-luxR ::  luxpR-lock(+)-TetR<br>
+
+Then some sort of competition between the + and - happens to determine
+'which' oriT gets used.
+
+Is there any way to copy a plasmid inside the cell? We could start with
+a cell that has one positive output plasmid and one negative output
+plasmid. A negative input key is received, causing the duplication of
+the negative plasmid, so there's now 2 copies of the same (-) plasmid in
+the cell and one copy of the positive, so we're more likely to transfer
+the negative plasmid.
+
+So the over all design is:
+logic plasmid: PTet-lock(-)-Tra :: PTet-lock(+)-Tra :: Pcon-lock(-)-luxR :: luxpR-lock(+)-TetR<br>
+
+outplamsid_pos: oriT-outKeyPos :: Pcon-lock(+)-DuplicateSelf <br>
+
+outplasmid_neg: oriT-outKeyNeg :: Pcon-lock(-)-DuplicateSelf <br>
+
+Chris suggested three possible schemes:
+*A negative key to in effect be dominant over the positive key.  So, if a cell has Pcon-lock(+)-Tra function and key(+) turns that on, you'd modify that with an inverter that would do something like Pcon-lock(-)-TetR    Ptet-lock(+)-Tra.  In this modified case, the cell turns on if it receives only key(+), but it turns off if it receives no key or key(-)--effectively a NOR gate with respect to two keys.  
+
+*Another angle along these lines would be to have a tra function with value 0.5 in the absence of keys, but with key(+) it jumps to activity 1, and with key(-) it falls to 0.  (and who knows what happens if it gets both keys).
+
+*A third would be key(+) and key(-) are reverse complements of each other so that a cell with a Pcon-lock(+)-Tra function is on with key(+), off with key(-) or no key, and off with both key(+) and key(-).
+
+*John commented "the gradient control might be tricky but I bet we can think of a way to do it.  I think Chris' idea of making a reverse/complement RNA as a negative key has promise.  We should be able to get this to work somewhat like silencing RNA where the reverse/complement RNA will block the positive key by competitively binding to it.  Might be able to make this a graded response. "
+
+'''dlk 08/23/06'''<br>
+There are two steps to using the network, a learning step which occurs during log phase growth, and a general use step which occurs after the learning step when the trained network is used to do whatever it was trained for.
+
+In the learning step, there are two sub steps, each of which is repeated several times. In the first step, information flows from the input nodes down the network to the output/error nodes. Our network is a 'feed forward' network, meaning there are distinct layers with no communication between nodes in the same layer. Input and general nodes are connected to all of the nodes in a lower layer of the network.<br>
+[[Image:Berk_nnet_network.PNG]]<br>
+
+The the second step of learning, information about the error of the network flows from the error nodes backwards through the network modifying the weights of connections. This is loosely 'back propagation' learning from computer neural nets, but is missing a few key components, so it's not really 'backprop'. I need to figure out 1) what kind of 'learning this is 2) is it actually 'learning' or just 'changing weights'. ''Edit dlk_08/28/06 I think it can offically pass as backprop with the inhibition discussed in the 08/28/06 entry''<br>
+[[Image:Berk_nnet_error_flow.PNG]]<br>
+
+There are three distinct types of nodes in the network:
+*input nodes which pass input values into the network
+*general nodes which receive input and produce output
+*error nodes which know the expected answer and generate error signals which modify the weights of connections between general nodes.<br>
+
+Each node is composed of one or more specific cell types. The cell types differ in the locks they contain and the keys they produce. Each connection between a node in the network corresponds to a unique lock and key pair.<br>
+
+The input layer is composed of one or more input nodes. So a function with three input values would have three input nodes. For a given input node, the value can be either 1 or 0. If value is one, the node is constitutively producing output keys. If the value is 0, the node is not producing output keys.<br>
+
+The input node is composed of one cell type which either constitutively produces a single key or not. (Or this cell could just be absent) This key is passed to the output cells of the node. Each output cell receives the key and begins to produce a unique key which is passed to one of the next nodes in the network. This design allows for each output key each to be changed independent of the others by regulating the population level of the output cell for a specific link.<br>
+[[Image:Berk_nnet_input_node.PNG]]<br>
+
+The input nodes connect to 'general nodes'. There may be multiple layers of general nodes. The general nodes are functionally the same as the input nodes, but instead of having a cell type which constitutively produces the input value, the general nodes sum their the input and produce a graded output response, the more input, the higher the output response. The output from the summation cell is a single key which is received by each out the output cells in the node. Each output cell in the node produces a unique key that corresponds to the summation cell in another node downstream.<br>
+
+The general node also contains additional locks for adjusting weights based on error signals. [finish explanation of how the error machinery works]<br>
+[[Image:Berk_nnet_general_node.PNG]]<br>
+
+Like input nodes, two different error nodes are available, one which expects an output of 1 and penalizes output of 0, and on which expects output of 0 and penalizes output of 1.<br>
+[[Image:Berk_nnet_error_node.PNG]]<br>
+
+Chirs and John's comments:<br>
+look into something like the pir116 plasmid and the pi protein<br>
+*r61 production plasmid
+*if transferred into a new cell without pi protein then it stops production and degrades – this way only specific plasmids are done, but a new design challenge to get the pi/non-pi protein placement correct
+*turns on replication when the pi protein is created, let the other plasmids decay reduces the number of plasmids in the cell if some are degrading
+<br>
+plasmid competition
+*has a base line of say 15 pska plasmids
+*as more move in they compete for space in the cell
+*a way of getting the graded response 
+<br>
+semi-cross talking keys
+*need 4 keys to fully open the lock
+*get partial expression with some combination of the keys
+
+Question of inhibition is still open, can learning be done without inhibition, what kind of learning is being done, is it useful/interesting<br>
+
+use key design to help the layers<br>
+Interchanging layers of R and F type plasmids<br>
+
+Use the keys to help design the layering approach
+*20 base pair key
+*15 base pair variable region
+*5 base pair is the same for each layer
+*changing the 5 base pair sequence gets orthogonally so that keys of this layer won’t cross talk with keys of another layer
+*8 sets of 5 base pair sequences - guarantees that everything within that set of orthogonal sequences will be orthogonal
+<br>
+estimate of the locks and keys are needed for each layer - if really done how many points of communication are needed in each layer
+<br>
+in terms of explanation
+*cells like switches in the transfer NAND example
+*brain -> cells
+*locks and keys are the connections between cells
+*layers of f and r type cells
+*then move to how the cojugation is the method of transfer
+*then move to the graded response
+
+
+
+
+
+'''dlk 08/18/06'''
+[[http://star.tau.ac.il/~eshel/Bio_complexity/11.%20Swarming%20Intelligence/Bacterial-Intelligence.pdf]] claims that bacteria naturally do 'neural network' style learning via a variety of mechanims. 
+
+'''wrb 08/16/06'''
+* note: 8.14's tecan was of J23039(5). this time around i grew J23039(6). It showed much stronger Luxation over J23039(5), by fluorescense
+* I also tried to grow T9002 in LuxGFP media, but that didn't work!
+* I also tried to grow I13601, and I13601 with IPTG, since TG1 cells are Lac blahblah. but i didn't really know how much iptg to add, even though i told Chris I'd be able to figure out. =( oops. one more try tomorrow morning!
+
+'''wrb 08/14/06, part 2'''
+* progress: it's taking longer to do everything than i thought.
+* saw 7x increase in fluorescence between J23039 and J23039+T9002. 
+* sequence data says constructs worked. sequence data is not perfect though. The parts made it in but the parts are not necassarily wwhat they should be / what we thought they were.
+* growing up more stuff. Putting T9002 in a heavily LuxI'd media (via pAC-LuxGFP) that we trust as well as one we don't (J23039). growing at 30C because Chris suspects Lux system is not super stable at 37C. 
+* Also growing the J23039 at 37C to test that hteory
+* also continuing the growth of this morning's growth, in hopes that diffusion "just takes a little longer." doubtful.
+* preparing for Wed. meeting to explain system and plan
+* preparing for move to boston. 
+
+
+'''dlk 08/15/06'''
+* Progress: It’s taking longer to build a simulation of conjugation than I thought it would. A key difficulty is the effect of ‘clumping’. I feel like, at least in solution, the clumping plays an important role, but so far my attempts to build a good model for clumping conjugation are not working. I may just do a uniform mixture model of conjugation and come back to the clumping question once everything else is worked out.
+* To build a real neural network, we need some concept of inhibition or ‘negative weights’ in addition to the backprop error mechanism which ‘zeros’ weights that are contributing to the error. My first proposal for this, (see side figure) is to split each ‘node’ into two cell types, one which represents the positive weight (and passes forward the gent marker) and one which represents the negative weight, (and passes forward the CCD) <br>Single signal<br>[[Image:Single_inhibition.PNG]] <br>Or two signals<br>[[image:Berk_inhibition_via_split.PNG|450px]]
+* This greatly complicates both the Hebbian re-enforcement and the backpropogation of error. I don't yet have a solution, but I think the solution will be to have each lock be unique and coorespond to a 'return' address as well as the 'destination' address.
+* The feedback mechanisms make sense in the context of a single layer and a multi-layer. <br>Single layer <br>[[Image:Berk_basic_feedback.PNG]] <br>Multi-layer feedback<br> [[Image:Berk_two_layer_feedback.PNG]]
+* If I can figure out the backwards addressing, then this feedback mechanism will work for both Hebbian learning and backprop. The backwards addressing is the key design issue.
+* As can be seen in the multi-layer feedback, it is important that the next stage of the feedback is sent before the cell death occurs. I assume this can be done by placing the CCD on another lock with is opened by the first lock. (The first lock opens letting both the next layer feedback and the key for CCD activate)
+* I think the best way to visualize the information flow will be using a dynamic graph.<br>
+[[Image:Berk_example_out.PNG|500]]<br>I'm using Ali Cemgil's dynamic belief net graphing package for matlab, which I'll turn into a movie, with each time step of the simulation being a frame in the animation. So the final output will be a network graph that evolves through time providing a visual representation of the information processing function that the cell culture is computing. I don't think open wetware will let me post MPEG files, so I'll stick them on one of my servers and link them here, but I'm not going to be generating those till I figure out the backprop addressing issue and the conjugation clumping issue.
+* Will is awsome for being in lab at 2am. mad props.
+
+'''wrb 08/14/06'''
+* started more overnights, this time @ 30C: pAC-LUXGFP in LB, T9002 + J23039, I13601 + J23039, J23039, and T9002 all in LBcarb. juice went in at 2am. 
+
+
+'''dlk 08/12/06'''
+conjugation clumping [[http://www.pubmedcentral.nih.gov/picrender.fcgi?artid=224845&blobtype=pdf]]
+
+
+'''wrb 08/10/06'''
+* still no flourescence.
+* transformed J23040 miniprep that showe positive results in digest on 08/07/06. started overnights.
+* PCR colony with the 6 J23039 parts grown (K009, G00101). a few of them showed the activity. I have the cells left over from their overnight in the freezer. 
+...j23039 and j23040 are pretty much done, it looks like. 
+* time to spec. out parts into conjugation
+* time to spec. out parts with locks and keys
+* time to make parts work in solution (not just parts, systems...)
+
+'''dlk 08/09/06'''
+* Talked with chris and john about how to make the simulations useful
+* Use a simpler system, Key1 with gent marker -> cell (lock1, that is locking key2) -> lock2-tra ->  regulate back to the cell with a cell death command
+* Cells that receive the gent marker live
+* Cells that produce the wrong key output receive the cell death command
+* two forms of regulation, upregulate with the gen marker if the lock key pair matches, down regulate with the cell death command if the output is incorrect
+* allows for a back prop style learning, but not really scalable, works for small scale proof of concept.
+* pretty pictures will be required
+
+'''wrb 08/08/06'''
+* still nothing growing green.
+* transferred .5 mL of each J23039 culture into fresh LBamp with .5mL T9002. (5mL total cultures)
+* if they don't show green soon, the rest of the J23039 cultures will be miniprepped and pcr'd tonight for sanity. maybe T9002 is bogus? 
+
+
+'''wrb 08/08/06'''
+* started overnights @ 9.30 am. growing in LBamp: J23039, J23040, J23039+T9002, J23039+I13601, J23039+I13601+J23040
+* tubes i expected to glow green did not. everything is still white. leaving these overnights in, in hopes that small molecule diffusion leading to gene expression just takes a long time. 
+* picked 6 more J23039 colonies to grow.
+
+
+'''wrb 08/07/06'''
+* PCR on some more colonies from the construction, using KB009/G00101 oligos. 
+* gel digest on miniprep from last week's overnights. cut eco/pst
+* i am optomistic j23039 construct worked, though not all checks were perfect. the j23040 pcr did not come out, but one of the test digests showed correct results. construct completed?
+
+
+'''wrb 08/06/06'''
+* trying to test constructs J23039 and J23040. J23040 is much bigger (almost 800 bp's) than either of the first parts, so, running a gel of the miniprep. 
+* J23039 is harder to test: one of the parts in J23039, R0040, contributed only ~70 unique bp's to the construct. Could grow J23039 up and do a LuxI assay? but i don't know how to do that. Starting overnights of J23039 and T9002 cells in the same vial. should cause fluoresense if everything is working. if it doesn't work, too many problems would be possible for the issue to be instantly resolvable.
+
+
+
+
+'''wrb 08/04/06'''
+* miniprepped overnights that had been overnighting for almost 40 hours. I think that generall it's not great practice to do that. 
+* gave part numbers to the constructs. see J23039 and J23040. 
+
+'''dlk 08/04/06'''
+* first attempt at handling pair wise interactions appears to work
+* it looks pretty fast
+* none of the units are correct, so all quantities are unitless, unclear what they should be
+* on the units subject, I think this might be a PoPS-ish simulation
+* I no longer think the first simulation of T9002 given on 07/31/06 is correct
+* the below shows simulation of r0040, B0034, C0062 producing luxR as levels of tetracycline drop
+* [[Image:Luxrvtettimeresponse1.png|center|450px]]
+
+
+'''dlk 07/31/06'''
+* i've got a simulation of T9002 working
+* everything is modeled probalisticly
+* takes into account diffusion and protein half life, doesn't take into account secondary structure or pairwise cytoplasm reactions
+* time to talk to chris about how that fancy light sensor machine works to see if we can do a real world v simulation comparison in the time domain
+* time to write up what I did in detail [[Image:TimeResponse1.png|center|500px]]
+
+'''wrb 07/31/06''''
+* plates had lots of little colonies on 'em. starting overnights in LBcarb, and the r0040+f1610 in LBamp/kan, since the construct SHOULD be on PSB1AK3. cultures went in at 11:30pm
+* actually, no LBcard in site. started r0040+f1610 in LBkam for giggles.
+* ought to put these constructs into the registry and get them their own part names.
+
+
+'''wrb 07/30/06'''
+* gel purify 
+* ligation: choosing insert and vector with the BglI cut site is kind of wierd...Bgl is more or less in the middle of the plasmid. chose the xba, bgl cut pieces to be "vector" 
+* transformation (heat shock) abd plated onto carb plates.
+* plates went into 37deg. @ 5.30pm . 
+
+'''wrb 07/29/06'''
+* miniprepped overnights. i put too much bufferP1 into part P0412. then I pippetted the extra out (and took some cells with me). woops. the next steps looked normal though...(and the gel came out ok)
+* was going to digest Spe, Xba, AlwN1...but we're out of alwn1. going to digest with Bgl I instead... F2620 & R0040 digest Spe & Bgl, P0412 & F1610 digest Xba + Bgl. f2620+p0412 and r0040 + f1610 ligated.  
+* gel came out clean. r0040 piece were 1140bp to 99bp so resolution was not great, but i think i pulled the right band out. 
+* tomorrow: gel purify, ligate, transform
+* monday morning: look at plates, run testdigest
+
+
+'''wrb 07/28/06'''
+* spun down overnights and put in freezer. went whitewater rafting.
+
+'''wrb 07/27/06'''
+* some overinghts did not grow. did them again. 
+
+'''wrb 07/26/06'''
+* ran test digest + gel on constructs (and backbones)
+* the gel was pretty murky (note: protocol on test digest says run digest for 30 minutes. i think that is bs. run a test digest for 2 hours) but the stuff we could see indicated that we got parent vector, not contruction vector. bummer
+* started overnights of construction pieces: P0412, F2620, F1610, R0040
+
+'''dlk 07/25/06'''
+* made mini preps of the overnight cultures pSB1a2-F2620+P0412 and pSB1A2-R0040+F1610
+* mini preps are sitting in a blue holder above the lgoic drawer awaiting some good ol' testin' digestin'
+* Made -80 stocks of pSB1a2-F2620+P0412 and pSB1A2-R0040+F1610 and put into box2
+
+'''dlk 07/24/06'''
+* looked at the cell culture plates from sunday, a handful of colonies on each plate, good sign
+* used ape to plan out a test digest
+* we can digest both R0040+F1610 and F2620+P0412 with enzyme BG11 (Or Bgi1, can't tell I's from 1's)
+* made overnight stocks of R0040+F1610 and F2620+P0412 using LB Carb, put into spinner incubator
+* appropriated a drawer to store all our nifty digrams in
+* quest for simulation initated, more thoughts to come later, two inital posablities, doing a cell level simulation (simulate conjugation) and doing a simulation one level higher with cell types (simulate info flow)
+
+'''wrb 07/23/06'''
+* ligated constructs. regular procedure.
+* transformed into TG1. Included saving for an hour in LBmedia.
+* plated both constructs onto seperate LBcarb plates. plates went in at 2.30pm
+* started overnights of T9002 and I13601, so that NAND and AND gates can be made as early as tomorrow (if our transforms work). overnights went in at 2pm. 
+* modified elevator pitch on front page to include logic gates.
+* Daniel said the magic words: computer simulation. We will now quest to write simulations of our logic gate systems. 
+
+'''wrb 07/22/06'''
+* digested R0040 (spe, awln1), F1610 (xba, awln1), F2620 (spe, awln1), and P0412 (xba, awln1). digest ran for 2 hours.
+* gel and gel-cut was a little bothersome. <attach picture>. many bands exhibited only single cuts. ...we'll see how it goes. Ran the gel with small wells. the 35uL of digest + ladder was loaded into 4 (10uL) wells for each digest type. 
+* gel purified. Some of the gels were so big that we went into 2 tubes. Otherwise, protocol was straightforward. eluted into 10uL bufferEB, not 2mM Tris.
+* Daniel worked some more on presenting the logic gate topic to a.) our team and b.) everyone else. That work is posted: [http://www.openwetware.org/wiki/IGEM:UC_Berkeley/2006/LogicIntro Logic&Info processing intro]
+
+'''wrb 07/21/06'''
+* miniprepped the overnights
+* made -80 stocks of overnights
+* the results of the T9002 test were nonconclusive. The plate was not expressing gfp, but the control did not grow at all. The cells that should have made Lux to trigger T9002 did not grow.
+ 
+need to:
+* set up digests for parts that need cutting and pasting to make new parts.
+* possibly, transform new parts
+* test parts without conjugation; insert parts into plasmids that do conjugation and test that.
+
+'''wrb 07/20/06'''
+* started overnights for AND and NAND gates controlled via small molecules (Lux system): T9002, R0040, F1610, F2620, P0412, I13601, I13603. Grown in LBcarb
+* grew T9002 with LuxI producing cell srain (given from Chris) with the intent of showing that T9002 expresses GFP in the presence of Lux. 
+
+'''wrb 07/19/06'''
+* Spec'd parts for AND and NAND gates, designing for the scenario that we have Lock&Keys and for the scenario that we don't. More on this laiter, but the locks and keys make the gates more scalable into a complex system. 
+
+a NAND logic gate.
+In the system suggested here cell1 and cell2 provide input signals. Cell3 processes these signals and provides an output. Cell1 and Cell2 communicate with Cell3 via conjugation. Cell1 and Cell2 will be R-type conjugating cells, Cell3 will be an F-type cell. The phenomona associated with the cell types can be better explained by the conjugation folks. 
+  	Cell1 will provide a ribosome containing a Lock_::promoter/rbs::LacI::terminator.
+	Cell2 will provide a ribosome containing a promoter/rbs::key::terminator.
+	Cell3 will contain a ribosome with LacI-inversion-site::RFP::terminator
+
+	If Cell3 receives both Cell1 and Cell2 plasmids, output of Cell3-rfp will desist. Initial experiments should integrate a tag into successful transmission in order to assay and show hotness. 
+	Apparently, conjugation rates are fairly low (10-30%, with enough time), so conjugating 2 plasmids could see a 99% loss of signal. In order to decrease the apparent signal loss, it might be useful to tag cell-death onto cells that don’t receive plasmids. This is a tough riddle though, and for another time. 
+
+'''dlk 07/13/06'''<br>
+Addressable communication could be used to build graphical models. In the computer science sense, graphical models represent some decision making algorithm with 'nodes' and 'edges'. Bayesian networks are the canonical example of a graphical model, and a special case of a Bayesian network is the artificial neural network (ANN), which has achieved wide success in handwriting and voice recognition. If we can use addressable communication between cells to build an artificial neural network then we have the ability to use a lawn of bacterial cells to compute very non-trivial algorithms. An artificial neural network running in a lawn of cells would have very different characteristics than one implemented on a computer, including being probabilistic and massively parallel.
+
+Constructing an artificial neural network using addressable communication between bacteria cells
+    Each node in the network is labeled {1...n} and has a corresponding lock {1...n}
+    Each node in the network accepts input in the form of its key {1...n}
+    Each node in the networks sends its output with a different lock
+
+A simple type of ANN is organized into hierarchal layers with all data flowing in one direction. (A feed forward network) In this case, a node in layer one would be able to produce the locks which are opened by layer 2, layer 2 produces the locks opened by layer 3, and so on. In a 'recurrent' ANN, each node would be able to produce the locks of any other node in the network. Some internal logic in the cell would be used to determine when input levels are satisfied and what output to produce.
+
+With two lock key pairs, it may be possible to compute the logic NAND function using an ANN framework.
+    1) The logic function NAND (Not AND, or the opposite of AND) is 'logically sufficient' meaning you can string together only NAND gates to compute _any_ logic function. (This is also true of NOR gates)
+    2) ANN's can be used to compute NAND
+    3) Computation of NAND using ANNs is different from designing the NAND logic into the cell 
+    4) If you can show NAND computation, you have in principal shown general purpose computation
+    5) If you can build ANNs, you can build extremely powerful computational machinery
+    6) You can start talking about building general graphical models, which can do even more powerful computation
+    7) The probabilistic and massively parallel natural of a bacteria ANN might make possible computations which are infeasible on digital computers.
+    8) You're introducing both data representation (state) and computation into biologically designed networks 
+    9) The learning algorithms for this would be awesome
+    10) a lot of this can be described with math
+
+How to build a NAND gate with addressable communication
+
+We need to be able to build specific networks, determine the network topology, create a liquid culture mix of all the cell types, and grow. Expose to stimulus and the lawn should compute a function.
+
+We need some way of determining HI and LOW from BACKGROUND
+    Use a common signal and measure it's intensity
+        threshold somewhere above ambient to be LOW
+        HI is somewhere above low
+    Use two signals, take the strongest
+        Chemical 1 is hi, chemical 2 is low, strongest concentration
+    Either way, the signal should be capable of decay faster than diffusion
+[[Image:Example.jpg]]

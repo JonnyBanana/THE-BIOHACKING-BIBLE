@@ -1,0 +1,44 @@
+{{Template:BMCB625}}
+<div style="padding: 10px; width: 720px; border: 5px solid #B3CD4E;">
+
+=== How to take a deeper look into a crystal structure, the first steps ===
+==== A guide to critically analyze crystal structures deposited in the PDB with accompanying experimental data-- It doesn't take a crystallographer====
+
+A published structure may look pretty at first glance, but how accurate is it?  The 3D graphics that are printed in journals make for nice eye candy, and may even be informative.  But, just like Hollywood, computer graphics can easily lead you to imagine a reality that exists only in the mind of an artist (or scientist); a technicolor Fantasia that leads down the proverbial rabbit hole.  Is your thesis chasing that white rabbit?
+
+In my mind, the best two programs for analyzing structures are PyMol and Coot.
+
+Download them from the following pages:
+
+:[http://pymol.sourceforge.net Pymol homepage]
+
+:[http://www.ysbl.york.ac.uk/~emsley/coot/ Coot for Mac and Linux]
+
+:[http://www.chem.gla.ac.uk/~bernhard/coot/wincoot.html Coot for Windows (WinCoot)]
+
+
+PyMol is great, maybe the best program ever, for looking at structures, generating beautiful high quality figures, making animations, etc.  For its power, it is surprisingly easy to learn, with a lot of the commonly used commands accessible from point and click mouse operations.  Plus, there is a lot of support for it on the web.  It may not be quite as intuitive at first as other similar programs such as Chimera, but I feel that it is well worth the small effort to learn.
+
+Coot is also a very worthwhile program to learn.  Though it has kind of a clunky interface and low res graphics compared to PyMol, it has a several powerful validation features built in and is much easier to view electron density maps with compared to PyMol.  If you know the PDB id of the structure you want to look at, Coot will automatically download the structure and electron density maps for you.  Of course, you have to learn how to interpret maps, what "sigma" levels mean and such.  My suggestion- become friendly with your village crystallographer, they always need more friends ;^)  Also, (or if your village crystallographer is a grouch) get a copy of "Crystallography Made Crystal Clear" by Gail Rhodes.  It is a very easy to read intro to macromolecular crystallography for people that want to understand it "just enough".
+
+In Coot, the file menu has a command "Get PDB & Map using EDS".  Just type in the pdb accession number e.g. 2A65, and voila! structure and density.  Sometimes crystallographers don't deposit the data necessary to make electron density maps (more the case of older structures).  This is a most unfortunate and unscientific situation, thus you won't be able to judge the model directly against the data for yourself.  But, you can still learn something as some information about the experimental density is preserved in the B-factors in the PDB file.
+
+As a quick-start guide to Coot:  When the density loads, two maps are actually displayed.  On my computer, one is blue, the other is green and red.  The blue density is the typical density map that was used to build the final version of the model, what is called a "2Fo-Fc" map (again, make friends or read the book).  You can change the "sigma" level by scrolling with the mouse wheel or the plus and minus keys.  Basically, higher sigma is stronger density.  Most of the protein should have density between 1 and 2.5 sigma.  Density at sigma < 1 is barely above noise, thus model built into such density should be viewed with uncertainty.  It doesn't make it wrong, it just means that it is a less well-defined area of the model.
+
+The green and red density is called "difference density" or "Fo-Fc".  The green blobs are the map at positive sigma values, the red is the map at the negative sigma value.  Changing the sigma value for the difference density changes both simultaneously, e.g. at 3 sigma, the green is contoured at +3 sigma, the red is contoured at -3 sigma.  For this type of map, positive sigma density indicates regions of experimental density where model is missing.  Negative sigma density indicates regions where the model does not explain the experimental density, where something about the model is clearly wrong.  These difference maps are only really meaningful at sigma values greater than approx 3.0 and less than -3.0.    For starters, just look for regions of the model with strong negative density.  This is a good indication that region is in error.
+
+Coot also has built in geometry validation.  In the "Validate" menu, there are several options; the key ones are Ramachandran Plot, Geometry Analysis and Density Fit Analysis.  The geometry analysis plots the deviation from ideal values as a bar chart for each residue.  Density fit plots the Real-Space R-factor for each residue.  Clicking on the bar will center the display to that residue for visual inspection.
+
+It may be an obvious point, but remember that building atomic models into electron density is more than just figuring out the xyz position of atoms and whether they should exist or not.  It is also the crystallographers challenge to make sure that the correct atom is modeled at that location (particularly troublesome sometimes for modeling ions).  Furthermore, since the data is from a time- and space-averaged crystalline diffraction pattern, the extent to which an atom should be modeled at a particular location should be determined.  If it is at a particular xyz location only half the time during data data collection, or only half the molecules in the crystal have the atom at that location, then the model should ideally reflect this somehow. This is generally approximated by B-factors, modeling alternate conformations and partial occupancies.
+
+Hopefully this will enable you to become familiar with some of the best tools for structure analysis.  Good luck, and watch out for those rabbits!
+
+For more info, check out the following links:
+:[http://molprobity.biochem.duke.edu/ MolProbity structure validation server]
+:[http://xray.bmc.uu.se/gerard/embo2001/modval/index.html Gerard Kleywegt's model validation tutorial]
+:[http://www.usm.maine.edu/~rhodes/ModQual/ Glossary of crystallography terms--Very nice!]
+
+--[[User:Chayne|Chayne]] 17:49, 8 June 2007 (EDT)
+
+</div>
+<br>

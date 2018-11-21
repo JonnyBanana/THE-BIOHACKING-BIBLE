@@ -1,0 +1,53 @@
+<calendar>
+name=Sean_Clarke/Notebook
+date=2006/08/11
+view=threemonths
+format=%name/%year-%month-%day
+weekstart=1
+</calendar>
+
+==Today==
+
+<calendar>
+name=Calendar:Sean_Clarke/Notebook
+view=days
+days=1
+date=today
+format=%name/%year-%month-%day
+formattitle="%M %day, %year (%l) (Today)"
+weekformat=list
+</calendar>
+
+==Upcoming==
+<calendar>
+name=Calendar:Sean_Clarke/Notebook
+view=days
+days=12
+date=tomorrow
+format=%name/%year-%month-%day
+formattitle="%M %day, %year (%l)"
+skipempty=0
+weekformat=list
+</calendar>
+
+name = Calendar:<Name>
+
+view = year, threemonths, days (days = howmany to show)
+
+format = use %name = calendar name, (%day, %year, %month are all numerical), %M (for 3-letter month name)
+
+formattitle
+
+skipempty = 1 (yes) 0 (no)
+
+weekformat=list (lists days downward), other options?
+
+formattitle="%M %day, %year (%l)"
+
+%l gives the name of the day of the week
+
+date = specify today, yesterday, tomorrow
+
+days = specify number of days
+
+[http://krass.com/software/wikicalendar.README calendar parameters readme]

@@ -1,0 +1,183 @@
+{{Synthetic biology top}}
+<div style="padding: 10px; color: #000000; background-color: #ccccff; width:730px" >
+
+==Registry use cases==
+*Subpart Search: search for parts that match a portion of this part or this sequence of parts. Software agent would take a part name and using the ontology definitions would query other registries via their semantic web interfaces (no need to know about schema: e.g., just say "need all <#part>s that match a <#component> of the given <#part>"). Software agent can search anyone's registry if they use a common ontology: simply follow URLs (or use query language) and add triples to the local RDF store.
+*Superpart Search: search for parts that contain the given parts
+*What about sub- and superpart searches in distributed registries?
+*Search for function (case insensitive): repressor, reporter, inverter, etc.
+*What are the available (instances of) parts? Are they used in any devices already? (saves time for constructing expression device). Problem: different names for exactly same DNA sequence
+*What kinds of devices/systems have been built?
+*Search for "similar" parts
+*Find all parts of the form promoter.Q04400 where promoter can be any promoter. It would also be nice to specify whether you want any parts, just available parts or available and working parts.
+
+==Miscellaneous use cases==
+*Find a low-copy vector (1 to 2 per cell) which carries two antibiotic marker genes. (preferably one sensitive such rpsL, and one resistant such at Tetracycline, Chloramphenicol, etc.) and are FLANKED between two LoxP sites.
+
+==Knowledge representation==
+
+===Abstraction hierarchy===
+*Part - simple biological function encoded in DNA
+*Device - simple logical function; collection of parts
+*System - collection of devices
+*Device is_a part in context of the system but also device has_a part.
+*Device is_a subclass of Part, System is_a subclass of Device
+*How to represent barriers and interfaces betwee levels of abstration?
+*Genetic, protein and cell devices
+* :RBS :subclassOf :BasicPart OR :RBS :typeOf :BasicPart (instance)
+*Basic parts: detailed specs and sequence data
+*Composite parts: basic parts plus assembly (composite parts have are the same if they have the same basic parts)
+*Device: not necessary on a single piece of DNA
+*Separate spaces: set of hierarchies
+**Physical (DNA sequence assembly)
+**Design
+**Standards (Performance)
+*Class of Standards: assembly standards, performance standards?
+
+===[http://www.synberc.org/thrusts.html SynBERC thrusts]===
+;Parts
+:any genetically encoded, basic biological function (e.g., a ribosome binding site, transcription termin-ator, or phosphorylation motif).
+;Devices
+:collections of parts that perform one or more human-specified functions under defined con­ditions (e.g., a Boolean logic oper­ation, a feedback control loop, or a chemical transfor­mation).
+;Chasses
+:provide materials, energy, and other basic resources that are needed for proper system function.
+
+===[http://parts.mit.edu/registry/index.php/Part_Promotion_Process Part Promotion Process]===
+* 2. Sandbox - Parts with no expectations of completeness or quality. These parts may never exist or be finished.
+* -1. Selected - This used to be called team or lab favorites. These parts have been selected as particularly interesting.
+* 0. Submitted - Documentation and the DNA for this part has been formally submitted to the Registry.
+* 1. * Accepted - Both the documentation and the DNA have been received by the Registry. The documentation passes a simple review for completeness and the DNA has been checked for the correct length and antibiotic resistance.
+* 2. ** Reviewed - The part has passed the Part Review Process as established by the Part Review Board. The author of a part will be invited to submit a BioBrick™ Note on the part.
+* 3. *** Confirmed - This part has been proven to work. Its parameters have been measured and/or it has been used successfully in other systems. 
+
+===Parts documentation===
+from [[SynBERC:MIT/Calendar/2007-8-15|synth bio lunch on 2007-08-15]]
+
+====Current part presentation====
+5 pages for every part
+*main page - explain what the part is about (basic info w/out details), produced by designer
+*design page - design notes, produced by designer
+*experience - user reviews
+*hard info - saved in DB (type, seq features, etc), used for searching
+*physical DNA - 
+
+====New part presentation====
+to put on part main page (besides description)
+*designer
+*part no
+*short name
+*extended name
+*origin (biological species?)
+*short abstract (functionality, how it works, why you made it)
+
+===Biobrick descriptions===
+*Parts/basic parts/subparts encode basic biological functions (RBS, CDS)
+*Devices/composite parts are made from a collection of parts and encode some human-defined functions, such as logic gates in electronic circuits) (inverter)
+*Systems perform tasks, such as counting (oscillator)
+
+*No need to specify deep_components vs component_list
+*Right now: composite parts have only components listed; deep components produced from that list
+
+Types: what type are Plasmid, Cell and T7?
+
+[http://parts2.mit.edu/r/parts/partsdb/index.cgi Registry Parts Index]
+*A part is not allowed to contain both its own sequence and other parts
+*Subparts - ordered set
+
+Naming convention
+*Part name/number - unique ID
+*BB a _ X nnnnnn
+*BB: BioBricks
+*a: alpha stage of development
+*X: part type
+*nnnnnn: 4-6 digit part number
+*Normally, the part name contains the letter associated with the part's type. Confusion is possible when a part fits into multiple categories.
+
+Part properties ([http://parts2.mit.edu/r/parts/partsdb/view.cgi?part_id=153 example]) (* marks properties that belong to composite, possible value(s) are in parenthesis)
+*name
+*short_description (Promoter (lacI regulated, lambda pL hybrid))
+*description
+*type (Regulatory)
+*status/availability (Available)
+*results/usefulness (None|Fails|Works)
+*component_list (NULL | BBa_B0032 BBa_C0051 BBa_B0010 BBa_B0012 BBa_R0063 BBa_B0030)*
+*base_components (0 | 9)*
+*deep_components (NULL | 149 156 603 145 193 147 161 603 145)*
+*deep_components_2 (own part_id | _149_156_603_145_193_147_161_603_145_)* ?
+*deep_component_count (1 | 9)*
+*device_name (NULL | inverter)*
+*sequence (why is sequence available for the composite parts)
+*feature(s)
+**type
+**start
+**stop
+**label
+*usage
+**lastmod_user
+**lastmod_date
+*biology (Very weak promoter)
+*functional parameters 
+**efficiency 0.6
+*design
+**author (names(s) or id)
+**owner (number: owner_id)
+**creation_date
+**container_id
+**version
+**source (Bacteriophage 434 right operator)
+**notes
+**reference?
+**owning groups
+*physical DNA (instances?)
+**plasmid
+**plasmid_length
+**part_and_plasmid_length
+**VF2-VR
+*location(s) - This part may be found in these wells/tubes
+**library
+**well
+**plate
+**plasmid - this the same plasmid as in physical DNA section above?
+**cell
+*files
+*references
+*licenses
+
+==Software architecture==
+*User
+**Ontology-based knowledge sharing
+**Ontology-based presentation platform
+**Ontology-based search engine
+*Backend
+**Inference and query engine
+**Persistant storage for ontologies and metadata
+**Extraction tools for metadata
+*Architecture based on open standards: RDF, OWL, HTTP, etc
+*Possible initial setup: [http://www.w3.org/2005/Talks/0517-boit-tbl/#(20) Adapting SQL Databases] (slide 20)
+**Persistent RDF store (MySQL + Jena)
+*Possible final setup: [http://www.w3.org/2005/Talks/0517-boit-tbl/#(19) Triple Store] (slide 19)
+
+===Examples===
+*[http://www.ebi.ac.uk/ontology-lookup/implementationOverview.do Ontology Lookup Service] - implementation overview
+*[http://slam.bs.jhmi.edu/gd/ GeneDesign &beta;2.0]
+
+==Resources==
+*[http://parts.mit.edu/registry/index.php/An_Introduction_to_BioBricks An Introduction to BioBricks]
+*[[Synthetic_Biology:Semantic_web_ontology#Meetings|Meetings]]
+*[http://parts.mit.edu/registry/index.php/Registry:Community_Portal Registry:Community_Portal] - feature requests, improvements, etc (old site: [[Registry of Standard Biological Parts|Registry of Standard Biological Parts]])
+**[[Registry_improvements|Registry improvements]]
+*[[Questions_and_Answers|Questions and Answers]]
+*[[Synthetic Biology:BioBricks|BioBricks]]: protocols and standards.
+**[[Synthetic_Biology:BioBricks/Naming_a_new_biological_part|Naming]]
+**[[Synthetic_Biology:BioBricks/Standardization|Standardization]] - ways to classify biological parts
+*[[Synthetic Biology:Abstraction hierarchy | BioBricks abstraction hierarchy]]
+**[[Synthetic_Biology:Abstraction_hierarchy/Composition_model|Composition model]]
+**[[Synthetic_Biology:Abstraction_hierarchy/Network_layer_model|Network layer model]]
+*[[Flakey_DE_Stuff#Physical_and_Functional_Composition_of_Standard_Biological_Parts|Physical and Functional Composition of Standard Biological Parts]]
+*[[Tk:parts]]
+*[[Receiver Definition]] - F2620 is a receiver device that responds to the presence of a signaling molecule in the extracellular media by activating transcription from a regulated promoter
+*[[Registry_of_Standard_Biological_Models|Registry of Standard Biological Models]]
+*[[Bioinformatics_Discussion_Group|Bioinformatics Discussion Group]]
+
+</div>
+{{Synthetic biology bottom}}

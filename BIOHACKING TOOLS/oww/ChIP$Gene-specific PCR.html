@@ -1,0 +1,53 @@
+==Overview==
+
+This is a protocol for 96-well format Gene Specific PCR. <br>
+Use in conjunction with [[ChIP|chromatin immunoprecipitation]] to validate ChIP-chip results and determine if a protein of interest binds a specific gene ''in vivo''.
+
+==Protocol==
+
+===Designing Primers for GS-PCR===
+
+''In development :)''
+
+===PCR===
+
+#Make a stock mix plate from your two plates of GS-PCR primers (forward and reverse). For 5uM (each) stock:
+#* 10 uL of 100 uM forward primer
+#* 10 uL of 100 uM reverse primer
+#* 180 uL of ddH2O
+# Make dilutions of your input (wce) samples: 40 ng/uL, 20 ng/ul, and 10 ng/uL. Make dilutions of your IP samples: 10 ng/uL
+#* May need to try different dilutions of wce to find a range that shows good enrichment. See comment in "Analysis". Roshan uses 45, 15, and 5 ng/uL.
+# Make PCR master mix. Per PCR:
+#* 13.6 uL of ddH2O
+#* 0.2 uL of 100x dNTPs (25 mM each)
+#* 2 uL of 10x ThermoPol buffer
+#* 0.2 uL of Taq
+#* Make 1000x and aliquot 16 uL per well into a clean PCR plate with multichannel pipettor.
+# Add (using multichannel pipettor, according to blueprint):
+#* 2 uL of primer mix (5 uM each). ''add blueprint''
+#* 2 uL of template. ''add blueprint''
+# Run PCR: 94°C, 2 min, 1x; 94°C, 45 sec; 58°C, 1 min; 72°C, 1 min (cycle steps 2-4, 28x); 72°C, 10 min; hold at 4°C. 
+
+===Analytical Gel===
+# Pour 2.5% agarose gel in 1x TBE. Requires 500 mL for one large format gel. Set with 6 combs, spaced every-other row. (40 lanes per comb).
+# Add 6 ul of 6x gel loading dye (kept in 4°C mini-fridge) to each 20 uL PCR reaction. Pour loading dye in trough and load with muliplex pipettor. Use yellow-box tips. Eject tips back into box for reuse when loading the gel.
+# Load 12 uL per sample. Multiplex pipettor will load every other lane of the gel.
+# Seal 96-well PCR plate with sticky foil cover. Store at -20°C.
+# For ladder: 3 uL of 100 bp ladder, plus 6 uL of 6x gel loading dye.
+#  Run gel at 150 V for 2 hours. (Dye will run~2/3 the length of a row.)
+# Prepare Sybr Gold Stain: 100 uL of Sybr Gold in 1L of 1x TBE. 
+# Cut large-format gels in half to fit in staining trays. (Earmark to differentiate). 
+# Stain gel for 1 hour, rocking at room temp. 
+# Image gel. (Be certain not to saturate the most intense peaks in the image.) 
+
+===Analysis===
+* Use ImageQuant for analysis of GS-PCR 
+# For each gene, check that the input (wce) dilutions show enrichment. Enrichment should be (very) roughly linear. You want to see '''at least''' two-fold enrichment in your highest dilution compared with your lowest. If not, you may need to run different dilutions of your input.
+# Check enrichment of IP sample over input. The threshold for calling a gene enriched will be determined from the input dilutions, at least 2-fold.
+
+===Notes===
+
+===References===
+
+===Contacts===
+* [[User:Cconboy|cmc]]

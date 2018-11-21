@@ -1,0 +1,94 @@
+==Speed of light==
+
+See link to last years lab manual for a complete lab description
+[http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf]
+
+==Purpose==
+
+The purpose of this lab is, as the title suggests, to determine the speed of light. This will be done by measuring the time it take for a signal to travel from a LED source to a PMT (More on both of these in the "equipment and setup section") This lab will build on what we learned in the previous lab on how to use an oscilloscope [[http://openwetware.org/wiki/Physics307L:People/Ritter/Notebook/070827]]. Now our oscilloscope will be triggered by a TAC which will measure the the delay between two inputed signals, a start and a stop, and output a signal proportional to the time it takes for our light signal to travel the length of our tube.
+
+==Equipment and setup==
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 14:08, 25 September 2007 (EDT):Great description!}}
+This lab was done along with Antonio Rivera [[http://openwetware.org/wiki/Physics307L:People/Rivera]]and A complete photo record of all equipment, as well as a set up description may be found on his site.
+
+A major portion of this lab involved setup. Given this was the first time this lab had been preformed in a while, setup proved to be a rather extensive process. I have provided a listing of the major components involved.
+
+1. LED - The first component of the setup was the low voltage source (which for the purposes of this lab was set between 150V and 200V) to power our LED (for more on LED's visit [http://en.wikipedia.org/wiki/LED]the Wikipedia page on light emitting diodes). The LED will serves as source of photons to be sent down an enclosed tube to our PMT. The "start signal" from the light source serves as a start time for our TAC.
+
+2. PMT - At the other end of our tube is a PMT or photomultiplier tube. The PMT will take a photon emitted from our LED and convert it into an electrical signal based on its intensity. The PMT in this experiment is powered by a high voltage source set between 1800V and 2000V. The PMT signal will serve as the stop signal for our TAC. It is the difference between start and stop times that will provide our "time of flight" measurement for light.
+
+3. Delay - Delay is necessary to provide adequate distance between the start and stop times received by the TAC. An initial assumption was that our signals would travel 1ft. in 1ns. It was our hope to provide 10ns delay between the start time and the stop time. Initially we attempted to use a delay generator to provide adequate spacing for our TAC. It turned out that our delay generator was no good (see lessons learned section for more). We turned then to our assumption of 1ft/1ns and simply added for cable to the PMT side of our set up. This seemed adequate for the purposes of our experiment.
+
+4. TAC - The time-amplitude converter is used to take the start and stop times of our experiment and produce and outputed voltage according to the magnitude of the delay between the two. This piece of equiptment was the source of the most confusion in the setup process.
+   A. Set TAC up for an acceptable window of time. For the purposes of our lab we set it for               
+      100ns. 
+   B. Ensure a proper signal from the start and stop time signals, and also that they fall 
+      within the 100ns time frame.
+   C. TAC signal is sent to an oscilloscope. Here the amplitude of the signal is read as a ratio 
+      of the delay time divided by your preset delay window.
+                      
+                            <math>Dt/Dw = Amplitude/10V</math>
+
+5. Oscilloscope - triggered by the TAC and used to measure the amplitude of our TAC signal as a voltage
+
+==Data Collection==
+In our first attempts at collecting data we found it difficult to find any consistency with our readings. Signals seemed to be very sensitive to the polarity of the PMT (which we were adjusting by hand)
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 14:06, 25 September 2007 (EDT):Of course I do know you spent the majority of the time just getting things working!  Obviously some more data points would help a lot.  Some more comments:  Even though we know the measurements on the meter stick are more precise and accurate than our TAC readings, you should still indicate somewhere your estimate of random error on meter stick (from parallax, etc.).  E.g. "estimated +/- 0.5 cm for all measurements."<br><br>I am not sure what you mean by "zeroing" the PMT.  The essential thing to try to do is rotate the PMT (and thus the polarizer) at each distance so that the magnitude of the PMT signal is the same for each TAC measurement.  This isn't easy to do, though ... take a look at Anne's or Matthew D's notebook to see some data they obtained.}}
+{|
+|-
+!measurement (cm)
+!TAC output (V)
+!travel time (ns)
+|-
+|75
+|3.8
+|38
+|-
+|95
+|3.7
+|37
+|-
+|55
+|3.9
+|39
+|}
+
+Second set of data taken by zeroing the output of the PMT rather then adjusting the polarity after every LED movement. This seemed like a much more accurate way of taking data. However, the large amounts of jitter on the oscilloscope made it very difficult to determine the exact output from the oscilloscope.
+
+{|
+|-
+!measurement (cm)
+!TAC output (V)
+!Travel Time (ns)
+|-
+|55
+|2.16
+|21.6
+|-
+|80
+|1.98
+|19.8
+|}
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 14:06, 25 September 2007 (EDT):"Off almost exactly by a factor of 2" = a statement about your '''''discrepancy''''' but not an estimate of your uncertainty.  I do realize you ran out of time to take more data, but I will take off substantial points for not having an uncertainty estimate for your "practice grade." :) }}
+Speed of light calculation from table 2 produced an amount of 1.4 x 10^8 m/s. Off almost exactly by a factor of 2
+
+Fortunately, in this lab the true value is known already. The speed of light is 299,792,458 m/s. this gives us 53% error in our data.
+
+==Error and Lessons Learned==
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 14:00, 25 September 2007 (EDT):Your "most important lesson" is a great lesson to have learned!  The experiment using the "start" signal from the LED for both "start" and "stop" was a great idea.  I agree that systematic error was the big problem ... with a little more time, I think you would have acquired data allowing you to obtain uncertainty estimates as well as get much closer to the true value.  Great experimental work and good job blazing the trail for everyone on this lab!}}
+
+The most important lesson learned came early on, and it is to simply test each piece of equipment separately. Initially my partner and I had the entire experiment set up. This would have been a huge disaster given our difficulties with the delay generator, the TAC and the start time signal. 
+
+The TAC was a difficult piece of equipment to use, and new to both of us. In dealing with new equipment, I learned that it is always a good idea to learn how to use it outside of the more complex setting of the experiment. At one point we removed the TAC. We T'd off the LED signal. Plugged one end into the start time input. We then plugged the other end into the stop time input with 10 feet of extra cable. This allowed us to prove that the TAC worked, that we were using it correctly, and also allowed us to check our 1ft of cable = 1ns of travel time assumption. 
+
+Given that our final result was off by a factor of 2 it seems obvious that there was some level of systematic error involved in our experiment, and more then likely it came from more then one source. 
+
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 14:00, 25 September 2007 (EDT):1) I think this is by far the biggest problem.  It's tricky to do, but setting the PMT to exactly the same average level for each distance is critical.<br><br>2) Were you measuring the speed of light in a vacuum, though?<br><br>3)Good idea for next time<br><br>4) I think the LED start signal is supposed to be a negative pulse, but would like it to look a lot cleaner.  From what I saw from you and others, though, is that the start pulse from LED wasn't the main source of problems (it was the PMT).}}
+
+1. Inaccuracy in setting PMT output - The PMT output seemed to drastically effect the amplitude of the TAC signal. Becoming more precise in setting that at a consistent level is crucial to precision.
+
+2. 1ft = 1ns - This didn't appear to be completely true. With our set up a given length of approximately 10ft produced 13.4ns delay time.
+
+3. Data Points - Given time constraints we were limited in the amount of data we were able to take. It would seem that many more data points would be necessary. In addition, each data point we took was an averaged amplitude given by the oscilloscope. I would have liked to have recorded min and max points as well to help develop a better idea of the numerical value of the error involved. 
+
+4. Bad start time signal - We were never able to receive a good signal from the LED. Even though the LED was powered by a positive source the oscilloscope always gave a negative reading.

@@ -1,0 +1,64 @@
+== FRET related techniques ==
+
+#Apply 50ng/ml EGF to stimulate Hela cells, so dilute 400x with stock solution 20ug/ml, mouse subpaxiliar EGF. (5 ul stock->2 ml HBSS).
+
+#Make proteins
+##Transform DNA (Prsetb)->JM109 (DE3)->plate LB amp
+##Pick fluorescent colonies ->grow 1 ml overnight, 37oC
+##1ml->100ml LB amp(1:1000 100uM), grow until A600 OD~0.5, ~2-4hr, 37oC
+##Induce with IPTG (1:1000, 0.4mM), ->25oC shake overnight
+##Harvest by 8000rpm, 4oC (big rotor)
+##Lysis with BPER (30 ml BPER pierce 78260 CC48598, with 1 cocktail tablet, 300 ul (17mg/ml, or 100mM) PMSF in isopropanel), for 3 samples.
+##Resuspend until completely dissolved, rock for 10min, at RT
+##Centrifuge 15000rpm, 10min, filter through 1hr, rock in 4oC with NI (nico raisin beads)
+##Prepare column, 1-2ml raisin/column, rinse with 5ml binding buffer/column
+##Load protein
+##Rinse 8 ml binding buffer
+##Wash 10 ml wash buffer
+##Elute 8 ml elution buffer to epitorf
+##Prepare dialysis tubes, prepare 500ml kinase assay buffer+1:1000 DTT for 1 column.
+##Pick colored tubes, add in dialysis tubes, stir bar in 4oC for 3 hr->overnight, could use (10-20%) PEG (polyethylene glycol) to concentrate the kinase assay buffer.
+##Aliquot all the kinase, do kinase assay
+##To measure the protein concentration with extinction coefficient;
+Eyfp@516=62*103 M-1cm-1, Egfp@488=61*103 M-1CM-1 SC concentration=absorbtioneading/Eyfp=0.03/(62*103)=4.83*10-7M=0.036mg/ml
+
+
+
+
+
+==== Existed Constructs ====
+#n-terminal tagged lyn-Akar1 in PCDNA (hindIII-sphI-SacI-EcoRI)
+#c-terminal tagged kras-Akar2, Rho-Akar1 in pcdna’(BamhI-sphI-SacI-EcoRI)
+##src reporter in pcdna’(BamhI-sphI-SacI-EcoRI)
+##src reporter in PRSETb (bamhI-sphI-SacI-EcoRI)
+
+
+==== Membrane lyn-tagged Src reporter (to lipid rafts and caveoli):  ====
+
+#Cut lyn-Akar1 in PCDNA3 with hindIII and EcoRI
+#Harvest both heavy chain and light chain
+#Cut light chain with SphI and harvest light chain carefully after long running (difference=length of linker+substrate+binding partner-tag)
+#Cut src-PRSETb with SphI and EcoRI, harvest light chain
+#3 piece ligation (heavy chain from 2, light chain from 3, light chain from 4; 1:5:5)
+#Lyn-tagged Src reporter in PCDNA3
+
+==== Membrane kras, or Rho-tagged Src reporter (outside of lipid rafts and caveoli): ====
+#Cut kras-Akar2, Rho-Akar1 in PCDNA3’ with BamhI and EcoRI
+#Harvest both heavy chain and light chain
+#Cut light chain with SacI and harvest light chain carefully after long running (difference=length of linker+substrate+binding partner-tag)
+#Cut src-PRSETb with BamHI and SacI, harvest light chain
+#3 piece ligation (heavy chain from 2, light chain from 3, light chain from 4; 1:5:5)
+#Kras or Rho tagged Src reporter in PCDNA3’
+
+==== Partial digestion ====
+*When there are two cutting sites (one desired and one unwanted) by specific restriction enzyme, could use partial digestion to get the desired cut piece and run gel and harvest by size. (1/5-1/10 dilution of enzyme, incubate for 5-10 min 37oC)
+
+==== Sequencing ====
+*8 ul/sample of miniprep, primer 1:2 dilution, primer:DNA=1:1
+*1% agarose gel:
+*0.5g agarose /50ml 1x TAE, heat up, swirl, add 5 l EB.
+
+
+==== Measuring FRET in vitro: ====
+*Principles: apply c-src (1l), 100 mM ATP(1l, such that Cf=1mM), excite at 432nm,
+*measure emission spectrum, take the ratio=YFPpeak/CFPpeak

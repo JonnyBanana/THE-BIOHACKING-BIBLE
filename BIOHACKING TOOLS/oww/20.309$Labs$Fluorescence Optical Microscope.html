@@ -1,0 +1,601 @@
+<div style="padding: 10px; width: 7.5in; border: 3px solid #000000;">
+
+
+
+==Objectives and Learning Goal==
+* Become familiar with the optical “Lego” block set.
+* Construct a fluorescence and white light microscope in terms of ray tracing and magnification.
+* Understand Fourier optics and its implications in microscopy.
+* Become familiar with basic cell labeling procedures with fluorescent probes.
+* Understand the microrheology measurement in cells.
+
+This laboratory sequence is three and a half weeks long. At the end, you will have constructed and characterized a working fluorescence microscope, you will understand basic optical principles such as ray tracing, fluorescence detection and resolution, and you will have applied this microscope to characterize a bio-photonic crystal and to measure mechanical properties of living cells.
+
+
+==Roadmap and Milestones==
+
+The AFM will be the basis of three weeks' worth of experiments, and the roadmap below is subdivided into weeks to help you gauge your progress.
+
+Week 1: 
+
+1. Design and Build an inverted white light microscope 
+
+2. Measure the magnification and field of view using an air force target and a Ronchi ruling in white light mode.
+
+3. Add a laser illumination beam path
+
+4. Measure the diffraction of Ronchi ruling in the Fourier plane
+
+5. Measure the diffraction pattern of a peacock feather and a piece of tissue paper  
+
+
+Week 2:
+
+1. Use the fluorescence microscope to track the endocytosed bead in the NIH 3T3 fibroblast cell. 
+
+2. Use Matlab to extract the storage modulus and the loss modulus of the cell.
+
+3. Add chemical cytochalasin D and repeat modulus measurements to determine its effect on cell microrheoology.
+
+
+Week 3:
+
+1. Learn how to fix NIH 3T3 fibroblasts and label its actin cytoskeleton.
+
+2. Image the labeled F-actin with fluorescence microscope.
+
+3. Repeat actin imaging with cytochalasin D to directly visualize the drug's effect on the cytoskeleton.
+
+[[Image:20.309Hw3Imagelight.JPG|center|thumb|400px|Figure 1: Rough schematic showing white light and fluorescence light paths for imaging the specimen plane.  Not drawn to scale.]]
+
+==Microscope Construction==
+
+To start, familiarize yourself with the optomechanical components that you will use as the building
+blocks for optical construction. Figure 1 provides a general scheme for the microscope geometry,
+but you will not be provided with a detailed schematic for how to put everything together. You
+are on your own! Spend some time on trial-and-error exploration.
+
+''It's worth noting that making an effort from the very start to build a high-quality,
+stable, carefully measured setup will pay off tremendously when doing your experiments.''
+
+====3.1 Major microscope parts====
+
+====3.1.1 Optical "Legos"====
+
+The main framework for these microscopes is the ThorLabs SM1 lens tube system, and related
+components. You will quickly figure out how most of these parts fit together. Be sure in particular
+you understand the use of the cage cubes, the optic mounts that go into them, the corresponding
+kinematic mounting plates, and the quick-connect linkages. Your instructor can review with you
+any components you're not sure about.
+
+====3.1.2 Simple lenses====
+
+Plano-convex spherical lenses are available for our microscopes in four focal lengths f = 25, 50,
+100, and 200 mm. Mount them inside lens tubes and secure with a retaining ring. Typically, the
+convex side of the lens faces toward the collimated beam (all rays parallel), and the planar side
+toward the convergent rays.
+
+As you install lenses into your microscope, ''label their focal lengths on the lens tubes''.
+This will help you remember what you did when building, and will aid in disassembly and storage
+afterward. Likewise, save the lens storage boxes. We have a large number of lenses, and some are
+difficult to identify when they are not labeled.
+
+Handle lenses as little as possible, and only by the edges. If a lens is dirty, clean it by wiping
+with a folded piece of lens paper wetted with a few drops of methanol (leaves no residue), held in
+a hemostat. Ask an instructor to show you the technique.
+
+====3.1.3 Objective lenses====
+These are specialized lenses that are the workhorses of a microscope. They are designed with
+great effort (and often great expense) by the microscope manufacturers to have excellent optical
+characteristics, low chromatic and geometric aberrations, and interchangeability. They are typically
+swapped in and out to set the overall magnification - in a commercial microscope this is done
+mechanically and sometimes automatically; we will do it manually.
+
+For the 20.309 scopes, we have three objective lens options: a 10×, a 40×, and a 100×. They
+are referred to by their nominal magnification, which assumes they are used with a 200 mm tube
+lens (which is how a commercial Nikon scope is built). We have adapter rings available that connect
+the objective lens mounting threads to be SM1 lens tube system.
+
+[[Image:20.309Hw3Imagenikon.JPG|right|thumb|300px|Figure 2: A typical Nikon objective lens]]
+
+Three important things to note:
+*Objectives don't have an indicated focal distance; in-
+stead, their back focal plane (BFP) is designed to coincide
+with the rear of the objective housing. This is equivalent to
+the focal location of a "normal" lens - ask a lab instructor
+if you're unsure where this is.
+*Another key parameter used to describe these lenses is
+the ''working distance'' (WD). This is the distance between
+the front end of the objective and the sample plane (when
+the sample is in focus). Generally, the higher the magnification, the lower the working distance.
+*The 100× objective is designed to be used with immersion oil, which provides an optical medium of pre-
+determined refractive index (n = 1.5). When using the
+100×, place a drop of oil on it, and bring the drop in con-
+tact with the slide cover glass. After use, clean off excess oil by wicking it away with lens paper
+(don't do a lot of rubbing). The 10× and 40× don't use oil.
+
+====3.1.4 Sample holder/stage====
+The purpose of this component is to stably support the sample above the objective lens, and to
+enable fine control for moving the sample in the x-y plane. Reliable translational control will be very
+important especially at 40× or 100× magnification. Build the sample holder using a component
+that allows x- and y-axis planar movement, and clamp it to a post.
+
+====3.1.5 Fluorescence illumination====
+We'll illuminate the fluorescent molecules of our scope using a λ=532 nm 5 mW green laser pointer
+(see also Sections 3.1.6 and 3.2.2). DO NOT begin working with the laser in this section
+until you're familiar with laser safety procedures! Use caution, because this laser can
+damage your eyes.
+
+
+'''Laser Safety'''
+
+Your lab instructor will provide a laser safety introduction before you start working.
+Two major safety policies we need to follow for EHS compliance:
+
+1. Wear the provided safety eyewear at all times, even when your laser is not on, since other
+groups may be running theirs.
+
+2. Whenever you working with the lasers, turn on the laser warning light switch by the door to
+the lab, and make sure the warning sign is flashing.
+
+Additional common-sense practices to keep in mind:
+*Under no circumstances should you point the laser toward other people.
+*In the configuration used here, laser light will emerge out of the top of the objective lens: do
+not put your face directly above the objective.
+
+
+'''Beam expansion'''
+
+The green light is collimated coming out of the laser pointer, and should also be collimated when it
+strikes the sample (this is called Kohler illumination). However, the green light should cover a good
+portion of the field of view of your microscope, and the beam may not be wide enough emerging
+from the pointer. This means that the laser beam will need to be expanded. What expansion factor
+should you use for a 40× objective? You may want to be a bit conservative with beam expansion,
+since the laser pointer is not too powerful and overexpansion will decrease the light intensity at the
+sample and may not give you enough power for imaging.
+Another simple 4-f system is useful here (in this instance the intermediate focal points must
+coincide).
+
+====3.1.6 Dichroic mirror and barrier filter====
+
+The fluorophores we will fluoresce (emit) in the orange-red region of the visible spectrum (550-
+600 nm). As mentioned, we'll excite these molecules using a 532 nm green laser pointer.
+
+In any fluorescence system, a key concern is viewing only the emitted fluorescence photons, and
+eliminating any background light, especially from the illumination source.
+
+We have two pieces of optics to help us do this. Take a look at Figure 1 for the roles they
+play in the microscope layout. Note that the barrier filter is key for high-sensitivity fluorescence
+imaging, and will not significantly impact white-light imaging.
+
+[[Image:20.309Hw3Imagespectra.JPG|center|thumb|400px|Figure 3: The transmission spectra for the 565DCXT dichroic and the E590LPv2 barrier filter]]
+
+
+'''dichroic mirror''' - Passes light of one wavelength, and reflects light of another. The transmission
+spectrum for our dichroics (the 565DCXT from Chroma Technology) is shown in Fig. 3.
+
+'''barrier filter''' - This filter blocks a particular spectral region. Our barrier filter is the E590LPv2,
+also from Chroma Technology, and its spectrum is likewise shown below.
+
+====3.1.7 CCD camera====
+Unlike some microscopes you may be used to, the one we build will not have an
+eyepiece for direct visual observation. Instead, we observe and capture images directly
+with a Firewire-enabled CCD camera (DMK 21F04 from The Imaging Source). Its
+monochrome (black and white) sensor is 640×480 pixels, each of which is a square
+5.6 μm on a side. Like the objective lenses, we have an adapter ring to attach the
+camera threads to the SM1 lens tube system.
+
+The camera software is called IC Capture, and is run from the PC desktop. If the program
+gives an error and cannot find the connected camera, it may need to have its driver updated.
+
+====3.2 Construction giudelines====
+A basic microscope is essentially a 4-f system (sketched in Fig. 4, which we have discussed in lecture.
+The requirement of overlapping the focal points between the two lenses can sometimes be relaxed,
+but sometimes needs to be adhered to very precisely. Do some ray-tracing to determine when this
+is the case. Discuss with a lab instructor, if this is not clear.
+
+[[Image:20.309Hw3Image4flens.JPG|center|thumb|400px|Figure 4: A 4-f lens system using lenses with focal lengths f1 and f2. The object and image distances (so and si, respectively) for the lenses are indicated.]]
+
+====3.2.1 White light microscope====
+The microscope should be built in two stages: first, you'll assemble a white-light inverted microscope, verify its alignment and magnification, and then you will add the fluorescence branch.
+
+First sketch out a rough design for the microscope on paper. Verify this with one of the lab
+instructors before beginning construction. Some hints and suggestions to help you with the layout
+and design process:
+
+* A rough schematic of the microscope geometry is shown in Figure 1.
+* The Nikon objective lenses are designed to be paired with a 200 mm tube lens, which gives
+the system the specified magnification.
+* Assume that the objectives behave as ideal plano-convex lenses (this is what they are designed
+to do). Since an objective's working distance can be quite short, the ability to finely control
+its distance from the image is important. Mount your objective using a component that will
+allow you to make fine distance adjustments.
+* Start the alignment with a 10× objective but progress to 40× and 100×.
+* Use the gooseneck lamps to trans-illuminate the sample for white light imaging.
+* Use a quick-connect for the CCD camera. This will make modification much more convenient
+for later construction stages.
+
+====3.2.2 Fluorescence microscope====
+As before, first sketch out a layout for adding fluorescence to the microscope and discuss it with
+your lab instructor. Adding fluorescence should require only a few modifications to your setup.
+
+Keep the following things in mind:
+* Use the dichroic to direct the laser illumination toward the sample and to pass the emitted
+(fluorescent) light back through to the CCD.
+* An adjustable iris aperture and some lens or tissue paper can be very helpful for aligning the
+laser and directing it along the axis of the tubes.
+* The barrier filter is used to "condition" the image before it reaches the CCD camera, removing
+any light from the illumination laser that might have gotten through the dichroic.
+* During actual fluorescent imaging, you will not use white light illumination, but having white
+light capability is useful for first visualizing the sample and viewing what features are in the
+field of view. You should retain the ability to do both white light and fluorescent visualization.
+
+==4 Experiment 1: Microscope Characterization and Fourier-Plane Imaging==
+
+====4.1 White light calibration====
+
+Use this white light microscope to image the following samples using the three different objectives
+(10×, 40×, and 100×)
+
+* The smallest line pair on the so-called "Air Force imaging target" test pattern.
+
+* A slide of 4 μm latex spheres.
+
+* Ronchi ruling - a periodic pattern containing 600 line-pairs per mm. (only use 40× and 100× objectives for this; why?)
+
+Can you see all these samples? What is the magnification of the microscope and the size of its
+field of view? Is it what you expected?
+
+====4.2 Fluorescence characterization and imaging====
+
+You have the following samples available for imaging using both 40× and 100× objectives:
+
+(a) A solution slide of Rhodamine 6G (Rh6G) solution, used to adjust the microscope for uniform
+illumination (this has its excitation peak at 530nm, and a fairly broad band of emission above
+550nm).
+
+(b) A sample slide with 4 μm red-fluorescent beads (modified with Nile Red dye, peak excitation
+at 535nm, peak emission at 575nm).
+
+Imaging tasks:
+
+1. Use the Rh6G slide to optimize the uniformity of the illumination field (you want the light
+distribution hitting the sample to be as uniform as possible). Take an image of this.
+
+2. Measure the signal level while imaging Rh6G - try to achieve maximal uniformity and
+brightness.
+
+3. Image the red beads slide. Perform flat field correction on the beads (i.e. divide the bead
+image by the normalized Rh6G image). Compare what you see before and after flat field correction.
+
+''If the images are noticeably different, especially at 40× (i.e. there is significant non-uniformity in the illumination field), you should improve the scope's alignment until there isn't much difference.''
+
+====4.3 Fourier optics====
+Recall from lecture that a lens behaves as a Fourier transformer. When an object is placed at a
+plane one focal length away from the lens, an image of the object's spatial frequencies is formed
+one focal length away on the other side (called the Fourier plane). Likewise a Fourier transform
+projected through a lens generates the corresponding image (see Figure 5).
+
+====4.3.1 The "light-scattering microscope"====
+Here we'll investigate the Fourier transforming properties of our microscope. This capability is
+employed in a type of microscopy called Dynamic Light Scattering (DLS), which can be used, for
+example, to quantify the presence of regular patterns or measure average sizes of features being
+imaged.
+
+To modify your microscope for imaging the Fourier plane, simply add a lens at the plane one
+focal length behind the image plane and position the CCD camera one focal length behind the lens.
+(A 50 mm lens is good { it will keep the beam path short, thought the exact focal length is not
+critical.) Here, a pair of quick-connects will play a key role, letting you quickly switch between
+capturing the image plane and the Fourier plane on the CCD.
+
+{|
+|[[Image:20.309Hw3Imagefourierplane.JPG|250px|right]]
+|-align="center"
+|'''Figure 5: A lens system with unity magnification,
+showing the relative locations of image and fourier
+planes.'''
+|}
+To characterize the Fourier-imaging ability of
+your microscope, we'll use the Ronchi ruling, illuminated by the laser. Its spatial frequency components can be readily imaged at the Fourier plane.
+Before doing the experiment, estimate how
+many diffraction orders you can observe with the
+40£ and 100£ objectives (which have NA = 0:65
+and NA = 1:3 respectively)?
+The general equation describing the optical
+geometry of a di®raction grating is
+a(sin µm ¡ sin µi) = m¸ ;
+where µi (the incident beam angle) and µm (the di®raction angle) are measured with respect to the
+normal, a is the grating period, m is the di®raction order number, and ¸ is the light wavelength.
+What is the incident angle of your experiment? What is the maximum di®raction angle allowed
+by your apparatus? How is µm related to the numerical aperture of the objective lens? Recall that
+NA = n sin µ, where n is the index of refraction of the medium. For air n = 1 and for oil n = 1:5.
+Now, view the Fourier plane images of the Ronchi ruling with the 40£ and 100£ objective
+lenses to verify your calculations.
+
+{|
+|[[Image:20.309Hw3Imagebutterfly.JPG|600px|left]]
+|-align="center"
+|'''Figure 6: [Images and caption reproduced from Vukusic and Sambles] (a) Real color image of the blue
+iridescence from a Morpho rhetenor wing. (b) Transmission electron micrograph (TEM) images showing
+wing-scale cross-sections of M. rhetenor. (c) TEM images of a wing-scale cross-section of the related
+species M. didius reveal its discretely con¯gured multilayer. The high occupancy and high layer number of
+M. rhetenor in b creates an intense re°ectivity that contrasts with the more di®usely colored appearance
+of M. didius, in which an overlying second layer of scales e®ects strong di®raction. Scale bars: (a) 1 cm, (b)
+1.8 ¹m, (c) 1.3 ¹m. (d) Blue iridescence is prevalent in the fern-like tropical understory plants of the genus
+Selaginella. (e) TEM section of a juvenile leaf from the plant Diplazium tomentosum.'''
+|}
+
+====4.3.2 Bio-photonic crystals====
+
+Many biological systems in nature have interesting optical properties (please see the fascinating
+review1 recently published in Nature). Some researchers have advocated using biological system
+to \grow" photonic crystals. Today, photonic crystals made by microlithography have been used
+to guide light in optoelectronic systems and for optical computing. If photonic crystals can be
+self-assembled using biological systems, this may become a new low-cost and high-throughput
+manufacturing approach.
+
+You are provided with two samples. (1) A peacock feather and (2) a piece of tissue paper.
+Obtain the di®raction pattern from both samples using the 100£ objective. Now remove the lens
+that generates the Fourier plane, and obtain a real image of both specimens. Can you explain the
+di®raction patterns observed (quantitatively)? Do either of these samples exhibit the properties of
+photonic crystals?
+
+If this subject interests you, take a look at the additional references listed in the footnotes.2,3
+
+
+==5 Experiment 2: Microrheology Measurements by Particle Tracking==
+
+====5.1 Introduction and background====
+
+Many cellular functions such as migration, differentiation, and proliferation are regulated by the
+mechanical properties of cells, specifically, their elasticity and viscosity. Rheology is the science of
+measuring materials' mechanical properties. Microrheology is a subgroup of techniques that are
+capable of measuring mechanical property from microscopic material volumes. Clearly, given the
+typical size of biological cells, microrheology is the technique needed to measure their elasticity and
+viscosity.
+
+The elastic and viscous properties of cells can be characterized by a complex-valued shear
+modulus (with units of Pa) G*(w) = G'(w) + iG"(w). The real part G'(w), referred to as the
+storage modulus, is a measure of cell elasticity, while the imaginary part G"(w), the loss modulus,
+is a measure of their viscosity. A generalized Hookian relationship can be written as
+
+F(w) <math> /propto </math> G¤(!)¢r(!) ;
+
+where ¢r(!) is a generalized displacement, and F(!) is a force linearly proportional to it via the
+shear modulus. Therefore, we can measure the shear modulus if we can measure the deformation
+of the cell under a known force. (Note that all these quantities are frequency-dependent).
+Particle-tracking microrheometry is based on measuring the displacement of a particle with
+radius a embedded in a cell driven by thermal forces (similarly to the vibrations of the cantilever that
+you observed in the AFM lab). One complication is that this relationship is frequency dependent
+{ this is because in complex °uids, such as the cellular cytoskeleton, there are di®erent energy
+dissipation mechanisms over di®erent time scales.
+
+To approach the derivation of the relevant formulas, it is more convenient to think in terms of
+energy, rather than force. The relationship between stored energy and displacement has a familiar
+form, similar to a spring-mass system (recall KE / k(¢z)2):
+
+U(!) = Z F(!)dr / G¤(w)¢r2(!) :
+
+What is the driving thermal energy U(!)? Recall also from that thermal energy is \white,"
+i.e., it contains equal power at all frequencies and is equal to 1
+2kBT for each degree of freedom in a
+second-order system, where kB is Boltzmann's constant and T is the absolute temperature. From
+this relationship (since we're observing motion in two dimensions), we have
+
+G¤(!) /
+kBT
+¢r2(!) :
+
+Our argument is clearly very rough but a complete (and much more di±cult) derivation results
+in the following equation (see Mason4 for details):
+
+jG¤(!)j =
+2kBT
+3¼a h¢r2(!)i¡[1 + ®(!)]
+
+Some key additional details to help you make sense of this equation:
+1. As you can see, the dependence on displacement is more accurately expressed as the mean-
+square displacement (MSD) h¢r2(!)i:
+MSD = h¢r2(!)i = h¢r2(
+2¼
+¿
+)i = h[r(t + ¿ ) ¡ r(t)]2i =
+1
+N
+NX
+i=1
+[r(ti + ¿ ) ¡ r(ti)]2 ;
+where h i denotes a time-average of the particle's displacement trajectory r(t), at discrete
+times t = t1; : : : ; tn (as sampled by a digital system like the PC and camera). Additionally, ¿
+is a characteristic lag/delay time for the measurement. corresponding to the frequency !.
+2.
+®(!) ´
+@ lnh¢r2(¿ )i
+@¿ ¯¯¯¯¯¿=2¼=!
+:
+3. The radius of the particle a plays a role in the formula.
+4. ¡(¢) is the Gamma function (the generalized form of the factorial function, which can be
+looked up in a mathematical table). Mason suggests that for our range of ®, ¡[1 + ®] ¼
+¡0:457(1 + ®)2 ¡ 1:36(1 + ®) + 1:90:
+This equation may look complicated but there is a simple approximation to calculate the elastic
+and viscous moduli:
+G0(!) = jG¤(!)j cos[¼®(!)=2]
+G00(!) = jG¤(!)j sin[¼®(!)=2]
+A detailed discussion of particle tracking microrheology can be found in the papers by Mason
+and Lau5.
+
+====5.2 Experimental details====
+
+====5.2.1 Stability and setup====
+
+The major challenge of particle tracking microrheometery is the small scale of the thermal forces and
+the associated nanometer scale displacements. A few things you can do to ensure the experiment
+works:
+Be sure all the microscope components are rigidly assembled and ¯rmly tightened. Poorly built
+scopes shake. It is also vital that when you perform this experiment that the optical tables are
+°oating so that building noise is isolated. Of course, avoid touching the optical table and the
+microscope during the measurement. There are also cardboard boxes available that you can put
+over your microscope to isolate it from air currents. Finally, make sure that you and the people
+around you are not talking too loudly during the experiment, because acoustic noise is signi¯cant.
+The camera gain and brightness setting should be set as described in Figure 7.
+
+====5.2.2 System veri¯cation====
+To verify that your system is su±ciently rigid/stable, ¯rst measure a specimen containing 1 m red
+°uorescent beads (Molecular Probes) dried in a cell dish. Chose a ¯eld of view in which you can
+see at least 3-4 beads. Using a 40£ objective record an .avi movie for about 3 min. at a frame
+rate of 30 frames/sec.
+From your experience with image processing, you already know how to import .avi movie data
+into matlab. To improve signal to noise ratio, sum every 30 frames together, which will make your
+sequence have a temporal interval of 1 sec.
+Use the bead tracking processing algorithm on two beads to calculate two trajectories. To
+further reduce common-mode motion from room vibrations, calculate the di®erential trajectory
+from the individual trajectories of these two beads. Calculate the MSD h¢r2i from this di®erential
+trajectory. Your MSD should start out less than 10 nm2 at ¿ = 1 sec. and still be less than 100 nm2
+for ¿ = 180 sec. If you don't get this, do not proceed further and ask for help.
+5.2.3 Live cell measurements
+Now that your system is su±ciently stable, you can run the experiment on cell samples. A key
+technique to keep in mind when working with live cells { to avoid shocking them with \cold" at
+20±C, be sure that any solutions you add are pre-warmed to 37±C. We will keep a warm-water bath
+running on the hotplate for this purpose, in which we will keep the various media.
+You are provided with NIH 3T3 ibroblasts, which were prepared as follows:
+Cells were cultured at 37±C in 5% CO2 in standard 100 mm £ 20 mm cell culture dishes
+
+{|
+|[[Image:20.309Hw3Imageic.JPG|600px|center]]
+|-align="center"
+|'''Figure7: Proper camera gain settings for particle tracking: Choose "Properties..." under the "Device" menu and set the gain and brightness level to zero.  Change the exposure time until the intensity of the fluorescent beads is just high enough to achieve good contrast, but do not saturate the intensity value to 255'''
+|}
+
+(Corning) in a medium referred to as DMEM++ { this consists of DMEM (Cellgro) supplemented
+with 10% fetal bovine serum (FBS - from Invitrogen) and 1% penicillin-streptomycin (Invitrogen).
+The day prior to the microrheology experiments, ¯broblasts were plated on 35 mm glass-bottom
+cell culture dishes (MatTek). On the day of the experiments, the cell con°uency should reach
+about 60%. 1 ¹m diameter orange °uorescent microspheres (Molecular Probes) were mixed with
+the growth medium (at a concentration of 5 £ 105 beads/mL) and added to the plated cells for a
+period of 12 to 24 hours for bead endocytosis. Choose cells with 3 or 4 particles embedded in them
+and take a movie as before. Take movies of about 3-5 cells.
+Now treat the cell with the cytoskeleton-modifying chemical cytochalasin D (CytoD). Pipet
+out the bu®er, add 1 mL CytoD solution at 10 ¹M (pre-mixed for you) to the dish, and wait for
+20 min. It's a good idea to check on your cells after 20 min.: sometimes they are in bad shape
+at that point but sometimes they still look very healthy. Wash and replace with bu®er twice with
+2 mL pre-warmed DMEM++.
+Repeat the particle tracking measurements again for 3-5 cells as quickly as you are able, since
+their physiology has now been signi¯cantly disrupted and they will die within a couple of hours.
+It's very unlikely that you'll be able to ¯nd the exact same cells you've already tracked; however
+it's very much advisable to use the same dish for the \before" and \after" so you're aren't also
+comparing between di®erent cell populations.
+
+==6 Experiment 3: Fluorescence Imaging of the Actin Cytoskeleton==
+
+We have now observed CytoD-induced rheological
+changes of 3T3 ¯broblasts. This next experiment seeks
+to better understand the e®ect of CytoD on cells. Since
+there are signi¯cant rheological changes of 3T3 ¯brob-
+last with CytoD, it is reasonable to assume that this
+chemical may modify the ¯broblast cytoskeleton. The
+most important component of the mammalian cell cy-
+toskeleton is actin, so we will image actin structures in
+these cells with and without CytoD treatment.
+The actin cytoskeleton is visualized using phalloidin
+labeled with Alexa Fluor 532. The excitation maximum
+is at about 535nm and emission maximum is at about
+575nm (see spectra in Fig. 8. Phalloidin is a fungal
+toxin (small organic molecule) that binds only to poly-
+merized ¯lamentous actin (F-actin), but not to actin
+monomers, G-actin. (It is a toxin because it hinders
+actin disassembly).
+
+
+[[image]]
+Figure 8: Excitation and emission spectra for
+Alexa Fluor 532.
+
+====6.1 Cell ¯xation and labeling protocol====
+
+Prepare a dish of ¯xed ¯broblast cells (NIH 3T3) with actin labeled with phalloidin-Alexa Fluor
+532. The labeling protocol is as follows:
+The starting point is as before { cells cultured in dishes containing DMEM++, at approximately
+60% con°uency. This is about the optimum percentage of cell population. If cells are too crowded,
+they will not stretch properly and show their beautiful actin ¯laments.
+Note also that these cells remain alive until the addition of formaldehyde, therefore requiring
+that any bu®er/media added to be pre-warmed.
+
+1. Pre-warm the 3.7% formaldehyde solution in a hot water bath on the hotplate.
+2. Wash the cells twice with pre-warmed phosphate bu®ered saline (PBS) at pH 7.4.
+{ Remove the medium with a pipette and wash each dish twice with 2 mL of PBS.
+3. Fix the samples with 2 mL of 3.7% formaldehyde solution in PBS for 10 minutes at room
+temperature.
+{ \Fixing" means cross-linking the intracellular proteins and freezing the cell structure. This
+kills the cells.
+4. Wash the cells three times with 2 mL PBS.
+5. Extract each dish with 2 mL 0.1% Triton X-100 (a type of soap solution in PBS) for 3-5
+minutes.
+{ \Extraction" refers to partially dissolving the plasma membrane of the cell.
+6. Wash the cells 2-3 times with PBS.
+7. Incubate the ¯xed cells with 2 mL 1% BSA (bovine serum albumin) in PBS for 20-30 minutes.
+{ BSA blocks the nonspeci¯c binding sites.
+8. Wash cells twice with PBS.
+9. To each cell dish, add 200 ¹L of °uorescent phalloidin solution (speci¯c binding to F-actin)
+pre-mixed in methanolic (diluted methanol). Carefully pipet this just onto the central circular
+glass region of the dish, just enough to cover the cells, and incubate for 60 min. at room
+temperature.
+10. Wash three times with PBS.
+11. You can now store the sample at +4±C (normal refrigerator) in PBS for a few days, or in
+mounting medium for long-term storage (approx. up to 1 year).
+By a very similar procedure, you should also prepare cells treated with CytoD. Between steps
+2 and 3 of staining procedure, add 1 mL of the pre-warmed 10 ¹M CytoD solution for 20 min.
+Afterwards, wash with DMEM++ twice.
+
+====6.2 Actin imaging====
+
+Since actin ¯laments and stress ¯bers are nm-scale objects, they are much dimmer than °uorescent
+beads or the dye solution { care must be taken to get good images of the cytoskeleton. You may
+need to cover the scope to reduce room light contamination.
+Adjust the gain and the brightness of the camera to get the best picture. Be sure to keep the
+same exposure conditions, however, for both untreated and treated cells.
+Using the 40£ objective, take ¯ve images each of treated and untreated cells. You may have to
+average multiple captured image frames to obtain acceptable signal to noise levels.
+
+==7 Report Requirements==
+
+''This lab report is due by 12:00 noon (in class) on Thursday, Nov. 30.''
+
+====7.1 Microscope construction====
+Make a sketch of your full microscope setup (a hand drawing is perfectly acceptable, but please keep
+it neat - a ruler is handy) with important parameters indicated (i.e. lens focal lengths, distances
+of main components, etc.).
+
+====7.2 Experiment 1: microscope characterization and Fourier-plane imaging====
+1. Include your favorite 2-3 white-light images, indicating the magni¯cation and ¯eld of view
+(do they match what was expected?).
+2. Include an uncorrected and a °at-¯eld-corrected °uorescent image of the 4 ¹m beads.
+3. Calculate the di®raction-limited resolution for the 10£, 40£ and 100£ objectives, and how
+this compares with which samples each objective could or could not resolve.
+4. Include both the real and Fourier-plane images of the peacock feather and tissue paper, and
+quantitatively describe how they relate to each other?
+
+====7.3 Experiment 2: microrheology measurements by particle tracking====
+Analyze the bead trajectories for the normal and CytoD-treated cells. Extract their MSD h¢r2i,
+and the G0 and G00 modulus values, and include enough detail to make it clear how you performed
+the analysis.
+Do you get consistent results across multiple cells in each group? What can you tell about the
+e®ect of CytoD on the mechanical properties of these cells?
+
+====7.4 Experiment 3: °uorescence imaging of the actin cytoskeleton====
+Include one or two of your favorite actin cytoskeleton images from each of the CytoD treated and
+untreated cell groups. Use your image processing knowledge to optimize image quality.
+Apply the algorithms you developed during the image processing lab to quantify the degree of
+\¯berness" of the actin structures with and without CytoD. As in Experiment 2, what can you say
+about the e®ect of CytoD on these cells? Discuss whether the results of this experiment and the
+microrheology experiment are consistent with each other?
+
+
+====Bonus (optional)====
+You've now used two di®erent optical microscopy methods to study the e®ects of cytochalasin D
+on NIH 3T3 ¯broblasts. Hopefully, as you were working, many questions arose in your mind about
+di®erent cell properties, their underlying physics, experimental conditions, etc.
+For bonus credit, think about and propose any other experiments you might like to do (using
+these microscopes, or the AFMs, or any other approach you like) to study any related questions of
+cytoskeletal mechanics, microrheology, °uorescent labeling, etc. This is not a formal grant proposal
+{ simply outline the question you'd like to answer and suggest an approach/method/technique that
+you could use to test it.

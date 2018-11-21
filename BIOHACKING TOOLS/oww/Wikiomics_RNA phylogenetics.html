@@ -1,0 +1,27 @@
+Many phylogenetic analysis tools assume that each site in an alignment is independant of all other sites. This is not generally true, particularly in the case of structural RNAs where base-paired sites co-vary with respect to each other. Some of the early work on site-dependant models was by Arndt von Haeseler and co-workers <cite>HAES98</cite>. More recently Paul Higgs and co-workers have compared a number of different evolutionary models <cite>SAVI01</cite>
+
+[[Image:RNA-phylo.png|thumb| RNA sequence evolution: evolution favours mutations that conserve base-paired sites in helical regions. The rates shown here were taken from Higgs (2000) <cite>HIGG00</cite>]]
+
+==== References ====
+<biblio>
+#HAES98 pmid=9541878
+#SAVI01 pmid=11139520
+#HIGG00 pmid=11191843
+</biblio>
+
+==== RNA phylogenetic analysis tools ====
+
+* [http://cbcanalyzer.bioapps.biozentrum.uni-wuerzburg.de/ CBCanalyzer] Inferring phylogenies based on compensatory base changes.
+* [http://hymenoptera.tamu.edu/rna/index.php jRNA] Exploring insect (and other less interesting) phylogenies using RNA secondary structure. Provides tools structural RNA alignment and analysis.
+* [http://mrbayes.csit.fsu.edu/index.php MrBayes] Bayesian Inference of Phylogeny. Allows [http://mrbayes.csit.fsu.edu/wiki/index.php/Evolutionary_Models_Implemented_in_MrBayes_3#The_Doublet_Model doublet] (secondary structure) models.
+* [http://bioinf.man.ac.uk/resources/phase/ PHASE] Designed specifically for use with RNA sequences that have a conserved secondary structure, e.g., rRNA and tRNA. Substitution models of sequence evolution that consider pairs of sites rather than single sites are implemented in this package along with standard nucleotides substitution models used nowadays. When a RNA molecule with a secondary structure is used in conjunction with a RNA substitution model, PHASE requires a structure-based alignment of the sequences with the consensus secondary structure indicated in bracket and dot notation at the top of the alignment.
+* [http://www.uhnres.utoronto.ca/tillier/rRNA/rna.html RRNADIST, RRNAML and RNAML] Empirical substitution models for Ribosomal RNA. Estimate phylogeny using maximum likelihood structural RNA models of sequence evolution.
+* [http://www.bi.uni-duesseldorf.de/software/sissi/ SISSI] Simulating Sequence Evolution with Site-Specific Interactions: a software tool to generate data of related sequences along a given phylogeny, taking into account user defined system of neighbourhoods and instantaneous rate matrices.
+
+[[Category:RNA]]
+[[Category:Sequence]]
+[[Category:Structure]]
+[[Category:Phylogenetics]]
+
+
+{{Paul P. Gardner}}

@@ -1,0 +1,75 @@
+==New Plan==
+
+* '''INPUT''': string of search-ready disease name or associated gene, ex. 'BRCA1', 'Hashimoto's Thyroiditis'
+* '''OUTPUT''': list (of lists) of 1) base site name of 2) searched-URLs for the disease/gene
+
+===Sites to be Searched===
+* '''General Patient Info'''
+** eMedicine
+** Google 
+** Wikipedia
+** (WHO)
+
+* '''Less Patient-Friendly But Possibly Useful Info''':
+** HapMap
+** OMIM
+** GeneCards
+
+===Tasks===
+# Parse the search-term for individual sites' search URLs
+# Return the search-URL + parsed-search-terms
+
+===Code===
+
+<pre>
+import sys
+
+# (Temporary) search_term will get whatever the input is 
+search_term = "Hashimoto's Thyroiditis"
+
+def parse_for_eMed(search_term):
+    parsed_term = search_term.lower().replace(' ', '%20')
+    return "http://www.emedicine.com/cgi-bin/foxweb.exe/searchengine@/em/searchengine?boolean=and&book=all&maxhits=40&HiddenURL=&query=%s" % parsed_term
+
+def parse_for_Google_genl(search_term):
+    parsed_term = search_term.lower().replace("'", '%27').replace(' ', '+')
+    return "http://www.google.com/search?hl=en&q=%s&btnG=Search" % parsed_term 
+
+def parse_for_Google_treatment(search_term):
+    parsed_term = search_term.lower().replace("'", '%27').replace(' ', '+')
+    return "http://www.google.com/search?hl=en&q=%s+more:condition_treatment&cx=disease_for_patients&sa=N&oi=cooptsr&resnum=0&ct=col1&cd=1" % parsed_term
+
+def parse_for_Wikipedia(search_term):
+    parsed_term = search_term.lower().capitalize().replace("'", '%27').replace(' ', '_')
+    return "http://en.wikipedia.org/wiki/%s" % parsed_term
+
+def parse_for_WHO(search_term):
+    parsed_term = search_term.lower().replace("'", '%27').replace(' ', '+')
+    return "http://search.who.int/search?ie=utf8&site=default_collection&client=WHO&proxystylesheet=WHO&output=xml_no_dtd&oe=utf8&q=%s&Search=Search" % parsed_term
+
+def parse_for_GeneCards(search_term):
+    parsed_term = search_term.lower().replace(" ", '+')
+    # NB: This only gives a functionally correct search if the search_term is a name of a disease
+    # because there are other formats for different inputs and different forms of the input
+    return "http://www.genecards.org/cgi-bin/cardsearch.pl?search_type=kwd&speed=fast&search=%s#MICROCARDS" % parsed_term
+
+
+def return_site_list_for_disease(search_term):
+    # Currently returns site-name and URL list
+    # ex. [["eMedicine", "http://www.emedicine.com/cgi-bin/foxweb.exe/searchengine@/em/searchengine?boolean=and&book=all&maxhits=40&HiddenURL=&query=parsed-term"]]
+    return [["eMedicine", parse_for_eMed(search_term)],
+            ["Google, general search", parse_for_Google_genl(search_term)],
+            ["Google, Treatment search", parse_for_Google_treatment(search_term)],
+            ["Wikipedia", parse_for_Wikipedia(search_term)],
+            ["WHO", parse_for_WHO(search_term)],
+            ["GeneCards", parse_for_GeneCards(search_term)]
+
+final_list = return_site_list_for_disease(search_term)
+print final_list
+    
+</pre>
+
+===Next Steps===
+* Accessing other, not-as-easily-accessible sites: PubMed, OMIM, HapMap, GeneCards?
+** GeneCards can be done - sort of.  The options for different inputs are the Examples on GeneCards main page, so we would need to know what kind of input, according to those options, we have in order to get the search information we really want.  However, the current format does give useful gene information when otehr inputs are used (ie. inputting ''wnt*'' gives a list of genes pertaining to wnt).
+** The others have a hidden, non-URL based system I don't know how to deal with - yet...

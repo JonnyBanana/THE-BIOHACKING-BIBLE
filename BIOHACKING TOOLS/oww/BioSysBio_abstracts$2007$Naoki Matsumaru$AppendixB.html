@@ -1,0 +1,82 @@
+== Algorithm to design reaction network to solve the maximal independent set problem ==
+
+Let an undirected graph <math>G=\langle V, E \rangle</math> be defined by a set of
+<math>N</math> vertexes <math> V=\{v_1, \dots, v_{N}\}</math> and a set of edges <math>E</math>. 
+When two vertexes <math>v_p</math> and <math>v_q</math> are connected, the pair of the
+vertexes are in the set: <math>(v_p,v_q)\in E</math>.  Note that the order of the
+pair is insignificant, that is, <math>(v_p,v_q)=(v_q,v_p)</math>.
+Given the undirected graph <math>G</math>, an algebraic chemistry <math>\langle {\mathcal M},{\mathcal R} \rangle</math> is
+designed as follows.
+For each vertex <math>v_j</math>, we assign two molecular species
+<math>s_j^0</math> and <math>s_j^1</math> representing the membership of the vertex in the
+maximal independent set.
+The subscript of the species name corresponds to the index number of
+the vertex.
+High concentration of species <math>s_j^1</math> means that 
+the vertex <math>v_j</math> is
+included in the maximal independent set.
+High concentration of species <math>s_j^0</math>
+represents that the vertex <math>v_j</math> is
+''not'' included in the maximal independent set.
+Thus the set of molecular species <math>{\mathcal M}</math> contains <math>2N</math> molecular
+species:
+<center><math>
+{\mathcal M}=\{s_{j}^0,s_{j}^1\; |\; j=1,\dots,N\}
+</math></center>
+
+
+The set of reaction rules <math>{\mathcal R}</math> is constructed by assembling
+reactions for each vertex:
+<center><math>
+{\mathcal R} = \bigcup_{i=1}^N {\mathcal R} ^i,
+</math></center>
+and for each reaction set <math>{\mathcal R} ^i</math>, there are three sorts of reactions:
+<center><math>
+{\mathcal R}^i = ({\mathcal V}^i \cup {\mathcal N}^i \cup {\mathcal D}^i)
+</math></center>
+
+The first is a reaction rule to produce species <math>s_i^1</math>:
+<center><math>
+\begin{matrix}
+{\mathcal V}^i =(&\underbrace{s_h^0 + s_k^0 + \dots + s_l^0}& \to n_i s_i^1)\\
+&n_i&\\
+\end{matrix}
+</math></center>
+where <math>n_i</math> is the number of vertexes connected to vertex <math>v_i</math> and
+<math>v_h, v_k, \dots, v_l</math> are these neighboring vertices, that is, 
+<math> (v_i, v_h), (v_i, v_k), \dots, (v_i, v_l) \in E</math>.
+The left hand side of the reaction contains <math>n_i</math> terms, and 
+this reaction is interpreted as follows:
+When no neighboring vertex is included in the maximal independent set,
+the target vertex <math>v_i</math> should be included in the set.
+
+
+The negation of this predicate is considered by a set of
+<math>n_i</math> reactions:
+<center><math>
+{\mathcal N}^i = \{s_j^1 \to s_i^0 | (v_i,v_j)\in E\}.
+</math></center>
+This is the second type of the reactions, which produce species <math>s_i^0</math>
+from any species corresponding to the neighboring vertexes with
+superscript <math>1</math>.  This rule can be interpreted as follows:
+If there exists at lease one neighboring
+vertex included in the maximal independent set,
+then the target vertex <math>v_i</math> should be excluded from the maximal
+independent set (otherwise the definition of the maximal independent
+set would be violated).
+Generating species <math>s_i^0</math> forces vertex <math>v_i</math> not to be included in
+the set.
+In passing note that two predicates constitute a program for any distributed processor
+to solve the maximal independent set problem under a central
+scheduler. 
+
+
+The last component of set <math>{\mathcal R} ^i</math> is a ''destructive reaction''.
+Since the membership of the maximal independent set is a binary state,
+the state becomes undefined when neither or both of the species are
+present.
+In order to avoid the latter case, the two opposite molecular species
+are defined to vanish upon collision:
+<center><math>
+{\mathcal D}^i = s_{i}^0 + s_{i}^1 \to \emptyset.
+</math></center>

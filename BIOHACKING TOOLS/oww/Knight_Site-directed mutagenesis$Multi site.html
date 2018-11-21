@@ -1,0 +1,72 @@
+''Back to [[Site-directed mutagenesis]]''
+
+Work in progress!
+
+This protocol permits mutation at multiple sites simultaneously with only a single oligo per site.
+
+==Materials==
+*Template plasmid purified from a dam<sup>+</sup> ''E. coli'' strain (not JM110 or SCS110)
+*Mutatagenesis primers (one per mutation, each on the same strand)
+*[http://www.stratagene.com/products/showProduct.aspx?pid=105 ''PfuTurbo'' DNA polymerase] (nonstrand-displacing) and associated reaction buffer
+*[http://www.neb.com/nebecomm/products/productM0208.asp Taq ligase]
+*dNTPs
+*ATP
+*PCR Thermocycler
+*[http://www.neb.com/nebecomm/products/productR0176.asp Dpn I]
+*Competent cells
+*unphosphorylated primers (1 for each mutation)
+
+==Mutagenesis PCR mix==
+25&mu;L total reaction volume:
+*2.5 &mu;L of 10X Taq ligase buffer (need the NAD for Taq ligase)
+*0.5 &mu;L 100mM ATP
+*1 &mu;L 25mM each dNTP
+*X &mu;L (50-100 ng) of dsDNA template
+*X &mu;L of each oligonucleotide primer
+**For 1-3 primers, add 100 ng each primer.  For 4-5 primers, add 50 ng each primer.
+**If primers are greater than 20% different in length, scale the amount of primer added so that primer is added in approximately equimolar amounts.  See [http://www.stratagene.com/manuals/200518.pdf Stratagene QuikChange Multi Site-Directed Mutagenesis manual] for details.
+**Austin uses 0.1&mu;L of 40&mu;M primer (each one).
+*1 &mu;L of dNTP mix (100mM total dNTP mix with 25 mM each individual dNTP)
+*ddH<sub>2</sub>O to a final volume of 22 &mu;L
+Then add
+*1 &mu;L of PfuTurbo DNA polymerase (2.5 U/&mu;L)
+*1 &mu;L of Taq Ligase
+*1 &mu;L of T4 PNK
+
+==Procedure==
+This procedure is primarily derived from the [http://www.stratagene.com/manuals/200518.pdf Stratagene QuikChange Multi Site-Directed Mutagenesis manual] with some modifications based on past experience.
+
+#Design mutagenesis primers.  
+#*The primer should be designed so that the desired mutation occurs at the exact center of the primer with 10-15 bp of matching sequence on each side.
+#*Primers should be 25-45bp in length with a melting temp of >=75&deg;C.  Stratagene recommends not using primers greater than 45 bp in order to avoid formation of secondary structure.  Primers should have comparable melting temperatures.
+#*See the [http://www.stratagene.com/manuals/200514.pdf Stratagene manual] for more detailed information.  In particular, adhere to their formula for calculating the melting temperature of your primers and design your primers to have a melting temperature >=75&deg;C.
+#*Primers should have at least 40% GC content and terminate in one or more C or G bases at the 3' end.
+#*PAGE purification of primers may improve mutagenesis efficiency.  See [[Designing primers#Oligo synthesis information | here]] for links to information on oligo purification.
+#*See [[Designing primers | designing primers]] for general advice on primer design.
+#Purify template plasmid from a dam<sup>+</sup> ''E. coli'' strain via [[Miniprep | miniprep]].
+#Set up mutagenesis PCR mix as described above.
+#Run Reaction
+##37&deg;C for 30 min (T4 PNK step)
+##95&deg;C for 3 min
+##95&deg;C for 1 min
+##55&deg;C for 1 min
+##65&deg;C for 2 min/kb of plasmid length minimum (is [http://www.neb.com/nebecomm/products/faqproductM0208.asp#361 optimal] temperature for Taq ligase)
+##Run reaction for 30 cycles.
+#*Stratagene recommends using a PCR machine with heated lid or overlaying the reaction with mineral oil.
+#Cool the reaction to <=37&deg;C
+#Add 1&mu;L DpnI restriction enzyme to the PCR tube directly.  (Purification is not necessary at this stage).
+#Incubate 6 hours at 37&deg;C (even though the Stratagene manual only recommends 1 hr).
+#Purify PCR product (not necessary, Austin transforms 3 &mu;l directly).  
+#*I typically do this step using a [http://www1.qiagen.com/literature/handbooks/PDF/DNACleanupAndConcentration/QQ_Spin/1021422_HBQQSpin_072002WW.pdf QIAgen PCR Purification kit] but any purification which removes the salts, dNTPs, oligos and proteins from the PCR should be fine.
+#[[Knight:Electroporation | Transform]] purified DNA into highly competent cells.
+#Screen the transformants for the desired mutation using [[Colony PCR  | colony PCR]], [[Restriction Digest | restriction digest]] or [[Sequencing DNA | sequencing]] as appropriate.
+
+==Notes==
+*Stratagene does not recommend this protocol for insertions or deletions.
+*Apparently there are no primer spacing-dependent effects on mutagenesis efficiency (primers can be adjacent or far apart).
+*You can also phosphorylate the primers separately from the rest of the mutagenesis reaction
+
+==Reference==
+[http://www.stratagene.com/manuals/200514.pdf QuikChange® Multi Site Directed Mutagenesis Kit]
+
+[[Category:Protocol]] [[Category:DNA]] [[Category:In vitro]]

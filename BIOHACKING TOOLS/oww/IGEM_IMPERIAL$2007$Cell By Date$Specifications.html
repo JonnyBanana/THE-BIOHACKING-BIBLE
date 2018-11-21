@@ -1,0 +1,73 @@
+= Cell by Date =
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date|Introduction]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Cell By Date/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Fabrication|Fabrication]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Testing|Testing]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/DataAnalysis|DataAnalysis]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Validation|Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Cell By Date/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Specifications==
+
+We are targetting Fresh Aerobically Packed Ground Beef
+
+{|
+|-
+!Property:
+!Value
+|-
+|Inputs
+|Isothermal Conditions between 0 & 40 C
+|-
+|
+|Dynamic conditions eg. steps & ramps 
+|-
+|Outputs
+|System like other TTIs should give a visual signal to indicate that the the beefs level of exposure is most likely off
+|-
+|Activation Energy
+|System Needs to have an activation Energy 30 +/- kJ/mol
+|-
+|Health Regulations
+|System Must not be living replicating bacteria
+|-
+|Response Time
+|System needs to have a response time under 1 hour
+|-
+|Lifespan
+|System must have a shelf life of 7 days
+|}
+
+==How i arrived at above specifications :==
+
+===1. Our Target : Beef===
+
+We all know that beef goes off.  The dominant organisms leading to the spoilage of beef depend of the beef's composition and the environmental conditions under which the beef is stored.  For refrigerated packaged beef Pseudomonas spp. were dominate areobically while Lactobacillus was dominant anaerobically. [[IGEM:IMPERIAL/2007/Cell By Date/References|(12.Labuza,1993)]]  Because bacteria are responsible for the spoilage of beef it is unwise to use a bacteria based device eg. by using e.coli/yeast as a chassis as this would further add to the spoilage.
+
+There also seems to be a general rule for beef that when the bacterial count reaches 10^7cm^-2 , off odours and slime production occour and the beef is considered off. [[IGEM:IMPERIAL/2007/Cell By Date/References|(13.Food Hygiene,Microbiology and HACCP)&(10.Leak,1999)]] For controlled isothermal conditions in a laboratory environment the time taken for beef to reach this spoilage point seems to be at most 7 days.(Koutsoumanis 2005)  This Implies that the shelf life of our system needs to be at least 7 days aswell.
+
+The Gompertz's model is widely used when considering beef spoilage as it has been shown to fit growth data very well[[IGEM:IMPERIAL/2007/Cell By Date/References|(12.Labuza,1993)]].  Using the Gompertz model we can get the specific growth rate, Lag phase duration (LPD) and maximum population density (MPD) for bacterial growth at a  particular constant temperature.  And then using these we can determine the Activation Energy Ea, for the beef spoilage rxn.  For U2 grade Argentinian beef stored in polyethylene and SARAN PVC the Ea ranged from 80kJmol^-1 to 220kJmol^-1 for a range of bacteria. [[IGEM:IMPERIAL/2007/Cell By Date/References|(11.Giannuzzi,1997)]]
+
+One contary value for the Ea of the beef spoilage rxns is given by Leak [[IGEM:IMPERIAL/2007/Cell By Date/References|(10.Leak,1999)]] who calculated Ea=30kJmol^1.  The difference between Leak's value and that of Giannuzzi probably lies in their packaging methods, i do not know Leak's packaging methods so this is just a guess.  I'm assuming that Leak's packaging method is the one of interest, aerobic, for the sake of this project.
+
+===2. Our System : a Time Temperature Integrator===
+
+Temperature is considered to be the major factor in beef spoilage and although industry tries to keep temperature low during transportaion exposure of the beef to 10 degrees celcius are not unusual. It is therefore important that our that we look at the performance of our system in isothermal conditions eg. in the cold chain, and dynamic temperature scenarios eg. a break in the cold chain.
+
+Several Technologies have already been developed to addressed the problem of monitoring the heat exposure of products in the cold chain.  One particular family of these products are called Temperature Time Integrators (TTI).[[IGEM:IMPERIAL/2007/Cell By Date/References|(2.Labuza,2006)]]
+
+The key aspect of a TTI is that they are based on a phenomenon which can act as a signal to a consumer for example, eg. a colour change.  The rate at which this change occours needs to be temperature dependant so it can mimic the effect temperature has on the spoiling of meat eg. change happens quicker at higher temperatures.  In order for a TTI to accurate report the spoilage rxn of beef the activation energy of the two rxns needs to be similar.  For example a difference between the two Ea's less than 20kJmol^-1 would result in the TTI estimating the thermal history of the beef to be within 1 degree C of the actual history.).[[IGEM:IMPERIAL/2007/Cell By Date/References|(1.Taoukis,2006)]]
+
+Applying this to our TTI this would mean that the Activation Energy of our system needs to be 30 +/- 20 kJ/mol if we are considering the most easily achieved activation energy found by Leak, which is most likely for aerobically packed beef.
+
+In addition to correctly coupling the activation Energies of our system to that of the dominant spoilage reaction in beef, we also have to consider the response time of our sytem.  Our system needs to have a rapid response time, so in other words it needs to be able to quickly switch between states eg. low output and high output.  This is so our system can capture small variations of temperature in the cold chain and report them in a meangingful way.  Specifically I think a response time in the order of a few hours would ensure that if there are any problems in the cold chain this will arise in our system very quickly.

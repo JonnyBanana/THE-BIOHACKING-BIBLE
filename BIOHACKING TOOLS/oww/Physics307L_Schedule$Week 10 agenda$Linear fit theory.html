@@ -1,0 +1,29 @@
+__NOTOC__
+Following John R. Taylor, "An Introduction to Error Analysis," 2nd edition, Chapter 8:
+===We have a relation as follows, and want to fit <math>\ A</math> and <math>\ B</math> to the data===
+:<math>\ y=A+Bx</math>
+===Assume same gaussian distribution for random error in each <math>\ y_i</math> (same <math>\ \sigma</math> for all).  Not necessary, but simplifies derivation and results===
+
+===Principle of maximum likelihood===
+
+===For a given <math>\ A</math> and <math>\ B</math>, the probability for each <math>\ y_i</math> is:===
+:<math>Prob(y_i) \propto \frac{1}{\sigma_y}e^{-(y_i-A-Bx_i)^2/2\sigma_y^2}</math>
+
+===And we can call the probability of getting all of the data points as:===
+:<math>Prob = Prob(y_1) \cdot Prob(y_2) \cdot ... \cdot Prob(y_N)</math>
+
+===Each term has the same <math>\sigma_y</math>, so can be simplified as:===
+:<math>Prob \propto \frac{1}{\sigma_y^N}e^{-\chi^2/2}</math>
+:<math>chi-squared, \chi^2 = \sum_{i=1}^N \frac{\left (y_i - A - Bx_i \right )^2}{\sigma_y^2}</math>
+
+===To maximize the probability, minimize the chi-squared sum ... take derivatives, solve system of equations, obtain:===
+
+:<math>A=\frac{\sum x_i^2 \sum y_i^2 - \sum x_i \sum x_i y_i}{\Delta}</math>
+
+:<math>B=\frac{N\sum x_i y_i - \sum x_i \sum y_i}{\Delta}</math>
+
+:<math>\Delta=N \sum x_i^2 - \left ( \sum x_i \right )^2</math>
+
+==Can also derive formulas for weighting each point individually==
+
+==Also, formulas for calculating uncertainty in fit parameters==

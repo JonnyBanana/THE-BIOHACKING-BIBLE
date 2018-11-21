@@ -1,0 +1,9 @@
+===Lots of algorithms available for generating random numbers from 0 to 1 with uniform probability===
+===General case===
+====Assume you have a random number r from 0 to 1.  To transform to x, with PDF given by P(x):====
+:<math>r=\int_{X=-\infty}^{x} P(x)\, dx</math>
+====Numerically solving for x gives random number with appropriate distribution.====
+===Specific case, time for random event to occur (i.e. radioactive decay)===
+:<math>P(t) = \frac {1}{\tau} e^{-\frac{t}{\tau}}</math>
+====Solving above,====
+:<math>\ t_i = -\tau \ln r_i

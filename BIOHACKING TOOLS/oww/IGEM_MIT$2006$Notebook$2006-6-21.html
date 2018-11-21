@@ -1,0 +1,103 @@
+==Results from yesterday's liquid culture experiment==
+200 uM and 300 uM concentrations of Salicylic Acid in both types of cells smelled the best.  The minimal media seemed to have a weaker smell.
+
+==The Heat-Sensitive Promoters are in the Registry==
+hybB (cold shock promoter):
+
+<bbpart>BBa_J45503</bbpart>
+
+htpG (heat shock promoter):
+
+<bbpart>BBa_J45504</bbpart>
+
+==SAMT Sequencing Results==
+#All of them failed- there must be issue with SAMT reverse primer
+
+==SA Optimal Concentration==
+#No carbon source for the plates so no cell growth
+#SA at 300 &mu;M is best from liquid culture
+==New Smelling Experiment==
+Cells with SAMT and BSMT were grown up with varying concentrations of Salicylic Acid in the media.  The following tubes were made with 20 uL of the appropriate cells and 7 mL of the appropriate media: [note: all quantities in uM are really ug/mL]
+
+SAMT in LB Kan with 17.36 uL SA (200 uM)
+
+SAMT in LB Kan with 21.70 uL SA (250 uM)
+
+SAMT in LB Kan with 26.04 uL SA (300 uM)
+
+SAMT in LB Kan with 30.38 uL SA (350 uM)
+
+SAMT in LB Kan with 34.72 uL SA (400 uM)
+
+BSMT in LB Kan with 17.36 uL SA (200 uM)
+
+BSMT in LB Kan with 21.70 uL SA (250 uM)
+
+BSMT in LB Kan with 26.04 uL SA (300 uM)
+
+BSMT in LB Kan with 30.38 uL SA (350 uM)
+
+BSMT in LB Kan with 34.72 uL SA (400 uM)
+
+SAMT in -TRP with 26.04 uL SA (300 uM)
+
+BSMT in -TRP with 26.04 uL SA (300 uM)
+
+Controls:
+
+SAMT in LB Kan with 26.04 uL SA (300 uM) (Not Induced)
+
+BSMT in LB Kan with 26.04 uL SA (300 uM) (Not Induced)
+
+==To Do==
+#ligate the cut BSMT into a biobrick backbone
+#*use red Kan backbone
+#*ligation reaction temperature is a compromise between competing reactions -- room temperature is pretty effective and fast (15 minutes for transformants) 
+#**note: T4 is optimal at 37c, but cannot run reaction at this temp b/c will get melting at this high of a temp. (sticky ends only have 8 H-bonds)
+#**note: could alternatively try 18c/16c in fridge overnight
+#*be kind to T4 buffer, can be less kind to T4 enzyme
+#*want equal moles of insert and backbone (50 nanograms each)
+#*run in smallest volume possible
+#run ATF1 pcr products on gel to see if pcr was successful at higher temperature
+#repeat BAMT and SAMT PCR at a higher temperature gradient
+#*try 48-64 this time and place most tubes in middle region
+
+==indole==
+
+#Oxindolyl-L-alanine inhibits, in a dose-dependent manner, indole production and biofilm formation by strain S17-1 grown in Luria-Bertani (LB) medium. Supplementation with indole at physiologically relevant concentrations restores biofilm formation by strain S17-1 in the presence of oxindolyl-L-alanine and by mutant strain E. coli 3714 (S17-1 tnaA::Tn5) in LB medium
+#*http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=14569285&dopt=Abstract
+#*could we try to get this mutant e. coli 3714 strain?
+#**if you can find the strain here: http://cgsc.biology.yale.edu/cgsc.html we can easily get it.
+#Here are 2 more articles on the mutant indole-negative e. coli strain 3714
+#*I hope that we can get mutant strain 3714 -- (or make our own mutant) -- what do you guys think about e. coli biofilm and cell-cell signaling systems/applications?? anyways, take a look...
+#*<biblio>Martino pmid=14569285</biblio> 
+#*<biblio>Martino pmid=11958566 </biblio>
+
+==Ligation reaction==
+
+#dilute BSMT by adding 40 &mu;L water
+#*final concentration is 15ng/&mu;L
+#*add 1 &mu;L + 1.5 &mu;L to ligation
+#Ligation mix test (10 &mu;L)
+#*1 &mu;L T4 ligation buffer
+#*.5 &mu;L T4 enzyme
+#*6 &mu;L backbone (kan) (40 nanograms)
+#*1 &mu;L diluted BSMT
+#*1.5 &mu;L water (15 nanograms)
+#Ligation control test (10 &mu;L)
+#*1 &mu;L T4 ligation buffer
+#*.5 &mu;L T4 enzyme
+#*6 &mu;L backbone (kan) (40 nanograms)
+#*2.5 &mu;L water
+
+==ATF1 gel results==
+#Unsuccessful at higher temperatures (48-64)
+#*need to reorder new (longer) primers
+
+==Made double antibiotic resistant plates==
+*20 Kan/Amp plates: 1mL Kan, .5mL Amp in 500mL of LB/agar [GREEN for Kan, ORANGE for Amp]
+*20 Kan/Cam plates: .5mL CHL, .5mL Amp in 500mL of LB/agar [BLUE for CHL, ORANGE for Amp]
+*TOM'S PLATES: ORANGE = AMP, GREEN = CHL
+
+==Set up BAMT & SAMT PCR with Tom's new PCR mix==
+*General formula for one PCR tube: 49&mu;L of Tom's PCR mix + 1&mu;L of appropriate template + .6&mu;L of each primer

@@ -1,0 +1,27 @@
+==Characterization==
+
+* Inserting a part into the screening plasmid follows standard BioBricks assembly techniques.
+**Note: We're in the process of inserting ccdb into the plasmids to aid in assembly.
+**For colony PCR/sequencing, the best combinations are: I13534/I13538 - E0040F (Caitlin's box) + E1010R (Josh's box). I13537 - G00700F (Multiple stocks) + E1010R (Josh's box). At some future point, we should design better internal primers specifically for the screening plasmid (the run on these combinations is ~1kb without any inserted part).
+
+*After assembly, the plasmid must be prepped and retransformed into CW2553+pJat8. pJat8 provides Gen resistance, and the CW2553 have background Kan (from a chromosomal knockout).
+
+*Finally, the part can be characterized. The current characterization process follows four general steps:
+#Grow the cells overnight in a rich media to achieve density.
+#Dilute back to return the cells to mid-log in M9/gly
+#Innoculate experimental cultures of M9/gly/ara
+#Harvest cells for FACS
+
+*This protocol is fairly complicated. Each culture has a different growth rate, so ensuring that the intermediate dilution and experimental culture remain in log phase is difficult. Additionally, the final culture must match induction time (so that the fluorophore concentration reaches steady state) and growth time (so that the culture is dense enough to measure at the end of the experiment, but still in mid-log). My rough guidelines for timing is below:
+
+#Overnights: These cells typically grow very slowly. I set up overnights early in the afternoon in a richer media (M9/glucose works reasonably well) and give them plenty of time to grow up.
+#Dilutions: For high copy plasmids, I estimate a doubling time of 1.5 to 2 hours. I generally dilute back 100x and grow for 8-10 hours. For low copy plasmids, either shorten the growth time (5-6 hours rather than 8-10) or increase the dilution.
+#Experimental cultures: 12 hours induction seems to provide sufficient time for the fluorophores to reach steady state (14 hours was essentially unchanged). For a high copy plasmid, innoculating at OD 0.002 works reasonably well. Lower copy plasmids will need smaller innoculums (OD 0.0001-0.0005).
+
+*For a 9am harvest on Day 2, then, the rough timing is:
+**Day 0: Set up overnights
+**Day 1: 10am - Dilute back into M9/gly
+**Day 1: 8pm - Set up experimental cultures (in at 9pm)
+**Day 2: 9am - Harvest cultures for FACS
+
+This process is useful for measuring large numbers of cultures simultaneously. However, for precise measurements, a chemostat is probably a better choice.

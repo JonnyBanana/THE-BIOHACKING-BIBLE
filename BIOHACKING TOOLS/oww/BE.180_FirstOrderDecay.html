@@ -1,0 +1,25 @@
+=== First Order Decay (of anything) ===
+
+Givens: 
+*A pile of some thing, '''X'''.
+*A first-order chemical process by which '''X''' is destroyed (or transformed into something else).
+
+Tasks: 
+*Compute amount of '''X''' remaining as a function of time.
+*Compute amount of time until there is half as much '''X''' as there is now (this length of time is called the "half-life" of '''X''' or <math>t_{1/2}</math>).
+
+Approach:
+*Write differential equation for change in '''X''' over time.
+<center><math>\frac{dX}{dt} = -k_d * [X]</math></center>
+*Solve equation for [X] as a function of time, t.
+<center><math>\frac{dX}{[X]} = -k_d * dt</math></center>
+*Integrating from <math>X_{(t=0)}</math> to <math>X_{(t=t)}</math>
+<center><math>[lnX]_{X_{(t=0)}}^{X_{(t=t)}} = [-k_d*t]_{(t=0)}^{(t=t)}</math></center>
+*Solving at the limits produces...
+<center><math>ln \Bigg( \frac{X_{(t=t)}}{X_{(t=0)}} \Bigg) = -k_d*t</math></center>
+*Which provides a general analytical solution for X as a function of time, t
+<center><math>X_{t=t} = X_{t=0} * e^{-k_d*t}</math></center>
+*Now, note that at <math>t_{1/2}</math>, <math>X_{(t=t)}/X_{(t=0)} = 0.5</math> by definition.  So we can substitute and get...
+<center><math>ln(0.5) = -k_d*t_{1/2}</math></center>
+*Which is the same as...
+<center><math>0.69 = k_d*t_{1/2}</math></center>

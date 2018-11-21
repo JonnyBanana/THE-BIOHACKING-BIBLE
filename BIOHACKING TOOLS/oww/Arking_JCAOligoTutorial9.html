@@ -1,0 +1,25 @@
+__NOTOC__
+==Keeping track of construction files==
+You'll be doing lots of cloning--so much so that you probably won't remember how you made any particular constructs 6 months from now.  It is therefore imperative that you keep some sort of log that shows what you've made and how you made it.  It doesn't really matter how you do it, all that really matters is that you have the information at your fingertips.  Here is a general description of how I manage it:
+
+===The basic construction file===
+You've already been introduced to the basic construction file in the tutorial which looked like this:
+
+  '''Construction of KanR Basic Part Bca9128'''
+  PCR ca1067F/R on pSB1AK3-b0015           (1055bp, EcoRI/SpeI/DpnI)
+  Sub into pSB1A2-I13521                   (EcoRI/SpeI, 2062+946, L)
+  Product is pSB1A2-Bca9128  [KanR]
+  -------------------------------------
+  ca1067F  Forward Biobricking of KanR of pSB1AK3  ccagtGAATTCgtccTCTAGAgagctgatccttcaactc
+  ca1067R  Reverse Biobricking of KanR of pSB1AK3  gcagtACTAGTtccgtcaagtcagcgtaatg
+
+Always do something like this if you do anything fancy with your cloning like SOEing, restriction site removal, fill ins, blunting, etc.  Basically, if it isn't just a PCR, cut, and paste, do this style.
+
+===The worksheet-style construction file===
+Whenever I order oligos, I create a spreadsheet file that includes the construction files in a slightly different format.  Here is [http://spreadsheets.google.com/pub?key=pUQEpr4ZqU9TZ60bB5Q1GQg an example of one.]  You could keep these things on your desktop or as google documents.  You'll notice that our above construction file is encapsulated in the first line of the spreadsheet.  So, it's much more compact, and is a nice guide to print out and put on your bench as you set up your PCRs if you want to do lots of cloning in parallel.
+
+===The All-Oligos spreadsheet===
+The second spreadsheet document that goes along with this is the "all oligos" spreadsheet.  [http://spreadsheets.google.com/pub?key=pUQEpr4ZqU9R097Oeyw7BDw Here is an example.]  You'll find it useful to have all the oligos in your freezer in one nice central location.  When you want to find an oligo that can be used for sequencing, you can easily pairwise align the whole list to your sequence and see what hits.  It also keeps all the information in one place so you don't have to hunt for files.
+
+===Biobrick calculator spreadsheets===
+You may find it useful to maintain a personal list of your biobricks (and non-Biobrick sequences) in one file. [[Media:JCATutorial-BiobrickCalculatorExample.xls | Download this for an example.]] Surprisingly, both google spreadsheets and excel can handle these files despite the large amount of data that accumulates -- mine is currently about 500 constructs long with no problems (wish me luck).  You'll need to play with it to see how it works.  Basically, you have basic parts and composite parts just like the registery.  You enter the part portion of the basic parts in a cell along with its name and description.  Composite parts get calculated from the basic parts based on the user-supplied lefty and righty parts and the vector name.  When you want to retrieve the complete sequence of a plasmid, you put the plasmid name and part name into the "plasmid calculater" and let it rip.  You can then copy and paste the calculated sequence into ApE, hit <ctrl> K to annotate, and you have a nice annotated map to play with.  Also, it doesn't care about the biobrick standards or if there is a standard at all--it can handle your entire collection in the same document.

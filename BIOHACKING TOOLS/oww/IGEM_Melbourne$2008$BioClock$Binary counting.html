@@ -1,0 +1,99 @@
+[[IGEM:Melbourne/2008|Return to Melbourne Homepage]]
+
+[[IGEM:Melbourne/2008/BioClock|Return to BioClock]]
+
+Binary counting (based on 2) is done in the same a way as decimal counting (based on 10, as we do everyday). For example,
+
+if we want to represent number 3 in binary numbers (bits), <math>3 = 1\times 2 + 1\times 1 = 1\times 2^1 + 1\times2^0 = 11~(base ~2) </math>
+
+to represent number 4 in binary, <math>4 = 1\times2^2 + 0\times2^1 + 0\times2^0 = 100~(base ~2)</math>
+
+to represent number 5 in binary, <math>5 = 1\times4 + 0\times2^1 + 1\times1 = 1\times2^2 + 1\times2^0 = 101~(base~ 2)</math>
+
+Binary numbers can represent arbitarily large numbers just as digital numbers, e.g. if we have a binary number 1011011,
+
+
+{|
+|-
+!<math>2^6</math>
+!<math>2^5</math>
+!<math>2^4</math>
+!<math>2^3</math>
+!<math>2^2</math>
+!<math>2^1</math>
+!<math>2^0</math>
+|-
+|1
+|0
+|1
+|1
+|0
+|1
+|1
+|} = <math>1\times2^6 + 0\times2^5 + 1\times2^4 + 1\times2^3 + 0\times2^2 + 1\times2^1 + 1\times2^0 
+= 64 + 0 + 16 + 8 + 0 + 2 + 1 = 91~(base~10)</math>
+ 
+===Implementing Binary expression on "bacteria counter"===
+Ok, so how can we implement this in bacteria systems? Say we have 3 bacteria: B2 B1 B0, each with its own characteristic colour (or other traits) when its expression is turned on, e.g. B2=<font color = "red">red</font>
+B1=<font color = "green">green</font>, B0=<font color = "blue">blue</font>. Also, each B(n) needs the expression outcome only from B(n-1) plus a toggle control to express its own gene. Then we can read off the current number just by
+reading the color combinations (or other characteristic traits). For example,
+{|
+|-
+!B2
+!B1
+!B0
+!Binary
+!Decimal(time)
+|-
+|clear   
+|clear   
+|clear   
+|000
+|0
+|-
+|clear
+|clear
+|<font color = "blue">blue</font>
+|001
+|1
+|-
+|clear
+|<font color="green">green</font>
+|clear
+|010
+|2
+|-
+|clear
+|<font color="green">green</font>
+|	<font color="blue">blue</font>
+|011
+|3
+|-
+|<font color="red">red</font>
+|clear
+|clear
+|100
+|'''4'''
+|-
+|<font color="red">red</font>
+|clear
+|<font color="blue">blue</font>
+|101
+|5
+|-
+|<font color="red">red</font>
+|<font color="green">green</font>
+|clear
+|110
+|6
+|-
+|<font color="red">red</font>
+|<font color="green">green</font>
+|<font color="blue">blue</font>
+|111
+|'''7'''
+|}
+
+So for instance if our colour combination is <font color="red">red</font>, <font color="green">green</font>, <font color="blue">blue</font>, then we know our current time is '''7''', if colour combination is just <font color="red">red</font>, we know it's time '''4'''. Every expression of B(n) depends only on input from B(n-1) plus another toggle control. So the only bacteria determining counting speed is B0 (just like in a stop watch where the counting speed is entirely dependent on the last digit). Maybe we can race the real clock by adjusting the expression rates!
+
+As we know ALU (Arithmetic Logical Unit) is also based on binary number operation. This idea could be extended to be implemented on binary addition, substitution, multiplication.

@@ -1,0 +1,86 @@
+==Timeline==
+
+==Progress==
+'''6/30/2006''' - recieved 4 strains from [http://scholar.google.com/url?sa=U&q=http://www.biochem.emory.edu/labs/imatsum/Parikh%2520and%2520Matsumura%25202006.pdf Ichiro Matsumura] (thanks!).
+
+==Overall Strategy==
+
+*Reconstitute functional [http://www.chem.qmul.ac.uk/iubmb/enzyme/reaction/polysacc/Calvin2.html Calvin Cycle] in E. coli.
+**making use of Synechococcus RuBisCO and PrkA from [http://peds.oxfordjournals.org/cgi/content/abstract/19/3/113 Parikh et al. (Protein Engineering, 2006)]
+**making use of sedoheptulose-1,7-bisphosphatase (SBPase, [http://www.chem.qmul.ac.uk/iubmb/enzyme/EC3/1/3/37.html EC 3.1.3.37]) or a dual-purpose SBPase/fructose-1,6-bisphosphatase (SBPase/FBPase, [http://www.chem.qmul.ac.uk/iubmb/enzyme/EC3/1/3/11.html EC 3.1.3.11])
+**making use of proteorhodopsin from [http://www.sciencemag.org/cgi/content/abstract/sci;289/5486/1902 Beja et al. (Science, 2000)]
+
+*General metabolism [http://www.sigmaaldrich.com/img/assets/4202/MetabolicPathways_updated_4.19.05.pdf pathway reference (Sigma)]
+
+*[http://www.springerlink.com.libproxy.mit.edu/content/tmfwcmbwjwqllaxf/fulltext.pdf Review of autotrophic CO2-fixation mechanisms in Archaea]
+
+*Jason is poop.
+
+==To Do List==
+#[[IGEM:MIT/2006/Autotrophic E.coli/Biobrick Calvin cycle enzymes|Biobrick the three Calvin cycle enzymes]]
+#[[IGEM:MIT/2006/Autotrophic E.coli/Find metabolite|Find appropriate metbolite for testing the function of the three enzymes]]
+#[[IGEM:MIT/2006/Autotrophic E.coli/Calvin cycle vs glycolysis|Can we run the Calvin cycle and glycolysis in the same cellular compartment?]]
+#[[IGEM:MIT/2006/Autotrophic E.coli/Calvin cycle model|We need to do energy/mass balances on Calvin Cycle, etc]]
+
+==Research Questions==
+#Is there an intermediate metabolite in the calvin cycle that would be a decent test for whether all 3 new enzymes were working properly?
+#Detailed work-up of the energy flux that is needed?  Would we be able to get enough out of PR in order to drive the Calvin cycle?
+#Will we have trouble getting the Calvin cycle to run in the same compartment as glycolysis?  In plants they seem to use the chlorplast to help isolate metabolites.  However, I think cyanobacteria do it all in one compartment.
+#How does reverse e-transport work in detail?
+#*[http://www.sciencedirect.com.libproxy.mit.edu/science?_ob=PublicationURL&_tockey=%23TOC%234898%231998%23986359997%2311550%23FLA%23&_cdi=4898&_pubType=J&view=c&_auth=y&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=55198df5a50a3b93878476017fcbfca0 journal issue about Complex I] - the proton pump that oxidzes NADH (which needs to operate in reverse in our case.)
+#**[http://www.sciencedirect.com.libproxy.mit.edu/science?_ob=MImg&_imagekey=B6T1S-3SV3G2B-5-D&_cdi=4898&_user=501045&_orig=browse&_coverDate=05%2F06%2F1998&_sk=986359997&view=c&wchp=dGLbVlb-zSkzS&md5=5f8f0c43d28f950e5d1f98564623b41b&ie=/sdarticle.pdf E. coli Complex I review] - ''E. coli'' has two NADH:ubiquinone oxireductases, NDH-1 and NDH-2.  Only NDH-1, a 13-subunit membrane-bound complex, couples NADH oxidation (to NAD+) and ubiquinone reduction (to ubiquinol) to transmembrane proton flux.
+#**[http://pubs.acs.org.libproxy.mit.edu/cgi-bin/archive.cgi/bichaw/1986/25/i09/pdf/bi00357a004.pdf Ref. 18]
+#**[http://scholar.google.com/url?sa=U&q=http://www.biochemj.org/bj/152/0647/1520647.pdf Ref. 19]
+#**Figure 3 from Ingledew and Poole, "Respiratory Chains of E. Coli." Microbiol Rev, Sept. 1984:
+[[Image:Resp_chain_e_coli.JPG]]
+
+==Strains==
+''Strains are stored in -80C in the Endy lab in Autotrophic E.coli box.  AE = Autorphic E.coli, we will use that convention for non-BB strains that are stored for this project.''
+  
+*AE1 - 
+**[http://www.neb.com/nebecomm/products/productN3033.asp pBR322]
+**pLysS
+**K-12, LB-amp-chl
+*AE2 - 
+**[http://www.neb.com/nebecomm/products/productN3033.asp pBR322]
+**arap-6his-WT-prkA-pLysS
+**K-12, LB-amp-chl
+*AE3 - 
+**rbcLS-[http://www.neb.com/nebecomm/products/productN8077.asp pMAL-p2x]
+**pLysS
+**K-12, LB-amp-chl
+*AE4 - 
+**rbcLS-[http://www.neb.com/nebecomm/products/productN8077.asp pMAL-p2x]
+**arap-6his-WT-prkA-pLysS
+**K-12, LB-amp-chl
+
+{| border="1" cellpadding="2"
+|+AUTOTROPHIC E. COLI
+|-
+! 1
+| AE1 || AE2|| AE3 || AE4 || ..........  ||..........   || ..........  || .......... || .......... 
+|-
+! 10
+| AE1 || AE2|| AE3 || AE4 || || || || || 
+|-
+! 19
+|  || || || || || || || || 
+|-
+! 28
+|  || || || ||  ||  ||  ||  || 
+|-
+! 37
+|  || ||  ||  ||  ||  ||    ||  || 
+|-
+! 46
+|  || ||  ||  ||  ||  ||    ||  || 
+|-
+! 55
+|  || ||  ||  ||  ||  ||    ||  || 
+|-
+! 64
+|  || ||  ||  ||  ||  ||    ||  || 
+|-
+! 73
+|  || ||  ||  ||  ||  ||    ||  || 
+|}

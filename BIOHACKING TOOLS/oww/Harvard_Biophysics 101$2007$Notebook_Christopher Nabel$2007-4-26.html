@@ -1,0 +1,24 @@
+==Tasks For Today==
+
+===What Can We Take Away From GeneCards?===
+
+For those who haven't explored the site, GeneCards is a huge reference site that takes a gene name, GenBank accession number, disease name, etc, and spits out a huge array of information about the gene.  Different sections provide different forms of information: there are many subsections, but a few of interest are 
+* SNP variants
+* Disorders and mutations
+* Medical News
+* Research Articles
+The information they provide here is basically parsed from XML from the standard databases we're using, and a few additional extremely small ones.  They have all of this information in the same place, pretty analogous to what we've been trying to set up.  They even have a [http://www.genecards.org/papers/tig_1997.pdf brief, one-page publication on the goals of their project] that's worth reading.  I think this similarity raises the following question: once we get this site up and running, what are our goals from here?  Given that we have overlap with other projects (GeneCards, Human Variome Project, to name a few), we should think seriously about what we can do anticipate and shape the future of personal genomics.
+
+===Brief Outline for False Positive Code===
+
+Here is an outline for the code that Mike and I will write by Tuesday to eliminate false positives in our queries:
+
+* Input: a dict object with RS ID# keyed to a SNP FASTA sequence.  This will necessitate revising our earlier code to generate this dict object as opposed to two distinct lists, which keep sequence and RS ID separate.
+* For every entry in the dict, align SNP with reference sequence
+* Find the position at which IUPAC ambiguous character is used to describe the SNP
+* If the reference base pair at that point is in the space of the SNP character, keep the entry
+* If not, remove the RS ID and keyed sequence
+* Return updated dict object
+
+===Disclaimer===
+This program is designed to provide an easy link between personal genomics technology and informational databases online.  All information returned to the user is information gathered from publicly available databases.  Any recommendations made by any of these sources should be confirmed with the advice of a physician.  Additionally, given that there is much ongoing research into identification and characterization of genetic mutations, it is possible that the current level of understanding in a field may be incomplete.  There may be over-characterizations, and there may be under-characterizations.  If there are any concerns or uncertainties about how to interpret the search results of this program, please consult your board-certified physician.  By agreeing to use this program, this project is not liable to any actions taken in response to queried search results.

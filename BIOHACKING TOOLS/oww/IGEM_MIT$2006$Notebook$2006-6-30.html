@@ -1,0 +1,108 @@
+==Stationary Phase Promoter Stuff To Get Done==
+
+Two plates carrying the control to compare with the stationary phase promoter are in the 30 degree room.  Remove them at the beginning of the day (really early if you don't want to come in on Saturday) and inoculate them in '''LB AMP''' liquid culture.  Please remember to take them out.  There is also a liquid culture labelled "control promoter" in the 37 degree room.  I don't think it was growing yesterday, but you may want to check if it grew.  If it grew, you still may want to make the LB AMP liquid culture from the fresh plates.  If it didn't, I guess we have to make the liquid cultures from the 30 degree plates.  If you guys feel ambitious and the liquid culture grew, you could start the fluorescent experiments (you can ask Barry to show you how it's done).  Anyways, good luck, and have a great weekend!
+
+==Number of Transformants from 6/29 [http://openwetware.org/wiki/IGEM:MIT/2006/Notebook/2006-6-29 BSMT-BB Ligation/Transformation]==
+{| border="1" cellpadding="5"
+!|
+!|pUC19-Old Top 10
+!|pUC19-Fresh Top 10
+!|E0040BB (+Ctrl)
+!|BSMTBB
+|-
+|20&mu;L
+|0
+|0
+|6
+|1
+|-
+|200&mu;L
+|2
+|20
+|~100
+|5
+|-
+|}
+
+We can make a few conclusions from these data:
+*The old Top 10 cells are probably not suitable for use (despite colonies appearing at the 200&mu; plating volume).
+*Barry's E0040 positive control worked.
+*<b>Our ligation was "succcessful", as colonies did appear on our plates.</b>
+
+==Colony PCR / liquid culture using BSMT biobrick transformants==
+There were 5 colonies on the 200&mu;L BSMT-BB plate, so we did a colony PCR following the [http://openwetware.org/wiki/Knight:Colony_PCR Knight colony PCR protocol]
+
+#Labeled the colonies A, B, C, D, E
+#Filled 5 tubes labeled A - E with 20&mu;L of water, set a pipetter to 3&mu;L, and picked colonies / deposited them into the appropriate tube. (used the pipet to pick the colony, and then pipetted up and down in the tube to make sure the cells were transfered / mixed)
+#'''Made an index plate:''' Got a fresh Amp plate to use as an index plate, and split it into 5 sectors labeled A - E; plated 1&mu;L of each water + cell mixture from the tubes on the appropriate sector of the index plate.  Put this plate in the 37 degree room. 
+#'''Set up the colony PCR:''' Labelled 5 little .2mL tubes A-E. In each little tube, put 8.5&mu;L of PCR supermix, .5&mu;L of cells from the appropriate mixture, .5&mu;L of 20&mu;M VF2, and .5&mu;L of 20&mu;M VR.  Ran the PCR using the program "Igemcol" on the left thermocycler 
+#*95&deg;C for 15 mins
+#*94&deg;C for 30 secs
+#*56&deg;C for 30 secs
+#*68&deg;C for 3 min 
+#*Repeat 2-4 39 times.
+#*68&deg;C for 20 mins
+#*4&deg;C for the rest of the time
+#'''Made liquid cultures:''' Added the remaining contents of each water + cell tube to a labeled culture tube with 10mL of LB/amp, and put in the rotater in the 37deg room. (will move to fridge tonight...at some point, need to do minipreps and make glycerols of these cultures)
+
+==SAMT PCR Product Eco/Pst Digest==
+
+#We are cutting the SAMT pcr product (using EcoRI and PstI)--'''Began at 11AM''' [note: We didn't digest ATF1 because it has an EcoRI cut site; we will digest it with PstI and XbaI later]
+#Total reaction volume is 50&mu;L
+#the amount of dna desired is about 800 nanograms
+#*SAMT pcr product at 75.5 ng/&mu;L -----add 11 &mu;L
+#we are also going to use Dpn1 '''only''' in SAMT cut reaction to destroy dna that is not a pcr product (i.e. get rid of extra template)
+#SAMT pcr cleanup product cut reaction:
+#*31.5 &mu;L water
+#*5 &mu;L NEB buffer 2
+#*.5 &mu;L BSA
+#*11 &mu;L BSMT pcr cleanup product (concentration = 50 ng/&mu;L)
+#*.75 &mu;L Pst1
+#*.75 &mu;L EcoR1
+#*'''.5 &mu;L Dpn 1'''
+#Incubate tube in 37c room for 1-6 hours, then 20 mins at 80deg C to heat inactivate the enzyme, then 4deg forever.
+#Did a PCR cleanup & nanodrop: concentration of digested SAMT = 10.4ng/&mu;L
+#'''run a gel before moving on to ligation !!'''
+
+==New BAMT PCR==
+
+*Total reaction volume of 50&mu;L -- '''Began at 11:35AM'''
+**1&mu;L 1ng/&mu;L BAMT template
+**0.6&mu;L of BAMTfor2 and BAMTrev primers (.6 &mu;L of the 25&mu;M primer yields roughly 300 nM final concentration of that primer, which is the goal) 
+**49 &mu;L of Tom's PCR mix.
+*Run the tubes on the thermocycler at: 95deg for 3:00, then cycle through: (a) 94deg for :30 (b) 55deg for :30 (c)68deg for 2:15, then 72deg for 10:00
+*Did a PCR cleanup & nanodrop: concentration of BAMT PCR product = 58.8ng/&mu;L
+*'''run a gel before moving on to digest!!''' (cut site in BAMT is SpeI, so we can do the normal digest w/ EcoRI and PstI)
+
+==Gel to check BSMT colony PCR, SAMT digest, BAMT PCR==
+We ran a gel with the following lanes (left to right):
+*2-log ladder
+*BSMT colony A: expected length 1312 bp 
+*BSMT colony B: expected length 1312 bp 
+*BSMT colony C: expected length 1312 bp 
+*BSMT colony D: expected length 1312 bp 
+*BSMT colony E: expected length 1312 bp 
+*BAMT PCR with new forward primer: expected length 1098 bp
+*SAMT after being digested with Eco/Pst: expected length ~ 1160 bp
+[[Image:6-30colonyetc.jpg]]
+
+Basically, it seems like everything worked.  So, next steps: miniprep the BSMT biobrick plasmid, ligate the digested SAMT into a biobrick backbone, and digest the BAMT PCR product
+
+==Biosynthesis (meeting at 2 pm)==
+'''Salicylic Acid'''
+*One pathway (in Pseudomonas and some other bacteria) involves 2 steps: chorismate -> isochorismate  via isochorismate synthase [ICS] (encoded by pchA), then isochorismate -> salicylate via isochorismate pyruvate -lyase [IPL] (encoded by pchB)
+*Mauch et al.: "By fusing the two bacterial genes pchA and pchB from Pseudomonas aeruginosa, which encode isochorismate synthase and isochorismate pyruvate-lyase, respectively, we have engineered a novel hybrid enzyme with salicylate synthase (SAS) activity" '''''We are getting this pchBA plasmid from them!''''' <biblio>Mauch01 pmid=11169183</biblio>
+*Pseudomonas flourescens has a plasmid that takes care of everything necessary to produce SA.  Mercado-Blanco et al. cut out the part of this plasmid that makes SA and put it in E. coli…and the E. coli made SA! The genes in this pathway are pmsC, pmsE, pmsA, and pmsB (genbank: Y09356).  The protein encoded by pmsB has a protein ID# CAA70531 '''''We have requested this plasmid''''' <biblio>Mercado01 pmid=11222588</biblio>
+'''Isoamyl Alcohol'''
+*Necessary gene: BAT2 (a branched-chain amino acid aminotransferase), from yeast. Overproduction of BAT2 in yeast resulted in 1.3-fold increase in production of isoamyl alcohol. We may need keto-isocaproate decarboxylase (Sc-THI3) to go from alpha-keto acid to 3-methylbutanal (a-keto acid is product of BAT2…3-methylbutanal is reduced to isoamyl alcohol) <biblio>Yoshimoto02 pmid=12172617</biblio> 
+*A way to increase isoamyl alcohol production in yeast: "HPG1 mutants, with a defect in their Rsp5 ubiquitin ligase, were found to produce high amounts of aromatics due to enhanced leucine uptake, with isoamyl alcohol production 2- to 3-fold and isoamyl acetate production 4- to 8-fold that of the wild-type strain." <biblio>Abe05 pmid=16217550</biblio>
+'''Jasmonic Acid'''
+*Jasmonate biosynthesis in ''A. thaliana'' <biblio>Delker06 pmid=16625494</biblio>
+'''Benzoic Acid'''
+*Seems to be working in a few strains of bacteria (esp. Streptomyces maritimus) <biblio>Piel00 pmid=11137817</biblio> <biblio>Moore02 pmid=12502351</biblio>
+
+==Email requests to be done (kate)==
+#Indole negative E. coli mutant strain 3714 (Patrick Di Martino) --- COMPLETE
+#Plasmid with pchA and pchB (Cornelia Reimann) --- COMPLETE
+#Plasmid with pmsA, pmsB, pmsC, pmsE (Peter Bakker) --- COMPLETE
+#Methylobacterium shuttle vector (Inge Holubova) --- COMPLETE

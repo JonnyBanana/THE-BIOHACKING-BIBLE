@@ -1,0 +1,41 @@
+== Chemical Organization Theory ==
+
+A set of molecules is called an organization
+if the following two properties are satisfied: closure and
+self-maintenance.
+A set of molecular species is closed when all reaction rules
+applicable to the set cannot produce a molecular species that is not
+in the set.
+This is similar to the algebraic closure of an
+operation in set theory.
+;Closure
+:Given an algebraic chemistry <math>\langle {\mathcal M},{\mathcal R} \rangle</math>, a set of molecular species <math>C \subseteq {\mathcal M}</math> is closed, if for every reaction <math>(A \rightarrow B) \in {\mathcal R}</math> with <math>A \in \mathcal{P}_M(C)</math>, also <math>B \in \mathcal{P}_M(C)</math> holds.
+
+
+The second important property, self-maintenance, assures, roughly
+speaking, that all molecules that are consumed within a self-maintaining set
+can also be produced by some reaction pathways within the self-maintaining set.
+The general definition of self-maintenance is more complicated than the
+definition of closure because the production and consumption of
+a molecular species can depend on many molecular
+species operating as a whole in a complex pathway.
+;Self-maintenance
+:Given an algebraic chemistry <math>\langle {\mathcal M},{\mathcal R} \rangle</math>, let <math>i</math> denote the <math>i</math>-th molecular species of <math>{\mathcal M}</math> and the <math>j</math>-th reaction rules is <math>(A_j  \rightarrow B_j) \in {\mathcal R}</math>. Given the stoichiometric matrix <math>\mathbf{M} = (m_{i,j})</math> that corresponds to <math>\langle {\mathcal M},{\mathcal R} \rangle</math> where   <math>m_{i,j}</math> denotes the number of molecules of species <math>i</math> produced or used up in reaction <math>j</math>, a set of molecular species <math>S \subseteq {\mathcal M}</math> is self-maintaining, if there exists a flux vector <math>\mathbf{v} = (v_{A_1 \rightarrow B_1}, \dots, v_{A_j \rightarrow B_j}, \dots, v_{A_{|{\mathcal R}|} \rightarrow B_{|{\mathcal R}|}})^T</math> satisfying the following three conditions:
+
+* <math>v_{A_j \rightarrow B_j} > 0</math> if <math>A_j \in \mathcal{P}_M(S)</math>
+* <math>v_{A_j \rightarrow B_j} = 0</math> if <math>A_j \notin \mathcal{P}_M(S)</math>
+* <math>f_i \geq 0</math> if <math>s_i \in S</math> where <math>(f_1, \dots, f_i, \dots, f_{|{\mathcal M}|})^T = \mathbf{M v}</math>.
+
+These three conditions can be read as follows: 
+When the <math>j</math>-th reaction is applicable to the set <math>S</math>,
+the flux <math>v_{A_j \to B_j}</math> must be positive (Condition 1).
+All other fluxes are set to zero (Condition 2). Finally,
+the production rate <math>f_i</math>
+for all the molecular species <math>s_i \in S</math> must be nonnegative (Condition~3).
+Note that we have to find only one such flux vector in order to show
+that a set is self-maintaining.
+
+
+Taking closure and self-maintenance together, we arrive at an organization:
+;Organization
+: A set of molecular species <math>O \subseteq {\mathcal M}</math> that is closed and self-maintaining is called an organization.

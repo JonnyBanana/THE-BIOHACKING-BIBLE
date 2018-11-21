@@ -1,0 +1,428 @@
+==Overview==
+
+The MIT SBWG has been discussing the barcoding of engineered biological systems for a while.  An initial attempt (described at [[Barcodes]]) was made to implement barcodes on many BioBrick coding regions.  Here is a quick (and likely incomplete) overview on some of the issues surrounding barcodes.
+
+As Drew has [[Talk:Synthetic Biology:Vectors/Barcode | initially suggested]], there are three basic purposes for barcoding synthetic systems.  
+
+#'''Detection''': to enable detection of standard biological parts in arbitrary DNA samples.  For instance, users wish to detect cases of misuse of parts.
+#'''Identification''': to enable identification of biological parts, devices and systems.  Such identification may also involve determining the original designer.  For instance, users wish to quickly identify the vector in which their part resides in a typical sequencing reaction.
+#'''Authentication''': to enable verification the integrity of a DNA sequence.  Such a barcode would allow users to check for naturally-occuring or human-induced mutations.
+
+There are a couple schemes for barcoding that have been implemented on a trial basis or proposed.
+
+#The [[Barcodes | original barcodes scheme]] enabled quick detection of BioBricks via PCR methods.  It is not clear that detection-based barcodes are necessary given the ease with which sequencing can be done.
+#The barcode schemes described below are primarily for the purpose of identifying BioBricks.  Since the scheme proposed by Austin is able to encode arbitrary bit strings, such a barcode would permit inline documentation of anything include
+#*BioBrick part number
+#*URL or doi number
+#*designer
+#*inline comments
+#There is no available proposal to accomplish the third goal of authentication.
+
+A universal barcoding scheme is difficult to implement for several reasons.
+
+#'''Barcodes should be biologically innocuous.'''  Ideally, barcodes should not be DNA sequences that will encode a biological function including but not limited to the following.
+#*initiate transcription (be a promoter)
+#*contain coding sequences
+#*initiate translation
+#*have secondary structure
+#*have restriction enzyme cut sites
+#*have too many repetitive elements
+#*have too many strings of a single nucleotide or strings of purines/pyrimidines.
+#'''Barcodes should not be sequences that interfere with system function.'''  There must be a mechanism to insert "escape sequences" to interrupt system-specific meaningful sequences.
+#'''Barcodes should not be too long.'''  Long sequences can add to fabrication costs and may impact system function.
+#'''Barcodes should be sequenceable.'''
+#'''Barcodes should have some mechanism for detecting and/or correcting for errors due to mutation.'''  Additional bases are needed for error detection and correction which can lengthen barcode length.
+#*Mutations are relatively straightforward to cope with using standard coding theory.  However, frameshift mutations are far more tricky to deal with.  See [[Talk:Synthetic Biology:Vectors/Barcode]] for details.
+
+Austin's barcode scheme to encode bit strings below represents an attempt to address many of these issues.
+
+==Scheme to encode bit strings==
+
+Enable encoding of arbitrary bit strings into DNA without introducing "biologically bad" sequences.  (Tom and Austin).
+
+[http://www.roubaixinteractive.com/PlayGround/Binary_Conversion/Binary_To_Text.asp Text to bit string converter] (ASCII not Unicode)
+
+Compression algorithms for DNA sequences: X. Chen, S. Kwong, M. Li, Genome Informatics (GIW'99), Tokyo, Japan, pp.51-61, 1999.
+
+
+I've put up a test page for playing with encoding binary into DNA at http://synbio.mit.edu/tools/encoder.cgi
+
+Check out the world's first [[Illegal DNA sequence]]. 
+
+The general encoding/decoding method: Each byte of 8 bits is split into 4x2 bits. Each pair of bits at each location is mapped to some nucleotide. For example 00 at position 0 could be mapped to A, 01 at position 1 to T, 00 at position 1 to T, etc. To be decodable, there must be a 1 to 1 mapping at each position from 2 bits to 4 nucleotides. But this leaves <math>24^4</math> different ways to do this type of encoding. Given a string to encode, all possible encodings are looked at and the encoding with the best following properties are used:
+* %GC close to 50%
+* %GT as high as possible (biased nucleotide use). 
+
+Biasing the nucleotides makes it less likely for restriction sites or other secondary structures to appear. At the beginning of the encoded string, we attach the encoding table as a simple fixed 12nt (4x3 nt as the 4th nucleotide can be derived from the first 3).
+
+The current escape sequence is simply 'AC'. As the encoded string is GT biased, the occurrence of AC turns out to be fairly low. If AC occurs in the encoded sequence, it gets escaped itself with another copy, e.g. AC->ACAC. All other escape sequences begin with AC followed by some sequence. For example, currently we have an escape sequence to represent the beginning and end of the code. There are also escape sequences that allows insertion of arbitrary sequence ('comments?') into the encoding. This allows you to modify the %GC content if desired, break up bad sequences, or whatever else by inserting arbitrary non-coding sequence. 
+
+Randy suggested some form of compression. Not sure how much space we save or how much more complex it would make the algorithm.
+
+Adding the ability to correct base mutations in the DNA (on the computer not in vivo) is possible and a Reed-Solomon code is the most promising candidate code (not implemented yet). Being resistant to frameshifts appears to be more difficult.
+
+This algorithm provides the ability to encode anything such as Unicode, pictures, or anything else under the sun. Is the complexity and increase in size worth this capability?
+
+==Scheme to encode text only==
+
+===Case-sensitive codon tables===
+
+Each codon represents an alphanumeric character (case-insensitive).  For convenience, those letters of the alphabet which represent a single letter amino acid code are coded by one of the amino acid's codons (aiming for near 50% GC content).
+
+(Note this table was done by hand so please correct errors!)
+
+===Encoding table===
+{| border="1"
+|-
+! Codon 
+! Character
+! Rationale
+! Codon
+! Character
+! Rationale
+|-
+| GCA 
+| A
+| codon for Ala
+| GCT
+| a
+| codon for Ala
+|-
+| GCC
+| B
+| (near alanine)
+| GCG
+| b
+| (near alanine)
+|-
+| TGC
+| C
+| codon for Cys
+| TGT
+| c
+| codon for Cys
+|-
+| GAC
+| D
+| codon for Asp
+| GAT
+| d
+| codon for Asp
+|-
+| GAA
+| E
+| codon for Glu
+| GAG
+| e
+| codon for Glu
+|-
+| TTC
+| F
+| codon for Phe
+| TTT
+| f
+| codon for Phe
+|-
+| GGA
+| G
+| codon for Gly
+| GGC
+| g
+| codon for Gly
+|-
+| CAC
+| H
+| codon for His
+| CAT
+| h
+| codon for His
+|-
+| ATC
+| I
+| codon for Ile
+| ATA
+| i
+| codon for Ile
+|-
+| GGT
+| J
+| (no reason)
+| GGG
+| j
+| (no reason)
+|-
+| AAG
+| K
+| codon for Lys
+| AAA
+| k
+| codon for Lys
+|-
+| CTA
+| L
+| codon for Leu
+| CTC
+| l
+| codon for Leu
+|-
+| ATG
+| M
+| codon for Met
+| CTG
+| m
+| sometimes codes for Met
+|-
+| AAC
+| N
+| codon for Asn
+| AAT
+| n
+| codon for Asn
+|-
+| CCC
+| O
+| (near proline)
+| CCU
+| o
+| (near proline)
+|-
+| CCG
+| P
+| codon for Pro
+| CCA
+| p
+| codon for Pro
+|-
+| CAA
+| Q
+| codon for Gln
+| CAG
+| q
+| codon for Gln
+|-
+| AGA
+| R
+| codon for Arg
+| AGG
+| r
+| codon for Arg
+|-
+| AGC
+| S
+| codon for Ser
+| AGT
+| s
+| codon for Ser
+|-
+| ACA
+| T
+| codon for Thr
+| ACT
+| t
+| codon for Thr
+|-
+| GTC
+| U
+| (near valine)
+| GTG
+| u
+| (near valine)
+|-
+| GTA
+| V
+| codon for Val
+| GTT
+| v
+| codon for Val
+|-
+| TGG
+| W
+| codon for Trp
+| TGA
+| w
+| (no reason)
+|-
+| TAG
+| X
+| resembles a stop codon
+| TAA
+| x
+| resembles a stop codon
+|-
+| TAC
+| Y
+| codon for Tyr
+| TAT
+| y
+| codon for Tyr
+|-
+| TTG
+| Z
+| (no reason)
+| TTA
+| z
+| (no reason)
+|-
+| ATT
+| 0
+| zero seems to go with stop codon
+|-
+| CTT
+| 1
+| (looks like an l)
+|-
+| ACC
+| 2
+| two starts with a T
+|-
+| ACG
+| 3
+| three starts with a T
+|-
+| CGA
+| 4
+| has an R in it
+|-
+| TCT
+| 5
+| (no reason)
+|-
+| TCC
+| 6
+| six starts with an S
+|-
+| TCG
+| 7
+| seven starts with an S
+|-
+| TCA
+| 8
+| (no reason)
+|-
+| CGT
+| 9
+| (no reason)
+|}
+
+===Lookup table===
+{| border="1"
+|-
+!
+! T
+! C
+! A
+! G
+!
+|-
+! rowspan=4 | T
+| f
+| 5
+| y
+| c
+! T
+|-
+| F
+| 6
+| Y
+| C
+! C
+|-
+| z
+| 8
+| x
+| w
+! A
+|-
+| Z
+| 7
+| X
+| W
+! G
+|-
+! rowspan=4 | C
+| 1
+| o
+| h
+| 9
+! T
+|-
+| l
+| O
+| H
+| spacer
+! C
+|-
+| L
+| p
+| Q
+| 4
+! A
+|-
+| m
+| P
+| q
+| spacer
+! G
+|-
+! rowspan=4 | A
+| 0
+| t
+| n
+| s
+! T
+|-
+| I
+| 2
+| N
+| S
+! C
+|-
+| i
+| T
+| k
+| R
+! A
+|-
+| M
+| 3
+| K
+| r
+! G
+|-
+! rowspan=4 | G
+| v
+| a
+| d
+| J
+! T
+|-
+| U
+| B
+| D
+| g
+! C
+|-
+| V
+| A
+| E
+| G
+! A
+|-
+| u
+| b
+| e
+| j
+! G
+|}
+
+===Start and stop sequences===
+What is a good start and stop sequence for the plasmid barcode?  
+*We could possibly use the same sequence that is used for the [[Barcodes | CDS barcodes]] (i.e. C TGA TAG TGC TAG TGT AGA T C) without the variable nucleotide.  Or would this just confuse any diagnostics people try to run on constructs?
+*Another possibility is to flank both sides with the translational stop sequence.
+*Maybe a start and stop sequence isn't necessary?
+*One problem with this codon table it that it becomes possible to accidentally encode BioBricks sites in the barcode.  A case-insensitive code might reduce the likelihood of that happening?  Any possible fixes to this problem?  Use one of the codons that doesn't encode a alphanumeric character as a "spacer" in this eventuality (i.e. CGC or CGG)?
+
+===Notes===
+*I didn't bother to try avoiding certain codons like start codons.
+*These codons may not be optimally spaced from one another?  Tom doesn't think this matters.
+*Tom pointed out that the barcode should probably be as GC content neutral (i.e. try to avoid all AT or all GC codons).

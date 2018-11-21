@@ -1,0 +1,275 @@
+{{Synthetic biology top}}
+<div style="padding: 10px; color: #000000; background-color: #ccccff; width:730px" >
+
+*[http://esw.w3.org/topic/SemanticWebTools Semantic Web Tools] from [http://esw.w3.org/topic/FrontPage ESW wiki]
+*[http://simile.mit.edu/ SIMILE] is focused on developing robust, open source tools based on Semantic Web technologies that improve access, management and reuse among digital assets
+
+==RDF==
+*[http://www.wiwiss.fu-berlin.de/suhl/bizer/toolkits/ Developers Guide to Semantic Web Toolkits for different Programming Languages]
+*[http://simile.mit.edu/reports/stores/ Scalability Report on Triple Store Applications]
+*[http://www.oracle.com/technology/tech/semantic_technologies/index.html Oracle Semantic Technologies] - links to the white papers at the bottom of the page
+*[http://www.semwebcentral.org/ SemWebCentral] - open source tools for the Semantic Web
+*[http://www.mozilla.org/rdf/doc/ RDF in Mozilla]: RDF engine, code examples, etc
+*[http://jslib.mozdev.org/libraries/rdf/rdf.html RDF module] of JSLib
+
+===RDF and other formats===
+*[http://download.oracle.com/otndocs/tech/semantic_web/pdf/w3d_rdf_data_model.pdf RDF data model in Oracle] - white paper (PDF) decribing DB schema for RDF statements storage.
+*[http://www-db.stanford.edu/~melnik/rdf/db.html Storing RDF in a relational database]
+*[http://www.w3.org/DesignIssues/RDB-RDF.html Relational Databases on the Semantic Web] from Design Issues.
+*[http://www.w3.org/2001/sw/Europe/reports/scalable_rdbms_mapping_report/ Mapping Semantic Web Data with RDBMSes] from SWAD Europe.
+*[http://www.w3.org/2001/sw/Europe/reports//rdf_ql_comparison_report/ Databases, Query, API, Interfaces report on Query languages] from SWAD Europe.
+*[http://protege.stanford.edu/doc/design/jdbc_backend.html Protégé JDBC backend design rationale]
+*[http://www.w3.org/2003/01/21-RDF-RDB-access/ RDF access to relational databases]
+*[http://esw.w3.org/topic/HCLSIG_BioRDF_Subgroup/Nuts_and_bolts Nuts and bolts from HCLSIG BioRDF] - tools for converting data in various formats to RDF
+*[http://www-db.stanford.edu/~melnik/rdf/fusion.html Bridging the Gap between RDF and XML]
+*[http://www.w3.org/TR/grddl/ GRDDL] - Gleaning Resource Descriptions from Dialects of Languages.  A mechanism for getting RDF data out of XML and XHTML documents using explicitly associated transformation algorithms, typically represented in XSLT.
+**[http://www.w3.org/2004/01/rdxh/grddl-xml-demo Demonstration of GRDDL applied to XML]
+**[http://idealliance.org/proceedings/xtech05/papers/03-06-01/ Bridging XHTML, XML and RDF with GRDDL]
+**[http://www.w3.org/2003/g/data-view GRDDL Data Views] - a way of extracting Semantic Web data in RDF from XML formats (especially XHTML dialects or microformats) via transformations identified by URIs and typically expressed in XSLT
+
+===Servers===
+;"semantic repository"
+:reasoner, ontology server, semantic store, metastore, RDF database ([http://www.ontotext.com/inference/semantic_repository.html reference])
+*[http://jena.sourceforge.net/ Jena] - a Java framework for building Semantic Web applications. It provides a programmatic environment for RDF, RDFS and OWL, including a rule-based inference engine.
+**[http://groups.yahoo.com/group/jena-dev/ jena-dev] - Jena developers mailing list archive
+**[http://jena.sourceforge.net/tutorial/RDF_API/index.html An Introduction to RDF and the Jena RDF API]
+**[http://www.ibm.com/developerworks/java/library/j-jena/ Introduction to Jena] from IBM
+**[http://jena.sourceforge.net/javadoc/index.html Jena Javadoc]
+**[http://jena.sourceforge.net/DB/ Jena relational database backend]
+***[http://jena.sourceforge.net/DB/howto.html How to create persistent models]
+***[http://jena.sourceforge.net/examples/persistent-ont-model/index.html Persistent ontologies example]
+***[http://jena.sourceforge.net/DB/mysql-howto.html Jena2 MySQL howto]
+**[http://www.joseki.org/ Joseki] is an HTTP and SOAP engine supports the SPARQL Protocol and the SPARQL RDF Query language
+**[http://jena.sourceforge.net/ARQ/ ARQ] is a query engine for Jena that supports the SPARQL RDF Query language
+**[http://jena.sourceforge.net/ARQ/lucene-arq.html LARQ] - [http://lucene.apache.org/ Lucene] + [http://jena.sf.net/ARQ/ ARQ]
+**[http://jena.sourceforge.net/Eyeball/ Eyeball]: checking RDF/OWL for common problems
+**[http://www.nexist.org/Jena2Manager/index.html Jena2 Manager]
+*[http://4suite.org/ 4Suite™]: an open-source platform for XML and RDF processing
+*[http://www.openrdf.org/ Sesame]: an open source RDF database with support for RDF Schema inferencing and querying
+**[http://www.ontotext.com/owlim/ OWLIM] - OWL Semantic Repository packaged as a Storage and Inference Layer (SAIL) for the Sesame RDF database
+*[http://kowari.org/ Kowari]: database for the storage, retrieval and analysis of RDF and OWL metadata; non-relational, written in Java.
+*[http://www.mulgara.org/ Mulgara] is a scalable RDF database written entirely in Java. Mulgara is an Open Source fork of [http://kowari.org/ Kowari].
+*[http://arc.web-semantics.org/ ARC - RDF and SPARQL for PHP developers] is a lightweight, SPARQL-enabled RDF system for mainstream Web projects. It is written in PHP and has been optimized for shared (or otherwise performance- or privilege-limited) Web environments.
+*[http://threestore.sourceforge.net/ 3store] - a C library that uses MySQL to store its raw RDF data and caches, part of the [http://www.aktors.org/akt/ AKT Project].
+*[http://www.guha.com/rdfdb/ rdfDB]: An RDF Database
+*[http://rdfstore.sourceforge.net/ RDFStore] - Perl/C RDF storage and API
+*[http://www.mindswap.org/2002/parka/ ParkaSW] is an inferencing database, built for use with the semantic web. It is currently undergoing revision to support RDF internally.
+*[http://lsdis.cs.uga.edu/projects/semdis/brahms/ Brahms] - RDF/S Main Memory Storage
+*[http://opensource.nokia.com/projects/sws-uriqa/index.html Nokia Semantic Web Server] - reference implementation of URIQA (URI Query Agent) model. Provides access to metadata describing products, documents, vocabularies, schemas, and other resources.
+**[http://sourceforge.net/projects/sws-uriqa/ Sourceforge page]. For MS Windows only.
+**[http://swdev.nokia.com/tools/ Tools & Utilities]
+*[http://web.ict.nsc.ru/smart SMART]: System for Managing Applications based on RDF Technology
+
+====Commercial====
+*[http://www.intellidimension.com/pages/site/products/rdfgateway.rsp Intellidimension RDF Gateway] - commercial Windows app but free version available
+*[http://virtuoso.openlinksw.com/ Virtuoso] is an innovative Virtualization platform that transparently integrates Data, Services, and Business Processes across the enterprise.
+**[http://virtuoso.openlinksw.com/wiki/main/ Virtuoso OpenSource Edition]
+*[http://www.franz.com/products/allegrograph/ AllegroGraph]
+**scalable RDF triple store with advanced query and reasoning capabilities
+**free Java version works with up to 50 million triples
+
+===Life Sciences===
+*[http://www.mygrid.org.uk/ myGrid] is a collection of services and components that allows the high level integration of biological data and applications.
+**Feta - a semantic discovery tool to search available web services
+**LSID components - LSIDs are used as unique identifiers for data objects that are imported or created in myGrid. This facilitates data retrieval, data searching and provenance capture
+**BioServices - provide mechanisms for producing web services from exisiting bioinformatics services for use in workflows
+*[http://myexperiment.org/mockup/ myExperiment] is a collaborative platform for life scientists to manage, share and find [http://taverna.sourceforge.net/ Taverna] workflows
+*[http://www.smarttea.org/ Smart Tea] is about improving the information environment for chemists doing chemistry - within and beyond the lab
+*[http://mytea.org.uk/ myTea] - extending Smart Tea Interaction to myGrid BioInformatics
+**[http://mytea.org.uk/vlab/ myTea vLab] - software environment for bioinformatics
+*[http://www.semanticgrid.org/ Semantic Grid] is an extension of the current Grid in which information and services are given well-defined meaning through machine-processable descriptions
+*[http://www.wikiprofessional.info/ Wiki for Professionals] are workspace for Semantic Web, enabling real-time knowledge exchange and exploration
+**developed by [http://knewco.com/ Knewco, Inc]
+
+===Toolkits===
+*[http://www.wiwiss.fu-berlin.de/suhl/bizer/toolkits/ Developers Guide to Semantic Web Toolkits for different Programming Languages]
+*[http://librdf.org/ Redland] RDF Application Framework: modular, object based libraries written in C ([http://download.librdf.org/binaries/ Redland RPMs])
+**[http://rdf-redland.rubyforge.org/ RDF-Redland] - a Ruby Wrapper around the Redland Application Framework
+**[http://librdf.org/docs/storage.html Storage modules]
+*[http://activerdf.org/ ActiveRDF] is a library for accessing RDF data from Ruby programs
+**[http://esw.w3.org/topic/HCLSIG_BioRDF_Subgroup/Tasks/Ruby_On_Rails_and_ActiveRDF Ruby On Rails and ActiveRDF] - HCLSIG subgroup task - to produce a Ruby On Rails and Active RDF implementation of the BioDash eclipse (Java) based gui so that we can show that the functionality shown in BioDash can be implemented using web based technologies.
+*[http://www.w3.org/2001/12/rubyrdf/intro.html Ruby RDF] was an experimental RDF system implemented in Ruby. It is no longer under active development.
+*[http://rdflib.net/ RDFLib] - Python library for working with RDF
+**[http://wiki.python.org/moin/RdfLib RDFLib Wiki]
+*[http://www.mnot.net/sw/sparta/ Sparta] is an Python API for RDF that is designed to help easily learn and navigate the Semantic Web programmatically. Unlike other RDF interfaces, which are generally triple-based, Sparta binds RDF nodes to Python objects and RDF arcs to attributes of those Python objects.
+*[http://infomesh.net/pyrple/ Pyrple] - Python 2.3 RDF toolkit
+*[http://jrdf.sourceforge.net/ JRDF] - Java RDF API
+*[http://tap.stanford.edu/ TAP] @ Stanford
+*[http://protege.stanford.edu/plugins/owl/api/ The Protégé OWL API]
+*Perl
+**[http://www.w3.org/1999/02/26-modules/ Perllib] - the W3C Perl Code Library
+**[http://cara.sourceforge.net/ CARA] Perl RDF API - a pure perl RDF system providing storage and RDF/XML parsing
+**[http://perlrdf.org Perl RDF API]
+*PHP
+**[http://www.wiwiss.fu-berlin.de/suhl/bizer/rdfapi/ RAP] - is a software package for parsing, searching, manipulating, serializing and serving RDF models.
+**[http://powl.sourceforge.net/ pOWL] - Semantic Web Development Platform - web-based ontology edititing and management solution
+*Java code generators
+**[http://rdfreactor.ontoware.org/ RDFReactor] views the RDF data model through object-oriented Java proxies; Java interfaces are generated automatically from an RDF Schema
+**[http://projects.semwebcentral.org/projects/kazuki/ Kazuki] generates a Java API for working with OWL instance data directly from a set of OWL ontologies.  It is built on Jena 2 and mirrors their ontology interface.
+**[http://jastor.sourceforge.net/ Jastor] is a open source Java code generator that emits Java Beans from Web Ontologies (OWL) enabling convenient, type safe access and eventing of RDF stored in a Jena Semantic Web Framework model.
+*LISP
+**[http://wilbur-rdf.sourceforge.net/ Wilbur] Nokia RDF toolkit written in Common LISP ([http://opensource.nokia.com/projects/wilbur/index.html another link])
+**[http://iswc2004.semanticweb.org/demos/32/ SWCLOS]: A Semantic Web Processor on Common Lisp Object System
+*[http://www.adobe.com/products/xmp/ Adobe's Extensible Metadata Platform (XMP)] is a labeling technology that allows you to embed data about a file, known as metadata, into the file itself.
+*[http://www.raiks.de/crow/ Crow]: Computational Representation Of Whatever is a java library for the manipulation and mining of complex and world-wide distributed data (by [[User:Raik|Raik Grünberg]])
+**[http://crow.sourceforge.net/ Sourceforge project page]
+*[http://esw.w3.org/topic/SemWebProgrammingLanguage Semantic Web programming languages]
+**[http://haystack.csail.mit.edu/developers/adenine.html Adenine] is a python like language that knows how to deal with RDF.  It is used to implement [http://haystack.lcs.mit.edu/ Haystack].
+**[http://fabl.net/ Fabl]
+*[http://www.biojava.org/docs/api15b/org/biojava/ontology/package-summary.html org.biojava.ontology]: a general-purpose API for ontologies
+
+===Browsers===
+*[http://www.w3.org/2005/ajar/tab Tabulator]: AJAX and Semantic Web - browser
+**[http://dig.csail.mit.edu/breadcrumbs/node/153 Slicing and dicing web data with Tabulator]
+*[http://simile.mit.edu/longwell/ SIMILE Longwell] is a web-based RDF browser
+*[http://simile.mit.edu/welkin/ SIMILE Welkin] - visualizes RDF models
+*[http://brownsauce.sourceforge.net/ BrownSauce] generic RDF browser
+*[http://www.foafnaut.org/ foafnaut] - SVG FOAF browser
+*[http://xml.mfd-consult.dk/foaf/explorer/ FoaF Explorer]
+*[http://haystack.csail.mit.edu/ Haystack]
+**[http://www.w3.org/2005/04/swls/BioDash/Demo/What%20is%20Haystack.html What is Haystack?]
+**[http://haystack.csail.mit.edu/developers Info for developers] - useful links
+**[http://www2003.org/cdrom/papers/poster/p339/p339-quan.htm Haystack: A Platform for Authoring End User Semantic Web Applications]
+*[http://wiki.nrcc.noklab.com/SwapMe/OINK OINK]: Open Integration of Networked Knowledge (by Ora Lassila, based on Wilbur)
+*[http://triplestore.aktors.org/browse/ AKT Triplestore Browser]
+
+====Editors====
+*[http://www.autistici.org/bakunin/morla/ morla] is a multiplatform editor of RDF documents
+*[http://www.w3.org/2001/11/IsaViz/ IsaViz]: A Visual Authoring Tool for RDF
+*[http://protege.stanford.edu/plugins/rdf/ RDF Backend for Protégé] - create, import, and save RDF(S) files in  in Protégé
+*[http://www.w3.org/2001/sw/Europe/events/foaf-galway/papers/pp/fentwine/ Fentwine]: A navigational RDF browser and editor
+*[http://jibbering.com/rdf/editor.html Simplistic RDF Editor] - needs SVG
+*[http://www.cs.rpi.edu/~puninj/rdfeditor/ RDF Editor in Java] - simple
+*[http://rdfweb.org/people/damian/2001/10/RDFAuthor/ RDFAuthor] is a tool designed to ease the pain of creating RDF instance data. Authoring is largely a matter of dragging in data and binding it together using a graphical interface.
+*Eclipse-based
+**[http://www.rdfx.org/ RDFX] is a suite of plug-ins for the Eclipse platform which together provide a framework for experimentation with RDF
+
+====IDEs====
+[http://www.topbraidcomposer.com/features.html TopBraid Composer]
+*commercial development environment for W3C's Semantic Web standards RDF Schema, the OWL Web Ontology Language, the SPARQL Query Language and the Semantic Web Rule Language (SWRL)
+*provides scalable database backends (Jena, AllegroGraph, Oracle 10g and Sesame) as well as multi-user support
+
+===Parsers===
+*[http://jibbering.com/rdf-parser/ Simple javascript RDF parser]
+*[http://www.hpl.hp.com/personal/jjc/arp/ ARP]: Another RDF Parser (Jena RDF/XML Parser, from Jeremy Carroll @ HP)
+*[http://www.cgi-interactive-uk.com/mysql_dmoz_rdf_parser.html MySQL Dmoz RDF Parser] - This Perl script converts the Dmoz content.rdf file from the RDF format into a text file which can be easily loaded into MySQL.
+
+===Visualization===
+*[http://esw.w3.org/topic/VisualizingRDF Visualizing RDF] - list of tools that allow viewing RDF document as a diagram
+*[http://www.dfki.uni-kl.de/~grimnes/2006/03/RDFRoom/ RDFRoom] is an isometric RDF viewer. It gives the user ways to view and manipulate his RDF data that might make him see the data in a brand new perspective.
+*[http://www.w3.org/2001/11/IsaViz/ IsaViz] is a visual environment for browsing and authoring RDF models represented as graphs.
+**[http://www.xml.com/pub/a/2003/12/03/gss.html Styling RDF Graphs with GSS] - [http://www.w3.org/2001/11/IsaViz/gss/gssmanual.html Graph Stylesheets]
+*[http://www.ilrt.bris.ac.uk/discovery/rdf-dev/rudolf/rdfviz/ Rudolf]: online RDF Visualizer
+*[http://www.daml.org/2003/09/dumpont/ DumpOnt] is a program to display the class and property hierarchies present in an RDF Schema or DAML+OIL or OWL ontology (based on Jena2).
+*[http://www.co-ode.org/downloads/owldoc/co-ode-index.php OWLDoc] is a tool that generates JavaDoc style html page documentation for an OWL ontology.
+*[http://simile.mit.edu/gadget/ Gadget] is an XML inspector.  It is able to process large quantities of well-formed XML and produce a condensed summary of that data.  [http://simile.mit.edu/gadget/live/ Live demo]
+*[http://semweb.salzburgresearch.at/apps/rdf-gravity/index.html RDF-Gravity] is a tool for visualising RDF/OWL Graphs/ontologies (Java Web Start)
+
+===Other===
+*[http://www.ontoware.org/ Ontoware] - Semantic Web related software projects
+*[http://www.w3.org/RDF/Validator RDF Validator]
+*RDB to RDF
+**[http://www.w3.org/2007/03/RdfRDB/ W3C Workshop on RDF Access to Relational Databases]
+**[http://www.wiwiss.fu-berlin.de/suhl/bizer/d2rmap/d2rmap.htm D2R Map] - Database to RDF Mapping Language and Processor
+**[http://www.wiwiss.fu-berlin.de/suhl/bizer/d2rq/ D2RQ] - Treating Non-RDF Databases as Virtual RDF Graphs
+***[http://www.wiwiss.fu-berlin.de/suhl/bizer/d2rq/spec/ D2RQ User Manual and Language Specification]
+***[http://www2003.org/cdrom/papers/poster/p004/p4-bizer.html D2R MAP] - a database to RDF mapping language (poster from WWW2003)
+***[http://www.w3.org/2007/03/RdfRDB/papers/d2rq-positionpaper/ D2RQ — Lessons Learned]: position paper for the W3C Workshop on RDF Access to Relational Databases
+**[http://www.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/ D2R Server] - SPARQL endpoint for relational databases; combines the D2RQ API and Joseki SPARQL Server to map a database's contents into a virtual RDF graph that can be accessed over the SPARQL protocol. It is bundled with a Jetty webserver and aims at being easy to set up and use.
+**[http://kaon.semanticweb.org/alphaworld/reverse KAON Reverse] is a prototype GUI for mapping relational database content to ontologies.
+*[http://simile.mit.edu/RDFizers/ RDFizers] are tools that allow to transform existing data into an RDF representation.
+*[http://tripletest.sourceforge.net/ Tripletest] is a testing framework for RDF triplestores
+*[http://www.w3.org/2005/04/swls/BioDash/Demo/ BioDash] is a Semantic Web prototype of a Drug Development Dashboard that associates disease, compounds, drug progression stages, molecular biology, and pathway knowledge for a team of users (built on Haystack)
+*RDF crawlers
+**[http://www.hackdiary.com/archives/000030.html RDF crawler] - uses Jena RDF toolkit to spider the web gathering up semantic web data and to store it in any of Jena's backend stores
+**[http://ontobroker.semanticweb.org/rdfcrawl/ OntoBroker] - Java-based
+*[http://pike.ida.liu.se/ Pike] is a dynamic programming language for the semantic web with a syntax similar to Java and C ([https://pike.ida.liu.se/projects/sweb/ examples] of Semantic Web support)
+
+====Benchmarks====
+[http://swat.cse.lehigh.edu/projects/lubm/ Lehigh University Benchmark (LUBM)] is developed to facilitate the evaluation of Semantic Web repositories in a standard and systematic way
+
+===RDF Schema===
+*[http://www.w3.org/2002/06/rdfs2html RDF Schema formatter] - online tool that extracts human readable information from a RDF Schema
+
+==Ontology editors==
+*[[Wikipedia:Ontology_editor|List of ontology editors]]
+*[http://www.xml.com/pub/a/2004/07/14/onto.html Ontology tools survey] @ xml.com from 2004
+*[http://protege.stanford.edu Protégé] is a free, open source ontology editor and knowledge-base framework
+**[http://protege.stanford.edu/plugins/owl/index.html Protégé OWL Plugin] - ontology editor for the Semantic Web
+**[http://protege.cim3.net/cgi-bin/wiki.pl?ProjectsThatUseProtege Projects that use Protégé]
+**[http://owlseditor.semwebcentral.org/ OWL-S Editor] is a Tab Widget plugin for Protégé
+*[http://oiled.man.ac.uk/ OilEd] is an ontology editor allowing the user to build ontologies using DAML+OIL
+*[http://ontolingua.stanford.edu/ Ontolingua]
+*[http://www.mindswap.org/2004/SWOOP/ SWOOP] A Hypermedia-based Featherweight OWL Ontology Editor
+*[http://coe.ihmc.us/ CmapTools Ontology Editor (COE)] - concept maps provide a human-centered interface to display the structure, content, and scope of an ontology
+**[http://cmap.ihmc.us/ CmapTools] knowledge modeling kit from the Institute of Human and Machine Cognition (IHMC)
+**[http://ihmc.us/research/projects/Cmaps/ CmapTools project description]
+*[http://owl-eclipse.projects.semwebcentral.org/ SweDE] is built on the Eclipse IDE, includes an OWL editor with helpful features like syntax highlighting, autocompletion, and error-detection. It also currently integrates existing tools like the OWL Validator, Kazuki (OWL to Java code generator), and DumpOnt (Ontology Visualizer).
+*[http://www.m3t4.com/semantic.jsp m3t4.studio Semantic Toolkit] - RDF and OWL editors for the Eclipse IDE.
+**[http://wiki.m3t4.com/display/SemToolkit/ m3t4 wiki]
+*[http://www.mindswap.org/2005/SMORE/ SMORE] - Create OWL Markup for HTML Web Pages
+*[http://annotation.semanticweb.org/ontomat OntoMat-Annotizer] is a user-friendly interactive webpage annotation tool.
+*[http://www.ei.sanken.osaka-u.ac.jp/hozo/eng/index_en.php Hozo] - from Osaka University, Java-based
+*Commercial
+**[http://www.alphaworks.ibm.com/tech/semanticstk IBM Integrated Ontology Development Toolkit] - IODT
+***[http://www.eclipse.org/emft/projects/eodm/ EODM Workbench] is part of IODT
+**[http://ontoedit.com/ OntoStudio] is the leading engineering environment for ontologies and for the development of semantic applications; based on Eclipse
+**[http://www.altova.com/products_semanticworks.html Altova SemanticWorks] - allows to graphically create and edit RDF instance documents, RDFS vocabularies, and OWL ontologies with full syntax checking
+
+==Ontology Managers==
+*[http://kaon.semanticweb.org/ KAON] is an open-source ontology management infrastructure targeted for business applications. It includes a comprehensive tool suite allowing easy ontology creation and management and provides a framework for building ontology-based applications. An important focus of KAON is scalable and efficient reasoning with ontologies.
+*[http://kaon2.semanticweb.org/ KAON2] is an infrastructure for managing OWL-DL and SWRL ontologies.
+*[http://www.ksl.stanford.edu/software/chimaera/ Chimaera] is a software system that supports users in creating and maintaining distributed ontologies on the web
+*[http://informatics.mayo.edu/ LexGrid] - an infrastructure for interlocking biomedical concepts across vocabularies and ontologies
+*[http://www.alphaworks.ibm.com/tech/wom IBM Web Ontology Manager]
+
+==Query==
+*[http://sparql.sourceforge.net/ SPARQL engine]
+*[http://jena.sourceforge.net/sparql2sql/ sparql2sql] - a query engine for SPARQL over Jena triple stores
+*[http://www.thefigtrees.net/lee/blog/2006/04/sparql_calendar_demo_a_sparql.html Javascript SPARQL library and AJAX SPARQL client]
+*[http://practicalrdf.info/class_rdql/query.htm RDF Query-o-matic Light]
+*[http://www.sparql.org/ SPARQLer] - an RDF Query server
+
+==Rule engines==
+*A ''reasoner'' is a service that takes the statements encoded (asserted) in an ontology as input and derives (infers) new statements from them. In particular, OWL reasoners can be used to:
+**Reveal subclass/superclass relationships among classes
+**Determine the most specific types of individuals
+**Detect inconsistent class definitions
+*[[Wikipedia:Inference_engine|Inference_engine]]
+*[http://dl.kr.org/dig/interface.html DIG interface] provides uniform access to Description Logic (DL) Reasoners ([http://dig.sourceforge.net/ DIG interface] on SourceForge)
+**a number of reasoners including FaCT++, RACER, and Pellet provide support for DIG
+**a number of ontology editors (including OilEd, Protege and SWOOP) can use the DIG interface to communicate with such reasoners
+**Jena framework also makes use of DIG for reasoning over OWL ontologies
+*[http://infomesh.net/2001/cwm/ CWM] - Closed World Machine
+*[http://www.mindswap.org/~katz/pychinko/ Pychinko]: Rete-based RDF friendly rule engine
+*[http://www.mindswap.org/2003/pellet/ Pellet] is an open-source Java based OWL DL reasoner.  It can be used in conjunction with both Jena and OWL API libraries and also provides a DIG interface.
+*[http://owl.man.ac.uk/factplusplus/ FaCT++] is the new generation of the well-known [http://www.cs.man.ac.uk/~horrocks/FaCT/ FaCT] OWL-DL reasoner
+*[http://homepage.ntlworld.com/peterhi/sie.html SIE] - Simple Inference Engine written in Ruby
+*[http://www.jboss.org/products/rules JBoss Rules] - an open source and standards-based business rules engine
+*[http://genie.sis.pitt.edu/ SMILE] (Structural Modeling, Inference, and Learning Engine) is a fully portable library of C++ classes implementing graphical decision-theoretic methods
+
+===Commercial===
+[http://www.racer-systems.com/ RacerPro] (Renamed ABox and Concept Expression Reasoner) is an OWL reasoner and inference server (also available from [http://www.franz.com/products/racer/ Franz Inc])
+
+==Web Services==
+*[http://dsg.port.ac.uk/projects/uisb/ The Universal Information Service Browser (UISB) Project] The aim of the UISB Project is to investigate and improve interaction with Information Services used in a range of distributed environments, in the first instance these will include Web Services, UDDI and the Jini Lookup Service.
+
+==Live demos==
+*[http://thefigtrees.net/lee/sw/demos/ Lee Feigenbaum: semantic web demos]
+*[http://librdf.org/query Redland Rasqal RDF Query Demo]
+*[http://librdf.org/parse Redland Raptor RDF Parser Demo]
+
+==Companies==
+*[http://www.oracle.com/technology/tech/semantic_technologies/index.html Oracle Semantic Technologies Center]
+*[http://www.hpl.hp.com/semweb/ Semantic Web Research at HP Labs]
+*[http://www.alphaworks.ibm.com/topics/semantics IBM alphaWorks : Semantics]
+*[http://research.nokia.com/research/programs/semantic-web/index.html Nokia Semantic Web] - Research Program
+**[http://research.nokia.com/research/projects/swapme/index.html SwapMe (Semantic Web Application Platform for Mobile Ecosystems)] project will develop a new software architecture that will enable the mobile ecosystem to take maximum advantage of the power of the Semantic Web data model
+*[http://www.teranode.com/products/semantic_web.php Teranode XDA]
+*[http://radarnetworks.com/ Radar Networks]
+*[http://www.metaweb.com/ Metaweb Technologies]
+*[http://www.powerset.com/ Powerset] - natural language search
+*[http://www.franz.com/ Franz Inc] develops [http://www.franz.com/products/allegrograph/ AllegroGraph] triple-store which works with [http://www.franz.com/products/racer/ RacerPro] reasoner and [http://www.topbraidcomposer.com/features.html TopBraid Composer] Semantic Web IDE
+
+</div>
+{{Synthetic biology bottom}}

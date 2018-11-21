@@ -1,0 +1,158 @@
+10.6.06
+=== CRs table===
+les CRs et leur matchs pour xie et al (cutoff?) conserved, (oui, je sais qu'il y a un probleme avec CR20...)
+{| border="1"
+||MODULE||J$MPITX2||J$MPAX-4||JM$TGATTTRY||JM$AAAYWAACM||J$MFOXO1||JM$TTANTCA||JM$YKACATTT||JM$WTGAAAT||JM$RAAGNYNNCTTY||JM$YATTNATC||J$MSRY||J$MIRF-1||J$MHNF-3||JM$AAANWWTGC||JM$WGTTNNNNNAAA||JM$CTAWWWATA
+|-
+|| CR2|| 1||2||0||0||0||1||1||0||0||0||0||0||0||0||0||0
+|-
+|| CR3|| 1||0||1||1||1||0||0||0||0||0||0||0||0||0||0||0
+|-
+|| CR1|| 0||0||0||0||0||0||0||1||2||0||0||0||0||0||0||0
+|-
+|| CR6|| 0||0||0||0||0||0||0||1||0||0||0||0||0||0||0||0
+|-
+|| CR7|| 2||0||0||0||2||0||0||0||0||1||0||0||0||0||0||0
+|-
+|| CR4|| 1||2||0||0||0||0||0||0||0||0||0||0||0||0||0||0
+|-
+|| CR5|| 2||0||0||0||0||0||1||0||0||0||0||0||0||0||0||0
+|-
+|| CR21|| 1||0||0||1||0||0||1||0||0||3||0||0||1||0||0||0
+|-
+|| CR8|| 0||0||1||2||1||0||0||0||0||0||1||1||2||0||0||0
+|-
+|| CR9|| 0||0||0||0||0||0||1||1||0||1||0||0||0||1||0||0
+|-
+|| CR20|| 0||0||0||0||0||0||1||1||0||0||0||0||0||0||0||0
+|-
+|| CR16|| 0||0||0||0||0||1||0||0||0||0||0||0||0||0||0||0
+|-
+|| CR10|| 1||0||0||0||0||0||0||0||0||0||0||0||0||0||0||0
+|-
+|| CR11|| 2||4||0||0||1||1||0||0||0||1||0||0||0||0||1||0
+|-
+|| CR13|| 0||0||0||1||0||0||0||0||0||0||0||0||1||0||0||2
+|-
+|| CR18|| 0||0||0||0||0||0||1||0||0||0||0||1||0||0||0||0
+|-
+|| CR19|| 0||0||0||0||0||1||0||0||0||0||0||0||0||0||0||0
+|-
+|| CR22|| 3||0||1||0||0||0||0||0||0||0||0||2||1||1||0||0
+|-
+
+|}
+----
+28.5.06
+
+locus pitx2 avec words5, words6, gatta, fox et meis
+[[http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg17&position=chr4:-113395551&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/Locus-Words-Conserved-FoxHDMeis.bed]]
+----
+
+19.5.06
+
+Genes with conserved up/downstream sequences in ci/cs:
+AK7  ALS2CR2  ATP5O  C14ORF92  CAPN7  CAPSL  DAG1  DUSP8  DYRK1B  ENSP00000239392  ENSP00000241001  ENSP00000248545  ENSP00000261522  ENSP00000263263  ENSP00000280051  ENSP00000286492  ENSP00000288710  ENSP00000292314  ENSP00000295469  ENSP00000298565  ENSP00000306148  ENSP00000313157  ENSP00000313933  ENSP00000317360  ENSP00000328163  ENSP00000331791  ENSP00000332257  ENSP00000333335  ENSP00000333552  FOXF1  GPC2  GSPT1  GTL3  HHEX  IRX3  JUP  KIAA1001  LBX1  MTA2  NINJ2  NKD1  NKX2-3  NUP205  NYD-SP14  PCSK2  POU4F3  Q53EP3_HUMAN  Q5TCJ4_HUMAN  Q96DN9_HUMAN  Q9HBQ9_HUMAN  Q9Y5L9_HUMAN  ROBO3  RPS19  SALL3  SPRY1  TBX3  TFEC  TLE2  USF1  VEZT
+
+Cette liste n'est PAS complete!! Il manque tous les genes qui ne sont pas traduit pas orthologs.txt de ANISEED (--> les numero ENSPxxx surtout). Faut voir les fichiers INTERPRO d'anissed et faut que max bouge un peu le popontin avec GO.
+
+----
+
+23.1.05
+
+* Scan D1 module for
+** All matches are conserved in Ci/Cs, 
+** high core stringency 0.92 
+** overall similarity 0.8
+** remove worst matrices: 
+** remove 120 top useless matrices (-> scanning 10 kb random sequences, count matches)
+** remove all matrices vom plants (P$...)
+** remove matrix made from less than 6 binding sites 
+** remove matches that do not overlap (with the core!) a mutation made by Lionel (e.g. MEIS was removed here)
+** remove factors that do not exist in C. intestinalis, that are not expressed in anb/nervous system/developmental role
+*** Still many matches for FOXes/HNF3 left:
+*** HFH3/FOXI: epidermis, (maybe nervous system as well?) [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?cies008h21 ghost]
+**** HFH3/ciFOXIb: mesenchyme
+**** HFH/ciFoxIb: somewhat stronger in the nervous system [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?cies004e21 ghost]
+*** DRIL1: nervous system,nervecord,epidermis,unidentifiable [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?citb014c21 ghost]; articles in pubmed: [http://cgd.aacrjournals.org/cgi/reprint/13/3/95?ijkey=f2457d57604d18b9eda4259d0273a22ceb534e21 family with junjomi] [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=retrieve&db=pubmed&list_uids=10838570&dopt=Abstract from the desert]
+*** Fushi Tarazu: No expression in head -> deleted from matches. [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?cits041n17 ghost]
+*** BRC Z4: No expression observed -> deleted from matches
+*** Hox11/NCX: No data in ghost, one [http://www.blackwell-synergy.com.gate1.inist.fr/doi/full/10.1111/j.1525-142X.2005.05045.x article] in pubmed, Gene ontology: "nervous system" but in anus (?) for sea urchin. 
+*** FALZ: nervous system? [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?cieg047o09 ghost]
+*** chx10=ceh10: expression in Endostyle,Pharyngeal gill,Neural gland,Stomach [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?CLSTR00858 ghost]
+*** IPF1: Nerve cord,Brain, also in pharynx, and in the etire trunk [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/txtgetr2.cgi?CLSTR00531 ghost]
+*** PBX1: Notochord,Epidermis,Endoderm,Nerve cord,Brain,Papilla [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?CLSTR00905 ghost]
+*** E2F1: Maternal signal was observed throughout embryogenesis, but somewhat stronger in the nervous system and the mesenchyme [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?cieg020g18 ghost]
+*** P300: nervous system,nervecord, weak [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?cicl061a19 ghost]
+*** DFD = HOX4 putative: expression in mesenchyme -> deleted from match-list
+*** GR = Glucorticoid receptor: no images in ghost, strange -> deleted from list
+*** MEF2: nervous system,endoderm [http://ghost.zool.kyoto-u.ac.jp/cgi-bin3/photoget2.cgi?cieg033j06 ghost]
+*** also deleted: V$BARBIE_01 V$TBP_Q6 V$PADS_C V$LDSPOLYA_B V$SPZ1_01 I$DFD_01
+
+* Result: 48 matches, many foxes: [http://genome.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_121:-180910&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/D1-092-08-Lionel.bed UCSC]
+
+Stop reading here. I still have to do the rest this night...
+
+----
+* Scan vertebrate alignments for combinations of all fox/all hnf3/pitx/dril1/
+** [http://genome.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_121:170511-170813&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/cutoff08-fox.bed cutoff 0.8, filtered to contain only matrices that contain HNF/FOX/SMAD/MEIS/POU/PAX in their name]
+*** You can see that the site at FOX_Q2 matches also HNF3B and various other FOXes
+** Just for information: [http://genome.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_121:170519-170817&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/cutoff09.bed D1 with ALL matches against Transfac at cutoff 0.9]
+
+*Scan otx2, pitx1, pitx2, pitx3, dlx2, dlx4, msx2 for non-conserved matches of:
+- all matches of FOX/HNF matrices
+- all matches for PITX matrix 
+
+*Scan otx2, pitx1, pitx2, pitx3, dlx2, dlx4, msx2 for conserved matches in 4 genomes of
+- all matches for conserved FOX/HNF/PITX
+- using conserved 5: all matches for clusters FOX/PITX2 50/100/150/200
+- using conserved 5: all matches for clusters FOX/PITX2 50/100/150/200
+
+
+*Scan otx2, pitx1, pitx2, pitx3, dlx2, dlx4, msx2 for conserved matches in 5 genomes of
+- all matches for conserved FOX/HNF/PITX
+- using conserved 5: all matches for clusters FOX/PITX2 50/100/150/200
+
+
+----
+
+12.12.05
+
+Module: 
+* gatta + Transfac Matrix V$Fox_Q2, 
+* Strand has to be identical (both + or both -)
+* Minimum Score for matrix against sequence: Fox_Q2=0.9 [http://www.genomatix.de/cgi-bin/matinspector_prof/matrix_help.pl?s=754c8e029e6d4c498cf35494f4c12ac2&NAME=U$V_FOX_Q2 matrix info on genomatix server]
+* Distance: 12-50 (genomatix-style numbers!)
+
+=== On UCSC Human Genome ===
+Tu peut cliquer sur les genes, pour etre renvoye sur le browser UCSC avec les annotations de genomatix
+
+*[http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr14:56342800-56355801&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/hg17_otx2.bed otx2] trois dont deux match tres bien conserve! (pas conserve dans le zebrafish)
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr4:111907300-111920691&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/hg17_pitx2-2.bed pitx2] avec les CRs des Lionel et les resultats du model, un match conserve, un deuxieme match pas conserve
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr2:172797657-172797703&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/hg17_dlx2.bed dlx2] un match, pas conserve
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr10:103988304-103988351&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/hg17_pitx3.bed pitx3] un match semi-conserve, le match putatif fox est conserve, pas le gatta
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr17:45407297-45407349&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/hg17_dlx4.bed  dlx4] pas de match, seulement un downstream
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr5:174072995-174089695&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/hg17_msx2.bed msx2] un upstream, un downstream, pas de match conserve
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr5:134396365-134408694&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/hg17_pitx1.bed pitx1] deux matchs, pas conserves
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr2:172797657-172797703&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/hg17_dlx2.bed dlx2] deux matchs, pas conserves
+
+=== On UCSC Zebrafish Genome ===
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=zebrafish&position=chr14:35100322-35174672&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/dr-knypek.bed knypek], pas de match conserves, en fait: pourquoi est-ce que c'est important? ce gene semble avoir une conservation beaucoup moins forte que les autres, il n'y a presque rien conserve a partir des exons...
+
+=== Background matches ===
+
+* [http://genome.ucsc.edu/cgi-bin/hgTracks?org=human&position=chr4:60000519-60099411&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/100k-background.bed 100k genome humain choisi au pif] et le matches pour le fox tout seul, le gatta tout seul et notre module. il y a 100 matches pour Fox et 12 pour notre module -> Fox: tout le 1000bp, notre module tout le 10kb a peu pres. Mais la, on parle pas de la conservation: seulement 1-2% du genome sont conserve, il trouve beaucoup moins que "tout le 10kb" un match conserve sur le genome humain.
+
+=== Ciona ===
+* Pas de match dans pRORa, pRORb (a refaire)
+* DBTGR: Matches conserves dans les promoteurs de Nodal, ACL, MA1, Pitx-Lionel, GI1, peut-etre msxb (pas de C.savigny dans DBTGR). Voir aussi [[la liste complete des matches DBTGR]]
+* Pout le Match dans D1, voir le serveur [http://hgwdev-kate.cse.ucsc.edu/cgi-bin/hgTracks?hgsid=1405309&hgt.out2=+3x+&position=Scaffold_121%3A170485-170813 UCSCbeta] de Kate avec la conservation Ci,Cs, Oikopleura (sic!) et Bf (sic sic!)
+
+A partir d'ici, je te donne le liens vers le serveur de Kate Rosebloom, c'est ca machine, elle est lente mais jusqu'ici pour moi, ca a bien marche:
+* [http://hgwdev-kate.cse.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_98:243892-250698&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/otx2.bed otx2] pas genial, un match a cote d'une region conserve
+* [http://hgwdev-kate.cse.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_193:100742-100799&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/dll.bed dll=dlx?] pas de match conserve
+* [http://hgwdev-kate.cse.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_96:14219-16561&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/foxe.bed foxe] pas de match conserve 
+* [http://hgwdev-kate.cse.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_29:22859-23653&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/msxb.bed msxb] deux a cote ET conserve!! genial!
+* [http://hgwdev-kate.cse.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_121:169838-179227&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/pitx.bed pitx] un match dans D1, un autre CONSERVE dans l'intron 1. Ca doit etre P2, selon page 43-x de la these de Lionel
+* [http://hgwdev-kate.cse.ucsc.edu/cgi-bin/hgTracks?db=ci1&position=Scaffold_337:72266-73446&hgt.customText=http://www.stud.uni-potsdam.de/~haussler/ucsc/pax6.bed pax6] pax6 and six3 sont lie au developpement de la lentille? deux matchs semi-conserve dans deux introns.
+* pou4: pas de match

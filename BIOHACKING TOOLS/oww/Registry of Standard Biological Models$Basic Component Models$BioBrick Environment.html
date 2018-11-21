@@ -1,0 +1,43 @@
+==BioBrick Environment Architecture==
+
+{| border="1"
+|
+*'''Description''': BioBrick environment model to define time and units used in simulations
+*'''Hypothesis''': 
+**n/a
+*'''Inputs''':
+**none
+*'''Outputs''':
+**time
+*'''Characteristic parameters''':
+**Unit: zero order reaction
+**Unit: first order reaction
+**Unit: second order reaction
+**Unit: molarity
+**Unit: ...
+| align= "center" | [[Image:VBB_Environment.png|thumb|left|300px|Environment Brick Architecture]]
+|}
+
+==CellML structure (CellML 1.1 spec)==
+*'''Component''': Environment
+*'''Units''': 
+**Zero order reaction
+**First order reaction
+**Second order reaction
+*'''Variables''':
+**time (public interface = out / initial value = 0.)
+*'''MathML'''
+**none
+
+==Examples==
+{| border="1"
+! BioBricks from Registry !! CellML file
+|-
+|not applicable || [[Media:BioBrick_Environment_Model.xml]]
+|-
+|not applicable || other environment
+|}
+
+==Comments==
+*This component is used to promote consistency in the use of units across all the other components (import mechanism)
+*This component defines the time in our simulations.

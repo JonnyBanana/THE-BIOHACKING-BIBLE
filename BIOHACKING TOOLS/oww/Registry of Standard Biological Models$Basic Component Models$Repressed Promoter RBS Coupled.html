@@ -1,0 +1,124 @@
+==Repressed Promoter RBS Coupled Architecture==
+
+{| border="1"
+|
+*'''Description''': Promoter coupled to RBS to provide a synthesis rate of protein depending on the amount of repressor
+*'''Hypothesis''': 
+**Constant and continuous transcription and translation rate
+**Maximum synthesis rate depends on number of gene copies
+**quasi steady state approx on mRNA
+**unlimited resources for transcription and translation (excess in polymerase ...)
+**Binding of the repressor on the promoter (Hill-function-type equation)
+*'''Inputs''':
+**repressor
+**nb-gene-copies
+*'''Outputs''':
+**Synthesis rate
+*'''Characteristic parameters''':
+**maxK (max-transcription-rate-per-gene)
+**Kd (dissociation-constant)
+**n (Hill-coefficient)
+| align= "center" | [[Image:VBB_RepressedPromoterRBS.png|thumb|left|400px|Repressed Promoter/RBS Brick Architecture]]
+|}
+
+==CellML structure (CellML 1.1 spec)==
+*'''Component''': RepressedPromoterRBSCoupled
+*'''Units''': 
+**Imported from Environment component
+*'''Variables''':
+**nb-gene-copies (public interface = in / init value = 1.0)
+**maxSynthesisRate (public interface = none / init value = XXX)
+**Kd (dissociation constant) (public interface = none / init value = XXX)
+**n (Hill Coefficient) (public interface = none / init value = XXX)
+**synthesisRate (public interface = out / init value = XXX)
+**repressor (public interface = in )
+*'''MathML'''
+**<amsmath>synthesisRate = \frac{nbGeneCopies*maxSynthesisRate}{K_d^{n}+[repressor]^{n}} </amsmath>
+
+==CellML File==
+
+<syntax type='xml'>
+
+
+<?xml version="1.0"?>
+
+<model xmlns="http://www.cellml.org/cellml/1.0#"
+       xmlns:cmeta="http://www.cellml.org/metadata/1.0#"
+       xml:base="file:///C:/CellML_models/promoter-RBS_repressed.cml"
+       cmeta:id="promoter-RBS_repressed"
+       name="promoter-RBS_repressed">
+  
+<!-- LIST OF COMPONENTS -->
+
+<component name="promoter-RBS_repressed">
+
+<variable name="synthesisRate"                initial_value=""    public_interface="out"   units="moles_per_second"/>
+<variable name="nb_gene"                      initial_value="1"   public_interface="none"  units="dimensionless"/>
+<variable name="synthesisRatePerGene"         initial_value="1"   public_interface="none"  units="moles_per_second"/>
+<variable name="repressorConcentration"       initial_value="0"   public_interface="in"    units="mole"/>
+<variable name="dissociation_constant"        initial_value="1"   public_interface="none"  units="dimensionless"/>
+<variable name="hill_coefficient"             initial_value="2"   public_interface="none"  units="dimensionless"/>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="protein synthesis rate">
+
+  <apply id="synthesisRate">
+     <eq/>
+     <ci>synthesisRate</ci>
+  <apply>
+     <divide/>
+  <apply>
+     <times/>
+     <ci>nb_gene</ci>
+     <ci>synthesisRatePerGene</ci>
+  </apply>
+  <apply>
+     <plus/>
+  <apply>
+     <power/>
+     <ci>dissociation_constant</ci>
+     <ci>hill_coefficient</ci>
+  </apply>
+  <apply>
+     <power/>
+     <ci>repressorConcentration</ci>
+     <ci>hill_coefficient</ci>
+  </apply>
+  </apply>
+  </apply>
+  </apply>
+	
+</math>
+
+</component>
+
+
+<!-- END LIST OF COMPONENTS -->
+
+
+
+<!-- LIST OF IMPORTS -->
+
+<import xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="file://C:\CellML_models\units.cml">
+
+      <units name="moles_per_second" units_ref="moles_per_second"/>
+      <units name="per_second"       units_ref="per_second"/>
+</import>
+
+<!-- END LIST OF IMPORTS -->
+
+
+<!-- LIST OF CONNECTIONS -->
+
+
+<!-- END LIST OF CONNECTIONS -->
+
+
+</model>
+
+</syntax>
+
+
+==Comments==
+*This component is simply a container providing the synthesis rate specific to a constitutive promoter coupled to a RBS and a given level of the repressor
+*To characterize this part you need to get {maxSynthesisRate} and {sensitivity}. It can be achieved experimentally using a quantitative GFP assay. Measurement of GFP levels should be done at steady state with different levels of the repressor.

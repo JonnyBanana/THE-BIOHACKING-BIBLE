@@ -1,0 +1,54 @@
+Quick Change Protocol-mBBP 1-360 fixing a glycine mutation<br><br>
+
+Forward and Reverse Mutagenic primers: <br>
+Both primers should contain the mutations of interest<br>
+25-45 bases in length<br>
+Tm should be greater than or equal to 78°C<br>
+Calculate for these primers with mutations:<br>
+	Tm=81.5+0.41(%GC) – 675/N	(N= # of all bases EXCEPT the mutation bases)<br>
+The mutation should be in the middle of the primer with 10-15 bases of correct sequence on either side<br>
+Primers should have a GC content of 40% or more and should terminate in one or more C’s or G’s.<br>
+Primers must be cleaned using a polyacrylamide gel, otherwise mutation efficiency decreases.<br>
+Primer content during PCR must be in high excess of the template (changing template conc may help)<br><br>
+
+STEP 1:  designing the primers<br>
+Want to fix the glycine mutation in mBBP 1-360 plasmid in pgex<br>
+ATGGCGACCGGAGCGAACGCCACGCCGTTGGACTTCCCAAGTAAGAAGCGGAAGAGGAGCCGCTGGAACC
+AAGACACAATGGAACAGAAGACAGTGATTCCAGGAATGCCTACAGTTATTCCCCCTGGACTTACTCGAGA
+ACAAGAAAGAGCTTATATAGTGCAACTGCAGATAGAAGACCTGACTCGTAAACTGCGCACAGGAGACCTG
+GGCATCCCCCCTAACCCTGAGGACAGGTCCCCTTCCCCTGAGCCCATCTACAATAGCGAGGGGAAGCGGC
+TTAACACCCGAGAGTTCCGCACCCGCAAAAAGCTGGAAGAGGAGCGGCACAACCTCATCACAGAGATGGT…<br><br>
+W/A= TGG to GCG<br>
+GC= 55%<br>
+TM=73°C<br><br>
+
+AemBBP1-360gly F or R<br>
+5’ CCAAGTAAGAAGCGGAAGAGGAGCCGCTGGAACCAAGACA Forward<br>
+5’ TGTCTTGGTTCCAGCGGCTCCTCTTCCGCTTCTTACTTGG Reverse<br><br>
+
+STEP 2: PCR with Advantage taq, 16 cycles<br><br>
+ 
+PCR reaction<br>
+38µl	water<br>
+5µl	thermalace buffer<br>
+1µl	50xdNTP<br>
+2µl	forward 10mM<br>
+2µl	reverse 10mM<br>
+1µl	template<br>
+1µl	advantage taq<br>
+
+program:<br>
+95°C 30sec<br>
+95°C 30sec, 55°C 1 min, 68°C 6min (16 cycles total)<br>
+37°C infinity <br><br>
+
+STEP 3 Dpn 1 digestion (digestion of methylated DNA)<br>
+Add 1µl of Dpn1 enzyme to each reaction.<br>
+Mix well<br>
+Incubate each reaction for 1 hr at 37°C in the thermocycler with the hot bonnet to digest the template<br><br>
+
+STEP 4  ethanol ppt, resuspend into 8 µl, ligate overnight<br><br>
+
+STEP 5: transformation into tg1 cells, use 5µl<br><br>
+
+STEP 6: sequencing with pGEX3 primers, cut inserts to see if the insert is still the proper size, may need an internal primer

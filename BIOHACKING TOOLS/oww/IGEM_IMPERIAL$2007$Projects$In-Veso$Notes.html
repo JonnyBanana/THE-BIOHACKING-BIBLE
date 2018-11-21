@@ -1,0 +1,191 @@
+=In-Veso Gene Expression: Notes=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/Implementation|Implementation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/TestingValidation|Testing/Validation]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/In-Veso/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/In-Veso/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+
+__TOC__
+
+<br style="clear:both">
+
+[[image:IC07_veso-powers.png|right|150px]]
+__TOC__
+
+== [[IGEM:IMPERIAL/2007/Projects/In-Veso/Presentations | Presentations]] ==
+
+
+==Veso Powers: International Bag of Lipids==
+
+{|align="right" style="width:400px; height:200px"
+| width="50%"| [[image:IC07_Normal_veso-powers.png|120px]]
+| width="50%"| [[image:IC07_X-ray_veso-powers.png|160px]]
+|- 
+|colspan="2"| <center><font size="3">'''Veso Powers - special imaging techniques reveal his lipid bi-layer membrane structure.'''</font></center>
+|}
+
+
+'''Veso Powers: Chassis of Mystery'''
+
+Some call it the liposome. Others prefer it known as the cell-free system. Whatever Veso Powers is, it is certainly not bacteria. Formed from the encapsulation of ''E. coli in vitro'' gene expression system in a phospholipid bilayer, no other known biological or synthetic barrier gives as many possibilities and as much flexibility to functionalize and establish simplistic controls inside and outside as these unilamellar vesicles - a demonstration of Veso Powers' synbio-mojo appeal. Veso Powers has even been claimed to be the somewhat like an artificial cell - certainly not something that we are suggesting. But by bringing Veso Powers to the iGEM arena, the Imperial College team hopes to spice and entice the competition with our contribution of the 'veso de novo' fantasy chassis. Yeah baby!
+
+
+'''Veso Powers: The Vesicle that Bagged Me'''
+
+Investigations into the potential of Veso Powers is not new. Indeed, more than 30 years of research has gone into optimizing Veso Powers for fast, effective and long-lasting comfort for gene expression. Using lubricating phospholipids as its protective membrane, Veso Powers rises to the occasion by delivering gene expression without the vindictiveness of bacteria - crosstalk, infectivity and mutations. Where bacteria falls short in certain areas, Veso Powers comes as a refreshingly flexible package that guarantees to blow the competition away. 
+
+
+'''Veso Powers: Glowmember'''
+
+Think flashy, think slick - think Glowmember. Veso Powers, equipped with in-built state of the art flasher detectors, has been sensitized to deliver effective expression of GFP when stimulated by its surroundings. This is evident in the two applications that we have - namely 'Cell by Date' and 'Infector Detector'. 
+
+
+
+<br clear="all">
+
+
+
+
+
+The vesicle chassis is an addition to the [http://parts.mit.edu/registry/index.php/Main_Page Registry of Standard Biological Parts]. In these pages we detail the techniques and characteristics of its use.
+
+The specification, design, modelling, implementation, and testing cycle is applied to the characterisation of the chassis. The specifications outline the characteristics of the chassis being sought, and the quantities that will be varied in experiments. The design elaborates how these characteristics will be obtained, including experimental protocols, and experiment schedules. Some characteristics are obtained from literature, and these are not covered in the design. In modelling, we seek to refine the experimental design, identify expected points of interest in the results, and provide a more abstracted description of the chassis itself. The section on implementation covers the actual experiments and their results. Finally, in testing and validation, the results are analysed and compared to the modelling and specifications.
+
+==The In Vitro Gene Expression System==
+The in vitro expression of proteins in cell-free extracts is an important tool for molecular biologists and has a variety of applications. The use of in vitro translation systems can have advantages over in vivo gene expression when the over-expressed product is toxic to the host cell, when the product is insoluble or forms inclusion bodies, or when the protein undergoes rapid proteolytic degradation by intracellular proteases. <cite>Basics</cite> The big advantage of the in vitro approach in our projects, is that it enables the detection of biofilm on medical devices and the detection of spoilage in meat, without actually having to place E.coli in contact with the medical devices or the meat.<br>
+
+There are two approaches to in vitro protein synthesis based on the starting genetic material: RNA or DNA. Standard translation systems use RNA as a template; whereas coupled transcription-translation systems start with DNA templates, which are transcribed into RNA then translated. DNA templates for coupled transcription-translation systems can be easily generated by PCR. The most frequently used cell-free systems consist of extracts from rabbit reticulocytes, wheat germ and E.coli. For the purposes of our projects, the E.coli system looks more attractive than the eukaryotic systems.<br>
+
+Unlike eukaryotic systems where transcription and translation occur sequentially, in E. coli systems, coupled transcription and translation occur simultaneously in the same tube under the same reaction conditions. This bacterial system gives efficient expression of either prokaryotic or eukaryotic gene products in a short amount of time. Capping of eukaryotic RNA is not required. Use of E.coli extract also eliminates cross-reactivity or other problems associated with endogenous proteins in eukaryotic lysates. In addition, the E. coli S30 extract system allows expression from DNA vectors containing natural E. coli promoter sequences. <cite>S30</cite> A more streamlined E.coli S12 extract has also been developed as an improvement to the S30 extract. <cite>S12</cite>
+
+Transcription can be performed by T7, SP16 or E.coli RNA polymerases. The E.coli RNA polymerase is the preferred choice for our projects because the reporter genes to be expressed are downstream of E.coli promoter sequences (such as pLux).
+
+==The In Veso Gene Expression System==
+
+{|align="right" style="width:400px; height:200px"
+| width="50%"| [[image:IC07_Normal_veso-powers.png|160px]]
+| width="50%"| [[image:IC07_X-ray_veso-powers.png|200px]]
+|- 
+|colspan="2"| <center><font size="3">'''Austin "Veso" Powers - special imaging techniques reveal his lipid bi-layer membrane structure.'''</font></center>
+|}
+
+The in veso gene expression system is somewhat like building an artificial cell. The E.coli in vitro gene expression system is encapsulated in a phospholipid vesicle. Unilamellar vesicles containing the E.coli cell extracts are produced in an oil–extract emulsion. The vesicles are then transferred into a feeding solution that contains ribonucleotides and amino acids to form a bilayer. To create a selective permeability for nutients, the α-hemolysin pore protein from Staphylococcus aureus is expressed inside the vesicle. Coupled transcription:translation of plasmid genes can thus be compartmentalized in the vesicles. <cite>Vesicles</cite>
+
+No other known biological or synthetic barrier gives as many possibilities and as much flexibility to functionalize and establish controllable exchanges between inside and outside. Cell-free expression in emulsion droplets brings expression to the scale of the cell but does
+not allow continuous expression because exchanges with the solvent phase are difficult. <cite>4</cite>
+
+<br clear="all">
+
+==Comparison of In vitro and In veso==
+1. One order of magnitude increase in protein production and duration of expression in in veso is obtained when compared to batch mode. 
+<br>2. Batch mode can last less than a day, as expression stops because of the decrease of the adenylate energy charge. Synthetic phospholipid vesicles can last up to four days.
+<br>3. Only bacteriophage polymerases can be used in veso, while E.coli polymerases can be used in vitro.
+<br>4. There will be osmotic pressure buildup when making vesicles. This can be counteracted by addition of polymers or inert proteins into the feeding solution.
+
+==Progress==
+<br>
+[[image:IC07_veso-roadmap.png|700px|left]]
+<br clear="all">
+
+==References==
+<biblio>
+#Basics [http://www.ambion.com/techlib/basics/translation/index.html In Vitro Translation: The Basics (Ambion)]
+#S30 [http://www.patentstorm.us/patents/6951734-description.html Methods for producing proteins by using cell-free protein synthesis systems]
+#S12 pmid=16797767
+#Vesicles pmid=15591347
+#4 pmid=16224117
+</biblio>
+
+
+
+
+==Shopping List==
+# L1020 E.coli S30 extract system for circular DNA; Promega; Quantity: 1
+# L1130 E.coli T7 S30 extract system for circular DNA; Promega; Quantity: 1
+''# R9379 Rhodamine B isothicynate-Dextran; Sigma; Quantity: 1''
+''# Fluorescein-12-dUTP; Serial no. 11373242910; Roche; Quantity: 1''
+# P9511 3-sn-Phosphatidic acid sodium salt from egg yolk lecithin; Sigma; Quantity: 1
+# M5904 Mineral oil, Sigma, Quantity: 500ml 
+# 42492 1,2-Dioleoyl-sn-glycero-3-phosphocholine. Quantity: 5ml
+# LAA21 L-amino acids. Sigma. Quantity: 1
+# R0884 T7 RNA Polymerase. Sigma. Quantity: 1 100mg/ml
+# 43817 DL Dithiothreitol. Fluka. Quantity: 5g
+# FLAAS Adenosine 5 triphosphate (ATP) disodium salt hydrate. Sigma. Quantity: 5vl
+# 860077 Phopho(enol)pyruvic acid monopotassium salt. Aldirch. Quantity: 1g
+# P1903 Pyruvate Kinase from Bacillus stearothermophilus. Sigma. Quantity: 1
+# I6758 Isopropyl b D 1 thiogalactopyranoside. Sigma. Quantity: 5g
+# 63052 Magnesium acetate solution. Fluka. Quantity: 500ml
+# G1501 L-Glutamic acid potassium salt monohydrate. Sigma. Quantity: 500g
+# M6250 2-Mercaptoethanol. Sigma. Quantity: 100ml
+# Y2377 2X YT Microbial Medium. Sigma. Quantity:250g
+# B2685 BL21 Competent Cells, Uni-pack. Quantity: 1
+
+'''Extras'''
+# 362794 Cholesterol. Aldrich. Quantity: 5g
+
+==Revised Shopping List==
+# L1020 E.coli S30 extract system for circular DNA; Promega; Quantity: 1
+# L1130 E.coli T7 S30 extract system for circular DNA; Promega; Quantity: 1
+# P9511 3-sn-Phosphatidic acid sodium salt from egg yolk lecithin; Sigma; Quantity: 1
+# M5904 Mineral oil, Sigma, Quantity: 500ml 
+# 42492 1,2-Dioleoyl-sn-glycero-3-phosphocholine. Quantity: 5ml
+
+==Additional Items to be Bought==
+#C6645 Cytosine β-D-arabinofuranoside hydrochloride. Sigma. Quantity: 1g
+#A3131 D-(−)-Arabinose. Sigma. Quantity: 25g
+#I6758 Isopropyl b D 1 thiogalactopyranoside. Sigma. Quantity: 5g
+#P1195 Nuclease free water. Promega. Quantity: 150ml
+
+==Timeline==
+===Week 4===
+<br>'''Mon''': Order reagents 
+<br>'''Tue''': -
+<br>'''Wed''': Make gene construct of T7 and pLux promoters, Make S30 extract, Make S12 extract
+<br>'''Thur''': Make gene construct of T7 and pLux promoters, Make S30 extract, Make S12 extract
+<br>'''Fri''': Make gene construct of T7 and pLux promoters, Make S30 extract, Make S12 extract
+
+
+
+===Week 5===
+<br>'''Mon''': Test if S30 or S12 is better for the respective strains of E.coli
+<br>'''Tue''': Carry out temperature and pH tests on in vitro and in veso extracts
+<br>'''Wed''': Carry out temperature and pH tests on in vitro and in veso extracts
+<br>'''Thur''': Carry out temperature and pH tests on in vitro and in veso extracts
+<br>'''Fri''': Carry out temperature and pH tests on in vitro and in veso extracts
+
+===Proposal for Lab=== 
+
+We will first work on making gene constructs and cloning them in E.coli. Restriction digestion, ligation and transformation will be used. Agarose gel electrophoresis will then be used to test for products formed. Cell extracts will be bought from Molecular biology suppliers. Miniprep will be performed to extract plasmids from the cells. The plasmids will then be used to express proteins in vitro and synthethic vesicles, and the proteins tested for by using a fluorometer. Vesicles will be made with phospholipids bought from a supplier. We also need to test these systems for their temperature and pH ranges, as well as their lifespans. All these will use standard equipment in the lab.
+
+==On &alpha;-Hemolysin==
+
+There are different kinds of nanopores used for different applications - both organic, such as HlyA (&alpha;-Hemolysin), and synthetic, solid-state pores produced primarily by elctron-beam-assisted techniques.<cite>1</cite> '''READ MORE''' 
+
+The composition of the lipid bi-layer membrane affects its stability when HlyA pores are inserted. Namely, adding the positive curvature agent lysophosphatidylcholine significantly increases the stability of the membrane. Untreated membranes had their lifetime decreased by up to three orders of magnitude<cite>2</cite> '''READ MORE'''
+
+However, the insertion of HlyA does not necessarily cause lysis - different variants of the protein have different effects, and varying insertion rates. This has implications to membrane stability - a non-lysing variant may be preferred. Further, HlyA requires the presence of Calcium for insertion.<cite>3</cite>
+
+An important group of OM (outer membrane) channels are the porins. Of these, OmpG is unique in that it has a large (approximately 13 A) central pore that is very similar in size to that of the toxin &alpha;-Hemolysin. OmpG may form a non-specific channel for the transport of larger oligosaccharides. The structure of OmpG provides the starting point for engineering studies aiming to generate selective channels and for the development of biosensors.<cite>4</cite> '''READ MORE'''
+ 
+No E.coli K-12 strain tested carries the HlyA gene. However, the silent &alpha;-Hemolysin gene, sheA, is present in all K-12 strains tested.<cite>5</cite>
+
+
+<biblio>
+#1 pmid=17320228
+#2 pmid=16935953
+#3 pmid=16377616
+#4 pmid=16797588
+#5 pmid=15956433
+
+</biblio>

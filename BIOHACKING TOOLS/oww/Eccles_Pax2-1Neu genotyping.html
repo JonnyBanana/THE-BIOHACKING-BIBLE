@@ -1,0 +1,68 @@
+Back to [[Eccles Lab]] > [[Eccles:_DGG_Protocols | DGG Protocols]]
+
+=Mouse Pax2-1Neu PCR for WAVE DHPLC genotyping=
+
+For detecting Pax2-1Neu  heterozygous mutant mice using heteroduplex analysis via DHPLC (denaturing high performance liquid chromatography) on the Transgenomic WAVE machine (Robertson Lab). Not all Taq enzymes and associated buffers are able to be used on the WAVE – AmpliTaq Gold, Roche standard and FastStart Taq, and Stratagene's AccuType Taq, to name a few, have been authorised by Transgenomic for use on the WAVE (use of non-compliant Taq will void HPLC cartridge warranty). The wild type allele gives a single peak, whereas the mutant gives an unambiguous double peak. Read appropriate bits of the Transgenomic manual before proceeding.
+   
+==Materials==
+===Taq===
+*Platinum Taq, Invitrogen (available from Invitrogen Supply Store in Pathology).
+*Roche Taq (available from Prime Supply in Biochemistry in varying sizes – check  concentration, as it comes in 1U/uL and 5U/uL).
+
+===PCR primers===
+*2292, (P2PB1F), 5' ggg cac ggg ggt gtg aac cag 3' 
+*2293 (PAX2EXTR), 5' ctg ccc agg att ttg ctg aca cag cc 3'
+
+==Reaction conditions==
+Set up the following on ice:
+
+{| border="1" cellspacing="0" cellpadding="5"
+!Reagents
+!50 uL !! 25 uL
+|-
+! DNA
+| 10-50 ng || 10-50 ng
+|-
+! Primer 2292 (10 uM)
+| 0.5 uL || 0.25 uL || (200 uM final)
+|-
+! Primer 2293 (10 uM)
+| 0.5 uL || 0.25 uL || (200 uM final)
+|-
+!dNTP's (10 mM)
+| 1 uL || 0.5 uL || (200 nM final)
+|-
+! 10 x plus Mg2+ buffer
+| 5 uL || 2.5 uL || (1.5 mM final)
+|-
+!Taq
+| 1 U || 0.5 U
+|-
+!Water
+|to 50 uL || to 25 uL
+|-
+!Total
+|50 uL||25 uL
+|}
+
+==Thermal cycling==
+#94°C, 2:00 min.
+#94°C, 30 sec.
+#60°C, 30 sec.
+#72°C, 30 sec.
+#To step 2 for 29 cycles (30 cycles total).
+#72°C, 7:00 min.
+#10°C hold.
+
+==Heteroduplexing==
+After thermal cycling, the resulting amplicons need to be heteroduplexed to allow detection on the WAVE. This is achieved by heating and then slowly cooling to (i) denature the DNA, and  (ii) allow single strands to re-anneal to result in (iii) a mixture of homoduplexes (wt:wt) and heteroduplexes (wt:mut). The heteroduplexing step can be added to the end of the normal cycling profile, or done in a separate step any time prior to the reactions being loaded onto the WAVE.  The heteroduplexes will only form if the Pax21Neu insertion mutation is present , and will result in two peaks on the WAVE (the first peak resulting from melting of heteroduplex and the second homoduplex). There are heteroduplexing programs on both the MJ Diad (Robertson Lab), and the PTC-100 and Biometra (Eccles lab) consisting of:
+
+*96°C, 10:00 (this is to kill AmpliTaq and is optional for other Taqs)
+*95°C, 40 sec
+*cooling at 0.1°C/4 sec. to 25°C
+*10°C hold.
+
+==Amplicon length==
+167 (wt), 168 (mutant). Check 6 uL (50 uL PCR) or 3uL (25 uL PCR) product on 1-2% agarose gel.
+
+A. Jeffs, June 2003.

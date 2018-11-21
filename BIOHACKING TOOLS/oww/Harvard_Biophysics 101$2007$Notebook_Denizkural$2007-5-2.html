@@ -1,0 +1,44 @@
+Here is the code for the output functions:
+
+<pre>
+
+# remove this or replace this with a way to use feedparser
+import feedparser
+
+# empty class
+class Feedoutput:
+	pass
+
+#I want a single string as input. This should be done as often as needed for multiple strings
+def outputzilla(inputstring):
+	#This will parse the blogs we want
+	blogresults = inputstring.replace(' ', '+')
+
+	medstory_results = inputstring.replace(' ', '%20')
+	medstory_root = 'http://www.medstory.com/rss?q=' + medstory_results
+
+	medstory_web = medstory_root + '&af=true&c=true&s=Web&i='
+	medstory_news = medstory_root + '&af=false&c=true&s=NewsFeed&i='
+	medstory_multimedia = medstory_root + '&af=true&c=true&s=AudioVideo&i='
+	medstory_clinical = medstory_root + '&af=true&c=true&s=ClinicalTrial&i='
+	medstory_research = medstory_root + '&af=false&c=true&s=Research&i='
+	technorati_blog = 'http://feeds.technorati.com/search/' + blogresults + '?authority=a7'	
+
+	#The feeds
+	output = Feedoutput()	
+	output.web_feed = feedparser.parse(medstory_web)
+	output.news_feed = feedparser.parse(medstory_news)
+	output.multimedia_feed = feedparser.parse(medstory_multimedia)
+	output.clinical_feed = feedparser.parse(medstory_clinical)
+	output.research_feed = feedparser.parse(medstory_research)
+	output.blog_feed = feedparser.parse(technorati_blog)
+
+	return output	
+
+# LO AND BEHOLD Here are the variables that you have access to
+#output.web_feed.entries[0].title
+#output.web_feed.entries[0].description
+#output.web_feed.entries[0].link
+#output.news_feed.entries[0].title
+
+</pre>

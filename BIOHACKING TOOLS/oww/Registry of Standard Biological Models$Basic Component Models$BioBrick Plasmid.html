@@ -1,0 +1,77 @@
+==BioBrick Plasmid Architecture==
+
+{| border="1"
+|
+*'''Description''': BioBrick plasmid model to define number of plasmid copies in simulations
+*'''Hypothesis''': 
+** the number of plasmid copies is an average among a given population of cells.
+*'''Inputs''':
+**none
+*'''Outputs''':
+**nbPlasmidCopies
+*'''Characteristic parameters''':
+**Unit: copy
+| align= "center" | [[Image:VBB_Plasmid.png|thumb|left|300px|Plasmid Brick Architecture]]
+|}
+
+==CellML structure (CellML 1.1 spec)==
+*'''Component''': Plasmid
+*'''Units''': 
+**copy
+*'''Variables''':
+**nbCopiesPlasmid (public interface = out / initial value = 300.)
+*'''MathML'''
+**none
+
+==Examples==
+{| border="1"
+! BioBricks from Registry !! CellML file
+|-
+|not applicable || [[Media:BioBrick_Plasmid_Model.xml]]
+|-
+|not applicable || other plasmid
+|}
+
+==CellML Code==
+[http://openwetware.org/index.php?title=Registry_of_Standard_Biological_Models/Basic_Component_Models/BioBrick_Plasmid/CellML_Code&action=raw CellML Code]
+
+<syntax type = 'xml'>
+
+<?xml version="1.0"?>
+
+<model xmlns="http://www.cellml.org/cellml/1.0#"
+       xmlns:cmeta="http://www.cellml.org/metadata/1.0#" 
+       xml:base="http://openwetware.org/index.php?title=Registry_of_Standard_Biological_Models/Basic_Component_Models/Plasmid/CellML_Code&action=raw"
+       cmeta:id="Plasmid"
+       name="Plasmid">
+  
+<!-- LIST OF COMPONENTS -->
+
+<component name="promoter-RBS_constitutive">
+
+<variable name="nbGeneCopiesOut"             initial_value="1"  public_interface="out" units="dimensionless"/>
+	
+</component>
+
+
+<!-- END LIST OF COMPONENTS -->
+
+
+
+<!-- LIST OF IMPORTS -->
+
+
+<!-- END LIST OF IMPORTS -->
+
+
+<!-- LIST OF CONNECTIONS -->
+
+
+<!-- END LIST OF CONNECTIONS -->
+
+</model>
+</syntax>
+
+==Comments==
+*This component is used to customize a given circuit to a particular plasmid construct in terms of copy number
+*This component defines the average number of gene copies per cell due to the number of plasmid copies.

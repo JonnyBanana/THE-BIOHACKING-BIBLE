@@ -1,0 +1,143 @@
+I thought it might be worth it to try implementing functions...
+I approached this problem by doing the counts each time a trial is completed.  I'm not sure if it would have been faster to do all the trials and then store them before counting.  Alternately, I guess you could keep track of consective trials as they happen.  Maybe one of the CS concentrators might have an answer.
+
+Code:
+
+<pre>
+#!/usr/bin/env python
+
+import random
+import string
+
+#CountRepeats counts the number of sequences in a single trial passed as a string
+#and then counts the consecutive string occurances and adds them to the appropriate
+#count matrix
+def countRepeats(trial, search_char, matrix):    
+    for i in range (10):
+        substr = ''.join([search_char for n in range (i+1)]) #create the substring to search for of appropriate length
+        count = 0
+        pos = trial.find(substr,0)
+        while not pos == -1:
+            count = count + 1
+            pos = trial.find(substr, pos +1)
+        matrix[i][count]+=1  #add one to the appropriate element in the 2d matrix
+
+        
+#DisplayCounts displays the data stored in the matrix and calculates total occurances
+def displayCounts (character, matrix):
+    print
+    print
+    Title = "Number of trials with n occurances of the given consecutive string of "+character
+    print Title.rjust(80)
+    print "n".rjust(45)
+    print "String".rjust(len(matrix)),
+    for m in range(len(matrix[0])):
+        print repr(m).rjust(6),
+    print "Total*".rjust(8)
+    totals = [0,0,0,0,0,0,0,0,0,0]
+    for i in range(len(matrix)):
+        substr = ''.join([character for n in range (i+1)])
+        print substr.rjust(len(matrix)),
+        for j in range(len(matrix[i])):
+            print repr(matrix [i][j]).rjust (6),
+        total = 0
+        for k in range(len(matrix [i])):
+            total+=matrix[i][k]*k
+        print repr(total).rjust(7)
+        totals[i]=total
+    print "*Total refers to total occurances of a particular string"
+    return totals
+    
+#Initialize a list of 10 zeros
+zero_list = range(10)
+for i in range(10):
+    zero_list[i]=0;
+print zero_list;
+#there must be a better way to do this....
+#ARGH!  I originally intended to use zero_string below, but apparently it passes a pointer instead of a value...
+
+#Initialize 2d matrix to store data
+count_of_H_counts = []
+count_of_T_counts = []
+for j in range (10):
+    count_of_H_counts.append ([0,0,0,0,0,0,0,0,0,0,0]) #wanted to use zero_string here
+    count_of_T_counts.append ([0,0,0,0,0,0,0,0,0,0,0]) #and here
+
+#Run Trials
+for k in range (10000):  #This for loop controls the number of trials performed
+                         #where each trial is ten tosses
+    random.seed()
+
+    #populating the trial    
+    temp = ""
+    for l in range (10):
+        if random.random()<0.5:
+            temp = temp + "H"
+        else:
+            temp = temp + "T"
+
+    #call the countRepeats function to process the new temp trial and add to H/T matrix    
+    countRepeats(temp, 'H',count_of_H_counts)
+    countRepeats(temp, 'T',count_of_T_counts)
+
+#Call displaycounts to display the tables and calculate totals
+Htotals=displayCounts ('H',count_of_H_counts)
+Ttotals=displayCounts ('T',count_of_T_counts)
+
+#Display the totals
+print
+print
+print "Total Counts"
+for i in range(len(Htotals)):
+    print repr(i+1).rjust(5),"|",Htotals[i]+Ttotals[i]
+</pre>
+
+Output:
+
+<pre>
+
+
+          Number of trials with n occurances of the given consecutive string of H
+                                            n
+    String      0      1      2      3      4      5      6      7      8      9     10   Total*
+         H      5    102    447   1188   2065   2475   2040   1123    465     79     11   49837
+        HH   1429   2356   2359   1775   1097    613    251     95     14     11      0   22234
+       HHH   5025   2314   1366    739    339    148     44     14     11      0      0    9809
+      HHHH   7578   1309    655    274    115     44     14     11      0      0      0    4282
+     HHHHH   8922    638    256    115     44     14     11      0      0      0      0    1807
+    HHHHHH   9560    256    115     44     14     11      0      0      0      0      0     729
+   HHHHHHH   9816    115     44     14     11      0      0      0      0      0      0     289
+  HHHHHHHH   9931     44     14     11      0      0      0      0      0      0      0     105
+ HHHHHHHHH   9975     14     11      0      0      0      0      0      0      0      0      36
+HHHHHHHHHH   9989     11      0      0      0      0      0      0      0      0      0      11
+*Total refers to total occurances of a particular string
+
+
+         Number of trials with n occurances of the given consecutive string of T
+                                            n
+    String      0      1      2      3      4      5      6      7      8      9     10   Total*
+         T     11     79    465   1123   2040   2475   2065   1188    447    102      5   50163
+        TT   1371   2312   2380   1806   1156    595    239    110     26      5      0   22546
+       TTT   4929   2355   1444    707    345    141     48     26      5      0      0    9959
+      TTTT   7556   1348    639    277    101     48     26      5      0      0      0    4292
+     TTTTT   8941    627    252    101     48     26      5      0      0      0      0    1786
+    TTTTTT   9568    252    101     48     26      5      0      0      0      0      0     727
+   TTTTTTT   9820    101     48     26      5      0      0      0      0      0      0     295
+  TTTTTTTT   9921     48     26      5      0      0      0      0      0      0      0     115
+ TTTTTTTTT   9969     26      5      0      0      0      0      0      0      0      0      36
+TTTTTTTTTT   9995      5      0      0      0      0      0      0      0      0      0       5
+*Total refers to total occurances of a particular string
+
+
+Total Counts
+    1 | 100000
+    2 | 44780
+    3 | 19768
+    4 | 8574
+    5 | 3593
+    6 | 1456
+    7 | 584
+    8 | 220
+    9 | 72
+   10 | 16
+</pre>

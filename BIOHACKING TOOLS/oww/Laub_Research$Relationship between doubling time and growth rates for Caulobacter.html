@@ -1,0 +1,19 @@
+==Introduction==
+''Caulobacter crescentus'' differentiates into two cell types every cell division: stalked cells and swarmer cells.  Stalked cells immediately start a new round of cell division, while swarmer cells will redifferentiate into swarmers before starting cell division.  In an exponentially growing population, how does the doubling time relate to the times for these individual processes, and what is the ratio between stalked and swarmer cells?  The rest of this page is the start of a analytic derivation of that relationship.
+
+==Setting up the equations==
+===Individual cell processes===
+<math>T \xrightarrow{k_1} T + S</math> <br><br>
+<math>S \xrightarrow{k_2} T</math><br><br>
+
+*T represent stalked cells
+*S represents swarmer cells
+
+The first equation describes the process of a stalked cell dividing into a stalked and swarmer cells.  The second equation describes swarmer cells re-differentiating into stalked cells.
+===Bulk cellular growth===
+<math>Y = Y_{0} 2^{t / {\tau}} \,</math><br><br>
+<math>Y \propto T + S </math>
+
+==Differential Equations==
+<math>\frac{dT}{dt} = k_2 S</math><br><br>
+<math>\frac{dS}{dt} = k_1 T - k_2 S</math><br><br>

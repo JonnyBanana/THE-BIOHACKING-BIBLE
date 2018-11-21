@@ -1,0 +1,69 @@
+= Background =
+
+The fluorescence level measured by flow cytometry is in arbitrary units and entirely dependent on the instrument settings used in taking the measurement. Even when consistent settings are used, variability in instrument performance makes comparison between data sets acquired on different days uncertain unless the instrument is calibrated. 
+
+Running a sample of calibration beads as a control in flow experiments allows normalization of multiple data sets for comparison (even if acquired with different pmt settings or on different cytometers). Additionally, the level of bead fluorescence can be experimentally correlated to absolute units, such as Molecules of Equivalent GFP (MEG). This allows users to approximate copies per cell of GFP from flow data, based on earlier quantitative western blot characterization. See a first pass at MEG calibration [[MEG|here]].
+
+= Beads =
+
+Note: Any beads can be used. As long as they’re run against The Default Bead the data can be normalized. As a general rule, beads with multiple intensity peaks will give better calibration (see uncertainty below). Beads with a rainbow of fluorophores are most versatile. 
+
+== The Default Bead ==
+
+SPHERO Rainbow Calibration Particles from [http://www.spherotech.com/cal_par_flo_cyt.htm Spherotech]: 
+
+Cat.#: RCP-60-5
+
+6.0- 6.4 um beads. (Size recommended by Glenn Paradis at the MIT flow facility. Not sure if there’s a strong rationale for this.)
+
+The cost of these beads is $235.00 per 5 mL, or < $0.05 per experiment, particularly if you store and reuse diluted beads, as recommended.
+
+Note: As a test, beads were diluted on 12.15.05 and stored at -4C in an opaque container. The same stock of beads were freshly diluted on 01.16.06 and both tubes were compared by FACS. To the accuracy of the instrument, the measurements were identical (+/- 2%). -[[User:Jkm|Jkm]]
+
+==FlowJo Calibration==
+
+In FlowJo, select the bead sample to calibrate against. Then choose Platform->Define Calibration. Select the parameter to calibrate, and use the beads as your reference sample. I ([[User:Jkm|Jkm]]) use as reference values:<br>
+ Peak  GFP    RFP
+ 1.    10.3    31.1
+ 2.    30.2    70.4
+ 3.    83.7   224
+ 4.   315     885
+ 5.  1092    2922
+
+These numbers are arbitrary - they simply are the values that I measured for one specific date. Every other measurement, then, is calibrated against that day.
+
+Occasionally, these peaks are difficult to distinguish (if the setting are extremely high or low, peaks will not be apparent). It can become a judgment call to decide which measured peak corresponds to which calibration peak.
+
+= Uncertainty in Calibration =
+
+*Qualitative observations from Josh (all numbers rough)
+**Uncertainty <5% when calibrating data sets from the same instrument with the same settings on different days.
+***Variation of <5% on the bead readings day to day, same machine and PMT settings.
+**Uncertainty ~10% when calibrating data acquired on the same instrument with variable pmt settings on the same day.
+***On one day, one machine, run samples and beads, change PMT settings, run samples and beads, etc.
+**Uncertainty ~20% when calibrating between different pmt settings if only using one calibration peak.
+***Same as above, only using a single point calibration.
+**Uncertainty when calibrating different machines hasn’t been evaluated. 
+*Bead quality issues:
+**Bead lifetime. (“very stable under proper storage conditions” means…?)
+**Lot to lot bead variability. Could retain one master lot to calibrate all new lots against. This comes back to bead lifetime eventually. Certainly any new lot of beads should be run against the previous lot.
+
+= Resources =
+
+Bead Suppliers:
+
+*[http://www.spherotech.com/cal_par_flo_cyt.htm Spherotech]
+**Download tech sheets [http://www.spherotech.com/tech.htm here]
+*[http://www.polysciences.com Polysciences]
+*[http://www.bangslabs.com Bangs Labs]
+
+Discussions:
+
+*Specific to [[Endy:NPE flow cytometer Calibration spheres|Endy Lab NPE system calibration]]
+*Generally, [[Standardized GFP quantification]]
+
+OWW Contacts:
+
+[[Caitlin Conboy]], [[Josh Michener]], [[Francois St.Pierre]], etc.
+
+[[Category:Protocol]] [[Category:Flow cytometry]]

@@ -1,0 +1,61 @@
+== POISSON ==
+
+'''Definition'''
+
+The Poisson Distribution is a discrete distribution which takes on the values X = 0, 1, 2, 3, ... . It is often used as a model for the number of events (such as the number of telephone calls at a business or the number of accidents at an intersection) in a specific time period. It is also useful in ecological studies, e.g., to model the number of prairie dogs found in a square mile of prairie.
+
+The Poisson distribution is determined by one parameter, lambda. The distribution function for the Poisson distribution is :
+
+<math>f(k;\lambda)=\frac{\lambda^k e^{-\lambda}}{k!},\,\!</math>
+
+Where 
+<math>\lambda</math> is the amount of successes in a given period and <math>k</math> is the amount of ocurances.
+
+'''Data'''
+
+[[Image:Poisson-animate.gif‎ |thumb|40ms Dwell Time]]
+
+We took data using a Multichannel Analyzer (MCA)which detects the amount of events occurring in a particular time period. Each channel represents the number of bins in time. The RAW data is found [[Media:Poisson.zip|here]]
+{{SJK comment|l=00:17, 10 December 2007 (CST)|c=You guys took some nice data, but it's not clear that you learned much from the analysis?  e.g., what is "chi-squared" representing?}}
+
+{|border="1"
+|-
+!Dwell Time
+!<math>chi^2</math>
+!Average <math>\lambda</math>
+|-
+|80ms
+|.45714
+|	0.70703
+|-
+|100ms
+|.4683
+|	0.62891
+|-
+|200ms
+|.9374
+|	1.2070
+|-
+|400ms
+|2.585
+|	2.7617
+|-
+|800ms
+|5.745
+|	6.0234
+|-
+|1s
+|7.7272
+|       7.3242
+|-
+|10s
+|73.902
+|       73.366
+|}
+
+
+
+
+'''Summary'''
+
+Well, at first i was thinking that this experiment was going to be easy but it turns out that the majority of the lab is not taking the data but analyzing the data. I originally thought that I would have time to cook up snazzy LabVIEW program that would display all the distributions it  an animated mode and a "single shot" mode but. I got some insight from Tomas on house exactly this is supposed to work being that he went above and beyond on the analysis.

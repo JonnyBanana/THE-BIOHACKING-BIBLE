@@ -1,0 +1,228 @@
+=='''Brainstorming Sessions'''==
+
+==3 July 2006==
+*General Objectives:
+:1) Interfacing bacteria with electronic devices
+:2) Speeding processes up
+:3) Implement an engineering application/device with biological systems
+:4) Different levels of abstraction: Parts -> Devices -> Systems
+:5) Analogue vs digital
+:6) Noise reduction (in analogue signals)
+:7) Wow factor !
+:8) We have 10 weeks !!!
+
+*Ideas:
+:1) Biological amplifiers & converting electrical into biological signals
+:2) Biological battery: Bacteria taking 
+:3) Clock
+:: Oscillator (problem: sinusoidal signal contains lots of noise)
+:4) Data storage and transport (biological harddrive?)
+:5) Control reproduction of E.coli: manipulate how rapidly they are dividing
+:6) Cooperative bacteria, cascading of events and their effects
+:7) Energy production: photophosphorylation
+:8) Biological Computer
+:9) Bacteria that measure level of chemicals inside the human body and "report" it
+:10) Biological lenses that darken upon different intensities of light
+:11) Sound sensitive bacteria
+
+*Previous iGEM projects: 
+** BioSketch: Bacteria being sensitive to UV light and heat (a double switch was used as memory)
+** Chemotaxis: influence direction in which bacteria move due to a concentration gradient -> did not work! 
+:: Instead a circuit was designed that depends on lactose gradient, an of/off switch
+:: -> a successful part was added to the registry
+:etc.
+
+==Tuesday 4 July 2006==
+===Group 1===
+*Band Pass Filter
+**Applications?  Is it possible to reuse this?
+*Computer Idea
+**Cell Networking
+*Dealing with the compartmentalisation problem
+*Bio-sketch - diffrent colours(**)
+**Speed (Phosphorylated proteins, metabolic pathways)
+*Trasnmit a message (building matrix of cellular logical components)
+*Bio-wire extension, depositon of metals by bacteria?
+*contorl of bacteria by a laser, create pattersn by using a deposit?
+**driving a bacteria
+*Biological filtration systems
+*Bacterial battery
+*Biosensors
+**Chemical converters
+*MinCDE system implemention as a clock
+*Extend the oscillator
+
+===Group 2===
+*Biosensors
+**Receiving stimuli from environmental factors
+**Eg - monitoring Carbon monoxide levels - could be used as a safety device by emitting coloured dyes in the presence of the chemical
+*Oscillators
+**Bio-clock - bacteria change colour at different time intervals, say every hour
+*Bacterial balloon
+*Bio-calculator
+*Cell-cell communication
+**Turning an analogue signal into a digital system
+*Energy conversion - bisensor coupled with some output source (eg turning heat energy to electrical energy)
+*Modification of PoPS to link pathways
+*Use blocks of bacteria to create a digital pattern
+*Modify bacteria to produce certain desirable chemicals
+
+==Wednesday, 5 July 2006==
+
+We have come up with three different ideas that we want to explore
+*Biological to Electrical Interface
+*Biosensor
+*Oscillator
+
+===Biological to Electrical Interface===
+
+Specification:
+:Stage 1: To be able to convert a biological signal to an electial signal via electron transfer
+:Stage 2: Use this interface to create a one bit memory system for digital information
+:Stage 3 (Future Developments): Electrical to Biological Signal Interface and BioRAM
+
+
+Ideas
+#We need a way to switch the biological signal on and off (switch)
+#We need a way to transfer the electrons between the bacteria and an electrode
+#We need to deal with speed; how fast do we want to make the cells respond, outlook of 5 hours
+#We need to deal with the amplifaction, since the biological electron transfer will be very minimal
+##One method is biological amplification, amplification through large sample of bacteria (noise reduction)
+##The other method is electrical amplifaction (if all else fails...plug into a computer)
+#We need to maintain the size of the colony of bacteria (not an issue if we are storing for 20 hours)
+
+Decisions:
+*We must use a gram positive bacteria such as ''bacillus'', so that we can have the electron transfer enzymes touching the electrode
+*Use a chemical stimulus, however, we need this to be erasable (this is feasible)
+*We need to be able to keep this stable for about 20 hours (the switch was stable for 22 hours, so this is also feasible)
+
+Design stage:
+*We want to make a culture on an agar plate with an electrode (electrode is behind the colony)
+
+===Oscillator===
+
+Specification
+:Stage 1: A biological oscillator
+
+Ideas
+*Must be able to maintain it's oscillation for more than 6 cycles (roughly 5 hours every cycle, and to remain stable for about 20 to 30 hours) (signal must not be damped and with constant frequency)
+*Use of two proteins, one of which will inhibit the each other.  
+*Possibly the use of Flipase (part from Cambridge iGEM 2005)
+
+Decisions:
+*Use ''E. coli'', the entire system must be contained in one cell
+
+===Biosensor===
+
+Specification
+:Stage 1: A biosensor
+
+Problem
+*Unfortunately Edinburgh's idea is an arsenic detector, so maybe it might not be worth pursuing this idea
+
+Ideas
+*Create a biosensor which will detect the presence of a chemical and output either colour (GFP) or convert the chemical to another chemical (enzyme)
+
+Issues
+*Slow gene expression
+*Which chemical do we use?
+
+
+===Bio-sketch extension===
+
+Specification
+
+:Stage 1: Write your name in E.coli (scrolling E.Coli marquee)
+
+Ideas
+*Send a pulse down a wire
+*'See' the pulse as it moves down the wire i.e. a moving bolus
+*Wipe out bolus with a buffer
+*Want small dimensions for wire to ensure as rapid diffusion as possible (1mm*10mm??)
+*Two quorom sensing molecules; one already present in E.coli and the other we introduce as a trigger
+
+
+Bio-clock extension to bio-sketch
+
+Specification
+
+:Stage 1: Create a circular wire along which bolus can move
+
+Problems:
+*A similar idea has already been implemented using a concentration gradient
+Ideas
+*Bolus moves along circular trajectory.
+*Measure time it takes to complete a cycle and then expand or reduce radius of circle so that it takes 24hrs to complete a cycle.
+
+==Thrusday 6 July 2006==
+
+A note on '''quorum sensing''':  "Many ''Bacillus'' species secrete an enzyme, AiiA, that cleaves the lactone rings from the acyl moieties of AHLs and renders the AHLs inactive in signal transduction (Dong et al. 2000).  AiiA is extremely nonspecific with regard to the AHL acyl side chain, which suggests that this strategy interferes generically with AHL-mediated communication between gram-positive bacteria (Dong et al. 2000) ''Bacillus'' relies on oligopeptide-mediated quorum sensing.  Therefore, this tactic, while disrupting gram-negative bacterial communication, leaves ''Bacillus'' cell-cell communication unperturbed." (Quorum Sensing:  Cell-to-Cell Communication in Bacteria) - ''Christopher M. Waters and Bonnie L. Bassler'' (Annu. Rev. Cell Dev. Biol. 2005.21:319-346)
+
+Note received and taken account of for presentation [[User:Tom|Tom]] 00:54, 7 July 2006 (BST)
+
+==Friday 7 July 2006==
+
+Questions that need to be addressed from each project
+===Biological to Electrical Interface (Jonny & Farah)===
+*Can we measure the voltage?
+*What literature is available on voltage gated channels?
+*What biosensors are currently available? Could we implement an electronic GFP?
+*We must remember that the output will be from the entire population, not just from one single cell
+*Also remember that there will be colony variations in modelling
+
+===Bioclock (Tom, Christin, Deepti)===
+
+*[http://intl.pnas.org/cgi/reprint/101/17/6355 Paper on Pulse Generation] + [http://karma.med.harvard.edu/w/images/7/7c/FinalFinalPresentation_2005-11-05.ppt#311,6,Transmission: BioWire] (Tom)
+**Pulse Generator
+***Does not self-propogate signal
+***Relies on concentration gradient
+***Switching mechanism based on cI expression eventually switching off GFP
+***Cells still receive signal but do not express reporter (Would mean signal propogation woud occur bidirectionally but would not be visualised)
+***Not wanted in our project
+**Biowire
+***Circuit based on Pulse Generator
+***Addition of a signal propogation step
+***Didn't work!
+***<nowiki>:-(</nowiki>
+*Look up on the switching mechanism (paper from Penn State)
+*What is the half-life of HSL?
+**<3 hours
+*Modelling of recA and cI and entire system
+
+===Oscillator (John & John)===
+*What exactly do we want to measure and how are we going to implement it?
+*Modelling of A & B
+*Could this be implemented in one cell effectively?
+*Van der Pol oscillator - read up on it!
+*Use of actual cells as the predator-prey in our model instead of molecules
+*Read up on the possibility of using quorum sensing molecules
+
+===Common themes that we have decided to research more on===
+*Quorum Sensing (used in bioclock and oscillator), especially stability and efficiency of HSL and other quorum sensing molecules (John S & Tom)
+*Available biomolecular sensors - used in both interface and oscillator)(Farah / Christin)
+*Voltage gated channels (used in interface)
+*Idea reconnaisance - see what other ideas are out there from other teams (Deepti & Jimmy)
+*Modelling - how do we model these?
+**prey-pedator (John^2)
+**unstable switch (Tom)
+*Van der Pol Oscillator (Jimmy)
+
+== Update on Monday evening ==
+
+===Oscillator===
+*Successful modelling of the Lotka-Voltarra model for our oscillator design!
+*We need to take a look at [http://www.mit.edu/~cbatten/work/ssbc04/modeling-ssbc04.pdf this paper] for modelling tips, as MIT have already modelling a similar system with values.
+[[Image:Workingossmodel.png|frame|left|Cell Designer Output...Notice the oscillations!]]
+
+<br style="clear:both;"/>
+==Possible Merger of the Three Projects==
+
+*Part 1: Create the biological oscillator (Feasibility:  Given that our modelling is correct and we can good values for our biobricks, then this part should be feasible)
+*Part 2: Couple the biological oscillator with biowire (which is pretty much what the bioclock will be) (Feasibility:  This part is just seeing what Harvard did last year with the biowire and seeing where they went wrong, and possibly implement a working system or create an improved system)
+**We can then send pulses from the biological oscillator from one system to another system and perhaps synchronise or turn the other system on
+**This would form a biological LAN (Local Area Network)
+*Part 3: Have this LAN connected with the world! (Feasibility:  If we considering today's breadth of biosensors currently available, then I believe that a simple biological/electrical interface is possible, but this part would be the most difficult)
+**Create the electrical/biological/electrical interface
+**Interface our oscillator with a computer (maybe using biosensors)
+**Send our computer electrically to another computer around the world
+**Convert the electrical signal into a biological signal or pulse to synchronise that colony with the original oscillating colony

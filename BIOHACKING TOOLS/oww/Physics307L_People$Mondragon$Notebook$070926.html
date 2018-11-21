@@ -1,0 +1,32 @@
+==Poisson distribution==
+This is an exercise in dealing with data that tends to fall into a [http://en.wikipedia.org/wiki/Poisson_distribution  Poisson distribution]
+<P>
+[http://www-hep.phys.unm.edu/~gold/phys307L/manual.pdf Quick link to lab manual here]
+
+==Lab equipment and setup==
+{{SJK comment|label=01:18, 22 October 2007 (CDT)|comment=This description of the lab is great!  You should copy it over to the "Labs" section of the wiki and you'd have a great start on the lab manual for this lab...bonus points on your final formal report if you do!}}
+The scintillator and PMT are one unit. It looks like a large flashlight. The scintillator is a large Thallium doped Sodium Iodide crystal in the wider end of the detector device. What the scintilator does is emit a pulse of ultraviolet light every time it absorbs high energy electromagnetic or particle radiation. Read more about [http://en.wikipedia.org/wiki/Scintillator scintillators] and [http://en.wikipedia.org/wiki/Scintillation_%28physics%29 scintillation]. The burst of UV light has an energy roughly proportional to the energy of whatever radiation the scintilator absorbed, but this isn't important in this experiment.
+
+The PMT is on the other end of the detector. Read about [http://en.wikipedia.org/wiki/Photomultiplier Photomultiplier tubes]. The PMT will produce a current roughly proportional to the energy of the ultraviolet light falling on its photocathode. How proportional and by what proportion aren't of much importance here either, since we are using the device to count events, not to measure their energy.
+
+The PMT needs a high voltage power source to turn the pulses of light hitting its photocathode into currents, usually in the range of 1000V to 2000V. Increased voltage usually corresponds to increased sensitivity. The point of this exercise is to find what the probability of distribution function of an unlikely event looks like, so throughout the experiment, use a voltage of 1000V.  To further decrease the number of events detected, keep the detector in a lead brick "cave."
+
+The output of the PMT can either come from the anode or dynode connectors at the back of the PMT. Output after the PMT has detected a light burst will be a positive voltage spike coming out of the dynode and a negative spike coming out of the anode. This is important because the event counter needs pulses of an amplitude larger than the PMT produces and the amplifier has settings for amplification of either positive or negative pulses. Try to look at the output of the PMT with an oscilloscope to make sure whether the pulses are positive or negative. The pulses are sharp, meaning they are short time wise and may be difficult to see, and come at random intervals, meaning triggering on the oscilloscope may not act nice. For this part you may want turn the high voltage up to 2000V and take the detector apparatus out of the cave so that the detector detect more events per second. This will make the pulses easier to see on the oscilloscope.
+
+The counter itself will be a MCA (MultiChannel Analyzer) card inside the computer next to the rest of the equipment. The card has an input suited for connecting to a coax cable connector, so that you can run a coax from the amplifier to the back of the computer without any special connectors. A MCA normally counts and bins incoming voltage pulses according to pulse height (Pulse Height mode, PHA), but for this exercise you will want to use the card in MCS mode (Multi Channel Scaling), where it will count and bin according to when the pulses arrive. to do this, short the MCA/REJ to the SCA pin on the back of the card using a "hydra" breakout cable. If you are unsure if the MCA card is ready to take data or where the hell the hydra or the MCA card is, ask Dr. Koch or myself for help.
+
+To set up dwell times and the number of passes for data collection, go to the program's main menu>setup(or press S-there is some way of getting a noise pointer with that thing but I never learned what button to push to get it)>MCS. To set up the channel number look around for some submenu called something like memory settings, hit enter, and a bunch of fractions (powers of 2), select one of them, select a memory subgroup(which one doesn't matter as far as I've been able to tell) Dr. Gold's lab manual recommends 256 channels. If the number of channels isn't correct, pick a smaller or larger fraction of the memory.
+
+Start data acquisition with F1. The program stops after doing a single sweep through all the channels. (count and bin events into channel x for d dwell time, count and bin events into channel x+1 for d dwell time,...). Pressing F1 again stops acquisition and control+F2 or something like that erases your data.
+
+Save your data in an ASCII file (File>save as ASCII or something)
+
+Data will be saved in folder C:\PCA3. Pressing the windows button on the keyboard will minimize the program so that you can hunt around for your file.
+
+Erase your data, rinse, wash repeat until sufficient data is taken.
+
+==final graph==
+Shows the Probability distribution function as is drifts from a Poisson distribution of a rarely occuring event to the more familiar Gaussian
+[[Image:Poissongraphsanimation.gif]]
+
+[[Physics307L:People/Mondragon/Notebook/071003 | SECOND WEEK(data and processing)]]

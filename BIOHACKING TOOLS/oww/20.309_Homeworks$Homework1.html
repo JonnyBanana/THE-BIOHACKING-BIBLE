@@ -1,0 +1,88 @@
+<div style="padding: 10px; width: 774px; border: 3px solid #000000;">
+
+<center><big>'''20.309 Fall Semester 2007'''</big></center>
+<center><big>'''Homework Set 1'''</big></center>
+<center>''Due by 12:00 noon on Friday Sept. 21, 2007''</center>
+<br/>
+
+==Question 1:Wheatstone Bridge==
+
+Figure 1 shows a resistor network known as a Wheatstone bridge.  This is a common circuit used to measure an unknown resistance. ''R<sub>x</sub>'' is the component being measured, and ''R<sub>3</sub>'' is a variable resistor (often called a [http://en.wikipedia.org/wiki/Potentiometer potentiometer] or just a [http://en.wikipedia.org/wiki/Pot pot] for no sensible reason).
+
+<br/>[[Image:Hw1wheatstone.JPG|250px|center]]<br/>
+<center>Figure 1: Schematic Diagram of a Wheatstone Bridge</center><br/>
+
+(a) The bridge is balanced when ''V<sub>ab</sub>'' is zero. Assuming ''R<sub>3</sub>'' is set so the bridge is balanced, derive an expression for ''R<sub>x</sub>'' in terms of ''R<sub>1</sub>'', ''R<sub>2</sub>'' and ''R<sub>3</sub>''.
+
+(b) Now let ''R<sub>3</sub>'' also be a fixed resistor. Suppose that ''R<sub>x</sub>'' varies in a way that makes ''V<sub>ab</sub>'' nonzero. Derive an expression for the current that would flow if you connected an [http://en.wikipedia.org/wiki/Ammeter ammeter] from ''a'' to ''b''. Assume the ammeter has zero internal resistance.
+
+==Question 2: Measuring Physical Quantities with a Wheatstone Bridge==
+
+A thermistor is a resistor whose value varies with temperature. Thermistors are specified by a zero power resistance, ''R<sub>0</sub>'', at a given temperature and a temperature coefficient, ''&alpha;''. As shown in Figure 2, a small person inside the thermistor observes the temperature on a thermometer and adjusts a variable resistor so that ''R=R<sub>0</sub>+&alpha;T'', where ''T'' is the temperature.
+
+<br/>[[Image:ThermistorMan.jpg|150px|center]]<br/>
+<center>Figure 2: Mister Thermistor (with apologies to [http://books.google.com/books?id=bkOMDgwFA28C&pg=PA64&lpg=PA64&dq=horowitz+hill+transistor+man&source=web&ots=F1goPL6_Tt&sig=2BkT_t2YQRLSUheqws2BUE8z9k8 Horowitz and Hill])</center><br/>
+
+Now imagine a Wheatstone bridge made out of four identical thermistors, as shown in figure 3. One of the thermistors (''R<sub>4</sub>'') is attached to an odd-looking blue apparatus that varies in temperature. The other three are maintained at a constant 20°C.
+
+<br/>[[Image:ThermistorBridge.jpg|359px|center]]<br/>
+<center>Figure 3: Wheatstone Bridge Made of 4 Thermistors</center><br/>
+
+
+(a) Derive an expression for ''V<sub>ab</sub>'' as a function of temperature.
+
+(b) What if both ''R<sub>1</sub>'' and ''R<sub>4</sub>'' are attached to the apparatus? Which configuration is more sensitive to temperature variations?
+
+==Question 3: Photodiode I-V Characteristics==
+
+Using the data that you collected in the lab for the photodiode, generate 3-4 ''i-v'' curves for a photodiode at different light levels (including in darkness). Plot these on the same graph to see how incident light affects diode ''i-v'' characteristics. <br>
+
+Give a brief (qualitative) explanation for why photodiodes are best used in reverse bias?
+
+==Question 4: Unknown Transfer Functions==
+
+For the black boxes that you measured in the lab, determine what kind of circuit/filter each one is (two of them will look similar, but have an important difference - what is it?). Determine a transfer function that can model the circuit, and fit the model to the data to see whether the model makes sense.
+
+Of the four boxes, "D" is required, and you should choose one of either "A" or "C". You can fit "B" for bonus credit.
+
+
+==Question 5:Power in a Voltage Divider==
+
+Referring to the circuit shown in Figure 4, what value of ''R<sub>L</sub>'' (in terms of ''R<sub>1</sub>'' and ''R<sub>2</sub>'') will result in the maximum power being dissipated in the load?
+
+(''Hint:'' this is much easier to do if you first remove the load, and calculate the equivalent Thevenin output resistance ''R<sub>T</sub>'' of the divider looking into the node labeled ''V<sub>out</sub>''. Then express ''R<sub>L</sub>'' for maximal power transfer in terms of ''R<sub>T</sub>''.
+
+[[Image:Hw1Divider.JPG|250px||center]]<br>
+<center>Figure 4: A voltage divider formed by ''R<sub>1</sub>'' and ''R<sub>2</sub>'' driving a resistive load ''R<sub>L</sub>''.</center>
+
+
+==Question 6:Transimpedence Amplifier==
+
+Lab module 0 introduced the op-amp circuit shown in Figure 5.
+
+[[Image:Hw1invopamp.JPG|250px|center]]<br/>
+<center>'''Figure 5: Inverting Voltage Amplifier'''</center><br/>
+
+(a) Calculate the gain of this circuit, ''V<sub>o</sub>/V<sub>i</sub>'' in terms of the input voltage and the two resistor values.
+
+[[Image:TransimpedenceAmplifierSchematic.jpg|250px|center]]<br/>
+<center>'''Figure 6: Transimpedence Amplifier'''</center><br/>
+
+(b) In the DNA melting lab, fluorescence intensity will be determined by measuring the output current of a photodiode.  Figure 6 shows a circuit called a transimpedance amplifier that converts a current to a voltage.  
+
+Derive an expression for the output voltage of the circuit produced by a DC current input at ''i<sub>in</sub>''. (At DC, you can ignore the affect of the capacitor.) Express your answer in the form of a transfer function, ''V<sub>out</sub>/I<sub>in</sub>''.
+
+(c) What is the high frequency gain of the circuit in Figure 6. Remember that a capacitor acts like an open circuit at low frequencies and a short circuit at high frequencies.
+
+(d) A transimpedence amplifier with a gain of approximately 10<sup>8</sup> V/A will be required for the DNA lab. What value of resistor in the circuit of Figure 6 would achieve this gain?
+
+(e) It is undesirable to use the large value of resistor you computed in part (d). Figure 7 shows another possible implementation of the transimpedence amplifier. Derive an expression for the output voltage of the circuit in figure 7 in terms of the input current and the three resistor values.
+
+[[Image:Hw1highgopamp.JPG|250px|center|Figure 5: high gain transimpedance amplifier]]<br/>
+<center>'''Figure 7: High gain transimpedance amplifier'''</center><br/>
+
+(f) In part C, you determined the effect of putting a capacitor across the feedback resistor in a transimpedence amplifier. High gain amplifiers are succeptible to noise couplig from a variety of sources. Since high frequences are not of interest in the DNA melting lab, it is beneficial to insert a capacitor to reduce the noise. In the circuit of Figure 7, where would you connect the capacitor and how would you choose its size?
+
+(g) Now write down the expression for this new circuit's output with respect to the current input for AC signals.
+
+</div>

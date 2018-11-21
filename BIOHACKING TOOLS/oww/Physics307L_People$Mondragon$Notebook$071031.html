@@ -1,0 +1,159 @@
+=speed of light week two=
+verify all setting are the same as last week
+==timewalk==
+as the voltage output of the PMT changes so will the time delay measured by the TAC, even though the actual time delay does not change
+
+here, with the time delay in the delay box and the distance between the PMT and LED held constant, find some way of changing the voltage amplitude output from the PMT. Perhaps messing with the high voltage source? At various values for voltage, what is the centroid data for the MCA?
+
+delaybox set to:56 ns
+
+LED position:7cm
+{|border="1"
+|-
+!PMT Voltage Output
+!Centroid
+!FWHM
+!centroid error
+!time delay
+!time error
+|-
+|12.6 V
+|693.0
+|29.976
+|70.5
+|64.16 s
+|12.90 s
+|-
+|12 V
+|698.8
+|31.152
+|73.4
+|64.71 s
+|13.20 s
+|-
+|11.4 V
+|706.1
+|32.487
+|76.5
+|65.40 s
+|13.54 s
+|-
+|10.8 V
+|715.0 
+|33.959
+|79.9
+|66.25 s
+|13.93 s
+|-
+|10.2 V
+|724.1
+|36.262
+|85.5
+|67.11 s
+|14.50 s
+|-
+|9.6 V
+|734.9
+|40.08
+|94.4
+|68.14 s
+|15.42 s
+|-
+|9.04 V
+|744.3
+|46.74
+|110.1
+|69.03 s
+|16.97 s
+|}
+[[Image:Timewalkplot.png]]
+
+
+The plot shows that a reliable trendline can not be placed, due to the very short domain and large(relatively) error on the range. Not enough data.
+
+<math>time \, delay=(-1.3688 \pm  4.6220 \tfrac{s}{V})(Peak \, voltage) -( 81.1802 \pm 51.1251)s</math>
+
+There does seem to be a decline in delay time as the peak voltage rises (as I predicted), but the data's too noisy and too tightly clustered to confirm or deny it. Oh well, the least we know from this data is that if the pulses coming out of the PMT have peak voltages that don't vary more than 4 V, timewalk won't add more than random noise.
+
+==Travel Time vs distance measurements==
+time for some actaul data
+
+figure a good pmt output voltage to set all the measurements
+to.
+
+withthe led and the pmt so far apart that the meter stick that I am pushing it in with is in the tube 5cm, the max output voltage I can get is 12.5 V with the HV to the PMT at 1500+496=1996 V and the polarizers aluigned as best I can. I'll shoot for 11.8 V in all my mmeasurements.
+
+measurement at increments of 10 cm starting at 5 cm.
+{|
+|-
+!LED stick position!!centroid!!FWHM!!time delay!!time delay error
+|-
+|5 cm
+|702.0
+|33.521
+|65.01
+|13.75
+|-
+|15 cm
+|698.7
+|32.005
+|64.70
+|-
+|25 cm
+|697.9
+|30.245
+|-
+|35 cm
+|697.2
+|29.266
+|-
+|45 cm
+|696.1
+|27.601
+|-
+|55 cm
+|695.2
+|26.134
+|-
+|65 cm
+|693.2
+|24.448
+|-
+|77 cm
+|692.2
+|22.688
+|-
+|85 cm
+|691.7
+|21.600
+|-
+|95 cm
+|690.5
+|20.339
+|-
+|102 cm
+|689.1
+|18.540
+|}
+
+ANOTHER RUN, THIS TIME AT INTERVALS ~25CM
+{|
+|-
+!LED stick position!!centroid!!FWHM
+|-
+|4 cm
+|702.5
+|33.274
+|-
+|29 cm
+|697.9
+|29.673
+|-
+|54 cm
+|694.2
+|26.293
+|-
+|79 cm
+|692.0
+|22.648
+|}

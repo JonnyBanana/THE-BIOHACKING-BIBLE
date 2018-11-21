@@ -1,0 +1,155 @@
+=Model Development for Infector Detector=
+
+==Formulation of the problem==
+As described earlier, Infector Detector (ID) is a simple biological detector, which serves to expose bacterial biofilm. It functions by exploiting the inherent AHL production employed by the quorum-sensing bacteria, in the formation of such structures.<br>
+
+<font color = red>~~Insert diagram illustrating this phenomenon </font><br>
+
+Our project attempts to improve where previous methods of biofilm detection have proven ineffective: first and foremost, by focussing on the sensitivity of the system, to low levels of AHL production (bacterial chatter).
+In doing so, a complete investigation of the level of sensitivity to [AHL] needs to be performed - in other words, what is the minimal [AHL] for appreciable expression of reporter protein. Furthermore, establish a functional range for AHL detection. How does increased [AHL] impact on maximal output of reporter protein?<br>
+Also, how can the system performance be tailored, by exploiting the remaining state variables (e.g. varying initial [LuxR] and/or [pLux]).  
+
+The system performance here revolves most importantly around AHL sensitivity; however, the effect on, maximal output of fluorescent reporter protein and/or response time is, likewise, of great importance.
+
+Our approach, involves the proposal of two simple constructs, varying with respect to the manner in which LuxR is introduced into the system:
+*Construct 1 - represented by [http://parts.mit.edu/registry/index.php/Part:BBa_T9002| T9002], incorporates constitutive expression of LuxR by pTET.
+*Construct 2 - simpler in nature, lacks pTET; LuxR is introduced in purified form here.<br>
+
+<font color = red>~~Here explain briefly why Construct 2 was selected, i.e. we were concerned with the time the system would take to reach steady-state (that is before energy-dependence was considered) - due to almost negligible <math> \delta_{LuxR}</math>, etc </font>.
+
+==Selection of model structure==
+At reasonably high molecular concentrations of the state variables, a continuous model can be adopted, which is represented by a system of ordinary differential equations. 
+
+It is for this reason that our approach to modelling the system follows a deterministic, continuous approximation. In developing this model, we were interested in the behaviour at steady-state, that is when the system has equilibrated and the concentrations of the state variables remain constant.
+
+In adopting this approach, we perform the following assumptions:
+
+====Assumptions====
+*Ignore spatial information of the system; we ignore molecular dynamics of the system - this is a kinetic model.
+*Keep track of total number of molecules of each type - by tracking the concentrations of these state variables (as a continuous variable)
+*System is homogeneous - well-stirred, so that the molecules of each type are spread uniformly throughout the spatial domain.  In doing so, we assume thermal equilibrium 
+*Volume of the spatial domain remains constant
+
+
+The system kinetics are determined by the following six coupled-ODEs.
+
+==Establishing a representative model==
+
+* '''Introduction'''
+We can condition the system in various manners, but for the purposes of our project, Infector Detector, we will seek a formulation which is valid for both constructs considered. <br><br>
+
+Our initial approach assumed that energy would be in unlimited supply, and that our system would eventually reach steady-state (Model 1). Experimentation suggested otherwise; our system needed to be amended. This lead to the development of model 2, an energy-dependent network, where the dependence on energy assumed Hill-like dynamics:
+<br><br>
+
+===Model 1: Steady-state is attained; limitless energy supply <font color = red>''(link here to derivation)''</font>===
+
+<br>
+<math>\frac{d[LuxR]}{dt} = k_1 + k_3[A] - k2[LuxR][AHL]- \delta_{LuxR}[LuxR]</math>
+
+<br>
+<math>\frac{d[AHL]}{dt} = k_3[A] - k2[LuxR][AHL]- \delta_{AHL}[AHL]</math>
+
+<math>\frac{d[A]}{dt} = -k_3[A] + k2[LuxR][AHL]- k_4[A][P] + k_5[AP]</math>
+
+<math>\frac{d[P]}{dt} = -k_4[A][P] + k_5[AP]</math>
+
+<math>\frac{d[AP]}{dt} = k_4[A][P] - k_5[AP]</math>
+
+<math>\frac{d[GFP]}{dt} = k_6[AP] - \delta_{GFP}[GFP]</math>
+
+===Model 2: Equations developed through steady-state analysis; however due to limited energy supply, we operate in the transient regime===
+
+<br>
+<math>\frac{d[LuxR]}{dt} = k_1\bigg(\frac{[E]^n}{K_E^n + [E]^n}\bigg) + k_3[A] - k_2[LuxR][AHL]- \delta_{LuxR}[LuxR]</math>
+<br>
+<math>\frac{d[AHL]}{dt} = k_3[A] - k_2[LuxR][AHL]- \delta_{AHL}[AHL]</math>
+
+<math>\frac{d[A]}{dt} = -k_3[A] + k_2[LuxR][AHL]- k_4[A][P] + k_5[AP]</math>
+
+<math>\frac{d[P]}{dt} = -k_4[A][P] + k_5[AP]</math>
+
+<math>\frac{d[AP]}{dt} = k_4[A][P] - k_5[AP]</math>
+
+<math>\frac{d[GFP]}{dt} = k_6[AP]\bigg(\frac{[E]^n}{K_E^n + [E]^n}\bigg) - \delta_{GFP}[GFP]</math>
+
+<math>\frac{d[E]}{dt} = -\alpha_{1}k_1\bigg(\frac{[E]^n}{K_E^n + [E]^n}\bigg) - \alpha_{2}k_6[AP]\bigg(\frac{[E]^n}{K_E^n + [E]^n}\bigg)</math>
+
+<br>
+
+where:<br><br>
+
+[A] represents the concentration of AHL-LuxR complex<br>
+[P] represents the concentration of pLux promoters<br>
+[AP] represents the concentration of A-Promoter complex<br>
+k1, k2, k3, k4, k5, k6 are the rate constants associated with the relevant forward and backward reactions<br>
+<math>\alpha_i \ </math> represents the energy consumption due to gene transcription. It is a function of gene length.<br>
+n is the positive co-operativity coefficient (Hill-coefficient)<br>
+<math>K_E \ </math> the half-saturation coefficient
+
+=== State Variables ===
+<font color = red>Create similar table for state variables, as for parameter table below</font>
+
+=== Model Parameters ===
+
+<font color = red>Populate parameters table</font>
+{| class="wikitable" border="1" cellspacing="0" cellpadding="2" style="text-align:left; margin: 1em 1em 1em 0; background: #f9f9f9; border: 1px #aaa solid; border-collapse: collapse;"
+! Parameter
+! Value                       
+! Description
+! Comment (literature, derived?)
+|-
+| k<sub>1</sub>
+| x [units]
+| max. transcription rate of constitutive promoter (pTET)
+| Estimate
+|-
+| k<sub>2</sub>
+| 
+| 
+| 
+|-
+| k<sub>3</sub>
+| 
+| 
+| 
+|-
+| k<sub>4</sub>
+| 
+| 
+| 
+|-
+| k<sub>5</sub>
+| 
+| 
+| 
+|-
+| k<sub>6</sub>
+| x [units]
+| 
+| 
+|-
+| <math> \delta_{GFP} </math>
+| 0.029 hrs <sup>-1</sup>
+| degradation rate of GFP
+| Literature <font color = red> ~~ give reference </font>
+|-
+| <math> \delta_{LuxR} </math>
+| x [units]
+| degradation rate of LuxR
+| 
+|-
+| <math> \delta_{AHL} </math>
+| x [units]
+| degradation rate of AHL
+| 
+|}
+<br>
+
+<br><br>
+The system of equations for the two constructs varies strictly with respect to the value of the parameter k1. Construct 1 possesses a non-zero k1 rate constant, whereas for construct 2, a zero value is assumed.
+
+==Generalities of the Model==
+
+==Simulations==
+
+===Sensitivity Analysis===

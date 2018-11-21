@@ -1,0 +1,62 @@
+Some rules for biology:
+
+* A mutant is only useful for what it tells you about wild-type.
+* Do not attempt to extrapolate behaviors from laboratory strains to feral strains.
+
+My own personal brand of labelling obsessiveness:
+
+* DNA shall have a light green dot on the top of it's tube if it is a maxiprep; bright orange if it is primer; dark green if it is a miniprep.
+* Chemicals will be labelled on orange tape if sterile, and on green if they are not.
+* E. coli stock will have a dark green dot on the top of its tube.  M. smegmatis will have dark blue.
+
+Some random advice from Neeraj for revising my PCR:
+
+* Titrating Mg, DNA, etc. is for when you don't get any bands; no good if you have too many bands.
+* Use 30s instead of 1 minute for the three stages of PCR in general.  Strongly binding primers will bind just fine in 30s, extension for 30s in 1 minute will reduce nonspecific large stuff, and 30s at denaturation will destroy less of the polymerase at each cycle.
+* Can try adding 5M DMSO if there's still a lot of nonspecific junk.
+* Can PCR straight out of ''E. coli'' and ''M. smegmatis'': take a scoop of colonies from a plate, suspend in 100&mu;L PBS+Tween, boil for 5-10 minutes, and use 1-2&mu;L of that as the template in PCR reaction.
+
+===Antibiotic markers===
+
+Hygromycin is generally not a good marker in ''E. coli'' --- even with resistance genes, they don't like it.
+
+===Restriction digests===
+
+To do restriction digests of vector backbones you're going to clone into, and where you won't get an excised fragment that will be visible on a gel:
+# For restriction enzymes A and B, do the single digests with both A and B, and the double digest, all in the same buffer.
+# Run the single digests, the double digest, and uncut DNA on a gel.  Uncut, supercoiled plasmid will run faster than cut, linear DNA, and will have a lagging band of nicked DNA (single stranded cuts which have thus lost a lot of the compactness from supercoiling).  If both the A and B digests appear to have worked (run slower than the supercoiled DNA), and they all have the same size (including the double digest), just take the double digest.  If this does not hold, there's something wrong with the enzymes.
+# Phenol-chloroform extract the double ligation to get rid of the restriction enzymes.
+# Dephosphorylate the vector backbone, and phenol-chloroform extract to get rid of enzyme.  This way when you ligate in the fragment you're inserting, you can't get self ligation.
+
+===Ligating DNA===
+
+For ligations: buy your own small aliquot of ligase and ligase buffer, and keep them to yourself.  This is something where having it not work because someone left it out on the bench for a week is really annoying.  If you suspect the ligase is bad, cut a vector with one enzyme (and confirm that it cuts by running it next to the uncut, supercoiled vector), then set up two parallel ligation reactions: one with no ligase, one with ligase.  When you transform the ligation into ''E. coli'' you should get no colonies from the reaction without ligase, and colonies from the one with.  Unless it's dead or contaminated.  If it is, just get new ligase.
+
+When using ligase, run the following reactions: vector alone, fragment alone, vector + fragment, no DNA (this last is to make sure you don't have DNA contamination, such as if someone went into the vial with a dirty pipette tip with plasmid on it).
+
+Generally use a 2:1 (molar) ratio of insert to vector when ligating in a piece.
+
+100kb linear DNA = 44.2&mu;m.  Persistence length is 50-80nm depending on salt concentration, or 113-180bp.  Thus fragments of a couple hundred base pairs aren't going to join their own ends, but something of a few kb is much more likely to join its own ends then to ligate with something else.  To see this, the phase space of the two ends of a cut plasmid is a sphere with diameter equal to the length of the DNA, while the phase space of ligating to something else is the size of the reaction volume/molecule.  If each process has the same rate, the first one will happen much more often since we assume the system is ergodic.
+
+===Cloning strategies===
+
+Ping-pong cloning.  If you have two vectors with different selective markers A and B, and an insert in one you're going to clone into the other, then cut the recipient vector and dephosphorylate, and cut the donor vector.  Don't gel purify the fragment from the donor vector, just ligate the whole combination of cut recipient vector and the donor vector restriction, and when you transform it, select it on plates which permit only the recipient vector.  No gel purification, ethidium bromide, etc. needed.
+
+===DNA purification===
+
+In phenol-chloroform extraction, use ethanol for precipitation if possible instead of isopropanol.  It's less volatile and easier to get rid of.  Use isopropanol when you're volume limited, as it takes less of it.
+
+Need salts to shield DNA from each other to encourage precipitation.  See [http://www.madsci.org/posts/archives/2000-07/965055056.Mb.r.html this discussion] for some rough information on salts to use.  More detail at [http://arbl.cvmbs.colostate.edu/hbooks/genetics/biotech/manip/conc.html this site], [http://omrf.ouhsc.edu/~frank/ETOHPPT.html here]
+
+===Protein purification===
+
+Jackie's advice on 6xHis tags: use Invitrogen's pET family of vectors, and Talon purification columns from Clontech (it's a cobalt based column, which she says gives better resolution and less background).  6xHis tags are a sequence of histidines hanging off the end of a protein.  Then will bind around a divalent cation, so you can use nickel or cobalt bound bead columns to purify just those proteins, then elute them with imidazole (a histidine analog which competes it off the beads).
+
+===Image analysis (epigrams)===
+
+# The only hard part of image analysis is segmentation.
+# Segmenters for different features of the same image generally bear no resemblance to each other.
+# Segmentation consists not of selecting features but in throwing away everything else.
+# To learn how to discard things, gaze on your images and "seek precise verbal definitions of your inarticular thoughts." (Confucius, The Great Digest)
+
+[[Media:cell_wall_diagram.png]]

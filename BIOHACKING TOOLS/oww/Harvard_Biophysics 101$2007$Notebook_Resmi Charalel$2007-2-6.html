@@ -1,0 +1,147 @@
+==Assignment 1, due 2/6/07==
+
+Code for Assignment (This code performs all requested changes to original code) and Output of Code:
+
+<pre>
+#!/usr/bin/env python
+
+from Bio import GenBank, Seq
+from Bio.Seq import Seq,translate
+
+# We can create a GenBank object that will parse a raw record
+# This facilitates extracting specific information from the sequences
+record_parser = GenBank.FeatureParser()
+
+# NCBIDictionary is an interface to Genbank
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+
+# If you pass NCBIDictionary a GenBank id, it will download that record
+parsed_record = ncbi_dict['6273291']#Opuntia marenae rp16 gene; partial intron sequence
+
+print "GenBank id:", parsed_record.id
+
+# Extract the sequence from the parsed_record
+s = parsed_record.seq.tostring()
+print "total sequence length:", len(s)
+
+max_repeat = 9
+
+print "method 1"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\nmethod 2"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+
+start = s.find('ATG')
+orf = ''
+c=start
+
+for x in range(len(s)-start-4):
+    orf = orf + s[c]
+    c= c +1
+    length = c-start
+    remainder=length%3
+    if remainder == 0:
+        codon=s[c]+s[c+1]+s[c+2]
+        if codon== 'TAA' or codon=='TAG' or codon=='TGA':
+            orf=orf+s[c+1]+s[c+2]
+            break
+
+protein = translate(orf)
+
+print 'protein sequence: ', protein
+print 'protein length: ', len(protein)
+
+rawdict = GenBank.NCBIDictionary('nucleotide', 'genbank')
+rawrec = rawdict['6273291']
+print "raw record: ", rawrec
+
+
+------
+
+Output of Code:
+
+GenBank id: AF191665.1
+total sequence length: 902
+method 1
+T 279
+TT 68
+TTT 14
+TTTT 7
+TTTTT 4
+TTTTTT 2
+TTTTTTT 0
+TTTTTTTT 0
+TTTTTTTTT 0
+
+method 2
+T 279
+TT 84
+TTT 25
+TTTT 13
+TTTTT 6
+TTTTTT 2
+TTTTTTT 0
+TTTTTTTT 0
+TTTTTTTTT 0
+protein sequence:  MRINGKAKERKK
+protein length:  12
+raw record:  LOCUS       AF191665                 902 bp    DNA     linear   PLN 07-NOV-1999
+DEFINITION  Opuntia marenae rpl16 gene; chloroplast gene for chloroplast
+            product, partial intron sequence.
+ACCESSION   AF191665
+VERSION     AF191665.1  GI:6273291
+KEYWORDS    .
+SOURCE      chloroplast Opuntia marenae
+  ORGANISM  Opuntia marenae
+            Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
+            Spermatophyta; Magnoliophyta; eudicotyledons; core eudicotyledons;
+            Caryophyllales; Cactaceae; Opuntioideae; Opuntia.
+REFERENCE   1  (bases 1 to 902)
+  AUTHORS   Dickie,S.L. and Wallace,R.S.
+  TITLE     Phylogeny of the subfamily Opuntioideae (Cactaceae)
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 902)
+  AUTHORS   Dickie,S.L. and Wallace,R.S.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (28-SEP-1999) Botany, Iowa State University, 353 Bessey
+            Hall, Ames, IA 50011-1020, USA
+FEATURES             Location/Qualifiers
+     source          1..902
+                     /organism="Opuntia marenae"
+                     /organelle="plastid:chloroplast"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:106980"
+                     /note="subfamily Opuntioideae; synonym: Marenopuntia
+                     marenae, Grusonia marenae"
+     gene            <1..>902
+                     /gene="rpl16"
+     intron          <1..>902
+                     /gene="rpl16"
+ORIGIN      
+        1 tatacattaa aggaggggga tgcggataaa tggaaaggcg aaagaaagaa aaaaatgaat
+       61 ctaaatgata taggattcca ctatgtaagg tctttgaatc atatcataaa agacaatgta
+      121 ataaagcatg aatacagatt cacacataat tatctgatat gaatctattc atagaaaaaa
+      181 gaaaaaagta agagcctccg gccaataaag actaagaggg ttggctcaag aacaaagttc
+      241 attaagagct ccattgtaga attcagacct aatcattaat caagaagcga tgggaacgat
+      301 gtaatccatg aatacagaag attcaattga aaaagatcct atgntcattg gaaggatggc
+      361 ggaacgaacc agagaccaat tcatctattc tgaaaagtga taaactaatc ctataaaact
+      421 aaaatagata ttgaaagagt aaatattcgc ccgcgaaaat tcctttttta ttaaattgct
+      481 catattttct tttagcaatg caatctaata aaatatatct atacaaaaaa acatagacaa
+      541 actatatata tatatatata taatatattt caaattccct tatatatcca aatataaaaa
+      601 tatctaataa attagatgaa tatcaaagaa tctattgatt tagtgtatta ttaaatgtat
+      661 atattaattc aatattatta ttctattcat ttttattcat tttcaaattt ataatatatt
+      721 aatctatata ttaatttaga attctattct aattcgaatt caatttttaa atattcatat
+      781 tcaattaaaa ttgaaatttt ttcattcgcg aggagccgga tgagaagaaa ctctcatgtc
+      841 cggttctgta gtagagatgg aattaagaaa aaaccatcaa ctataacccc aaaagaacca
+      901 ga
+//

@@ -1,0 +1,80 @@
+This is a general protocol page for extracting RNA from cells.
+
+==Specific Protocols==
+*[[Endy:RNA extraction]]
+*[[Etchevers:RNA tissues|Extraction of RNA from tissues in English]]
+*[[Etchevers:Extraction ARN francais|Extraction of RNA from tissues in French]]
+*[[Gattuso:RNA extraction]]
+
+==Notes==
+Some general notes on isolating RNA derived from chapter 2 of <cite>MeasuringGeneExpression</cite>.
+
+These notes are focused on bacterial cells but please contribute to include information about plant, mammalian and other cells etc.
+
+===Harvesting cells===
+*Centrifugation of cells can induce a stress response in cells altering transcript levels (potentially unequally across different transcripts).
+*[http://www1.qiagen.com/literature/handbooks/literature.aspx?id=1000278 "RNA''protect''"] is a reagent used to stabilize RNA content in bacterial cells grown in liquid culture.
+**Works best if cells are grown in minimal media.  Works worst in LB liquid culture due to complex components.
+*Prepare all reagents and organize all equipment ahead of time to minimize the time between end of cell growth and cell lysis (especially if stabilization reagents are not used).
+*Once cells are lysed, keep all samples on ice and use ice cold reagents to reduce RNase activity.  However, note that RNases are still active at 0&deg;C.  (Do not put cells on ice prior to cell lysis otherwise you risk inducing a cold-shock response.)
+
+===Lysing cells===
+*The best way to lyse bacterial cells is guanidine isothiocyanate which isolates cellular RNA at the same time.
+**Pre-digestion of the cell wall may improve lysis efficiency.  This is essential for Gram-positive bacteria.  Use 0.4mg/mL lysozyme for Gram-negative bacteria and 3mg/mL lysozyme for Gram-positive bacteria in chosen resuspension buffer.
+*Use 2mL of lysozyme containing buffer per 10mL of E. coli bacterial culture having an OD600nm of 0.5 (assumes OD600nm  of 1 equals 10<sup>9</sup> cells per mL).  Scale the amount of resuspension buffer linearly based on the number of cells to be lysed.
+*To lyse cells, add resuspension buffer and pipette up and down rapidly using a 250 &mu;L capacity pipette tip until no cell clumps are visible.  Incubate on the bench for 5 mins (Gram-negative bacteria) or 15 mins (Gram-positive bacteria).  (This lysis procedure assumes that RNA stabilization reagents have been used or that resuspension buffer contains RNase inhibitors.)
+*Homogenization can improve efficiency of RNA isolation from bacterial cells.  If cell lysate is viscous, pour lysate into a syringe and pass the solution back and forth through a 20 gauge needle 5-10 times.
+
+===Purification approaches===
+====Acid phenol extraction and alcohol precipitation====
+*Very cheap
+*Long procedure
+*Prone to DNA contamination
+*Can leave residual phenol in the sample inhibiting downstream reactions and introducing error into RNA quantitation.
+*Doesn't inactivate RNases immediately.
+====Guanidine isothiocyanate extraction coupled with lithium chloride precipitation====
+*Lyses cells, extracts cellular RNA and denatures proteins all at once in many cases.
+*Inactivates RNases faster than acid phenol extraction.
+*Does not physically separate RNA from proteins and DNA in one step. Protein contamination must be removed by chloroform treatment and need to differentiate between RNA and DNA using some other technique (like lithium chloride precipitation).
+*Can also use cesium chloride ultra-centrifugation instead of lithium chloride precipitation but this requires access to an ultra-centrifuge.
+====Anion-exchange matrices====
+*Allows purification of genomic DNA and RNA in parallel.
+====Silica matrices====
+*Very small species (< 200nt) do not bind to silica matrices.
+====Commercially available kits====
+*Qiagen RNA easy kits are the most widely recommended.  It is more expensive than other kits but is good for transcriptomics.  All the kits are suitable for applications like RT-PCR as long as you check for and remove contaminants from RNA preparation.
+*Cell lysis is the point at which things are most likely to go wrong.  
+*Mechanical disruption and homogenization can help with cell lysis issues. Using a bead grinding machine may be helpful.
+
+===Solubilization of RNA, storage and quantification===
+*To dissolve RNA pellets, use RNase-free water (which is least likely to interfere with downstream applications).  After adding water, heat the RNA to reduce secondary structure and promote solubilization (70&deg;C for 5 mins, mix by pipetting every minute).  RNA at a concentration of 1 &mu;g/&mu;L is too dilute to re-precipitate upon cooling.
+*Store RNA at less than -70&deg;C.  
+*Only freeze-thaw RNA samples once.
+*Re-determine RNA concentration following storage and defrosting.
+*The A<sub>260</sub> reading of the RNA sample should be between 0.1-0.5.  Dilute the sample in H<sub>2</sub>O for this measurement.
+
+===Sources of contamination===
+====DNA====
+*To identify low levels of DNA contamination, do a PCR of a housekeeping gene and a portion of the RNA preparation as template.  If there is contamination, there will be products in all samples.
+*Use lithium chloride re-precipitation to remove DNA for best results.  However, this is slow.
+*Use DNaseI if you are in a hurry.
+====Protein====
+*Measure th A<sub>260</sub>/A<sub>280</sub> ratio.  It should be 2.0 for very pure RNA samples.  When measuring this ratio, dilute the RNA sample in TE buffer (not H<sub>2</sub>O) because pH can affect the A<sub>280</sub> reading.
+*If there is protein contamination, you may need to do a chloroform cleaning and reprecipitation.
+====Salt====
+*Measure the A<sub>260</sub>/A<sub>240</sub> ratio.  It should be 1.4 for very pure RNA samples.  
+*Isopropanol precipitation coupled with a 70% v/v ethanol wash of the pellet can remove salts.
+
+==Related information==
+See [[RNA]].
+
+==Reference==
+<biblio>
+#MeasuringGeneExpression isbn=0415374723
+</biblio>
+
+[[Category:Protocol]]
+[[Category:RNA]]
+[[Category:In vitro]]
+
+__NOTOC__

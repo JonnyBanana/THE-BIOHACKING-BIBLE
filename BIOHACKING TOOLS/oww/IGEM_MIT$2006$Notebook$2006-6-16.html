@@ -1,0 +1,76 @@
+==Progress from Previous Day==
+#Looking over all sequences, BAMT and BSMT were all fine- will use A colonies for PCR 
+#SAMT with reverse primer had sequencing issues on all colonies, with poor match and a shorter number of bases
+
+==Indole==
+
+#Here is a paper complete with GenBank Accession Nos. for the gene (in e. coli) that we would need to mutate in order to inhibit its indole-producing trait!!!!!: http://www.pubmedcentral.gov/articlerender.fcgi?artid=523188
+#*e. coli Tna operon: GenBank #: AY746464
+#*e. coli TnaA genes: GenBank #: AY746494
+#Indole is another putative extracellular signal which is involved in biofilm formation in E. coli and is prevalent in the stationary phase. Indole is formed from tryptophan by tryptophanase (TnaA)
+#Here is a paper about indigo biosynthesis if we are still interested: http://www.nature.com/nbt/journal/v11/n3/pdf/nbt0393-381.pdf
+
+==Sequencing==
+#PCRed BAMT, SAMT, BSMT A's as per method described [[../Notebook/2006-6-15|6-15-2006]]
+#*Ran it in gel: 1 % agarose solution- 40 uL, 1 uL ethidium bromide, added buffer, and loaded gel
+
+==BL21 Transformation==
+#Transformed BL21 (DE3) with BAMT, SAMT, and BSMT A's using procedure described by Invitrogen's [https://www.invitrogen.com/content/sfs/manuals/oneshotbl21_man.pdf manual].
+
+==Toxicity: How much SA / BA does it take to kill E. coli?==
+
+*To each of 12 tubes, we added 5mL LB, 10&mu;L of BL21 cells from the fridge, and SA or BA as specified in the table below; then we incubated the tubes @ 37 deg. C.  We took OD600 readings 5 hours after incubating the cells.
+ 
+{| border="1" cellpadding="5"
+!|Concentration
+!|volume of 1M benzoic acid (BA) added, ''[OD600]''
+!|volume of 1M salicylic acid (SA) added, ''[OD600]''
+|-
+|0&mu;g/mL [control]
+|none ''['''1.2'''/1.22/1.23]''
+|none ''['''1.15'''/1.15/1.15]''
+|-
+|5&mu;g/mL 
+|.2&mu;L ''['''1.09'''/1.14/1.17]''
+|.15&mu;L ''['''1.12'''/1.12/1.12]''
+|-
+|10&mu;g/mL 
+|.41&mu;L ''['''1.15'''/1.20/1.20]''
+|.31&mu;L ''['''1.10'''/1.10/1.10]''
+|-
+|100&mu;g/mL 
+|4.1&mu;L ''['''1.06'''/1.06/1.07]''
+|3.1&mu;L ''['''.99'''/.99/.99]''
+|-
+|500&mu;g/mL 
+|20&mu;L ''['''.91'''/.91/.95]''
+|15&mu;L ''['''.53'''/.53/.53]''
+|-
+|5000&mu;g/mL 
+|205&mu;L ''['''.01'''/.01/.00]''
+|155&mu;L ''['''.03'''/.03/.03]''
+|-
+|}
+
+*We found that it would probably be safe to '''add 100&mu;g/mL of BA or SA to our liquid cultures''' without severely inhibiting cell growth; it's likely that we can also get away with 500&mu;g/mL of BA (but 500&mu;g/mL of SA could be a bad idea).
+
+==gel results of ATF1 PCR construct==
+#positive controls worked
+#no sample
+#*need to troubleshoot
+#**doublechecked primer sequences: they still look pretty good
+#***reverse primer is a bit short (16bp), so could consider adding an AG onto 3' end
+#***in papers they used much shorter forward primer (9bp binding sequence), maybe try this too
+#***adjust temperature of PCR reaction?
+
+==To do==
+#PCR biobricks [SAMT, BAMT, BSMT...the sequences from the plasmids that were transformed into Top10 cells came out OK]
+#Mutagenesis PCR for ATF1
+#Transform plasmids isolated from Top10 cells into BL21 competent cells (and make our own BL21 competent cells)
+#If we get methyl benzoate or methyl salicylate, try to determine the concentration necessary to detect a scent. **We'll do this on Monday!**
+
+==Wiki Development== 
+Currently building a new page that is topical instead of linear, [[../../Index]]
+
+==On order==
+Salicylic acid had been ordered, should be here any time now.  Methyl salicylate and methyl benzoate have been ordered and should be here on Monday.  Indole has been ordered, not sure when it is expected.

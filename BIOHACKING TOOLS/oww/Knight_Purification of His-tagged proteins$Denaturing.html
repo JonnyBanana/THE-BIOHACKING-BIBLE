@@ -1,0 +1,113 @@
+==Overview==
+Denaturing purifications can often lead to better purity and yield.
+
+==Materials==
+
+===Lysis and column equilibration buffer===
+*8 M urea
+*100 mM NaH<sub>2</sub>PO<sub>4</sub>
+*10 mM Tris Cl
+*10 mM imidazole (recommended by Kathleen, 9/27/2006)
+*pH 8.0
+*1 mM TCEP (add just before use)
+
+===Wash buffer (Qiagen buffer C)===
+*8 M urea
+*100 mM NaH<sub>2</sub>PO<sub>4</sub>
+*10 mM Tris Cl
+*10 mM imidazole (recommended by Kathleen, 9/27/2006, also use here?)
+*pH 6.3
+*1 mM TCEP (add just before use)
+
+===Elution buffer (Qiagen buffer E)===
+*8 M urea
+*100 mM NaH<sub>2</sub>PO<sub>4</sub>
+*10 mM Tris Cl
+*10 mM imidazole (recommended by Kathleen, 9/27/2006, also use here?)
+*pH 4.5
+*1 mM TCEP (add just before use)
+
+===Notes===
+*Solid urea to make up an 8M solution takes up a lot of volume so be conservative on how much H <sub>2</sub>O you start with (maybe 50% of final volume)
+*Kathleen suggested supplementing the lysis buffer with 10mM imidazole to prevent nonspecific protein binding to the column.  Perhaps supplement the other buffers as well?
+*The urea should be freshly prepared and deionized prior to use.
+*The buffers should each be degassed before use.
+*[http://www.piercenet.com/Products/Browse.cfm?fldID=02051012 TCEP] is not particularly stable in phosphate buffers, especially at neutral pH. Therefore, if TCEP is to be used in phosphate buffers, prepare the working solution immediately before use.
+
+==Procedure==
+
+===Grow and pellet cultures===
+#Grow up an overnight 5mL culture in LB plus the appropriate antibiotic.
+#The following morning, dilute back the culture 1:50 to the appropriate culture volume (which depends on the expected yield of the protein).
+#*''Since I don't know what yield to expect, I arbitrarily did 50mL cultures assuming that my protein yield would be low and let it grow most of the day.  I try to catch the cultures around OD600nm 0.6.''
+#Harvest the cells by centrifugation at 4000 x ''g'' for 15 mins.
+#*''The Qiagen protocol didn't specify a temperature so I did 4&deg;C.''
+#Decant supernatant.
+#The cell pellet can be stored at -70&deg;C or processed immediately.
+#*''I stored the pellet at -80&deg;C.  Long term storage at -80&deg;C might affect protein recovery???''
+
+===Prepare solutions===
+#Prepare 10M Urea.
+#[[Knight:Deionization|Deionize]] the urea solution.
+#Prepare lysis, wash and elution buffers (everything except reducing agent).
+#[[Knight:pH meter/Measurement|Verify pH]] of lysis, wash and elution buffers.  Adjust if necessary.
+#*''Dissociation of urea can lead to changes in pH.  The pH definitely needs to be checked prior to using the solutions.''
+#Degas lysis, wash and elution buffers by placing under vacuum for one hour.
+#*''Tom recommends doing the degassing step last.''
+#Add TCEP to 1mM final concentration.
+#*''TCEP is not stable in phosphate buffers at neutral pH.''
+#Verify that pH hasn't changed.
+#*''It is not known whether TCEP affects pH.  Degassing can affect pH in some cases.''
+
+===Purify protein===
+#Thaw pellet for 30 mins.
+#*''Can thaw at room temperature since the next step happens at room temperature.  However, proteases will be less active if the pellet is thawed on ice.''
+#*''The Qiagen protocol calls for 15 mins, but it was still frozen after 15 mins so I let it thaw for 30 mins.''
+#Transferred to 2mL eppendorf tube.
+#Resuspend in 1mL Lysis Buffer (see above).
+#Add half or 1/4 protease inhibitor pellet.
+#Incubate cells with agitation for 1 hr at room temperature.
+#*''Use an orbis shaker on the bench to do this temp (usually kept in 37&deg; incubator).  Note that the shaker moves during shaking.''
+#Centrifuge lysate at 10000 x ''g'' for 30 mins at room temperature.
+#Add 600 &mu;L lysis buffer to Ni-NTA column to equilibrate.
+#Centrifuge Ni-NTA column '''2 mins at 700 x ''g''''' with open lid to remove equilibration buffer.
+#Save 20 &mu;L cleared lysate.
+#Load 600 &mu;L cleared lysate to Ni-NTA column.
+#Centrifuge Ni-NTA column '''5 mins at 700 x ''g''''' with closed lid.
+#*''I typically repeat this step to load the rest of my cleared lysate.''
+#*''Save flow through.''
+#Add 600 &mu;L wash buffer to Ni-NTA column.
+#Centrifuge Ni-NTA column '''2 mins at 700 x ''g''''' with open lid.
+#*''Save flow through.''
+#Add 600 &mu;L wash buffer to Ni-NTA column.
+#Centrifuge Ni-NTA column '''2 mins at 700 x ''g''''' with open lid.
+#*''Save flow through.''
+#Tranfer to clean 1.5mL eppendorf tube.
+#Add 200&mu;L elution buffer.
+#Centrifuge Ni-NTA column '''2 mins at 700 x ''g''''' with open lid.
+#*''Most of the protein should elute in this elution step.''
+
+==Notes==
+*Sauer lab uses a Qiagen Ni-NTA resin but this protocol uses spin columns.  (Smaller scale purification).
+*Using the Qiagen Ni-NTA resin may be preferable for proteins with low yields.  
+*A lower pH may be needed for elution.  For instance, aggregates should elute at pH 4.5 whereas monomers generally elute at pH 5.9.
+*Contaminating proteins tend to be less of an issue in bacteria because there are few proteins with neighboring histidines that tend to bind to the column.
+*20 year old spin columns don't work.  :)
+*These columns can tolerate up to 20mM &beta;-mercaptoethanol or 1mM dithiothreitol.  Some people also seem to use 0.5-1mM TCEP with these columns.  TCEP appears to [http://www.piercenet.com/Products/Browse.cfm?fldID=02051012&WT.srch=1&WT.mc_id=go_TCEP_TCEP_brj&gclid=CPWzwfDkkIkCFUh6GgodyBUn6g more compatible] with NTA columns for his-tagged protein purification.
+*Even when doing denaturing purifications, add 10mM imidazole to solutions to help with washing out non His tagged proteins.
+
+==Troubleshooting and optimization==
+*[[Knight:Deionization|Deionize]] urea solutions prior to use.
+*Degas all buffers.
+
+==Safety==
+
+==References==
+<biblio>
+#SauerDenaturingProtocol [[Sauer:Purification of His-tagged proteins/Denaturing prep]]
+#QiagenNTAManual [http://www1.qiagen.com/literature/handbooks/PDF/Protein/Purification/NiNTA_Spin/1023679HBNINTA_022003WW.pdf Qiagen Ni NTA Spin Kit manual]
+</biblio>
+
+[[Category:Protocol]]
+[[Category:In vitro]]
+[[Category:Protein]]

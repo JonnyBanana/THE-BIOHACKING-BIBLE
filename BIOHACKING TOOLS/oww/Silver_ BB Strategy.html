@@ -1,0 +1,79 @@
+*Please note that although our protocols are very similar to that of [[BioBricks construction tutorial|others]], our biobrick vectors, called biofusion vectors, are slightly different. Although the biobrick ends are identical to the vectors designed by Tom Knight, our biobrick vectors allow in frame fusion of two protein coding regions. Specifically, our protein coding biofusion parts:
+**do not start with ATG
+**do not end with a stop codon
+**do not have a A or G nucleotide between the end of the XbaI and the beginning of the protein coding region or after the coding sequence and the start of the SpeI 
+*Refer to  [https://dspace.mit.edu/bitstream/1721.1/32535/1/PhillipsSilverFusion.pdf#search=%22Ira%20Phillips%20fusion%22 Ira Phillip's technical note] for more details. 
+
+== Making a New BioBrick Part ==
+# Create an insert containing the new part flanked by BioBrick ends.
+#* For parts that are smaller than ~85 bp, then the part can be make using an [[Silver: Oligonucleotide_Inserts|oligonucleotide insert]].
+#* For parts that are between ~ 85 - 150 bp, then the part can be make by using [[Silver: Overlapping_Oligonucleotide_Inserts|overlapping oligonucleotide inserts]]. 
+#* For parts that are larger than ~150 bp and are based on an existing DNA fragment, then use [[Silver: PCR|PCR amplification]] of the existing DNA.
+# [[Silver: Restriction_Digest|Digest]] the insert and the [[Media:BBa_V0120.gb|BioBrick vector]].
+# [[Silver: Ligation|Ligate]] the insert into the vector.
+# [[Silver: Plasmid_Verification|Verify]] the new part.
+
+== Combining Two Parts ==
+* The overall strategy of combining two parts is very similar to that of making a new part. Instead of placing your insert into an empty vector (making a new part), you cut out a part from one vector and ligate it into a second vector which already contains a second part.
+* If possible, use a suffix insertion (insertion of the added part behind the existing part), over a prefix insertion (insertion of the added part in front of the existing part).
+* Gel extraction of fragments less than 200 bp is rather difficult, so plan your strategy so that the insert part is larger than 200 bp.
+* Isolating one of two very similarly sized DNA fragments by gel extraction is difficult, so avoid doing a digest which produces an insert which is within ~700 bp of the size of the cut vector. If necessary, use a triple digest (typically ApaLI is the third restriction enzyme) to cut the vector in an additional location, while leaving your insert intact.
+
+
+<table border=1 align=center>
+<tr><td rowspan=2></td><td colspan=2><center><b>Prefix Insertion</b></center></td>
+<td colspan=2><b><center>Suffix Insertion</center></b></td></tr>
+</td><td> prefix (insert) </td><td> suffix (vector) </td><td> prefix (vector) </td><td> suffix (insert) </td></tr>
+<tr><td> Enzyme 1 </td><td>EcoRI</td><td>EcoRI</td><td>SpeI</td><td>XbaI</td></tr>
+<tr><td> Enzyme 2 </td><td>SpeI</td><td>XbaI</td><td>PstI</td><td>PstI</td></tr>
+<tr><td> Buffer </td><td>2</td><td>EcoRI</td><td>2</td><td>3</td></tr></table>
+
+
+*Prefix 5'-gaattcgcggccgcttctaga-(part)-actagtagcggccgctgcag-3' Postfix 
+
+
+
+# In separate tubes, digest both vectors containing the parts to be combined using the scheme above. 
+#*Mix:	
+#**700 ng BioBrick vector 
+#**1 µL 10x BSA
+#**1 µL 10x NEB buffer x
+#**0.1-0.2 µL Enzyme 1 (20 units/mL)
+#**0.1-0.2 µL Enzyme 2 (20 units/mL)
+#**distilled water to final volume of 10 µL
+# Incubate overnight at 37 °C.
+# To the vector digestion mix only, add 0.1 µL CIP next morning and incubate for 1 hr. at 37 °C.
+# Purification of vector and insert  
+#* Run an agarose gel of the insert (and optionally, the vector).
+#* Cut the insert out of the agarose gel and extract it using Qiagen's Gel Extraction Kit (and optionally, the vector).
+#* If the vector was not gel extracted, use Qiagen's PCR Purification Kit to remove the small, undesired DNA fragments.
+#  [[Silver: Ligation|Ligate]] the insert into the cut vector to combine the parts.
+#  [[Silver: Bacterial Transformation|Transform]] the new BioBrick vector into E. coli.
+#  [[Silver: Plasmid Verification|Verify]] the new part.
+
+== Making a Final Part and Incorporating it into a Yeast Shuttle Vector==
+*Final parts can be simply incorporated into a Sikorski vector by isolating the part and ligating it into an appropriately cut Sikorski vector.
+*Perform preparative digests of the Sikorski vector, and the full part per the following.
+<table border=1 align=center>
+<tr><td> Sikorski vector </td><td> insert & vector digest </td></tr>
+<tr><td> pRS303 (HIS3) </td><td>EcoRI, SpeI </td></tr>
+<tr><td> pRS304* (TRP1) </td><td>EcoRI, SpeI </td></tr>
+<tr><td> pRS305 (LEU2) </td><td>XbaI, PstI</td></tr>
+<tr><td> pRS306 (URA3) </td><td>EcoRI, SpeI </td></tr>
+</table>
+*Alternatively, the final construction step of the BioBrick part can be combined with incorporation into a Sikorski vector (a vector which allows the part to be integrated into the yeast genome) by performing a triple ligation. 
+*Perform preparative digests of the Sikorski vector, the forward part, and the back part per the following.
+<table border=1 align=center>
+<tr><td> Sikorski vector </td><td> vector digest </td><td> forward part digest </td><td> back part digest </td></tr>
+<tr><td> pRS304* (TRP1) </td><td>EcoRI, Not I </td><td>EcoRI, SpeI</td><td>XbaI, NotI</td></tr>
+<tr><td> pRS305 (LEU2) </td><td>NotI, PstI</td><td>NotI,SpeI</td><td>XbaI, PstI</td></tr>
+<tr><td> pRS306 (URA3) </td><td>EcoRI, Not I </td><td>EcoRI, SpeI</td><td>XbaI, NotI</td></tr>
+</table>
+*Ligate, transform, and verify the part. I (Caroline) have found that triple ligations work well, especially if the two inserts are present at approximately the same molar excess relative to the cut vector.
+*Note:
+**If this is the only construct to be incorporated into the 580a strain, then the final BioBricks part should be incorporated into the URA3 Sikorski vector (pR306; Silver collection pPS750). 
+**If this is not the only construct that will be integrated into a single yeast strain, then you must decide which auxotrophic marker will be used for this particular construct.
+**The orientation of the BioBrick part should be opposite that of the auxotropic gene once incorporated into the Sikorski vector.
+
+
+last modified by Caroline Ajo-Franklin 1 October 2006

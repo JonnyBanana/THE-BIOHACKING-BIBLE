@@ -1,0 +1,270 @@
+<pre>
+#ICD9_prevalance.py
+#Zachary Sun
+#5.1.07, Biophysics 101
+
+#Ultimately: This code is able to output a formal disease name from informal info.
+#INPUT: RS NUMBER
+#Output1 : Mesh terms relevant to RS NUMBER
+#INPUT2 : Mesh terms relevant to RS NUMBER
+#Output2 : The single major mesh term (eg. disease name)
+#INPUT3: The single major mesh term (eg. disease name)
+#Output3: CDC# to standardize mesh term, formal disease name, and incidence
+
+#This code does a couple of things:
+#1) **Cynthia**: Takes in a rs# and outputs a list of mesh terms and important mesh terms
+#2) **Zach**: Takes Cynthia's list of important mesh terms, 
+#    *removes short words from mesh terms, and hits against paper titles from which it was taken
+#    *for the mesh terms with the most paper title hits, it says that mesh term is the MAIN TERM
+#    *feeds the main term to http://icd9cm.chrisendres.com
+#3) **Zach**: Enables lookup of ICD9 ID numbers and formal name when given a MAIN TERM
+#    *This is particularly useful as all data (WHO, CDC) is based
+#    *on the ICD9 ID, which is a method of classifying all known
+#    *diseases. This code is able to queue a website, http://icd9cm.chrisendres.com
+#    *which has the database of diseases - it returns the best hits
+#    *in dirty HTML, which can then be parsed to obtain ICD9 #'s and description.
+#4) **Zach** Enables lookup of prevalance data in database
+#    *Currently, I only have it hooked up to the State of CA prevalance data from
+#    *http://www.oshpd.ca.gov/hqad/PatientLevel/ICD9_Codes/index.htm, it does a
+#    *lookup based on #1 and returns prevalance data. Havent looked up but can theoretically
+#    *link to main CDC db at http://wonder.cdc.gov/.
+
+import os
+import string
+import urllib
+import sys
+from Bio import PubMed
+from Bio import Medline
+
+rsNumber = "rs11200638" # MODIFY THIS!
+print "INPUT: ", rsNumber
+
+###cynthias section###
+
+# parses a mesh term to remove * and /
+def parse_term(str, bool):
+    parsed_term = str
+    if(bool):
+        parsed_term = parsed_term.replace('*', '')
+    if str.find('/') != -1:
+       parsed_term = parsed_term.replace('/', ' ')
+    return parsed_term
+
+# parses list of mesh terms
+# returns embedded list, one with all terms and one major  terms
+def parse_mesh(list):
+    all_mesh_terms = []
+    major_mesh_terms = []
+    mesh_term = ''
+    for i in range(len(list)):
+        major = False
+        if list[i].find('*') == -1:
+            mesh_term = parse_term(list[i], major)
+            all_mesh_terms.append(mesh_term)
+        else:
+            major = True
+            mesh_term = parse_term(list[i], major)
+            major_mesh_terms.append(mesh_term)
+            all_mesh_terms.append(mesh_term)
+    all_mesh = [all_mesh_terms, major_mesh_terms]
+    return all_mesh
+    
+article_ids = PubMed.search_for("rs11200638")
+rec_parser = Medline.RecordParser()
+medline_dict = PubMed.Dictionary(parser = rec_parser)
+
+all_mesh = []
+all_mesh_terms = []
+major_mesh_terms = []
+for did in article_ids[0:5]:
+    cur_record = medline_dict[did]
+   # print '\n', cur_record.title, cur_record.authors, cur_record.source
+    mesh_headings = cur_record.mesh_headings
+    if len(mesh_headings) != 0:
+        all_mesh = parse_mesh(mesh_headings)
+        all_mesh_terms.extend(all_mesh[0])
+        major_mesh_terms.extend(all_mesh[1])
+
+#print '\n', all_mesh_terms, '\n', major_mesh_terms
+######cynthia's section end#####
+
+
+#####
+#Problem to solve: Although Cynthia's output parses out the
+#major mesh terms from the paper, each mesh term can give a hit
+#ie: it does not figure out which is really the "major" major mesh term.
+#I intend to solve it by hitting against the title to see if there are matches
+#and by removing connecting words from the mesh terms.
+#####
+
+##modifying cynthia's output
+
+new_term = []
+for term in major_mesh_terms:
+    test = term.split(" ") #split by " "
+    temp = ""
+    for test_term in test:
+        if len(test_term) <= 3: #if it is a small connecting word
+            pass
+        else:
+            if temp != "":
+                temp = temp + "+"
+                temp = temp + test_term
+            else:
+               temp = test_term
+    #print temp
+    new_term.append(temp)
+
+titles = []
+#create list of article id's
+for did in article_ids:
+    cur_record = medline_dict[did]
+    titles.append(cur_record.title)
+
+#titles = a list of all titles returned by PubMed
+count = 0 #counter
+bestterm = [0,"ERROR"]
+for term in new_term:
+    count = 0
+    test = term.split("+") #split by "+"
+    for test_term in test: #hit each word in term against title
+        for title in titles:
+            if str.upper(title).find(str.upper(test_term)) != -1: #if found the term in title
+                count += 1
+    if count > bestterm[0]:
+        bestterm[0] = count
+        bestterm[1] = term
+
+#print bestterm[1] #bestterm[1] is the main disease name
+
+if(bestterm[1] == "ERROR"): # if not hit
+    print "Warning: There are no relevant mesh terms for the passed rs#!"
+    sys.exit(0)
+
+fh = open(os.path.join(os.curdir, "dx05.txt")) #the CA data file
+line = fh.readline()
+disease_name = bestterm[1] #INSERT DISEASE NAME HERE FOR TESTING
+ICD9code = []
+ICD9dName = []
+found = 0
+
+####
+#queueing http://icd9cm.chrisendres.com for code lookup
+####
+queue_name = 'http://icd9cm.chrisendres.com/index.php?action=search&srchtype=diseases&srchtext='
+queue_name = queue_name + disease_name
+    
+code_lookup = urllib.urlopen(queue_name).read() #send queue request to site, returns dirty html
+out = open("index.txt", "w") #write dirty html to file
+out.write(code_lookup)
+out.close()
+
+tempName = ""
+readCode = open("index.txt", "r") #read dirty html
+lookup_line = readCode.readline()
+print "***ICD9 and hits, arranged by importance***\n"
+while lookup_line:
+    w= lookup_line.find("<div class=dlvl>") #the unique marker before the disease
+    if w != -1: #if it is found
+        tempCode = lookup_line[32:40] #code in this section
+        tempCode = string.split(tempCode, ' ') #split into number
+        #print tempCode
+        ICD9code.append(tempCode[0])
+        w = lookup_line.find("</div>")
+        if w != -1: #if there is a </div> marker (junk html)
+            tempName = lookup_line[32:w]
+            tempName = tempName[tempName.find(" ")+1:]
+            #print tempName
+            ICD9dName.append(tempName)
+        else:
+            tempName = lookup_line[32:len(lookup_line)-7]
+            tempName = tempName[tempName.find(" ")+1:]
+            #print tempName
+            ICD9dName.append(tempName)
+    lookup_line = readCode.readline()
+
+####
+#searching incidence data in CA data file
+#note: returns class of hits
+####
+print "\n\n***Prevalance data per IDC9 above***"
+print "Note: returns incidence data/yr, including subclasses\n"
+
+fh = open(os.path.join(os.curdir, "dx05.txt")) #the CA data file
+
+#new data structure: [0] = code, [1] = name, [2] = incidence
+ICD9_prev_output= [[],[],[]]
+
+for (code,name) in zip(ICD9code,ICD9dName):
+    fh.seek(0)
+    line = fh.readline()
+    totalIncidence = 0
+    sumCount = 0
+    while line: #for every line in the data
+        line = line[:-1] #remove /n
+        lineVector = string.split(line, ',') #split to vector
+        if lineVector[0].find(code) != -1: #if disease hit
+            totalIncidence += int(lineVector[1])
+            sumCount += 1
+        else:
+            if sumCount > 0:
+                print "ID: ", code, "name: ", name, "incidence: ", totalIncidence
+                ICD9_prev_output[0].append(code)
+                ICD9_prev_output[1].append(name)
+                ICD9_prev_output[2].append(totalIncidence)
+                totalIncidence = 0
+                sumCount = 0
+        line = fh.readline()
+fh.close()
+
+#returns the most relevant ICD9 information
+
+#THIS IS THE DATA YOU PROBABLY WANT
+mainCode = 0
+mainName = 0
+mainIncidence = 0
+
+counter = 0
+for c,n,incid in zip(ICD9_prev_output[0], ICD9_prev_output[1], ICD9_prev_output[2]):
+    if incid > counter:
+        counter = incid
+        mainCode = c
+        mainName = n
+        mainIncidence = incid
+
+print "THE MOST RELEVANT HIT:\n"
+print "CDC CODE: ", mainCode
+print "Disease Name: ", mainName
+print "Incidence/yr in CA: " , mainIncidence
+    
+
+</pre>
+
+
+OUTPUT:
+
+<pre>
+INPUT:  rs11200638
+***ICD9 and hits, arranged by importance***
+
+
+
+***Prevalance data per IDC9 above***
+Note: returns incidence data/yr, including subclasses
+
+ID:  362.52 name:  Exudative senile macular degeneration incidence:  23
+ID:  362.51 name:  Nonexudative senile macular degeneration incidence:  22
+ID:  362.53 name:  Cystoid macular degeneration incidence:  6
+ID:  362.50 name:  Macular degeneration (senile), unspecified incidence:  11338
+ID:  362.5 name:  Degeneration of macula and posterior pole incidence:  11560
+ID:  362.63 name:  Lattice degeneration incidence:  21
+ID:  429.1 name:  Myocardial degeneration incidence:  49
+ID:  363.32 name:  Other macular scars incidence:  6
+ID:  743.55 name:  Congenital macular changes incidence:  2
+ID:  371.55 name:  Macular corneal dystrophy incidence:  10
+THE MOST RELEVANT HIT:
+
+CDC CODE:  362.5
+Disease Name:  Degeneration of macula and posterior pole
+Incidence/yr in CA:  11560
+</pre>

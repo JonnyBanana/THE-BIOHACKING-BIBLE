@@ -1,0 +1,195 @@
+=Electron Spin Resonance=
+==Purpose==
+The purpose of this experiment is to figure out the <math>g_s\;</math> factor from the spin flip transistion of a free electron in a magnetic field.
+
+
+
+==Materials==
+*Helmholtz coils (radius 6.75 cm, 320 turns) model 55506 mfd. Leybold Didactic GMBH
+*Digital Storage Oscilloscope (DSO) - TDS 1012 mfd. by Tektronix
+*Power supplies for ESR Adapter: Model 721A mfd. by Hewlett Packard
+*ESR Adapter: Model 51416 mfd. by Leybold
+*Phase shifter: made by Physics Dept.
+*ESR Probe Unit: Model 51455 mfd. Leybold
+*Soar DC Power Supply model PS-3630
+*Fluke 111 Mutlimeter
+*Variac: W5MT3 mfd. by General Radio Company
+*Alligator clips
+*BNC connectors
+*Banana connectors
+*5001 Universal Counter Timer mfd. Global Specialties Corporation
+*Transformer: 6.3V 1Amp Model T-631 mfd. by Caltronics
+*1000 <math>\mu F</math> capacitor, model 593A, 16V, -40-85°C
+
+==Setup==
+[http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf See lab manual for more information.]
+*The sample of DPPH is placed in a coil inserted into the ESR probe unit and placed between the Helmholtz coils. The ESR probe unit is our RF oscillator, with frequency set by a knob on its top.
+*Set up the experiment with figures 1 and 2 and the description in the lab manual.
+*When we have an exact value for the magnetic field we would need to know the exact value for the frequency, since this is troublesome for an experiment we will connect the Helmholtz coils to a DC power source but also in parelell to n AC power source.  Thus the magnetic field will oscillate about some fixed value.
+*We reduce distortion of the sinusoidal wave by connecting the AC power supply to the Helmholtz coils through a capacitor.    
+*Since the current in the coils is out of phase with the power supplies we need a phase shifter to correct this, we used a homemade one provided by the UNM physics department.
+[[Image:ESR1.JPG|thumb|Figure 1: setup of probe and Helmholtz coils and the ESR adapator.]]
+[[Image:ESR2.JPG|thumb|Figure 2: setup of the power supples to the Helmholtz coils]]
+
+==Theory==
+The magnetic field provided by the Helmholtz coils is given by:
+*<math>B=\mu_0\left(\frac{4}{5}\right)^{\frac{3}{2}}N\frac{I}{r}</math>
+**<math>\mu_0=1.2567\times 10^{-6}\;m\cdot kg\cdot s^{-2}\cdot A^{-2}</math> is the magnetic constant
+**<math>N=320</math> is the number of turns in each coil
+**I is the current through each coil
+
+The electron has its own magnetic moment related to the fact that it has an intrinsic spin given by:
+
+*<math>\vec{\mu_s} = -g_s \mu_B \left(\frac{\vec{S}}{\hbar}\right)</math>
+**<math>g_s=\;</math> a constant characteristic of the electron, its intrinsic g-factor
+**<math>\mu_B=\frac{e \hbar}{2 m_e} = 5.788 \times 10^{-9}</math> eV/G is the Bohr magneton
+**<math>\vec{S} = </math> the spin of the electron
+**<math>\hbar = \frac{h}{2 \pi}=6.582 \times 10^{-16}</math>eV-sec or <math>\hbar c = 197.3</math> eV-nm
+
+Remember that: 
+<math>E = -\vec{\mu_s} \cdot \vec{B}</math>.
+
+
+The electron is either spin up or spin down, with energy
+*<math>E = E_0 \pm \frac{g_s \mu_B B}{2}</math>
+**<math>E_0\;</math> is the energy of the electron before the magnetic field was applied
+**This means that the energy difference between a spin-up electron and a spin-down electron is <math>g_s \mu_B B</math>.
+
+The condition for resonance is
+*<math>h\nu = g_s\mu_B B \;</math>
+**<math>\;\nu</math> is the frequency of oscillating RF field
+
+
+''I took all of the equations off Jesse's, my lab partner, notebook.''
+==Procedure==
+See better description in the lab manual
+[[Image:ESR_fig1.gif|thumb|'''Figure B''': Oscilloscope Traces, not in resonance. Figure B]]
+[[Image:ESR_fig2.gif|thumb|'''Figure A''': Oscilloscope Traces, in resonance.  Channel one and channel two traces visible.  ]]
+*Turn everything on, make sure that the DC power is at approximately 1 A and the AC power at 2 V
+*Channel one of the oscilloscope should show a AC voltage superimposed on a DC sine wave (under the DC coupling option).
+*Insert the sample into the RF coils and the insert it into the center of the Helmholtz coils.  Make sure that the Helmholtz coils are lined up and space correctly (Approx. the distance of their radius).
+*Adjust the frequency and the amperage of the DC power supply until you get pictures like those in figure A. Figure B is what the oscilloscope will look like before all adjustments are made.
+*Hints to take adjustments
+**Phase shifter moves the periodic drops left/right on top of the sine wave.
+**Increasing the amperage widens and lessens the gaps between the periodic drops.  
+**It helps to zoom in on one periodic drop and match that up, zoom out then match up the other drops and then check the first by zooming in again.
+*After adjustment is finished write down the frequency meter (frequency) reading and the reading output from the multimeter (current).  Use these later combined with the resonance equations above to find the g-factor.
+
+==Data==
+To see my excel sheet: [[Image:ESR.xls]]
+
+===Low Range Coil (13-30 MHz)===
+{|
+!Current (Amps)
+!Frequency (MHz)
+|----
+|0.248
+|13.05
+|----
+|0.293
+|15.6
+|----
+|0.365
+|18.55
+|----
+|0.376
+|21.25
+|----
+|0.483
+|24.2
+|----
+|0.519
+|27.55
+|----
+|0.573
+|30
+|----
+|}
+
+===Medium Range Coil (30-75 MHz)===
+
+{|
+!Current (Amps)
+!Frequency (MHz)
+|----
+|0.608
+|32.95
+|----
+|0.663
+|36.05
+|----
+|0.744
+|40.75
+|----
+|0.898
+|47.35
+|----
+|0.952
+|52.95
+|----
+|1.05
+|57.55
+|----
+|1.196
+|64.95
+|----
+|1.252
+|68.25
+|----
+|1.324
+|73.65
+|----
+|}
+
+===High Range Coil (75-130 MHz)===
+{|
+!Current (Amps)
+!Frequency (MHz)
+|----
+|1.363
+|75.25
+|----
+|1.457
+|81.75
+|----
+|1.556
+|87
+|----
+|1.64
+|91.95
+|----
+|1.776
+|98.05
+|----
+|1.863
+|103.55
+|----
+|1.951
+|108.95
+|----
+|2.054
+|114.25
+|----
+|2.0905
+|116.95
+|----
+|2.217
+|123
+|----
+|2.29
+|126.95
+|----
+|}
+
+==Results==
+[[Image:ESR3.JPG]]
+
+*Above is a graph of the Magnetic field provided by the Helmholtz coils times the Bohr magnetron vs the frequency times Planck's constant.  The slope is the g factor.
+
+Final value for <math>g_s\;</math>: 1.856871102
+
+Uncertainty in <math>g_s\;</math>: 0.005232689
+
+Accepted value for <math>g_s\;</math>: 2.0023
+
+Relative error: 7.26%

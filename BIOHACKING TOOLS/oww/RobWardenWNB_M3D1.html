@@ -1,0 +1,115 @@
+=Expression Engineering, Day 1, 4/4/07=
+==Choosing a SAGA Subunit==
+{|
+|Purpose
+|To choose a SAGA gene that when deleted will produce viable phage with an interesting phenotype.
+|}
+
+===Notes on Genes:===
+{|border=1
+!Protein
+!Function Notes
+|-
+|Ada1
+|Structural, Activator of histone acetyltransferase, Acetylation & Transciption Regulation
+|-
+|Ada2
+|Activator of histone acetyltransferase
+|-
+|Ada3
+|Glucose Regulator, histone acetyltransferase
+|-
+|Gcn5
+|histone acetyltransferase
+|-
+|Ada5
+|SAGA Integrity, Transcriptional regulator
+|-
+|Spt3
+|Transcription Activator (of RNAP2-dependant promoters) and Inhibitor
+|-
+|Spt7
+|SAGA Assembly, C-Truncation in SALSA
+|-
+|Spt8
+|required for SAGA-mediated inhibition at some promoters
+|-
+|Spt20
+|SAGA Integrity
+|-
+|Sgf73
+|Formation of preinitiation complex
+|-
+|Sgf29
+|Probably in SAGA
+|-
+|Sgf11
+|required for the Ubp8p association with SAGA and for H2B deubiquitylation
+|-
+|Ubp8
+|required for SAGA-mediated deubiquitination of histone H2B
+|-
+|Sus1
+|mRNA transport
+|-
+|}
+
+===Decision===
+We are going to delete Spt8 in the context of the following genome:<br>
+'''FY569:   "a" ura3-52 leu2d1 spt7-223 his4-917d lys2-173R2'''<br>
+This will create the SALSA complex!
+
+==Primer Design==
+===Forward Primer===
+*Landing Sequence (first 20 bases of URA3): ATGTCGAAAGCTACATATAA
+**Tm = 54 C
+**Ta = 49 C
+**GC Ratio: 30%
+**There is also a large hairpin
+*Tail Sequence: '''ACTAAAGGCTCAGTTTTTTTTTTTTTCTTCTTTTACGTA'''
+*Complete Oligo: '''ACTAAAGGCTCAGTTTTTTTTTTTTTCTTCTTTTACGTA'''ATGTCGAAAGCTACATATAA
+**Tm = 78.1 C
+**GC Ratio: 27.1%
+**Retains hairpin from landing sequence
+
+===Reverse Primer===
+*Landing Sequence: Top - 5'-TGCGGCCAGCAAAACTAA-3'  Reverse Compliment - 5'-TTAGTTTTGCTGGCCGCA-3'
+**Tm = 52.2 C
+**Ta = 47.2
+**GC Ratio: 50%
+*Tail Sequence: Reverse Compliment: '''TATGATTATGATTATGGTTATGATTATTATTACAACTCA'''
+*Complete Oligo: '''TATGATTATGATTATGGTTATGATTATTATTACAACTCA'''TTAGTTTTGCTGGCCGCA
+**Tm = 78.5 C
+**Tm = 73.5 C
+**GC Ratio: 29.8%
+
+==PCR==
+PCR Mixture:
+
+ Template       		1 ul pRS406 (=100 ng)
+ Forward Primer 		1 ul (=100 pmol)
+ Reverse Primer 		1 ul (=100 pmol)
+ PCR Master Mix*		20 ul of 2.5X stock (see REAGENTS LIST)
+ H2O            		27 ul
+
+Protocol:
+#Add water to a PCR tube.  Add 28 ul to another tube.
+#Add primers
+#Add template to first tube
+#Add PCR Mix and pipette up and down
+#Place in thermal cycler to undergo:
+#*95° 4 minutes
+#*95° 1 minute
+#*40° 1 minute
+#*72° 3 minute
+#*repeat steps 2-4 5 times
+#*95° 1 minute
+#*45° 1 minute
+#*72° 3 minute
+#*repeat steps 6-8 5 times
+#*95° 1 minute
+#*50° 1 minute
+#*72° 3 minute
+#*repeat steps 10-12 30 times
+#*72° 10 minutes
+#*4° forever (or until one of the teaching faculty removes the reactions and stores them in the freezer)

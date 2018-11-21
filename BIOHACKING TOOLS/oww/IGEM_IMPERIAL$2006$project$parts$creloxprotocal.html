@@ -1,0 +1,40 @@
+==Testing Cre Lox==
+
+The cre lox part is designed to stop the RNA polymerase from passing through the part and activating downstream genes. There are two aspects of this part that we can test. These are the ability to stop the RNA polymerase and the efficiency of CRE excision.
+
+The Part will produce monomeric red fluorescent protein when not activated. Then upon addition of CRE the sequence of mRFP is removed so it’s fluorescence will drop.
+
+*[[http://www.genebridges.com/gb/pdf/A112-705-Cre_Version_2.1.pdf|cre plasmid info]]
+*<bbpart>BBa_J37027</bbpart>
+
+==Testing Removal of DNA==
+
+This test involves overnight culturing of the bacreria at 30{{c}}, making a fresh day culture, measuring fluorescence and OD then heating slowly to 37{{c}} allowing the cre to remove the DNA and measuring the fluorescence over several hours. The cre should remove the fluorescent reporter and cause the fluorescence of the culture to drop. The cre should act almost immediately but the fluorescence will take a long time to drop as the excised RFP part will still remain inside the cell in a separate plasmid.
+
+===Protocol===
+
+The cells must have both the Pops Blocker and the cre plasmid electroporated into them prior to the experiment.
+
+===The previous day===
+
+*Make a 2ml culture and incubate overnight. Culture these bacteria at 30{{c}} 
+*Bacteria being cultured
+**–CRE plasmid control <font color = green> these cells are a control to show that any degradation in fluorescence is solely due to the cre plasmid</font color>
+**Bacteria for a low temp control
+**Bacteria for the test
+**Non fluorescent/ cre bacteria eg, J37017 <font color = green> these cells act as a control to show that the pops blocker actually fluoresces </font color>
+
+===On day of testing===
+
+*Make a fresh day culture OD=0.1 keeping it at 30{{c}}
+*Incubate for 2 hours
+*Record OD
+*Measure fluorescence using the SAF flourimeter <font = color orange> (the wallic victor doesn’t have the filters) </font color>
+*Incubate the test cultures at 37{{c}} <font color = orange> this causes the cre to be expressed</font colore> <font color = green> one controll tube should be kept at 30{{c}} to show that the cre plasmid will not remove any DNA when kept at the low temperature</font color>
+*Continue incubating at 37{{c}} for 3hours <font color = orange> This gives time for the loop of DNA containing the RFP gene and the mRFP itself to be degraded</font color>
+*Record OD
+*Measure fluorescence using the SAF flourimeter
+
+===Expected Results=== 
+
+The expected results are a drop in fluorescence in the test cultures, this should be proportional to the amount of DNA excised

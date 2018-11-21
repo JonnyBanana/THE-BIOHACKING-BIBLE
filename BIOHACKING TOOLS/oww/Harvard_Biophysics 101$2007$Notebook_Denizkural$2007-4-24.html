@@ -1,0 +1,63 @@
+'''Completed:'''
+
+*Reading feeds and turning them into variables.
+*Providing feeds variables of our choice 
+*All we need to do is decide which ones we're gonna use and integrate them.
+*I'd like to show them in the server (Xiaodi?) and ask the class their opinion
+
+Installing feed parser (download it from google code):
+
+<pre>
+$Python setup.py install
+</pre>
+
+Using it is somewhat more involved, I will post the final form of the script once we decide how to integrate it to the rest (it very much depends on how the integration is done). Just to give an example:
+
+<pre>
+kural@case:~$ python
+Python 2.5.1c1 (release25-maint, Apr 12 2007, 21:00:25) 
+[GCC 4.1.2 (Ubuntu 4.1.2-0ubuntu4)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import feedparser
+>>> d = feedparser.parse('http://www.medstory.com/rss?q=macular%20degeneration&af=false&c=true&s=NewsFeed&i=')
+>>> d['feed']['title']
+u'Medstory NewsFeed Search on: macular degeneration'
+>>> d.feed.description
+u'This feed has been created for a Medstory Health Search'
+>>> d.feed.link
+u'http://www.medstory.com'
+>>> d.entries[0].title
+u'Positive Interim Phase 2 Data Reported For VEGF Trap-Eye In Age-related Macular Degeneration'
+>>> d.entries[0].description
+u'... <b>macular</b> <b>degeneration</b> (wet AMD). The VEGF Trap-Eye met its primary endpoint...'
+</pre>
+
+
+'''For April 24:'''
+
+*Return RSS feeds to the general script (which can then be displayed)
+*Do the above using variables
+*Work with Xiaodi to integrate the two
+
+I decided to use the feedparser library and gave up on my own feed parsing (except maybe for google news, I'm still thinking about that one) to parse programmable/variable feeds, for the following reasons:
+* It can handle a wide variety of different formats
+* It allows us to worry about how to present these feeds as opposed keeping up with formats
+* We can host it and '''modify it''' -- it is a python script (i.e. this is an advantage over dapper etc.)
+
+Where I am trying to get is to provide a web-based automated way to let people with no programming skills design what they'd have people using our search engine see as our 'outgoing' links. Ideally we'd integrate this scheme with OMIM results as well.
+
+Here is a description of feedparser, taken from the website for it:
+
+<pre>
+Universal Feed Parser is a Python module for downloading and parsing syndicated feeds. It 
+can handle RSS 0.90, Netscape RSS 0.91, Userland RSS 0.91, RSS 0.92, RSS 0.93, RSS 0.94, 
+RSS 1.0, RSS 2.0, Atom 0.3, Atom 1.0, and CDF feeds. It also parses several popular 
+extension modules, including Dublin Core and Apple's iTunes extensions. To use Universal 
+Feed Parser, you will need Python 2.1 or later. Universal Feed Parser is not meant to run
+standalone; it is a module for you to use as part of a larger Python program."
+</pre>
+
+'''For April 26:'''
+
+*Finish the mysql database for 'ranking'
+*Test if it is any good / accurate

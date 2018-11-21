@@ -1,0 +1,310 @@
+[[IGEM_project_tsinghua|Back to Project Page]]
+==Introduction==
+
+===Synthetic oscillator in a single operon that simulates the natural oscillations.===
+
+Referring to the expression oscillators, the Elowitz oscillator is the first and 
+the only typically successful one so far, in which three operons express three 
+different transcriptional repressors, lacI, lambda C1 and tetR, respectively. 
+The three transcriptional repressors in the Elowitz oscillators inhibit one another to generate 
+oscillations. However, this is a relatively complex system, and protein 
+accumulation has been observed at the single-cell scale during the oscillating 
+cycles. While the natural oscillations usually works in pulses including a stage when 
+the signal is reset to zero. For example, in the process of the active 
+potential, the cardiac cycles and the muscle contraction, the neural/electric signal is triggered 
+at the state of &quot;zero&quot;, and then amplified until a feedback inhibiting 
+mechanism is reinforced to blocked the amplification. At last, as the inhibition 
+dominates, the signal falls 
+to the state of &quot;zero&quot;, which can be thought as the &quot;reset&quot;. To understand 
+and simulate the natural oscillations, we 
+propose a method to allow the oscillator being reset to &quot;zero&quot; after each cycle 
+and find that it is an still simpler method to generate oscillations. A 
+fast-degrading DNA polymerase and a fast-degrading transcriptional repressor are 
+engaged in this system. This oscillation works in four stages: (1)Triggering: 
+the RNA polymerase gene is expressed by constructive promoters. (2)Amplication: 
+the RNA transcripts the gene coding itself. (3) Inhibiting: the RNA transcripts 
+a transcriptional repressor, which has longer degrading half-life than the RNA 
+polymerase, that blocks the transcription of the RNA polymerase gene. (4) 
+Resetting: the transcription of the RNA polymerase is blocked and until the 
+transcriptional repressor degrades to a concentration below a specific level. 
+And we found that this oscillator can be constructed in a single operon.
+
+===Fast-degrading T7 RNA polymerase.===
+Fast-degrading transcriptional repressors are available, such as the lacI, 
+lambda C1 and tetR, because those protein are not conservative in their 
+C-terminus and ready to be fused with a degrading marker. While the 
+fast-degrading RNA polymerase is the key in this project. Most RNA 
+polymerases consist of multiple subunits, except for T odd number RNA 
+polymerase, SP6 RNA polymerase and so on. Those RNA polymerases are very 
+conservative at their C-terminus and can not be engineered to fuse a C-terminus 
+degrading marker. Fortunately their N-terminus are not that conservative and can 
+be engineered to get some N-terminus fusions. Some degrading marker of E. coli 
+can be identified on the N-terminus, such as the degrading marker recognized by 
+Lon and other heat shock proteases. UmuD 
+degrades quickly in <i>E. coli</i> and its N-terminal 30 amino residues were reported 
+to work as a N-terminal degrading marker. Therefore, we try to construct a fast 
+degrading T7 RNA polymerase with UmuD N-terminal degrading marker.</td></tr>
+
+
+===Model and simulation===
+
+To describe the system we are going to construct, we model the mRNA levels and protein levels respectively. In the following description, we use lower-case of the first letter to indicate mRNA levels whereas up-case to indicate protein levels. The system is described by following differential equations:
+<br>[[Image:eq1_6.jpg]]<br>where,<br>
+[[Image:eq7_9.jpg]]<br>
+We assume that the kinetics of mRNAs is governed by two respects: its spontaneous degradation and transcriptions which produce them specifically. Spontaneous degradation is assumed to be a ‘first-order’ reaction which means the rate of mRNA degradation is proportional to its current level and therefore produces a constant half life time. Here, for convenience, we assume that all mRNAs have the same half life time. 
+
+The rate of transcription is calculated by multiplying 3 items: the elongation rate, the ratio of DNA elements which occupied by transcription factors and the total copy numbers of DNA elements. The key point here is to estimate occupation ratios. We use classical M-C equation (eq. 7 and 8) to describe the behavior of protein binding. In these equations, Hill coefficient indicates the cooperation during the binding process. Please note that in calculating occupation ratio of LacI, the protein level is used after divided by 2 due to LacI binds to lacO as tetramers. In our model, we conveniently assume that LacI monomers form tetramers tightly soon after its production.
+
+It is a little more complex to model the transcription of T7 polymerase which is regulated by a constitutive promoter, a T7 promoter and a lac operon. The transcription is considered as following conditions: The transcription ceases when LacI binding to lacO, no matter whether T7 or host polymerases are bound. Without the repression by LacI, T7 polymerase, once successfully binds to its promoter, dominates the transcription. The host polymerase functions only if neither LacI nor T7 polymerase bound. In eq. 9 and 10, number of activated DNA (i.e. DNA which form complex with T7 polymerase but not LacI) and number of free DNA (i.e. DNA which binds to neither T7 polymerase nor LacI) are calculated respectively.
+
+The kinetics of proteins is also governed by two respects: spontaneous degradation and translation. Like the case assumed in mRNA modeling, spontaneous degradation of proteins are taken as first-order reaction. The translation rate is assumed to be the same among different proteins.
+
+To make our model more realistic, we modify our model to a stochastic one. In this model, all the parameters, except copy numbers of plasmids, are assumed to obey to a norm distribution and a ‘sigma’ value (which indicates the peak width) is set for each parameter.
+
+The numerical solution is made using following parameter values:
+
+Copy number of the repressor plasmid: n_lac_plasmid=30 copy
+
+Copy number of the amplifier plasmid: n_t7_plasmid=5 copy
+
+Transcription rate of T7 polymerase: r_transcribe_T7=600 mRNA/min
+
+Transcription rate of host polymerase: r_transcribe_P=30 mRNA/min
+
+Translation rate: r_translate=10 proteins/min
+
+Half life time of mRNA: τ(mRNA)=3min
+
+Half life time of LacI: τ(LacI)=10min
+
+Half life time of T7: τ(T7)=10min
+
+Half life time of EGFP: τ(EGFP)=40min
+
+Dissociation constant of LacI: K(LacI)=10 tetramers per cell
+
+Dissociation constant of T7 polymerase: K(T7)=10 monomers per cell
+
+Hill coefficient of LacI: hill_LacI=1;|
+
+Hill coefficient of T7: hill_T7=1;
+
+In stochastic model, sigma for all parameters equal to 10 percents of their average values respectively.
+
+[[image:1_T7&LacI.jpg]] <br> <strong>FIGURE1:T7&LacI（protein）</strong>  The protein levels of T7 RNAP(Red) and LacI(Blue) are simulated by MATLAB with parameters described above. (Note: The scale of LacI molecules is 1,000 fold of that of T7 RNAP) 
+
+[[image:1_T7&LacI_mRNA.jpg]] <br> <strong>FIGURE2:T7&LacI_mRNA </strong>  The mRNA levels of T7 RNAP(Red) and LacI(Blue) are simulated by MATLAB with parameters described above. (Note: The scale of LacI molecules is 1,000 fold of that of T7 RNAP)
+
+---------------------------
+
+==Strains &amp; Plasmids==
+
+===Strains===
+{| border="1" cellspacing="0" cellpadding="0"
+|-
+| Strain || Source
+|-
+| E. coli TOP10 ||  Transgen biotech company, Beijing. 
+|-
+| E. coli MC4100 ||  GCSC of Yale 
+|-
+| E. coli JM109 ||  Prof. Chen's lab collection 
+|-
+| E. coli BL21(DE3) ||  Transgen biotech company, Beijing. 
+|}
+
+===Plasmids===
+{| border="1" cellspacing="0"
+|-
+| Plasmid ||  Source
+|-
+| pEASY-Blunt ||  Transgen biotech company, Beijing.
+|-
+| pET15b ||  Prof. Chen's lab collection
+|-
+| pBluescript II SK(-) ||  Prof. Chen's lab collection 
+|-
+| pMD18-T ||  Takara, Japan.
+|-
+| pBHR91 ||  Prof. Chen's lab collection
+|-
+| pZS1-lTLrLLtCL ||  Prof. Michael B. Elowitz
+|-
+| pJBA110 ||  Prof. Michael B. Elowitz
+|-
+| pJBA111 ||  Prof. Michael B. Elowitz
+|-
+| pJBA112 ||  Prof. Michael B. Elowitz
+|}
+
+--------------------------------------
+
+==Materials==
+
+===Reagents===
+{| border="1" cellspacing="0"
+|-
+|Reagents || Source
+|-
+|Mouse-anti-T7 RNA Polymerase monoclonal antibodies. ||  Novagen
+|}
+	
+---------------------------
+
+==Flowchart==
+[[Image:RAPv1.4.gif]]
+
+---------------------------
+
+==Experiment Records==
+
+===Thread 1: RAP repressor.===
+
+{| border="1" cellspacing="0"
+|-
+| Number || Date || Inherit || Chart Index || Notes || Results || Plan || Expected Time || Operator
+|-
+| 1 || 7-15 || - || 1-4 || Inoculate E. coli harboring pET15b. || 　 || Extract plasmids || 7-16 || Yexing Liu
+|-
+| 2 || 7-16 || 1 || 1-4 || Extract the pET15b plasmid, which was the digested by XagI and KspAI, || 　 || Extract digestion products. || 7-17 || Yexing Liu
+|-
+| 3 || 7-17 || 2 || 1-4 || The digestion products were extracted and blunted with Klewnow fragment exo(-) from MBI, then ligated and transformed. || 　 || Check the plates. || 7-18 || Yexing Liu
+|-
+| 4 || 7-18 || 3 || 1-4 || 6 clones were picked from the plates and cultured. || 　 || Extract the plasmids and perform restriction analysis. || 7-18 || Yexing Liu
+|-
+| 5 || 7-19 || 4 || 1-5 || Extract plasmid from the 6 cultures and perform restriction analysis. || 4 of the 6 clones were found to be correct, which were then named as pET15b-LacI(-). || Clone the lacI and EGFP genes. || - || Yexing Liu
+|-
+| 6 || 8-5 || 5 || 1-5 || Inoculate E.coli harboring plasmid pET-15b without lacI in 50ml LB added 50μl Amp. On the shaker 37 degrees over night. || - || Extract plasmids || 8-6 || Lijun Zhou
+|-
+| 7 || 8-5 || - || 1-5 || Inoculate three strain of E. coli harboring plasmid pZS1-lTLrLLtCL. || - || Extract plasmids || 8-6 || Lijun Zhou
+|-
+| 8 || 8-6 || 6 || 1-1 || Extract the pET15-b plasmid, which was then digested NcoI and BamHI.<p> The digestion products were extracted and kept at -20 degrees. || - || Wait for ligation. || 8-6 || Lijun Zhou
+|-
+| 9 || 8-6 || 7 || 1-1,1-2,1-3 || Extract the plasmid from the three oscillator plasmid strain's culture.<p> Use 3 pairs of different primers to clone three different versions of lacI from the three plasmid.</p> <p>The PCR products were ligated with pEASY-B cloning vector. || - || Check the plates. || 8-7 || Lijun Zhou
+|-
+| 10 || 8-7 || 9 || 1-3 || From each of the 3 plates, 10 clones were picked and verified by colony PCR. 4 of each strains were sent for sequencing. || - || Wait the sequencing results. || - || Lijun Zhou
+|-
+| 11 || 8-7 || - || 1-6 || Inoculate the strains harboring plasmid - pJBA110, pJBA111, pJBA112. || 　 || PCR clone three different versions of EGFPs from the three different plasmids. || 8-8 || Lijun Zhou
+|-
+| 12 || 8-8 || 11 || 1-6 || Extract the plasmids - pJBA110, pJBA111, pJBA112.<p>User primers to clone different version of EGFPs.</p> <p>The PCR products were ligated with pEASY-B cloning vector. || 　 || Check the plates by colony PCR. || 8-9 || Lijun Zhou
+|-
+| 13 || 8-9 || 12 || 1-6 || From each of the 3 plates, 10 clones were picked and verified by colony PCR. 4 of each strains were sent for sequencing. || 　 || Waiting for the sequencing results. || - || Lijun Zhou
+|-
+| 14 || 8-10 || 10 || 1-3 || Culture the three different lacI strains. || There were correct clones of all the 3 kinds of lacI clones. || Extract the plasmids and ligate with pET15b-LacI(-). || 8-11 || Lijun Zhou
+|-
+| 15 || 8-11 || 14 || 1-7 || Extract the plasmids from the 3 different strains.<p>The plasmids were then enzyme digested with NcoI and BamHI and ligated with the digested pET15b-LacI(-), and then transformed. || 　 || Check the plates. || 8-12 || Lijun Zhou
+|-
+| 16 || 8-12 || 15 || 1-7 || From each of the three plates, 10 clones were picked and checked by PCR.<p> The corrected clones were then cultured and verified by enzyme digestion.</p> <p>Extract more of the three plasmids, and then digest with BamHI and EcoRI. || The correct clones were named pETLacI0, pETLacI1, and pETLacI2. || Wait for EGFPs. || - || Lijun Zhou
+|-
+| 17 || 8-13 || 13 || 1-7 || Culture the three different EGFP strains. || There were correct clones of all the 3 kinds of EGFPs. || Extract the plamids. || 8-14 || Lijun Zhou
+|-
+| 18 || 8-14 || 17 || 1-7 || Extract the three different EGFP strains and digest them with BamHI and EcoRI.<p>The digestion products of the three pETLacIs and three EGFPs were extracted, ligated and transformed. || 　 || Check for the plates. || 8-15 || Lijun Zhou
+|-
+| 19 || 8-15 || 18 || 1-7 || From each of all the 9 plates, 10 clones were picked for PCR verification. || Each of the 9 constructions turn out to give positive clones. || 　 || 　 || Lijun Zhou
+|}
+	
+===Thread 2: RAP Amplifier.===
+
+{|border="1" cellspacing="0"
+|-
+|  Number ||  Date ||  Inherit ||  Chart Index ||  Notes ||  Results ||  Plan ||  Expected Time ||  Operator
+|-
+|  1 ||  6-23 ||  - ||  2-1 ||  PCR clone the pSC101 ori from pBHR91. ||  Success ||  Extract of the PCR product. ||  6-23 ||  Zhenyu Shi
+|-
+|  2 ||  6-23 ||  1 ||  2-2 ||  Extract the PCR product and insert the product into pEASY-B cloning vector. Transformation with blue/white screening. ||  - ||  Pick clones. ||  6-24 ||  Zhenyu Shi
+|-
+|  3 ||  6-24 ||  2 ||  2-2 ||  Get the white clones and perform PCR screening. ||  Three clones were found correct. ||  Have the correct clones sequenced.  ||  6-25 ||  Zhenyu Shi
+|-
+|  4 ||  6-25 ||  3 ||  2-2 ||  Send the correct clones for sequencing. ||  - ||  Wait for the sequencing results. ||  - ||  Zhenyu Shi
+|-
+|  5 ||  6-29 ||  4 ||  2-2 ||  The sequencing result was analyzed.  ||  The sequence is correct. ||  Synthesize the RAP promoter and insert the RAP promoter into the vector. ||  6-29 ||  Zhenyu Shi
+|-
+|  6 ||  6-29 ||  5 ||  2-3 ||  Synthesize the RAP promoter. ||  - ||  Wait for the synthesis result. ||  - ||  Zhenyu Shi
+|-
+|  7 ||  8-15 ||  6 ||  2-3 ||  The sequence was reduced and sent for synthesis again.<p>　 ||  The Augct company claimed that they failed to synthesize the whole sequences. ||  Wait for the synthesis result. ||  - ||  Zhenyu Shi
+|-
+|  8 ||  9-2 ||  7 ||  　 ||  The sequence was sent to synthesize in Invitrogen. ||  The augct company again failed to synthesize the reduced sequence. ||  　 ||  9-15 ||  Zhenyu Shi
+|-
+|  9 ||  9-3 ||  8 ||  　 ||  - ||  Invitrogen failed to prodive the synthesized sequennce in time. ||  Wait. ||  - ||  Zhenyu Shi
+|-
+|  10 ||  10-10 ||  9 ||  　 ||  　 ||  Invitrogen finally provided the synthesized promoter. ||  　 ||  　 ||  Zhenyu Shi
+|}
+
+===Thread 3.1: Fast-degrading T7 RNA polymerase.===
+
+{|border="1" cellspacing="0"
+|-
+|  Number ||  Date ||  Inherit ||  Chart Index ||  Notes ||  Results ||  Plan ||  Expected Time ||  Operator
+|-
+|  1 ||  7-11 ||  - ||  3-1 ||  PCR clone the T7 RNA polymerase gene from a previously construct vector containing T7 RNA polymerase gene. ||  Success ||  Extract of the PCR product. ||  7-11 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  2 ||  7-11 ||  1 ||  3-1 ||  Extract the PCR product and insert the product into pEASY-B cloning vector. Transformation with blue/white screening. ||  - ||  Pick clones. ||  7-12 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  3 ||  7-12 ||  2 ||  3-1 ||  Pick the white clones and perform PCR screening. ||  Three clones were found correct. ||  Have the correct clones sequenced.  ||  7-13 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  4 ||  7-13 ||  3 ||  3-1 ||  2 clones were sent for sequencing. ||  - ||  Wait for the sequencing results. ||  - ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  5 ||  7-19 ||  4 ||  3-1 ||  The sequencing result was analyzed.  ||  All the clones have the same mutations. The template may contains mutations. ||  Try a different template to clone the T7 RNAP gene. ||  7-19 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  6 ||  7-20 ||  5 ||  3-1 ||  Clone the T7 RNA polymerase gene from E. coli BL21(DE3) culture. ||  Failed. ||  Extract the genome DNA from E. coli BL21(DE3). ||  7-23 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  7 ||  7-23 ||  6 ||  3-1 ||  Extract the E. coli BL21(DE3) genome DNA. ||  Success. ||  PCR clone the T7 RNA polymerase from the E. coli BL21(DE3) genome DNA. ||  7-23 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  8 ||  7-23 ||  7 ||  3-1 ||  PCR clone the T7 RNA polymerase from the E. coli BL21(DE3) genome DNA. ||  Success ||  Extract of the PCR product. ||  7-23 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  9 ||  7-23 ||  8 ||  3-1 ||  Extract the PCR product and insert the product into pEASY-B cloning vector. Transformation with blue/white screening. ||  - ||  Pick clones. ||  7-24 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  10 ||  7-24 ||  9 ||  3-1 ||  Get the white clones and perform PCR screening. ||  Three clones were found correct. ||  Have the correct clones sequenced.  ||  7-25 ||  Die Hu, Tian Fang, Zhenyu Shi
+|-
+|  11 ||  7-25 ||  10 ||  3-1 ||  Send the correct clones for sequencing. ||  - ||  Wait for the sequencing results. ||  - ||  Zhenyu Shi, Die Hu, Tian Fang
+|-
+|  12 ||  7-29 ||  11 ||  3-1 ||  The sequencing result was analyzed.  ||  There were two mutations at the restriction site in the primer. ||  Synthesize another pair of primers for cloning. ||  7-29 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  13 ||  7-29 ||  12 ||  3-1 ||  Synthesize another pair of primers for cloning. ||  - ||  Wait for the primer and perform PCR cloning again. ||  - ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  14 ||  8-2 ||  13 ||  3-1 ||  PCR clone the T7 RNA polymerase from the E. coli BL21(DE3) genome DNA. ||  Success ||  Extract of the PCR product. ||  8-2 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  15 ||  8-2 ||  14 ||  3-1 ||  Extract the PCR product and insert the product into pEASY-B cloning vector. Transformation with blue/white screening. ||  - ||  Pick clones. ||  8-3 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  16 ||  8-3 ||  15 ||  3-1 ||  Get the white clones and perform PCR screening. ||  Three clones were found correct. ||  Have the correct clones sequenced.  ||  8-6 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  17 ||  8-6 ||  16 ||  3-1 ||  6 clones were sent for sequencing. ||  - ||  Wait for the sequencing results. ||  - ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  18 ||  8-10 ||  17 ||  3-1 ||  Analyze the sequencing results. ||  All clones were found to have correct sequence. ||  Construct the pT7Blue. ||  8-10 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  19 ||  8-10 ||  18 ||  3-2 ||  PCR clone the part of the pBluescript II SK(-) plasmid.<p>The PCR products were purified, phosphorated, ligated and then transformed. ||  　 ||  Check the transformants. ||  8-11 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  20 ||  8-11 ||  19 ||  3-2 ||  8 clones were picked and cultured.<p>Plasmids were extracted and restriction-analyzed.</p> <p>The correct T7 RNA gene clone was culture. ||  2 clone were found to be correct. ||  Ligate the T7 RNAP gene into pT7Blue. ||  8-12 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  21 ||  8-12 ||  20 ||  3-3 ||  The plasmid of T7 RNA gene clone and pT7Blue were extracted and digested by SpeI and BamHI.<p>The digestion products were gel purified, ligated and transformed. ||  　 ||  Check the plates. ||  8-13 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  22 ||  8-13 ||  21 ||  3-3 ||  6 clones were picked from the plates and cultured.<p>Extract the plasmids and perform enzyme digestion.</p> <p>Extract more of the pT7BlueT7 plasmid and digest it with NcoI and SpeI. ||  4 clones were found to be correct, which were named as pT7BlueT7 ||  Clone the Xis tag. ||  8-13 ||  Chun Li, Qin Zhou, Zhenyu Shi
+|-
+|  23 ||  8-13 ||  22 ||  3-5 ||  PCR clone the xis tag from the E. coli genome DNA.<p>The PCR products were then digested with NcoI and SpeI.  ||  　 ||  Extract the products and ligate. ||  8-14 ||  Yexing Liu
+|-
+|  24 ||  8-14 ||  23 ||  3-6 ||  The digestion products were purified, ligated and transformed. ||  　 ||  Check the plates. ||  8-15 ||  Yexing Liu
+|-
+|  25 ||  8-15 ||  24 ||  3-7 ||  6 clones were picked from the plates and cultured.<p>Plasmids were extracted from the 6 cultures and restriction analyzed.</p> <p>The 4 possibly correct clones were sent for sequencing. ||  4 clones were suspected to be correct. ||  Check the activity of the T7 RNAP gene with xis marker. ||  8-16 ||  Yexing Liu
+|-
+|  26 ||  8-16 ||  25 ||  3-7 ||  The plasmids from the 4 clones was co-transformed with pACYCDuet-Lux into E. coli TOP10.<p>The pBluescript II SK(-) plasmid and pACYCDuet-Lux plasmid were also transformed into E. coli TOP10 as a control. ||  　 ||  Test the luciferase activity. ||  8-17 ||  Yexing Liu
+|-
+|  27 ||  8-17 ||  26 ||  3-4 ||  One clone from every transformation was picked and cultured in 200ml shaking flask.<p>The five cultures were certrifuged and resuspended with Tris buffer, And the resuspended E. coli was lyzed by supersonic treatments.</p> <p>Substrates was added to the the lyzed product to test luciferase activity.</p> <p>　 ||  The data of the four clones were 323, 36, 102, 301. The control was only&nbsp; 13. ||  Wait for the sequencing results. ||  - ||  Yexing Liu
+|-
+|  28 ||  8-18 ||  25,27 ||  3-7 ||  　 ||  The sequencing result confirmed that the clone with luciferase data 102 does not contains mutations. Other three clones all contains mutations in the xis regeion.  ||  　 ||  　 ||  　
+|}
+
+
+===Thread 3.2: Luciferase Reporter.===
+
+{|border="1" cellspacing="0"
+|-
+|  Number ||  Date ||  Inherit ||  Chart Index ||  Notes ||  Results ||  Plan ||  Expected Time ||  Operator
+|-
+|  1 ||  6-15 ||  - ||  3-4 ||  Culture the E. coli strain harboring pGL3-Basic and the E. coli strain harboring pGL3-Basic. ||  　 ||  Extract of the plasmids. ||  6-16 ||  Zhenyu Shi
+|-
+|  2 ||  6-16 ||  1 ||  3-4 ||  Extract the plasmid. Digest the plasmids with NcoI and BamHI.<p>The digestion products were purified, ligated and transformed. ||  　 ||  Check the plate. ||  6-17 ||  Zhenyu Shi
+|-
+|  3 ||  6-17 ||  2 ||  3-4 ||  Four of the colonies on the plates were picked and cultured.<p>Extract the plasmids and digest them.</p> <p>The pACYCDuet-Lux plasmid was transformed into E. coli BL21(DE3). ||  All four clones were correct, which were named as pACYCDuet-Lux. ||  Check the luciferase activity. ||  6-18 ||  Zhenyu Shi
+|-
+|  4 ||  6-18 ||  3 ||  3-4 ||  One of the transformants was picked and cultured in 200ml shaking flask.  A control E. coli BL21(DE3) strain was also cultured. IPTG was added at the 6 hour.<p>The two cultures were certrifuged and resuspended with Tris buffer, And the resuspended E. coli was lyzed by supersonic treatments.</p> <p>Substrates was added to the the lyzed product to test luciferase activity. ||  The luminance of sample from E. coli BL21(DE3) harboring pACYCDuet-Lux was 123, while the luminance from the control sample was only 17.<p>The plasmid pACYCDuet-Lux can serve as a T7 RNAP reporter. ||  　 ||  　 ||  Zhou Yu
+|}

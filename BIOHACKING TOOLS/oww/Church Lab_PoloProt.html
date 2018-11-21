@@ -1,0 +1,600 @@
+=Polony Sequencing Protocols=
+Church Lab : (GP) 12‐Dec‐2007 ; OWW (GMC) 15-Jan-2008
+
+[http://arep.med.harvard.edu/Polonator/polony_protocols_12Dec07.pdf reference PDF draft]
+
+==Paired-End-Tag (PET) Genomic Shotgun Library==
+Polony genomic resequencing is generally performed on a shotgun paired-tag library
+(Shendure et al., 2005). Each library molecule is 135 bp in length, and has two 17- to
+18-bp paired genomic tags separated and flanked by common sequences.
+The key step in this protocol is the circularization of randomly sheared and size-selected
+genomic DNA around a synthetic insert-linker. This links sequences that are separated
+on the genome by a defined distance distribution.
+
+=== Materials ===
+Genomic DNA
+*Buffer EB (Qiagen)
+*End-It DNA end repair kit (Epicentre), including:
+**10× buffer
+**10× ATP
+**10× dNTP mix
+**Enzyme mix
+*10× PCR buffer without MgCl<sub>2</sub> (Invitrogen)
+*50 mM MgCl<sub>2</sub>
+*100 mM dATP
+*5 U/μl Taq DNA polymerase
+*20 mg/ml glycogen
+*Oligonucleotides:
+*100 μM T30-T: 5_-phosphorylated-GTCGGAGGCCAAGGCGGCCGTACGTCCAACT-3_ (purified by HPLC)
+*100 μM T30-B: 5_-phosphorylated-GTTGGACGTACGGCCGCCTTGGCCTCCGACT -3_ (purified by HPLC)
+*1 mM N6 oligonucleotides: 5_-NNNN*N*N-3_ (*signifies phosphorothioate linkage; IDT)
+*100 μM FDV-B: 5_-ATCACCGACTGCCCATAGAGAGGAAAGCGGAGGCGTAGTGGTT-3_ (purified by HPLC)
+*100 μM FDV-T: 5_-AACCACTACGCCTCCGCTTTCCTCTCTATGGGCAGTCGGTGAT-3_ (purified by HPLC)
+*100 μMRDV-B: 5_-AGAGAATGAGGAACCCGGGGCAGTT-3_ (purified by HPLC)
+*100 μMRDV-T: 5_-AACTGCCCCGGGTTCCTCATTCTCT-3_ (purified by HPLC)
+*Quick ligation kit (NEB), including:
+*2× Quick ligation buffer
+*Quick T4 DNA ligase
+*20 U/μl Exonuclease I (NEB)
+*100 U/μl Exonuclease III (NEB)
+*TE buffer, pH 8.0 (APPENDIX 2)
+*25 mM dNTP mix (25 mM each nucleotide)
+*10× RepliPhi phi29 reaction buffer (Epicentre Technologies)
+*100 U/μl RepliPhi phi29 polymerase (Epicentre)
+*10× NEBuffer 4 (NEB)
+*1.6 mM S-adenosylmethionine (SAM; diluted from 32 mM stock in 1× NEBuffer
+*4; NEB)
+*2 U/μl MmeI (NEB)
+*2000 U/μl T4 DNA ligase and 10× buffer (NEB)
+*40% (w/v) polyethylene glycol 8000 (PEG) in H<sub>2</sub>O
+*10× NEBuffer 2 (NEB)
+*10 U/μl E. coli DNA polymerase I (NEB)
+*5 U/μl Platinum Taq DNA polymerase (Invitrogen)
+*Qiaquick columns (Qiaquick PCR cleanup kit; Qiagen)
+*NanoDrop ND-1000 spectrophotometer (NanoDrop Technologies)
+*Microcon-30 column (Millipore)
+*Thermal cycler
+
+Additional reagents and equipment for DNA quantitation (link),
+phenol/chloroform extraction and ethanol precipitation (link), and agarose
+and polyacryamide gel electrophoresis (link)
+
+'''Prepare genomic DNA for circularization'''
+
+1. Shear 15 μg genomic DNA to desired size distribution.
+The Hydroshear (http://www.genomicsolutions.com) is the recommended instrument for
+this purpose since, when the manufacturer’s instructions are followed, it produces a
+population of fragments having a relatively tight size distribution and ends that can be
+efficiently blunted. The authors typically shear DNA at a concentration of ∼60 ng/μl.
+
+2. Purify DNA on Qiaquick columns (≤10 μg per column) as per manufacturer’s
+instructions.
+Use as few columns as possible.
+3.  To repair the DNA ends (i.e., blunt them following shearing), combine the DNA with
+the components of the End-It DNA end repair kit as follows:
+* 10 μg column-purified, sheared genomic DNA in buffer EB
+* 25 μl 10× buffer
+* 25 μl 10× ATP
+* 25 μl 10× dNTP mix
+* 5 μl enzyme mix
+* H2O to a final volume of 250 μl.
+* Incubate 1 hr at room temperature.
+
+4. Purify DNA on a Qiaquick column per manufacturer’s instructions, except elute with
+90 μl buffer EB.
+
+5. Quantitate DNA using a NanoDrop ND-1000 spectrophotometer (see APPENDIX 3D).
+Concentration should be ∼100 ng/μl.
+
+6. Incubate 15 min at 70◦C to eliminate any residual enzyme activity.
+
+7. Add an adenosine tail by combining the following components:
+* 2.2 μg end-repaired DNA
+* 10 μl 10× PCR buffer without MgCl2
+* 6 μl 50 mM MgCl2
+* 0.5 μl 100 mM dATP
+* 0.5 μl 5 U/μl Taq DNA polymerase
+* H2O to 100 μl.
+
+Incubate 30 min at 70◦C then cool to 4◦C. Transfer to ice.
+In the A-tailing reaction, Taq polymerase adds a single A to the 3_ ends of the blunted
+DNA in a template-independent fashion.
+
+8. Extract DNA from the reaction mixture with phenol/chloroform and precipitate in
+ethanol using 20 μg glycogen as carrier (UNIT 2.1A). Resuspend pellet in 40 μl buffer
+EB.
+Glycogen should be used as a carrier in all ethanol precipitation steps in this protocol.
+
+9. Separate the sheared, A-tailed DNA on a 6% polyacrylamide gel with TBE buffer
+(UNIT 2.7). Stain with ethidium bromide.
+For Invitrogen precast gels, mix 20 μl DNA with 5 μl of 5× loading buffer (Novex) and
+load across two 0.5-cm lanes.
+
+10. Cut out the desired bands and extractDNAusing the crush-and-soak method (UNIT 2.7).
+Precipitate in ethanol using glycogen as a carrier, and resuspend in 10 μl buffer EB.
+For a paired-tag library with an average intertag distance of 1 kb, excise and pool gel
+bands centered at 1 kb with a total width of no more than 500 bp. Exposure of the DNA
+to UV light during visualization should be minimized.
+
+11. Quantitate the size-selected DNA by separating on an agarose or polyacrylamide gel
+(link) and comparing the brightness of the smear to that of a known amount
+of a molecular weight standard.
+The concentration should be ∼20 to 40 ng/μl.
+
+'''Circularize genomic material around synthetic oligonucleotides'''
+
+12. Anneal oligonucleotides T30-T and T30-B in a thermal cycler by combining equal
+amounts and heating to 95◦C for 10 min and then slowly cooling to room temperature
+over the course of 1 hr.
+The final concentration of the T30 insert-linker should be 100 μM. T30 has T 3_ overhangs
+designed to be complementary to the A 3_ overhangs of the genomic DNA.
+
+13. Ligate genomic DNA fragments in the presence of annealed T30 using the Quick
+ligation kit as follows:
+* 170 ng size-selected DNA (0.25 pmol at ∼1 kb)
+* 0.8 μl 1 μM annealed T30 (0.8 pmol)
+* 40 μl 2× Quick ligation buffer
+* 4.0 μl Quick T4 DNA ligase
+* H2O to a final volume of 80 μl.
+
+Incubate reaction 10 min at room temperature then heat-inactivate 10 min at 65◦C.
+Use the heat-inactivated reaction mixture directly in the next step without further
+purification.
+
+The ligation should be performed under conditions favoring formation of monomeric
+recombinant circles (i.e., genomic DNA–T30). To this end, T30 should be present at a
+three-fold molar excess to genomic fragments.
+
+14. Eliminate all noncircularized material by exonucleolysis as follows:
+* 1.0 μl 20 U/μl Exonuclease I
+* 0.1 μl 100 U/μl Exonuclease III
+* 80 μl heat-inactivated reaction mix
+
+TE buffer, pH 8.0, to a final volume of 90 μl.
+Incubate 45 min at 37◦C, and then heat-inactivate 20 min at 80◦C. Use this reaction
+mixture directly in the next step without further purification.
+
+'''Amplify circular DNA'''
+
+15. Prepare the master mix for hyper-branched rolling-circle amplification of the circular
+DNA:
+* 12 μl 25 mM dNTP mix
+* 30 μl 10× RepliPhi phi29 reaction buffer
+* 15 μl 1 mM N6 oligonucleotides
+* 213 μl H2O
+* 30 μl circularized DNA.
+
+Split into 6 tubes of 50 μl each.
+
+16. Denature material by heating to 95◦C for 5 min, then anneal by rapidly cooling to
+4◦C. Add 2.5 μl phi29 polymerase to each tube, keeping on ice. Incubate overnight
+at 30◦C.
+
+17. Pool amplified circular DNA into a single tube. Purify DNA using a Microcon-30
+column according to the manufacturer’s instructions, washing with 1 ml TE buffer,
+pH 8.0. Wash the membrane several times to maximize recovery.
+
+18. Resuspend the DNA using 750 μl buffer EB, preheated to 50◦C. Quantitate the DNA
+using a NanoDrop ND-1000 spectrophotometer.
+Concentration should be ∼230 ng/μl.
+
+'''Release paired tags'''
+
+19. Digest the amplified DNA with MmeI to release the 70-bp T30-linked paired tags:
+* 40 μg amplified circular DNA
+* 100 μl 10× NEBuffer 4
+* 1.6 μl of 1.6 mMSAM
+* 60 μl MmeI (2 U/μl)
+* H2O to 1000 μl.
+
+Split into eight tubes of 125 μl each on ice, and then incubate at 37◦C for 30 min.
+MmeI cuts 18 to 19 bp from its recognition site, which is 1 bp from the start of the genomic
+fragment. The released fragments contain the common T30 sequence flanked by two 17-
+to 18-bp tags of genomic DNA.
+
+20. Immediately extract the DNA with phenol/chloroform and precipitate with ethanol
+using glycogen as a carrier. Resuspend pellet in a total volume of 80 μl TE buffer,
+pH 8.0.
+
+21. Purify the 70-bp paired-insert library as in steps 9 and 10, resuspending precipitated
+DNA in 20 μl TE buffer, pH 8.0.
+The sample should be split across four 0.5-cm lanes of a precast 6% polyacrylamide gel
+in TBE buffer.
+
+22. Quantitate the gel-purified DNA by electrophoresis (step 11).
+DNA concentration should be ∼12 ng/μl.
+
+'''Add emulsion PCR adapters'''
+
+23. To perform the blunting reaction (to remove 2-nt 3_ overhangs from the MmeI digestion),
+combine the DNA with components of the End-ItDNAend repair kit as follows:
+* 8.5 μl paired-insert library (∼100 ng DNA)
+* 1.25 μl 10× buffer
+* 1.25 μl 10× ATP
+* 1.25 μl 10× dNTP mix
+* 0.25 μl enzyme mix.
+
+Incubate at room temperature for 45 min.
+
+24. Put on ice and add TE buffer, pH 8.0 to bring volume to 50 μl. Extract the DNA
+with phenol/chloroform and precipitate in ethanol using 20 μg glycogen as carrier.
+Resuspend DNA in 8 μl TE, pH 8.0.
+
+25. Prepare emulsionPCRamplification primer sequences by annealing oligonucleotides
+FDV-T and FDV-B and oligonucleotides RDV-T and RDV-B as in step 12.
+The final concentration of each oligonucleotide should be 50 μM. FDV and RDV are not
+5'-phosphorylated, so they will not ligate to one another.
+
+26. Prepare the ligation reaction mixture by mixing the following components on ice:
+* 8.0 μl blunt-ended library DNA (∼100 ng, 2 pmol)
+* 1.0 μl 50 μM FDV (50 pmol)
+* 1.0 μl 50 μM RDV (50 pmol)
+* 2.5 μl 10× T4 DNA ligase buffer (∼0.5×)
+* 21.1 μl 40% PEG
+* 12.3 μl H2O.
+
+27. Mix on ice, then add 2.0 μl of 2000 U/μl T4 DNA ligase and incubate overnight at
+16◦C to ligate primer sequences to the library molecules.
+After ligation, several species will be present: FDV-insert-FDV, FDV-insert-RDV, and
+RDV-insert-RDV.
+
+28. Increase volume to 100 μl with TE buffer, pH 8.0. Extract the DNA with phenol/
+chloroform, precipitate in ethanol using glycogen as a carrier, and resuspend in
+10 μl buffer EB.
+
+29. Purify the 135-bp FDV-RDV paired-insert library as in steps 9 and 10, resuspending
+the precipitated DNA in 10 μl TE buffer, pH 8.0.
+
+30. Assemble on ice the reaction mixture used to remove nicks in double-stranded library
+molecules by nick translation:
+* 10.0 μl library DNA
+* 0.5 μl 25 mM dNTP mix
+* 2.5 μl 10× NEBuffer 2
+* 1.0 μl 10 U/μl E. coli DNA polymerase I
+* 11.0 μl H2O.
+
+Incubate 30 min at 16◦C.
+
+31. Increase volume to 100 μl with TE buffer, pH 8.0. Extract the DNA with phenol/
+chloroform, precipitate in ethanol using glycogen as a carrier, and resuspend in
+10 μl TE buffer, pH 8.0.
+
+'''Amplify FDV/RDV-adapted library'''
+
+32. Prepare the master mix for PCR amplification (for eight tubes of 50 μl each):
+* 50 μl 10× PCR buffer without MgCl2
+* 4.0 μl 25 mM dNTP mix
+* 15 μl 50 mMMgCl2
+* 426 μl H2O
+* 1.0 μl 100 μM FDV-T
+* 1.0 μl 100 μMRDV-T
+* 2.0 μl 5 U/μl Platinum Taq DNA polymerase.
+
+33. Split the master mix into eight tubes of 50 μl each, and add 0.5 μl FDV/RDV-adapted
+library material to each tube.
+
+34. Carry out PCR using the following amplification cycles:
+* Initial step: 2 min 94◦C (denaturation)
+* 12 cycles: 30 sec 94◦C (denaturation)
+* 30 sec 55◦C (annealing)
+* 90 sec 72◦C (extension).
+
+The number of cycles is kept low to minimize PCR amplification bias. Due to suppression
+PCR effects (Siebert et al., 1995), FDV/FDV- and RDV/RDV-adapted molecules are not
+amplified.
+
+35. Purify DNA using Qiaquick columns according to the manufacturer’s instructions
+for PCR cleanup.
+
+36. Purify the amplified 135-bp FDV-RDV paired-insert library as in steps 9 and 10,
+resuspending the precipitated DNA in 10 μl TE buffer, pH 8.0.
+When excising the 135-bp library band, be careful to avoid contamination by marker
+DNA, if used.
+
+37. Quantitate the final DNA library by electrophoresis (step 11).
+The concentration should be ∼2 ng/μl.
+
+==Emulsion PCR Protocol==
+Church Lab 11‐26‐07
+This protocol is for emulsification and thermal cycling of one 96‐well microwell ‘plate’ of emulsion, 50ul
+per well. Each plate is sufficient for 1 unenriched 1.5cm array; for an enriched array, 2.5 plates are
+needed. Titrate library DNA to yield 40% amplified beads.
+Aqueous phase:
+• 96 ul 10x PCR buffer without MgCl2 (Invitrogen)
+• 360 ul 50 mM MgCl2
+• 135 ul 25 mM(each) dNTP mix
+• 6.0 ul 2 mM PR1R‐S
+• 60 ul MyOne beads in TE, pre‐loaded w/ forward primer
+• 54 ul hot‐start Taq (5U/ul, Denville)
+• 1.0 ul template DNA at appropriate concentration
+• 248 ul dH2O
+
+Oil phase:
+• 4.01 ml Tegosoft DEC (Degussa)
+• 1.10 ml light mineral oil (Sigma #5904‐500ml)
+• 385 ul ABIL WE09 (Degussa)
+
+For aqueous phase, add all components except Taq, mix well, then add Taq and mix well again. For oil
+phase, add all components to a 50 ml polypropylene falcon tube and vortex well to mix. Add aqueous
+phase, cap tube, and vortex well for 5 min. Distribute mix into 96‐well polypropylene plate @ approx
+50ul per well.
+
+Thermal cycle as follows:
+
+1. 10’ 94C
+
+2. 15 sec 94C
+
+3. 30 sec 57C
+
+4. 75 sec 70C
+
+5. Goto 2, 119 more times
+
+6. 2 min 70C
+
+7. Forever 4C
+
+
+==Emulsion breaking protocol==
+Church Lab 26-Nov‐2007
+
+This protocol is performed on a 96‐well microwell plate of emulsion following PCR, ~50ul of emulsion
+per well.
+
+1. Using a multichannel pipette add 100 uL of isopropanol to each well.
+
+2. Pipette up and down at least 10 times
+
+3. Using the multichannel pipette pool the isopropanol/PCR mixes into a reservoir
+
+4. Transfer the pooled mixture into a 15 mL polypropylene falcon tube
+
+5. Vortex for 1 min
+
+6. Spin for 30 sec at 4000 rpm in table‐top centrifuge
+
+7. Remove supernatant by decanting
+
+8. Add 5 mL of isopropanol and resuspend the pellet via pipetting. Pipette for at least 1 min. Be
+sure no clumps are visible.
+
+9. Add 5 mL of isopropanol
+
+10. Vortex for 30 sec
+
+11. Spin for 30 sec at 4000 rpm in table‐top centrifuge
+
+12. Remove supernatant making sure that you remove as much of the isopropanol as possible.
+
+13. Resuspend the pellet in 6 mL of NXS. Pipette for ~ 1 min using pipetaid. The goal here is to make
+sure that the pellet is VERY well resuspended. There cannot be any yellowish/orangeish clumps
+(Even on the side of the tube). This is absolutely critical.
+
+14. Vortex for 30 sec
+
+15. Spin for 30 sec at 3000 rpm in table‐top centrifuge
+
+16. Remove supernatant using magnetic particle separator
+
+17. Resuspend in 1 mL of NXS and pipette for ~1 minute and then transfer to a 1.5 mL siliconized
+eppendorf
+
+18. Vortex for 30 sec
+
+19. Spin for 30 sec at 1000 g.
+
+20. Use magnet (Dynal MPC) to remove supernatant
+
+21. Resuspend in 1 mL TE
+
+22. Mix by pipetting for at least 30 sec
+
+23. Spin for 30 sec at 1000 g
+
+24. Use magnet to remove supernatant
+
+25. Resuspend in 500 uL TE
+
+26. Use magnet to remove supernatant
+
+27. Resuspend in 500 uL 0.1 M NaOH
+
+28. Incubate on labquake at RT for 5 min
+
+29. Wash 1x with 500 uL 0.1 M NaOH
+
+30. Wash 2x with 500 uL TE
+
+31. Resuspend in 30 uL of TE
+
+*NXS: 10mM Tris pH 7.5, 1mM EDTA pH 8.0, 100mM NaCl, 1% (v/v) Triton X‐100, 1% (w/v) SDS
+
+==Bead Capping Protocol==
+Church Lab 01‐09‐07
+
+The purpose of this protocol is to attach a ‘capping’ oligonucleotide to every 3’ end on the bead –
+unextended forward ePCR primers and 3’ template ends. The cap we use is an amino group, which
+blocks any further ligation and also allows for coupling directly to the glass coverslip through a dual‐NHS
+moiety (BS3).
+
+1. Perform ‘bridging oligo’ hybridization in 1.5mL silicon tube:
+• 180ul 6x SSPE with 0.01% Triton X‐100
+• 3.6ul 1mM PR1F5‐CAP‐TMPL ‐‐ 5’‐GTG AGC TTC GTC TGC CCC GGG TTC‐3’
+• 3.6ul 1mM PR1R5‐CAP2‐TMPL – 5’‐GTG AGC TTC GTC CAT AGA GAG GAA AGC G‐3’
+Resuspend (meaning remove the TE beads are suspended in) single‐stranded, (optionally) enriched
+beads in this solution and incubate for 10’ at 56C, pipet to mix, then 10’ at RT on Labquake.
+
+2. Wash 2x with 200ul TE
+
+3. Prepare ligation mix:
+• 93ul dH2O
+• 4ul 1mM 5Phos‐9N‐3NH ‐‐ /5Phos/NNNNNNNNN/3AmM/
+• 100ul 2x Quick Ligase Buffer (NEB)
+• 4ul 1mM PR1F5‐NHCAP ‐‐ /5Phos/CG AAG CTC AC/3AmM/
+• 4ul 1mM PR1F5A‐NHCAP ‐‐ /5Phos/ACGA AGC TCA C/3AmM/
+• 4ul T4 DNA ligase (2KU/ul)
+Remove all liquid from beads and resuspend in this solution. Incubate on Labquake for 1 hour at RT.
+
+4. Place solution on magnet and wait for beads to pellet against back of tube. This will take time
+because the solution is very viscous.
+
+5. Remove liquid and add 200ul TE. Vortex, spin to bring contents to bottom of tube, place on magnet
+(Dynal MPC), and remove all liquid.
+
+6. Add 200ul NX, vortex, spin briefly, and remove all liquid on magnet.
+
+7. Wash 2x with 200ul TE as in 6.
+
+8. Transfer to new tube, wash 1x w/ 200ul TE, then resuspend in 30ul TE.
+
+9. To array beads, wash 3x in 50 ul PBS, then resuspend in 35 ul PBS.
+
+10. Prepare BS3 solution (2.86 mg BS3 ‐‐ Bis(Sulfosuccinimidyl) suberate – in 1 ml PBS).
+
+11. Remove liquid from beads with MPC, quickly resuspend in 35 ul BS3 solution, and pipette into inlet
+port of correct chamber on flowcell. It should only take several seconds to resuspend the beads and
+transfer them to the flowcell chamber.
+
+12. Leave flowcell upside-down on benchtop, un-disturbed, for 1 hour. During this time, the beads will
+settle to the glass and be covalently coupled to it by the BS3.
+
+13. Flush each flowcell chamber with 100ul TE to remove un-attached beads.
+
+*NX: 10mM Tris pH 7.5, 1mM EDTA pH 8.0, 100mM NaCl, 1% (v/v) Triton X‐100
+
+
+==Bead Enrichment==
+Church Lab 10‐Dec-2007
+
+The purpose of this protocol is to enrich for amplified beads from a pool containing ~40% amplified
+beads (the rest of which are unamplified). The protocol is similar to that in the Redbook except for the
+volumes used and the ratio of capture beads to amplified ePCR beads. When performing this on a
+sample to be arrayed in a gel‐less array, at least 2.5 plates of beads amplified to 40% should be used.
+
+'''Bind beads (enough to enrich 3 plates):'''
+* 540ul SVP‐30‐5 spherotech 3um streptavidin polystyrene beads, washed 2x and resuspended in
+original volume in TE (beads are 0.67e8/ml, want ratio of 2‐3 capture beads per amplified ePCR
+bead)
+* 10.8ul 1mM PR1‐BIOXL (unpurified, 5'‐biotinTEGCGTACCCCGCTTGGTCTTTCTCCCGTACCCCGCTTGGTCTTTCTCCCTGCCCCGGGTTCCTCATTCTCT‐
+3')
+Incubate for 1 hour at RT. Wash 3x in B&W buffer and resuspend in 60ul B&W buffer (5 mM Tris
+HCl pH 7.5, 0.5 mM EDTA pH 8.0, 1.0 M NaCl). Use 20ul per plate per enrichment.
+
+'''Resuspend plate of ePCR beads in 20ul TE. To perform enrichment'''
+* Add 20ul capture beads from above and incubate at 56C for 10 min
+* Prepare 300ul 60% v/v glycerol in dH2O. Solution must be prepared fresh.
+* Add 40ul capture‐ePCR bead mix to top of glycerol. Immediately centrifuge at >= 16,000rcf for
+1 min at RT
+* Pipette off all supernatant, being careful to not disturb the pellet. Transfer this supernatant
+(containing ePCR‐capture bead complexes) to a new siliconized tube
+* Add 1ml dH2O and vortex. Centrifuge for 1 min at >= 16,000 rcf
+* Place on magnet, and remove most liquid (being careful to not aspirate any beads)
+* Add 200ul 0.1M NaOH, and vortex
+* Place on magnet and wait until solution turns pure white (all ePCR beads will now be against the
+back of the tube facing the magnet)
+* Remove liquid and wash 2x w/ 200ul 0.1M NaOH, then transfer to a new tube and wash 2x w/
+TE. Resuspend in 20ul TE. If enriching more than 1 plate, beads can be pooled into a single tube
+when transferred after final wash with 0.1M NaOH.
+
+==Aminosilane treatment of coverslips==
+Church Lab 10‐Dec-2007
+
+This protocol is used to wash and aminosilane‐treat the rectangular coverslips used in polony
+sequencing. It is critical that the protocol be followed exactly as written to ensure 1) no fluorescent
+contamination is present on the glass, and 2) coverslip is uniformly amino‐functionalized.
+
+1. Load coverslips into rack (available from flowcell supplier)
+
+2. Immerse coverslips in solution of 0.5% Triton X‐100 in dH2O. Wash by manually agitating the
+rack for ~1 minute.
+
+3. Pour all liquid off and wash thoroughly under running water to remove all detergent. Rinse with
+dH2O.
+
+4. Pour off all liquid and dry by immersion in 100% EtOH. Remove from EtOH and allow all ethanol
+to evaporate (aided by use of a Dust‐off compressed air canister if possible).
+
+5. Prepare 2% aminopropyl triethoxysilane (Pierce) solution in dry acetone in a glass beaker.
+Pipette with glass – the solution will react with polystyrene.
+
+6. Immerse rack of completely dry (and ethanol‐free) coverslips in silane solution for 30 seconds.
+Use the handle to manually agitate the rack.
+
+7. Remove and immediately immerse in fresh dry acetone rinse for 1 minute. Use the handle to
+manually agitate the rack.
+
+8. Remove rack and blow‐dry partially with compressed air (to remove the bulk of the acetone).
+
+9. Completely air‐dry and store under vacuum at RT.
+
+10. When cleaning beakers containing acetone and aminopropyltriethoxysilane, be sure to rinse
+with fresh acetone to remove all traces of aminopropyltriethoxysilane. If present, it will form a
+white precipitate upon evaporation of acetone.
+
+==Polony Sequencing Fluorescent Nonamer Sequences ==
+Church Lab 10‐Dec-2007
+
+All nonamers are synthesized by IDT on the 1 umol scale, with HPLC purification. Specify N:25:25:25:25
+for all degenerate bases. Average yield is ~30 nmol for Cy3, Cy5, and TxRed, ~100 nmol for FAM.
+
+'''Minus 1 nonamers'''
+* 5' Cy5‐NNNNNNNNT
+* 5' Cy3‐NNNNNNNNA
+* 5' TexasRed‐NNNNNNNNC
+* 5' 6FAM‐NNNNNNNNG
+'''Minus 2 nonamers'''
+* 5' Cy5‐NNNNNNNTN
+* 5' Cy3‐NNNNNNNAN
+* 5' TexasRed‐NNNNNNNCN
+* 5' 6FAM‐NNNNNNNGN
+'''Minus 3 nonamers'''
+* 5' Cy5‐NNNNNNTNN
+* 5' Cy3‐NNNNNNANN
+* 5' TexasRed‐NNNNNNCNN
+* 5' 6FAM‐NNNNNNGNN
+'''Minus 4 nonamers'''
+* 5' Cy5‐NNNNNTNNN
+* 5' Cy3‐NNNNNANNN
+* 5' TexasRed‐NNNNNCNNN
+* 5' 6FAM‐NNNNNGNNN
+'''Minus 5 nonamers'''
+* 5' Cy5‐NNNNTNNNN
+* 5' Cy3‐NNNNANNNN
+* 5' TexasRed‐NNNNCNNNN
+* 5' 6FAM‐NNNNGNNNN
+'''Minus 6 nonamers'''
+* 5' Cy5‐NNNTNNNNN
+* 5' Cy3‐NNNANNNNN
+* 5' TexasRed‐NNNCNNNNN
+* 5' 6FAM‐NNNGNNNNN
+'''Plus 1 nonamers'''
+* 5' Phos‐TNNNNNNNN‐Cy5
+* 5' Phos‐ANNNNNNNN‐Cy3
+* 5' Phos‐CNNNNNNNN‐TexasRed
+* 5' Phos‐GNNNNNNNN‐6FAM
+'''Plus 2 nonamers'''
+* 5' Phos‐NTNNNNNNN‐Cy5
+* 5' Phos‐NANNNNNNN‐Cy3
+* 5' Phos‐NCNNNNNNN‐TexasRed
+* 5' Phos‐NGNNNNNNN‐6FAM
+'''Plus 3 nonamers'''
+* 5' Phos‐NNTNNNNNN‐Cy5
+* 5' Phos‐NNANNNNNN‐Cy3
+* 5' Phos‐NNCNNNNNN‐TexasRed
+* 5' Phos‐NNGNNNNNN‐6FAM
+'''Plus 4 nonamers'''
+* 5' Phos‐NNNTNNNNN‐Cy5
+* 5' Phos‐NNNANNNNN‐Cy3
+* 5' Phos‐NNNCNNNNN‐TexasRed
+* 5' Phos‐NNNGNNNNN‐6FAM
+'''Plus 5 nonamers''' 
+* 5' Phos‐NNNNTNNNN‐Cy5
+* 5' Phos‐NNNNANNNN‐Cy3
+* 5' Phos‐NNNNCNNNN‐TexasRed
+* 5' Phos‐NNNNGNNNN‐6FAM
+'''Plus 6 nonamers''' 
+* 5' Phos‐NNNNNTNNN‐Cy5
+* 5' Phos‐NNNNNANNN‐Cy3
+* 5' Phos‐NNNNNCNNN‐TexasRed
+* 5' Phos‐NNNNNGNNN‐6FAM

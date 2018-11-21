@@ -1,0 +1,30 @@
+= Protein Evolutionary Rates =
+
+* dS = # synonymous changes per site
+* dN = # non-synonymous changes per site
+* calculate these quantities by comparing coding sequences of similar organisms that have diverged (S. ceriviciae and S. bayanus diverged 20 million years ago)
+* Drummond, PNAS, 2005 <cite> Drummond-PNAS-2005 </cite>
+** dN has a range of several orders of magnitude
+** what is known is that highly expressed proteins evolve slowly (small dN)
+** expression level, CAI, abundance, # interactions, length, network centrality, fitness of knockout - all correlate with dN
+* Drummond, MBE, 2006 <cite> Drummond-MBE-2006 </cite>
+** principal axis when do Principle Component Regression is: expression level, CAI, abundance - no other relevant axis
+*** Principle Component Regression - take axes that find with Principle Component Analysis (PCA), and regress these with an outcome variable (here dN)
+** the problem is protein interaction data is very unreliable <cite> vonMering-Nature-2002 </cite>
+* Plotkin and Fraser, MBE, 2007, <cite> Plotkin-Fraser-MBE-2007 </cite>
+** make all variables on equal footing by adding noise to them to equal the noise in the protein interaction data
+*** find that the principle component found above drastically reduced
+** hidden variable analysis to see if can extract anything from the noisy data
+** contentious because protein interaction data is biased towards picking up interactions between highly abundant proteins, and thus slowly evolving proteins - conflation
+
+== Side Note ==
+* how does PCA deal with variables that have different scales?
+** 2 options 
+*** normalize all variables to have an internal variance of 1 (and 0-mean)
+*** do PCA on the rank of the variables (non-parametric)
+
+= Bibliography =
+
+<biblio force=false>
+#[[Julius B. Lucks/Bibliography]]
+</biblio>

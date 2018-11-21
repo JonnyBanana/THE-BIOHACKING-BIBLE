@@ -1,0 +1,27 @@
+== Oscilloscope lab ==
+
+=== Basic Waveform Measurement ===
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 21:55, 29 August 2007 (EDT):I like this summary of the basic waveform measurement, was very easy to follow.  At one point you mentioned the low pass filter (capacitor in parallel) and we talked about how the oscilloscope has an intrinsic low pass filter due to unavoidable capacitances.  For the scope you were using I think the high frequency cutoff = 60 MHz.  It's possible the reason the stepwise function didn't have sharp bends was due to the low pass filter on the oscilloscope (you need high frequency components to make a sharp step function--FFT would help explain this).  However, more likely is just that the function generator was not able to generate the sharp function at high frequency (due to bandwidth limits or maybe [http://en.wikipedia.org/wiki/Slew_rate slew rate].}}
+So I hooked up the oscilloscope to the function generator with a coaxial cable into channel 1 and 2 of the oscilloscope.  Both cables carried the same signal.  The type of connectors used were BNC.  I almost understand the function generator thanks to Lorenzo and Koch, and I get the screen on the oscilloscope to create some cool periodic functions.
+
+I created a sine pulse with the function generator at 200 Hz at about medium amplitude.  The oscilloscope measured it to be 196 Hz and to have an amplitude of about 7 V.  Changing the shape from a sine to different jagged periodic function didn't change the amplitude or frequency measured by the oscilloscope.  Very low frequencies could be measured (down to .1 Hz), but high frequencies, once I zoomed in enough, created a jittery fuzzy curve.  The stepwise function at high frequencies didn't create sharp bends.  Maybe the crappy wire setup I had caused this.  Also, at high amplitude, DC offset did not work in its full range because the function generator was maxing out.
+
+=== Triggering ===
+
+Triggering is how you can have the waveform on the screen of the oscilloscope always start at the same stage in the waveform's period.  Triggering on a rising edge means that the waveform will always have a positive slope where the arrow on the top of the screen is.
+
+===     AC coupling      ===
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 21:57, 29 August 2007 (EDT):Most people were getting 52 ms -ish.  I don't know if anyone today googled the "correct" answer.  I have to believe that it's somewhere on the internet, but I didn't find it in the five minutes I spent.}}
+I generated a square/stepwise wave at 8.6 V amplitude.  Relax time (the time it takes for the V measured by the oscilloscope to go to %10) was measured as:
+
+*52ms
+*53ms 
+*52ms 
+
+These measurements imply the following RC constants (<math>RC=\tau=\frac {t_r}{2.197} </math>):
+
+*23.7ms
+*24.1ms
+*23.7ms
+
+I don't know if I should expect these values on my oscilloscope because I am no longer sitting in front of it.

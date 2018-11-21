@@ -1,0 +1,240 @@
+[[User:Nkuldell:M13 redesign]]
+
+===Vectors===
+[[Image:Macintosh HD-Users-nkuldell-Desktop-M13K07 plasmid-M13K07plasmidmap.jpg|thumb|right|600px| M13K07 plasmid map, using sequence from L. Panganaban. Map drawn using NEBcutter]]
+*M13KE [[http://www.westburg.nl/pages/TechnicalResources/Vectors.htm]]
+*pUC118 [[http://seq.yeastgenome.org/vectordb/vector_descrip/PUC118.html]] or 119 [[http://seq.yeastgenome.org/vectordb/vector_descrip/PUC119.html]]
+*M13K07 (helper phage)[[http://www.neb.com/nebecomm/tech_reference/restriction_enzymes/sequences/m13ko7.txt |sequence]][[http://www.neb.com/nebecomm/tech_reference/restriction_enzymes/sequences/m13ko7.txt]]
+[[Image:M13KO7 zerocutters.txt]]<br>
+[[Image:M13KO7 singlecutters.txt]]<br>
+[[Image:M13KO7 2cutters.txt]]<br>
+
+===Possible M13K07 edits===
+{| border="1"
+! Sequence
+! code on plasmid map
+! edit
+|-
+| PS (packing sequence) 
+| ?
+| ?
+|-
+| bact ori 
+| "e"
+| to pSCAN ori
+|-
+| gII and gX 
+| "c" and "g"
+| unstuff
+|-
+| gV 
+| "i"
+| different ssBP
+|-
+| gVII 
+| "k" 
+| add loop to be presented on phage head
+|-
+| gIX and gVIII 
+| "l" and "j"
+| remove overlap of gIX stop with gVIII start
+|-
+| gVIII and gIII 
+| "j" and "b" 
+| add epitope tags
+|-
+| gVI 
+| "f"
+| add loop to be presented on phage tail 
+|-
+| gI and gXI 
+| "d" and "h" 
+| unstuff, and/or add aa substitutions to make maturation PS-indep
+|-
+| gIV 
+| "a"
+| titrate promoter to vary pore concentration
+|}
+
+===Primers===
+====For M13K07 manipulations====
+*<b>First need to delete Pst site from M13K07 polylinker</b>
+these oligos should both destroy Pst and add unique EcoRI to position 8083<br>
+* NO133: ChangePst2RI_top<br>
+**5'ATAG AAT TCT ATG CA
+* NO134: ChangePst2RI_btm <br>
+**5'ACG TTAT CTT AAG AT <br>
+*<b>Next step is to add PstI to Petrenko site</b>
+use site directed mutagenesis to change GCT to GCA (silent change at Ala, first residue in mature protein)<br>
+*NO135: AddPst2gVIII_fwd<br>
+**CGT TCCGATGCTG TCTTTCGCTG CaGAGGGTGA CGATCCCGCA AAAGCGGCC
+** Tm 74°
+*NO136: AddPst2gVIII_rev
+**GGC CGC TTT TGC GGG ATC GTC ACC CTC TGC AGC GAA AGA CAG CAT CGG AAC G 
+**Tm 74°
+====For M13K07 sequencing====
+*NO137: M13KO7_seq1100_fwd
+**TAAGTAACATG GAGCAGGTCG CGGATTTCGA CAC
+**Tm 65°
+**useful for seq'ing p8 N-term
+*NO156: M13KO7_seq2000_fwd
+**CTT CTC TTG AGG AGT CTC AGC CTC TTA ATA CTT TCA TGT TTC AG
+**Tm 63°
+**useful for seq'ing p3 epitope in Bam site
+
+===Epitope Tagging===
+[[http://64.233.161.104/search?q=cache:clm1PVBQlrYJ:www.roche-applied-science.com/PROD_INF/MANUALS/epitope/p13-16.pdf+c-myc+epitope+sequence&hl=en&gl=us&ct=clnk&cd=2| general info about epitope tagging with PCR]]<br>
+[[http://www.neb.com/nebecomm/tech_reference/general_data/genetic_code.asp| genetic code]]<br>
+[[http://www.neb.com/nebecomm/EnzymeFinderSearchbySequence.asp| RE finder to help with primer design]]<br>
+Generalize instructions as:
+*reverse translate epitope
+*add overhangs for cloning
+*check reading frame
+*destroy restriction site from bkb
+*add RE site either via silent changes or to restore reading frame or by adding aa
+
+
+====g8p====
+[[Image:Macintosh HD-Users-nkuldell-Desktop-g8p M13K07+Pst.doc|thumb|translated M13K07+Pst g8p]] 
+[[http://www.pir.uniprot.org/cgi-bin/upEntry?id=P69541| UniprotKB entry]]<br>
+<b> Insert tag at Pst in g8p M13K07 after SDM with NO135/136 </b>
+*<b>HA</b>
+** 9-amino acid sequence (YPYDVPDYA) recognized by the anti-12CA5 (=anti-HA)
+** reverse translate at [[http://slam.bs.jhmi.edu/gd/ |Gene Design]]
+** default settings gives sequence: TACCCATATGATGTTCCGGACTACGCT
+** add silent restriction sites. Considered all degeneracies of codons, found can silently insert AatII in middle of tag as: TACCCATATGAcGTcCCGGACTACGCa gives AatII site which is not naturally in M13KO7. 
+*** <i>alternatively add Val to N-term end of tag where val tyr encoded by GTA TAC = unique BstZ171 site
+*** alternatively add Ser to C-term end of tag so prot seq reads:...asp tyr ala ser cys...where ala ser encoded by GCT AGC = unique NheI site </i>
+** add Pst tails for ligation, using last t of Ala codon as first base for Pst overhang...this requires that the bottom primer not base pair to that position. 
+***NO140   g8p_HA_top: TAC CCA TAT GAC GTC CCG GAC TAC GCt gca 
+***NO141   g8p_HA_btm: acgt ATG GGT ATA CTG CAG GGC CTG ATG CG
+***resulting tag is 10aa (9aaHA+Ala) then back in frame with g8 seq at Glu25
+
+*<b>c-myc</b>
+** 10-amino acid sequence (EQKLISEEDL) recognized by anti-9E10 (=anti-myc)
+** reverse translate at [[http://slam.bs.jhmi.edu/gd/ |Gene Design]]
+** default settings gives sequence: GAACAGAAACTGATCTCTGAAGAAGACCTG
+** add silent restriction site. Considered all degeneracies of codons, found can silently insert HindIII in middle of tag as: GAACAGAAgCTtATCTCTGAAGAAGACCTG
+(there is second HindIII in M13K07 at 7402, so construct with insert should give fragment plus bkb.
+** add Pst tails for ligation using last t of Leu codon as first base for Pst overhang...this requires that the bottom primer not base pair to that position. 
+***NO142   g8p_myc_top:  GAA CAG AAg CTt ATC TCT GAA GAA GAC CTt gca 
+***NO143   g8p_myc_btm: acgt CTT GTC TTC GAA TAG AGA CTT CTT CTG GA
+***resulting tag is 11aa (10aa c-myc+Ala) then back in frame with g8 seq at Glu25
+
+
+====g3p====
+[[Image:Macintosh HD-Users-nkuldell-Desktop-g3p M13KO7translated.doc|thumb|translated M13K07 g3p]] 
+[[http://www.pir.uniprot.org/cgi-bin/upEntry?id=P69168| UniProtKB entry]]<br>
+<b> Insert tag at natural unique BamHI in g3p M13K07. </b> <br>For consistency used version after SDM with NO135/136 but if these silent changes attenuate phage, may want to try in wtM13KO7 <br>
+<b>Note from CN at NEB 11.1.06:</b><br>The Bam site in wt M13 (and M13KO7) overlaps residues 196-198 of pIII, which fall in the domain (D2) which is involved in F-pilus binding (i.e. the first step in phage infection). Deng and Perham (J Mol Biol 319, 603-614, 2002) characterized a series of mutants to delineate the precise F-pilus binding site of D2, and found that the interaction occurs at a loop comprising residues 178-199, which happens to contain the BamHI site. The good news is that this is a solvent-exposed loop; the bad news is that insertions here might disrupt F-pilus binding, resulting in non-infectious phage. (FYI, in the mp versions of M13, and our PhD cloning vector M13KE, the 2 C's in the Bam site are replaced by T's, resulting in Pro198 being Leu, which has no effect on phage infectivity.) So the short answer is that while there are good reasons to expect that insertions at the Bam site would not be tolerated, you might want to try it anyway.<br>
+
+*<b>HA</b>
+** 9-amino acid sequence (YPYDVPDYA) recognized by the anti-12CA5 (=anti-HA)
+** reverse translate at [[http://slam.bs.jhmi.edu/gd/ |Gene Design]]
+** default settings gives sequence: TACCCATATGATGTTCCGGACTACGCT
+** add silent restriction site: TACCCATATGAcGTcCCGGACTACGCT gives AatII site which is not naturally in M13KO7. 
+** add Bam tails for ligation, changing last T of Ala codon to G (also Ala) as first base for Bam overhang...this requires that the top primer not base pair to that position. 
+***NO144   g3p_HA_top: gat cca TAC CCA TAT GAC GTC CCG GAC TAC GC
+***NO145   g3p_HA_btm: gt ATG GGT ATA CTG CAG GGC CTG ATG CGc tag
+***resulting tag starts after g3 Pro216, inserting 10aa (9aaHA+Ile) then back in frame with g3 seq at Phe217
+
+*<b>c-myc</b>
+** 10-amino acid sequence (EQKLISEEDL) recognized by anti-9E10 (=anti-myc)
+** reverse translate at [[http://slam.bs.jhmi.edu/gd/ |Gene Design]]
+** default settings gives sequence: GAACAGAAACTGATCTCTGAAGAAGACCTG
+** add silent restriction site. Considered all degeneracies of codons, found can silently insert HindIII in middle of tag as: GAACAGAAgCTtATCTCTGAAGAAGACCTG
+(there is second HindIII in M13K07 at 7402, so construct with insert should give fragment plus bkb.
+** add Bam tails for ligation, removing last G of Leu codon from top primer to use as first base for Bam overhang, followed by unpaired TAG on bottom primer for Bam site. This inserts Ile into tag.
+***NO146   g3p_myc_top:  gat cca GAA CAG AAg CTt ATC TCT GAA GAA GAC CT 
+***NO147   g3p_myc_btm:  gt CTT GTC TTC GAA TAG AGA CTT CTT CTG GAc tag
+***resulting tag starts after g3 Pro216, inserting 11aa (10aa c-myc+Ile) then back in frame with g3 seq at Phe217
+
+===Epitope Tagging, try harder, try smarter===
+[[http://64.233.161.104/search?q=cache:clm1PVBQlrYJ:www.roche-applied-science.com/PROD_INF/MANUALS/epitope/p13-16.pdf+c-myc+epitope+sequence&hl=en&gl=us&ct=clnk&cd=2| general info about epitope tagging with PCR]]<br>
+[[http://www.neb.com/nebecomm/tech_reference/general_data/genetic_code.asp| genetic code]]<br>
+[[http://www.neb.com/nebecomm/EnzymeFinderSearchbySequence.asp| RE finder to help with primer design]]<br>
+Generalize instructions as:
+*get gene seq's, translate, find restriction sites
+*reverse translate epitope
+*add overhangs for cloning
+*check reading frame
+*destroy restriction site from bkb
+*add RE site either via silent changes or to restore reading frame or by adding aa
+*verify bp'ing, restriction sites present/absent at NEBcutter [http://tools.neb.com/NEBcutter2/index.php] (must add tail and bkb base to confirm restriction sites gone)
+
+====g8p: take2====
+instructions should direct top strand planning then bottom strand...<br>
+
+<b> HA </b>
+** 9-amino acid sequence (YPYDVPDYA) recognized by the anti-12CA5 (=anti-HA)
+** reverse translate at [[http://slam.bs.jhmi.edu/gd/ |Gene Design]] with E. coli codon bias
+** default settings gives sequence: TAC CCG TAC GAC GTT CCG GAC TAC GCT
+** add Pst tail for ligation:  TAC CCG TAC GAC GTT CCG GAC TAC GCT t gca
+** to restore reading frame, might like to use wobble T in Ala as t in overhang but can't do this and simultaneously silently destroy Pst
+** instead restore reading frame and destroy Pst by conservative insertion = TAC CCG TAC GAC GTT CCG GAC TAC GCT <i>GG</i>t gca, which adds gly to insertion
+** consider all degeneracies of codons, to find AatII site which is not naturally in M13KO7. So 
+<b>
+***NO148 = g8p_HA'_Top=       TAC CCG TAC GAC GTc CCG GAC TAC GCT GGt gca </b>
+** next design bottom piece, leaving off top overhang, adding bottom overhang and then checking reading frame and destruction of Pst site.
+<b>
+***NO149 = g8p_HA'_Btm= a cgt ATG GGC ATG CTG CAg GGC CTG ATG CGA CC</b>
+*This results in 10aa insertion (9aaHA+gly)at Ala24, followed by natural seq Glu25 <br>
+
+<b> c-myc </b>
+** 10-amino acid sequence (EQKLISEEDL) recognized by anti-9E10 (=anti-myc) 
+** reverse translate at [[http://slam.bs.jhmi.edu/gd/ | Gene Design]]
+** default settings gives sequence: GAA CAG AAA CTG ATC TCT GAA GAA GAC CTG
+** add Pst tail for ligation: GAA CAG AAA CTG ATC TCT GAA GAA GAC CTt gca, using wobble at last Leu to keep reading frame. 
+** confirmed Pst not regenerated by insert 
+** consider all degeneracies of codons, gives HindIII site. There is second HindIII in M13K07 at 7402, so construct with insert should give fragment plus bkb.     
+***g8p_myc'_Top: GAA CAG AAg CTt ATC TCT GAA GAA GAC CTt gca
+
+** next design bottom piece, leaving off top overhang, adding bottom overhang
+*** acgt CTT GTC TTc GAa TAG AGA CTT CTT CTG GA
+** check reading frame
+*** a cgt CTT GTC TTc GAa TAG AGA CTT CTT CTG GA
+** to destroy Pst site add aa at 5' end of tag, most conservative possible = leu = CTn
+** write top and bottom strand accordingly
+<b>
+***NO150 = g8p_myc'_Top:       CTC GAA CAG AAg CTt ATC TCT GAA GAA GAC CTt gca
+***NO151 = g8p_myc'_Btm: a cgt GAG CTT GTC TTc GAa TAG AGA CTT CTT CTG GA </b>
+ 
+* This results in 11aa insertion (Gly +10aamyc) at Ala24, followed by natural seq Glu25 <br>
+
+====g3p: take 2====
+instructions should direct top strand planning then bottom strand...<br>
+<b> HA </b>
+** 9-amino acid sequence (YPYDVPDYA) recognized by the anti-12CA5 (=anti-HA)
+** reverse translate at [[http://slam.bs.jhmi.edu/gd/ |Gene Design]] with E. coli codon bias
+** default settings gives sequence: TAC CCG TAC GAC GTT CCG GAC TAC GCT
+** add Bam tail for ligation:  gatc TAC CCG TAC GAC GTT CCG GAC TAC GCT
+** check reading frame and add bases at 5' end to correct, making most conservative structural mutation, namely Leu for natural Pro. Add bases to both primers so  : gat c<i>TA</i> TAC CCG TAC GAC GTT CCG GAC TAC GCT
+** confirm that this does not regenerate Bam
+** consider all degeneracies of codons, gives AatII site which is not naturally in M13KO7. So 
+<b>
+***NO152 = g3p_HA'_Top= gat cTA TAC CCG TAC GAC GTc CCG GAC TAC GCT </b>
+** next design bottom piece, leaving off top overhang, adding bottom overhang and then checking reading frame and destruction of Bam site.
+<b>
+***NO153 = g3p_HA'_Btm=      AT ATG GGC ATG CTG CAg GGC CTG ATG CGA cta g </b>
+*This results in 10aa insertion (Leu+9aaHA)at D215, followed by natural seq picking up at D215P216F217 <br>
+
+<b> c-myc </b>
+** 10-amino acid sequence (EQKLISEEDL) recognized by anti-9E10 (=anti-myc) 
+** reverse translate at [[http://slam.bs.jhmi.edu/gd/ | Gene Design]]
+** default settings gives sequence: GAA CAG AAA CTG ATC TCT GAA GAA GAC CTG
+** add Bam tail for ligation: gatc GAA CAG AAA CTG ATC TCT GAA GAA GAC CTG
+** restore reading frame and add bases at 5' end to correct, making most conservative structural mutation,namely Leu for natural Pro. Add bases to both primers so  : gat c<i>TA</i> GAA CAG AAA CTG ATC TCT GAA GAA GAC CTG
+** confirmed Bam not regenerated by insert 
+** consider all degeneracies of codons, gives HindIII site. There is second HindIII in M13K07 at 7402, so construct with insert should give fragment plus bkb.      
+***g3p_myc'_Top: gat cTA GAA CAG AAg CTt ATC TCT GAA GAA GAC CTG
+
+** next design bottom piece, leaving off top overhang, adding bottom overhang
+*** AT CTT GTC TTc GAa TAG AGA CTT CTT CTG GAC ctag
+** check reading frame
+*** AT CTT GTC TTc GAa TAG AGA CTT CTT CTG GAC cta g
+** to destroy Bam site, use wobble at last Leu to destroy Bam 
+*** AT CTT GTC TTc GAa TAG AGA CTT CTT CTG GA<i>T</i> cta g
+** fix top strand accordingly<b>
+***NO154 = g3p_myc'_Top: gat cTA GAA CAG AAg CTt ATC TCT GAA GAA GAC CTA
+***NO155 = g3p_myc'_Btm:      AT CTT GTC TTc GAa TAG AGA CTT CTT CTG GAT cta g
+*This results in 11 aa insertion (Leu+10aamyc) at D215, followed by natural seq picking up at D215P216F217 <br>

@@ -1,0 +1,85 @@
+This page describes the setup needed to operate a microfluidic chip via computer controlled pressure actuation.  The setup described below is what we use in the [[Endy Lab|Endy lab]], and is adapted from the setup defined in Steve Quake's lab at Stanford.
+
+==Pressure Control==
+===Pressure Source===
+You will need a pressure source capable of providing ~30psi.   Had luck with air, could probably use a nitrogen source as well.
+
+===In-line Filters===
+*You may want to filter the pressure source.
+*'''[[User:Jasonk|Jasonk]] 11:31, 28 July 2006 (EDT)''': Any suggestions for the pore size -- what are we trying to avoid, clogging of the control lines?  contamination?
+
+===3-way split===
+*Need to split the pressure source into 3 outputs, for push-up valves, push-down valves, and fluid.  
+*'''[[User:Jasonk|Jasonk]] 11:34, 28 July 2006 (EDT)''': Should include a picture of the Endy lab construction and the parts list for it if we still have it, Ty.
+
+===Pressure Guage (PSI Traix)===
+*digital pressure guage (need 3 of these, one for each of the pressure outlets.
+*PG500-30-G
+*'''[[User:Jasonk|Jasonk]] 11:16, 28 July 2006 (EDT)''':I would probably find a normal, analog one instead, these have been a bit problematic -- the buttons often stick and they turn off after awhile to conserve batteries.  If anyone finds a reliable one, please post it here.
+
+===Pressure Regulator (Coast Pneumatics,Inc)===
+*0-30 psi
+*R-800-30-W/K
+*'''[[User:Jasonk|Jasonk]] 11:36, 28 July 2006 (EDT)''': These are made of plastic and have a tendency to break when you insert metal pipes into them.  If someone finds a more sturdy one, please post it.
+
+==Microfluidics==
+
+===Luer Stab Adapter (Clay Adams)===
+*23 Guage
+*Cost $1.5/each
+*These look like needles for syringes, but have a blunt end.  They are used to load the tubing with fluids.  (you’ll also need standard syringes to go along with them).
+
+===[http://www.coleparmer.com/catalog/product_view.asp?sku=0641802 Small Tubing (Cole-Parmer)]===
+*Tubing, Tygon, 0.02 X .06", 100' 
+*Catalog# 06418-02
+*This tubing connects the manifold to the pins.
+
+===Large tubing===
+*You will need tubing to connect the pressure source to the manifolds.  This will in part depend on your pressure source, but at the end you will need to reduce to tubing of size X (in order to interface with the manifold).
+
+===Pins ([http://www.nesmalltube.com/ New England Small Tube Corp.])===
+*TW 0.500 long, cut tupe, type 304, deburred & passivated 
+*23 Guage
+
+===Chips===
+*The [[Endy Lab]] orders their from the [http://www.kni.caltech.edu/foundry/ Caltech Microfluidic Foundry].
+
+===Caps===
+Flanges, claps,etc  -- ty has ordering info.
+
+===Tracer Dye===
+*Using undiluted food dye to debug chips.
+
+==Computer Control / Electronics==
+
+===[http://sine.ni.com/nips/cds/view/p/lang/en/nid/13508 Digital I/O card for interfacing with BOB3 (National Instruments)]===
+*Direct I/O to the BOB3 from the computer. 
+*PCI-DIO-32HS
+*'''[[User:Jasonk|Jasonk]] 11:02, 28 July 2006 (EDT)''':Ty, was this specific to our computer, I forget how this played out.
+*Will also need to get the [http://sine.ni.com/nips/cds/view/p/lang/en/nid/4795 cable].
+*Zack thinks looks like overkill, tlak to fluidigm about what you need here.
+
+===BOB-3 Microfluidic Valve Manifold Controller (Fluidigm)===
+*Can operate 4 manifolds, so a total of 32 valves.
+
+
+===Miniature Solenoid valve cluster manifolds (Fluidigm)===
+*Only one type of manifold available, it contains 8 valves
+*Each BOB-3 controller can interface with 4 manifolds (so total of 32 valves controlled).
+
+==Microscopy==
+===Stage===
+*may want to get a custom stage insert with a hole just the size of the chip if you are having your chipped fabbed onto a coverslip-thick slide. 
+
+==Contact==
+[[Jason Kelly]] for more information.
+
+{| border="1" cellpadding="5" cellspacing="1" align="center"
+|-
+| Item name
+| Description
+| Company
+| Part #
+|-
+|
+|}

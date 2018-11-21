@@ -1,0 +1,52 @@
+{{Template:BE.109}}
+
+
+==Introduction==
+The invention of automated sequencing machines has made sequence determination a fast and inexpensive endeavor. The method for sequencing DNA is not new but automation of the process is recent, developed in conjunction with the massive genome sequencing efforts of the 1990s. At the heart of sequencing reactions is chemistry worked out by Fred Sanger in the 1970’s which uses dideoxynucleotides. 
+
+[[Image:Be109dideoxynucleotide.jpg|thumb|left|500px|'''Normal bases versus chain-terminating bases''']]
+<br style="clear:both" /> 
+
+These chain-terminating bases can be added to a growing chain of DNA but cannot be further extended. Performing four reactions, each with a different chain-terminating base, generates fragments of different lengths ending at G, A, T, or C. The fragments, once separated by size, reflect the DNA’s sequence. In the “old days” (all of 10 years ago!) radioactive material was incorporated into the elongating DNA fragments so they could be visualized on X-ray film (image on left). More recently fluorescent dyes, one color linked to each dideoxy-base, have been used instead. The four colored fragments can be passed through capillaries to a computer that can read the output and trace the color intensities detected (image on right). Your sample was sequenced in this way on an ABI 3730 DNA Analyzer.
+
+[[Image:Be109sequencinggel.jpg|thumb|left|120px|'''Sequencing gel''']]
+[[Image:Be109tracedata.jpg|thumb|left|150px|'''Sequence trace data''']]
+<br style="clear:both" />
+
+Analysis of sequence data is no small task. “Sequence gazing” can swallow hours of time with little or no results. There are also many web-based programs to decipher patterns. The nucleotide or its translated protein can be examined in this way. Thanks to the genome sequence information that is now available, a new verb, “to BLAST,” has been coined to describe the comparison of your own sequence to sequences from other organisms. BLAST is an acronym for Basic Local Alignment Search Tool, and can be accessed through the National Center for Biotechnology Information (NCBI) home page at http://www.ncbi.nlm.nih.gov/ 
+
+==Protocol==
+The data from the Biopolymers Facility has been loaded to your laptop. If you would like to retrieve it yourself go to http://web.mit.edu/biopolymers/www/  You can follow the link to DNA SEQUENCING SERVICES to read about the sequencing that was done or go directly to INSTRUCTIONS FOR DOWNLOADING DATA - ACCESSING THE FTP SERVER. To download your data, know: 
+Host = biopolymers.mit.edu
+User ID = KULDELL
+Password = NATECOLE (all caps!)
+Directory = /pub
+Scroll to find the “Kuldell” folder, which is only data folder you’ll be able to open. There should be two outputs for each sequencing sample your group provided. One ends with “.abi” and is a trace of the fluorescent output from the sequencing machine. This can be viewed with “EditSeq” if you are using a Mac or with “Chromas” if you are on a PC. The other output file ends with “.seq” and lists the nucleotide sequence in Excel. The data from this file can be imported into any web-based sequence analysis program you’d like to use, pasting it wherever the program asks for “FASTA” format. 
+
+A good place to start your sequence analysis might with the translation program freely available at
+http://www.ebi.ac.uk/emboss/transeq/. The table below may help orient you to the salient parts of your data. The translated sequence is presented in single letter code, where X indicated ambiguity in the sequence data. The four library sequences do not necessarily bind gold. 
+
+{| border="1"
+| pCT-CON
+| <font face="courier">YALQA SGGGG SGGGG SGGGG SASCG GGGTS KISHF LKMES LNFIR AHTPY INIYN CEPAN PSEKN SPSTQ YCYSI QSSQV DCGGG SEQKL ISEED L**LEI **QQ</font>
+|-
+| pAu1
+| <font face="courier">YALQA SGGGG SGGGG SGGGG SASQV QLQQS GPGLV KPSQT LSLTC AISGD SVSGN TAAWN WIRQS PSRGL EWLGR TYYRS KWHYD MRHL* KVE*</font>
+|-
+| Library seq1
+| <font face="courier">YALQA SGGGG SGGGG SGGGG SASQG GGGSG PPRRR SNVWA PV*LA RPVAW GRIRT KAYF*</font>
+|-
+| seq2
+| <font face="courier">YXXXA SGGGG SGGGG SGGGG SASQG GGGSG VYGLS GTARS RG*LA RPVAW GRIRT KAYF*</font>
+|-
+| seq3
+| <font face="courier">YXXXA SXXGG SGGGG SGGGG SASQG GGGSG KRGCS RALWW IA*LA RPVAW GRIRT KAYF*</font>
+|-
+| seq4
+| <font face="courier">YXLQA SGGGG SGGGG SGGGG SASQG GGGSG WKMFI GGTWL GC*LA RPVAW GRIRT KAYF*</font>
+|}
+
+As you consider your data, you should also explore what is known about amino acid interaction with metals, using search engines such as PubMed, MIT’s homepage or even Google, and also consider the data from your classmates. Collaborating in this way may support any developing theory you have. Before you leave, please post your data (sequence, relative strength of gold binding, and so on) to the discussion page associated with this lab and write a few comments about the results. 
+
+
+REALLY DONE!

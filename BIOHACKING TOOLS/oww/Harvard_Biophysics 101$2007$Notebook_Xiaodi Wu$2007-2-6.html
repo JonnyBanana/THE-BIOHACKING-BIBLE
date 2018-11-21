@@ -1,0 +1,91 @@
+<pre>
+#!/usr/bin/env python
+
+from Bio import GenBank, Seq
+
+# Wait message
+print "thinking...please wait one moment..."
+
+# Create GenBank object to parse a raw record
+record_parser = GenBank.FeatureParser()
+ncbi_dict = GenBank.NCBIDictionary('nucleotide', 'genbank', parser = record_parser)
+# Download and parse record
+parsed_record = ncbi_dict['119392085'] # IHH gene
+
+print "GenBank ID:", parsed_record.id
+
+# Extract the sequence from the parsed_record
+s = parsed_record.seq.tostring()
+print "total sequence length:", len(s)
+
+# Translate!
+p = Seq.translate(s).split('*') # Split a stop codon
+q = Seq.translate('C' + s).split('*') # Try a different frame
+r = Seq.translate('CC' + s).split('*') # Try another
+# pc = Seq.translate(Seq.reverse_complement(s)).split('*') # And yet another
+# qc = Seq.translate('C' + Seq.reverse_complement(s)).split('*') # And another
+# rc = Seq.translate('CC' + Seq.reverse_complement(s)).split('*') # And another
+
+# Group them all
+pqr = p
+pqr.extend(q)
+pqr.extend(r)
+# pqr.extend(pc)
+# pqr.extend(qc)
+# pqr.extend(rc)
+
+# Find start codon for each
+def trim(x): return x[x.find('M'):]
+p_trimmed = map(trim, pqr)
+
+# Find longest of them
+def max(x, y):
+  if len(x) < len(y): return y
+  else: return x
+p_max = reduce(max, p_trimmed)
+print "total translated sequence length:", len(p_max)
+
+
+max_repeat = 9
+
+print "\npoly-A count -- method 1"
+for i in range(max_repeat):
+    substr = ''.join(['A' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\npoly-A count -- method 2"
+for i in range(max_repeat):
+    substr = ''.join(['A' for n in range(i+1)])
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+
+print "\npoly-T count -- method 1"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    print substr, s.count(substr)
+
+print "\npoly-T count -- method 2"
+for i in range(max_repeat):
+    substr = ''.join(['T' for n in range(i+1)])
+    count = 0
+    pos = s.find(substr,0)
+    while not pos == -1:
+        count = count + 1
+        pos = s.find(substr,pos+1)
+    print substr, count
+    
+print "\ntranslated sequence"
+print p_max
+
+print "\nraw record (please wait a moment...)"
+ncbi_dict_raw = GenBank.NCBIDictionary('nucleotide', 'genbank')
+raw_record = ncbi_dict_raw['119392085']
+print raw_record
+
+print '-' * 40
+print "Xiaodi Wu, Biophysics 101, 2007-02-06\n"
+</pre>

@@ -1,0 +1,36 @@
+==Already measured with SP1.0 (I13534.pSB1A2)==
+*[http://parts.mit.edu/registry/index.php/Part:BBa_Q04401 Q04400.007] - mutated Q04400 (tetR QPI), point mutation in RBS.  Works well, switches later than Q04400.
+[[Image:tetR QPI.png]]
+*mnt inverters from enterobacteriophage p22 <cite>Knight Stormo</cite>
+**Note: The [http://parts.mit.edu/registry/index.php/Part:BBa_R0073 promoter] used in these inverters is missing base 13 in its 17-bp operator site <cite>Stormo</cite>, though I think they meant to include it (they reference the article and mention it in the registry).  It's also missing a -35 site.
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q04720 Q04720] - mnt inverter, strong repressor - output not very high, and doesn't appear to be doing much ([[:Image:June29_2006_Q04720_MOFLO.png|picture]])
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q04730 Q04730] - mnt inverter, weak repressor - output not very high, and doesn't appear to be doing much ([[:Image:June29_2006_Q04730mut_MOFLO.png|picture]])
+
+==Measured with older versions of screening plasmid (I13537.pSB1A2, I13538.pSB1A2, or I13534.pSB4A3)==
+*tetR inverters <cite>Elowitz Lutz</cite>
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q04400 Q04400] - works reliably (quantitatively), switches at low input.
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q03400 Q03400] - weaker RBS driving tetR. Looks like it starts to switch, but very high GFP gives very high RFP numbers. Unclear what's happening.
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q01400 Q01400] - weakest RBS. Generally looks like it's stuck in the high-output stage. Some evidence suggests it might be switching, however.
+*p22 cII inverters
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q01530 Q01530] - p22 cII inverter. Appears to be stuck in the low-output stage, perhaps due to crosstalk with CW2553/lambda.
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q04530 Q04530] - Same as Q01530, but with a stronger RBS driving the cII. Also stuck in low-output.
+*penI inverters <cite>Himeno Himeno_errata</cite> from bacillus licheniformis
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q02740 Q02740] - strong RBS, looks like it begins to switch at high input.
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q03740 Q03740] - medium strength RBS, stuck on.
+**[http://parts.mit.edu/registry/index.php/Part:BBa_Q04740 Q04740] - strongest RBS, works well, switches at higher input than Q04400. <br>[[Image:PenI_QPI.png]]
+
+==To be measured/constructed/etc==
+*[http://parts.mit.edu/registry/index.php/Part:BBa_I14103 I14103] (Q04740-Q04400.007) - bistable switch one way 
+*[http://parts.mit.edu/registry/index.php/Part:BBa_I14104 I14104] (Q04400.007-Q04740) - bistable switch the other way - having trouble getting it cloned in this direction (tetR-penI) - weird stuff happening with growth rate and trying to prep the final plasmid, though colony PCR looks fine - load issues?
+*[http://parts.mit.edu/registry/index.php/Part:BBa_Q04510 Q04510] - lambda cI inverter, ligated into the screening plasmid, but somehow missed being characterized. Seems unlikely to work, but hasn't been tested.
+*[http://parts.mit.edu/registry/index.php/Part:BBa_Q07400 Q07400]/[http://parts.mit.edu/registry/index.php/Part:BBa_Q08400 Q08400]/[http://parts.mit.edu/registry/index.php/Part:BBa_Q09400 Q09400] - tetR inverters using RBS's from the Voigt lab. Not BB'd, and previous attempts were unsuccessful.
+
+==References==
+<biblio>
+#Knight pmid=2668272
+#Stormo pmid=8445649
+#Elowitz Elowitz, M. B. Transport, Assembly, and Dynamics in Systems of Interacting Proteins. Thesis, Princeton Univ., Princeton (1999)
+#Lutz pmid=9092630
+#Himeno pmid=3096969
+#Himeno_errata [http://www.pubmedcentral.gov/articlerender.fcgi?artid=212400 corrections to Himeno et al., J. Bact. 168:1128 (1986)]
+</biblio>

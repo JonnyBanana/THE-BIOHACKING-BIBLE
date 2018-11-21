@@ -1,0 +1,24 @@
+The kinetics of the available repressors is important for determining the expected chassis load required to operate an inverter based on the repressor.  At a minimum, need to estimate the # molecules of repressor / copy of promoter needed for "full" repression.  
+
+=Inverter characteristics=
+==I/O==
+*Unrepressed promoter strength 
+*Fully repressed promoter strength (leakiness)
+*Cooperativity
+
+==Load==
+*Number of molecules (or conc) of repressor for full repression
+*Number of molecules (or conc) of repressor for ½ max repression 
+
+=cI/pR=
+*There are references listed in the Sup Mat of the elowitz GRF paper that seem to have most of the numbers we need here.
+
+=lacI=
+*[[Image:LacI-MullerHill94.JPG|thumb|Natural lacI operators]]
+*[http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=395232 Muller Hill (1994) varied the operators and measured the repression level] -- may be useful for promoter tuning.
+*[http://nar.oxfordjournals.org/cgi/content/abstract/29/18/3873 Lutz & Bujard (2001) Plac variants]
+*[http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=146584 Lutz & Bujard (1997) lac, ara, tet hybrid promoters]
+
+=tetR=
+*[http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=330813 tetR promoter tuning] - they tuned the WT operator site which has promoters in both directions.  However the changes they made were within the operator sites, and those are the same as in the Registry <bbpart>R0040</bbpart>
+**They weren't able to improve repressor strength (%repression) over the wt operator.  however they were able to get variants with equivalent repressor strength that had higher PoPS levels (e.g. higher High and higher Low), as well as ones with lower levels and equivalent repression.

@@ -1,0 +1,47 @@
+==Problem==
+What is the optimal cut-off percentile for choosing a chamber to be sorted if you have N sorts (trials) remaining until you must take the sort to preserve a constant dilution rate?
+
+==Analytical Solution==
+
+===Definition of variables===
+
+<math>\emph E[X_N] = </math> expected value of the optimal percentage that can be returned from N trials
+
+<math>\emph S_i = </math> random variable representing the percentile returned from the ith trial
+*all trials are assumed to be independent therefore <math>\emph S_i = S</math>, for all i
+<math>\emph C_i = </math> the cut-off percentile for the ith trial.
+
+
+===General===
+<math>\emph E[X_N] = P(S>C_1) E[S|S>C_1] + </math>
+
+
+<math>\emph (1-P(S>C_1))(P(S>C_2)E[S|S>C_2]) + </math>
+
+
+<math>\emph (1-P(S>C_1))(1-P(S>C_2))(P(S>C_3)E[S|S>C_2]) + </math>
+
+
+<math>\emph ... </math> 
+
+
+<math>\emph (1-P(S>C_1))(1-P(S>C_2))...(1-P(S>C_{N-1})E[S_N]  </math>
+
+
+===Simplified===
+Since <math>\emph (1-P(S>C_1))</math> can be factored out of every term after the first above, the solution can be simplified and solved recursively:
+
+<math>\emph E[X_N] = P(S>C_N) E[S|S>C_N] + (1-P(S>C_N))E[X_{N-1}]</math>
+
+base case:
+
+<math>\emph E[X_1] = \int_0^\infty P(S)*S dS</math>
+* e.g., if you have only 1 trial then you expect to get the mean of the distribution for S.
+
+==Simulation Solution==
+Since our probability skills were pretty sad, we ([[Alex Mallet]]) simulated it to confirm our analytical results.  MATLAB file can be found here.
+
+===Results===
+
+==Contact==
+[[Jason Kelly]]

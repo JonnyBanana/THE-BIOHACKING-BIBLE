@@ -1,0 +1,310 @@
+==References==
+*[http://www.perl.com/pub/a/1999/10/DBI.html perl.com: A Short Guide to DBI]
+*[http://www.saturn5.com/~jwb/dbi-examples.html DBI examples]
+
+==DBI::DBD==
+
+*DBI is “Database Interface”
+*DBD is “Database Driver”
+
+MySQL database handle syntax:
+ "DBI:mysql:db_name", "username", "passwd"
+
+Create a database handle cadlled $dbh:
+ $dbh = DBI->connect( “DBI:mysql:eeb59_db”, “eeb59”, “12D3f4”, { RaiseError => 1 } )
+    or die("Connect error: $DBI::errstr");
+
+DBI:mysql:eeb59_db - Data Source Name (DSN) 
+*DBI - DBI (necessary first part of the DSN)
+*mysql - Name of DBD 
+*eeb59_db - Name of database we are connecting to
+*eeb59 - User we are connecting to this database as 
+*12D3f4 - Password for the user 
+*RaiserError , error: $DBI::errstr – Checks for connection
+
+Define the SQL statement
+ $sql = “SELECT seq_name,details FROM notes WHERE details LIKE '%A% ' ”;
+
+Prepare the statement for execution
+ my $sth = $dbh->prepare( $sql ); # statement handle
+or
+ my $sth = $dbh->prepare('SELECT * FROM people WHERE lastname = ?')
+    or die "Couldn't prepare statement: " . $dbh->errstr;
+
+Now execute the handle 
+ $sth->execute;
+or
+ $sth->execute($lastname)             # Execute the query
+    or die "Couldn't execute statement: " . $sth->errstr;
+
+Once you execute the handle you can read results from it. You can prepare a statement once and execute it many times with different parameters/value.
+
+Example: A text file containing gene names,start,stop
+
+ $sql = “INSERT INTO gene_details ( gene_names,start,stop) VALUES ( ?, ?, ? )”;
+ $sth = $dbh->prepare( $sql ); 
+ open( INP, “gene.txt" ) or die "Cannot open gene file: $!";
+ while ( $in=<INP> ) { 
+    chomp ($in); 
+    ( $gene_names, $start, $stop ) = split (/,/,$in); 
+    $sth->execute($gene_names, $start, $stop ); 
+ } 
+ close(INP);
+
+You can prepare and execute in one step using the do statement:
+ $sql = “UPDATE genes SET stop=’12’ WHERE gene_name = ‘ILK9’ “ ;
+ $run = $dbh->do($sql) ;
+$run will have a non zero value if sql statement was successful (undef if an error occurred)
+
+For most databases $run = number of rows modified:
+ if ( $dbh->do( $sql ) ) 
+    { ...continue on with next action... } 
+ else
+    { ...error with $sql... } 
+
+To determine number of rows returned:
+ $rc = $sth->rows;
+
+do( ) method supplied by the DBI makes executing non-SELECT statements much simpler than repeatedly preparing and executing statements. This is achieved by simply wrapping the prepare and execute stages into one composite method.
+
+Fetchrow methods get the next row of data and returns a reference to an array of field values. If there are no more rows to fetch then it returns undef.
+There are 4 fetch row methods
+*fetchrow_array 
+*fetchrow_arrayref 
+*fetchrow_hashref 
+*fetchall_arrayref 
+
+ while(@row = $sth->fetchrow_array) { 
+    print "$row[0] $row[1]\n"; } 
+ # This is efficient but hard to read
+
+ while($row = $sth->fetchrow_arrayref) { 
+    print "$row->[0] $row->[1]\n";    }
+ # This is efficient but hard to read
+
+ while($row_hash = $sth->fetchrow_hashref) { 
+    print "$row_hash->{gene} $row_hash->{start}\n";}
+ # This is NOT efficient but easy to read
+
+To make the first two methods more readable use bind_columns:
+ $sth->bind_columns(undef, \$gene, \$stop); 
+ $sth->execute; 
+ while($sth->fetchrow_arrayref) {print "$gene $stop\n";} 
+Since you know number of variables coming back from your query always bind_columns accordingly.
+
+When done with your prepared statement
+ $sth->finish; 
+
+When done with your database handle
+ $dbh->disconnect; 
+
+Very important when you are doing 1000’s of iterations (but do it even if you have 1!)
+
+Quick way to display results
+ $rows = $sth->dump_results( );
+
+==DBD::CSV==
+
+ use DBI;
+ my $dbh = DBI->connect("DBI:CSV:f_dir=/usr/local/apache/data/stats")
+    or die "Cannot connect: " . $DBI::errstr;
+ $dbh->do( "insert into Player_Info values ('Hakeem Olajuwon', 10, 27, 11, 4, 2)")
+    or die "Cannot do: " . $dbh->errstr(  );
+ $dbh->disconnect;
+
+==Miscellaneous==
+
+===Quote Handling===
+quote() correctly quotes and escapes SQL statements in a way that is suitable for a
+given database engine.
+
+ ### Escape the string quotes ...
+ my $quotedString = $dbh->quote( $string );
+
+===Tracing DBI Execution===
+
+ ### Set the tracing level to 1
+ DBI->trace( 1 );
+
+*0    Disables tracing.
+*1    Traces DBI method execution showing returned values and errors.
+*2    As for 1, but also includes method entry with parameters.
+*3    As for 2, but also includes more internal driver trace information.
+*4    Levels 4, and above can include more detail than is helpful.
+
+The trace() method is also available at a handle level, allowing you to individually trace any database and statement handle operations. Therefore, you could trace operations on a given database handle to level 1 and a single statement handle to level 2. For example:
+
+ ### Connect to a database...
+ my $dbh = DBI->connect( "dbi:Oracle:archaeo", "username", "password" );
+
+ ### Trace the database handle to level 1 to the screen
+ $dbh->trace( 1 );
+
+ ### Create a new statement
+ my $sth = ...;
+
+ ### Trace the statement to level 2 to the file 'trace.lis'
+ $sth->trace( 2, 'trace.lis' );
+
+===Numeric Testing===
+
+looks_like_number() operates by taking a list of values as an argument and returns a new array signifying whether or not the corresponding value within the original array was a number, not a number, or undefined.
+
+===Neat and Tidy Formatting===
+
+The DBI features a couple of utility functions that can be used to tidy up strings into a form suitable for easy reading.
+neat() operating on a single scalar value
+neat_list() operating on a list of scalar values.
+
+==Error checking==
+
+In summary, for most applications, automatic error checking using RaiseError and/or PrintError is recommended. Otherwise, manual checking can be used and $DBI::errstr can easily be interpolated into messages. The handle methods are available for more complex applications.
+
+ ### Attributes to pass to DBI->connect(  )
+ %attr = (
+    PrintError => 0,
+    RaiseError => 0
+ );
+ ### Connect...
+ my $dbh = DBI->connect( "dbi:Oracle:archaeo", "username", "password" , \%attr );
+
+===Example of manual error checking===
+
+  #!/usr/bin/perl -w
+  #
+  # ch04/error/ex1: Small example using manual error checking.
+
+  use DBI;            # Load the DBI module
+
+  ### Perform the connection using the Oracle driver
+  my $dbh = DBI->connect( undef, "stones", "stones", {
+      PrintError => 0,
+      RaiseError => 0
+  } ) or die "Can't connect to the database: $DBI::errstr\n";
+  
+  ### Prepare a SQL statement for execution
+  my $sth = $dbh->prepare( "SELECT * FROM megaliths" )
+      or die "Can't prepare SQL statement: $DBI::errstr\n";
+  
+  ### Execute the statement in the database
+  $sth->execute
+      or die "Can't execute SQL statement: $DBI::errstr\n";
+  
+  ### Retrieve the returned rows of data
+  my @row;
+  while ( @row = $sth->fetchrow_array(  ) ) {
+      print "Row: @row\n";
+  }
+  warn "Data fetching terminated early by error: $DBI::errstr\n"
+      if $DBI::err;
+  
+  ### Disconnect from the database
+  $dbh->disconnect
+      or warn "Error disconnecting: $DBI::errstr\n";
+  
+  exit;
+
+The following short example illustrates the use of RaiseError instead of manual error checking is:
+
+  #!/usr/bin/perl -w
+  #
+  # ch04/error/ex2: Small example using automatic error handling with 
+  #                 RaiseError, i.e., the program will abort upon detection
+  #                 of any errors.
+  
+  use DBI;            # Load the DBI module
+  
+  my ($dbh, $sth, @row);
+  
+  ### Perform the connection using the Oracle driver
+  $dbh = DBI->connect( "dbi:Oracle:archaeo", "username", "password" , {
+      PrintError => 0,   ### Don't report errors via warn(  )
+      RaiseError => 1    ### Do report errors via die(  )
+  } );
+  ### Prepare a SQL statement for execution
+  $sth = $dbh->prepare( "SELECT * FROM megaliths" );
+  
+  ### Execute the statement in the database
+  $sth->execute(  );
+  
+  ### Retrieve the returned rows of data
+  while ( @row = $sth->fetchrow_array(  ) ) {
+      print "Row: @row\n";
+  }
+  
+  ### Disconnect from the database
+  $dbh->disconnect(  );
+  
+  exit;
+
+DBI defines several error diagnostic methods that can be invoked against any valid handle, driver, database, or statement. These methods will inform the programmer of the error code and report the verbose information from the last DBI method called. These are:
+
+ $rv  = $h->err();
+ $str = $h->errstr();
+ $str = $h->state();
+
+it's even more long-winded than using the $DBI::errstr variable, which can at least be interpolated directly into the error messages.
+
+In addition to these three methods, which allow finely grained error checking at a handle level, there are three corresponding variables that will contain the same information, but at a DBI class level:
+
+ $DBI::err
+ $DBI::errstr
+ $DBI::state
+
+==Details==
+
+Retrieving data from a database using DBI is essentially a four-stage cycle:
+
+# The prepare stage parses an SQL statement, validates that statement, and returns a statement handle representing that statement within the database.
+# Providing the prepare stage has returned a valid statement handle, the next stage is to execute that statement within the database. This actually performs the query and begins to populate data structures within the database with the queried data. At this stage, however, your Perl program does not have access to the queried data.
+# The third stage is known as the fetch stage, in which the actual data is fetched from the database using the statement handle. The fetch stage pulls the queried data, row by row, into Perl data structures, such as scalars or hashes, which can then be manipulated and post-processed by your program.
+The fetch stage ends once all the data has been fetched, or it can be terminated early using the finish() method.
+If you'll need to re-execute() your query later, possibly with different parameters, then you can just keep your statement handle, re-execute() it, and so jump back to stage 2.
+# The final stage in the data retrieval cycle is the deallocation stage. This is essentially an automatic internal cleanup exercise in which the DBI and driver deallocate the statement handle and associated information. For some drivers, that process may also involve talking to the database to tell it to deallocate any information it may hold related to the statement.
+
+All this is done for you automatically, triggered by Perl's own garbage collection mechanism.
+
+ $dbh->connect(...);
+ $sth->prepare(...);
+ $sth->execute();
+ $sth->finish();
+ $dbh->disconnect();
+
+The following is a fragment of Perl example code for finding out the surname of employees with a particular department number.
+
+ my $dbh = DBI->connect("dbname","username","password");
+ my $depno = 3;
+ my $cmd = $dbh->prepare("SELECT surname FROM employee where depno=?");
+ my $res = $cmd->execute($depno);
+ while (my ($name) = $res->fetchrow_array()) {
+    prnt "The employee name is $name\n";
+ }
+
+===Fetching Data===
+
+The data retrieved by your SQL query is known as a result set  (so called because of the mathematical set theory on which relational databases are based).
+
+Cursors are used for sequential fetching operations: records are fetched in the order in which they are stored within the result set. Currently, records cannot be skipped over or randomly accessed. Furthermore, once a row addressed by a cursor has been fetched, it is ``forgotten'' by the cursor.
+
+ ### Fetch each row of result data from the database as a list
+ while ( ( $name, $type ) = $sth->fetchrow_array ) {
+    ### Print out a wee message....
+    print "Megalithic site $name is a $type\n";
+ }
+
+ ### Fetch the data via fetchrow_array() into an array variable instead of a list
+ while ( @row = $sth->fetchrow_array ) {
+    ### Print out a wee message
+    print "Megalith site $row[0] is a $row[1]\n";
+ }
+
+ ### Fetch the rows of result data from the database as an array ref....
+ ### This method is faster than fetchrow_array(),
+ ### as the returned data is not copied into a new array for each row fetched.
+ while ( $array_ref = $sth->fetchrow_arrayref ) {
+    ### Print out a wee message....
+    print "Megalithic site $arrayref->[0] is a $array_ref->[1]\n";
+ }
+ die "Fetch failed due to $DBI::errstr" if $DBI::err;
+
+An important thing to watch out for is that currently the same array reference is used for all rows fetched from the database for the current statement handle. This is of utmost importance if you are storing the row data somewhere for future reference.

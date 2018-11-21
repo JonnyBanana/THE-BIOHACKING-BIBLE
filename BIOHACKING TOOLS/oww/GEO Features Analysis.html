@@ -1,0 +1,56 @@
+==BENEFIT ANALYSIS OF THE GENE EXPRESSION OMNIBUS (GEO)==
+
+
+;Architecture:
+
+:Datasets organized by Series, Samples and Platforms—advantageous for sorting data.
+:Data can be browsed if one does not want to perform search
+:Datasets encouraged to be MIAME compliant to standardize on public data
+:Easy to use interface with Java script for help box (help box changes when cursor is moved on different links)
+:.CEL files clearly labeled and downloadable directly off results page of search
+
+;Search:
+
+:Search functions include limits (Boolean Operators e.g. AND, OR,  NOT), history, clipboard, and help
+:Search available by platform, series or sample, as well as organism 
+:EVS (Enterprise Vocabulary Service) integrated search
+
+;DataSets:
+
+:Each dataset given a unique accession number for easy search access.  
+:Entrez GEO search works in conjunction with other NCI databases including: GenBank, PubMed, Gene, UniGene, OMIM, Homologene, Taxonomy, SAGEMap, and MapViewer.
+:“Hold until published” feature available for private data
+:Login access can be given to reviewers for private data
+:DataSoft files available for download has table with each patient and expression values for each probe set.
+:Clearly lists array platform, PubMed ID organism studied
+
+;Web-based Analysis:
+
+:Cluster heat maps: Hierarchical and K-means clustering algorithms provided. Regions of interest can be selected, enlarged, downloaded, plotted as line charts, or linked directly to Entrez GEO-Profiles.
+:Query subset A vs. B: Helps in the identification of genes that display differences in expression level between two sets of samples in a DataSet, calculated using t-tests or fold difference. Genes that meeting defined significance criteria displayed in Entrez GEO-Profiles.
+:Subset effects: Retrieves all profiles flagged as having significant effects with respect to a specific experimental variable, e.g.  'age' or 'strain'.
+:Value distribution: plots average gene expression for patients for comparison and outlier detection
+
+;Deposit formats supported:
+:;SOFTtext file
+::Multiple platform, sample and series data may be submitted as concatenated SOFT-formatted records.
+::Suitable when data already in a database, or if many samples to submit.
+::SOFT (Simple Omnibus Format in Text) is designed for rapid batch submission (and download) of data
+:;SOFTmatrix (spreadsheet or text)
+::Multiple sample and series data may be submitted as a SOFT-formatted data matrix.
+::Suitable when data multiple hybridizations contained in one spreadsheet, e.g. multi-chip Affymetrix Pivot files.
+::Less suitable if sample data tables have many columns, e.g. GenePix data
+:;MINiML
+::Multiple platform, sample and series data may be submitted as MINiML XML files.
+::MINiML (MIAME Notation in Markup Language) is data exchange format for microarray gene expression data, and other types of high-throughput molecular abundance data.
+
+:;MAGE-ML
+::Can accept MAGE-ML formatted data, but MAGE-ML data can be structured in different ways, so we should review format and content of files to determine they are valid XML documents containing all minimum info. for submission.
+::* Processing times for MAGE-ML submission can be substantially longer than for our other deposit routes
+
+;Our database:
+
+:Should be able to search data by genes, and biomarkers (whether they are up-regulated or down-regulated) for cross-study comparisons.
+:Search should be integrated with EVS
+:List co-expressed genes and locations on chip
+:No external data: .CEL files and data should be on FTP for easy access

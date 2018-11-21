@@ -1,0 +1,38 @@
+==Experiments==
+==Make Fusion==
+<b>1</b> (a) Fuse FecA with scFv at chosen points and attach chimera to known promoter (makes promoter::FecA::scFv)<br>
+(b) Make reporter(GFP/lacZ/Tetresistance) with FecA promoter - makes FecApromoter::GFP<br>
+(c) If needed put FecI and FecR under a known promoter.<br>
+<br>
+==Test fecA promoter==
+<b>2.</b>Transform FecA- strain:
+::FecApromoter::GFP --> Nothing
+::FecApromoter only --> Nothing
+:: GFP only --> Nothing
+:Transform wt strain:
+::FecApromoter::GFP --> light up
+::FecApromoter only --> nothing
+::GFP only --> nothing
+
+==Test Expression of scFv==
+<b>3.</b> Transform FecA- strain with <b>1</b>(a), (b) and (c), or <b>7</b><br>
+<b>4.</b> Test scFv expression in outer membrane: Detect TAG by Ab*fluorophore --> centrifuge --> FACS
+<table border=1 align=center>
+<tr><th><th>FecA::scFv::TAG<th>FecA (no scFv)<th>FecA::scFv<th>FecA::TAG/OmpA::TAG
+<tr><th>Fluorescence<th>Yes<th>No (-ve control)<th>No (-ve control)<th>No (+ve control)
+</table>
+
+==Test overall system==
+<b>5.</b>Test whether system works: (Negative controls: no GFP under promoter, no scFv, wt FecA strain)
+<table border=1 align=center>
+<tr><th>+ Fluorescein<th>- Fluorescein<th> To Do Next
+<tr><th>GFP produced <th> No GFP produced <th> System works!! --> Characterize system
+<tr><th>Anything else <th> Anything else <th> Go To <b>6.</b>
+ </table>
+
+==What if it doesn't work?==
+<b>6.</b> System doesn't work. Troubleshoot. Test binding of antibody with antigen (FRET etc). If ok, then:<br>
+(a) Either choose a new point to fuse scFv with FecA. Go to <b>1.</b><br>
+(b) Introduce random mutations. Go to <b>7.</b>
+
+<b>7.</b> Miniprep plasmid DNA and insert random mutations (by either transposons/Drew's paper/circularization). Go to <b>3.</b>

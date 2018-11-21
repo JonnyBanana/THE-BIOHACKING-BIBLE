@@ -1,0 +1,56 @@
+==Intro==
+I started looking into this because I wanted to generate a strain in which I could control the level of induction from both a pTrc and a pBAD promoter in individual cells. After talking to a few people, I was able to sort out that these promoters both exhibit all-or-none activity in "wild-type" ''E. coli'' strains. I also discovered that it seems that not everyone knows about this (or at least the details of the process and how to get around it). Below is a summary of the information I was able to assemble on the topic. Hopefully, you know more than I do and can add more information.
+
+==What is an "all-or-none" promoter?==
+Inducing gene expression from an "all-or-none" promoter at subsaturating inducer concentrations results in a heterogeneous population of cells in which some are fully induced and others are induced very little, if at all. What is often confusing about this phenomenon in practice is that a population of cells will typically respond in a linear manner to increased concentration of inducer. What is really happening, though, is that more cells in the population are being turned on as inducer concentration is increased, but there are still some cells in the population that are not induced at all. The "on" phenotype is a result of inducer importers being turned on when a cell is exposed to the inducer, resulting in increased uptake of the inducer. At subsaturating inducer concentrations, there is not enough inducer to go around for all of the cells, so those that get their importer turned on first get all of the the inducer.
+
+===References===
+<biblio>
+#Novick-PNAS-1957 pmid=16590055
+</biblio>
+
+==''lac'' promoters==
+*Import of lactose (and IPTG) into ''E. coli'' is controlled by the ''lacY'' gene. If you knock this gene out, ''lac''-type promoter induction is titratable at non-saturating lactose or IPTG concentrations in individual cells (see figure below). <cite>Jensen-EurJBiochem-1993</cite>
+
+[[Image:DelLacYInduction.PNG|thumb|LacY+/- induction|left]]
+
+<br style="clear:both" />
+
+*Lactose metabolism is likely a problem in these cells (see P<sub>BAD</sub> section below), but this can be avoided by using IPTG, which is not metabolized.
+
+===References===
+<biblio>
+#Khlebnikov-BiotechnolProg-2002 pmid=12052093
+#Jensen-EurJBiochem-1993 pmid=8425528 
+#Oehler2006 pmid=16432263
+#Kuhlman2007 pmid=17376875
+</biblio>
+
+==pBAD promoters==
+*Import of arabinose into cells is mediated by the ''araE'' gene. Induction of the arabinose transporter encoded by ''araE'' can be uncoupled from the endogenous P<sub>BAD</sub> promoter by deleting the chromosomal ''araE'' gene and replacing it with a plasmid-borne copy of ''araE'' under control of a constitutive promoter (1). However, this does not seem to be enough to allow for homogenous expression from P<sub>BAD</sub> promoters in a population of cells (2). 
+*At low concentrations of arabinose, degradation of the sugar within cells also effects the homogeneity of expression from P<sub>BAD</sub> promoters (2). Arabinose degradation is mediated by the ''araBAD'' genes. Strains lacking functional  ''araE'', ''araFGH'' (another transporter), and ''araBAD'' can be made to be responsive to arabinose for P<sub>BAD</sub> promoter induction (2). This is achieved by introduction of a mutant ''lacY'' gene. LacY A177C allows for downhill transport of arabinose, as well as maltose, palatinose, sucrose, and cellobiose (3), but does not actively transport these sugars (4). Lactose import is not affected in this mutant. So, P<sub>BAD</sub> promoters in cells lacking endogeneous arabinose importers and containing LacY A177C are linearly responsible to arabinose at the individual cell level.
+*By the way, AraC is the repressor of the P<sub>BAD</sub> promoter. It is encoded on the pBAD vector series and is still present in the above-described strains.
+
+===References===
+<biblio>
+#Khlebnikov-Microbiology-2001 pmid=11739756
+#Morgan-Kiss-PNAS-2002 pmid=12032290
+#Rotman-JSupramolStruct-1977 pmid=415184
+#King-JBS-1990 pmid=2190983
+#Siegele-PNAS-1997 pmid=9223333
+#Zhang96 pmid=8613984
+#Guzman95 pmid=7608087
+#Khlebnikov2002 pmid=12080425
+</biblio>
+
+==Constructing a strain that allows homogenous, titratable induction of both ''lac'' and P<sub>BAD</sub> promoters==
+*From what I can tell, this is impossible to do with the current technology. To get homogenous, titratable induction of P<sub>BAD</sub> promoters, LacY A177C is necessary. To get homogenous, titratable induction of ''lac''-type promoters, LacY cannot be present. How do we get around this?
+**What about a strain that has ''araBAD'', ''araE'' and ''araFGH'' deleted and ''lacY A177C'' under the control of a constitutive promoter?  My understanding was that ''lacY'' is problematic because the upstream promoter is inducible via IPTG and thus cells which happen to have a few more copies of LacY initially will import more IPTG and thus make more LacY than cells with fewer copies of LacY.  By eliminating the positive feedback, you should still be able to achieve titrable control.
+*It seems like the best that can be done at this point is use of ''araE'' under the control of a constitutive promoter in a ''lacY''<sup>—</sup> strain. Does anyone have any other suggestions?
+**'''[[User:Jasonk|Jasonk]] 07:30, 14 June 2006 (EDT):'''You could consider using the pPRO [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=16269719&query_hl=2&itool=pubmed_docsum Propionate-inducible] induction system instead of pBAD.
+
+==Related work==
+<biblio>
+#Lee-ApplEnvironMicrobiol-2007 pmid=17644634
+</biblio>
+[[Category:Escherichia coli]]

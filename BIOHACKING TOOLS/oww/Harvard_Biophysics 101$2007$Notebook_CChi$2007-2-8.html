@@ -1,0 +1,74 @@
+== Assignment 1, due 2/8/07 ==
+
+Write a python script that generates 10,000 strings of 10 random coinflips (H or T) and outputs the tally of continguous (overlapping) stretches of 2, 3, 4, 5, 6, 7, 8, 9, and 10 H's or T's in that set of 10,000 10-mers.
+
+=== Code ===
+
+<pre>
+#!/usr/bin/env python
+
+import random
+
+# make a list of values for each 
+tallyH = [0 for i in range(11)]
+tallyT = [0 for i in range(11)]
+
+# 10000 trials of 10 flips each
+for i in range(10000):
+    # Generates random 10-mer of H's and T's
+    coinflip = ''.join([random.choice(['H','T']) for n in range (10)])
+
+    # loop to tally up instances of each k-mer (from 2 to 10)
+    for k in range(2,11):
+
+        # counts up number of "H" k-mers in this coinflip
+        Hsubstr = ''.join(['H' for n in range(k)])     
+        Hcount = 0
+        pos = coinflip.find(Hsubstr,0)
+        while not pos == -1:
+            Hcount = Hcount + 1
+            pos = coinflip.find(Hsubstr,pos+1)
+        tallyH[k] = tallyH[k] + Hcount
+
+        Tsubstr = ''.join(['T' for n in range(k)])
+        Tcount = 0
+        pos = coinflip.find(Tsubstr,0)
+        while not pos == -1:
+            Tcount = Tcount + 1
+            pos = coinflip.find(Tsubstr,pos+1)
+        tallyT[k] = tallyT[k] + Tcount        
+
+# print out the results
+print "Head strings"
+for i in range(2,11):
+    print i, tallyH[i]
+
+print "\nTail strings"
+for i in range (2,11):
+    print i, tallyT[i]
+</pre>
+
+===Output===
+<pre>
+Head strings
+2 22572
+3 9968
+4 4362
+5 1881
+6 786
+7 315
+8 121
+9 38
+10 5
+
+Tail strings
+2 22338
+3 9895
+4 4362
+5 1892
+6 804
+7 328
+8 123
+9 41
+10 10
+</pre>

@@ -1,0 +1,329 @@
+{{Template:BE.109}}
+
+==Introduction==
+How can one study and understand a protein? Broadly speaking proteins are examined structurally, biochemically and genetically, and over the next few weeks you will explore these complementary approaches for one enzyme, beta-galactosidase. As you’ll see, the three approaches can be intelligently combined to understand the activity and interactions of proteins at the molecular level as well as to rationally change the enzyme to change its properties. 
+
+For the visual folks among us, perhaps the most informative approach to understanding proteins is to elucidate their three-dimensional structures. Structures can be derived from cryoEM, NMR or X-ray diffraction patterns of the purified protein (more on protein purification later). The protein’s shape may suggest how other molecules can or can’t interact. For example, does the structure have a narrow cleft that would restrict interactions with molecules above a certain size? Structures also reveal exquisite detail. Is a particular amino acid exposed on the surface of the protein or is it buried deep in a hydrophobic core? Does it interact with a metal or water molecule? Is the active site a shallow or deep crevice of the protein? Are there rigid portions of the structure and more flexible areas? Critically important is the idea that structural information may lead to predictions for the protein’s mechanism of action, and to testable hypotheses that examine these predictions. In lab you will have the chance to look at several proteins using a program called [http://www.umass.edu/microbio/chime/pe/protexpl/frntdoor.htm “Protein Explorer"], examining the three-dimensional structures from all angles and identifying the location of particular amino acids.  This will help you generate some predictions for how their modification could affect protein activity. 
+
+A second informative approach to understanding protein activity is the biochemical one. In such experiments, the protein in question is isolated from other proteins and then tested with other purified proteins or molecules under controlled conditions. This approach is particularly useful when studying enzymes, since the amount of product formed from an enzyme-catalyzed reaction can be measured and then compared to other enzymes or the same enzyme under different conditions. As you’d predict, an enzyme’s efficiency depends on the experimental set-up. It’s possible to reduce a reaction’s efficiency by decreasing temperature since this lessens thermal movement, leading to fewer productive collisions between enzyme and substrate. Another way to reduce the amount of product formed is to decrease substrate concentration, making it harder for the enzyme and substrate to find one another in solution. Clearly reaction conditions must be specifically and clearly defined if enzymes are to be compared. 
+When substrate for an enzymatic reaction is limiting, addition of more substrate will increase the amount of product formed until the substrate saturates the enzyme. After that point, further addition of substrate does not increase the amount of product that is formed in a given time since all the enzymes are fully occupied with substrate. This reaction pattern is a hallmark of enzyme-catalyzed reactions that was first mathematically characterized by Maud Menten and Leonor Michaelis (pictured below) and then further refined by Hans Lineweaver and Dean Burk. You will be performing such an analysis of purified beta-galactosidase in lab, measuring the protein’s concentration and its enzymatic activity.
+
+[[Image:Macintosh_HD-Users-nkuldell-Desktop-MichaelisMenten.png]]
+
+A third powerful approach to understanding a protein is to genetically modify it. Indeed, genetic changes that affected beta-galactosidase activity played a seminal role in Francois Jacob and Jacques Monod’s operon model for regulated gene expression. Changing the DNA that encodes a protein can help us understand the protein’s role in a cell. Even knowing that a particular change will kill the cell tells you it’s an important protein for the cell (or organism’s) normal life. Genetic changes that affect protein activity can be less dramatic and can lead to molecular models for the mechanism of action of the normal and mutated protein. Given that mis-expression and mutations in proteins underlie many health issues, such an understanding is of more than academic interest. Recall that in the first experimental module, you genetically-modified a protein-encoding gene (GFP) by changing the DNA that encoded it. In this module you will modify a protein (beta-galactosidase) at the level of translation, by introducing a non-canonical amino acid. How this change affects the enzyme’s expression and activity is something you will try to predict based on structural studies and then something you will measure through biochemical techniques.
+
+Today’s lab has several parts: First, you will become familiar with beta-galactosidase using the Protein Explorer program to examine the enzyme’s three dimensional structure, considering where un-natural amino acids could be introduced and what the effects might be. You will also learn how to measure a protein’s concentration using a “BioRad” assay, and determine its enzymatic activity using a modified “Miller” assay (also generically called a beta-gal assay). Before you leave lab you will induce expression of the modified enzyme so you can study it next time.
+
+==Protocol==
+===Part 1: Molecular modeling using Protein Explorer===
+The lab’s laptops should all have Protein Explorer loaded onto them. This is a free web-based viewer for biological molecules, particularly protein and nucleic acid structures. To get started type <font face="courier">proteinexplorer.org</font> into the Firefox browser and you’ll see the Protein Explorer’s Front Door load. Before we look at beta-galactosidase per se, you should familiarize yourself with this program by examining some of the structures pre-selected in their “Atlas of Macromolecules” which can be found at the lower left portion of the Front Door. These structures are listed with their defining “PDB” identification codes. PDB [http://www.pdb.org], short for Protein Data Bank, is an online international resource where structural information is routinely deposited. The identification codes are four characters long, usually “#-letter-letter-letter.”  Double click on the code for any protein of interest to you to get started. 
+
+*'''FIRSTVIEW''' 
+When the program opens, it offers you a “first view” of the structure you’ve chosen. If the "first view" does not appear you may need to follow the instructions provided by Firefox to disable popup blockers. There are three frames here to examine. On the right is the molecular image itself, rotating in space. The image includes associated water molecules, ligands and any disulfide bonds that protein might have. Try clicking and dragging on the rotating image to see what happens. The second frame is the “Control Panel” on the upper left. In this frame, you can modify the image shown in the molecular image panel (more on this feature in a minute). The control panel also has links to places for more information about the structure being examined. Finally there is the “Message Frame” on the lower left. With this panel you can specifically query the identity of any atom shown in the image panel. Try clicking on the image in the image panel and then read the message frame that results. You’ll see information about that atom’s identity. Commands can also be entered into the Message Frame, using the box just above where information is reported. 
+
+Try working for just a minute with the control panel. First use it to hide or show any water molecules (shown as red spheres in the image panel) that were associated with the solved structure. When the water molecules are hidden, what is left should be the backbone trace of the protein, with different colors indicating different backbones. Any associated ligands also remain. Use the “backbone trace” link in the control panel to explore what this term means, then click the “back” button to return. The “back” button is your escape hatch and will always link you to the standard view of the control panel. Next click on any ligand in the image view panel (if there are any) to discover the identity of these molecules. The identity will be shown in the message panel in the lower left.  The final aspect of the control panel to become familiar with is the “explore more features” link. Information from the biologists who solved the structure you are examining is included here in three categories: “about”, “reliability” and “substructures.”  Explore and enjoy these now. You will find the substructures section particularly relevant as you try to rationally modify beta-galactosidase, so be sure you can fully appreciate what this link offers. 
+
+*'''QUICKVIEW'''
+Once you are finished with the FirstView study, you can move on to the “QuickView” features. With this part of the program you can modify and customize the image displayed in the image viewer. Again, you can choose any molecule from the menu to begin and click the “quick views” link in the control panel. There are three pull-down menus that are displayed: “select” “display” and “color.” Try a few things in each of these menus just to see what happens to the image that’s displayed. Don’t forget you can still rotate the image using your mouse in the image frame. With each change you make from the pull-down menus, helpful information should appear. Also keep an eye on the message panel to follow the story. Finally, there are a few buttons below the three drop-down menus. These offer quick ways to make commonly desired changes to the structure’s appearance. Give them a go.
+
+Here’s one thing you might want to explore: how does the polarity of the amino acids differ on the surface of the protein vs in the core? The “slab” button might be particularly useful here. This is just one idea. Feel free to explore any aspects of protein structure that are of interest to you. Note, however, that Protein Explorer is not able to “dock” two protein files together or mutate particular residues in the structure you are considering. 
+
+*'''CUSTOMIZING'''
+Once you’re happy with your mastery of Protein Explorer’s basic workings, use the NCBI web site   (http://www.ncbi.nlm.nih.gov/gquery/gquery.fcgi?itool=toolbar) to find a PDB ID for beta-galactosidase. Choose the "Structure" database and search for beta-galactosidase. Notice that there are numerous structures to choose from. Since beta-galactosidase is such a well studied enzyme the structure has been solved for beta-gal isolated from a number of different species. It has also been cocrystalized with a number of substrates and inhibitors. For interests' sake consider choosing a structure of beta-gal from e. coli since that is what you are working with in lab. Once you’ve chosen a PDB ID (singular or plural), go back to the center panel at the bottom of the Protein Explorer front door and type this code into the box associated with “Enter any PDB identification code here.” Then “go.”  
+
+Now comes the real fun: first learn as much as you can about the beta-galactosidase structure and how the structure relates to its function. See if you can find the N terminus and C terminus of one of the subunits. Then you should decide what amino acid you’d like to modify. Your choices are 
+
+{| border="1"
+! Substitution of 
+! with
+! stock concentration 
+! working concentration
+|-
+| Leucine	
+| 5,5,5-Trifluoroleucine
+| 100 mg/ml in H<sub>2</sub>O
+| 400 &mu;g/ml
+|-
+| Tryptophan
+| 5-Hydroxy-L-Tryptophan
+| 10 mg/ml in H<sub>2</sub>O
+| 100 &mu;g/mL
+|-
+| Histidine
+| 3-Methyl-L-Histidine
+| 100 mg/mL in H<sub>2</sub>O
+| 400 &mu;g/ml
+|-
+| Alanine
+| L-4-Fluorophenylalanine HCl
+| 50 mg/ml in H<sub>2</sub>O
+| 100 &mu;g/mL
+|-
+| Tyrosine
+| m-Fluoro-DL-tyrosine
+| 20 mg/ml in H<sub>2</sub>O, 0.5 M HCl  
+| 100 &mu;g/mL
+|-
+| Glutamic Acid
+| L-Glutamic Acid-&gamma;-benzyl ester
+| 20 mg/ml in H<sub>2</sub>O, 0.5 M HCl  
+| 100 &mu;g/mL
+|-
+|}
+
+Consult the web as well as the references that are reproduced in your lab manual to help you with this decision. Additional helpful information can be found here [[Image:Molecular modeling using protein explorer-student handout.doc]]. Inducing the over-expression of beta-galactosidase in bacterial cells will be the very last thing you do before you leave today.
+
+===Part 2: BioRad assay===
+With this assay you will determine the concentration of protein in a sample of beta-galactosidase we have provided for you. The assay reagent (called the “BioRad” reagent after the company that supplies it) changes from brown to blue when it reacts with proteins, a change that can be monitored spectrophotometrically. A protein of known concentration (mg/ml of BSA) is used to calibrate the reaction, generating a standard curve for comparison. 
+# Aliquot 10 &mu;l of each BSA standard into eppendorf tubes, labeled 0.1/0.2/0.4/0.6/0.8/1.0. 
+# Dilute the beta-gal stock in Zbuffer-BME so you have at least 50 &mu;l of undiluted material, and 50 &mu;l of 1:5, 1:10 and 1:50 dilutions. 
+# Add 10 &mu;l of each beta-gal dilution into labeled eppendorf tubes.  
+# Using your P1000, add 1 ml of BioRad reagent to each tube. 
+# Mix by inverting several times. Incubate at room temperature at least 10 minutes. 
+# Read the absorbance of each sample at 595nm, using a cuvette with BioRad reagent to blank the spectrophotometer. 
+
+{| border="1"
+! Tube 
+! Contents 
+! A595 
+!
+! Tube
+! Contents
+! A595
+|-
+| 0 
+| Blank 
+| 0 
+|
+| undiluted 
+| beta-galactosidase
+|
+|-
+| 0.1 
+| BSA 
+| 
+| 
+| 1:5 
+| beta-galactosidase
+|
+|-
+| 0.2 
+| BSA 
+| 
+| 
+| 1:10 
+| beta-galactosidase
+|
+|-
+| 0.4 
+| BSA 
+|  
+|
+| 1:50 
+| beta-galactosidase
+| 
+|-
+| 0.6 
+| BSA 
+|  
+|
+| 
+| 
+|
+|-
+| 0.8 
+| BSA 
+|  
+| 
+|
+| 
+|
+|-
+| 1 
+| BSA 
+|  
+|
+|  
+| 
+|
+|}
+
+===Part 3: Beta-galactosidase activity assay===
+Beta-galactosidase normally cleaves lactose into glucose and galactose, however the reactive center of the enzyme can be fooled into cleaving substrates that resemble the natural one but that give more experimentally useful products. We will revisit this fact in the systems engineering experimental module when “S-gal” will be used. Here we will use o-nitrophenyl-b-galactoside (“ONPG”), which can be cleaved by beta-galactosidase to release galactose and o-nitrophenol. The latter product, being yellow in color, is easily detectable in a spectrophotometer at 420nm and consequently can be used as a readout for the enzyme’s activity. The more yellow color, the more active enzyme. 
+You will combine the dilutions of the enzyme with ONPG for a given amount of time and then stop the reactions by raising the reaction’s pH, inactivating the enzyme. You will perform each reaction in duplicate to increase the confidence you have in your results. 
+
+# Add 0.5 ml of Zbuffer-BME to 11 eppendorf tubes labeled 0, 1a, 1b, 2a, 2b, 3a, 3b, 4a, 4b, 5a, 5b.
+# Dilute the stock solution of beta-galactosidase in Zbuffer-BME so you have at least 100 &mu;l of 1:5, 1:10, 1:50, 1:100 dilutions. You can make these dilutions individually or in series.  
+# Add 10 &mu;l of undiluted beta-galactosidase to tubes 1a, 1b. 
+# Add 10 &mu;l 1:5 diluted beta-galactosidase to tubes 2a, 2b. 
+# Add 10 &mu;l 1:10 diluted beta-galactosidase to tubes 3a, 3b.
+# Add 10 &mu;l 1:50 diluted beta-galactosidase to tubes 4a, 4b.
+# Add 10 &mu;l 1:100 diluted beta-galactosidase to tubes 5a, 5b.
+# Invert to mix 
+# Add 100 &mu;l of the ONPG to each tube staggering additions by 10 seconds (use your timer). Cap and invert to mix after each addition. 
+# Stop the reactions after 10 minutes of reaction time by adding 250 &mu;l of 1M Na<sub>2</sub>CO<sub>3</sub>. Cap and invert to mix after each addition. 
+# Read the absorbance at 420 nm for each reaction, using the reaction in the tube 0 as your blank. 
+
+A table like the following one might be useful as you perform these sorts of assays. 
+
+{| border="1"
+! Tube 
+! Buffer 
+! Enzyme 
+! Start
+! Stop
+! 
+! A420
+|-
+| 0 
+| 0.5 ml 
+| none 
+| 0:00
+| 10:00
+| 
+|
+|-
+| 1a 
+| 0.5 ml 
+| undiluted 
+| 0:10
+| 10:10
+| 
+|
+|-
+| 1b 
+| 0.5 ml 
+| undiluted 
+| 0:20
+| 10:20
+| 
+|
+|-
+|2a 
+| 0.5 ml 
+| 1:5 
+| 0:30
+| 10:30
+| 
+|
+|-
+|2b 
+| 0.5 ml 
+| 1:5 
+| 0:40
+| 10:40
+| 
+|
+|-
+| 3a 
+| 0.5 ml 
+| 1:10 
+| 0:50
+| 10:50
+| 
+|
+|-
+| 3b 
+| 0.5 ml 
+| 1:10 
+| 1:00
+| 11:00
+| 
+|
+|-
+| 4a 
+| 0.5 ml 
+| 1:50 
+| 1:10
+| 11:10
+|
+| 
+|-
+| 4b 
+| 0.5 ml 
+| 1:50 
+| 1:20
+| 11:20
+|
+|
+|-
+| 5a 
+| 0.5 ml 
+| 1:100 
+| 1:30
+| 11:30
+|
+| 
+|-
+| 5b 
+| 0.5 ml 
+| 1:100 
+| 1:40
+| 11:40
+|
+|   
+|}
+
+===Part 4: Induce expression of your modified beta-galactosidase===
+For reasons that will become clearer next time, the cells you’ll be using need an “inducer” to start making beta-galactosidase. You will compare the yield and activity beta-gal from cells without inducer, from cells with inducer, and from cells induced in the presence of the unnatural amino acid you’ve selected based on your study of the structure of the molecule. 
+
+# You’ll be provided with a sample of bacteria growing in M9 Media with ampicillin. Begin by removing 0.5 ml to read OD600, using M9 or water to blank the spectrophotometer. 
+# Using sterile technique, split the remaining bacterial culture into three fresh tubes with 3 ml each. 
+# One tube will remain “uninduced” and will give you an idea of how much beta-galactosidase the cells naturally make. Label this tube “No IPTG.”
+# Another tube will be induced to express beta-galactosidase by adding IPTG to a final concentration of 1 mM. The stock IPTG solution is 0.1M. You can figure out how much to add. Label this tube “+IPTG.”
+# The third tube will also be induced with both IPTG as you did above, and also with the unnatural amino acid. The volume added should be according to the table in Part1 of today’s protocol. Be sure to note what you added and label this tube “+IPTG+AA.”
+# Return all your team’s samples to the roller wheel in the 37&deg; incubator. They will grow overnight and a member of the teaching team will move them to the 4&deg; fridge tomorrow so they are ready for your return to lab on Module 2 Day 2. 
+
+DONE!
+
+==For next time==
+# Use your BSA samples in the BioRad assay to create a standard curve using Excel. Determine the r-squared to assess the quality of your standard curve (a curve that is linear will have an r-squared = 1). Display the trend-line and use it to calculate the concentration of beta-galactosidase in each sample. Indicate which concentration measurement(s) you consider reliable and which ones you don’t (and why). Finally, consider the fact that Sigma sold us the betagalactosidase you are using labelled as 5000 units, 29 mg of "solids." The solids were put in solution with 5 ml PBS. What is the expected concentration of "solids" and if this number is different than the concentration of protein you measured, try to explain the difference.
+# Find and draw (or printout) the structures for lactose and o-nitrophenyl-b-galactoside. Why do you think both are substrates for beta-galactosidase? 
+# Which dilution(s) of beta-galactosidase do you consider as reliable measures of the enzyme’s activity and which ones do you consider unreliable (and why)?
+# Calculate the units of activity in the beta-galactosidase sample using the following information. Please show all your work. 
+#* a) Units are defined as the micromoles of o-nitrophenol generated/min/mg of beta-galactosidase protein.
+#* b) The molar extinction coefficient for o-nitrophenol is 2.13 x 10<sup>4</sup> M<sup>-1</sup> cm<sup>-1</sup>. 
+#* c) The path length of the cuvette you used to measure the absorbance is 1 cm. This knowledge and the value for the molar extinction coefficient can be used to convert the absorbance you’ve measured at 420 nm to a concentration of o-nitrophenol in the solution you read. 
+#* d) Use the final reaction volume to convert from o-nitrophenol concentration to # of micromoles generated. Be careful with your unit conversions here. This is the most common place to make a mistake. The reaction time was 10 minutes unless you did something different from the recommended protocol.
+#* e) The concentration of beta-galactosidase is known from the BioRad assay you performed. Be sure to use the # of mg of protein in your assay reaction as opposed to the concentration in that reaction or the concentration of the stock solution.
+
+==Reagents list==
+===Beta-galactosidase (G6008)===
+*5000 Units (29mg = lot #084K8629) dissolved in 5 ml PBS so ~1000 units/ml.
+
+===Zbuffer-BME===
+*0.85 g Na<sub>2</sub>HPO<sub>4</sub>
+*0.55 g NaH<sub>2</sub>PO<sub>4</sub>*H<sub>2</sub>O
+*0.07 g KCl
+*0.012 g MgSO<sub>4</sub>
+**Dissolved in 100 ml H<sub>2</sub>0 final volume
+
+===&beta;-gal start: ONPG=== 		
+*4 mg/ml in Zbuffer-BME
+
+===&beta;-gal stop: 1M Na<sub>2</sub>CO<sub>3</sub>===
+*10.6 g in 100 ml
+
+===BioRad Reagent===
+*stock solution is diluted 1:5 to working concentration
+
+===BSA standards===
+*0.1-1 mg/ml in H<sub>2</sub>O
+
+===5X M9 Media===
+*30 g       Na<sub>2</sub>HPO<sub>4</sub>
+*15 g       KH<sub>2</sub>PO<sub>4</sub>
+*5 g        NH<sub>4</sub>Cl
+*2.5 g      NaCl 
+**Dissolved in 1000 ml, and autoclaved. 
+**Diluted to working conc of 1X with 1mM MgSO<sub>4</sub> and 2% sugar, as well as any needed antibiotic.
+
+===Ampicillin===
+*100 mg/ml in H2O, filter sterilized. Final concentration should be 100 &mu;g/ml.
+
+===IPTG===
+*0.1M in H2O. 
+**Filter sterilized. 
+**Final concentration should be 1 mM
+
+Unnatural Amino Acids dissolved according to table in part 1 of today's protocol.

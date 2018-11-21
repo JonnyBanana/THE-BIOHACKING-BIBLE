@@ -1,0 +1,45 @@
+=Integration of SABIO-RK in workbenches for kinetic model design=
+'''Author(s): '''Martin Golebiewski, Saqib Mir, Renate Kania, Olga Krebs, Andreas Weidemann, Ulrike Wittig and Isabel Rojas<br> 
+'''Affiliations:''' EML Research gGmbH, Schloss-Wolfsbrunnenweg 33, 69118 Heidelberg, Germany<br>
+'''Contact:'''Martin.Golebiewski@eml-r.villa-bosch.de<br>
+'''Keywords:''' System Biology' 'database' 'kinetic data' 'modelling support' 
+
+[[Category:BioSysBio Keywords System Biology]] 
+[[Category:BioSysBio Keywords database]]
+[[Category:BioSysBio Keywords kinetic data]]
+[[Category:BioSysBio Keywords modelling support]]
+
+==Abstract==
+
+Systems biology deals with analyzing and predicting the behavior of complex biological systems like cells, organisms or even whole ecosystems. This requires qualitative information about the interplay of genes, proteins, chemical compounds and biochemical reactions, but also calls for quantitative data describing the dynamics of these networks. These data have to be collected, systematically structured and made accessible for the set-up of biochemical model simulations.
+
+To provide quantitative experimental data, we have developed SABIO-RK [1], a database system offering information about biochemical reactions and their corresponding kinetics. It not only describes participants (enzymes, substrates, products, inhibitors and activators) and kinetic parameters of the reactions, but also provides the environmental conditions for parameter determination, as well as detailed information about the reaction mechanisms. This includes the mechanism type of a reaction and its related kinetic law equation defining the reaction rate with its corresponding parameters (rate constants, maximal velocities and equilibrium constants like Michaelis, dissociation or inhibition constants).
+
+In order to facilitate the interpretation and integration of data, we employ controlled vocabularies and annotate single entities and expressions to domain ontologies like SBO (Systems Biology Ontology [2]) or ChEBI (Chemical Entities of Biological Interest [3]) and to knowledge bases like KEGG (Kyoto Encyclopedia of Genes and Genomes [4]) or UniProt/Swiss-Prot [5]. These annotations assist users in identifying a certain entity or expression, and also provide additional information through links from SABIO-RK to external resources. Additionally, SABIO-RK contains synonymic notations for chemical compounds and enzymes, and we have developed controlled vocabularies and expression standards for certain attributes, e.g. to differentiate between kinetic law types or parameter roles.
+
+SABIO-RK can be accessed in two different ways: through a web-based user interface to browse and search the data manually, and through web-services that can be automatically called by external tools, e.g. by other databases or simulation programs for biochemical network models. In both interfaces, reactions with their kinetic data can be exported in SBML (Systems Biology Mark-Up Language [6]). The export of the kinetic data into SBML requires particular standards in the expression of certain entities. For example, parameter units have to be specified in scaled and composite SBML units, and kinetic law equations need to be described in a defined format. These transformations are carried out in the data population process in order to comply with SBML standards.
+
+The existence of a programmatic interface, together with the use of controlled vocabularies, ontologies and links to external resources make SABIO-RK well suited for its integration into different applications using or requiring kinetic data for biochemical reactions. Currently SABIO-RK is being used by two systems biology platforms: CellDesigner [7] and SYCAMORE (Systems biology’s Computational Analysis and Modeling Research Environment). 
+
+
+==References==
+
+[1]	Wittig U, Golebiewski M, Kania R, Krebs O, Mir S, Weidemann A, Anstein S, Saric J, Rojas I (2006): Lecture Notes in Bioinformatics, 4075: 94-103
+
+[2]	Systems Biology Ontology (SBO): http://www.ebi.ac.uk/sbo/
+
+[3]	ChEBI: http://www.ebi.ac.uk/chebi/
+
+[4]	KEGG: http://www.genome.jp/kegg/
+
+[5]	UniProt/Swiss-Prot: http://www.ebi.ac.uk/swissprot/
+
+[6]	Hucka M, et al. (2003): Bioinformatics, 19: 524-31.
+
+[7]	Funahashi A, Tanimura N, Morohashi M, Kitano H (2003): BIOSILICO, 1:159-162
+	http://celldesigner.org/
+
+
+==Link==
+
+'''http://sabio.villa-bosch.de/SABIORK/'''

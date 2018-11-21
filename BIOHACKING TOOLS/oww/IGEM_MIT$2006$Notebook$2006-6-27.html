@@ -1,0 +1,116 @@
+==Some Notes and Questions on the Papers regarding osmY (Stationary Phase Promoter)== 
+
+These findings are all from the following two papers:
+
+http://www.pubmedcentral.gov/articlerender.fcgi?tool=pubmed&pubmedid=8631665
+
+http://www.pubmedcentral.gov/articlerender.fcgi?tool=pubmed&pubmedid=9829938
+
+#Good News: we were worried that although the promoter was a stationary phase promoter, a lag in protein expression could result in the smell enzymes being expressed at the incorrect time.  However, Schellhorn, et al. say that the promoter is induced in the growth phase and does not express the protein until stationary phase.  Thus, we no longer have to worry about this potential problem.
+#Another interesting application of this promoter.  Schellhorn, et al. also say that RpoS (the factor inducing the osmY promoter) is increasingly expressed in the presence of weak acids (e.g., acetates).  Recall that the product of the ATF1 gene (banana-smelling gene) is isoamyl acetate.  Thus, if the osmY promoter is attached to the ATF1 gene, it is possible that this system will result in a positive feedback loop in which expression of the ATF1 gene results in more expression of the ATF1 gene, amplifying the production of isoamyl acetate.
+#The osmY promoter was tested in both papers by attaching it to a LacZ coding region and performing B-galactosidase assays.  We could either test it using this same method or by attaching it to a fluorescent protein ORF.
+#The results of the B-galactosidase assays mentioned above were that the osmY promoter was more strongly induced in LB media than in minimal media.
+#Problem (at least it seems to be).  As Wise, et al. reports, "Similarities in the amino acid sequences of the sigmas and sigmad proteins suggested that Esigmas might also interact with promoter DNA at approximately 35 nucleotides upstream from the start of transcription."  They also "believe that additional determinants of sigmas-dependent transcription are likely to be found in the region separating the -10 and -35 sites."  Thus, I am not sure if this means that we can use merely the contracted sequence that Wise, et al. presents in their paper.
+
+==New BAMT Primer==
+
+5' - GTT TCT TCG AAT TCG CGG CCG CTT CTA G<b>AT GAA GAA ACT TTT GTG TAT G</b> - 3'
+
+==Results from Smell Experiment==
+
+See 6/23/06's Notebook for protocol http://openwetware.org/index.php?title=IGEM:MIT/2006/Notebook/2006-6-23
+
+Cells put in 37 degree Celsius room at 12:00 PM
+
+''OD600 Readings (4:30 PM Reading/8:30 PM Reading/10:00 AM Reading)''
+
+LBK SAMT 4 Hr Induction (Mistake): 0.33/1.23/2.78
+LBK SAMT 4 Hr Induction: 0.56/1.22/2.70
+LBK SAMT 8 Hr Induction: 0.55/1.26/3.10
+
+LBK BSMT Control: 0.28/1.07/2.34
+LBK BSMT 4 Hr Induction: 0.67/1.47/2.84
+LBK BSMT 8 Hr Induction: 0.29/1.05/2.62
+
+EZK SAMT Control: 0/0.16/1.45
+EZK SAMT 8 Hr Induction: 0/0.17/0.37
+EZK SAMT 8 Hr Induction: 0/0.22/0.48
+
+EZK BSMT Control: 0/0/0.03
+EZK BSMT 8 Hr Induction: 0/0/0
+EZK BSMT 8 Hr Induction: 0/0.01/0.01
+
+'''Smell Results'''
+
+Barry, Stephen, and Andre all agreed with the following conclusions:
+
+The 4 Hr Inductions smelled better than the 8 Hr Inductions for the LBK cultures.
+
+SAMT smelled better in general than BSMT.
+
+BSMT did not smell in EZK (cells did not grow).
+
+The SAMT EZK cultures smelled much less pleasant than the SAMT LBK cultures and the BSMT LBK cultures.  There was a weak wintergreen smell in the SAMT EZK cultures but not a very strong smell.
+
+Bad Note: A few of us thought that the LBK BSMT Control smelled minty.  Maybe our senses of smell are skewed at this point.
+
+==Restriction Digest--TAKE 2==
+'''things that we did the first time (that we changed): we used a Kan backbone (this time we used the CHL one), we used a different part from Barry (control part 3k3.I7101 at 44 ng/&mu;L -- we added 20 &mu;L), we added 9&mu;L of BSMT b/c it's concentration was 90ng/&mu;L, and we added less backbone (I think 28&mu;L?)'''
+#We are cutting the backbone and the BSMT pcr product separately (using EcoRI and PstI)
+#Total reaction volume is 50&mu;L
+#Our control cut reaction is with the part PSBI82E0040 from Barry
+#the total volume desired is about 50 &mu;L and amount of dna desired is about 800 nanograms (it was 400ng last time, but Samantha said 1mg so we doubled.)
+#*pSBIAC3 backbone at 20 ng/&mu;L -----add 40 &mu;L backbone 
+#*BSMT pcr product at 50 ng/&mu;L -----add 16 &mu;L
+#*control part PSBI82E0040 at 200 ng/&mu;L ----add 4 &mu;L
+#we are also going to use Dpn1 to destroy all dna that is not a pcr product (i.e. get rid of extra template)
+#BACKBONE cut reaction (in order added, following the Knight Lab restriction digest protocol):
+#*3 &mu;L water
+#*5 &mu;L NEB buffer 2
+#*.5 &mu;L BSA
+#*40 &mu;L backbone plasmid
+#*.5 &mu;L Pst1
+#*.5 &mu;L EcoR1
+#*.5 &mu;L Dpn 1
+#BSMT pcr cleanup product cut reaction (in order added, following the Knight Lab restriction digest protocol):
+#*34 &mu;L water
+#*5 &mu;L NEB buffer 2
+#*.5 &mu;L BSA
+#*16 &mu;L BSMT pcr cleanup product (concentration = 50 ng/&mu;L)
+#*.5 &mu;L Pst1
+#*.5 &mu;L EcoR1
+#*.5 &mu;L Dpn 1
+#CONTROL (Barry's biobrick) cut reaction (in order added, following the Knight Lab restriction digest protocol):
+#*39 &mu;L water
+#*5 &mu;L NEB buffer 2
+#*.5 &mu;L BSA
+#*4 &mu;L part PSBI82E0040 (from Barry)
+#*.5 &mu;L Pst1
+#*.5 &mu;L EcoR1
+#*.5 &mu;L Dpn 1
+#Incubate both tubes in 37c room for 4-6 hours, then 20 mins at 80deg C to heat inactivate the enzyme, then 4deg forever.
+
+==PCR cleanup / Nanodrop / Ran Gel - TAKE 1==
+...and it showed that the digests were probably not very successful. [BSMT was OK (but that doesn't show anything...it was the same before the digest), and there was a faint band at approx the length of Barry's biobrick, but there wasn't really any sign of a 3kB fragment for the backbone]
+We also found that the concentration of DNA in our cleaned-up digested backbone was very low...about 2ng/&mu;L
+And, we used the Kan resistance backbone instead of CHL, so we're not even sure if it could've worked (Tom just did a transformation with the Chl backbone and it worked, so we know that the CHL backbone works)
+
+==PCR cleanup / Nanodrop / ran gel - TAKE 2==
+#PCR cleanup: followed standard protocol for PCR cleanup...not too exciting : )
+#Nanodrop: checked the concentrations of the cleaned-up cut DNA:
+#*Backbone (CHL resistance, cut with EcoRI and PstI): 20.6 ng/&mu;L
+#*Barry's part (PSBI82E0040, cut with EcoRI and PstI): 31.3 ng/&mu;L
+#*BSMT (cut with EcoRI and PstI): 23.8 ng/&mu;L
+#Gel: the columns, from left to right, are:
+#*1kB ladder
+#*cut BSMT
+#*cut Barry's biobrick part
+#*cut CHL backbone
+#*uncut CHL backbone
+[[Image:Gel6-27.jpg]]
+
+Sooo looks like we have no backbone...so let's not do the ligation tomorrow.  Though, some good news...it looks like Barry's BB part was cut in the right place (note the band around .7kB). And, our BSMT is still the irght length (approx 1.1kB)!  '''Edit (6/28): We checked Barry's plasmid & insert for DpnI cut sites, and it shows that there are 2 DpnI cut sites in the insert (so the band we saw is not the insert).  However, there is an approx. 700bp stretch with no DpnI cut sites...so that's probably what we saw on the gel'''
+
+Things to try:
+*Talk to Tom about the backbone...what are the extra bands?  Why did it get cut up?
+*Redo digests after talking it over with people...but don't digest Barry's part with DpnI next time (so we just see two bands)

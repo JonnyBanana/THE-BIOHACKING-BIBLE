@@ -1,0 +1,156 @@
+==BAMT PCR Product Eco/Pst Digest==
+'''BEGAN AT 11:15 AM'''
+#We are cutting the BAMT pcr product (using EcoRI and PstI)--
+#Total reaction volume is 50&mu;L
+#the amount of dna desired is about 800 nanograms
+#*BAMT pcr product at 58.8 ng/&mu;L -----add 13.6 &mu;L
+#we are also going to use Dpn1 '''only''' in BAMT cut reaction to destroy dna that is not a pcr product (i.e. get rid of extra template)
+
+#BAMT pcr cleanup product cut reaction:
+#*28.9 &mu;L water
+#*5 &mu;L NEB buffer 2
+#*.5 &mu;L BSA
+#*13.6 &mu;L BAMT pcr cleanup product (concentration = 50 ng/&mu;L)
+#*.75 &mu;L Pst1
+#*.75 &mu;L EcoR1
+#*'''.5 &mu;L Dpn 1'''
+#Incubate tube in 37c room for 1-6 hours, then 20 mins at 80deg C to heat inactivate the enzyme, then 4deg forever.
+#Did a PCR cleanup & nanodrop: concentration of digested BAMT = ??ng/&mu;L
+#'''run a gel before moving on to ligation !!'''
+
+==New Liquid Cultures for GC==
+Used 40 uL SA, 20 uL cell cultures, 10 mL LB Kan in each of the following tubes:
+
+SAMT, not induced
+
+BSMT, not induced
+
+SAMT, induced
+
+BSMT, induced
+
+BSMT BB, induced
+
+*Note that the SAMT and BSMT cultures were two weeks old.
+
+==Measurement of Stationary Phase Promoter==
+Francois' rpos promoter was tested on a 96-well plate for fluorescence.  The following wells were filled accordingly:
+
+A1- 200 uL rpos promoter attached to GFP liquid culture
+
+A2- 200 uL rpos promoter attached to GFP liquid culture
+
+A3- 200 uL rpos promoter attached to GFP liquid culture
+
+A4- 200 uL constitutive promoter attached to GFP liquid culture
+
+A5- 200 uL constitutive promoter attached to GFP liquid culture
+
+A6- 200 uL constitutive promoter attached to GFP liquid culture
+
+A7- 200 uL LB media
+
+A8- 200 uL LB media
+
+A9- 200 uL LB media
+
+We will read out the fluorescence data tomorrow.
+
+==ATF1 PCR Product Xba/Pst Digest==
+'''BEGAN AT 11:15 AM'''
+#We are cutting the ATF1 pcr product (using XbaI and PstI)--
+#Total reaction volume is 50&mu;L
+#the amount of dna desired is about 800 nanograms
+#*ATF1 pcr product at 30.8 ng/&mu;L -----add 26 &mu;L
+#we are also going to use Dpn1 '''only''' in ATF1 cut reaction to destroy dna that is not a pcr product (i.e. get rid of extra template)
+
+#ATF1 Digest:
+#*16.5 &mu;L water
+#*5 &mu;L NEB buffer '''3'''
+#*.5 &mu;L BSA
+#*26 &mu;L ATF1 pcr cleanup product (concentration = 50 ng/&mu;L)
+#*.75 &mu;L Pst1
+#*.75 &mu;L XbaI
+#*'''.5 &mu;L Dpn 1'''
+#Incubate tube in 37c room for 1-6 hours, then 20 mins at 80deg C to heat inactivate the enzyme, then 4deg forever.
+#Did a PCR cleanup & nanodrop: concentration of digested SAMT = ??ng/&mu;L
+#'''run a gel before moving on to ligation !!'''
+
+==BACKBONE pSB1A3-1 bkb Xba/Pst Digest==
+'''BEGAN AT 11:15 AM'''
+#*35 &mu;L water
+#*5 &mu;L NEB buffer '''3'''
+#*.5 &mu;L BSA
+#*8 &mu;L backbone plasmid
+#*.75 &mu;L PstI
+#*.75 &mu;L XbaI
+
+==CONTROL (BSMT-BB) Xba/Pst Digest==
+#*31.58 &mu;L water
+#*5 &mu;L NEB buffer '''3'''
+#*.5 &mu;L BSA
+#*11.42 &mu;L BSMT-BB (from BSMT miniprep @ 71ng/&mu;L )
+#*.75 &mu;L PstI
+#*.75 &mu;L XbaI
+
+==Glycerols and Miniprep of BSMT biobrick== 
+#Did minipreps of A, C, E BSMT liquid cultures to get the BSMT biobrick plasmid.
+#Made glycerols of these cells (which contain the BSMT biobrick)
+
+==SAMT-BB (J45001), BAMT-BB (J45002), & ATF1-BB (J45006) Ligations==
+'''RUN GELS OF DIGESTS TO DOUBLECHECK THAT THEY WORKED!
+
+'''Nanodrop readings following PCR clean-ups: (?? &mu;L for 50 nanograms)
+#EP cut pSB1A3-1 = 29.8 ng/&mu;L (2 &mu;L)
+#EP cut SAMT = 10.4 (5 &mu;L)
+#EP cut BAMT = 13 ng/&mu;L (4 &mu;L)
+#EP cut E0040 = 11.7 ng/&mu;L (5 &mu;L)
+#XP cut pSB1A3-1 = 22 ng/&mu;L (2.5 &mu;L)
+#XP cut ATF1 = 28.1 ng/&mu;L (2 &mu;L)
+#XP cut BSMT = 15.7 ng/&mu;L (3.5 &mu;L)
+
+'''We'll do 5 ligations, 10 &mu;L total volume each: 
+*EP cut pSB1A3-1 and EP cut SAMT 
+*EP cut pSB1A3-1 and EP cut BAMT
+*EP cut pSB1A3-1 and EP cut E0040 ('''+ Ctrl''')
+*XP cut pSB1A3-1 and XP cut ATF1
+*XP cut pSB1A3-1 and XP cut BSMT ('''+ Ctrl''')
+
+
+'''EP cut pSB1A3-1 and EP cut SAMT'''
+*1.5&mu;L water
+*1&mu;L T4 DNA ligase buffer (vortex well before adding, make sure it smells ''strongly'' like wet dog!!)
+*.5&mu;L T4 DNA ligase enzyme
+*5&mu;L cut SAMT (50ng)
+*2&mu;L cut backbone (50ng)
+
+'''EP cut pSB1A3-1 and EP cut BAMT'''
+*2.5&mu;L water
+*1&mu;L T4 DNA ligase buffer (vortex well before adding, make sure it smells ''strongly'' like wet dog!!)
+*.5&mu;L T4 DNA ligase enzyme
+*4&mu;L cut BAMT (50ng)
+*2&mu;L cut backbone (50ng)
+
+'''EP cut pSB1A3-1 and EP cut E0040 (+ Ctrl)'''
+*1.5&mu;L water
+*1&mu;L T4 DNA ligase buffer (vortex well before adding, make sure it smells ''strongly'' like wet dog!!)
+*.5&mu;L T4 DNA ligase enzyme
+*5&mu;L cut Barry's E0040 part (50ng)
+*2&mu;L cut backbone (50ng)
+
+'''XP cut pSB1A3-1 and XP cut ATF1'''
+*4&mu;L water
+*1&mu;L T4 DNA ligase buffer (vortex well before adding, make sure it smells ''strongly'' like wet dog!!)
+*.5&mu;L T4 DNA ligase enzyme
+*2&mu;L cut ATF1 (50ng)
+*2.5&mu;L cut backbone (50ng)
+
+'''XP cut pSB1A3-1 and XP cut BSMT (+ Ctrl)'''
+*2.5&mu;L water
+*1&mu;L T4 DNA ligase buffer (vortex well before adding, make sure it smells ''strongly'' like wet dog!!)
+*.5&mu;L T4 DNA ligase enzyme
+*3.5&mu;L cut BSMT (50ng)
+*2.5&mu;L cut backbone (50ng)
+
+
+'''Ligate at room temp for 15 to 20 minutes and then proceed to transformation'''

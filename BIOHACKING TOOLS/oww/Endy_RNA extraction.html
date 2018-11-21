@@ -1,0 +1,104 @@
+This is a protocol for the acid-phenol extraction of RNA from ''E. coli'', used in the Endy Lab. 
+Contact: Heather Keller or Caitlin Conboy
+
+==Set-up==
+# Set sand bath to 100°C.
+# Set H2O bath to 67°C.
+===Prepare RNase-Diminished bench===
+#Wipe bench and pipettes with EtOH.
+#Wipe with Rnase Zap wipes.
+#Wipe with wet (H20) paper towels (2x).
+
+==Culture growth and sample collection==
+#Samples from continuous culture in chemostat:
+##See [[Endy:STN Chemostat Protocol|Chemostat protocol]]
+##At desired time, measure OD600 of chemostat culture
+##Pull 2mL sample from chemostat through bubbler line. Immediately proceed to cell collection.
+#Samples from batch culture:
+##Inoculate 5mL standard media (see protocol, M9_recipe) from fresh plate (<2 weeks). Grow to saturation at 37° C, approx 20 hr. 
+##Measure OD600 of saturated cultures.  All should be ~2.5.
+##Dilute all saturated cultures to OD600=0.0025 (dilution ~1:1000) into 5mL fresh media. (5 uL of culture if OD600=2.5).
+##Grow to mid-log, OD600 ~ 0.4
+##Pull 2mL sample and proceed immediately to cell collection.
+
+==Cell collection==
+#Immediately combine 0.8mL cold stop solution with each 1mL sample in a pre-chilled centrifuge tube. (Stop solution= 5% H2O saturated phenol in ethanol).
+#Store on ice while plating dilutions of culture for CFU count. Plate three replicates of a 1:10^4 and a 1:10^5 dilution.
+#Centrifuge samples at 4°C in Sauer Lab tabletop centrifuge. 13,000rpm, 10 minutes.
+#Decant the supernatants from the pellets and discard.
+#''(optional)'' At this point, the pellets can be frozen at -80°C until ready to proceed with step 4.  Thaw on ice before lysis.
+
+==Lysis==
+#Resuspend each pellet in 0.5 ml of Lysis buffer (2% SDS and 4 mM EDTA).
+#Incubate the cells in a 100°C sand bath for 3 minutes to lyse the cells.
+#Add 15 ul of 3M NaOAc to each tube and transfer to ice.
+#''(optional)'' spike in [[RNA In Vitro Standards|control mRNA]] to evaluate the efficiency of extraction
+
+==Phenol Extraction with heat==
+#Add an equal volume (0.5 mL) of water-saturated phenol to each tube.
+#Invert several times to mix.
+#Transfer to a 67°C water bath for 6 minutes and invert every 40 seconds.
+#Immediately transfer to ice. 
+#Centrifuge in an Eppendorf 5414 table top microcentrifuge (15,000 RPM) at 4°C for 10 minutes.
+#Transfer as much of each aqueous layer as possible to new tubes.  The aqueous layer is the upper layer and is distinct from the organic phase which is tinted yellow by 8-Quinolinol in the phenol
+
+==Phenol/Chloroform Extraction==
+#Add an equal volume (0.5 mL) of water-saturated phenol:chloroform:isolamyl alcohol (25:24:1) to each tube.
+#Invert several times to mix.
+#Centrifuge in an Eppendorf 5414 table top microcentrifuge (15,000 RPM) at 4°C for 5 minutes.
+#Transfer as much of each aqueous layer as possible to new tubes.
+#Repeat phenol/chloroform extraction once.
+
+==Ethanol Precipitation==
+#To each tube, add: 1/10 volume (50 ul) 3M NaOAc, 1/10 volume (50 ul) 1 mM EDTA, and 2-2.5 volumes (1 mL) of cold, 100% ethanol.
+#Invert to mix and then incubate at -80°C for 20 minutes.
+#Centrifuge in an Eppendorf 5414 table top microcentrifuge (15,000 RPM) at 4°C for 25 minutes.
+#Decant the ethanol from the pellets and discard.
+#Wash each pellet in 1 ml of cold 80% ethanol.
+#Centrifuge in an Eppendorf 5414 table top microcentrifuge (15,000 RPM) at 4°C for 5 minutes.
+#Decant the ethanol from the pellets and discard.  
+#Repeat wash with cold 80% EtOH twice, for a total of three washes.
+#Dry the pellets in a 37°C heat block after the final wash is removed, ~15 min
+#Resuspend each pellet in 50 ul of Buffer EB.
+
+==Absorbance reading==
+*[[Nanodrop]] (make sure to set for RNA). Record concentration and A260/A280 ratio. An ideal purity has an A260/A280 between 1.8 and 2.2.
+
+==Storage==
+*If the sample is to be treated immediately with DNase, proceed to the next section. Otherwise, dilute and/or aliquot the samples if necessary and store at -20°C until needed.
+
+==DNase treatment==
+#Combine:
+#*50 uL of 10x DNase I Buffer
+#*50 uL of RNA Extraction product 
+#*1 uL of Superase Inhibitor
+#*2 uL DNase I (~1 ug enzyme)
+#*397 uL of H2O (RNase-free) to total volume of 500 uL
+#Incubate 10 min at 37°C.
+#''Optional:'' If using NEB DNase I, heat inactivate 10 min at 75°C.
+
+==Phenol/Chloroform Extraction==
+#Add an equal volume (0.5 mL) of water-saturated phenol:chloroform:isolamyl alcohol (25:24:1) to each tube.
+#Invert several times to mix.
+#Centrifuge in an Eppendorf 5414 table top microcentrifuge (15,000 RPM) at 4°C for 5 minutes.
+#Transfer as much of each aqueous layer as possible to new tubes.
+
+==Ethanol Precipitation==
+#To each tube, add: 1/10 volume (50 ul) 3M NaOAc, 1/10 volume (50 ul) 1 mM EDTA, and 2-2.5 volumes (1 mL) of cold, 100% ethanol.
+# Invert to mix and then incubate at -80°C for 20 minutes.
+#Centrifuge in an Eppendorf 5414 table top microcentrifuge (15,000 RPM) at 4°C for 25 minutes.
+#Decant the ethanol from the pellets and discard.
+#Wash each pellet in 1 ml of cold 80% ethanol.
+#Centrifuge in an Eppendorf 5414 table top microcentrifuge (15,000 RPM) at 4°C for 5 minutes.
+#Decant the ethanol from the pellets and discard.  
+#Repeat wash with cold 80% EtOH twice, for a total of three washes.
+#Dry the pellets in a 37°C heat block after the final wash is removed, ~15 min.
+#Resuspend each pellet in 30 ul of nuclease free water if to be analyzed by RPA or RT-PCR or in 10 uL Buffer EB if to be used in Northern Blot.
+
+==Absorbance reading==
+*[[Nanodrop]] (make sure to set for RNA). Record concentration and A260/A280 ratio. An ideal purity has an A260/A280 between 1.8 and 2.2.
+
+==Storage==
+*Store at -20°C until needed.
+
+[[Category:Protocol]] [[Category:RNA]] [[Category:In vitro]]

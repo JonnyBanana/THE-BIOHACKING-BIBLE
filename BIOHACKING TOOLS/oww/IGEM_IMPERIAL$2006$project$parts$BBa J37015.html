@@ -1,0 +1,183 @@
+== <font color= red> Comments </font> ==
+
+Christin:
+*Do we need to check whether LuxR is expressed as we expect it to or should we add an extra check for that? 
+**Perhaps add a fluorescent protein different from GFP (e.g. red colour: mCherry) so that we can monitor LuxR expression as well. We need to know beforehand whether we can distinguish the fluorescence from the two molecules, i.e. whether their excitation wavelength are sufficiently far apart.
+
+
+==Specifications==
+
+The motivation to build this part is to characterise the positive feedback loop in the prey cell, and from this be able to characterise (and possibly extend) the exponetial phase of AHL production.
+
+This part allows us to investigate the following parameter:
+*The length of the positive feedback exponential phase
+
+==Design==
+
+===Part Design===
+
+[[image:J37015Main.JPG]]
+
+[http://parts.mit.edu/registry/index.php/Part:BBa_J37015 J37015 - Link to MIT Parts Registry]
+
+[[IGEM:IMPERIAL/2006/project/parts/BBa_J37015#Potential_Issues|<font color=red>Unsure about design, see Potenial Issues at bottom of page</font>]]
+
+'''[http://openwetware.org/images/9/9f/J37015_RestrictionMap.doc Restriction Map J37015]'''
+
+===Inputs/Outputs===
+
+*Part Input = aTc
+*Part Output = AHL, YFP
+
+===Comments===
+
+*From this part we produce AHL in the positive feeback fashion identical to that of the prey cell
+*This AHL can then be assayed using [[IGEM:IMPERIAL/2006/project/parts/BBa_T9002|Part T9002]]
+*YFP acts as a measure of LuxI expression, allowing us to see that LuxI is being produced in the predicted fashion
+
+==Modelling==
+
+===The Model===
+
+[http://openwetware.org/images/1/1c/J37015.xml J37015 Model]
+
+[[image:J37015_Model.JPG]]
+<br>
+===Variables & Parameters===
+<br>
+
+{| border="1" cellpadding="5"
+!<u>Variable</u> || <u>Status</u>
+|-
+|AHL
+|Measured
+|}
+
+
+{| border="1" cellpadding="5"
+!<u>Paramter</u> || <u>Status</u> || <u>Value in model</u>
+|-
+|AHL Degredation
+|Known
+|Half-Life = 24 Hours
+|-
+|AHL Vmax
+|Unknown
+|10
+|-
+|AHL Km
+|Unknown
+|1000
+|}
+
+
+{| border="1" cellpadding="5"
+!<u>Reaction</u> || <u>Kinetic Law</u>
+|-
+|GFP Production
+|AHLVmax * (AHL / (AHL + AHLKm))
+|-
+|AHL Degredation
+|AHLDegredation * AHL
+|}
+<br>
+
+===Sensitivty of Key Paramters===
+
+*AHL Vmax
+**Increase causes a proportional increase in steady-state level
+**Increase causes a decrease in exponential phase time
+*AHL Km
+**Increase causes an increase in exponentional pahse time
+**Increase causes an increase in the time taken to reach steady state
+*AHL Deg
+**Increases causes an increase in exponetional phase time
+**Increase causes a decrease in steady state value
+
+===Assumptions===
+
+*LuxR is at steady state
+**A good approximation if LuxR gene is left in an active state while cells are growing in medium
+*LuxR is at steady state and is excess of AHL
+**This is not strictly true as LuxR and AHL bind using Michaelis-Menten kinetics
+**Gives a good approximation if LuxR is in excess of AHL (ie not saturated by AHL)
+***Unlikely to occur all the time as LuxI levels increase to very high amounts
+*LuxI can be ignored
+**LuxI levels vary throughout, and it is these levels that are directly responsible for AHL production
+**This could be a major flaw in the model
+
+==Implementation==
+
+*Part is not available in its complete form.
+*Composite parts:
+**[http://parts.mit.edu/registry/index.php/Part:BBa_F2620 F2620] - 6B Plate 1
+**[http://parts.mit.edu/registry/index.php/Part:BBa_C0261 C0261] - 24A Plate 1
+**[http://parts.mit.edu/registry/index.php/Part:BBa_I13504 I13504] - 12D Plate 1
+[[image:J37015.JPG]]
+
+==Testing and Validation==
+
+=== <font color = red>Prequisites</font> ===
+
+*Ligation of parts
+*Culture of Part T9002
+
+===Protocol===
+
+See [[IGEM:IMPERIAL/Protocols/J37015|J37015 Testing Protocol]]
+
+===Equipment & Materials===
+
+*Equipment
+**Wallac Victor 3 Multi-Well Fluorimeter (or alternative apparatus)
+**Microfuge Tubes
+**Gilson Pippettes
+**37oC Shaker
+
+*Materials
+**aTc
+**E.coli Growth Medium w/Ampicilin
+**E.coli Culture Containing T9002
+**E.coli Culture Containing J37015
+
+===Predicted Experimental Results===
+
+[[image:J37015_Expected_Results.JPG]]
+
+The image shows the expected form of the results as predicted by the model. The line represents amount of AHL, and it can be seen with an exponential phase followed by a linear phase. The line eventually reaches a steady-state level.
+
+===Value Extraction===
+
+The experiment will allow us to extract the values of '''Km''' and '''Vmax''' for AHL producition.
+
+We will still have to borrow the following values from the literature:
+*AHL degredation rate 
+
+===Potential Issues===
+
+*Do we need the YFP couple?
+**For:
+***At some stage we may want to measure LuxI if we get values that differ from that of the simplified model
+***Could be used to follow AHL levels in real time if pLux activation to AHL is insensitive enough to allow YFP to build up
+***YFP could also act as an easy and quick way to tell whether our positive feedback loop has been activated while in the growth medium
+**Against:
+***It may not be necessary to measure LuxI levels, and therefore the use of a coupled reporter is greater than out needs.
+***It could be possible to measure LuxI production by assaying AHL (which we are doing anyway) to assess the state of the pLux promoter
+***Prescene of reporter could have unseen effects on AHL levels
+**'''<font color=red>Decision</font>'''
+***Decided to drop YFP couple, it was felt YFP degredation would be too slow to be able to follow the feedback loop in real time
+*Shutting off the positive feedback loop
+**In order to follow the positive feedback loop we need to be able to prevent the feedback loop from activating itself from leaky expression while growing
+**To do this a RNA switch might be used to prevent LuxI expression
+**Simple washing out of AHL may not be enough, as LuxI would need to degrade (could take a long time)
+**[http://www.nature.com/nbt/journal/v23/n3/pdf/nbt1069.pdf Ligand controlled riboregulators]
+**[http://www.biochemsoctrans.org/bst/033/0474/0330474.pdf Engineered riboswitches control gene expression by small molecules]
+
+[[IGEM:IMPERIAL/2006/project/parts/BBa_J37015/Cre-LoxP system|Cre-LoxP system]]
+
+Resolution:
+*Washing out should always be done, even if it doesn't work on its own
+*Locate chemostat to do wash out
+*We will try to implement the riboswitch
+*Use all three: riboswitch, antiswitch, and antisense
+*[http://www.checkbiotech.org/blocks/dsp_document.cfm?doc_id=8930 Article on Theophylline]

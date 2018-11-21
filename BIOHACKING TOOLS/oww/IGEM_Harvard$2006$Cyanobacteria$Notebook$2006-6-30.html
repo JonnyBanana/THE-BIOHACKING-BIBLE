@@ -1,0 +1,65 @@
+{{IGEM:/Harvard/2006/Cyanobacteria}}
+
+<div class="tabs">
+<ul>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-6-29 | Previous Entry]]</li>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-6-30 | Current Entry]]</li>
+<li>[[IGEM:Harvard/2006/Cyanobacteria/Notebook/2006-7-5 | Next Entry]]</li>
+</ul>
+</div>
+<br style="clear:both">
+<div class="tabcontent">
+
+==Incubator status==
+*'''Removed'''
+**Dried clean agar plate with the lid slightly open
+
+==Two problems==
+Today we realized that there are two major obstacles to our project:
+
+(Note: when I refer to ''KaiABC'', I mean both the ''KaiA'' and ''KaiBC'' operons. When I use KaiABC without italics, I mean the three proteins KaiA, KaiB, and KaiC).
+
+===Synchronization problem===
+After inserting the ''KaiABC'' genes into ''E. coli'', we will measure oscillation by doing Western blots of our colonies and observing the relative amounts of phosphorylated versus unphosphorylated KaiC (recall that the phosphorylation state of KaiC is what oscillates when KaiA, KaiB, and KaiC are mixed ''in vitro'').
+*This measurement must be done on groups of cells, since individual cells don't have enough protein to measure
+*This measurement is destructive (we must extract the protein from the cells)
+These two points mean that we cannot observe a single cell over a period of time. Instead, we must take aliquots of groups of cells at different timepoints. Thus we can only observe group oscillation.
+
+Nick raised a big problem with our project: how will we synchronize our ''E. coli'' clocks? ''E. coli'' don't have the same light-sensing apparatus as cyanobacteria, so light/dark entrainment is unlikely to work (and the KaiABC proteins do not respond directly to light as far as we know). If our cells are out of phase with each other, we won't be able to detect any group oscillation in KaiC phosophorylation, even if the oscillator works perfectly in individual cells. The group's level of phosphorylated KaiC would be more or less a flat line, since for every cell at a peak, there would probably be another cell at a trough.
+
+===Generation problem===
+There is a second related problem: will our ''E. coli'' preserve clock phases between mothers and daughters? Cyanobacteria preserve their clock phase during cell division, so that colonies which were entrained at the same time will still be synchronized after several generations. ''E. coli'' doesn't have any special mechanisms to preserve phase, so daughters might end up at different phases from their mothers after division. In that case, even if we solve the synchronization problem, our cells will still desynchronize after reproducing.
+
+However, it's not clear why the phase should change between mothers and daughters, since the only elements of the clock are the KaiABC proteins, whose interaction in the cytoplasm should not be reset or otherwise phase-shifted by cell division.
+
+==Solutions==
+===Proposed solution #1===
+One solution is to put the ''KaiABC'' genes under a temperature-sensitive promoter. These genes would be unexpressed in normal conditions, but expressed at high temperature. We could use a pulse of high temperature (a heat shock) to stimulate production of KaiABC for a brief period, then lower the temperature to stop production. Ideally this would synchronize all the cells by causing them to begin translation at the same time. We could also mitigate the generation problem by starving the cells after heat shocking them, to slow down their rate of reproduction.
+
+With this solution, the concentration of KaiABC in each cell will grow more and more dilute, since no new KaiABC will be produced after the beginning of the experiment. The proteins will also degrade over time (KaiC's half life in cyanobacteria is 10 hours --'''citation?'''). Thus, the oscillator's period will lengthen over time and eventually flatline. Even so, it would be a big achievement to observe at least a rise + all or a fall + rise (one semicycle), as this would be evidence that our oscillator worked.
+
+===Proposed solution #2===
+We chose temperature as a trigger in solution #1 because it can be raised and lowered quickly. However, we may want to express ''KaiABC'' continuously after a definite starting point (think of a ray versus a point). In that case, we could use a different promoter that responds to a chemical signal (e.g. LuxR). We would achieve synchronization by controlling the exogenous chemical, plus we would not have the same problems with dilution and degradation of KaiABC as solution #1, since our cells would be producing KaiABC continuously.
+
+The obvious problem with this solution is that constant production of KaiABC may interfere with the clock in unknown ways (in cyanobacteria, ''KaiA'' expression remains constant while ''KaiBC'' oscillates on a circadian rhythm). At a glance, it seems that '''constant expression of ''KaiA'' and ''KaiBC'' should maintain a constant ratio between the KaiA, KaiB, and KaiC proteins.''' At least, I can't think of any differential effects which would not also be present in solution #1. Since the KaiABC clock works even if this ratio remains static (see the ''in vitro'' paper), it seems like this solution could work.
+
+One possible problem is that, if ''KaiABC'' expression temporarily ceases during cell division, and cell division is unsynchronized, then the KaiABC clock might also become desynchronized after several generations, since production of KaiABC will drop at random intervals for different cells. However, I think this is only a problem if the levels of KaiABC drop so low during cell division that the clock phase changes.
+
+===Proposed solution #3===
+The third solution is to simply forget about reconstituting the cyanobacteria clock in ''E. coli''. Instead, we could use cyanobacteria as an external clock. This would require modifying cyanobacteria to produce a messenger chemical (e.g. AHL) in a circadian rhythm. We would also have to modify ''E. coli'' to respond to this chemical.
+
+The latter step has already been done succesfully (see [[IGEM:Harvard/2006/Brainstorming Papers - Jeffrey|here]]; also, there are BioBricks for LuxI and LuxR in the registry). However, we would probably be treading new ground by trying to introduce quorum sensing to cyanobacteria ('''Note: need to do more research on this'''). We would also have to figure out a way to share media between cyanobacteria and ''E. coli'' so the messenger chemical can diffuse between them. All of this adds up to a signficant amount of work that may not see results by the end of the summer.
+
+The potential rewards would be great, though, and probably higher than what we would achieve by reconstituting the KaiABC clock in ''E. coli'', since we already know how to make ''E. coli'' react to quorum sensing signals. Even if solution #1 or solution #2 worked, we would have further practical difficulties-- see the next section.
+
+==Practical application==
+Suppose that solution #1 or solution #2 work, and we observe oscillation in KaiC phosphorylation in ''E. coli''-- what then? We still don't have a way of linking the KaiABC clock output to anything useful in ''E. coli.'' We will do more research on cyanobacteria sigma factors to see if it's feasible to use the KaiABC clock to regulate gene expression in ''E. coli.'' 
+
+Note that, if we could link the output of the clock to gene regulation, we could also solve our synchronization problem via selection (e.g. select for all the bacteria of the same phase by linking antibiotic resistance to the circadian oscillator).
+
+==Reading==
+The cyano team should read these three papers:
+
+#[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=Abstract&list_uids=8985018&query_hl=2&itool=pubmed_docsum Circadian rhythms in rapidly dividing cyanobacteria], Kondo ''et al.'', 1997
+#[http://jb.asm.org.ezp1.harvard.edu/cgi/content/full/183/8/2439 Independence of Circadian Timing from Cell Division in Cyanobacteria], Mori and Johnson, 2000
+#[http://jbr.sagepub.com.ezp1.harvard.edu/cgi/reprint/20/3/257 Article on synchronization]

@@ -1,0 +1,123 @@
+==Materials==
+LYSIS BUFFER<br>
+25mM Tris pH 7.5<br>
+300mM NaCl<br>
+1mM EDTA<br>
+2mM DTT<br>
+<br>
+GLUTATHIONE ELUTION BUFFER<br>
+50mM Tris pH 8<br>
+3.08mg/mL reduced glutathione<br>
+(may want to add salt for protein stabilization)<br>
+<br>
+10X PRESCISSION PROTEASE CLEAVAGE BUFFER<br>
+500mM Tris pH 7<br>
+1.5M NaCl<br>
+10mM EDTA<br>
+10mM DTT<br>
+0.1% Triton X-100<br>
+ (I no longer put DTT in this buffer, as I'm not sure it lasts with the buffer being stored at 4˚.  Just add fresh DTT to cleavage reaction.)<br>
+<br>
+S BUFFER A<br>
+10mM MES pH 6.5<br>
+100mM NaCl<br>
+1mM EDTA<br>
+filter with 0.22µm filter<br>
+2mM DTT<br>
+<br>
+S BUFFER B<br>
+10mM MES pH 6.5<br>
+1M NaCl<br>
+1mM EDTA<br>
+filter with 0.22µm filter<br>
+2mM DTT<br>
+<br>
+DIALYSIS/STORAGE BUFFER<br>
+25mM Tris pH 7.5<br>
+300mM NaCl<br>
+1mM DTT<br>
+15% glycerol<br>
+<br>
+==Methods==
+
+1.	Start a 50mL overnight culture from frozen stock of E.coli carrying the protein expression plasmid.  (Scrape a bit out of the frozen stock with a toothpick and drop toothpick into culture.)<br>
+a.	50mL 2X YT broth<br>
+b.	appropriate antibiotics as needed<br>
+i.	Ampicillin (2X) 100µg/mL<br>
+c.	37˚ overnight with shaking (~200-225rpm)<br>
+<br>
+2.	Scale-up: 1 - 2L<br>
+a.	Fernbach flasks preferred<br>
+b.	Per 1L 2X YT broth, add antibiotics as above<br>
+c.	Inoculate 10-25mL of the overnight culture into each L (same volume for each)<br>
+d.	Grow at 37˚ with shaking to OD600 of ~1.0<br>
+e.	Take a 100µL sample of uninduced cells, spin down, retain cell pellet at -20˚<br>
+<br>
+3.	Induce protein expression using Lac promoter<br>
+a.	Per liter of culture, add IPTG to final concentration of 0.25-1mM<br>
+b.	Continue to incubate at 37˚ for 3 hours<br>
+c.	Take 100µL sample of induced cells, save cell pellet at -20<br>
+<br>
+4.	Pellet cells: spin in giant rotor at 5000rpm for ten minutes.  Pour off media, scrape cell pellets into a 50mL conical tube, and save pellet at -20˚ overnight.<br>
+
+5.	Resuspend pellet in lysis buffer (up to 35-45mL on top of pellet in tube).  This can be done on the rotator at 4˚C and/or with vortexing, etc.<br>
+a.	If using already made buffer, filter anew and add fresh DTT to 2mM<br>
+
+6.	Sonication: power setting 5-7, 3-5 x 30sec bursts<br>
+a.	Transfer cell suspension to small beaker.<br>
+b.	Keep on ice and check between bursts to keep from overheating.<br>
+c.	Tune sonicator according to protocol<br>
+<br>
+7.	Pellet insoluble cell debris: spin in JA-17 rotor at 20,000xg (12,000rpm) for 30 minutes.<br>
+a.	Sample: 3µL of extract (supernatant) + 12uL H2O -> -20<br>
+b.	Sample: pellet (scrape a little into 12µL H2O) -> -20<br>
+c.	Save pellet(s) at 4˚ until gel has been run<br>
+<br>
+8.	Prepare GST beads by washing with lysis buffer.<br>
+a.	7.5mL slurry glutathione sepharose beads (Amersham) (shake to resuspend) (5mL beads)<br>
+b.	to 35-45mL with lysis buffer<br>
+c.	spin in cooled clinical centrifuge (molbio centrifuge room) 1000rpm, 3min<br>
+d.	Discard supernatant<br>
+e.	Repeat for total of 3 washes<br>
+<br>
+9.	Bind protein to GST beads: add extract from step 7 to washed beads and incubate on rotator at 4˚ for 1 hour.<br>
+<br>
+10.	Collect unbound proteins by spinning in clinical centrifuge for 4min at 1000rpm.  Tranfer supernatant (unbound) to new tube and save at 4˚ until gel has been run.<br>
+a.	Wash beads 3x with lysis buffer.<br>
+b.	Sample: 3µL unbound + 12uL H2O<br>
+c.	Sample: 6uL bound beads + 6uL H2O<br>
+<br>
+11.	Elute fusion protein by competition with reduced glutathione<br>
+a.	Add 10mL elution buffer to beads<br>
+b.	Room temp shaker 10min<br>
+c.	Spin down beads 1000rpm 4min<br>
+d.	Retain supernatant (eluate) in new tube<br>
+e.	Sample: eluate 10µL<br>
+f.	Repeat for total of 3 elutions<br>
+g.	Sample: 6uL eluted beads + 6uL H2O<br>
+h.	Save beads at 4˚ for regeneration<br>
+<br>
+12.	Protease cleavage of GST fusion protein: Add 10X cleavage buffer to 1X final concentration + DTT to 1mM + 25µL (aliquot) of Prescission Protease.  Rotator 4˚ overnight.  Take a 10µL sample after cleavage.<br>
+<br>
+13.	Gel of results: 10% SDS-PAGE<br>
+a.	Add dye to each sample (3µL of 5X dye or 10µL of 2X)<br>
+b.	Heat 15 min at 100˚ (don’t let them boil dry!)<br>
+c.	Run gel 200-250V 40-50 min (until dye is just leaving gel)<br>
+d.	Stain with Coomassie<br>
+e.	If protein is soluble and was cleaved well from the GST, move on to S-column purification!<br>
+<br>
+14.	 S-column purification<br>
+a.	Filter cleaved protein with 0.45µm, then 0.2µm syringe filter.<br>
+b.	Transfer to Superloop, bring up to 50mL with S buffer A<br>
+c.	Run on Äkta, mono S column (Andy: monoS32 p14 change to 1ml from 1.5ml)<br>
+d.	Collect flow-through during loading and column rinse<br>
+e.	Run 10% SDS-PAGE gel of load, flow-through, peak fractions<br>
+i.	Load/ft samples: 10µL + 2µL 5X dye<br>
+ii.	Fraction samples: 6µL + 6µL 2X dye<br>
+<br>
+15.	Concentration<br>
+a.	Pool best fractions (cleanest/most concentrated).  Dilute 1:1 with S buffer A (1mL buffer for each 1mL fraction). [I do this to decrease the salt concentration of the fractions—h65 hates high salt when the protein concentration is high, and it elutes from the S column at ~700mM NaCl.]<br>
+b.	Concentrate in Centricon YM-30 until you can't stand it any more.<br>
+c.	Measure protein concentration by Bradford / Bio-Rad assay<br>
+<br>
+16.	Dialysis: overnight at 4˚C (note: h65 precipitates in lower salt!).  Measure protein concentration before distributing into aliquots.  Freeze aliquots in N2(l), and store at –80˚.<br>

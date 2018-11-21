@@ -1,0 +1,44 @@
+{{Beauchamp Navigation Bar}}
+<b>Electrical Stimulation</b><br>
+1. Select "Microstim Staircase" from available KNOT plugins.<br>
+2. On toolbar, open Channel Settings, Stimulus Settings, Staircase Settings, and Behavior Settings windows.<br>
+3. Enter the names of all Channels.<br>
+4. Check to see that the following fields in Stimulus Settings have default values specified below:<br>
+:a. Stimulation: Electrical<br>
+:b. Pre-Interval (ms): 250 (period before Interval One)<br>
+:c. Interval (ms): 300 (length of each interval)<br>
+:d. Inter-interval (ms): 1000 (period between Interval One and Interval Two)<br>
+:e. Post-interval (ms): 50 (period after Interval Two)<br>
+:f. Select Electrical<br>
+::i. Indicate "Max. Current (uA)" and "Min. Current (uA)."<br>
+::ii. Indicate number of "Currents."<br>
+::iii. Frequency (Hz): 200<br>
+::iv. Pulse Width (uS): 200 <br>
+::v. Indicate "uA per V output" (If range max is below 1000 uA, use 100 uA per V.  If range max is above 1000 uA, use 1000 uA per V.)<br>
+::vi. DA Channel Out: 0<br>
+::vii. Marker Pulses Bit: 1<br>
+::viii. Gate Bit: 0<br>
+::ix. Check "TTL Marker Pulses." <br>
+::x. Check "TTL Gate." <br>
+Values in other fields will not matter for close-eyed detection task.<br>
+5. Check to see that the following fields in Staircase Settings have default values specified below:<br>
+:a. Trial Limit: 10000 (This is the maximum number of tries the computer will make to determine threshold.)<br>
+:b. Test Jitter (%): 15% (This is the amount by which the computer will jitter the number it selects from the Gaussian around its threshold estimate to deliver.  Ultimately, it will choose to deliver the current level from the restricted range we provide that is closest to this jittered value.)<br>
+:c. Select "Electrical."<br>
+:d. Guess Threshold: 1500<br>
+:e. Smallest Intensity Step: 100 (If this is too small, the computer may get stuck in a local minimum.  If it is too large, the computer will never deliver currents near threshold.)<br>
+:f. STD of Threshold: 1500<br>
+6. Check to see that the following fields in Behavior Settings have default values specified below:<br>
+:a. Blocks: 20<br>
+:b. Intertrial (ms): 2000<br>
+:c. Response Time (ms): 1000 (This can be quicker, if the patient is fast.) <br>
+:d. Too Fast (ms): 100 (This is the window after Post-Interval during which the subject cannot respond.)<br>
+:e. Tries: 1<br> 
+Values in other fields will not matter for close-eyed detection task.<br>
+7. On toolbar, select File: Record Data to File to record data.  Press Run.  20 blocks should take about 20 minutes.   <br>
+8. On toolbar, open Windows: Behavior.  Keep track of "Number of Trials" in particular.  We want at least 10 repetitions at current levels producing 50% correct and 100% correct with several points along the rising edge of the psychometric function.  <br>
+9. If the computer is not delivering currents optimally to reconstruct a good behavioral function, press Stop and then press "Choose Constant Currents" in the Stimulus Settings window.  Check the current levels desired and the number of trials for each (bearing in mind how many repetitions have already been delivered for each level selected).  Press OK.  Check "Constant Currents."  Now, press Run again.<br>
+
+ 
+Back to [[Beauchamp:Setup Apparatus|Setup Apparatus]].<br>
+On to [[Beauchamp:Selectivity|Selectivity]]. <br>

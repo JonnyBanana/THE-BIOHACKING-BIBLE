@@ -1,0 +1,23 @@
+==Useful links==
+*http://www.probes.com/handbook/sections/0801.html
+*http://www.probes.com/handbook/sections/1502.html
+*[http://www.sigmaaldrich.com/Area_of_Interest/Life_Science/Molecular_Biology/Nucleic_Acid_Electrophoresis/Product_Lines/Dyes_and_Stains.html Dyes, Loading Buffers, and Nucleic Acid Gel Stains from Sigma-Aldrich]
+
+==Notes==
+
+===Live cell stains===
+
+There don't appear to be many dyes that selectively stain live cells.  When people want to detect live cells, I think that what they do is the following:  "The principle of this approach is to use simultaneously a permeant (SYBR Green [more recently SYTO green]; Molecular Probes) and an impermeant (propidium iodide) probe and to take advantage of the energy transfer which occurs between them when both probes are staining nucleic acids. A full quenching of the permeant probe fluorescence by the impermeant probe will point to cells with a compromised membrane, a partial quenching will indicate cells with a slightly damaged membrane, and a lack of quenching will characterize intact membrane cells identified as viable."   From Applied and Environmental Microbiology, October 2001, p. 4662-4670, Vol. 67, No. 10.  So most stains that people bill as live cell stains are only membrane permeant stains and therefore stain both live and dead cells.
+
+There a number of dyes from [http://probes.invitrogen.com/handbook/sections/1503.html Molecular Probes] that are supposedly pretty good at staining live cells a particular color.  
+For example, their BacLight Bacterial Membrane Potential kit uses a dye DiOC2 that is green in all cells, but turns red upon concentration at the cell membrane if there is an active proton gradient.  Also, there are dyes that measure redox potential of live cells through reduction of [http://probes.invitrogen.com/servlets/product?item=34951 C12-resazurin] --[[User:Skosuri|Sri Kosuri]] 14:29, 29 Apr 2005 (EDT)
+
+'''Question'''
+
+I am interesting in selectively staining live E coli cells for flow cytometry experiments. Essentially, the experiment I would like to carry out is to be able to simultaneously detect live E coli cells and measure YFP expression from these cells (where not all live cells will necessarily be producing YFP). So I need a stain that preferentially stains live cells and is compatible with YFP (ie has a different emission spectra so it can be measured simultaneously).
+
+From what I have read one of your SYTO dyes would be best. Your viability kits use SYTO 9 but this isn't compatible with YFP. Is SYTO 9 the best for visualizing live cells? Are there any others you would recommend?
+
+'''Answer from Invitrogen'''
+
+The Orange or Red SYTO dyes may be an option for you. However none of them are live-cell only stains. What happens is these dyes are a total cell stain, and then you combine them with a dead-cell stain to determine viability. If you are not concerned with these, I would consider the red dye to co-localize with your YFP, this will minimize any signal confusion you would get with the Green or Orange versions. If your Flow Cytometer only has a 488 nm laser, than you will have trouble, because neither the Orange or Red ones have very good 488 nm excitation.

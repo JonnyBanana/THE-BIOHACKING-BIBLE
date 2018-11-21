@@ -1,0 +1,50 @@
+<div class="tabs-blue">
+<ul>
+<li id="current">[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Prey_Construct |Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/popsblocker/Design | Design]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/popsblocker/Modelling| Modelling]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/popsblocker/Implementation| Implementation]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/popsblocker/Testing| Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+===Cre-LoxP System===
+
+==Motivations==
+
+*We wanted a way of controlling the activation of the positive-feedback loop in our predator-prey based oscillator. The idea was to use some kind of switch, and seeing as the available switches in the registry all had certain drawbacks, we went about designing our own and what we came up with was the Cre-LoxP system
+*The use of Cre recombinase to excise regions of DNA between two loxP sites could be incorporated into part [http://parts.mit.edu/registry/index.php?title=Part:BBa_J37015 J37015]. Our aim is to insert two loxP sites into this part, which, when in place, would block the synthesis of any genes downstream of it, and when removed would allow their synthesis. Thus the Cre-loxP system would effectively act as a switch/Pops blocker controlled by the activity of the promoter in front of the Cre enzyme.
+   
+*In theory, using Cre recombinase as a switch/Pops blocker appears to be a very efficient and solid method.
+
+==Part interface==
+
+
+{| border="0" width="100% align="center"
+|-
+|
+{| border="1" cellpadding="15" width="100%"
+|- 
+! style="background:#66CC99"| INPUTS !!style="background:#FF3333"| OUTPUTS 
+|-
+| Cre ||rowspan = "2"| Reporter
+|-
+| Pops 
+|}
+||
+[[Image:IGEM_IMPERIAL_Methodology_Specifications_Cre.PNG|right|350px]]
+|}
+
+<html>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1999441; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="18996820"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c19.statcounter.com/counter.php?sc_project=1999441&amp;java=0&amp;security=18996820&amp;invisible=1" alt="website statistics" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</html>

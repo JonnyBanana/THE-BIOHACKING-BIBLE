@@ -1,0 +1,162 @@
+Script in progress:
+
+<pre>
+#!/usr/bin/env python
+
+import os
+from Bio import GenBank, Seq, Clustalw, SeqRecord, SubsMat
+from Bio.Align import AlignInfo
+from Bio.Align.FormatConvert import FormatConverter
+from Bio.Alphabet import IUPAC
+from Bio.Clustalw import MultipleAlignCL
+from Bio.Seq import Seq, translate
+#from Bio.Tools import Transcribe
+from sets import Set
+
+cline = Clustalw.MultipleAlignCL(os.path.join(os.curdir, 'apoe.fasta'))
+cline.set_output('test.aln')
+alignment = Clustalw.do_alignment(cline)
+
+summary_align = AlignInfo.SummaryInfo(alignment)  
+
+# This segment determines if the error is a mutation or deletion
+
+seq = []
+for i in range(alignment.get_alignment_length()):
+    col = alignment.get_column(i)
+    s = Set() # create a new set
+    for c in range(len(col)):
+        s.add(col[c]) # add each column element to the set
+        if c == 0:
+            seq.append(col[c])
+    if '-' in s: # determine if there is a deletion
+        print 'Deletion at %d: %s' %(i, col)
+    else:
+        if len(s) > 1: # multiple elements in s indicate a mutation
+            print 'Point mutation at %d: %s' %(i, col)
+
+f53h1 = "5'->3' Frame 1: Start codon position:" # frame 5 - 3 header
+f53h2 = "5'->3' Frame 2: Start codon position:" # frame 5 - 3 header
+f53h3 = "5'->3' Frame 3: Start codon position:" # frame 5 - 3 header
+f35h1 = "3'->5' Frame 1: Start codon position:" # frame 5 - 3 header
+f35h2 = "3'->5' Frame 2: Start codon position:" # frame 5 - 3 header
+f35h3 = "3'->5' Frame 3: Start codon position:" # frame 5 - 3 header
+scph = 'Stop codon position:'
+tlh = 'Transcript length:'
+length = 1
+
+# find start and stop codons
+count = 0
+for i in range(len(seq)):
+    if seq[i] == 'A' and seq[i+1] == 'T' and seq[i+2] == 'G' and i%3 == 0:
+        count = 1
+        for j in range(i+2, len(seq)):
+            if seq[j] == 'T' and seq[j+1] == 'A' and seq[j+2] == 'A' and j%3 == 0:
+                    break
+            elif seq[j] == 'T' and seq[j+1] == 'A' and seq[j+2] == 'G' and j%3 == 0:
+                    break
+            elif seq[j] == 'T' and seq[j+1] == 'G' and seq[j+2] == 'A' and j%3 == 0:
+                    break
+        if length < j - i:
+            length = j - i
+            print f53h1, i, scph, j, tlh, j - i, '(**using this one**)'
+        elif length > j - i:
+            print f53h1, i, scph, j, tlh, j - i
+if count == 0:
+    print f53h1, 'NA', scph, 'NA', tlh, 'NA'
+
+count = 0
+for i in range(len(seq)):
+    if seq[i] == 'A' and seq[i+1] == 'T' and seq[i+2] == 'G' and i%3 == 1:
+        count = 1
+        for j in range(i+2, len(seq)):
+            if seq[j] == 'T' and seq[j+1] == 'A' and seq[j+2] == 'A' and j%3 == 1:
+                    break
+            elif seq[j] == 'T' and seq[j+1] == 'A' and seq[j+2] == 'G' and j%3 == 1:
+                    break
+            elif seq[j] == 'T' and seq[j+1] == 'G' and seq[j+2] == 'A' and j%3 == 1:
+                    break
+        if length < j - i:
+            length = j - i
+            print f53h2, i, scph, j, tlh, j - i, '(**using this one, disregard previous**)'
+        elif length > j - i:
+            print f53h2, i, scph, j, tlh, j - i
+if count == 0:
+    print f53h2, 'NA', scph, 'NA', tlh, 'NA'
+
+count = 0
+for i in range(len(seq)):
+    if seq[i] == 'A' and seq[i+1] == 'T' and seq[i+2] == 'G' and i%3 == 2:
+        count = 1
+        for j in range(i+2, len(seq)):
+            if seq[j] == 'T' and seq[j+1] == 'A' and seq[j+2] == 'A' and j%3 == 2:
+                    break
+            elif seq[j] == 'T' and seq[j+1] == 'A' and seq[j+2] == 'G' and j%3 == 2:
+                    break
+            elif seq[j] == 'T' and seq[j+1] == 'G' and seq[j+2] == 'A' and j%3 == 2:
+                    break
+        if length < j - i:
+            length = j - i
+            print f53h3, i, scph, j, tlh, j - i, '(**using this one, disregard previous**)'
+        elif length > j - i:
+            print f53h3, i, scph, j, tlh, j - i
+if count == 0:
+    print f53h3, 'NA', scph, 'NA', tlh, 'NA'
+
+#3-5            
+count = 0
+for i in range(len(seq)):
+    if seq[i] == 'G' and seq[i+1] == 'T' and seq[i+2] == 'A' and i%3 == 0:
+        count = 1
+        for j in range(0, i-2):
+            if seq[j] == 'A' and seq[j+1] == 'A' and seq[j+2] == 'T':
+                    break
+            if seq[j] == 'A' and seq[j+1] == 'G' and seq[j+2] == 'T':
+                    break
+            if seq[j] == 'G' and seq[j+1] == 'A' and seq[j+2] == 'T':
+                    break
+        if length < i - j:
+            length = i - j
+            print f35h1, i, scph, j, tlh, i - j, '(**using this one, disregard previous**)'
+        elif length > j - i:
+            print f35h1, i, scph, j, tlh, i - j
+if count == 0:
+    print f35h1, 'NA', scph, 'NA', tlh, 'NA'
+    
+count = 0
+for i in range(len(seq)):
+    if seq[i] == 'G' and seq[i+1] == 'T' and seq[i+2] == 'A' and i%3 == 1:
+        count = 1
+        for j in range(0, i-2):
+            if seq[j] == 'A' and seq[j+1] == 'A' and seq[j+2] == 'T':
+                    break
+            if seq[j] == 'A' and seq[j+1] == 'G' and seq[j+2] == 'T':
+                    break
+            if seq[j] == 'G' and seq[j+1] == 'A' and seq[j+2] == 'T':
+                    break
+        if length < i - j:
+            length = i - j
+            print f35h2, i, scph, j, tlh, i - j, '(**using this one, disregard previous**)'
+        elif length > j - i:
+            print f35h2, i, scph, j, tlh, i - j
+if count == 0:
+    print f35h2, 'NA', scph, 'NA', tlh, 'NA'
+
+count = 0
+for i in range(len(seq)):
+    if seq[i] == 'G' and seq[i+1] == 'T' and seq[i+2] == 'A' and i%3 == 2:
+        count = 1
+        for j in range(0, i-2):
+            if seq[j] == 'A' and seq[j+1] == 'A' and seq[j+2] == 'T':
+                    break
+            if seq[j] == 'A' and seq[j+1] == 'G' and seq[j+2] == 'T':
+                    break
+            if seq[j] == 'G' and seq[j+1] == 'A' and seq[j+2] == 'T':
+                    break
+        if length < i - j:
+            length = i - j
+            print f35h3, i, scph, j, tlh, i - j, '(**using this one, disregard previous**)'
+        elif length > j - i:
+            print f35h3, i, scph, j, tlh, i - j            
+if count == 0:
+    print f35h3, 'NA', scph, 'NA', tlh, 'NA'

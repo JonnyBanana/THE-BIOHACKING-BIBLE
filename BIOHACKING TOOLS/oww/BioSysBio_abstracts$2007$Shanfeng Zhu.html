@@ -1,0 +1,297 @@
+* Add or delete the sections that you require.
+
+==Predicting Implicit Associated Cancer Genes from OMIM and MEDLINE by a New Probabilistic Model==
+'''Authors: '''Shanfeng Zhu, Yasushi Okuno, Gozoh Tsujimoto and Hiroshi Mamitsuka <br> 
+'''Affiliations:''' Kyoto University, Japan  <br>
+'''Contact:'''email: zhusf (at) scl.kyoto-u.ac.jp <br>
+'''Keywords:''' 'Cancer gene discovery' 'Machine Learning' 'Text Mining' 'Probabilistic model' 
+
+[[Category:BioSysBio Keywords add_keyword_1]] 
+[[Category:BioSysBio Keywords add_keyword_2]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+==Abstract==
+Since the co-occurrence of biological entities has been shown to be a
+popular and efficient technique for identifying biological
+relationships in biomedical text mining, we extracted cancer-gene and
+cancer-cancer co-occurrence data from OMIM by a software tool CGMIM,
+and gene-gene co-occurrence data from MEDLINE. A new probabilistic
+model, which we call MAM, was employed to find implicit associated
+cancer genes by mining cancer gene co-occurrece data from OMIM and
+MEDLINE. Through a series of cross-validation experiments, the accuracy of
+predicting cancer-associated genes was shown to be significantly
+improved by incorporating gene-gene co-occurrence pairs from MEDLINE
+into cancer-gene co-occurrence pairs in OMIM, especially in the case
+of a small size of training data. 
+Furthermore, after training the MAM with all three types of
+co-occurrence data, 
+some implicit associated cancer genes were predcited. The detailed
+result was presented on line
+(http://www.bic.kyoto-u.ac.jp/pathway/zhusf/CancerInformatics/Supplemental2006.html)
+for the reference of interested researchers and further validation by
+biologists.
+
+==Introduction==
+Discovering cancer associated genes can facilitate the understanding
+of tumor pathogenesis, the medical diagnoses and the treatment of
+patients. In addition to cytogenetic and molecular genetic techniques,
+we can resort to bioinformatics approaches to discover cancer
+associated genes by analyzing high-throughput biological data, such as
+genomics, transcriptomics and metabonomics data [1]. Here we mined OMIM
+and MEDLINE to discover implicitly associated cancer genes by applying
+a new probabilistic model, mixture aspect model (MAM) [2], on cancer
+gene co-occurrence data in OMIM and MEDLINE. Analyzing the
+co-occurrence of biological entities in the literature is a simple,
+comprehensive and popular technique to characterize the association of
+these entities [3]. MAM was proposed by us to mine implict "chemical
+compound-gene" relations by integrating three types of co-occurrence
+data (compound-compound, gene-gene and compound-gene) in the
+literature [2]. It was extended from a clssical probabilistic latent
+variable model, which is generally called aspect model (AM), which has
+wide applications in information retrieval and collaborative filtering
+in E-commerce [4]. 
+The main advantage of MAM is the ability of integrating different
+type of co-occurrence data from heterogenous data sources. MAM was
+first estimated by an EM algorithm to fit the existing co-occurrence data
+of cancer and gene, and then was used to predict the likelihood of
+the association of an unobserved pair of a cancer and a gene. Through
+cross-validation experiments, the accuracy of predicting associated
+cancer genes was shown to be improved by incorporating gene-gene
+co-occurrence pairs from MEDLINE into cancer-gene co-occurrence pairs in
+OMIM. Furthermore, some implict associated cancer genes were predcited
+and analyzed preliminarily. The result was presented on line for
+further validation by biologists.
+
+==Data==
+We extracted cancer-gene and cancer-cancer co-occurrence pairs from
+OMIM, a human curated knowledgebase on human genes and inherited
+diseases. A software tool CGMIM was used to extract the description
+section of OMIM to obain cancers and assocated genes [5]. This software
+maps genetic disorders into 21 different types of cancers. The
+gene-gene co-occurrence pairs were extracted from MEDLINE. To avoid
+the difficulty of recognizing gene names, we extracted a human curated
+database, Locuslink, to obtain a subset of high quality MEDLINE records,
+where we obtained gene-gene co-occurrence data. The size of
+co-occurrence datasets is shown in Table 1.  
+
+<blockquote style="background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;">
+{| border="1"
+|+ Table 1: The size of co-occurrence datasets
+! Item !! Gene type !! Gene-Gene !! Cancer type !! Cancer-Cancer !! Cancer-Gene
+|-
+! Size
+| 2,017 || 3,118 || 21 || 206 || 3,743|| 
+|}
+</blockquote>
+
+==Results== 
+
+We evaluated the performance of MAM by cross-validation on predicting
+associated cancer-gene pairs. In addition to training AM on
+cancer-gene pairs, we trained three other types of MAM by
+incorporating different type of co-occurrence data. 2MAM (CG+CC) and
+2MAM (CG+GG) were built by adding cancer-cancer pairs and gene-gene
+pairs, respectively. In addition, 3MAM was built by incorporating all
+three types of co-occurrence data. To explore the effect of the size
+of the training data set on the performance of the probabilistic
+model, we set three different ratios of the size of training to test
+datasets, 3:1, 1:1 and 1:3, in the cross-validation experiment. The
+negative test examples were randomly generated, and it was assured that no
+negative test example would appear in either training or postive test
+data. We carried out 50 rounds of this cross-validation to reduce
+possible biases occurring in only a few rounds and averaged the results
+obtained. After estimating the probability parameters of a
+probabilistic model from training data, we computed the likelihood of
+each cancer-gene pair in test data and ranked all pairs according to
+their likelihoods. Then it would be evaluated by AUC (Area Under the
+ROC curve). Please note that the larger the value of AUC, the better
+the performance of the model. The t-value was also computed to check
+the statistical significance of the different performance by two
+models. Here if the t-value is greater than 3.50 (2.36), the difference 
+is more than 99.9% (98%) statistically significant. As illustrated in
+Table 2, 3MAM outperforms all other models statistically signficant in
+all cases. The improvement over AM ranges from 2 to 9%, and is
+especially significant in the case of a small size of training data. 
+ 
+<blockquote style="background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;">
+{| border="1"
+|+ Table 2: AUCs and t-values obtained in the cross-validation experiment on cancer-gene association prediction.
+! Model !!  The ratio || of training|| to test data
+|-
+!  !!   3:1 ||  1:1 || 1:3
+|-
+! 3MAM(CG+CC+GG)
+| '''76.1''' || '''74.6''' || '''73.2'''|| 
+|-
+! 2MAM(CG+CC)
+| 75.8(2.56) || 74.2(2.44) || 71.8(12.9) ||
+|-
+! 2MAM(CG+GG)
+| 73.9(17.2) || 71.4(22.5) || 68.3(38.0) ||
+|-
+! AM(CG)
+| 74.1(14.7) || 70.5(26.3) || 64.9(55.1) ||
+|}
+</blockquote>
+
+After training 3MAM with all three types of co-occurrence data, we can
+compute the likelihood of all other cancer-gene pairs that are unknown
+in the OMIM. From top 20 implicit associate cancer gene pairs we found
+some famous oncogenes, such as BCL2, TP53 and TNF, which lead to
+an unsurprising result. Thus we further calculated the likelihood of a
+gene associated with a specific cancer. For each type of cancer, we
+present the top implicit gene in the Table 3. One interesting result
+is the top implict assocated gene specific to the colorectal cancer,
+CYP1A1, which was already verfied by Hou et al [6].
+More detailed results can be accessed from
+http://www.bic.kyoto-u.ac.jp/pathway/zhusf/CancerInformatics/Supplemental2006.html 
+
+<blockquote style="background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;">
+{| border="1"
+|+ Table 3: For each type of cancer, the top implicit associated gene specific to this cancer by 3MAM
+! Cancer Type  !!  Gene Name
+|-
+! BLADDER 
+| GAGE6 
+|-
+! BRAIN 
+| MMP17 
+|-
+! BREAST 
+| ZAP70 
+|-
+! CERVIX 
+| PTGER1
+|-
+! COLORECTAL 
+| CYP1A1
+|-
+! ESOPHAGUS 
+| TMEM4
+|-
+! KIDNEY 
+| SDHD
+|-
+! LARYNX 
+| TPR 
+|-
+! LEUKEMIA 
+| NOTCH4
+|-
+! LUNG 
+| CST6
+|-
+! LYMPHOMA 
+| LMO1
+|-
+! MELANOMA 
+| MYO5A 
+|-
+! MYELOMA 
+| PDCD2 
+|-
+! ORAL 
+| FOXO1A
+|-
+! OVARY 
+| INHBB 
+|-
+! PANCREAS 
+| NR5A2
+|-
+! PROSTATE 
+| KLK10
+|-
+! STOMACH 
+| FUT6
+|-
+! TESTIS 
+| GAGEB1
+|-
+! THYROID 
+| SSTR3
+|-
+! BODY_OF_UTERUS 
+| TIMP2
+|}
+</blockquote>
+
+==Methods==
+To explore the co-occurrence of cancer and genes
+in literature, let <math>G</math> be an observable random variable taking
+values <math>g_1, g_2, \cdots, g_S</math>, each of which stands for a
+specific gene, and let <math>C</math> be an observable random variable taking
+value <math>c_1, c_2, \cdots, c_T</math>, each of which stands for a specific
+type of cancer. Similarly, let <math>Z</math> be a discrete-valued latent
+variable taking on values <math>z_1,\cdots,z_H</math>, each of which corresponds
+to a latent cluster, where <math>H</math> is the number of clusters. Let
+<math>\theta</math> be a set of parameters for the model to be optimized in
+the learning process, and let <math>\pi</math> be a mixture parameter (ie
+weight) of a component of our model that the users can specify.
+Let <math>D</math> be a set of all examples.
+
+Here we present the E-Step and M-Step for 3MAM. For further details on MAM, please refer to [2].
+
+Paremeters are estimated to maximize the log-likelihood of data D:
+
+<math>\theta^{ML} = arg \max_{\theta} \log p(D ; \theta) </math>
+
+Specifically in 3MAM,
+
+<math> \log p(D)  =  \pi_{CG} \sum_{i,j} \frac{N_{i,j}}{N_{CG}} \log \sum_h
+p(c_i|z_h) p(g_j|z_h) p(z_h) 
+ +  \pi_{GG} \sum_{j,j'} \frac{M_{j,j'}}{N_{GG}} \log \sum_{h}
+p(g_{j}|z_{h}) p(g_{j'}|z_{h}) p(z_{h}) </math>
+
+<math> +  \pi_{CC} \sum_{i,i'} \frac{L_{i,i'}}{N_{CC}} \log \sum_{h}
+p(c_{i}|z_{h}) p(c_{i'}|z_{h}) p(z_{h})</math>
+
+
+
+E-step:
+
+<math>p(z_h|c_i,g_j)  =  \frac{p(c_i|z_h) p(g_j|z_h) p(z_h)}{\sum_{h'}
+p(c_i|z_{h'})p(g_j|z_{h'})p(z_{h'})} </math>
+
+<math>p(z_h|g_j,g_{j'})  =  \frac{p(g_j|z_h)p(g_{j'}|z_h)p(z_h)}{\sum_{h'}
+p(g_j|z_{h'})p(g_{j'}|z_{h'})p(z_{h'})} </math>
+
+<math>p(z_h|c_i,c_{i'})  =  \frac{p(c_i|z_h)p(c_{i'}|z_h)p(z_h)}{\sum_{h'}
+p(c_i|z_{h'})p(c_{i'}|z_{h'})p(z_{h'})}</math>
+
+
+M-step:
+
+<math> \hat{p}(c_i|z_h) \propto  \pi_{CG} \sum_{j} \frac{N_{i,j}}{N_{CG}} p(z_h|c_i,g_j) 
+ +  \pi_{CC} \sum_{i'}\frac{L_{i,i'}}{N_{CC}} p(z_h|c_i,c_{i'}) </math>
+
+<math> \hat{p}(g_j|z_h) \propto  \pi_{CG} \sum_{i} \frac{N_{i,j}}{N_{CG}} p(z_h|c_i,g_j) 
+ +  \pi_{GG} \sum_{j'}\frac{M_{j,j'}}{N_{GG}} p(z_h|g_j,g_{j'}) </math>
+
+<math> \hat{p}(z_c)  \propto \pi_{CG} \sum_{i,j} \frac{N_{i,j}}{N_{CG}} p(z_h|c_i,g_j) 
+ +  \pi_{GG} \sum_{j',j''}\frac{M_{j',j''}}{N_{GG}} p(z_h|g_{j'},g_{j''})  +  \pi_{CC} \sum_{i',i''}\frac{L_{i',i''}}{N_{CC}} p(z_h|c_{i'},c_{i''}) </math>
+
+==Conclusion==
+
+We mined OMIM database and MEDLINE to discover implicitly associated
+pairs of cancers and genes by applying a new probabilistic model,
+mixture aspect model(MAM), on the data of co-occurrence of cancers and
+genes, using OMIM and MEDLINE. By integrating the co-occurrence data from heterogenous sources, MAM outperformed the original AM in the cross-validation experiment. Here
+to aviod the difficulty of recognziing gene names, we actually used a
+subset of MEDLINE indexed in LocusLink. It would be interesting to
+extract gene-gene co-occurence data directly from MEDLINE.
+
+==References==
+[1] Giallourakis C, Henson C, Reich M, Xie X and Mootha VK.(2005) Disease gene discovery through integrative genomics. ''Annu. Rev. Genomics Hum. Genet'' 6:381-406
+
+[2] Zhu S, Okuno Y, Tsujimoto G. and Mamitsuka H.(2005) A probabilistic model for mining implicit chemical compound-gene relations from literature. ''Proc. of ECCB2005 (Bioinformatics 21 Supplement 2):'' ii245-ii251
+
+[3] Jenssen,T. et al. (2001) A literature network of human genes for high-throughput analysis of gene expression. ''Nat. Genet.,''28:21-28.
+
+[4] Hofmann T. (2001) Unsupervised learning by probabilistic latent semantic analysis. ''Machine Learning.'' 42:177-196.
+
+[5] Bajdik CD, Kuo B, Rusaw S, Jones S and Brooks-Wilson A. (2005) CGMIM: Automated text-mining of Online Mendelian Inheritance in Man (OMIM) to identify genetically-assocaited cancers and candidate genes. ''BMC Bioinformatics'', 6:78-84
+
+[6] Hou T et al. (2005) CYP1A1 Val462 and NQO1 Ser187 polymorphisms, cigarette use, and risk for colorectal adenoma. ''Carcinogenesis'', 26(6):1122-1128.
+__NOTOC__

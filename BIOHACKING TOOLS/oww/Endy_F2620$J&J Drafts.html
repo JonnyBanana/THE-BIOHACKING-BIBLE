@@ -1,0 +1,71 @@
+===Final Submission===
+(2/4/2006)
+I have finally finished writing the application. I attach the latest version here. Sorry it is still in Latex but I will convert it to wiki-thing soon. Thank you for help, Barry!
+
+J&J submission [http://openwetware.org/wiki/Image:Anna_labno_-_paper.pdf]
+
+
+It is very unclear what exactly is to be sumited for the price but in any case for now:
+# Detailed Abstract
+# Research Description
+# Personal Statement of Involvement
+
+===Characterization of BBa_F2620 an Engineered Cell-Cell Communication Device===
+
+
+Anna Labno , Barry Canton, Drew Endy
+
+===Abstract===
+
+Current research in synthetic biology aims to enable the design and construction of biological systems in the manner that we now engineer electrical, mechanical, and other systems. To enable the rational design and construction of synthetic biological systems, we need to be able to predict the behavior of a system from the characteristics of the components that comprise it. Thus, designing and using a methodology for characterizing the performance of biological parts and devices is central to the future success of biological engineering. While a wide range of devices and systems has been described (refs) there has been insufficient characterization of those devices and systems. This work presents a first attempt at comprehensive characterization of a standard biological part. We engineered a cell-cell communication device, BBa_F2620, based on parts from the quorum sensing system of Vibrio fischeri. BBa_F2620 is a receiver device that responds to the concentration of a small signaling molecule (AHL) in the media by modulating the transcription rate that is output from the device. To begin to systematically characterize BBa_F2620, we defined the characteristics important for performance based design ''<-what does performance based design mean?'' and composability. To measure those characteristics, we connected the receiver upstream of BBa_E0240, a fluorescent protein-based reporter device and measured the following properties: device INPUT/OUTPUT transfer function (including switch point, latency, and variation across genetically identical clones), input signal specificity, and device stability (both genetic and performance), using multiwell fluorimetry and flow cytometry. Using these characteristics we populated a first-generation datasheet that describes the use and operation of BBa_F2620. Families of devices characterized in the manner described here, will accelerate the development of larger-scale systems.
+
+===Research Description===
+ 
+
+Current research in synthetic biology aims to enable the design and construction of biological systems in the manner that we now engineer electrical, mechanical, and other man-made constructs. Biological systems offer properties and functions not found in traditional engineering systems and have broad applications in medicine, biology and engineering. To enable the design of multi-device assemblies, it is necessary to be able to predict system function from the constituent devices of the system. Such prediction requires that the behavior of the constituent devices be well specified and documented. Furthermore, this characterization must be done in a consistent manner such that characterized devices can be composed reliably, systematically cataloged and compared across research institutions. While a wide range of devices and systems have been described [1-4] there has been insufficient characterization of them to allow the rapid, reliable assembly of more complex systems. 
+We identified a set of characteristics that specify the performance of a simple biological device and measured these characteristics for a cell-cell signaling receiver device, F2620. A fluorescent reporter device was used to measure the output of the receiver device.  By applying this approach to other devices, a library of well-characterized and composable devices could be generated. 
+
+Cell-cell communication allows individual cells to coordinate their behavior with the rest of the population and as such is a powerful technology for engineering complex biological systems. F2620 is a receiver device that responds to the concentration of a small signaling molecule (an acyl-homoserine lactone or AHL molecule) in the extracellular media by modulating the transcription rate from a promoter. Hence, we define the input to the device to be the extracellular concentration of AHL and the output to be transcription rate. The device is based on elements of the quorum sensing system of ''Vibrio fischeri''. The quorum sensing system includes an enzyme, LuxI, that synthesizes an AHL molecule (N-(b-ketocaproyl)homoserine Lactone). LuxR is a transcriptional activator protein that is active when bound to AHL. When active, it binds to the Lux box and recruits RNA polymerase to the operator region [5-8]. F2620 consists of six standard parts (Figure 1). A tet repressible promoter (R0040), followed by a ribosome binding site (B0034), drives production of LuxR from the luxR coding region (C0062). Transcription from TetR promoter is terminated by two transcription terminators (B0010, B0012) to ensure 100% termination. The sixth part is a LuxpR promoter (R0062) that contains a LuxR binding site. This promoter is the rightmost part of the ''V. fischeri'' Lux operator. To measure the output from F2620 we connected a GFP reporter device, E0240 downstream of F2620 (not shown on Fig 1). 
+
+
+The transfer function relating device input to output is the primary characteristic for any device. For the receiver device, we measured the input by adding a known concentration of AHL to the culture media. We measured the output by calculating the rate of GFP accumulation per colony forming unit (cfu). We derived certain parameters that capture the key characteristics of the transfer curve - Hi/Lo input and output values, switch point, performance variability between genetically identical clones, input signal specificity, latency, and device stability (genetic and performance). The GFP reporter device was chosen because it allowed reliable, high time-resolution measurements to be made via multiwell fluorimetry and flow cytometry.  
+
+
+The maximum output level, Hi value, was determined to be 247 GFPs-1/OD ± 23% and was observed above an input of 10E-7M AHL. The device was considered to be off (Lo value) when GFP accumulation rate was below 5% of the maximum output, which occurred below 10E-10M AHL. The switch point for the device, the input concentration at which output is at 50% of the maximum is 10E-9M AHL.
+We measured the performance variation between genetically identical colonies taken from long-term storage using multiwell fluorimetry. The average performance of cultures grown from 6 colonies is 312 GFPs-1/OD. The coefficient of variation in the Hi value among the 6 colonies is 8.3% and is evenly distributed above and below the mean. Other tested AHL concentrations above switch point, show a coefficient of variation below 25% (see Fig. 1). 
+
+
+We sought to quantify the ability of the device to distinguish between its cognate inducer AHL (N-(β-Ketocaproyl)-DL-homoserine lactone) and a range of chemically similar inducers with varying length side chains (N-Hexanoyl-DL-homoserine lactone, N-Butyryl-DL-homoserine lactone, N-Heptanoyl-DL-homoserine lactoneN-Octanoyl-DL-homoserine lactoneN-Decanoyl-DL-homoserine lactone , N-Dodecanoyl-DL-homoserine lactone , N-Tetradecanoyl-DL-homoserine lactone ). Fig. 1''are they all figure 1?'' shows transfer curves obtained using the different AHL molecules as inputs. The maximal output of the device (Hi level) shows strong dependence on the specific inducer. The cognate AHL produces the highest output level of 261 GFPs-1/OD. A similar inducer lacking a carbonyl group and having chain length intact or extended to 7, 8 or 10 carbon atoms show a 16% decrease in response relative to the maximum output. When the AHL molecules have their side chains extended further to 12 or 14 carbon atoms or shortened to 4 carbon atoms, activation is visible, but its maximum level is less than 18% of the cognate inducer at maximum output. It can be seen that the switch point for each of AHL variants is constant at 10E-9M. 
+
+
+Latency is defined as the time delay between a change in input concentration and the output level reaching 95% of its final value. These values were obtained by measuring the rate of GFP accumulation per second per OD at a high induction level every minute in a multiwell fluorimeter until a constant accumulation rate was obtained (data not shown). The rate reaches a plateau of 215 GFPs-1/OD after 7min.  After transcription is stopped, using Rifampicin, the device output decreases to reach a Lo value after 86 min. This implies on/off latency of 7min and off/on latency of 86 min for the receiver-reporter construct. 
+
+
+Device stability was investigated under different operating conditions by propagating the culture through 92 doublings over the course of 5 days. Performance under low input conditions, assayed using multi well fluorimetry, shows slight variations in GFP accumulation rate over the course of the experiment (coefficient of variation 12%). The performance of the device working under high input conditions shows similar variations during the first three days of the experiment; however, in the fourth day, after 74 doublings, the high output level dropped to approximately 1% of the original level and on the fifth day the high output had fallen further to less than 0.9% (data not shown). In order to gain more insight into the mechanism of failure, single-cell performance was investigated using flow cytometry and showed that the population of cells split on day 3 (how many doublings) into two groups: a more populous one, which was not-activated and a less populated one (quantify relative size of populations), which still retained fluorescence (Figure 1, bottom). On the last day there were few visibly fluorescent cells. The DNA sequence of the receiver and reporter device remained unchanged over the course of the experiment when the device was operated with low input. When operated with a high input, approximately ###% acquired a mutation in the receiver sequence that ### 
+
+
+This work presents a first attempt to comprehensively characterize a standard biological part. In the process of characterizing BBa_F2620 we laid the foundations of an engineering methodology for the future characterization of biological parts and populated a first-generation datasheet that describes the use and operation of BBa_F2620. We hope that the biological engineering community will begin to work together to populate a library of well-characterized devices in a manner similar to that described here, to facilitate the engineering of complex biological systems. 
+
+
+
+[1] parts.mit.edu
+
+[2] Modeling a synthetic multicellular clock: Repressilators coupled by quorum sensing. Garcia-Ojalvo J, Elowitz MB, Strogatz SH. Proc Natl Acad Sci U S A. 2004 Jul 27; 101(30): 10955-10960.
+
+[3] Engineering Escherichia coli to see light; Anselm Levskaya at al[4] A synthetic multicellular system for programmed pattern formation; Subhayu Basu at al 
+
+[4] B. Bassler. How bacteria talk to each other: Regulation of gene expression by quorum sensing. Current Opinion in Microbiology, 2(6):58 587, 1999.
+
+[5] K. Nealson. Cell-Cell Signaling in Bacteria, chapter Early Observations Defining Quorum-Dependent Gene Expression. American Society for Microbiology, Washington, D.C., 1999.
+
+[6] P. Nilsson, A. Olofsson, M. Fagerlind, T. Fagerstrom, S. Rice, S. Kjelleberg, and P. Steinberg. Kinetics of the ahl regulatory system in a model biofilm system: How many bacteria constitute a ”quorum”? Journal of Molecular Biology, (309):631 640, 2001.
+
+[7] J. James, P. Nilsson, G. James, S. Kjelleberg, and T. Fagerstrom. Luminescence control in marine bacterium Vibrio Fisheri: An analysis of the dynamics of lux regulation. Journal of Molecular Biology, (296):1127 1137,1999.
+
+[8] J. Engebrecht, K. Nealson, and M. Silverman. Bacterial bioluminescence: isolation and genetic analysis of functions from Vibrio Fischeri. Cell, (32):773 781, 1983.
+
+===Statement of Personal Involvement===
+
+There existed a proof of concept when I came and I used parts. I primerly carried experiments by myslef with guidance and help from Barry, Drew and other lab memebers when needed
+
+???

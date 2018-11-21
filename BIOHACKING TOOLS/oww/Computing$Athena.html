@@ -1,0 +1,66 @@
+==Mac==
+===Kerberos===
+[http://tig.csail.mit.edu/twiki/bin/view/TIG/InstallingKerberosOnMac-0SX Installing Kerberos On Mac 0S X] - CSAIL page
+
+==Linux==
+*[http://itinfo.mit.edu/answer.php?id=7551 Kerberos for RedHat Linux]
+*[http://tig.csail.mit.edu/twiki/bin/view/TIG/KerberosConfiguration Debian Kerberos Configuration] - CSAIL page
+*[http://web.mit.edu/ist/topics/athena/diff-variants.html Athena Linux Differences: Variant Packages Detail]
+
+===AFS===
+It is now possible to access Athena lockers on shmoo or habanero (Linux machines). This means that you can simply copy (instead of sftp/scp) files to and from your Athena home directory when you are logged in to either machine. Also, you can use any [http://web.mit.edu/acs/www/table.html Athena software] which runs on Linux by attaching an appropriate locker.
+
+Here's what you need to do to attach a locker (in this example, locker is your Athena home directory):
+
+1. Obtain Kerberos tickets
+ $ kinit mitusername
+
+2. Obtain AFS tokens
+ $ aklog mitusername
+
+3. Attach your Athena home directory (here lockername = mitusername)
+ $ afslocker lockername
+
+Now your Athena home directory should be accessible at /mit/lockername
+
+See the links below for more details:
+*[http://itinfo.mit.edu/article?id=6845 AFS at MIT: An Introduction]
+*[http://itinfo.mit.edu/article?id=6844 OpenAFS 1.2.10 for Red Hat Linux: Getting Started]
+
+===User accounts===
+AFS will work properly only if local user IDs match Athena user IDs. Here are the steps one should take to create accounts on Linux machines in the lab.
+
+Create group called Athena with id 101 in /etc/groups (necessary to do only once per machine):
+ # groupadd -g 101 Athena
+
+Get UID/GID on Athena:
+ $ hesinfo username passwd
+
+Create local account:
+ # useradd username -u UID -g Athena -c "Firstname Lastname"
+where UID is the Athena user ID obtained in the previous step
+
+Optionally, assign a local password (allows logins when the network is down):
+ # passwd username
+
+Modifying existing accounts may be necessary, if they were created without following the procedure above. Here's how to do it.
+
+Change uid/gid for the existing user:
+ # /usr/sbin/usermod -u uid -g Athena username
+Any files which the user owns and which are located in the directory tree rooted at the user’s home directory will have the file user ID changed  automatically. Files outside of the user’s home directory must be altered manually.
+
+Record first and last names:
+ # /usr/bin/chfn username
+
+Change ownership on files belonging to the user outside home dir (except files in /var/spool/mail in RedHat):
+ # find / -uid old_id -exec chown username:Athena {} \;
+or
+ # find / -uid old_id | xargs chown username:Athena
+To do:
+*exclude /mnt from search (workaround: umount /mnt/bionet /mnt/shmoo)
+
+Delete old group of the user from /etc/group if necessary.
+ # /usr/sbin/groupdel groupname
+
+==Windows==
+[http://tig.csail.mit.edu/twiki/bin/view/TIG/InstallingKerberosForWindows Installing Kerberos For Windows] - CSAIL page

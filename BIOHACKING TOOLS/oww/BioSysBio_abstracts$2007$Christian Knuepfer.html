@@ -1,0 +1,132 @@
+'''Add or delete the sections that you require.'''
+
+=How to Formalise the Meaning of a Bio-Model: A Case Study=
+
+'''Author(s): '''[[User:ChristianKnuepfer|Christian Knüpfer]], Clemens Beckstein, Peter Dittrich<br> 
+'''Affiliations:''' Institute of Computer Science, Friedrich-Schiller-University Jena, Germany<br>
+'''Contact:''' [[User:ChristianKnuepfer|Christian Knüpfer]], tral@minet.uni-jena.de<br>
+
+'''Keywords:''' 'semantics of bio-models' 'meaning in systems biology'
+'computer-aided modelling' 
+
+[[Category:BioSysBio Keywords add_keyword_1]] 
+[[Category:BioSysBio Keywords add_keyword_2]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+==Background/Introduction==
+Systems biology reconstructs biological phenomena in order to develop
+explanatory models of living systems. These models are represented
+precisely in terms of mathematical expressions.  However, the meaning
+of a model usually is not formally specified but only described in
+natural language. This is something which hampers the development of
+computer-aided modelling in systems biology. Here, we discuss a
+framework for specifying the meaning of bio-models. We show that
+semantics appears on different levels: the meaning of the model as a
+whole, the meaning of the model's components, and the meaning of the
+model's behaviour. Each level has an intrinsic and extrinsic facet. We
+illustrate our framework by sketching what must be considered for a
+formal semantics of two simple numerical models of the cell cycle.
+
+==Results== 
+
+===Conceptual Framework===
+
+A bio-model can be seen as a binary relation between a formal
+(mathematical or computational) expression and the modelled biological
+reality.  This introduces two sides of the meaning of the bio-model:
+The mathematical expression bears meaning by itself without referring
+to the biological reality. It can be interpreted, analysed, and used
+in computational simulations without knowing what it represents. We
+call this side the intrinsic meaning of the bio-model. However, a
+bio-model is more than a pure syntactical formal expression: it
+describes a piece of biological reality and thereby also exhibits an
+extrinsic meaning.  For both meaning sides of a bio-model three
+pragmatic meaning levels can be identified: (1) The meaning regarding
+the model as a whole accounts for its intention. (2) The meaning
+regarding the components of the model accounts for its structure. (3)
+The meaning regarding the dynamics of the model accounts for its
+behaviour. The extrinsic/intrinsic sides of the three levels together
+form the six '''meaning facets'''. The meaning facets are views at the
+meaning of a bio-model from different perspectives. We claim that a
+formal semantics of a bio-model has to incorporate all of these
+meaning facets and the relations between them.
+
+In order to make the notion of the meaning facets of bio-models more
+concrete [[#tab:questions|Table 1]] shows typical questions for each of the meaning facets. The answers to these questions have to be formalised in order to arrive
+at a semantic description of a bio-model.
+
+{| border="1"
+<caption id="tab:questions"><strong>Table 1:</strong> Typical questions to answer in order to account for the meaning facets of a bio-model.</caption>
+  !width="50%"|<b>intrinsic</b>
+  !width="50%"|<b>extrinsic</b>
+|-
+  |colspan="2" align="center"|<b>intentional</b>
+|-
+  |Which mathematical <b>formalism</b> is used? How is the formalism interpreted and executed? How is the formalism used to simulate the behaviour?
+  |Which biological <b>system</b> is addressed? What does the model stand for in the biological reality? What is the aim of the model?
+|-
+  |colspan="2" align="center"|<b>structural</b>
+|-
+  |What is the structure of the mathematical <b>expression</b>? What are the mathematical entities of the model (equations, terms, variables)?
+  |Which biological <b>mechanism</b> is proposed by the model? What are the modelled biological objects and processes? How do model entities map to biological reality?
+|-
+  |colspan="2" align="center"|<b>behavioural</b>
+|-
+  |Which <b>simulation</b> results does the model show? Which parameter settings are used therefore? What are characteristic types of dynamical behaviour (e.g.&nbsp;attractors)?
+  |Which biological <b>phenomenon</b> correlates with which type of dynamical behaviour? Which experimental data are reproduced by simulation results?
+|}
+
+===Case Study===
+
+In order to illustrate the conceptual framework of the meaning facets
+we sketch the meaning of two cell cycle models by Tyson
+<cite>tyson91</cite>:
+
+[[Image:models.jpg|center|frame|Equations from <cite>tyson91</cite>, for details see [[BioSysBio:abstracts/2007/Christian Knuepfer/Model explanation|Explanation of the Models]] ]]
+
+The following table shows the BioModels <cite>novere06</cite> entry
+for Tyson's cell cycle model (<i>Model 1</i>) after it has been
+extended according to our meanings facets (emphasised in green). In <cite>knuepfer07</cite> we show how the meaning of both Tyson
+bio-models can be formalised.
+
+[[Image:table_thumb.jpg|center|frame|<center>For a full version see [[Media:Table.pdf]]</center>]]
+
+==Conclusion==
+
+The meaning facets suggested here can serve as a guideline to arrive
+at reasonable formal semantics of bio-models. We illustrate this using
+Tyson's cell cycle models. Our meaning facets can be seen as a
+methodological commitment that should be followed when modelling
+biological processes. They offer a set of criteria for systematically
+constructing bio-models and for reconstructing their meaning. Our
+approach also addresses aspects of the meaning that existing
+approaches did not, e.g. the meaning of behaviours and the meaning of
+aggregated abstract model variables. This can be the basis for a new class
+of knowledge-based modelling tools that helps the working biologist to
+understand bio-systems. 
+
+==References==
+
+<biblio>
+#knuepfer06 Knüpfer, C., Beckstein, C., Dittrich, P.: Towards a
+semantic description of biomodels: Meaning facets -- a case study. In:
+Proceedings of the Second International Symposium on Semantic Mining
+in Biomedicine (SMBM 2006), Jena, April 9th - 12th. CEUR-WS, Aachen,
+RWTH University (2006), pp.97-100
+
+#tyson91 Tyson, J.: Modeling the cell division cycle: cdc2 and cyclin
+interactions. Proc Natl Acad Sci USA 88(16) (1991), pp.7328-7332
+
+#novere06 Le Novére, N., Bornstein, B., Broicher, A., et al.:
+BioModels Database: A free, centralized database of curated,
+published, quantitative kinetic models of biochemical and cellular
+systems. Nucleic Acids research 34(Database issue) (2006), pp.689-691
+
+#knuepfer07 Knüpfer, C., Beckstein, C., Dittrich, P.: Towards a
+Semantics of Bio-Models A Case Study Formalising the Meaning of Two
+Cell Cycle Models, submitted (2006)
+</biblio>
+
+
+__NOTOC__

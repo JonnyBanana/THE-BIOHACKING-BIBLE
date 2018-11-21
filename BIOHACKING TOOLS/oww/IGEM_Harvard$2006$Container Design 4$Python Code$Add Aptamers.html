@@ -1,0 +1,108 @@
+==Add aptamers - User Input ==
+<pre>
+#######
+# Add aptamers to the ends of the appropriate oligos.
+#######
+
+# Constants
+apt_seq = 'GGTTGGTGTGGTTGG'
+T_linker = 'TTT'
+        
+print oligo_ra
+num_aptamers = int(raw_input('How many aptamers do you want to add? '))
+i = 0   
+while i < num_aptamers:
+        oligo_num = int(raw_input('Which oligo needs an aptamer? '))
+        if oligo_num < len(oligo_ra):
+                # Add the aptamer to that oligo
+                oligo_ra[oligo_num] = oligo_ra[oligo_num] + T_linker + apt_seq
+                i = i + 1
+        else:
+                print 'oligo ' + str(oligo_num) + ' out of range.'
+
+print oligo_ra
+</pre>
+
+==Add aptamers using File Input rather than User Input==
+<pre>
+#####
+# Add apts this time using file input instead of user input
+#####
+                        
+# Constants
+apt_seq = 'GGTTGGTGTGGTTGG'
+T_linker = 'TTT'
+                        
+fin_barrel = None
+                        
+try:
+        fin_barrel = open("barrel_apts_to_add.txt", "r")
+except IOError, e:
+        print "Error in file IO: ", e
+
+# Ask the user if they are running a lid or a barrel
+shape = int(raw_input("Enter 1 if you are running a barrel, 2 if lid: "))
+if (shape == 1):   
+        apts_to_add = pickle.load(fin_barrel)
+        for apt_specs in apts_to_add:
+                oligo_num = apt_specs[0]
+                type = apt_specs[1]
+                if (type == 1):
+                        # apt is pointing in so add 'I' as a flag at the end
+                        oligo_ra[oligo_num] = oligo_ra[oligo_num] + T_linker + apt_seq + 'I'
+                elif(type == 2):
+                        # apt is pointing out so add 'O' as a flag
+                        oligo_ra[oligo_num] = oligo_ra[oligo_num] + T_linker + apt_seq + 'O'
+                else:
+                        # incorrect type
+                        print 'Bad input - aptamer needs to be pointing in or out'
+
+</pre>
+
+Place in a different file - barrel_apts_to_add.txt
+(Pickle Script)
+<pre>
+apt_list = [[oligo_num, type], ... ]
+# note that 1 corresponds to in and 2 corresponds to out.
+
+import pickle
+
+fout_barrel = None
+
+try:
+        fout_barrel = open("barrel_apts_to_add.txt", "w")
+except IOError, e:
+        print "Error in file IO: ", e
+
+barrel_apts = [[1, 1], [2, 2], [7, 2], [11, 1], [17, 2], [23, 2], [36, 1], [47, 1]]
+
+pickle.dump(barrel_apts, fout_barrel)
+
+if fout_barrel:
+        fout_barrel.close()
+</pre>
+
+==Print Aptamer Oligos==
+Oligo sorting - find an print out those with aptamers
+
+<pre>
+
+#####   
+# oligo sorting
+#####
+
+# sort based on whether or not there's an aptamer attached to the end of
+# an oligo
+        
+apt = re.compile('TTTGGTTGGTGTGGTTGG')
+oligo_num = 0
+for oligo in oligo_ra:   
+        m = apt.search(oligo)
+        if m:
+                print 'Match found: ', oligo + ' : ' + str(oligo_num)
+        else: 
+                print 'No match' + str(oligo_num)
+        oligo_num = oligo_num + 1
+
+
+</pre>

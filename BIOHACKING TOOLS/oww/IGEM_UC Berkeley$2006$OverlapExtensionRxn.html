@@ -1,0 +1,19 @@
+'''Overlap extension reactions take two oligos with complementary 3' ends, and fill in the rest of the sequence with a polymerase.<br>
+Any polymerase system will work for this (Taq, Vent, Expand, Pfu...)'''
+
+#Make 100uM stocks of the oligos (the usual concentration for stocks, it's used here as 1x)
+#Set up per extension reaction (it's ok to make a master mix of everything except the oligos, then split it and add the oligos--just make sure to add the polymerase after the buffer and dNTPs have been added)
+  34 uL ddH2O
+  5 uL 2mM in each dNTPs
+  5 uL 10x ThermoPol buffer
+  5 uL 100 uM oligo 1
+  5 uL 100 uM oligo 2
+  1 uL Vent polymerase
+#Run the "wobble" program, which is:
+  step 1:  2 min at 94
+  step 2:  30 sec at 55 degC
+  step 3:  30 sec at 72 degC
+  step 4:  Got to 2 10 times
+  step 5:  hold at 4 degC forever
+'''Note that the wobble program is basically a short PCR program without extra denaturation steps'''
+#There is nothing to see on a gel, so don't bother, just go into the [[IGEM:UC_Berkeley/2006/Short_DNA_cleanup | short DNA cleanup]] procedure.

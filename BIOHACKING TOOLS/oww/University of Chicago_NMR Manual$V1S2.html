@@ -1,0 +1,128 @@
+===2. Processing a 2D Spectrum===
+====Overview====
+*These instructions for processing a 2D NMR spectrum are the basis for processing all other spectra. 1D spectra can be handled with a subset of these instructions. 3+D spectra require initial processing of the first 2D plane, after which addition step, covered later in this guide, are performed. 
+*Figure 1 provides a schematic overview of the procedure for obtaining a high-quality spectrum from raw data provided by the spectrometer. [[Image:NMRUG-Processing_Flow.gif|thumb|none|600px|'''Figure 1.''' Flowchart for processing a 2D spectrum with NMRPipe.]]
+*It is important to realize that processing this data requires you to frequently exit and enter NMRPipe to work with text editors and invoke commands on command lines. This is because much of the data does not actually get processed using the graphical user interface (GUI) that appears when you type “nmrDraw.” The function of the GUI is to allow you to view spectra that are already established as independent files and to perform minor manipulations on them.
+*Most of the computation is conducted by scripts, which are files in your directory; these usually end in “.com” or “.s.” Typing the name of a script on a terminal command line gets it to run. A line within the script will tell NMRPipe which file to act upon, and another line will tell it the name a new file to write. Thus, each script will create a new file without destroying the original. In a sense, these files and scripts are like different parts of speech in a sentence (Figure 1). The scripts are the verbs, and act on original files, which are the subjects of the sentences (nouns), to produce new files, which are the objects of the sentences.
+*You, the user, will edit these scripts to specify file names and adjust processing parameters. (Don’t worry – you’ll be starting from existing template scripts and modifying them, not creating them from scratch.) You can use various test editors, but you’ll be frustrated if you use Microsoft Word, which inserts 6M characters at the end of every line, even when saving as “text only.” On the Mac, I recommend TextEdit or, if you’re used to it already, vi editor from the command line.
+
+====Start the program====
+#In a terminal window (in X11 if you’re on a Mac), change to the directory of your NMR spectrum. If you’re processing several spectra, it will be handy to go to the directory where you can view all the .fid directories. If you’re looking at just one, switch into the Varian .fid directory. You should see the files fid, procpar, log, text, and maybe some other, optional, files.
+#Type “nmrDraw.”
+====Orient yourself====
+#Here’s the primary toolbar (as it appears on my Mac OS 10.3 desktop). [[Image:NMRUG-Pipe_Main.gif|thumb|none|600px|'''Figure 2.''' NMRPipe main toolbar.]]
+#Here’s what you see when you pull down these menus (accomplished by right-clicking on the menu buttons): [[Image:NMRUG-Pipe_Pulldowns.gif|thumb|none|600px|'''Figure 3.''' NMRDraw main toolbar pulldown menus.]]
+#Familiarize yourself with the effects of clicking different mouse buttons. Right-clicking opens up menus from menu buttons. Left-clicking selects items from the menu. Left-clicking on a button that activates a menu when right-clicked will select the choice at the top of the menu.
+
+====Convert Varian’s fid to an NMRPipe fid====
+#Right-click on the “proc” menu button to pull down the menu.
+#Click “7) Convert Varian.” This should call up two windows, one which houses dialog entries for details of the conversion, and one that lets you view the script you are creating. These are shown below: [[Image:NMRUG-Convert_Varian_1.gif|thumb|none|600px|'''Figure 4.''' GUI for converting varian data.]] Because you started NMRPipe by typing ‘nmrDraw” while you are already in a Varian .fid directory, the GUI has identified the input file as “./fid,” “./” indicating your current directory. You are going to use this GUI to write a script called “fid.com” that will convert the file “./fid” to an output file, whose name will not be that which currently appears in the “Output Template” box. Indeed, the next step will change the view significantly.
+#Left-click on the “Read Parameters” button. The program looks up the experimental parameters in the Varian file procpar, determines the dimensionality of the experiment, and enters in several of the appropriate numbers required for conversion into their corresponding boxes in the window. [[Image:NMRUG-Convert_Varian_2.gif|thumb|none|600px|'''Figure 5.''' Varian conversion window after reading parameters.]] Reading the parameters also makes a preliminary script appear in the conversion Script Text window: [[Image:NMRUG-Convert_Varian_3.gif|thumb|none|400px|'''Figure 6.''' Preliminary conversion script text.]]
+#Reading the procpar file is not perfect, and some parameters must be entered manually. For instance, the example data here come from a 1H-15N HSQC spectrum, but the program has defaulted into assuming we’re working with a 1H-13C spectrum. Left-click on the > arrows to pull down menu choices or type directly into the boxes to specify values explicitly. Note that the y-axis Acquisition Mode will be set to “Complex,” but if sensitivity enhancement was used in the acquisition, you will need to use the “Rance-Kay” option. Otherwise, your spectrum will have its own mirror image superimposed on it. Also, be sure to use the appropriate Axis Label for 1H, the x-axis. Experiments detecting amide 1H’s will probably need to have their 1H axis labeled as “HN.” The default output file name is “test.fid;” this can be modified, but because other scripts must use this name to work, it is expeditious to leave it as is. When done, lift-click on “Clear Script,” left-click on “Update Script,” then left click on “Save script.” If you wish, you can click on “Execute Script” also, though you may also execute the script by typing “fid.com” on the command line while in the directory of interest. Here are the windows with the final menu selections and the corresponding script for this HSQC experiment: [[Image:NMRUG-Convert_Varian_4.gif|thumb|none|600px|'''Figure 7.''' Conversion GUI with final choices.]] [[Image:NMRUG-Convert_Varian_5.gif|thumb|none|400px|'''Figure 8.''' Edited conversion script in GUI window.]]
+#Left-lick “Quit” in the conversion Utility window to exit the conversion GUI.
+
+====Read in the NMRPipe-format 2D fid.====
+#Return to the main GUI.
+#The act of getting the fid into your working space takes two steps: “selecting” and “reading.” To start selecting your file, right-click on ‘File.”
+#Left-click on “test.fid.” Double-left-clicking on “test.fid” will also “read” the fid, making it appear in the main window.
+#Left-click “Done.”
+#If you single-clicked “test.fid” in step c), then right-click “File” and left click “Read” to display the fid in the main window. 
+====Process the first increment====
+#Right-click on the “Mouse” button on the main toolbar.
+#Select “h) 1D horizontal. This gives you a straight yellow line and a yellow fid. The left mouse button, when applied in the dark field of the fid, drags the straight yellow line up and down, selecting different increments’ fid’s. Move this cursor line all the way down to select the first increment. TAKE CARE! As long as you are in “mouse mode,” ANY TIME you click within the black working area, you will select a new fid! So if you go through and process a or partially process a 1D spectrum, but then left-click within the working area, you will abandon the processing and choose a new fid!
+#Familiarize yourself with the functions of the different mouse buttons in the right purple margin. Holding down the right mouse button and moving the mouse moves the fid up and down. Holding down the middle mouse button and moving the mouse increases and decreases the scale of the fid. When you have processed the fid into a spectrum, these mouse buttons will retain these functions.
+#Right-click on the “Proc” button of the main toolbar. Select “N) NMRPipe command.” You will see a new window pop up: [[Image:NMRUG-Pipe Com Line.gif|thumb|none|600px|'''Figure 9.''' NMRPipe Command window.]] You can either type commands directly into the line beyond the “Command:” directive, or you can right-click on the “Functions” menu button to see an array of processing choices. Note that the text you see or type on this command line is exactly what goes into the processing scripts. Recall that the NMRPipe GUI exists primarily to help you write those scripts. This line is where you can test the effects of alternate commands or parameter values.
+#Now start processing your first increment. Here, we’ll go through a standard processing routine, including everything that’s essential, but nothing fancy.
+#Right-clicking on the “Function” button yields the window shown in Figure 10. [[Image:NMRUG-Pipe_Com_Funs.gif|thumb|right|150px|'''Figure 10.''' Command "Functions" Menu.]]
+#First, apply solvent subtraction. Under some circumstances, this may be unnecessary or undesirable, but here we’d like it. If you end up with a glitch in your spectrum worse than a giant peak in your spectrum, then reprocess and leave this step out. Left-click on “Solvent Filter SOL” to invoke solvent subtraction. Either left-click in the command line and hit your “return” key, or left-click on “Execute.” To invoke the command. You should see your fid change shape so that it oscillates about a straight horizontal line.
+#Second, apply your apodization function. Right-click on the ‘Functions” button, left click on “Cosine bell,” then left-click on “Execute” to apply a cosine-bell (90°-shifted sine-bell) window function. Please see the appendix on apodizations for a thorough discussion of the meanings of the parameters and the shapes of their corresponding functions. Write down the parameters used for this function because you’ll need to enter them into your script later. After application, you should see the fid with a new envelope shape, but the change may be subtle.
+#Third, apply your zero-filling. Right-click on “Functions,” then left-click on “Zero Fill.” You should see the fid shift to the left half of your working area.
+#Fourth, perform your Fourier transform. Right-click on “Functions”, left click on “Fourier Transform,” then left-click “Execute.” Your fid should become a spectrum now, though you will need to adjust its phase.
+#Left-click “Done” in the NMRPipe Command window.
+#Adjust the vertical scale and position of the spectrum by center-clicking/holding/dragging and right-clicking/holding/dragging in the right-hand purple border region.
+#Adjust the phase.  [[Image:NMRUG-Pipe_Phase_Cont.gif|thumb|none|600px|'''Figure 11.''' Phasing controls.]]
+#*Orient yourself with the phasing controls at the top of the NMRPipe window (Figure 11). At the left are the zeroth and first order (P0 and P1, respectively) phase controls. Each has a coarse and a fine adjustment bar. Operate these by left-clicking on the gray rectangle and dragging it left and right. The P0 and P1 phase correction values appear in the P0: and P1: displays in the middle. These are very important because you must manually edit the processing macros to reflect the numbers in these displays. The pivot point display informs you which point number you’ve selected at which to pivot. Phasing mode is entered and exited by clicking the “On” or “Off” buttons after the “Phasing:” label at the right. 
+#*Select the location of your pivot point. Left-click/hold/drag in the purple border region at the BOTTOM of the NMRPipe window. Two little yellow arrows pointing at each other will appear at the top and bottom of the working area. Place the arrows so they point at the rightmost peak in the spectrum (Figure 12). [[Image:NMRUG-Pipe_Phase_Pivot.gif|thumb|right|350px|'''Figure 12.''' Placement of phasing pivot point.]]
+#*Enter active phasing mode by clicking the “On” button after the “Phasing:” label in the upper right of the NMRPipe window (Figure 11).
+#*Adjust the zeroth-order phase. Use the slider bar labeled “P0:” in the upper left of the NMRPipe window to phase the rightmost peak (Figure 11).
+#*Adjust the first-order phase. Use the slider bar labeled “P1:” in the upper left of the NMRPipe window to phase the rest of the spectrum (Figure 11).
+#*Once you are satisfied with the phasing of your spectrum, write down the P0 and P1 values so you can use them in your processing script.
+#If you wish to see what your spectrum looks like after baseline correction, right-click on “Proc” in the main NMRPipe window toolbar, select “N) NMRPipe Command,” right-click ‘Functions,” then left-click on “Baseline Correction.” The default settings simply adjust for a DC offset, which is highly recommended. Higher order corrections can be achieved by varying the polynomial order number at the end of the script line; e.g. changing the 1 to a 3 sets you up to confer a third-order baseline correction. Left-click the “Execute” button to make the baseline correction happen.
+#It is most common for 15N-edited experiments to have peaks only in the left half of the spectrum. NMRPipe lets you abandon the useless right half of these spectra with the command “Extract Left” in the NMRPipe command window “Functions” menu. This is entirely unexciting to perform on the first increment in the NMRPipe GUI, but it’s useful to include in the script. Go ahead if you’re curious, though.
+#You’re done with the first increment! You’ll find that this is the most labor-intensive portion of 2D spectrum processing.
+
+====Edit the script “process2d.com”====
+[[Image:NMRUG-Init_Script.gif|thumb|right|350px|'''Figure 13.''' Initial "process2d.com" script.]] 
+#You now need to switch to a text editor program so you can edit the script entitled “process2d.com.” You’ll come back to NMRPipe in a minute, so there’s no need to shut it down.
+#Locate a copy of the script “process2d.com,” copy it, and place it in your spectrum’s directory, which should now also contain Varian’s normal files; fid, procpar, text, and log; the script fid.com, and the NMRPipe-format fid, test.fid.
+#Open up a non-MS Word editor program like “TextEdit,” and open up the appropriate file “process2d.com.” On the Mac, double clicking “process2d.com” will probably open it up in TextEdit.
+#Orient yourself. Your script should look something like Figure 13 when you open it up. These lines should look familiar to you since they have the same format as those that appeared in the NMRPipe command window (Figure 9). The chief difference is the presence of the initiating clause “| NMRPipe –fn,” which simply tells you computer to interpret the following statements in terms of the program NMRPipe. The “#” characters at the left comment out the remainder of the line; this is handy to keep things like GM apodization functions ready in case you want them in future work, but not in the current work. Here’s what’s happening line-by-line, after the initial commentary:
+#*“-in ./test.fid” reads in the input file, specified as the file “test.fid” in the current directory. If you wish, you could specify an entire pathname for the file. Also, the file could have a different name, but processing ends up being much easier if you don’t have to keep switching names if these intermediate files, which requires you to edit those portions of your macro.
+#*“SOL” performs solvent subtraction.
+#*“GM” will not be used because it’s commented out. GM applies a lorentz-gaussian apodization function. See the appendix for more details.
+#*“SP” applies a cosine-bell apodization window with the parameters shown. See the appendix for more details.
+#*“ZF” applies zero filling.
+#*“FT” applies Fourier transformation.
+#*“PS” adjusts the F2 phase with values P0 and P1.
+#*“POLY” applies baseline correction, but for “-ord 1,” it is just a DC offset correction.
+#*“EXT –left ” extracts the left half of the spectrum.
+#*“TP” transposes the spectrum to enable processing of the indirect dimension.
+#*The subsequent statements have the same meaning as normal, but they’re applied to the t1/F1 dimension.
+#*“-out test.ft” writes the processed spectrum to a new file, “test.ft,” in the current directory.
+#Edit what you need to in the first half of the script (i.e., above the first “TP” statement).
+#*Check the apodization function parameter values. They should match those that you used before when processing the first increment. The values used for GM and SP are pretty standard, and can be safely applied to most spectra. SP is the simplest apodization, and GM is commonly used for resolution enhancement.
+#*Edit the P0 and P1 values so they equal the values you wrote down when processing the first increment. There is a special consideration to note with regard to using the GUI P0 and P1 numbers in the script, but that is better introduced later, when adjusting the phase of the second dimension.
+#*Alter other parameters, such as baseline correction polynomial order, if you feel like it will be useful for improving the spectrum. The script shown above should produce a good spectrum under most circumstances.
+#Edit parameters for processing the indirect dimension. You don’t get to see a 1D spectrum to help you alter these parameters. In the NMRPipe procedure, you just process the 2D spectrum as a whole, read it into the GUI, make observations and phase adjustments in the GUI, then return to this script, alter it, and reprocess the spectrum.
+#*Edit the apodization function. In t1, you shouldn’t use the GM function; just use the SP function. I’d change the SP line to read “SP –off 0.5 –end 1.0 –c 0.5 \” to yield a regular cosine bell function.
+#*Consider adding a line for linear prediction. In this spectrum, it won’t be necessary, but it you have so few t1 increments that you get f1 wiggles on your peaks because of truncation, then insert the line “LP –auto –pred 64” or something like that. Place this line between the TP line and the SP line. For details on the LP line syntax, type in the terminal command line “NMRPipe –help –fn LP.”
+#*Don’t worry yet about the f1 P0 and P1 values. You need to see the spectrum, correct the f1 phase, and then add the corrections to the values in this script.
+#Save the script. It will be convenient to retain the name “process2d.com.” You’ll find it worthwhile to keep the file open in the text editor because you’ll need to go back to edit the f1 phase values.
+
+====Execute the script “process2d.com”====
+[[Image:NMRUG-Exec_Script.gif|thumb|right|350px|'''Figure 14.''' Execution of the macro "process2d.com".]]
+#This step is trivial. Get to an X11 terminal window and cd to the directory of the spectrum you’ve been working with.
+#Type “process2d.com.” You should first see one counter counting the f1 increments that have been processed, then a second counter showing the f1 dimension being processed. After a couple of seconds (on a modern computer), it will be over, and a new file, “test.ft” should be in the directory. Figure 14 shows what this whole process should look like.
+
+====Read the spectrum “test.ft” in the NMRPipe GUI====
+#Return to the NMRPipe GUI.
+#Right-click on the “File” button in the NMRPipe main toolbar.
+#Left-click on “Select file.”
+#Double click on “test.ft.”
+#A beautiful 2D spectrum should appear in your working area.
+#The contour level at which you’re viewing the spectrum will probably be suboptimal. Right-click on the “Draw” button in the main toolbar, left-click to select “T) Estimate Noise,” then left-click the “continue” button in the new window that pops up. Now that the program knows about the noise level, right-click on the “Draw” button in the main toolbar, and left-click to select “contours.” This adjusts your contour level based on the noise in your spectrum, and will give you something that looks reasonable, though perhaps too noisy.
+#Manually adjust the contour level with the “+” and “-“ buttons in the upper right corner of the NMRPipe main window. This won’t have an effect until you left-click on the “Draw” button in the main toolbar. The convention is that “+” raises the lowest observed contour level;, thus making observation of noise less likely, and that “-“ has the opposite effect.
+#Evaluate the spectrum for obviously odd behavior. It is at this point that you’ll discover whether the Varian fid was converted to NMRPipe format correctly. If your crosspeaks look like they’re duplicated, with the duplicate set being a mirror image symmetric about the center of the indirect dimension, you probably did not specify the correct mode of F1 phasing in the script fid.com; you probably need the “Rance-Kay” treatment rather than the “Complex” or “States” treatments. If it is reflected about the horizontal center line without being duplicated, you will probably need to include the modifier “-neg” to your second FT statement in “process2d.com.”
+#If everything looks good, then you are done processing this spectrum and should skip to its conversion to NMRView format.
+====Phase the F1 dimension====
+[[Image:NMRUG-Pipe_Phase_F1.gif|thumb|right|350px|'''Figure 15.''' Phasing F1, two vertical traces selected.]]
+#Right-click on the “Mouse” button in the main toolbar.
+#Left-click on “v) 1D Vertical.” This gives you a vertical line and a vertical spectrum corresponding to the trace under the line. Like with the horizontal cursor used in the 1st increment processing, position of the vertical line cursor is determined by left-clicking/holding/dragging in the workspace area, vertical scale is controlled by center-clicking/holding/dragging in the purple margin to the right of the spectrum, and position of the vertical 1D spectrum is governed by rightclicking/holding/dragging in the purple margin to the right of the spectrum.
+#Select a spectrum that contains a crosspeak at the top of the working area. Move it somewhere out of the way, and increase its vertical scale so you can observe the baseline around the top peak.
+#Right-click “1D” in the main toolbar, left-click “a) Append 1D.” This will keep the spectrum where you put it while you select another 1D vertical spectrum.
+#Select another 1D vertical spectrum this time choosing one with a crosspeak toward the bottom of the 2D spectrum.
+#Left-click in the right-hand purple margin to bring up a pair of small yellow arrows pointed at one another. Left-click/hold/drag them so that they point at the topmost peak. Figure 15 shows what things should look like in your working area. This spectrum happened to be phased quite well by the initial “process2d.com” script. g) Enter active phasing mode by left-clicking the “On” button at the right side of the phase controls toolbar (Figure 11).
+#Phase the topmost peak with P0 and the bottom-most peak with P1. Note that the 2D spectrum will not reflect these changes; only the 1D traces will respond.
+#Record the P0 and P1 values appearing in their windows in the phase controls toolbar.
+
+====Edit the script “process2d.com” again====
+#Return to your editor with “process2d.com” open.
+#ADD the values of P0 and P1 to those in the lower “PS” line. For example, if your original script line was: | NMRPipe –f PS –p0 3.2 –p1 0.0 –di \ and your new P0 and P1 corrections are –85.0 and 177.0, respectively, then your new line should read: | NMRPipe –f PS –p0 –81.8 –p1 177.0 –di \
+#Make other alterations you find beneficial, such as adding a 2nd order baseline correction to f1: | NMRPipe –fn POLY –auto –ord 2 \
+#Save the modified script as”process2d.com” again.
+====Re-run the script “process2d.com”====
+#Like with step H, return to an X11 terminal and cd to the directory of your spectrum.
+#Type “process2d.com.”
+====View the reprocessed 2D spectrum in the NMRPipe GUI====
+#As in step I, open the spectrum “test.ft.”
+#Study the spectrum and its 1D vertical traces. If all is OK, then exit NMRPipe. If not, go back and edit process2d.com, execute the script, and re-view it until it looks right. 
+====Convert the NMRPipe file “test.ft” to NMRView format====
+[[Image:NMRUG-P2V_Script.gif|thumb|right|350px|'''Figure 16.''' The pipe2view.com script.]] [[Image:NMRUG-Exec_P2V_Script.gif|thumb|right|350px|'''Figure 17.''' Results of pipe2view conversion.]]
+#Your NMRPipe spectrum can be converted to NMRView format in either of two convenient ways: using a one-line command on the command line, or using a one-word script which must be created or copies from somewhere else.
+#Go to an X11 terminal window and cd to the directory of your spectrum.
+#Do either of the following:
+#*Type “pipe2xyz –in test.ft –out ./test.nv -nv”
+#*Copy the script “pipe2view.com” into your working directory, then type “pipe2view.” Figure 16 shows what this script looks like inside.
+#Figure 17 shows what your terminal should show you after the conversion.
+
+====You’re done!====

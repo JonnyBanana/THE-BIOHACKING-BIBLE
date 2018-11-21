@@ -1,0 +1,14 @@
+{{Kafatos/Christophides Lab}}
+==MMC2 annotation==
+
+'''EMBL A. gambiae MMC2 12k v1'''
+
+Download [[Media:EMBL MMC2 12k v1 ANNOT single line.txt|this tab-delimited file of annotations]]  based on the mapping of MMC2 reporters to the AgamP3.3 assembly/gene build using the VectorBase pipeline.  All annotations are derived from the corresponding Ensembl gene(s) and transcript(s).  When a microarray reporter (probe) corresponds to more than one gene, the corresponding annotations are joined with a vertical bar ("|").  Duplicate annotations (e.g. where two different transcipts contain the same domains) are removed.
+
+If your existing data files contain ENSANGTnnnnnnnnnn reporter IDs, you will have to convert them to "gene-neutral" IDs (e.g. 123.4.5) using the [[Media:MMC2 grid1 150205.gal|this GAL file]], before using the annotation file.
+
+'''Warning:''' error found for reporter 64.1.1 (it is not spotted many times as the GAL file suggests) [[User:Maccallum|Maccallum]] 12:37, 6 March 2007 (EST)
+
+To look up the current genome mapping of an MMC2 reporter, use a URL in the following style:
+ http://agambiae.vectorbase.org/Genome/FeatureView/?type=OligoProbe;id=1.2.3
+replacing the "1.2.3" with your reporter ID.

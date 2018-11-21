@@ -1,0 +1,200 @@
+The goal is to create a series of transcriptional terminators with varying efficiencies.  The majority of transcriptional terminators have a G+C rich stem of 7(+/-1)bp and a loop of 4(+/-1) nucleodtides followed by a poly(U) tail.  Two common loops are UUCG and GAAA, both of which are known to increase RNA hairpin stability.  The sequence GCGGG(G) is a common sequence found on the 3' arm of the stem. <cite>Aubenton90</cite>
+
+==Effects of stem loop sequence on terminator efficiency==
+Bulges and mismatches in the stem, as well low G+C content of the stem will lower TE more than reducing the length of or elimination of the poly(U) tail <cite>Abe96</cite>.  The sequences downstream of the poly(U) tail and between the stop codon and the start of the stem loop structure also affect the TE of a terminator, particularly T7Te or T3Te.
+
+*T7Te
+Several sources <cite>Reynolds92II</cite> [Chamberlin 79] measured the termination efficiency(TE) of T7Te at around 90%.  However, efficiency for the biobricks part BBa_B0012 [http://parts.mit.edu/registry/index.php/Part:BBa_B0012], also T7Te, is around 30%.  T7Te has a very short poly(U) tail and requires the further downstream sequence for efficiecent termination <cite>Reynolds92II</cite>, and this further downstream sequence is lacking in BBa_B0012.  If the sequence for BBa_B0012 is lengthened to include this downstream segment, then the TE of part should be improved.
+
+==Predicting terminator efficiency==
+It may be possible to predict terminator efficiency using methods from d'Aubenton, in particular, the score d assigned to a possible terminator sequence
+
+d = nt*18.16+Y*96.59-116.87
+
+where nt measures the statistical distribution of the T residues in the non transcribed DNA strand and Y is the free energy per nucleodtide of the stem loop structure.
+
+The score d will give a rough estimate of how efficient a terminator is.
+
+d<0:  TE<20%
+
+0<d<30:  20%<TE<70%
+
+d>30:  TE>70%
+
+==Ideal terminator==
+*has 6 base stem with 3' sequence of GCGGGG
+*4 base loop, either UUCG or GAAA
+*tail containing >8 uridines
+*for a biobrick part, flanking regions will be biobrick site
+
+==Designed terminators==
+The score d is calculated as mentioned above.  The energy of hairpin formation, delG, is caluclated using UNAFold.
+
+These terminators are designed to be bidirectional.  delG reverse is the energy of hairpin formation on the opposite strand.
+
+*Terminator 1:	
+
+delG=-12.6		d=62.33	%T>90	
+
+delG reverse=-10.2	d=53.09	%T>90
+
+stem loop:	CCCCGCTTCGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGAAAAAAAAACCCCGCTTCGGC
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAAAAAAAAACCCCGCCGAAGC
+
+
+*Terminator 2:	
+
+delG=-12.6		d=38.25	%T>90
+
+delG reverse=-10.2	d=23.02	%T=75
+
+stem loop:	CCCCGCTTCGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGCGCAAAAAACCCCGCTTCGGC
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAGCGAAAAAACCCCGCCGAAGC
+
+
+*Terminator 3:	
+
+delG=-12.6		d=27.78	%T=80
+
+delG reverse=-10.2	d=11.64	%T=40
+
+stem loop:	CCCCGCTTCGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGCGCCAAAAACCCCGCTTCGGC
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAGCGGAAAAACCCCGCCGAAGC
+
+
+*Terminator 4:	
+
+delG=-12.6		d=16.05	%T=55
+
+delG reverse=-10.2	d=0.91	%T=<20
+
+stem loop:	CCCCGCTTCGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGGCCGAAAACCCCGCTTCGGC
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTACGGCAAAACCCCGCCGAAGC
+
+
+*Terminator 5:	
+
+delG=-12.6		d=4.22	%T=25
+
+delG reverse=-10.2	d=-11	%T<10
+
+stem loop:	CCCCGCTTCGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGCGCCGCAAACCCCGCTTCGGC
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAGCGGCGAAACCCCGCCGAAGC
+
+
+*Terminator 6:	
+
+delG=-16.2		d=57.39	%T>90
+
+delG reverse=-18.9	d=66.22	%T>90
+
+stem loop:	CCCCGCCCCUGACAGGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGAAAAAAAAACCCCGCCCCTGACAGG
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAAAAAAAAACCCCGCCCTGTCAGGG
+
+
+*Terminator 7:	
+
+delG=-16.2		d=33.32	%T=80
+
+delG reverse=-18.9	d=42.69	%T>90
+
+stem loop:	CCCCGCCCCUGACAGGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGCGCAAAAAACCCCGCCCCTGACAGG
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAGCGAAAAAACCCCGCCCTGTCAGGG
+
+
+*Terminator 8:	
+
+delG=-16.2		d=22.84	%T=70
+
+delG reverse=-18.9	d=33.03	%T=80
+
+stem loop:	CCCCGCCCCUGACAGGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGCGCCAAAAACCCCGCCCCTGACAGG
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAGCGGAAAAACCCCGCCCTGTCAGGG 
+
+
+*Terminator 9:	
+
+delG=-16.2		d=11.56	%T=40
+
+delG reverse=-18.9	d=22.31 %T=75
+
+stem loop:	CCCCGCCCCUGACAGGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGCGCCGAAAACCCCGCCCCTGACAGG
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAGCGGCAAAACCCCGCCCTGTCAGGG
+
+
+*Terminator 10:	
+
+delG=-16.2		d=-0.72	%T<10
+
+delG reverse=-18.9	d=10.40	%T=40
+
+stem loop:	CCCCGCCCCUGACAGGGCGGGG
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGCGCCGCAAACCCCGCCCCTGACAGG
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAGCGGCGAAACCCCGCCCTGTCAGGG
+
+
+*Terminator 11:	this is not supposed to work.  if it does, then something is wrong
+
+delG=-3.3		d=-52.65	%T=0
+
+delG reverse=-0.5	d=-69.56	%T=0
+
+stem loop:	TTTTATGAAAATAAAA
+
+primer 1:	GTTTCTTCGAATTCGCGGCCGCTTCTAGAGCGCCGCAAATTTTATGAAAAT
+
+primer 2:	GTTTCTTCCTGCAGCGGCCGCTACTAGTAGCGGCGAAATTTTATTTTCAT
+
+==References==
+<biblio>
+# Abe96 pmid=9150882
+# Aubenton90 pmid=1702475
+# Bredel86 pmid=3078109
+# Cheng91 pmid=1835546
+# Christie81 pmid=7027254
+# Ermolaeva00 pmid=10926490
+# Lesnik01 pmid=11522828
+# Lynn88 pmid=2961747
+# Petrillo06 pmid=16820051
+# Reynolds92I pmid=1372365
+# Reynolds92II pmid=1372366
+# Unniraman02 pmid=11809879
+# Uptain97 pmid=9391063
+# VonHippel92 pmid=1536005 
+# Wilson94 pmid=7966320
+# Wilson95 pmid=7568019
+# Yager91 pmid=1703438
+# Gusarov99 pmid=10230402
+# deHoon05 pmid=16110342
+# Smolke06 pmid=16845378
+# Nudler02 pmid=12167155
+</biblio>

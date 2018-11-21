@@ -1,0 +1,74 @@
+[[Image:Manalisbanner.gif|750px]]
+<div style="padding: 10px; color: #ffffff; background-color: #000; width: 730px">
+<center>
+
+[[Manalis | <font face="trebuchet ms" style="color:#ffffff"> '''Home''' </font>]] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[[Manalis:Contact | <font face="trebuchet ms" style="color:#ffffff"> '''Contact''' </font>]] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[[Manalis:Back Door | <font face="trebuchet ms" style="color:#ffffff"> '''Internal''' </font>]] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[[Manalis:Lab Members | <font face="trebuchet ms" style="color:#ffffff"> '''Lab Members''' </font>]] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[[Manalis:Reprints | <font face="trebuchet ms" style="color:#ffffff"> '''Publications''' </font>]] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[[Manalis:Orders | <font face="trebuchet ms" style="color:#ffffff"> '''Orders''' </font>]] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[[Manalis:Safety | <font face="trebuchet ms" style="color:#ffffff"> '''Safety''' </font>]] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[[Manalis:Calendar | <font face="trebuchet ms" style="color:#ffffff"> '''Calendar''' </font>]] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</center>
+</div><br>
+
+==The Basics of Wire Bonding==
+#	Turn on the Machine
+#*	Check the pressure gauge behind the wire bonder—40 PSI is a good reading, but any nonzero value is fine
+#*	Ultrasonic Error?  Wait 5 minutes, then power on/off.  Could take up to 5 times before you stop getting this error.  Machine will not operate if this error is present.
+#	The Buttons (on Bond 1 of 2 screen)
+#*	Torch/Prev : extends wire, only happens if correctly threaded
+#*	Thread/Next: opens clamp.
+#**	Torch/Prev closes clamp and extends wire.  Bond off excess.
+#*	Buffer: standard buffer: power 300, time 30 ms
+#**	Different surfaces require different settings.  
+#***	Power 200 – 400 (change in increments of 10).
+#***	Time 30 – 100 ms
+#*	Don’t change tool heat, ball size dials
+#	Check the Bond Tool Position setup
+##	Turn machine off, press down on Torch/Prev & at same time turn machine back on
+##	The current value should be ~30 (>28) for a good needle position.  The number gets lower whether you have the needle too high or too low.
+##	Do not hold the needle with the flat tweezers while getting a new current value.
+##	When you have a good value, press ESC
+#	Press Torch/Prev
+#*	This will extend the wire if everything is acting like it should.
+#*	Bond off the excess.
+#	Bonding
+#*	Always bond the front pad first.  Work front (towards you) to back.
+#*	Do not allow the needle to touch the surface for very long.  
+#*	Make bonds with long wires, rather than short, since these are less easy to break.
+#	Rethreading
+##	When in the machine, the flat side of the needle is pointing towards you.
+##	Press “Thread/Next”
+##	Remove the needle from the wire bonder, using the Flat Tweezers.  Pull lots of wire (1.5”) out.
+##	Cut off any kinked wire.
+##	Rethread the needle by holding the needle in your left hand, with it pointing downwards, and the slanted side pointing towards you.  
+##	Guide the thread downwards and through the tiny hole at the tip of the needle, using the Flat Tweezers.  (The sharp tweezers will cut the wire).
+##	Pull lots of thread out (2”) and put the needle back into the machine.
+##	Now keep pulling the thread until it inserts itself into the slot on the clamp (it doesn’t go in much at all, but as long as it’s centered it’s fine).  Pull out a little more thread (0.5”)
+##	Go to the Bond Tool Position setup and properly adjust the needle position (see item #2 above).
+##	Press ESC.  Press Torch/Prev and if the wire advances, then things are perfect  . 
+#	Clogging
+#*	Gold may clog the needle, then it needs to be etched away with a special solvent.
+
+==Wire Bonding the SMR==
+Each pad on the device corresponds to a pad on the PCB.  There are 2 gold pads on the device for each cantilever.  The other pads are silicon.
+
+{| border="1"
+|+ 
+! !! Power !! Time
+|-
+! Settings for gold pads:
+| 360 || 60 ms
+|-
+! Settings for silicon pads:
+| 381 || 91 ms
+|}
+
+Orient the PCB so that you are working front to back…generally meaning bond the device pad, then the PCB pad.
+Try to make each of the wires as short as possible, so that the UV curing epoxy will cover them well.
+
+==Comments==
+Please list any recent problems with the wirebonder here.
+[[Category:Manalis_Page]]

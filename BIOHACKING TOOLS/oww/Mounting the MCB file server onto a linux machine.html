@@ -1,0 +1,14 @@
+It is very easy to do this mount ''once you know how''.
+
+1. Create the directory which you want to be equivalent to the root directory of the mounted filesystem. On my machine I do this with
+  sudo mkdir /mnt/mcb
+
+2. Now you are ready to mount the server. After issuing the following command you will be prompted for your MCB password
+  sudo mount -t smbfs -o username=friedm,workgroup=mcb,uid=baf //lsdivfs3.mcb.harvard.edu/Maniatis_Lab /mnt/mcb
+
+Here <code>friedm</code> is my username ''on the MCB server'' and <code>baf</code> is my username ''on my linux box''. If you don't 
+supply <code>username</code> then it won't be able to make the connection. If you don't supply <code>uid</code> then all the mounted files
+will default to be owned by <code>root</code> on your local filesystem. In that case you will have no trouble reading them, but you will
+need to use <code>sudo</code> to make any changes or write new files.
+
+The document on Mac and PC mounting says that some labs have truncations in their names, so if you have a PI with a long last name try some variants. If you can't figure out the correct directory, just connect using the PC or Mac instructions on a PC or Mac (available at [http://internal.mcb.harvard.edu/Tech/CompServices/HelpFiles/pdfs/ConnectToCelerra.pdf MCB internal website]) and scroll down the list of available directories.

@@ -1,0 +1,88 @@
+[[Image:Victor.jpg|right|thumb|200px]]
+
+'''Summer Intern'''
+
+Victor is currently a student at The University of Pennsylvania who is interned in the [http://openwetware.org/wiki/Hoatlin_Lab Hoatlin lab] during the summer of 2006 and returns for summer 2007. He enjoys table tennis, go cart racing, miniature golf and other miniaturized sports.
+
+==Building a Protein Model==
+
+[[Image:Aquaporin.gif|right|thumb|250px| Aquaporin as visualized through RasMac v2.6]]
+
+====Searching for Sequence Homologs====
+#Acquire sequence for the protein that you want to model (target sequence)
+#Go to [http://www.ncbi.nlm.nih.gov/BLAST/ NCBI BLAST]
+#Click on '''position-specific iterated and pattern-hit initiated BLAST (PSI- and PHI-BLAST)'''
+#Enter your target sequence into the box labelled '''Search'''
+#Change the database to "swissprot" in the '''Choose Database''' box 
+#Click on '''BLAST!'''
+#Click on '''Format!'''
+#Run '''PSI-BLAST iteration''' 3 or 4 times.
+#Save sequences with high identity percentages
+#*Save as either a FASTA file or copy and paste each sequence into MacVector 
+Note: If you already know which homologs you are using and have the accession codes, it is possible to find the sequences at PubMed.
+
+====Searching for a Template Sequence====
+#Go to [http://www.ncbi.nlm.nih.gov/BLAST/ NCBI BLAST]
+#Click on '''position-specific iterated and pattern-hit initiated BLAST (PSI- and PHI-BLAST)'''
+#Enter your target sequence into the box labelled '''Search'''
+#Change the database to "pdb" in the '''Choose Database''' box 
+#Click on '''BLAST!'''
+#Click on '''Format!'''
+#Click on the alignment with the highest score
+#Save sequence as either a FASTA file or copy and paste into MacVector
+
+====Aligning Homolog Sequences====
+'''MacVector'''
+#Open all sequences
+#Open '''Analyze''' and then click on '''ClustalW alignment'''
+#Save Alignment as a FASTA file
+
+
+'''ClustalW'''
+#Paste all of your sequences into one FASTA file
+#Select an online alignment program ([http://www.ch.embnet.org/software/ClustalW.html CLUSTALW] or [http://igs-server.cnrs-mrs.fr/Tcoffee/tcoffee_cgi/index.cgi TCoffee]) depending on the number of sequences you are using and the total length of the sequences
+#Upload your alignment
+
+====Submitting Your Alignments====
+#Go to [http://swissmodel.expasy.org/ Swiss-Model]
+#Click on '''Alignment Interface'''
+#Set '''Alignment Input Format''' as ClustalW
+#Upload or paste your alignment
+#Click on '''Submit Alignment'''
+#Select the name of your target sequence in the '''Target Sequence''' box
+#Select the name of your template sequence in the '''Template Sequence''' box
+#Enter the PDB code of your template sequence in the '''PDB-Code''' box
+#Click on '''Submit'''
+#Provide your name and e-mail
+#Submit your alignments
+#'''Pray Swiss-Model doen't send you a modeling failure notice'''
+
+====Visualizing Your Protein====
+#Download your protein as a PDB
+#*Both your model and its script should be attached to an e-mail sent by Swiss-Model
+#Open the PDB file using a protein visualization program
+
+==Important Websites==
+[[Image:Biofordummies.jpg|right|thumb|200px| In case of problem consult the above]]
+'''Searching for Sequence Homologs'''
+*[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?DB=pubmed/ PubMed]
+*[http://www.ncbi.nlm.nih.gov/BLAST/ NCBI BLAST]
+
+'''Creating an Alignment'''
+*[http://align.genome.jp/ CLUSTALW at GenomeNet]
+*[http://www.ch.embnet.org/software/ClustalW.html/ CLUSTALW at ch.EMBnet.org]
+*[http://igs-server.cnrs-mrs.fr/Tcoffee/tcoffee_cgi/index.cgi/ Tcoffee]
+
+'''Submitting an Alignment'''
+*[http://swissmodel.expasy.org/ Swiss-Model]
+
+'''Databases'''
+*[http://www.expasy.org/ ExPASy]
+*[http://www.rcsb.org/pdb/Welcome.do;jsessionid=ewzSxSFShUQESs9zzKYUmw**/ Protein Databank]
+
+'''Visualization Programs'''
+*[http://www.expasy.org/spdbv/ DeepView Swiss-PDB Viewer]
+*[http://www.umass.edu/microbio/rasmol/getras.htm/ RasMol]
+
+
+Back to Main Page [[Hoatlin Lab]]

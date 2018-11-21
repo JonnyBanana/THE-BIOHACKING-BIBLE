@@ -1,0 +1,35 @@
+==Motivation==
+[[Image:DedicatedTubesW852.jpg|thumb|right|300px|Two orthogonal protein synthesis channels, one specific for engineered biological systems and one specific for normal cellular function.]]
+
+We are working to reduce the coupling between engineered biological systems and their cellular chassis.  This coupling leads to unexpected system behavior and perturbed cellular function.  A major source of the coupling between system and chassis is that both share the same transcription and translation processes.  We are working to implement an orthogonal protein synthesis channel that is solely used by an engineered biological system and does not perturb cellular function.
+
+
+If this orthogonal channel can be standardized and designed to function in multiple cell types, then it forms the basis of a [[Endy:Dedicated systems/Virtual machines| biological virtual machine]]([[Endy:Dedicated systems/Virtual machines|1.0]], [[Endy:Chassis engineering/VM2.0|2.0]]).
+<br style="clear:both" />
+
+Currently, we are working to enable dedicated transcription and dedicated translation in an ''E. coli'' strain MG1655 chassis.  Details on this work can be found on the following pages - 
+
+*[[Endy:Dedicated systems/Transcription|Dedicated Transcription]]
+*[[Endy:Dedicated systems/Translation|Dedicated Translation]]
+
+==Demonstrating the usefulness of dedicated systems==
+#'''Measure specificity of combined dedicated systems'''
+#'''Demonstrate decoupled function of the system and the cellular chassis'''
+#*GFP accumulation as chassis make the transition from log to stationary phase should indicate whether system performance is less affected by the change in the chassis state.
+#*Suddenly turning on the high level protein expression of a system should reduce growth rate of the chassis when the system uses dedicated systems than when it does not.  Initial experiments have suggested that this might only be true in a minimal media such as M9.
+
+==First generation reporter devices for the dedicated transcription/translation systems==
+
+{| border="1" cellpadding="2" align="center"
+|+
+|-
+!  !! General Translation !!  VM Translation
+|-
+! General Transcription
+| '''[http://parts2.mit.edu/r/parts/partsdb/view.cgi?part_id=5341 I7101]'''<br>[[Image:I7101]]|| '''[http://parts2.mit.edu/r/parts/partsdb/view.cgi?part_id=5367 I7102]'''<br>[[Image:I7102.gif]]
+|-
+! VM Transcription
+| '''[http://parts2.mit.edu/r/parts/partsdb/view.cgi?part_id=5761 E7104]'''<br>[[Image:E7104.gif]] || '''[http://parts2.mit.edu/r/parts/partsdb/view.cgi?part_id=5474 E7103]'''<br> [[Image:E7103.gif]]
+|-
+
+|}

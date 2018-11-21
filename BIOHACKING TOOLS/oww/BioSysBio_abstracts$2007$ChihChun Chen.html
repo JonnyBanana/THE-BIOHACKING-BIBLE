@@ -1,0 +1,38 @@
+* Add or delete the sections that you require.
+
+=Context Sensitivity in Individual-Based Modelling=
+'''Author(s): '''[[User:ChihChun|Chih-Chun Chen, Christopher D. Clack, Sylvia B. Nagl]]<br> 
+'''Affiliations:''' Department of Computer Science, University College London  <br>
+'''Contact:'''c.chen@cs.ucl.ac.uk <br>
+'''Keywords:''' 'modeling' 'simulation' 'process algebra' multifunctionality'
+
+[[Category:BioSysBio Keywords modeling]] 
+[[Category:BioSysBio Keywords simulation]]
+[[Category:BioSysBio Keywords process algebra]]
+[[Category:BioSysBio Keywords multifunctionality]]
+
+
+The function of many bio-molecules and biological entities is dependent on their context. We can define context as anything influencing the molecule but which is not the molecule itself. For example, ‘moonlighting’ proteins [1] use various molecular mechanisms to switch between functions, such as differential localisation, complex formation and substrate formation; these can all be classified as context-dependent mechanisms. Cell function is also highly dependent on external signals and local environment e.g. [2]. Context sensitivity implies the following:
+
+1. Biological function can not be deduced purely from an entity’s type or species. Role and species need to be represented as distinct aspects of an entity.
+
+2. An entity can play several different roles during its lifetime and some of these can be simultaneous.
+
+A biological system can be seen to consist of a large number of individual entities e.g. molecules, cells.  Individual-Based modelling techniques are those that model from the ‘bottom up’, taking the behaviour of these entities as their starting point. Simulations run from these models can reveal emergent phenomena and structures that would not be easy to predict from analysis alone. Context sensitive multifunctionality in Biology poses a challenge in individual-based modelling because context conditions often need to be represented at higher levels of abstraction. For example, complex formation depends on the collective behaviour of several different molecules. However, we can reduce the representation of context to an interaction between an individual and its environment, where its environment is anything that affects the entity’s behaviour or function but that is not internal to the entity itself. Context sensitive multifunctionality can then be represented in terms of different state transformations for different individual-environment combinations.
+
+Process algebras such as the p-calculus [3], bioambient calculus [4] and brane calculus [5] can be used to describe interactions between entities in biological systems. In general, they consist of (i) a language for describing systems (ii) a behavioural equivalence or inequivalence that allows comparison of system behaviours and (iii) axioms that allow for proofs for equivalence between systems [6]. A biological entity is represented by a process and a handshake mechanism between processes via a channel is usually used to represent interactions between entities. Once the data are exchanged, both processes continue. Since context-sensitive multi-functionality can be seen simply as interactions between entities, process algebras can be used to formally represent these models.
+
+
+
+'''References'''
+
+[1] C. J. Jeffrey: Molecular mechanisms for multitasking: recent crystal structures of moonlighting proteins. Current Opinion in Structural Biology, 14: 663-668, 2004.
+
+[2] M. H. Barcellos-Hoff and S. V. Costes: A systems biology approach to multicellular and multi-generational radiation responses. Mutation Research, 597, 32-38, 2006.
+
+[3] A. Regev, W. Silverman and E. Shapiro. Representation and simulation of biochemical processes using the pi-calculus process algebra. In R. B. Altman, A. K. Dunker, L. Hunter and T. E. Klein (Eds.). Pacific Symposium on Biocomputing, Volume 6, pages 459-470, Singapore, 2001.
+
+[4] A. Regev, E. M. Panina, W. Silverman, L. Cardelli and E. Shapiro. Bioambients: an abstraction for biological compartments. Theoretical Computer Science, 325: 141-167, 2004.
+[5] L. Cardelli. Brane calculi. In V. Danos and V. Schachter (Eds.). CMSB 2004, LNBI 3082, 2005.
+
+[6] M. Hinchey, J. P. Bowen and C. A. Rouff. Introduction to Formal Methods. In C. A. Rouff, M. Hinchey, J. Rash, W. Truszkowski and D. Gordon-Spears (Eds). Agent Technology from a Formal Perspective. Springer, 2006.

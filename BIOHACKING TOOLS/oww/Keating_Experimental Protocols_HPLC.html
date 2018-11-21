@@ -1,0 +1,29 @@
+{{KeatingLabToolbar}}
+[[Keating:Experimental Protocols|back to Experimental Protocols]]
+
+== HPLC General Protocol for new proteins ==
+
+(This is more of a summary than a protocol, more details to be added later)
+
+*written by [[user:sdeignan|Shaun]]
+
+#If your protein contains Cys residues, you probably want to fully reduce them before purification (think about whether this is the case for your application).  This can be accomplished by stirring in 200 mM DTT at pH ~8 for at least 30 minutes.
+#Confirm that the column was left clean by the previous user by checking the wash trace.
+#Run a blank.  To the extent possible, use the same exact buffers you will use in your sample preparation, e.g. include DTT if you are using that, use dialysis solution if you have dialyzed your sample.
+#Run a 1%/min gradient on an analytical scale (~75 ug).  Run the gradient from 10% to X%, where X is 80, except for Bcl-2 proteins, where X=100.
+#Calculate %B where sample comes off (remember to account for the dead time), call it M.  RECORD this.
+#Run slower 0.1%/min gradient on an analytical sample.  Sample should come off 3% B earlier than calculated M.  Want the slower gradient to be 5% B on each side of elution, to make sure you catch your peaks of interest.  So run 0.1% gradient from ((M-3)-5)% to ((M-3)+5)%. 
+#Calculate %B where sample comes off, call it N.  RECORD this.
+#If you want to purify your protein at this point, you can now run a gradient that starts at N-2%B (see note below).  Make the gradient long enough that you are confident you will get all of your peaks off.  When doing prep runs, after you have collected your last peak you can switch to a program that immediately ramps from the current conditions up to 100%B and then re-equilibrates the column, you don’t have to wait for the entire programmed run to finish.  When changing from analytical scale to prep scale, you can expect your peak approx. 3 minutes earlier.  Don’t miss it!
+#Run wash gradient until CLEAN.
+
+
+NOTE 1:  Once you know where your protein comes off at 0.1%/min, future slow gradients can be run starting 2% B before the expected elution point.  This will leave the sample on the column for ~ 20 minutes before it elutes, which is necessary for good separation.
+
+NOTE 2:  Once you are sure you know what you are doing and how your protein behaves, you may want to deviate from this procedure or skip some steps.
+
+NOTE 3: Buffer B is 90% Acetonitrile, 0.1% TFA
+
+[[Category:Protocol]] 
+[[Category:In vitro]] 
+[[Category:Protein]]

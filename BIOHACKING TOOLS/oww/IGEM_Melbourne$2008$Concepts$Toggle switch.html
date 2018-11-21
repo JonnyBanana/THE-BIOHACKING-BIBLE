@@ -1,0 +1,37 @@
+[[IGEM:Melbourne/2008|Return to Melbourne Homepage]]
+==Overall System==
+[[Image:TS_Overall.jpg|thumb|left|400px|A Toggle Switch]]
+Components:
+*IPTG (Isopropyl β-D-1-thiogalactopyranoside) - small organic compound that stops the LacI protein from functioning
+*LacI - protein that interacts with the P<sub>''trc-2''</sub> promoter to repress transcription of downstream genes
+*CI - protein that interacts with the P<sub>L</sub> promoter to repress downstream genes
+*GFP (Green Fluorescent Protein) - Protein that fluoresces green (fairly self explanatory), used to indicate states of ON (green) and OFF (no green)
+<br style="clear:both;"/>
+==Initial State==
+[[Image:TS_Init.jpg|thumb|left|400px|Initial State]]
+*Consider an initial state where neither of the switch mechanisms is active
+*The promoter P<sub>L</sub> is active, therefore the ''lacI'' gene is expressed
+*This produces the LacI protein which represses the promoter P<sub>''trc-2''</sub>
+*As this promoter is repressed, the ''cI'' & ''gfp'' genes are not transcribed
+*No CI protein means that the P<sub>L</sub> promoter is not repressed and can keep on making the LacI protein
+*No GFP means that there is no green signal (OFF)
+<br style="clear:both;"/>
+==Switch On==
+[[Image:TS_On.jpg|thumb|left|400px|Switched On]]
+*Now switch the circuit on by adding IPTG
+*IPTG stops the LacI protein from functioning, therefore the P<sub>''trc-2''</sub> promoter is no longer repressed
+*The ''cI'' & ''gfp'' genes are now able to be transcribed, producing the CI and GFP proteins
+*GFP gives us a green signal (ON)
+*The CI protein represses the P<sub>L</sub> promoter, stopping the production of any more LacI protein
+*This system is now stable in the ON state and IPTG can be removed without switching it off
+<br style="clear:both;"/>
+==Switch Off==
+[[Image:TS_Off.jpg|thumb|left|400px|Switched Off]]
+*To switch it off, raise the temperature to 42°C
+*This degrades the CI protein so that it cannot repress the P<sub>L</sub> promoter
+*This means that the P<sub>L</sub> promoter can initiate expression of the ''lacI'' gene, producing the LacI protein
+*The LacI protein represses the P<sub>''trc-2''</sub> promoter, which stops production of the GFP and CI proteins
+*No GFP means no green signal (OFF)
+*No CI means no repression of LacI production
+*Again, this system is stable in the OFF state. If you were to lower the temperature the diagram would return to that shown as the 'Initial State' and would remain OFF.
+<br style="clear:both;"/>

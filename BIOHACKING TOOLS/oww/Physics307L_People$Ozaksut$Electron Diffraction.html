@@ -1,0 +1,77 @@
+=Electron Diffraction=
+*[http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf Electron Diffraction Lab Manual]
+*[http://iktp.tu-dresden.de/KP/boston/downloads/electrondiffraction1.pdf Better Electron Diffraction Lab Manual]
+
+==Goal==
+{{SJK comment|label=02:26, 11 October 2007 (CDT)|comment=While I didn't check your derivations, these two sections are a very nice introduction!  Great that you looked up information in various sources to get a better idea of what is going on, and that you cited it.}}
+We wish to verify the wave properties of matter by trying to produce a diffraction pattern of electrons that we beam through a graphite diffraction grating onto a luminescent screen.  If we control the speed of the electrons by manipulating the accelerating voltage, we can calculate the momentum, energy, and wavelength of our electrons as well as the dimensions of the polycrystalline grating which produces the diffraction pattern by measuring the spacing between diffraction rings on the screen.
+
+==Theory==
+We use a polycrystal in order to more easily detect the diffraction pattern: a diffraction pattern caused by electrons scattering through one crystal layer would be too weak to detect or measure, so passing electrons through multiple layers will necessarily increase the intensity of the positive interference, and because the layers are oriented in different directions, the resulting pattern is concentric circles, corresponding to the regular spacing of different atoms in the crystal structure. (I used my beginning physics text by Halliday, Resnick, and Walker and this wikipedia site for help with the concept: [http://en.wikipedia.org/wiki/X-ray_crystallography X-ray crystallography])
+
+We use the formula to find maxima produced from a crystal diffraction grating:
+
+<math>{d_1}\cos\theta_1={m}\lambda</math>
+<math>{d_2}\cos\theta_1={m}\lambda</math>
+
+set <math>{m}=1</math>,
+use the deBroglie relationship to set <math>\lambda=\frac{h}{p}</math>,
+<math>{p}={mv}</math>,
+<math>{1/2}{m}{v}^2={e}{V_a}</math> solve for v and plug into the deBroglie equation,
+and use the relationship between theta and diameter of diffraction ring:
+<math>{D}={2L}\tan\theta</math>
+
+to get a final relationship between electron rest mass (known), accelerating voltage (known), diameter of diffraction (measured), and distance between diffracting "layers" (want to know)
+
+<math>d=\frac{4 \pi L \hbar c}{D \sqrt{2eV_Amc^2}}</math>
+
+We can compare our d values with the accepted values of .123nm and .213nm.
+
+==Equipment==
+{{SJK comment|label=02:28, 11 October 2007 (CDT)|comment="weak" is sort of an ambiguous term..."low voltage" would be better, or even better yet, the exact specs.  Also, for all of these, the model number is essential to record.}}
+*1 HV power supply (~5 kV max)
+*1 weak power supply (bias voltage ~2.5V)
+*banana plugs
+*multimeter to monitor current
+*electron diffraction tube
+*calipers
+
+==Setup==
+{{SJK comment|label=02:30, 11 October 2007 (CDT)|comment=This is interesting about the bias voltage!  I still don't quite understand it, but it seems like you do?  Maybe you can explain it to me when we have time}}
+We referred to the circuit diagram in the lab manual to understand the physical setup of the system.  [http://www-hep.phys.unm.edu/~gold/phys307L/manual.pdf lab manual]  We supply power to a heater which heats a cathode which then releases electrons.  We supply enough energy to an anode for it to pull the loose electrons from the cathode toward the crystal mesh diffraction grating.  The bias voltage is run through the crystal mesh in order to ensure that only the electrons with the most momentum make it through to the luminescent screen.  Changing the bias voltage doesn't change the size of the diffraction rings, it only changes the relative intensity of the ring pattern.
+
+==The Procedure==
+Since the diffraction rings had some width, we chose to take max diameter and min diameter measurements for each ring at each accelerating voltage.  Because we used calipers instead of a flexible ruler, we didn't have to convert our data before making calculations.  We took data for voltage increments of .1 kV from 5kV to 3.3kV, because the diffraction pattern became too dim to see at Va below 3.3kV.  Additionally, we gathered some data the first week at increments of .2 kV from 5kV to 4kV, so we had more data points to include in our average for certain values of Va.   
+
+
+==Data==
+{{SJK comment|label=02:33, 11 October 2007 (CDT)|comment=It appears to me as though you forgot to divide by sqrt(N) to calculate your standard error of the mean?  (See cells I22 and I47 in your excel file.)  It's confusing, so check with me if you don't understand why, or if you think I'm wrong.}} 
+Please see this excel spreadsheet for our data
+[[Media:electron diffraction lab.xlsx]]
+{{SJK comment|label=01:31, 20 October 2007 (CDT)|comment=Your data look pretty good when plotted this way!}}
+[[Image:Anne and Matthew e diffraction data.png]]
+
+==Calculations==
+Using the above equations,
+
+The average value of d(the smaller atom spacing in the carbon crystal which creates the larger diffraction circle) that I calculated was .1083 nm.  The accepted value is .123 nm.
+
+The average value of d(the larger atom spacing in the carbon crystal which creates the smaller diffraction circle) that I calculated was .189 nm.  The accepted value is .213 nm.
+
+Please see the excel spreadsheet for the calculated electron wavelength corresponding to each accelerating voltage.
+[[Media:electron diffraction lab.xlsx]]
+
+
+==Error Analysis==
+{{SJK Comment|label=02:38, 11 October 2007 (CDT)|comment=As for your guess about measuring too generously, that would be a '''''systematic''''' error too.  It would be a bias in your measurements, and something you could try to correct on future measurements.  A better use of significant digits would be to report your answers like so:<br>0.19 nm +/- 0.01 nm <br>That is, you don't need as many digits as you used.  Also, I am not sure what you are saying about the random error being the same....I definitely agree, though that there appears to be systematic error...because the "real" value is very far outside your uncertainty range.}}
+For each decreasing value of the accelerating voltage, we should have gotten a different increasing value of the ring diameter.  For both ring measurements, our diameters grew too quickly as our voltage dipped below 4kV.  Part of this was due to how difficult it was to see the rings at such a low voltage.  Also, we probably noticed the pattern of diameter growth in the early measurements and were biased when taking the later ones, maybe measuring too generously (random error).  Additionally, the diffraction pattern on the screen at the front of the bulb wasn't a perfect circle, and the screen was slightly damaged due to too high an intensity of electrons hitting it at some point, so the rings weren't as clear or as uniform and might not have produced the best data (systematic error).
+
+Our best guess d(larger) value was .189nm +/-.0118nm.  The real value was .213nm.  Our error was 11%.
+Our best guess d(smaller) value was .108nm +/- .0034nm.  The real value was .123nm.  Our error was also 11%.  This suggests stronger systematic error than random error, or our random error was randomly the same for both data sets.
+
+== Lab Critique ==
+The lab doesn't require tons of equipment, or very old equipment, so it allowed us to start taking data earlier than in other labs.  Also, because the setup is relatively simple, there is less systematic error built into the experiment, so it's a good exercise in taking good data/ taking a lot of data/ analyzing data.  Maybe investing in an electron diffraction tube which can sustain a higher voltage would be good, because then we could start taking data at a higher voltage than 5kV, and mabye we could take a larger sample of data.  The lab manual could definitely use a diagram of path length difference next to a diagram of interference maxima relating the two pictures with the same theta.
+
+==Acknowledgments==
+{{SJK comment|label=02:39, 11 October 2007 (CDT)|comment=Great acknowledgement!}}
+Thanks to Bradley Knockel for writing such a thorough lab summary.  I used his as a template.

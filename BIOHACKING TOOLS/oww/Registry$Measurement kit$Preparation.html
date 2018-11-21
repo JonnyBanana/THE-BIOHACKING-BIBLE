@@ -1,0 +1,81 @@
+Description of the measurement kit components and methods of preparation.  See also [[Registry/Measurement kit/Instructions]] for a description of how to use the kit to test a promoter or RBS.
+
+=Promoter Measurement Kit=
+
+==Components==
+*[http://parts.mit.edu/registry/index.php/Part:pSB3K3 psb3K3]
+*<bbpart>E0240</bbpart>
+*TOP10 Chemically competent cells 
+
+==Preparation==
+===psb3K3===
+====Primers for Preparatory PCR====
+*Need to fill in here.
+
+====Preparatory PCR====
+*[[Image:Psb3k3 Pcr prep.JPG|thumb|Result of a successful preparatory PCR; Ladder is 1ug of 2log]]
+
+*The psb3K3 "backbone" plasmid is produced by PCR from a prepped psb3K3 template.  
+*A preparative PCR mix containing:
+**190 of PCR Supermix HIFI from Invitrogen
+**5uL of 3K3SuffixFWD primer
+**5uL of 3K3PrefixREV primer
+**0.5uL of template at ~40ng/uL
+*Run PCR with the following conditions:
+*#95C for 5 min
+*#95C for 30 sec
+*#55C for 30 sec
+*#68C for 3min 20sec
+*#Goto 2 35 times
+*#68C for 10 min
+*#4C for eva
+*Notes: I haven't really optimized the PCR conditions, but I find that using the Supermix is much more reliable than using the random endy lab stocks, fwiw.  
+
+====PCR Cleanup====
+*PCR Cleanup on a 200uL preparative PCR mix should yield about 48uL of cleaned up DNA at a concentration of ~330-350ng/uL (16ug).
+
+====Restriction Digest====
+*Load 1ug of DNA into a 50ml digest (X/P)
+*I use this [[Knight:Restriction Digest|protocol]] (except use buffer NEB3)
+
+=RBS Measurement Kit=
+==Components==
+*[http://parts.mit.edu/registry/index.php/Part:pSB3K3 psb3K3]
+*<bbpart>I13401</bbpart>
+*TOP10 Chemically competent cells
+==Preparation==
+===I13401===
+====Miniprep====
+*Streak LB+Amp plate of I13401.1A2
+*Innoculate 10ml of LB+Amp with a single colony from the plate, grow to saturation
+*Miniprep the 10ml of culture 
+**Load the entire sample into a single miniprep column
+**Elute with 50uL EB
+*Measure the concentration of DNA in the sample (expected concentration?)
+
+====Digest====
+*Load 1ug of DNA into a 50ml digest (X/P)
+*I use this [[Knight:Restriction Digest|protocol]] (except use buffer NEB3)
+
+====PCR Cleanup====
+*Expected conecntation 
+*On average we see ~65% yield between what went into the digest and what comes out of this cleanup step. 
+**So expected concentration will be ~22ng/uL in 30uL elution.  
+**I load 3uL into the ligation, so if you need to do more than 9 ligations then make up multiple digests (or include more DNA in the digest -- up to how much?)
+
+====Ligation====
+*Most recently I tried 10ng of each of the inputs (I13401, psb3K3, and P.RBS) in a 20uL ligation reaction with concentrations as specified in [[Endy:DNA ligation using T4 DNA ligase|the Endy lab protocol]].  This hasn't been optimized, but I ran some controls (number of colonies after ='s):
+**3k3 PCR-product (non-ligated) = 3
+**3k3 PCR-product digested E/P (non-ligated) = 6
+**3k3 PCR-product digested E/P (ligated) = 1
+**3k3 + I13401 = 26
+**3k3 + I13401 + b0031 = 1
+**3k3 + I13401 + b0033 = 56
+**3k3 + I13401 + b0034 = 19
+*Not sure exactly what to make of this, clearly some more optimization is needed.  One point to note is that I only directly measured the concentration of one of the P.RBS annealed primer preps (though they all should be at the same concentrations, should dbl check the others).
+
+=Troubleshooting=
+*Described below are the tests we did to verify that the input parts to the measurement Kit are what we thought they are.
+**TOP10 cells were transformed with prepped P1010.3k3 and no colonies were produced.
+***This is to demonstrate that any P1010.3k3 used as template for the PCR reaction will not appear as background false-positive colonies when doing the final ligation/transformation.
+[[Image:MeasKit inputs.JPG|left|frame|Digest of I13401.1a2, E0240.1a2, and 3k3(PCR product).  3k3 and I13401 were digested for 4 hrs, E0240 was digested for 3hrs (due to experimental constraints).  The upper band in the I13401 and E0240 columns is the appropriate size for the plasmid they are being cut out of (psb1A2, 2075bp) and the lower band is the I13401(857)and E0240(876) parts themselves]]

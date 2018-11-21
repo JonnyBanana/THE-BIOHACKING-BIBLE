@@ -1,0 +1,27 @@
+==Introduction==
+Although I don't really want to start working on this yet, it makes sense to order the different promoters I want to use for it now while I am still working on building the dedicated transcription promoter.  I might as well do all the constructions in parallel.  In addition, it might be possible to find a T7 promoter variant that leads to equivalent rates of mRNA production as R0040, the promoter used by Jen and Caitlin for all their work.  That would be desirable when quantitatively comparing the system-dedicated transcription systems to the chassis-dedicated transcription systems.  
+
+Imburgio and coworkers have published a comprehensive analysis of the promoter strength of all single-base mutations in the T7 consensus promoter.  I intend to pick a small number of these that should have a wide range of promoter strengths.
+
+==Considerations==
+The T7 promoter sequence has two domains, an unmelted binding domain (-17 to -5) and a melted initiation domain (-4 to +6).  It may make sense for me to only pick mutations in one of these domains and it may also matter which I pick.  Right now, it would seem to make sense to vary the binding region, since mutations in the initiation region appear to affect the amount of aborted transcription and the amount of slippage.  In addition, mutations in this region will mean that there are different mRNA transcribed that might lead to different levels of translation initiation.  In short mutations in the binding region should be the least complicated and most independent way of varying the recruitment rate of T7 RNAP.
+
+All the authors work was ''in vitro''.  It's unclear if their results will be repeatable ''in vivo''.
+
+*'''-17''' - This base makes intimate contact with T7 RNAP
+*'''-17 - -15''' - Very close to T7 RNAP
+*The authors did not report any changes in transcript sequence due to mutations in the binding region.
+
+==Potential promoters==
+Mutation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Relative strength (compared to consensus)
+*-16T &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.72 ordered
+*-17G &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.5 ordered
+*-12T &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.4
+*-10T &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.3 ordered
+*-16G &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.14
+*-16C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.09 ordered
+*-6T  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.06
+These should give me a good spread of output PoPS.  In addition, seeing as I would be using all -16 mutations, I could just buy promoters made with degenerate bases at that location.  I would have to sequence to make sure I had individual clones of all three,  this might not be cheaper than just ordering the three separately.
+
+==References==
+#	Imburgio, D., Rong, M., Ma, K., and McAllister, W. T. Studies of promoter recognition and start site selection by t7 rna polymerase using a comprehensive collection of promoter variants. Biochemistry 39, 34 (2000), 10419–30.

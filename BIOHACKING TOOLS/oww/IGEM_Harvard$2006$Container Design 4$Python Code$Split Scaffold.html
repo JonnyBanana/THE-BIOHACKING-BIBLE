@@ -1,0 +1,67 @@
+==Split Scaffold Sequence into Chunks==
+--[[User:Vlau|Vlau]] 16:12, 10 July 2006 (EDT)
+<pre>
+#!/usr/bin/python
+
+import string
+import sys
+import fileinput
+
+def nowhite(s):
+  return ''.join([c for c in s if c in string.letters])
+
+seq = ''
+
+# read in sequence
+for line in fileinput.input("-"):
+  seq = seq + nowhite(line)
+
+lid_1 = 96 * 14
+linker_1 = 200
+box = 29 * 96
+linker_2 = 200
+lid_2 = 96 * 14
+linker_3 = 200
+box_2 = 96
+
+#store first segment up to end of lid 1
+lid_1_seq = seq[:lid_1]
+#reset sequence to start at end of lid 1
+seq = seq[lid_1:]
+linker_1_seq = seq[:linker_1]
+seq = seq[linker_1:]
+box_1_seq = seq[:box]
+seq = seq[box:]
+linker_2_seq = seq[:linker_2]
+seq = seq[linker_2:]
+lid_2_seq = seq[:lid_2]
+seq = seq[lid_2:]
+linker_3_seq = seq[:linker_3]
+seq = seq[linker_3:]
+box_2_seq = seq[:box_2]
+seq = seq[box_2:]
+extra_scaffold = seq
+barrel = box_1_seq + box_2_seq
+
+#print out the length of each segment and its sequence
+
+barrel_file = file('barrel_scaffold.txt', 'w')
+lid_1_file = file('lid_1_scaffold.txt', 'w')
+lid_2_file = file('lid_2_scaffold.txt', 'w')
+
+print len(lid_1_seq)
+print lid_1_seq
+lid_1_file.write(lid_1_seq)
+print len(linker_1_seq)
+print linker_1_seq
+print len(barrel)
+print barrel
+barrel_file.write(barrel)
+print len(linker_2_seq)
+print linker_2_seq  
+print len(lid_2_seq)
+print lid_2_seq
+lid_2_file.write(lid_2_seq)
+print len(linker_3_seq)
+print linker_3_seq
+</pre>

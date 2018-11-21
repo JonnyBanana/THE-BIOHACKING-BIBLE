@@ -1,0 +1,81 @@
+== A Virtual Machine is an Abstraction ==
+
+A VM is an abstraction that helps the people who build programming languages do their job.  Ok, but what does it do?  We'll get back to this abstraction idea again at the bottom.
+
+
+
+== A Virtual Machine is a kind of program translator ==
+
+'''NB: The word 'translation' is used here in a general sense, and not in a technical biological sense.'''
+
+A VM is a piece of software that translates a program from one form to another.
+There are a variety of different kinds of program translators.  What distinguishes
+one kind of translator from another is:
+
+# '''when translation happens:'''
+## before execution (ie, before you run the program)
+## immediately before execution
+## during execution
+# '''input form:'''
+## source code
+## bytecode
+## machine code
+## IR (some 'intermediate representation')
+# '''output form:'''
+## source code
+## bytecode
+## machine code
+## IR (some 'intermediate representation')
+
+
+Some common kinds of program translators:
+
+* A '''compiler''' usually means a translator from source code to machine code that happens before execution.
+** A '''compiler front-end''' translates from source code to some IR
+** A '''compiler back-end''' translates from some IR to machine code
+* A '''just-in-time compiler''' (JIT) translates from source (or bytecode) to machine code immediately before execution.
+** Most modern Java VMs include JITs.
+* An '''interpreter''' translates from source to machine code during execution.
+* A '''virtual machine''' translates from bytecode to machine code immediately before, or during, execution.
+
+
+All of these terms are just conventional names for different kinds of translators.  The ''when translation happens'' criteria is a bit fuzzy, and one shouldn't think of it dogmatically.  For example, modern Java VMs include both an interpreter and a JIT:  they monitor the program's performance while it's executing, and apply the JIT to the code that gets executed the most frequently.  This is sometimes called 'dynamic' or 'adaptive' compilation.
+
+What is clear is that there's a lot of translation going on:  your program will almost always be translated at least twice before it is executed, if not more often.  For example, suppose you write a Java program and run it on Jikes Java Research Virtual Machine (http://jikesrvm.sourceforge.net/):
+
+# javac: compiles from source to Java bytecode
+# Jikes RVM:
+## first translates bytecode to some IR
+## then translates that IR to machine code
+
+So your program has been translated three times.  Why?
+
+
+
+== Divide and Conquer ==
+
+The task of translating a program from source code to machine code is hard (see 6.035 http://web.mit.edu/6.035/www/index.html).  It's especially hard if you want the program to run as fast as possible.  So it helps to break the task down into steps:
+
+# '''Parsing:''' Reading the source code, and giving the programmer meaningfull error messages about spelling and grammatical problems in the program.  If there are no spelling or grammatical errors, translate the program into some IR or bytecode that will be easier to analyze and optimize.  This is what a compiler front-end does.  javac is, in some sense, just a compiler front-end.
+# '''Optimization:''' Re-arrange the instructions in the program so it runs faster.  Intermediate representations are designed to make this job easier.
+# '''Code generation:''' Translate the IR (or bytecode) into machine code for a specific processor.  More optimization can happen here.
+
+Each form of the program is best suited to one or more of these tasks:  the source code is easiest for the programmer to work with, the IR/bytecode is easiest for the optimizer to work with; and the machine code is easiest for the machine to execute.  Dividing the total translation task up into these smaller steps makes the overall problem easier to solve.
+
+
+
+== Modularity and Abstraction ==
+
+Suppose you write a program in Python and you want it to run on the Sun machine in the Athena cluster, and on the x86 Athena machine, and on your Mac at home.  How many translators would have to exist to allow you to do this?  At least three.  And what if you also wanted to write programs in Perl, Ruby, Scheme, etc, and have them run on all of those different kinds of computers?  If you wrote a translator from each source language to each machine type, you'd need L*M translators (where L is the number of source language and M is the number of machine types).  It would look sort of like this:
+
+[[Image:language-translation-n2.png]]
+
+
+However, if you introduce an ''abstraction boundary'' as some IR, then you can reduce the number of translators needed to L+M:
+
+[[Image:language-translation-n.png]]
+
+
+This is what people do in practice, because it is substantially less work for the people who have to make the translators.  The Parrot VM (http://en.wikipedia.org/wiki/Parrot_virtual_machine), currently under development, will support all of the languages and machines mentioned here, plus more.
+
+Recall that the term ''compiler'' has a variety of conventional meanings.  It is not a precise term.  It basically means 'something that translates a program from a form that's easier for humans to work with to a form that's easier for a machine to execute'.  While the term is most often used for compilers that produce machine code, it is now common parlance to refer to javac as a compiler, which translates Java source code to Java bytecode.

@@ -1,0 +1,116 @@
+==Questions==
+'''Design 5'''
+*''How big does a 2-ply lid need to be to span a 30-helix barrel?''
+**Estimated diameter for double-ply helix is 2.1nm.  This gives a length of 33.0nm for each 18-helix-long double-ply lid (36 helices in total).  This model uses 3456 bp each, 6912 bp together if both lids are coded on one scaffold, and with the necessary spacer between lids to be as long as the barrel (ie. +84bp), 7080 bp, and if the 200bp spacer between lid and barrels are designed in, 7480bp total.    
+**(Since the 30-helix single-ply barrel is 28.9nm at its widest point, the lid will be more than enough to fit.)
+**Another possibility is making each lid out of its own scaffold, which would allow each to be coded with different sections of the p7308 M13 phage genome.  Since the 30-helix single-ply barrel only requires 2880 bp, it can be coded on the phiX174 genome (5386bp long).
+
+*''Can we make a double-ply barrel (42-helix=outer barrel, 30-helix=inner barrel)?''
+**A double-ply helix can be made with (42+30) helices, taking 6912 bp, requiring the use of the M13 phage genome.  
+**If the diameter of the helices are assumed to be 2.1nm, the barrel is 27.6nm wide at its widest point.  This allows the use of 18-helix-long double-ply lids (36 helices in total), 33.0nm long.
+**If the normal 3nm diameter is assumed, the double-ply barrel will be 39.4nm at its widest point, necessitating a 22-helix-long lid (44 helices in total), or 4224bp per lid.  This would require each lid be coded in its own scaffold, and would also require using overlapping parts of that scaffold sequence to code the lids.
+**However, it is most likely that the barrel is somewhere between 27.6nm and 39.4nm at its widest point.  A 20-helix-long lid (40 helices in total), or 3840bp per lid, could likely be used.  This would require overlapping of the parts of the scaffold sequence to be used, since phiX174 genome is necessary, as M13 will be used for the double-ply barrel.
+
+*''Can we use two scaffolds in the design?''
+**'''2x42bp repeats in barrel'''
+**30-helix bundle with 30*(2*42+12) repeats = 2880 bases
+**two-ply-lid: 36 * (2*42+12) = 3456 * 2 = 6912
+**using single scaffold for 2880-base 30hb: 9792 bases total = $783.36
+**'''3x42bp repeats in barrel'''
+**30-helix bundle with 30*(3*42+12) repeats = 4140 bases
+**two-ply-lid: 36 * (2*42+12) = 3456 * 2 = 6912
+**using single scaffold for 4140-base 30hb: 11052 bases total = $884.16
+
+*''Will unused scaffold interfere with proper folding of lid & barrels?''
+*''Should we use two M13-based scaffolds, or try to make {{phix174}} to have less slack?'' 
+*''Can we easily get {{phix174}}?  [http://www.fermentas.com/catalog/nucleicacids/dna_sd0031.htm fermentas]''
+
+==Protection assay==
+
+====Questions====
+*''Can we digest streptavidin with [http://www1.qiagen.com/Products/Accessories/AccessoryEnzymes/QIAGENProteinaseK.aspx Qiagen proteinase K] and/or [http://www1.qiagen.com/Products/Accessories/AccessoryEnzymes/QIAGENProtease.aspx Qiagen protease]?''
+
+====Incubation and dilution protocol====
+* '''Goal''': to see the lower threshold of imaging streptavidin bound to biotin
+* '''Protocol''': mix 5 {{ul}} 2 {{um}} streptavidin with 5 {{ul}} 1 {{um}} c.3.2.7.2b oligo, to give a final oligo concentration of 500 nM, and incubate at room temperature for 5 min.
+* dilution and electrophoresis:
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''lane'''
+| align="center" style="background:#f0f0f0;"|'''volume used''' ({{ul}})
+| align="center" style="background:#f0f0f0;"|'''dilution'''
+| align="center" style="background:#f0f0f0;"|'''final oligo concentration''' (nM)
+| align="center" style="background:#f0f0f0;"|'''amt of oligo''' (fmols)
+|-
+| 1||1||1x||500||500
+|-
+| 2||1||2x||250||250
+|-
+| 3||1||5x||100||100
+|-
+| 4||1||10x||50||50
+|-
+| 5||1||20x||25||25
+|}
+* each lane contained 1 {{ul}} of diluted mix, 7 {{ul}} of water, and 2 {{ul}} of loading dye
+** lanes 7-11 were loaded with the same mixtures as lanes 1-5, respectively
+* ran on native 12% polyacrylamide gel for 15 min. at 120V
+* stained lanes 1-5 with Coomassie blue and 7-11 with EtBr for 3.5 hrs
+* neither protein nor DNA imaged on respective gel halves
+
+====Proteinase K protocol====
+
+* Wu's digestion protocol [http://www.jbc.org.ezp1.harvard.edu/cgi/reprint/280/24/23225]: Proteinase K Digestion of Streptavidin and Its Muteins—Purified streptavidin and its muteins (30 {{um}} monomer) were treated with proteinase K (Invitrogen, 5 {{um}}) for 15 min at 30{{c}} in 50 mM Tris-HCl containing 5 mM CaCl2, pH 8.0. The reaction was stopped by precipitation with trichloroacetic acid (18). Boiled samples of precipitated proteins were resolved by reducing SDS-PAGE. The same analysis was performed with streptavidin samples treated with biotin (1 mM final concentration) prior to proteinase K digestion.
+* A possible protocol:
+** Streptavidin tetramer (20 {{um}}) is incubated with 3'-biotinylated oligo (10 {{um}}) for 5 min. at room temperature (28{{c}} today, whew)
+** Streptavidin tetramer (one expt. biotin-treated, one expt. biotin-untreated), is treated with 5 {{um}} proteinase K for 15 min at 30{{c}} in 50 mM Tris-HCl containing 5 mM CaCl2, pH 8.0
+** Reaction is stopped by EtOH precipitation of DNA, or by filtration through a Qiagen column
+
+==Container 3.2==
+
+====Pre-working stocks====
+*Mix 2.5 {{ul}} of each 200 {{um}} stock oligo (add 7.5 {{ul}} {{h2o}} per oligo to dilute to 50 {{um}})
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''pre-working stock'''
+| align="center" style="background:#f0f0f0;"|'''desc'''
+| align="center" style="background:#f0f0f0;"|'''oligos plate locations'''
+| align="center" style="background:#f0f0f0;"|'''total'''
+|-
+|c3.2.6b||barrel at inside aptamer locations +3'biotinaptamers||3.2.6.1b, .2b, .3b||3
+|-
+|c3.2.7b||barrel at inside aptamer locations +3'biotinaptamers||3.2.7.1b, .2b, .3b||3
+|}
+
+====Working stocks====
+
+Final concentration of each oligo in working stocks is 250 nM.
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''working stock'''
+| align="center" style="background:#f0f0f0;"|'''description'''
+| align="center" style="background:#f0f0f0;"|'''pre-working stocks''' (according to [[IGEM:Harvard/2006/Container_Design_3#Working_stocks|chart]])
+| align="center" style="background:#f0f0f0;"|'''water'''
+| align="center" style="background:#f0f0f0;"|'''total'''
+|-
+|c3.2.Ib.core||+latch2<br>+biotinaptamers out||1 (94 {{ul}}), 2 (28 {{ul}}), 3 (30 {{ul}}), 4 (3 {{ul}}), 7b (3 {{ul}}), 10 (2 {{ul}}), 12 (2 {{ul}}), 13 (0 {{ul}}), 15 (2 {{ul}})||36 {{ul}}||200 {{ul}} 
+|-
+|c3.2.Ib.latches||+latch2<br>+biotinaptamers out||16 (4 {{ul}})||-||-
+|}
+
+
+====Folding experiment====
+
+*Reagents (each expt in respective 0.2 mL PCR tube)
+{| {{table}}
+| align="center" style="background:#f0f0f0;"|'''Experiment'''
+| align="center" style="background:#f0f0f0;"|'''Scaffold'''
+| align="center" style="background:#f0f0f0;"|'''Oligos'''
+| align="center" style="background:#f0f0f0;"|'''Folding buffer'''
+| align="center" style="background:#f0f0f0;"|'''d{{h2o}}'''
+| align="center" style="background:#f0f0f0;"|'''total volume'''
+|-
+| Ib||9 {{ul}} p7308||16 {{ul}} 3.2.Ib.core (250 nM)||4 {{ul}} 10x||11 {{ul}}||40 {{ul}}
+|-
+| (-)||9 {{ul}} p7308||-||-||31 {{ul}}||40 {{ul}}
+|}
+*Annealing protocol
+**1. 80°C 2 min, decrease by 1°C each cycle
+**2. Goto step 1, 59 times

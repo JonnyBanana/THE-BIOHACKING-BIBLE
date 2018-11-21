@@ -1,0 +1,13 @@
+*Here is a smaller test tree that you can easily draw by hand (or use the [http://cgi-www.daimi.au.dk/cgi-chili/phyfi/go web visualization link]). Note that both TreeViewX and the web drawing tool draw the left and right branches from the parent's perspective (looking from the root towards the leaves)
+<blockquote><tt>
+(a:15,((b:2,c:16):3,(d:4,e:5):1):1):10;
+</tt></blockquote>
+
+*Your code, run with this example tree, should give the answers below (which hopefully match what you get when you do it by hand )<br>
+<blockquote><tt>
+Average distance: 20.8 <br>
+Min distance/node [16.0, 'b'] <br>
+Max distance/node [30.0, 'c'] <br>
+</tt></blockquote>
+(where I did average distance the equal-weighting way, and the root branch was included)
+(I think if you do it the "phylogenetic-weighting" way the avgDist comes out to 22.375 but I'm too tired to double-check)

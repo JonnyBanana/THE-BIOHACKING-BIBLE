@@ -1,0 +1,92 @@
+=Registry of BioBricks Models using CellML=
+'''Author(s): '''[[User:Vincent|Vincent Rouilly]]<sup>1</sup>, [[User:bcanton|Barry Canton]]<sup>2</sup>, Poul Nielsen<sup>3</sup>, Richard Kitney<sup>1</sup><br> 
+'''Affiliations:''' <sup>1</sup>Imperial College London, <sup>2</sup>MIT, <sup>3</sup>The University of Auckland<br>
+'''Contact:'''email: vincent(dot)rouilly(at)ic(dot)ac(dot)uk <br>
+'''Keywords:''' 'synthetic biology' 'biobrick' 'cellML' 'model database' 
+
+[[Category:BioSysBio Keywords add_keyword_1]] 
+[[Category:BioSysBio Keywords add_keyword_2]]
+[[Category:BioSysBio Keywords add_keyword_3]]
+[[Category:BioSysBio Keywords add_keyword_4]]
+
+==Introduction==
+One of the main goals in Synthetic Biology is to assess the feasibility of building novel biological systems from interchangeable and standardized parts. In order to collect and share parts, a [http://parts.mit.edu/registry Registry of standardized DNA BioBricks] has been established at the MIT. [http://parts.mit.edu/registry/index.php/Help:An_Introduction_to_BioBricks  BioBricks] can be [http://parts.mit.edu/registry/index.php/Help:BioBrick_Assembly assembled] to form devices and systems to operate in living cells.
+
+Design of reliable devices and systems would benefit from accurate models of system function.  To predict the function of systems built from many parts, we need to have accurate models for the parts and mechanisms to easily compose those part models into a system model. 
+
+Therefore, in parallel to increasing the number of parts available and [[Parts_characterization/Characterization_approaches | characterising them experimentally]], a logical extension to the Registry would be to build a Registry of BioBrick models to complement the physical parts. 
+
+{| border="1" cellpadding="5" cellspacing="0" align="left" style="width:100%"
+|-
+| colspan="2" style="background:#efefef;" | '''Motivations behind a Registry of BioBrick Models'''
+|-
+| [[Image:VBB_RegistriesIcon.png|200px|DNA & Model registries]]
+|  
+* to '''store''', '''search''' and '''curate''' models related to standardized DNA Biobricks.
+* to gain a '''deeper understanding''' of the function of BioBricks.
+* to promote the '''re-usability''' of BioBrick models.
+* to '''explore through simulations''' the properties of de-novo assemblies of parts.
+* to progress towards a '''faster/cheaper development process'''.
+* to complement the '''open-source spirit''' of Synthetic Biology and open-up a new form of '''''in Silico'' contributions'''.
+
+|}
+<br style="clear: both">
+
+A key aspect in this effort is the use of a description language able to describe and support the BioBrick concepts of modularity and abstraction.
+
+{| border="1" cellpadding="5" cellspacing="0" align="left" style="width:100%"
+|-
+| colspan="2" style="background:#efefef;" | '''Properties needed for BioBrick description language'''
+|-
+| [[Image:VBB_BioBrickLanguage.png|200px|DNA & Model registries]]
+|
+* '''Human''' and '''machine''' readable.
+* Enable the description of '''qualitative and quantitative models''' of biochemical networks.
+* Enable the definition of '''modules''' (as biobricks have inputs/outputs).
+* Enable the definition of '''hierarchies between modules''' (as a system will be composed of sub-systems or devices).
+* Enable a minimum '''annotation scheme''' to comply with [http://www.nature.com/nbt/journal/v23/n12/full/nbt1156.html| MIRIAM].
+|}
+<br style="clear: both">
+
+==Results== 
+
+In this article, we demonstrate that such a '''Registry of BioBrick Models''' is achievable. A mock-up is provided based on the great flexibility and modularity offered by [http://www.cellml.org| '''CellML'''].
+
+Following the steps of already succesful model registries such as the [http://www.cellml.org/examples/repository/ CellML registry] or [http://www.ebi.ac.uk/biomodels/ BioModel registry], a BioBrick Model Registry will enable the curation of models. Using CellML and a MIRIAM annotation scheme will guarantee compliance with the previously cited registries.
+However, a strong emphasis is made on coupling the DNA BioBrick characterisation with their corresponding models. An iterative process between qualitative modelling and experimental characterization will insure consistency.
+The proposed framework could be the foundation of a future CAD environment for Synthetic Biology.
+
+{| border="1" cellpadding="5" cellspacing="0" align="left" style="width:100%"
+|-
+| colspan="2" style="background:#efefef;" |'''Generic CellML architecture for BioBricks'''
+|-
+| [[Image:VBB_ActivatedPromoterRBS.png|right|200px|Activated Promoter/RBS Brick Architecture]]
+| First, we explore the definition of modular and re-usable models to represent the available DNA BioBricks. A series of  [[Registry_of_Standard_Biological_Models/Basic_Component_Models|'''generic model architectures''']] in CellML is defined for most of the types of parts encountered in the DNA registry (plasmid, promoter, RBS, proteins, riboswitch etc.). 
+
+Interfaces and import mechanisms in CellML enable a modular and re-usable design.
+|-
+| colspan="2" style="background:#efefef;" |'''Catalog of quantitative BioBrick models'''
+|-
+| [[Image:VirtualBioBrickModelCatalogIcon.png|right|200px|BioBrick Model Catalog]]
+| Second, a [[Registry_of_Standard_Biological_Models/Model_Catalog|'''catalog of quantitative models''']] based on already characterized parts is presented.
+An ongoing effort to characterize BioBricks experimentally is providing us data to move from a qualitative description to a more quantitative one.
+
+|-
+| colspan="2" style="background:#efefef;" |'''Building simulations from modular BioBrick models'''
+|-
+| [[Image:VBB_Inverter.png|right|200px|Inverter Brick Architecture]]
+| To conclude, the versatility of the approach is demonstrated by simulating different systems from a set of pre-defined models:
+*[[Registry_of_Standard_Biological_Models/Model_Catalog/BBa_I5610_Model|Elowitz's Repressilator.]]
+*[[Registry_of_Standard_Biological_Models/Model_Catalog/BBa_20100_Model|Band Detector from Basu and Weiss.]]
+|}
+<br style="clear: both">
+
+
+==Conclusion==
+
+The concept of a Registry of BioBrick models based on CellML has been demonstrated. It takes advantage of CellML flexibility and modularity to provide a catalog of quantitative models which are standardized, modular and re-usable. 
+With the increase of available physical DNA parts in the MIT Registry, as well as the characterisation of these parts, such a repository will help to provide a deeper understanding of the BioBrick properties and speed up the process of building new devices and systems. But more importantly, it will help to federate the growing number of contributions from the modeling community and build on the experimental characterization of BioBricks.
+
+ 
+
+__NOTOC__

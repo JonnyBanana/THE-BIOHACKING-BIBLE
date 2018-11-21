@@ -1,0 +1,116 @@
+==Promoter library design==
+
+<font color="red">In progress!</font>
+
+===Promoter architecture===
+
+                  -35                    -10        +1
+                 ______                 ______       _
+ ----------------TTGACA-----------------TATAAT----- CA------------------- (consensus)
+ ----------------TTGCTT-----------------TATAAT-GATT CATAAATTTGAGAGAGGAGTT (good promoter clearance?) <cite>Kammerer-EMBO-1986</cite>
+ ----------------TTGACT-----------------GATACT------CA------------------- (repressible, low K<sub>ON</sub>?)<cite> Lanzer-PNAS-1988</cite>
+
+ ----------------TTGAC<font style="background-color: yellow">Cccacgcgtggg</font>------TATAAT----- CA------------------- (operator site in position of maximum steric interference with RNAP)<cite>Wolfe-Structure-2000, Murakami-Science-2002a, Murakami-Science-2002b</cite>
+ ----------------TTGACA---------<font style="background-color: yellow">CccacgcgTGGG</font>AT----- CA------------------- (operator site in position of maximum steric interference with RNAP)<cite>Wolfe-Structure-2000, Murakami-Science-2002a, Murakami-Science-2002b</cite>
+
+===Constant promoter===
+
+                  -35                    -10        +1
+                 ______                 ______       _
+ tttatcaaaaagagtgTTGAT<font style="background-color: yellow">Cccacgcgtggg</font>atatagGATACTtagattcataaatttgagagaggagtt (promoter9)
+ tttatcaaaaagagtgTTGACAtttttaagt<font style="background-color: yellow">cccacgcgTGGG</font>ATtagattcataaatttgagagaggagtt (promoter8)
+
+====Questions====
+#Do I include too much extraneous sequence?  These promoters are longer to reflect those found in papers.
+
+===Libraries===
+
+                  -35                    -10        +1
+                 ______                 ______       _
+ tttatcaaaaagagtgTTGNT<font style="background-color: yellow">Cccacgcgtggg</font>annnnnNATANTnnnnnncannnnnnnnnn (based on promoter9)
+ tttatcaaaaagagtgTTGACAnnnnnnnnt<font style="background-color: yellow">cccacgcgTGGG</font>ATnnnnnncannnnnnnnnn (based on promoter8)
+        nnnnnnnnnTTGNCAnnnt<font style="background-color: yellow">cccacgcgcgtggG</font>ATANTnnnnnnca (based on BBa_R2000)
+
+====Questions====
+#Are these promoters likely to be functional?  Too much sequence diversity?
+#I potentially don't need to vary the -35 and -10 from consensus because I can still achieve a range of promoter strengths without changing them. <cite>Hammer-TrendsBiotechnol-2006</cite>
+
+===Operator===
+
+  0 site operator: <font style="background-color: yellow">cccacgcgcgtggg</font> (14bp)
+ -2 site operator: <font style="background-color: yellow">cccacgc  gtggg</font> (12bp) (higher affinity)
+==Brainstorming==
+How could these regulatory regions be redesigned to be repressible?
+
+'''Comments welcome'''
+
+*Repressor sites tend to fall between the -35 and -10 regions and/or downstream of the -10 (around the +1).  (Not upstream of the -35). <cite>Collado-Vides-MicrobioRev-1991 Gralla-Cell-1991</cite>
+*Binding of the repressor dimer to the promoter may lead to DNA bending rendering binding of more dimers unfavorable.  Perhaps a single binding site is preferable?
+*The TG sequence at -16 is causing the regulatory regions to be too strong in the derepressed state.  The RNA polymerase is "winning" the competition for binding with the repressor.  Perhaps this dinucleotide should be removed. <cite>Burr-NAR-2000 Voskuil-MolMicrobiol-1995</cite>
+*A high k<sub>ON</sub> (rate of complex formation between RNA polymerase and promoter) correlates inversely with repressibility.  High k<sub>ON</sub> may result in RNAP outcompeting the repressor for the regulatory region binding.  High regulatory region clearance rates enable strong transcription initiation and allow for repressor binding.<cite>Lanzer-PNAS-1988</cite>
+*+1 base should be an A with 6-7 bases between end of -10 hexamer and +1. <cite>Lanzer-PNAS-1988, Kammerer-EMBO-1986</cite>
+*Use the -2 operator site because it binds the homodimer more tightly.  (But it is less modular).
+
+*How can we design promoters with low k<sub>ON</sub> but high clearance rates for improved repressibility?
+**K<sub>ON</sub> and promoter occupancy by RNAP is determined by the -35 and -10 hexamers.  Closer to consensus sequences means high k<sub>ON</sub> and more stable RNAP-promoter complexes. <cite>Ellinger-JMB-1994</cite>
+**An AT rich region around the transcription start site may lead to better promoter clearance? <cite>Ellinger-JMB-1994, Kammerer-EMBO-1986</cite>
+
+==Existing promoters==
+
+The following promoters have been tested and are not repressible under my testing conditions.
+
+ Heterodimers:
+                          -35                    -10
+ Promoter1 <font style="background-color: yellow">cacgtgtgcgtggg</font>TTGA<font style="background-color: yellow">CAcgtgtgcgtggg</font>aagtcGATACTgagcaca
+ Promoter2*              TTGA<font style="background-color: yellow">CAcgtgtgcgtggg</font>aagtcGATACTtagatt<font style="background-color: yellow">cacgtgtgcgtggg</font>
+ Promoter3 <font style="background-color: yellow">cacgtgtgcgtggg</font>TTGA<font style="background-color: yellow">CAcgtgtgcgtggg</font>aagtcGATACTtagatt<font style="background-color: yellow">cacgtgtgcgtggg</font>
+ Promoter4 <font style="background-color: yellow">cacgtgtgcgtggg</font>TTGACA<font style="background-color: yellow">cacgtgtgcgtggg</font>aatGATACTgagcaca
+ Promoter5               TTGACA<font style="background-color: yellow">cacgtgtgcgtggg</font>aatGATACTtagatt<font style="background-color: yellow">cacgtgtgcgtggg</font>
+ Promoter6 <font style="background-color: yellow">cacgtgtgcgtggg</font>TTGACA<font style="background-color: yellow">cacgtgtgcgtggg</font>aatGATACTtagatt<font style="background-color: yellow">cacgtgtgcgtggg</font>
+
+ Homodimers:
+                     -35                   -10
+ BBa_R2000 agtttattcTTGACAtggt<font style="background-color: yellow">cccacgcgcgtggG</font>ATACTacgtcag
+ BBa_R2001 agtttattcTTGACAtggtcatattacggtgaGATACT<font style="background-color: yellow">cccacgcgcgtggg</font>
+ BBa_R2002 agtttattcTTGACAtggt<font style="background-color: yellow">cccacgcgcgtggG</font>ATACT<font style="background-color: yellow">cccacgcgcgtggg</font>
+
+These promoters are too weak under my testing conditions.  (Some were not clonable).
+
+ Homodimers:
+                             -35                    -10        +1
+                            ______                 ______       _
+ BBa_R2108  tttatcaaaaagagtgTTGACAtttttaagt<font style="background-color: yellow">cccacgcgTGGG</font>ATtagattcataaatttgagagaggagtt
+ BBa_R2110  tttatcaaaaagagtgTTGACAtttttaagct<font style="background-color: yellow">cccacgcGTGGG</font>Ttagattcataaatttgagagaggagtt
+ BBa_R2112  tttatcaaaaagagtgTTGACAtttttaat<font style="background-color: yellow">cccacgcgtGGG</font>AATtagattcataaatttgagagaggagtt
+ BBa_R2109  tttatcaaaaagagtgTTGAT<font style="background-color: yellow">Cccacgcgtggg</font>atatagGATACTtagattcataaatttgagagaggagtt
+ BBa_R2111  tttatcaaaaagagtgTTGACT<font style="background-color: yellow">cccacgcgtggg</font>aatagGATACTtagattcataaatttgagagaggagtt
+ BBa_R2113  tttatcaaaaagagtgTTGT<font style="background-color: yellow">CCcacgcgtggg</font>actatagGATACTtagattcataaatttgagagaggagtt
+ BBa_R2114  tttatcaaaaagagtgTTGACT<font style="background-color: yellow">cccacgcgtggg</font>aatagGATATTtagattcataaatttgagagaggagtt
+
+==References==
+===Promoter design===
+<biblio>
+#Lutz-NAR-1997 pmid=9092630
+#Lanzer-PNAS-1988 pmid=3057497
+#Besse-EMBO-1986 pmid=3015603
+#Gralla-Cell-1991 pmid=1868543
+#Collado-Vides-MicrobioRev-1991 pmid=1943993
+#Burr-NAR-2000 pmid=10756184
+#Voskuil-MolMicrobiol-1995 pmid=7494476
+#Ellinger-JMB-1994 pmid=8006961
+#Kammerer-EMBO-1986 pmid=3539590
+</biblio>
+
+===Structures===
+<biblio>
+#Wolfe-Structure-2000 pmid=10903945
+#Murakami-Science-2002a pmid=12016306
+#Murakami-Science-2002b pmid=12016307
+</biblio>
+
+===Promoter libraries===
+<biblio>
+#Alper-PNAS-2005 pmid=16502313
+#Hammer-TrendsBiotechnol-2006 pmid=16406119
+#Fischer-TrendsBiotechmol-2006 pmid=16380177
+</biblio>

@@ -1,0 +1,107 @@
+==Variation in repeated measurements==
+
+===Fluorescence===
+I measured the fluorescence of a well containing ''E. coli'' expressing YFP and a well containing untransformed MG1655.  Ten measurements were taken over a 5min period.
+
+{| border="1" cellpadding="2"
+|+'''Variation in repeated YFP measurements'''
+| '''Reading'''|| '''MG1655.YFP''' || '''MG1655'''
+|-
+
+| 1|| 108445|| 8142
+|-
+
+| 2 || 109492|| 8320
+|-
+
+| 3|| 110628 ||8194
+|-
+
+| 4 || 109728 || 8188
+|-
+
+| 5 || 109334 || 8304
+|-
+
+| 6 || 109988 || 8329
+|-
+
+| 7 || 110382 || 8480
+|-
+
+| 8 || 109248 || 8205
+|-
+
+| 9 || 107576 || 8238
+|-
+
+| 10 || 107560 || 8228
+|-
+
+| Mean || 109238 || 8263
+|-
+
+| Stdev || 1016.07 || 93.1 
+|-
+
+| CV || 0.0093 || 0.011
+|-
+|}
+
+===Absorbance===
+I measured the absorbance of the same wells.  Measurements were taken over the same 5min period.
+
+{| border="1" cellpadding="2"
+|+'''Variation in repeated absorbance measurements'''
+| '''Reading'''|| '''MG1655.YFP''' || '''MG1655'''
+|-
+
+| 1|| 0.476|| 0.650
+|-
+
+| 2 || 0.471|| 0.651
+|-
+
+| 3|| 0.469 ||0.648
+|-
+
+| 4 || 0.463 || 0.644
+|-
+
+| 5 || 0.462 || 0.643
+|-
+
+| 6 || 0.465 || 0.643
+|-
+
+| 7 || 0.460 || 0.641
+|-
+
+| 8 || 0.457 || 0.639
+|-
+
+| 9 || 0.458 || 0.639
+|-
+
+| 10 || 0.456 || 0.639
+|-
+
+| Mean || 0.46 || 0.64
+|-
+
+| Stdev || 0.00623 || 0.0042 
+|-
+
+| CV || 0.013 || 0.0065
+|-
+|}
+
+===Notes===
+The absorbance readings for both wells appear to decrease over time.  Over a 5 min time course this is unlikely to be due to evaporation.  It may be due to settling of the cells in the well.  The same effect was not observed for the fluorescence readings.
+
+
+==Correlation in noise between adjacent wells==
+[[Image:Victor3Covariation.jpg|thumb|right|200px|Figure 1. Rate of change in absorbance over time for cultures growing in three adjacent wells.  The blue curves are the time series for the three adjacent wells, the light green curve is the time series for a media blank, located elsewhere on the plate.  The noise is clearly correlated between the three replicates and to a lesser extent between the replicates and the media blank.]]
+The absorbance of three adjacent wells was measured over 20 hours at 37C with shaking.  The wells contained BL21(DE3) growing in [[Neidhardt EZ Rich Defined]].
+
+Figure 1 on the right shows the rate of change of absorbance over time.  The variation in these rates are clearly highly correlated and this is expected to be due to machine variation rather than variations in the absorbance of the bacterial culture.  The correlation between each of these time series is >.775 which is highly significant (p-value <10E-16).  This data suggests that averaging replicate cultures in adjacent wells may not remove the kind of machine variation seen here.  Fitting a line to the data or smoothing the data may be necessary.  The correlation between these time series and a media blank located elsewhere on the plate was less than between the replicates but still significant (correlation ~0.4, p-value = 0.0001).  This suggests that some but not all of the machine variation seen in Figure 1. can be removed by subtracting a media background.

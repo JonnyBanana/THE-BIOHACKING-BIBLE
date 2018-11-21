@@ -1,0 +1,127 @@
+==Split Oligos From User Input==
+Script for splitting up as many oligos as you want (USING USER INPUT). The first part goes in main. The second part goes in honeycomb_pointers_v1.py
+<pre>
+
+#####
+# Oligo splitting:
+# get new list of oligos given user input specifying which oligo to cut
+#####
+
+num_to_split = int(raw_input('How many oligos do you want to split?'))
+i = 0
+new_OTP_ra = OTP_ra[:]
+while i < num_to_split:  
+
+        oligo_num = int(raw_input('Enter the number oligo you wish to split:'))
+        print '\n'
+        print 'How many tokens should the first new oligo be?'
+        num_toks = int(raw_input('Number of toks starting from 5 prime: '))
+
+        new_OTP_ra = split_oligo(new_OTP_ra, oligo_num, num_toks)
+        
+        print new_OTP_ra
+        print len(OTP_ra)
+        print len(new_OTP_ra)
+        i = i + 1
+
+####
+# given an oligo to split, split it and return the new list of oligos
+####    
+def split_oligo(new_OTP_ra, oligo_num, num_toks):
+        
+        print new_OTP_ra[oligo_num]
+
+        original_oligo = new_OTP_ra[oligo_num]
+        
+        oligo_1 = original_oligo[:num_toks]  
+        oligo_2 = original_oligo[num_toks:]
+        print oligo_1
+        print'\n'
+        print oligo_2
+                
+        new_OTP_ra[oligo_num] = oligo_1
+        new_OTP_ra.insert(oligo_num + 1, oligo_2)
+        return new_OTP_ra    
+
+
+</pre>
+
+==Split Oligos From File Input==
+Script for splitting up oligos automatically (FILE INPUT). (make sure to import pickle at the top). This part goes in main. Further down is the file
+to read from essentially (uses pickle)
+
+<pre>
+#####
+# Oligo splitting - this time reading from a file and not asking for user
+# input
+#####
+fin_barrel = None
+fin_lid = None
+        
+try:
+        fin_barrel = open("barrel_oligos_to_split.txt", "r")
+        fin_lid = open("lid_oligos_to_split.txt", "r")
+except IOError, e:
+        print "Error in file IO: ", e
+        
+# Ask the user if they are running a lid or a barrel
+shape = int(raw_input("Enter 1 if you are running a barrel, 2 if lid: "))
+if (shape == 1):
+        oligos_to_split = pickle.load(fin_barrel)
+elif (shape == 2):
+        oligos_to_split = pickle.load(fin_lid)
+else:
+        print 'Please modify code or run with lid or 30hb barrel'
+
+
+new_OTP_ra = OTP_ra[:]
+for pair in oligos_to_split:
+        oligo_num = pair[0]
+        print oligo_num
+        num_toks = pair[1]
+        print num_toks
+
+        new_OTP_ra = split_oligo(new_OTP_ra, oligo_num, num_toks)
+        
+        print new_OTP_ra
+        print len(OTP_ra)
+        print len(new_OTP_ra)
+
+# if it's the barrel design and so that all the numbers aren't messed
+# up, the 7bp token on the start of strand 10 needs to be removed
+# because it's going to be left unpaired
+if (shape == 1):
+        new_OTP_ra = new_OTP_ra[:61] + new_OTP_ra[62:]
+
+if fin_barrel: fin_barrel.close()
+if fin_lid: fin_lid.close() 
+        
+</pre>
+
+Pickle Script Split Parameters (for if you use file input)
+<pre>
+### split = [[oligo_num, num_tokens for oligo_1 - from 5prime], ... ]
+
+import pickle
+
+fout_barrel = None
+fout_lid = None
+
+try:
+        fout_barrel = open("barrel_oligos_to_split.txt", "w")
+        fout_lid = open("lid_oligos_to_split.txt", "w")
+except IOError, e:
+        print "Error in file IO: ", e
+
+barrel_split = [[56, 2], [57, 3], [41, 3], [26, 3], [21, 4]]
+lid_split = [[27, 4], [2, 4]]
+
+pickle.dump(barrel_split, fout_barrel)
+pickle.dump(lid_split, fout_lid)
+
+# clean up if they're open
+if fout_barrel:
+        fout_barrel.close()
+if fout_lid:
+        fout_lid.close()
+</pre>

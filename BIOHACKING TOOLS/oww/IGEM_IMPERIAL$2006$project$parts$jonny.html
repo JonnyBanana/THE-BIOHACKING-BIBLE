@@ -1,0 +1,302 @@
+==Jonny gave us a sequence without telling us what it is==
+
+I am 100% sure it is the correct sequence for J37019 because...
+
+Sequencce
+ TTGAGTTTTAGAAATAACAATAGGGGTTCCGCGCACATTTCCCCGAAAAGTGCCACCTGACGTCTAAGAAACCATTATTA
+ TCATGACATTAACCTATAAAAATAGGCGTATCACGAGGCAGAATTTCAGATAAAAAAAATCCTTAGCTTTCGCTAAGGAT
+ GATTTCTGGAATTCGCGGCCGCTTCTAGAGACCTGTAGGATCGTACAGGTTTACGCAAGAAAATGGTTTGTTATAGTCGA
+ ATAAATACTAGAGAAAGAGGAGAAATACTAGATGAAAAACATAAATGCCGACGACACATACAGAATAATTAATAAAATTA
+ AAGCTTGTAGAAGCAATAATGATATTAATCAATGCTTATCTGATATGACTAAAATGGTACATTGTGAATATTATTTACTC
+ GCGATCATTTATCCTCATTCTATGGTTAAATCTGATATTTCAATCCTAGATAATTACCCTAAAAAATGGAGGCAATATTA
+ TGATGACGCTAATTTAATAAAATATGATCCTATAGTAGATTATTCTAACTCCAATCATTCACCAATTAATTGGAATATAT
+ TTGAAAACAATGCTGTAAATAAAAAATCTCCAAATGTAATTAAAGAAGCGAAAACATCAGGTCTTATCACTGGGTTTAGT
+ TTCCCTATTCATACGGCTAACAATGGCTTCGGAATGCTTAGTTTTGCACATTCAGAAAAAGACAACTATATAGATAGTTT
+ ATTTTTACATGCGTGTATGAACATACCATTAATTGTTCCTTCTCTAGNTGATAATTATCGNAAAANTTACATTTNGCAAA
+ TTATAANATCCAACAACGATTTAACCAAAAGAGAAAAAGAAAGGTTTAGGCGTGGGGCATGCGAAGGAAAAAAGCTCTTG
+ GGATNTTTCCAAAAATNTTNGGNTGCAGNGNGCGTCCTGTCCCCTTTCCNTTTGANCNANGNCGCAAATGNAACTCCANT
+ CCAACNANCNGCTGNCNAGGTNTTCTTAAGCCANTTTTANCGGNNCCANTNGATTGCCCNNCCTTTNAAANTNNANANCC
+ NGGATNGGGGCTTGGGGGGGGNTCCCTTCCNNNGNCAANGGGGGGGNNNTCCCGGTGGG
+
+===Alignment with J37015===
+
+'''I can say with absolute certianty that this sequences contains the RBS B0034 followed by LuxR''' It may also contain the promoter but we cannot be sure'''
+
+ CLUSTAL W (1.83) multiple sequence alignment
+ test            TTGAGTTTTAGAAATAACAATAGGGGTTCCGCGCACATTTCCCCGAAAAGTGCCACCTGA 60
+ J37015          ------------------------------------------------------------
+                                                                            
+ 
+ test            CGTCTAAGAAACCATTATTATCATGACATTAACCTATAAAAATAGGCGTATCACGAGGCA 120
+ J37015          ------------------------------------------------------------
+                                                                             
+ 
+ test            GAATTTCAGATAAAAAAAATCCTTAGCTTTCGCTAAGGATGATTTCTGGAATTCGCGGCC 180
+ J37015          ------------------------------------------------------------
+                                                                            
+ 
+ test            GCTTCTAGAGACCTGTAGGATCGTACAGGTTTACGCAAGAAAATGGTTTGTTATAGTCGA 240
+ J37015          -----------TCCCTATCAGTGATAGAGATTGACATCCCTATCAGTGATAGAGATACTG 49
+                             *  **  *  *     * **         *   **     * *  *  
+ 
+ test            ATAAATACTAGAGAAAGAGGAGAAATACTAGATGAAAAACATAAATGCCGACGACACATA 300
+ J37015          AGCACTACTAGAGAAAGAGGAGAAATACTAGATGAAAAACATAAATGCCGACGACACATA 109
+                 *  * *******************************************************
+ 
+ test            CAGAATAATTAATAAAATTAAAGCTTGTAGAAGCAATAATGATATTAATCAATGCTTATC 360 
+ J37015          CAGAATAATTAATAAAATTAAAGCTTGTAGAAGCAATAATGATATTAATCAATGCTTATC 169
+                 ************************************************************
+ 
+ test            TGATATGACTAAAATGGTACATTGTGAATATTATTTACTCGCGATCATTTATCCTCATTC 420
+ J37015          TGATATGACTAAAATGGTACATTGTGAATATTATTTACTCGCGATCATTTATCCTCATTC 229
+                 ************************************************************
+ 
+ test            TATGGTTAAATCTGATATTTCAATCCTAGATAATTACCCTAAAAAATGGAGGCAATATTA 480
+ J37015          TATGGTTAAATCTGATATTTCAATCCTAGATAATTACCCTAAAAAATGGAGGCAATATTA 289
+                 ************************************************************   
+ 
+ test            TGATGACGCTAATTTAATAAAATATGATCCTATAGTAGATTATTCTAACTCCAATCATTC 540
+ J37015          TGATGACGCTAATTTAATAAAATATGATCCTATAGTAGATTATTCTAACTCCAATCATTC 349
+                 ************************************************************
+ 
+ test            ACCAATTAATTGGAATATATTTGAAAACAATGCTGTAAATAAAAAATCTCCAAATGTAAT 600
+ J37015          ACCAATTAATTGGAATATATTTGAAAACAATGCTGTAAATAAAAAATCTCCAAATGTAAT 409
+                 ************************************************************ 
+ 
+ test            TAAAGAAGCGAAAACATCAGGTCTTATCACTGGGTTTAGTTTCCCTATTCATACGGCTAA 660
+ J37015          TAAAGAAGCGAAAACATCAGGTCTTATCACTGGGTTTAGTTTCCCTATTCATACGGCTAA 469
+                 ************************************************************ 
+ 
+ test            CAATGGCTTCGGAATGCTTAGTTTTGCACATTCAGAAAAAGACAACTATATAGATAGTTT 720
+ J37015          CAATGGCTTCGGAATGCTTAGTTTTGCACATTCAGAAAAAGACAACTATATAGATAGTTT 529
+                 ************************************************************
+ 
+ test            ATTTTTACATGCGTGTATGAACATACCATTAATTGTTCCTTCTCTAGTGATAATTATC-- 778
+ J37015          ATTTTTACATGCGTGTATGAACATACCATTAATTGTTCCTTCTCTAGTTGATAATTATCG 589
+                 ************************************************    * *     
+ 
+ test            GAAAATTACATTTGCAAATTATAAATCCAACAACGATTTAACCAAAAGAGAAAAAGAAAG 838
+ J37015          AAAAATAAATATAGCAAATAATAAATCAAACAACGATTTAACCAAAAGAGAAAAAGAATG 649
+                  ***** *   * ****** ******* ****************************** *
+ 
+ test            GTTTAGGCGTGGGGCATGCGAAGGAAAAAAGCTCTTGGGATTTTCCAAAAATTTGGTGCA 898
+ J37015          TTTAGCGTGGGCATGCGAAGGAAAAAGCTCTTGGGATATTTCAAAAATATTAGGTTGCAG 709
+                  **   * * *        * *  **              *     * *           
+ 
+ test            GGGCGTCCTGTCCCCTTTCCTTTGACAGCGCAAATGAACTCCATCCAACACGCTGCAGGT 958
+ J37015          TGAGCGTACTGTCACTTTCCATTTAACCAATGCGCAAATGAAACTCAATACAACAAACCG 769
+                  *          * ****** ** *           **    *  *** **     *   
+ 
+ test            TTCTTAAGCCATTTTACGGCCATGATTGCCCCCTTTAAATAACCGGATGGGGCTTGGGGG 1018
+ J37015          CTGCCAAAGTATTTCTAAAGCAATTTTAACAGGAGCAATTGATTGCCCATACTTTAAAAA 829
+                  *   **   ****      **   **  *      ** * *  *        **     
+ 
+ test            GGGTCCCTTCCGCAAGGGGGGGTCCCGGTGGG---------------------------- 1050
+ J37015          TTAATAACACTGATAGTGCTAGTGTAGATCACTACTAGAGCCAGGCATCAAATAAAACGA 889
+                          * *  ** *   **   * *                               
+ 
+ test            ------------------------------------------------------------
+ J37015          AAGGCTCAGTCGAAAGACTGGGCCTTTCGTTTTATCTGTTGTTTGTCGGTGAACGCTCTC 949
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          TACTAGAGTCACACTGGCTCACCTTCGGGTGGGCCTTTCTGCGTTTATATACTAGAGACC 1009
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          TGTAGGATCGTACAGGTTTACGCAAGAAAATGGTTTGTTATAGTCGAATAAATACTAGAG 1069
+                                                                            
+ 
+ test            ------------------------------------------------------------
+ J37015          AAAGAGGAGAAATACTAGATGACTATAATGATAAAAAAATCGGATTTTTTGGCAATTCCA 1129
+                                                                            
+ 
+ test            ------------------------------------------------------------
+ J37015          TCGGAGGAGTATAAAGGTATTCTAAGTCTTCGTTATCAAGTGTTTAAGCAAAGACTTGAG 1189
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          TGGGACTTAGTTGTAGAAAATAACCTTGAATCAGATGAGTATGATAACTCAAATGCAGAA 1249
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          TATATTTATGCTTGTGATGATACTGAAAATGTAAGTGGATGCTGGCGTTTATTACCTACA 1309
+                                                                               
+ 
+ test            ------------------------------------------------------------
+ J37015          ACAGGTGATTATATGCTGAAAAGTGTTTTTCCTGAATTGCTTGGTCAACAGAGTGCTCCC 1369
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          AAAGATCCTAATATAGTCGAATTAAGTCGTTTTGCTGTAGGTAAAAATAGCTCAAAGATA 1429
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          AATAACTCTGCTAGTGAAATTACAATGAAACTATTTGAAGCTATATATAAACACGCTGTT 1489
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          AGTCAAGGTATTACAGAATATGTAACAGTAACATCAACAGCAATAGAGCGATTTTTAAAG 1549
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          CGTATTAAAGTTCCTTGTCATCGTATTGGAGACAAAGAAATTCATGTATTAGGTGATACT 1609
+                                                                              
+ 
+ test            ------------------------------------------------------------
+ J37015          AAATCGGTTGTATTGTCTATGCCTATTAATGAACAGTTTAAAAAAGCAGTCTTAAATGCT 1669
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          GCAAACGACGAAAACTACGCTTTAGTAGCTTAATAACTCTGATAGTGCTAGTGTAGATCT 1729
+                                                                              
+ 
+ test            ------------------------------------------------------------
+ J37015          CTACTAGAGAAAGAGGAGAAATACTAGATGCGTAAAGGAGAAGAACTTTTCACTGGAGTT 1789
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          GTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGA 1849
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          GAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGA 1909
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          AAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCGGTTATGGTGTTCAATGCTTT 1969
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          GCGAGATACCCAGATCATATGAAACAGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGT 2029
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          TATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAA 2089
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          GTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAA 2149
+                                                                              
+ 
+ test            ------------------------------------------------------------
+ J37015          GAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATAC 2209
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          ATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATT 2269
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          GAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGCGATGGC 2329
+                                                                              
+ 
+ test            ------------------------------------------------------------
+ J37015          CCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCC 2389
+                                                                              
+ 
+ test            ------------------------------------------------------------
+ J37015          AACGAAAAGAGAGACCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACAT 2449
+                                                                             
+ 
+ test            ------------------------------------------------------------
+ J37015          GGCATGGATGAACTATACAAATAATAATACTAGAGCCAGGCATCAAATAAAACGAAAGGC 2509
+                                                                              
+ 
+ test            ------------------------------------------------------------
+ J37015          TCAGTCGAAAGACTGGGCCTTTCGTTTTATCTGTTGTTTGTCGGTGAACGCTCTCTACTA 2569
+                                                                              
+  
+ test            --------------------------------------------
+ J37015          GAGTCACACTGGCTCACCTTCGGGTGGGCCTTTCTGCGTTTATA 2613
+
+===alignment with J37019 + restriction sites===
+
+This sequence reads restriction sites RBS Luxr so it is J37019
+
+ test                            TTGAGTTTTAGAAATAACAATAGGGGTTCCGCGCACATTTCCCCGAAAAG 50
+ restrictionsitesplusJ37019      --------------------------------------------------
+                                                                                   
+ 
+ test                            TGCCACCTGACGTCTAAGAAACCATTATTATCATGACATTAACCTATAAA 100
+ restrictionsitesplusJ37019      --------------------------------------------------
+                                                                                  
+ 
+ test                            AATAGGCGTATCACGAGGCAGAATTTCAGATAAAAAAAATCCTTAGCTTT 150
+ restrictionsitesplusJ37019      ---------------------------------AAAAAATCCTTAGCTTT 17
+                                                                  *****************
+ 
+ test                            CGCTAAGGATGATTTCTGGAATTCGCGGCCGCTTCTAGAGACCTGTAGGA 200
+ restrictionsitesplusJ37019      CGCTAAGGATGATTTCTGGAATTCGCGGCCGCTTCTAGAGACCTGTAGGA 67
+                                 **************************************************
+ 
+ test                            TCGTACAGGTTTACGCAAGAAAATGGTTTGTTATAGTCGAATAAATACTA 250
+ restrictionsitesplusJ37019      TCGTACAGGTTTACGCAAGAAAATGGTTTGTTATAGTCGAATAAATACTA 117
+                                 ************************************************** 
+ 
+ test                            GAGAAAGAGGAGAAATACTAGATGAAAAACATAAATGCCGACGACACATA 300
+ restrictionsitesplusJ37019      GAGAAAGAGGAGAAATACTAGATGAAAAACATAAATGCCGACGACACATA 167
+                                 ************************************************** 
+ 
+ test                            CAGAATAATTAATAAAATTAAAGCTTGTAGAAGCAATAATGATATTAATC 350
+ restrictionsitesplusJ37019      CAGAATAATTAATAAAATTAAAGCTTGTAGAAGCAATAATGATATTAATC 217
+                                 **************************************************
+ 
+ test                            AATGCTTATCTGATATGACTAAAATGGTACATTGTGAATATTATTTACTC 400
+ restrictionsitesplusJ37019      AATGCTTATCTGATATGACTAAAATGGTACATTGTGAATATTATTTACTC 267
+                                 **************************************************
+  
+ test                            GCGATCATTTATCCTCATTCTATGGTTAAATCTGATATTTCAATCCTAGA 450
+ restrictionsitesplusJ37019      GCGATCATTTATCCTCATTCTATGGTTAAATCTGATATTTCAATCCTAGA 317
+                                 ************************************************** 
+ 
+ test                            TAATTACCCTAAAAAATGGAGGCAATATTATGATGACGCTAATTTAATAA 500
+ restrictionsitesplusJ37019      TAATTACCCTAAAAAATGGAGGCAATATTATGATGACGCTAATTTAATAA 367
+                                 **************************************************
+ 
+ test                            AATATGATCCTATAGTAGATTATTCTAACTCCAATCATTCACCAATTAAT 550
+ restrictionsitesplusJ37019      AATATGATCCTATAGTAGATTATTCTAACTCCAATCATTCACCAATTAAT 417
+                                 **************************************************
+ 
+ test                            TGGAATATATTTGAAAACAATGCTGTAAATAAAAAATCTCCAAATGTAAT 600
+ restrictionsitesplusJ37019      TGGAATATATTTGAAAACAATGCTGTAAATAAAAAATCTCCAAATGTAAT 467
+                                 ************************************************** 
+ 
+ test                            TAAAGAAGCGAAAACATCAGGTCTTATCACTGGGTTTAGTTTCCCTATTC 650
+ restrictionsitesplusJ37019      TAAAGAAGCGAAAACATCAGGTCTTATCACTGGGTTTAGTTTCCCTATTC 517
+                                 ************************************************** 
+ 
+ test                            ATACGGCTAACAATGGCTTCGGAATGCTTAGTTTTGCACATTCAGAAAAA 700
+ restrictionsitesplusJ37019      ATACGGCTAACAATGGCTTCGGAATGCTTAGTTTTGCACATTCAGAAAAA 567
+                                 **************************************************
+ 
+ test                            GACAACTATATAGATAGTTTATTTTTACATGCGTGTATGAACATACCATT 750
+ restrictionsitesplusJ37019      GACAACTATATAGATAGTTTATTTTTACATGCGTGTATGAACATACCATT 617
+                                 ************************************************** 
+ 
+ test                            AATTGTTCCTTCTCTAGTGATAATTATC--GAAAATTACATTTGCAAATT 798
+ restrictionsitesplusJ37019      AATTGTTCCTTCTCTAGTTGATAATTATCGAAAAATAAATATAGCAAATA 667
+                                 ******************    * *      ***** *   * ****** 
+ 
+ test                            ATAAATCCAACAACGATTTAACCAAAAGAGAAAAAGAAAGGTTTAGGCGT 848
+ restrictionsitesplusJ37019      ATAAATCAAACAACGATTTAACCAAAAGAGAAAAAGAATGTTTAGCGTGG 717
+                                 ******* ****************************** * **   * * 
+ 
+ test                            GGGGCATGCGAAGGAAAAAAGCTCTTGGGATTTTCCAAAAATTTGGTGCA 898
+ restrictionsitesplusJ37019      GCATGCGAAGGAAAAAGCTCTTGGGATATTTCAAAAATATTAGGTTGCAG 767
+                                 *        * *  **              *     * *             
+ 
+ test                            GGGCGTCCTGTCCCCTTTCCTTTGACAGCGCAAATGAACTCCATCCAACA 948
+ restrictionsitesplusJ37019      TGAGCGTACTGTCACTTTCCATTTAACCAATGCGCAAATGAAACTCAATA 817
+                                  *          * ****** ** *           **    *  *** *
+ 
+ test                            CGCTGCAGGTTTCTTAAGCCATTTTACGGCCATGATTGCCCCCTTTAAAT 998
+ restrictionsitesplusJ37019      CAACAAACCGCTGCCAAAGTATTTCTAAAGCAATTTTAACAGGAGCAATT 867
+                                 *     *    *   **   ****      **   **  *      ** *
+ 
+ test                            AACCGGATGGGGCTTGGGGGGGGTCCCTTCCGCAAGGGGGGGTCCCGGTG 1048
+ restrictionsitesplusJ37019      GATTGCCCATACTTTAAAAATTAATAACACTGATAGTGCTAGTGTAGATC 917
+                                  *  *        **              * *  ** *   **   * * 
+ 
+ test                            GG 1050
+ restrictionsitesplusJ37019      AC 919

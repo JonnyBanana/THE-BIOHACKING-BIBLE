@@ -1,0 +1,124 @@
+This is a demo of [http://simile.mit.edu/exhibit/ Exhibit]. It only includes some of the data from [[E. coli genotypes]].
+
+<exhibit>
+  <source id="ecoligenotypes" 
+          columns="label,description,genotype,parent,requires,resistance,purpose,inducible,lambda" 
+          type="Strain" label="Strain" pluralLabel="Strains" 
+          />
+  <facet facetClass="TextSearch" facetLabel="Search"/>
+  <facet expression=".genotype" />
+  <facet expression=".purpose" />
+  <facet expression=".resistance" />
+  <facet expression=".requires" />
+  <view viewClass="Tabular"
+        label="Table"
+        columns=".label, .genotype, .parent, .purpose"
+        sortColumn="0"
+        />
+</exhibit>
+
+{|id="ecoligenotypes" border=1
+|-
+!Strain
+!Description
+!Genotype
+!Parent
+!Requires
+!Resistance
+!Purpose
+!Inducible
+!Lambda
+|-
+|AG1
+|
+|endA1;recA1;gyrA96;thi-1;relA1;glnV44;hsdR17(rK- mK+)
+|
+|thiamine
+|nalidixic acid
+|cloning
+|-
+|BL21(DE3)
+|
+|F-;ompT;gal;dcm;lon;hsdSB(rB- mB-);lacIq;lambda;lacUV5-T7 gene 1;ind1;sam7;nin5
+|B834
+|
+|
+|protein expression
+|T7 RNA polymerase
+|prophage
+|-
+|BL21(DE3) pLysS
+|The pLysS plasmid (with chloramphenicol resistance) encodes T7 phage lysozyme, an inhibitor for T7 polymerase which reduces and almost eliminates expression from transformed T7 promoter containing plasmids when not induced.
+|F-;ompT;gal;dcm;lon;hsdSB(rB- mB-);lacIq;lambda;lacUV5-T7 gene 1;ind1;sam7;nin5;pLysS(cmR)
+|BL21(DE3)
+|
+|chloramphenicol
+|protein expression
+|T7 RNA polymerase
+|prophage
+|}
+
+<html>
+<script type="text/javascript">
+/*
+var data = {
+       [
+        {
+            label : "BNN93",
+            lambda : "no",
+            requires : ["thiamine", "threonine", "leucine"],
+            genotype : ["F-", "tonA21", "thi-1", "thr-1", "leuB6", "lacY1", "glnV44", "rfbC1", "fhuA1", "mcrB", "e14-(mcrA-)", "hsdR(rKmK)", "lambda-"]
+        },
+        {
+            label : "BW26434 CGSC Strain #7658",
+            lambda : "no",
+            resistance : "kanamycin",
+            genotype : ["D(araD-araB)567", "D(lacA-lacZ)514(::kan)", "lacIp-4000(lacIq)", "lambda-", "rpoS396(Am)?", "rph-1", "D(rhaD-rhaB)568", "hsdR514"]
+        },
+        {
+            label : "C600",
+            purpose : "general purpose",
+            lambda : "no",
+            requires : ["thiamine", "threonine", "leucine"],
+            genotype : ["F-", "tonA21", "thi-1", "thr-1", "leuB6", "lacY1", "glnV44", "rfbC1", "fhuA1", "lambda-"]
+        },
+        {
+            label : "C600 hflA150 (Y1073, BNN102)",
+            parent : "C600",
+            purpose : "cDNA libraries",
+            lambda : "no",
+            resistance : "tetracycline",
+            requires : ["thiamine", "threonine", "leucine"],
+            genotype : ["F-", "thi-1", "thr-1", "leuB6", "lacY1", "tonA21", "glnV44", "lambda-", "hflA150(chr::Tn10)"]
+        },
+        {
+            label : "D1210",
+            parent : "HB101",
+            genotype : ["lacIq", "lacY+"]
+        },
+        {
+            label : "DB3.1",
+            purpose : "propagating plasmids with ccdB",
+            resistance : "streptomycin",
+            parent : "HB101",
+            genotype : ["F-", "gyrA462", "endA1", "glnV44", "D(sr1-recA)", "mcrB", "mrr", "hsdS20(rB-, mB-)", "ara14", "galK2", "lacY1", "proA2", "rpsL20(Smr)", "xyl5", "D(leu)", "mtl1"]
+        },
+        {
+            label : "DH1",
+            purpose : "cloning",
+            resistance : "nalidixic acid",
+            parent : "Hoffman-Berling 1100 strain derivative",
+            genotype : ["endA1", "recA1", "gyrA96", "thi-1", "glnV44", "relA1", "hsdR17(rK- mK+)", "lambda-"]
+        },
+        {
+            label : "DH5a",
+            purpose : "cloning",
+            resistance : "nalidixic acid",
+            parent : "DH1",
+            genotype : ["F-", "endA1", "glnV44", "thi-1", "recA1", "relA1", "gyrA96", "deoR", "nupG", "phi80dlacZD(M15)", "D(lacZYA-argF)U169", "hsdR17(rK- mK+)", "lambda-"]
+        },
+    ]
+};
+*/
+   </script>   
+</html>

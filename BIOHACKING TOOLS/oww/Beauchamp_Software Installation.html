@@ -1,0 +1,121 @@
+{{Beauchamp Lab Notebook Navigation Bar}}
+<br>
+<div style="padding: 8px; color: #000000; background-color: #ffffff; width: 730px; border: 2px solid #666666;">
+
+== Updating AFNI ==
+
+AFNI is frequently updated, so it is important to make sure you have the most recent version.
+Here is an easy way to update (for Intel Macs):
+  set pkg = macosx_10.4_Intel
+  wget http://afni.nimh.nih.gov/pub/dist/tgz/{$pkg}.tgz
+  tar xvfz {$pkg}.tgz
+ 
+Optionally, it can be good to test the new version BEFORE overwriting the old version. Here is how we can test SUMA:
+  cd macosx_10.4_Intel
+  ./suma
+If it works, we copy it over the old version (type "which afni" if you are not sure which directory afni is in)
+
+  mv macosx_10.4_Intel/* /Applications/AFNI/
+  rm -r macosx_10.4_Intel  macosx_10.4_Intel.tgz
+
+== X11 and XTools ==
+
+X11 is the display system for Macs and most Unix machines. XTools is a programming environment for the Mac that includes a couple of useful compilers. Right now Apple does not provide these programs for the Intel Macs on their website. To install X11 and XTools on the Intel Macs find the Install Disc 1, go into the System Installation Packages folder, and install the useful pkg files. After installing X11, it will be useful to switch the default shell to T-shell. Type the following into an X11 window:
+
+ chsh –s /bin/tcsh
+
+The T-shell is particularly convenient because it can retrieve previous lines entered with the up arrow key and it can also automatically complete file names with the tab key. Note that this command requires you to quit and restart X11 for changes to take effect.
+ 
+
+== Fink ==
+
+Fink is a program package manager for Macs. Download the program from the Fink webpage: 
+
+http://fink.sourceforge.net/. 
+
+The program in the dmg file will be straightforward. You can copy finkcommander to the applications folder for a GUI interface. 
+You should update your libraries every few weeks by running the following:
+fink selfupdate; fink update-all
+
+
+
+=== Installing Required Libraries for AFNI ===
+
+
+Type the following line to have Fink grab the newest versions:
+
+ fink install glib2-dev glib netpbm openmotif3
+
+
+== AFNI ==
+
+AFNI is a suite of programs developed at the NIH for the analysis of functional neuroimaging. The best place to go for installation directions is AFNI’s instruction website:
+
+http://afni.nimh.nih.gov/pub/dist/HOWTO//howto/ht00_inst/html/index.shtml
+
+Unlike the NIH, we install AFNI to the /Applications/abin folder, rather than the local folder of each user. 
+If you want the most up to date version, click the link for compiling AFNI under Mac OS X. You should also check the download webpage each month for updates: 
+
+ http://afni.nimh.nih.gov/pub/dist/tgz/
+
+To include AFNI in the path, paste the following line into a terminal window:
+
+ echo 'set path = ( $path  /Applications/abin )' >> ~/.cshrc
+
+== FreeSurfer ==
+
+FreeSurfer is another set of programs developed at NIH for the analysis of functional neuroimaging. We mainly use it for cortical surface reconstruction. Their download page is part of an extensive wiki that describes its many functions.
+
+https://surfer.nmr.mgh.harvard.edu/fswiki/Download 
+
+Updates to the software are normally posted on the listserv. To set the correct paths for Freesurfer paste the following lines into a terminal window:
+
+ echo ‘setenv FREESURFER_HOME /Applications/freesurfer‘ >> ~/.cshrc
+ echo ‘source $FREESURFER_HOME/SetUpFreeSurfer.csh' >> ~/.cshrc
+
+== Caret ==
+Go to [http://brainmap.wustl.edu/caret/#DownloadCaret Caret's Download Webpage], register for an account, and download the newest release. 
+Copy the caret folder to the Applications folder on your machine and add the following line to your .cshrc file:
+   set path = ($path /Applications/caret/bin/)
+
+== Creating Symbolic Links ==
+
+It is useful to have symbolic links from the command line so you do not need to type the full path to a file. The program ln creates such symbolic links. Here are a couple of examples:
+
+ ln –s /Volumes/data9/surfaces/ /surfaces
+ ln –s /Volumes/data1/UT /UT
+
+The paths are now linked to /surfaces/ and /UT/.
+
+
+== Installing the Dell Printer Drivers ==
+The  application '''Dell 5100cn Installer''' is on data9. The printer IP is 129.106.236.253
+To see the current status of the printer go to
+http://129.106.236.253
+
+Here is a copy of the manual
+http://openwetware.org/images/8/83/Dell_5100cn.pdf
+
+== Mounting a Volume after sshing to a different machine ==
+
+
+For example.  I ssh onto tellmore machine.  Now I want to access data9 from his machine.
+
+in my home directory (~) (on tellmore) I make a directory called mount, inside of mount I make a directory
+called data9 (or which ever volume I am mounting), then I mount data9.
+
+ cd ~
+ mkdir mount
+ cd mount
+ mkdir data9
+ mount_afp -i afp://akingon@129.106.236.180/data9 data9
+ enter password 
+ 
+and now you can cd into data9
+
+==Installing Matlab==
+To install Matlab for use in the Beauchamp lab:
+:1. Download and install matlab [http://www.mathworks.com/downloads/web_downloads here]. Get login name and pw from Mike
+:Note: you will be prompted to install Java run-time environment 5. This will ease the installation.
+:2. Place license.dat  in the MATLAB folder when prompted.
+:3. Find out that Matlab is already on the computer and cancel installation.

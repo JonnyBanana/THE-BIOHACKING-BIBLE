@@ -1,0 +1,160 @@
+==The Method==
+
+This is a brief tutorial on how to do the least square curve fit on Matlab to extract values.  
+
+Adopted from previous tutorials by Marcio von Muhlen, Maxim Shusteff, Nate Tedford, and other BE Students at MIT.
+
+In order to generate a fit, you need to tell Matlab the form of the equation you believe the data should follow.  Matlab has no way of knowing or telling you if your function is incorrect, so it's up to you to account for this.  We first create a Matlab function file.  For example, an equation of the form:
+<center><amsmath>
+f(x) = \frac{C_1 \times x}{1 + C_2 \times x}
+</amsmath></center>
+
+The function file might look like:
+<pre>
+ function yhat = myfun(beta, x)
+ c1 = beta(1);
+ c2 = beta(2);
+ yhat = (c1*x ./ (1 + c2.*x);
+</pre>
+
+Since this is a function, it must be named '''myfun.m'''.  The coefficients to be fitted are here contained in the input variable beta.  Make sure to have this function in your working directory.  
+
+Create a matrix fitData which contains the information you want.  You could use:
+
+Some sample data can be found [http://www.openwetware.org/images/8/8f/Fitdata.txt here].
+
+<pre>
+ >>fitData = dlmread('fitdata.txt', '\t', 1, 0);
+</pre>
+
+Assign the X column to the variable X and the f(X) column to the variable Y, then plot the data.
+
+<pre>
+ >>X = fitData(:,1);
+ >>Y = fitData(:,2);
+ >>semilogx(X, Y, 'bd')
+</pre>
+
+We need to provide Matlab with initial guesses for our coefficient values.  At this point it's a good idea to plot our function to see if the data makes sense with regards to it.  We can start by guessing 1 for both coefficients; in a real experiment, your prior knowledge of what you are measuring would determine these guesses.
+
+<pre>
+ >>hold on
+ >>semilogx(X, (X ./(1 + 1.*X))
+</pre>
+
+Now let's have Matlab figure out the best fit (least squares sense) of the data to this function, then plot the data together.
+
+<pre>
+ >>Cfs = lsqcurvefit(@myfun, [1 1], X, Y)
+ >>hold off
+ >>semilogx(X, Y, 'bd', X, (Cfs(1)*X ./ (1 + Cfs(2)*X)), 'k-')
+</pre>
+
+Here we plotted two sets of dta in the same command.  See the help file for semilogx to understand how this works.  Notice that although our guess wasn't very good, Matlab had no trouble finding good coefficients.  This won't always be the case with more complicated data functions.
+
+Additional resources:
+[http://web.mit.edu/answers/matlab MIT's Matlab Answer Page]
+
+[http://openwetware.org/images/7/76/MatlabTutorial2.pdf Another Matlab tutorial], with additional material on looping and solving ODE's in Matlab.
+
+
+==J37016 Curve Fitting==
+Consider the differential equation governing the rate of change of GFP over time.
+<center><math>
+\frac{d[GFP]}{dt} = \frac{V_{max}[AHL][LuxR]}{[AHL][LuxR] + \frac{K_D}{K_{D \alpha}}} - \delta_{GFP}[GFP] 
+</math></center>
+We can now solve this differential equation for [''GFP''] to obtain a relation which we can use to fit the curve we obtain from experiment, since we obtained a graph of fluorescence (directly related to the concentration of GFP) vs. concentration.
+
+We first let:
+<center><math>
+\gamma = \frac{V_{max}[AHL][LuxR]}{[AHL][LuxR] + \frac{K_D}{K_{D \alpha}}}
+</math></center>
+Now we solve the differential equation
+<center><math>
+\frac{d[GFP]}{dt} + \delta_{GFP}[GFP] = \gamma
+</math></center>
+From the initial conditions t = 0, [GFP] = 0, we can come up with the solution:
+<center><math>
+[GFP] = \frac{\gamma}{\delta_{GFP}} \times (1 - exp(-\delta_{GFP}t))
+</math></center>
+At steady state (t approaches infinity), we can see that we are left with the equation:
+<center><math>
+[GFP] = \frac{\gamma}{\delta_{GFP}}
+</math></center>
+But we want an equation relating [GFP] to [AHL], so let us resubstitute gamma into the equation:
+<center><math>
+[GFP] = \frac{1}{\delta_{GFP}} \times \frac{V_{max}[AHL][LuxR]}{[AHL][LuxR] + \frac{K_D}{K_{D \alpha}}}
+</math></center>
+
+We know the degradation rate of GFP and LuxR:
+<center><math>
+\delta_{GFP} = 0.015 \qquad \delta_{LuxR} = 0.0116
+</math></center>
+Let us also assume we know the concentration of Lux R is proportional to the concentration of GFP as derived in the [[IGEM:IMPERIAL/2006/project/Oscillator/Modelling/J37016|J37016 Modelling page]]:
+<center><math>
+[LuxR] = \frac{\delta_{GFP}}{\delta_{LuxR}} \times [GFP]
+</math></center>
+
+Now we can come up with an equation relating only AHL concentration to GFP concentration (directly proportional to fluorescence).  
+<center><math>
+[GFP] = \frac{V_{max}}{\delta_{GFP}} - \frac{K_D}{K_{D \alpha}} \times \frac{\delta_{LuxR}}{\delta_{GFP}} \times \frac{1}{[AHL]}
+</math></center>
+
+For simplification purposes, we can assume that:
+<center><math>
+\frac{K_D}{K_{D \alpha}} = K_m
+</math></center>
+
+We can thus fit our data points to the equation:
+<center><math>
+[GFP] = \frac{V_{max}}{\delta_{GFP}} - \frac{K_m}{[AHL]} \times \frac{\delta_{LuxR}}{\delta_{GFP}}
+</math></center>
+
+Please see the [http://www.openwetware.org/images/9/98/J37016_Curve.pdf Curve Fitting .pdf file] for the Mathematica document I used to fit the equation. <math>r^2</math> values relate to the "fitness" of the curve.  This was calculated taking the sum of the squares of the vertical distances of the points from the best fit curve.
+
+Overall, the following values were found for data taken on 27 August 2006:
+If we considered all points:
+<center><math>
+V_{max} = 30.43 \;  \frac{units}{s} \qquad K_m = \frac{K_D}{K_{D \alpha}} = 7.36 \;  units \times M \qquad r^2 = 1.86 \times 10^6
+</math></center>
+
+If we consider only the values of [AHL] from 1 to 10,000, we get the following values:
+<center><math>
+V_{max} = 35.36\  \frac{units}{s} \qquad K_m = \frac{K_D}{K_{D \alpha}} = 1290.36\  units \times M \qquad r^2 = 383896
+</math></center>
+
+If we consider only the values of [AHL] from 5 to 10,000, we get the following values:
+<center><math>
+V_{max} = 37.56\  \frac{units}{s} \qquad K_m = \frac{K_D}{K_{D \alpha}} = 5157.26\  units \times M \qquad r^2 = 88696.2
+</math></center>
+
+If we consider only the values of [AHL] from 10 to 10,000, we get the following values:
+<center><math>
+V_{max} = 38.07\  \frac{units}{s} \qquad K_m = \frac{K_D}{K_{D \alpha}} = 7601\  units \times M  \qquad r^2 = 56942
+</math></center>
+
+[[Image:270806J37016ten.png|frame|center|Graph showing Fluorescence (arbitrary units) vs. Concentration of AHL (mol) with best fit curve for AHL concentration of 10 to 10,000 {{uM}}]]
+
+==Comments==
+[[User:Vincent|VR:]]Well, the model you refer to has 3 variables ([AHL],[LuxR],[GFP]) and 2 parameters (Vmax, Kd). Your fitting function needs to have the same degrees of freedom.
+Your fitting function should be like:
+<center><math>
+GFP = \frac{C_1 \times X \times Y}{C_2 + XY}
+</math></center> 
+Out of the fitting operation you want to get C_1 and C_2.Then you have to figure out how to constrain your function with the experimental data we have. Remember that we operated at steady state and with the assumption that the degradation of GFP equals degradation of LuxR (mostly due to dilution from growth).
+
+[[User:Johnsy|Johnsy]]:  I will try again with the model that you suggest.  I thought that we were assuming that LuxR was a constant?  How can we extract values from the graph of LuxR, since we only have a graph of GFP vs. [AHL]?  Also, what I have done to constrain the parameters was to "ignore" everything before expression occurs.  So in most of our cases, this would correspond to 10 nM (I think) before GFP production began to increase significantly.
+
+--[[User:Vincent|Vincent]] 09:32, 7 October 2006 (EDT): here are some comments about your approach:
+*you assume LuxR constant (not a function of AHL). How can it be possible when LuxR is under the expression of pLux ? Because LuxR and GFP have the same synthesis rate (same promoter), their levels of expression are proportional, as described in the modelling of J37016. See comment above to get an idea about the relation.
+*you don't need to assume anything about initial conditions as you are considering  the unique non trivial stable steady state.
+*When using the least square fitting method, it is really important to take care of the initial conditions of the algo (as it can get stuck easily in local minimums). I would be good to define a measure of how good is the fit (distance between experimental and predicted points for example)
+*Need to specify the units of the values you found.
+
+--[[User:Vincent|Vincent]] 15:41, 16 October 2006 (EDT): 
+* how can you get mols when we are only measuring fluorescence ?
+* what were the initial conditions used in the least square optimization ?
+* You should show the fit on the experimental data (displaying experimental data + fitted curve)
+
+[[User:Johnsy|Johnsy]] 23:30, 20 October 2006 (EDT): 
+*The FindFit function in mathematica did not require initial conditions for least square optimization.

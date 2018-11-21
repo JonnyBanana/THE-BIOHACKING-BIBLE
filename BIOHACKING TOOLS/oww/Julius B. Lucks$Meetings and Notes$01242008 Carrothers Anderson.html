@@ -1,0 +1,50 @@
+= Meeting with James Corothers - the problems with the pIP501/pT181 project =
+* look at a project, if 1 out of 20 things are good, probably worth doing
+** this looks like it is worth a try, but don't spend too much time on it - cut losses if things aren't really working out right away
+* things to try immediately
+*# recapitulate the Brandtl, Wagner paper (putting these inte E. coli)
+*#* don't needt to run the gels (norther blots) like in Figure 2 - just need to put them into cells, and monitor it with RTPCR
+*#** do the following with and without RNAIII
+*#**# transcribe for awhile - arrest
+*#**# use Reverse transcriptase to convert mRNA to DNA
+*#**# do '''quantitative''' PCR
+*#**# look at how the population of mRNAII shifts from long to short when add RNAIII
+*#** see Amin in the Keasling lab for info about RTPCR
+*# Ask the question - is this effect really anti-sense?
+*# Ask the question - can we get better than 3 fold attenuation?
+*#* These last 2 can be done with a library experiment - construct RNAII's with randomly-changed relevant regions, as well as for RNAIII's - mix together and grow colonies (2 diff plasmids) - have a GFL reporter on RNAII, so that if RNAII is NOT working, will have GFP. Plate cells and do a 2 stage screen. 
+*#*# 1st screen - select for colonies that have no GFP when RNAIII is induced - make sure RNAIII works
+*#*# 2nd screen - select for colonies that HAVE GFP when RNAIII is NOT induced - make sure RNAII is not broken
+* could also try in vitro re-capitulation of experiments, but fine to start w/ in-vivo
+
+== problems ==
+* Gollnick paper F5 - looks like is a kissing interaction 
+** these are big RNAs (200nt) - probably something more than just secondary structure going on
+** probably some 3d structure that is mediating this interaction
+** this is going to be a lot harder to figure out what is going on - when do library stuff, if can't figure out what pattern there is in the base pairs, then this could be the case - if there is some sort of conserved residues, then it might mean that it is just secondary structure
+* 3-fold attenuation is not that much - very weak effect
+
+== another idea ==
+* try to make antisense work where ribosome would in trp attenuation - F1 of Gollnick
+** take away RBS so no ribosome can act - make RNAIII act like the ribosome does here
+** maybe more straight-forward antisense interaction
+
+= Chat with Chris Anderson =
+* be careful when doing a library - calculate the space of possibilites
+** realistically can screen 10^5 if can put on a plate and have lacZ or GFP reporter
+** any other methon (96 well plate), at 10^3
+** need to cover 10x the theoretical space of the library - if you undersample, you won't find anything
+** need to selection (?)
+* use strong promoters, and include terminators
+** see iGEM 2006 ribo regulators
+* if RNAs < 120nt, can synthesize with 2 oligos with 20 bp overlap
+** can also make the library like this
+* if RNAs > 120nt, going to need to PCR out of the genome
+* don't try a standard biobricks (?)
+** could use a promoter and terminator that is outside of the BamHI/BglII sites so can splice in the RNA
+*** see John Dueber for something like this
+* don't make the RNA's inducible - make everything constitutive
+** use presence or absence of the plasmid instead of inducing or not
+** use something like pTet or pCon
+** can tune with strength of the promoter
+** if use inducers, can have growth phase dependence which just complicates things

@@ -1,0 +1,76 @@
+=Infector Detector: Design=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Specifications|Specifications]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Implementation|Fabrication]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/TestingValidation|Testing]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Data Analysis|Data Analysis]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Validation|Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+
+==Overall Design==
+
+===Possible Parts===
+====Signaling System====
+[http://parts.mit.edu/registry/index.php/Part:BBa_F1610 BBa_F1610] RBS-luxI<br>
+No promoter - we need to put one on it!<br>
+[http://parts.mit.edu/registry/index.php/Part:BBa_J23039 BBa_J23039] ptet-luxI<br>
+A better part has been found! This part will most likely be used.
+
+====Promoter for Signaling System====
+[http://parts.mit.edu/registry/index.php/Part:BBa_R0040 BBa_R0040] 
+ptet, if uncontrolled
+<br>
+<s>pLac, if constitutive secretion<br>
+pBAD, if controlled secretion</s>
+
+====Detection System====
+[http://parts.mit.edu/registry/index.php/Part:BBa_F2620 BBa_F2620] ptet-LuxR-pLux<br>
+Detection range: 1-1000 nM, highest sensitivity from 1-10 nM<br>
+Peak secretion: 400 GFP molecules cfu<sup>-1</sup> s<sup>-1</sup><br>
+Peak response time: 27 minutes<br>
+[http://parts.mit.edu/registry/index.php/Part:BBa_T9002 BBa_T9002] ptet-LuxR-pLux-GFP<br>
+With GFP attached<br>
+[http://parts.mit.edu/registry/index.php/Part:BBa_J37032 BBa_J37032] pLux-GFP<br>
+The same part, but without constitutive LuxR production
+
+====GFP Reporter====
+[http://parts.mit.edu/registry/index.php/Part:BBa_I13504 BBa_EI1354] GFP<br>
+Standard GFP, excited/emitted at 501/511 nm, with RBS and stop codons.<br>
+<s>LacZ for &beta;-galactosidase assay (LacZ is too big...)</s><br>
+Or possibly DsRed Express - this will be ordered from clontech!
+
+==Construct 1: Detector for AHL==
+Our first aim is to create a system that can accurately detect the concentration of AHL in solution. We found a well characterized detector system sensitive to 3OC<sub>6</sub>HSL which we will attach to a standard GFP reporter to determine its response to GFP.<br>
+<br>[[Image:IC2007_BF_stage1_construct.png]]<br clear="all">&nbsp;<br>
+We would later test the promoter on a different reporter. The reporter that is chosen for the final comstruct needs to have a long half-life, be stable, be visible to the naked eye and should not have a response time longer than 3 hours. <br>
+<br>[[Image:IC2007_BF_stage1a_construct.png‎]]<br clear="all">
+
+It has been decided that DsRed Express will be the final reporter, since it has two important properties. A very long half-life (several days), and is visible to the naked eye. [The second property might not be true for small concentrations of DsRed].
+
+==Component: Detector for bacterial secreted AHL==
+To more accurately simulate a bacterial biofilm, we decided to create bacteria that would constitutively secrete AHL.<br>
+<br>[[Image:IC2007_BF_stage2_construct_sender.png]]<br clear="all>
+We might need to clone this part in if the biofilm ''E. coli'' strain doesn't produce AHL by itself...
+
+==Component: Amplifier for reporter production==
+Our detector plasmid would incorporate the Hrp system as an amplifier, to amplify a reporter gene yet to be decided.<br>
+<br>[[Image:IC2007_BF_stage2_construct_receiver.png]]<br clear="all>&nbsp;<br>
+
+The characterisation of the '''[[IGEM:IMPERIAL/2007/Projects/Hrp System|Hrp System]]''' will be carried out along with this project, and thus will only be incorporated into the infector detector once the system has been fully characterised.
+
+''It has now been shown that the amplifier system will most likely not work. This part of the project has been cancelled.''
+
+==Construct 2: Detector for AHL==
+From our models, it has been shown that the construct 1 does not respond uniformly, since the activator protein LuxR is produced by a promoter and not maintained at a constant level. This makes it hard to relate the output of the system to the AHL input. We decided to add purified LuxR to the system instead, and simplify the construct by removing the constitutive LuxR production.<br>
+<br>[[Image:IC2007_BF_stage1_construct2.png]]

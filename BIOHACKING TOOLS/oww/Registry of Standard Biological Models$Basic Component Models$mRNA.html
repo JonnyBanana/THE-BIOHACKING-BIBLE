@@ -1,0 +1,105 @@
+==mRNA molecule architecture==
+
+{| border="1"
+|
+*'''Description''': mRNA molecule
+*'''Hypothesis''': 
+**mRNA molecules are produced following the binding of a promoter by a polymerase
+**mRNA production is continuous (no stochastic effect)
+**unlimited resources for transcription (excess of polymerases ...)
+*'''Inputs''':
+**PoPs-IN
+**time
+*'''Outputs''':
+**[mRNA]
+*'''Characteristic parameters''':
+**mRNA-degradation-rate
+| align= "center" | [[Image:VBB_mRNA.png|thumb|left|400px|mRNA Brick Architecture]]
+|}
+
+
+==CellML structure (CellML 1.1 spec)==
+*'''Component''': mRNA-molecule
+*'''Units''': 
+**Imported from Environment component
+*'''Variables''':
+**time (public interface = in)
+**PoPsIN (public interface = in )
+**K_{deg} (mRNADegradationRate) (public interface = none / init value = XXX)
+**mRNA (public interface = out / init value = 0.)
+*'''MathML'''
+**<amsmath>\frac{d[mRNA]}{dtime} = PoPsIN - K_{deg}*[mRNA] </amsmath>
+
+
+==CellML File==
+
+<syntax type='xml'>
+<?xml version="1.0"?>
+
+<model xmlns="http://www.cellml.org/cellml/1.0#"
+       xmlns:cmeta="http://www.cellml.org/metadata/1.0#"
+       xml:base="file:///C:/CellML_models/mRNA.cml"
+       cmeta:id="mRNA"
+       name="mRNA">
+  
+<!-- LIST OF COMPONENTS -->
+
+<component name="mRNA">
+      <variable name="mRNAdegradationRate" initial_value="1"     public_interface="none" units="per_second"/>
+      <variable name="nb_mRNA"             initial_value="0"     public_interface="out"  units="mole"/>
+      <variable name="mRNAsynthesisRate"   initial_value="none"  public_interface="in"   units="moles_per_second"/>
+      <variable name="time"                initial_value="none"  public_interface="in"   units="second"/>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+
+  <apply id="rate of change of mRNA">
+    <eq/>
+  <apply>
+    <diff/>
+    <bvar>
+    <ci>time</ci>
+    </bvar>
+    <ci>nb_mRNA</ci>
+  </apply>
+  <apply>
+    <minus/>
+    <ci>mRNAsynthesisRate</ci>
+  <apply>
+    <times/>
+    <ci>mRNAdegradationRate</ci>
+    <ci>nb_mRNA</ci>
+  </apply>
+  </apply>
+  </apply>
+
+</math>
+
+</component>
+
+
+<!-- END LIST OF COMPONENTS -->
+
+
+<!-- LIST OF CONNECTIONS -->
+
+
+<!-- END LIST OF CONNECTIONS -->
+
+
+<!-- LIST OF IMPORTS -->
+
+<import xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="file://C:\CellML_models\units.cml">
+
+      <units name="moles_per_second" units_ref="moles_per_second"/>
+      <units name="per_second"       units_ref="per_second"/>
+</import>
+
+<!-- END LIST OF IMPORTS -->
+
+</model>
+</syntax>
+
+
+==Comments==
+*I feel uneasy with this component design as it is not a 'real' biobrick. I would like to encapsulate it into a higher level component, related to the coded protein.

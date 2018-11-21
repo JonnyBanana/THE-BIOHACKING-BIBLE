@@ -1,0 +1,259 @@
+=Determining the Speed of Light by Direct Time of Flight Measurements=
+
+==Contact Information==
+Kyle Martin, University of New Mexico Student, kmartin1@unm.edu
+
+==Abstract==
+
+The purpose of the experiment was to measure the speed of light, which is an important constant used in many physical computations. We measured the speed of light using a direct time of flight measurement, measuring the time it took to travel a certain distance.  Our measured value for the speed of light was <math> 3.046 \times10^{8} \frac{m}{s}</math> +/- <math>1.45 \times10^{7} \frac {m}{s}</math>, in good agreement with the accepted value of <math>2.99 \times 10^{8} \frac {m}{s}</math> [http://physics.nist.gov/cgi-bin/cuu/Value?c], with a relative error of only 1.87%.  Our relative uncertainty was fairly good and could be reduced in further experimentation by increasing the accuracy in which the TAC voltage data is taken.
+<br style="clear:both;">
+
+==Introduction==
+
+The speed of light is one of the fundamental constants in physics.  It is a maximum velocity for particles and according to Einstein's relativity is constant in all reference frames  [http://www.gutenberg.org/catalog/world/readfile?fk_files=12465&pageno=1].  It is used to calculate the energy and momentum of photons [http://books.google.com/books?id=7qCMUfwoQcAC&pg=PA29&dq=wave-particle+all-particles&as_brr=3&sig=2uPutqrcV_8vPVJwJnw3jstZj-o#PPA29,M1].  The speed of light is used to calculate many important features in physics from the Bohr radius (the most probable distance from a proton to an electron in a hydrogen atom) <math>a_0 = \frac {h} {2\pi c \alpha}</math>to the distances of stars from earth, this fundamental constant is really important and is needed to do almost any calculation in physics.  In fact the speed of light was defined as a constant and the meter was redefined to match on October 21, 1983.  Before that time there were a lot of ways of determining the speed of light.  Galileo and his assistant in the 17th century stood atop hills a mile opposite each other and shined lanterns at each other and attempted to measure the speed of light this way [http://math.ucr.edu/home/baez/physics/Relativity/SpeedOfLight/measure_c.html].  Their result still yielded a infinite speed of light.  The simple fact is light travels too fast for that method to work.   Olaus Roemer in 1676 observed Jupiter and used the varying time it took light to reach earth as the distance between Earth and Jupiter increased and got a value of <math> 214,000 \frac{km}{s}</math>, others used similar astronomical methods to estimate the speed of light as well [4].  The first successful Earth bound test was preformed by Armand Fizeau in 1849.  He shined a beam of light through a rapidly rotating wheel and observed the speed at which he rotated the wheel when the light failed to pass through the gaps.  Armand reported the value for the speed of light to be <math> 315,000 \frac{km}{s}</math> [4].  K.D Froom measured the speed of light using a radio interferometer and his result was  <math>299,792.5 \frac{km}{s}</math> +/- <math> 0.1 \frac{km}{s}</math> [http://prola.aps.org/abstract/PRL/v29/i19/p1346_1].  Many other scientist took different approaches to measuring the speed of light until it was finally defined on October 21, 1983.  We report the speed of light using the direct time of flight method.
+
+==Methods and Materials==
+There is a problem, light travels fast, really fast.  No longer can we plot out some distance and time how long the light takes to travel from start to finish, if we did this we would have a very long distance to measure out for only 1 second of light travel time.  No, measuring exact distance and time to travel that distance seems impractical.  In my experiment I did a variation of this. I measured relative distances and how the time varied.  I used this and the famous <math> v = \frac{\delta d}{\delta t} </math>.
+===Materials===
+
+#TAC Model 567 manufactured by EG&G Ortec
+#Delay 2058 manufactured by Canberra
+#Power supply Model 315 DC power supply 0-5000V, 0-5mA Manufactured by Bertan Associates Inc.
+#Oscilloscope Tektronics TDS 1002
+#LED Power Supply: Model 6207a mfd. by Harrison Industries, 0-160V, 0-0.2A 
+#Photo multiplier tube: N-134 (PMT)
+#Multichannel analyzer program (MCA)
+#Microsoft Excel 2003
+
+<gallery>
+Image:Physics_307L_Speed_of_light1.JPG|From Left: Power Supply 315, Delay 2058, TAC
+Image:Physics_307L_Speed_of_light2.JPG|Oscilloscope and Power Supply 315, Delay 2058, and TAC setup
+Image:Physics_307L_Speed_of_light3.JPG| Power supply for LED
+</gallery>
+
+===Method===
+
+Through out this experiment I worked with Jesse Smith, he was my lab partner.  Knowing that the PMT is light sensitive Jesse and I made sure to avoid PMT damage by avoiding PMT contact with light when the power source was on.  We placed the LED in a cardboard tube, much like the ones left over after the paper towels are out just much larger, opposite the PMT.  We connected LED to the 0-160 Volt power source.  The LED was also connected to the time amplitude converter (TAC) to relate to the TAC when the light signal was sent.  We also connected the PMT to the time amplitude converter to tell the TAC when the light signal was received.  There was one problem with this setup and that was that the "received" light signal could be received before the "sent" light signal, to solve this problem we connected the PMT to the TAC through a time delay.   We connected this TAC device to an oscilloscope to read the voltage readings from the TAC.  With the lowest settings selected on our TAC I have to multiply by five to convert from voltage readings to time difference between sent and received signals.  In further experimentation we connected the TAC to the computer as well and used a multichannel analyzer (MCA) program to take our TAC voltage readings.  There is an important source of error here that if not regulated the outcome of the experiment would be terrible, even while using the MCA time walk must be accounted for.  Time walk is related to the intensity of the received light.  The TAC device triggers at a fixed voltage, so shorter pulses will trigger later then longer pulses.  As the LED is moved closer to the PMT the intensity of the light changes.  In the experiment polarizers are attached to both the PMT and the LED, twisting the PMT and keeping the received intensity constant will avoid the time walk problem; This is why we connected the PMT directly to the oscilloscope as well as the TAC, to measure the intensity of the light into the PMT to avoid the time walk factor.
+After the long setup process we started taking data.  We moved the LED using a meter stick attached to the end of it.  We used this meter stick to take the relative distances from the LED to the PMT.  We took a data point and the moved the LED 10 cm rotating the PMT in order to keep the intensity of the received light at a constant value. 
+
+'''Linear regression'''
+All of the analysis of this data was done on excel. I plugged the data we gathered in our lab into excel and had it do a linear regression (least squares fit) on the data set.  I also had excel graph the data in a Distance vs. Time plot as well as the linear fit to the graph.   The slope of the Distance vs. Time plot is the value I am looking for, the speed of light.  The built in excel linear regression program runs on the following, where x is the TAC voltage converted time reading, and y is the distance recording:
+
+<math>S_X = x_1 + x_2 + \cdots + x_n \,</math>
+
+<math>S_Y = y_1 + y_2 + \cdots + y_n \,</math>
+
+<math>S_{XX} = x_1^2 + x_2^2 + \cdots + x_n^2 \,</math>
+
+<math>S_{XY} =  x_1 y_1 + x_2 y_2 + \cdots + x_n y_n. \,</math>
+
+The slope of the linear fit, the speed of light, is given by:
+
+<math>c = {n S_{XY} - S_X S_Y \over n S_{XX} - S_X S_X}. </math>
+
+'''Multichannel Analyzer Program (MCA)'''
+The multichannel analyzer program counts events, electrical signals sent to the computer.  The MCA shows this counted data in graphical form where the x-axis is related to a bin number and the y-axis is related to the number of counted events.  Most of the time the bin number axis is a time axis where each bin number lasts a specified time.  In our experiment the MCA counts the number of voltage occurrences of the voltage signal from the TAC.  The resulting graph can be approximated as a normal or Gaussian distribution.  We took the most probable bin number from the MCA graphical display, the MCA also tells the graphs "full width at half maximum" (FWHM), this is 2.355 times the standard deviation or the uncertainty of a Gaussian.  Using this program we can come up with a much better estimate of our uncertainty in the voltages.  To get the value of c from the MCA is a little trickier though.  We know that the bin number <math>N\,</math> at the maximum number of voltage occurrences is directly related to the time between sent and received light signals: <math>\N = kt </math>.  We have by the chain rule in math that: <math>c=\frac{dx}{dN}\frac{dN}{dt}</math>
+
+and from <math>\N = kt </math> that
+
+<math>c=k\frac{dx}{dN}</math>.
+
+However, since then relative LED to PMT distance is directly related to the number<math> x = m N\,</math>.
+
+<math> c = k m\,</math>.
+To find the proportionality constant <math>k\,</math>we varied the time delay switch and measured <math>N\,</math> at a fixed PMT to LED distance, <math>k\,</math> was the slope of a linear regression done in excel.  We calculated <math>m\,</math> by varying the PMT-LED distance and recording the corresponding bin number and then using excel to do a linear regression to find the slope <math>m\,</math>.  Multiply <math>k\,</math> and <math>m\,</math> to get the speed of light. 
+
+
+
+[[Image:Setupsl.JPG]]
+
+Above is the setup of the experiment
+
+==Results and Discussion==
+
+Raw Data: [http://openwetware.org/wiki/Image:Speed_of_light3.xls Experiment one excel sheet], [http://openwetware.org/wiki/Image:Speed_of_light_2.xls Experiment two excel sheet]
+I put this data into excel and asked excel to linearize the data and to compute uncertainty in the slope of that linear regression.  Where the slope I was computing was <math> v = \frac{\delta d}{\delta t} </math>
+'''Linear regression''' utilizes the method of least squares fit or reducing <math>\chi ^{2}</math> to find the most probable trend fit to a group of data.
+
+'''Table 1'''
+{|
+|-
+!Distance from 1.4 m in meters
+!voltage readings
+!time in nanoseconds
+|-
+|1
+|4.96
+|24.8
+|-
+|0.9
+|4.85
+|24.75
+|-
+|0.8
+|4.82
+|24.1
+|-
+|0.7
+|4.74
+|23.7
+|-
+|0.6
+|4.7
+|23.5
+|-
+|0.5
+|4.6
+|23
+|-
+|0.4
+|4.54
+|22.7
+|-
+|0.3
+|4.5
+|22.5
+|-
+|0.2
+|4.42
+|22.1
+|-
+|0.1
+|4.37
+|21.85
+|-
+|0
+|4.4
+|22
+|}
+
+
+'''Table 2'''
+
+{|
+|-
+!delay time in nanoseconds
+!N as previously defined
+!Uncertainty in N
+|-
+|0
+|208.5
+|17.21
+|-
+|1
+|217.9
+|17.55
+|-
+|2
+|228.3
+|17.34
+|-
+|4
+|249.4
+|17.07
+|-
+|8
+|288.7
+|17.67
+|-
+|'''value of K in inverse nanoseconds'''
+|10.08
+|
+|-
+|'''uncertainty in K'''
+|0.089
+|
+|}
+
+'''Table 3'''
+{|
+|-
+!N as previously defined
+!Distance from 1.4 m in meters 
+!Uncertainty in N 
+|-
+|208.5
+|0
+|17.21
+|-
+|212.1
+|0.1
+|17.3
+|-
+|213.9
+|0.2
+|17.36
+|-
+|219.8
+|0.3
+|17.37
+|-
+|222.2
+|0.4
+|17.35
+|-
+|224.1
+|0.5
+|17.45
+|-
+|217.1
+|0.6
+|17.61
+|-
+|'''Value of m in meters'''
+|0.0299
+|
+|-
+|'''Uncertainty in m'''
+|0.0023
+|
+|}
+
+
+
+
+
+
+
+<gallery>
+Image:Sol.JPG| Figure 1
+Image:Sol5.JPG| Figure 2
+Image:Sol4.JPG| Figure 3
+Image:Sol6.JPG| Figure 4 the marked data point is one that I threw out for a few reasons explained later this figure becomes figure 3 when this data point is thrown out.
+</gallery>
+
+
+
+Table 1 and Figure 1 belong to the first set of data that Jesse and I took.  During this experiment we took our TAC voltage readings from the oscilloscope.  Table 1 is the list of raw data that we recorded during the experiment.  Figure 1 is the linear fit to our data in a Distance vs. Time graph.  The slope of the linear fit in Figure 1 is the speed of light.  
+Below are the results that excel gave for the least squares fit.  
+*slope (speed of light): <math> 3.06 \times10^{8} \frac{m}{s}</math> +/- <math>1.83 \times10^{7} \frac {m}{s}</math>
+Table 2, Table 3, Figure 2, Figure 3 and Figure 4 belong to the second set of data that Jesse and I recorded.  During this experiment we used the MCA device to display our TAC voltage readings.  Tables 2 and 3 are lists of the raw data taken off of the MCA, one of these data sets yielded the constant K and the other yielded the M constant.  Figures 3 and 4 are similar less one data point.  I took out the data point marked out by the red arrow in figure 4 because it was the closest PMT to TAC distance measurement and the MCA was having trouble recording the number N as the PMT to TAC distance decreased.  Also the data point is obviously flawed because it lies so far off the obvious linear trend.  The linear trend line in Figure 2 is K and the linear trend line in Figure 3 is M.  I multiplied these numbers together and the result was the speed of light.  Below is my final answer for the speed of light from the MCA data:
+*Speed of Light: <math> 3.02 \times10^{8} \frac{m}{s}</math> +/- <math> 2.37 \times10^{7} \frac{m}{s}</math>
+Both of these answers are in good agreement with the accepted value of <math>2.99 \times 10^{8} \frac {m}{s}</math> so I then took a weighted average of these sets to get my final overall answer:
+*<math> 3.046 \times10^{8} \frac{m}{s}</math> +/- <math> 1.45 \times10^{7} \frac{m}{s}</math>
+
+===Possible sources of error===
+
+I believe that though we conducted our experiment as best as we could there were a few sources of error that we overlooked in our initial trial of this experiment.  I believe that the twisting of the PMT device is quite inefficient and would like to invent a way to account for time walk and not worry about rotating the PMT.  Also it was difficult to get a accurate reading of the voltage output from the TAC through the oscilloscope, this is why we used the MCA the second time around, we got a slightly better value for the speed of light.  The MCA did help us get better TAC voltage readings and therefore better results in the end.  I still believe that there must be a better way to gather the voltage readings where there is not as much uncertainty.  Using the MCA to analyze the TAC voltage readings helped but next time I would like to eliminate some of the uncertainty in the voltage readings.  
+<br style="clear:both;"/>
+
+==Conclusions==
+The speed of light is well known in fact it has been defined to be a specified value and the meter was changed to match.  This precise value is given by CODATA as <math>2.99 \times 10^{8} \frac {m}{s}</math>.  Now we can calculate a relative error in my experiment this value was.
+*relative percent error: 1.87%
+
+We found our final result with its given uncertainty acceptable given the Oscilloscope reading fluctuations and the associated problems with rotating the PMT device and visually deciding if the incoming voltage remained at a constant.  I controlled as much of the possible systematic errors that I could and believe the rest of the reasons for error in this experiment to be mostly random.  During the second experiment we used the MCA program to analyze the TAC voltage, we got a better idea of the uncertainty in the voltage value and a better idea of the correct voltage value itself.  Using the MCA reduced our relative error from 2% to 1.87%.  The only thing that I would like to improve upon in the future is the amount of uncertainty in the voltage.  I believe that if I can get the uncertainty in the voltage readings down my result for the speed of light would be better.  
+<br style="clear:both;">
+
+==Acknowledgments==
+I would like to thank my teacher Dr. Koch for helping me understand the setup and the components of the lab.  I would like to also thank my lab partner Jesse Smith for his help with the lab itself.
+
+==References==
+
+*Last years lab manual[http://www-hep.phys.unm.edu/%7Egold/phys307L/manual.pdf Previous Course lab manual.]
+*TAC Operator Manual, found in the physics senior lab.
+*Jesse Smiths page (My lab partner) [[http://openwetware.org/wiki/Physics307L:People/Smith/Notebook/4]]
+*1: CODATA. Speed of light in vacuum. 2006 CODATA recommended values. NIST. Retrieved on 8/23/2007
+*2: Einstein, Albert. "Relativity: The Special and the General Theory," Part 1, Sect 7.
+*3: Walter Greiner (2001). Quantum Mechanics: An Introduction. Springer. ISBN 3540674586.
+*4: How is the speed of light measured? by Philip Gibbs 1997. [http://math.ucr.edu/home/baez/physics/Relativity/SpeedOfLight/measure_c.html link to his page]
+*5: Speed of Light from Direct Frequency and Wavelength Measurements of the Methane-Stabilized Laser.      K. M. Evenson, J. S. Wells, F. R. Petersen, B. L. Danielson, and G. W. Day, Quantum Electronics Division, National Bureau of Standards, Boulder, Colorado 80302

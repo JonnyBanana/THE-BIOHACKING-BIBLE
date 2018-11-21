@@ -1,0 +1,54 @@
+<!-- feel free to remove this "stub" note: -->{{stub}}
+
+Information about the method is here: [[wikipedia:ChIP-on-chip]]
+
+== Programs used to analyze ChIP-CHIP data ==
+
+* [http://proteus.nimblegen.com/products/software/signalmap.html SignalMap] (Nimblegene) uses gff format; useful mostly for visualization
+
+* [http://transcriptome.affymetrix.com/download/Nix/TiMAT2/ TiMAT2] is a collection of command line java  tools used for for both low and high level tiling microarray data analysis using the Affymetrix, Nimblegen, and Agilent platforms. TiMAT2 is designed for processing chIP-chip, RNA difference, and comparative genomic hybridization experiments from both single and multi chip data sets. Options exist for distributed computing on a cluster via PBS. (dead link Nov 2007)
+
+* [http://chipanalysis.genomecenter.ucdavis.edu/cgi-bin/tamalpais.cgi TAMALPAIS]: Web-based online analysis of ChIP-chip data (gff format); emails results to user
+
+* [http://chipanalysis.genomecenter.ucdavis.edu/cgi-bin/promoterarray.cgi Promoter Array Analysis Server]: simple list comparison for NimbleGen summary files for Minimum Promoter Designs; displays in browser
+
+* [http://www.bio.unc.edu/faculty/lieb/labpages/ChIPOTle/home.htm ChIPOTle  Microsoft Excel]: Microsoft Excel macros. Restriction on maximum number of rows accepted by Excel (ca 64k).
+
+* [http://www.stat.ucla.edu/~zmdl/ Mpeak] <cite>mpeak</cite> Win only ver.2 ?not working?
+
+* [http://ceas.cbi.pku.edu.cn/index.html CEAS] BED/GFF file format ([http://genome.ucsc.edu/FAQ/FAQformat#format1 BED format]) so far only human and mouse genomes, web based
+
+* [http://chip.dfci.harvard.edu/~wli/HMM.Tiling/HMMTiling/HMMTiling_Readme.htm HMMTiling]
+
+* [http://biogibbs.stanford.edu/~jihk/TileMap/index.htm TileMap] <cite>tilemap</cite>
+
+* [http://www.stat.wisc.edu/~keles/software.html TileHGMM]: R package, requires replicates from chips, plus probe location file. For computational reasons data sould be separated for each chromosome.
+
+* [http://llama.med.harvard.edu/cgi/Chipper/chip3.py Chipper] online and stand-alone R-based software (2006) <cite>Chipper</cite>
+
+* [http://bioinfo.cs.technion.ac.il/drim/ DRIM] online and stand alone program (2007) <cite>DRIM</cite>
+
+* [http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=1906858 Ringo](R package, 2007)
+
+* [http://bioconductor.org/packages/2.1/bioc/html/ACME.html ACME] (R package), 
+ACME (Algorithms for Calculating Microarray Enrichment) is a set of tools for analysing tiling array ChIP/chip, DNAse hypersensitivity, or other experiments that result in regions of the genome showing "enrichment". It does not rely on a specific array technology (although the array should be a "tiling" array), is very general (can be applied in experiments resulting in regions of enrichment), and is very insensitive to array noise or normalization methods. It is also very fast and can be applied on whole-genome tiling array experiments quite easily with enough memory.
+
+* [http://bdtnp.lbl.gov/TiMAT TiMAT] 
+
+
+== References ==
+
+<biblio>
+#tilemap pmid=16046496
+#mpeak Zheng M, Barrera LO, Ren B, and Wu YN. ''ChIP-chip: Data, Model, and Analysis''. University of California, Los Angeles, 2005. [http://scholar.google.com/url?sa=U&q=http://repositories.cdlib.org/cgi/viewcontent.cgi%3Farticle%3D1074%26context%3Duclastat PDF] <!-- note: if you want, you can upload the PDF to wikiomics if the authors agree -->
+
+#Chipper  pmid=16277751 [http://genomebiology.com/2005/6/11/R96#B30]
+#DRIM  Eden E, Lipson D, Yogev S, Yakhini Z (2007) Discovering Motifs in Ranked Lists of DNA Sequences. PLoS Comput Biol 3(3): e39 doi:10.1371/journal.pcbi.0030039
+</biblio>
+
+== Credits ==
+
+{{credits}}
+
+* [[User:Darked|Darek Kedra]] wrote this tutorial
+<!-- other contributors, put yourself here -->

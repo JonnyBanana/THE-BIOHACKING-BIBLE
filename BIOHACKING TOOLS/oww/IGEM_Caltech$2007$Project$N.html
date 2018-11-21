@@ -1,0 +1,39 @@
+<div id="mainpage">
+<hr width="750px">
+<div id="about">
+{{Caltech_iGEM}}
+</div>
+<hr width="750px">
+__NOTOC__
+{|cellspacing="5" cellpadding="10" style="background:#ffffff; width: 750px;"
+|-valign="top"
+|style="background:#ffffff"|
+=<center>N Antiterminator</center>=
+
+==Background Information==
+
+N protein is one of the three critical proteins expressed by the lambda genome that influence the developmental cycles of the virus. It is called an antiterminator because in the presence of this protein, RNA polymerase is able to code through regions of the genome it would otherwise be unable to transcribe. As depicted in the diagram below, there is a termination sequence early in the lambda genome, which causes the mRNA transcript to terminate in the absence of N. However, when N is present, the protein recognizes a specific sequence called Nut, which stands for N utilization, and as the polymerase passes over the Nut site, it is modified by N so that it can ignore the termination sequence that is downstream of the Nut site, thus allowing the elongation of the mRNA transcript.
+
+[[Image:N_antiterminator.png]]
+
+==Role in Lambda Life Cycle==
+Relative to the two promoters on the chromosome, PL and PR, the N gene lies early in the lambda genome, as depicted in the diagram below. The N protein therefore, acts in the early stages of the phage’s developmental cycle, even before a choice is made between lysis and lysogeny. As shown, it is necessary to turn on the genes to the left of N gene and to the right of cro gene. If the protein is not expressed the mRNA transcripts are terminated in the early stages of development. That is, the phage cannot go into either lytic or lysogenic pathways and it will not be infectious in the absence of N.
+[[Image:early_events.png]]
+
+==Original Goals==
+The objective of this subproject project was to determine the necessary concentration of N protein required for lysis. The N protein is active in the early stages of viral development, even before a choice is made between lysis and lysogeny, so in the absence of this protein the virus will not be infectious.
+
+The constructed system, as depicted below, consists of the N gene driven by the Ptet promoter and is followed by a transcription terminator (B0015). This device is followed by a sequence of either a strong or medium strength promoter (J23100 and J23116 respectively), TetR gene and terminator, which is responsible for expressing TetR protein, which is a repressor that acts on the Ptet promoter.
+
+We designed this system so that we would be able to control the output of protein from the cell by controlling the input to the cell. Under normal conditions, this construct should stop producing N protein as the TetR protein expressed by the TetR gene represses the Ptet promoter. However, if anhydrotetracycline (aTc) is added to the system, the aTc binds to TetR, relieving the repression of the Ptet promoter and allowing the N protein to be produced. Therefore, we can control the concentration of N protein produced in the cells by adding varying amounts of aTc to the media in the plates or liquid cell cultures.
+
+[[Image:N_construct.png]]
+
+==Status and Future Plans==
+'''What did you end up doing, and what's next?'''
+
+==Relevant Protocols==
+* [[IGEM:Caltech/2007/Protocols/Titering | Titering]]
+* [[IGEM:Caltech/2007/Protocols/Liquid_Lysis | Liquid Lysis Assay ]]
+|}
+</div>

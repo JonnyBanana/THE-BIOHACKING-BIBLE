@@ -1,0 +1,18 @@
+Warning! Work in progress, reading this page may lead to an urge to edit it.
+==Introduction==
+To establish a parts characterization framework, there are other issues that need to be addressed in parallel with choosing experimental techniques.  We need to decide what it is we want to characterize, how we make that characterization easy to do and how we make the information be independent of the characterization approach.  Hopefully, some of these issues will drive the choice of characterization techniques.  The parts characterization already undertaken by [[Jennifer Braff]] and [[Caitlin Conboy]], among others, should provide insight into these questions.
+
+==Questions==
+*'''Do we need absolute measurements?'''
+Do we need to measure absolute molecule numbers for every device or is it sufficient to calibrate relative measurements via an absolute "gold standard" set of measurements.  If I know the Km and Vmax for promoter X is it sufficient to measure the relative Km and Vmax for every other promoter or must these be measured absolutely also? (see Liang, S., Bipatnath, M., Xu, Y., Chen, S., Dennis, P., Ehrenberg, M., and Bremer, H. Activities of constitutive promoters in escherichia coli. J Mol Biol 292, 1 (1999), 19–37)
+*'''What measurements are independent of other measurements?''' 
+For example, is plasmid copy number independent of the part?  Is plasmid copy number constant for the range of cellular chassis we use to supply our systems?  How does plasmid copy number vary with growth rate?  If we can answer these questions, then people may not need to measure DNA copy number unless they are using a novel plasmid.
+Other similar questions include, is RiPS/mRNA independent of mRNA number?  Is PoPS/DNA independent of the number of plasmid copy number etc.  The idea is that if we can answer these questions in the affirmative, then parts characterization becomes much more tractable.  If these things aren't true, then we need to look at the way we build systems.
+*'''What are the set of measurements that should be made to characterize a device?'''
+Are input and output PoPS sufficient to characterize a PoPS based device?  If so, we should only need to measure RNA levels and possibly DNA levels.  Is PoPS an invariant parameter describing a promoter or do we need to measure Km and Vmax values for each promoter.  What experimental conditions will make PoPS be invariant for a given promoter?
+*'''What measurements can we make once and never again?''' 
+If we measure GFP levels once via Western blotting or some other method, can we build a reliable model such that for any device driving expression of GFP a relative measure of GFP level will allow us to accurately infer the PoPS or RiPS into the GFP expression device?
+*'''Can we design standard experiments to verify a measurement technique?'''
+If we had benchmark tests it would allow people to verify that they are doing their experiments right.  If you measure the plasmid copy number of benchmark cell X and don't get 15+/-1 then your measurement technique is bad.
+*'''Do we need to standardize operating conditions?'''
+Under different operating conditions (i.e. media, growth temperature, growth phase, oxygen level, strain background), parts may behave differently.  One could imagine two reasonable scenarios with respect to operating conditions.  Parts characterization standards also specify standard operating conditions.  Or alternatively, parts characterization standards ignore operating conditions and simply require that the operating conditions be specified by the tester.  Alternatively, we could try to move towards parts that are independent of operating conditions as much as possible.

@@ -1,0 +1,29 @@
+= Notes on <cite>Mao-Nature-407-2000</cite> =
+
+* computation using aperiodic self-assembly of DNA
+** isomorphism to Wang tiles which can act as a Turing machine
+* triple-crossover molecules - 4 DNA strands that pair into 3 double helices in plane
+* 8 triple-crossover molecules used
+** 2 x values representing inputs
+** 4 y values that perform the XOR corresponding to the inputs (0,0) (1,0) (0,1) (1,1)
+** 2 'corner' molecules which set up the initial conditions (bring together x_1 and y_1 for example)
+* example computation (See Figure 1)
+** start with C1 and C2
+** C1 recruits y1=1, C2 recruits x1=1
+** x1 recruits x2=0
+** y2=1 can only bond to x2=0, and y1=1, therefore y2 = y1 XOR x2
+** x2 and y2 can recruit x3 and y3, respectively, thereby computing a cumulative XOR
+* The calculation is read out by ligating together reporter strands on each of the tiles
+** Contains the series of inputs and intermediate steps in the calculation
+* SAT problems in DNA computing context: 11, 14, 15
+* Computation with DNA hairpins: 16
+* 'This XOR computation can be used for executing one-time pad cryptosystem (theoretically unbreakable)': 17
+* can also be used to specify the construction of nanomaterials algorithmically
+
+
+= References =
+<biblio force=false>
+
+#[[Julius B. Lucks/Bibliography]]
+#
+</biblio>

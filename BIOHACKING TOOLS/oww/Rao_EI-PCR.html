@@ -1,0 +1,37 @@
+==You'll Need==
+*High-fidelity polymerase - ''Pfu'' (Stratagene, etc.) or Phusion (NEB)/iProof (Bio-Rad)
+*A very small vector back-bone and your desired gene inserted (preferably w/o BsaI or BsmBI cut sites)
+*Primers designed for your mutation (see [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=1327007&dopt=Abstract Stemmer et al.] on how to do it)
+*Restriction enzymes ''DpnI'' and ''BsaI'' or ''BsmBI'' or another similar restriction endonuclease
+*Your favorite thermal cycler
+
+==Step 1: PCR==
+* Set up your PCR as follows for 50 uL reaction volume:
+** x uL Polymerase Buffer
+** 1 uL 10x to 20x diluted template
+** 0.5 uL Forward Primer (30 uM) (or appropriately diluted)
+** 0.5 uL Reverse Primer (30 uM)
+** 1.5 uL <math>MgCl_2</math> (50 mM)
+** 1.5 uL DMSO (optional)
+** x uL <math>H_2O</math>
+*Reaction Conditions
+**Use the manufacturer specified reaction temperatures and times for optimal performance.
+**Touchdown annealing from 60C to 50C with -1.0C steps
+***This will be the first 10 cycles. Use your determined extension time.
+**Continue with annealing at 50C and extension using determined time.
+**Verify your product by standard gel electrophoresis
+If your reaction yields are low, some suggest to run more than one and pool the results.
+==Step 2: Digestion==
+*Purify the PCR product via standard methods (Qiagen PCR prep or other well established methods)
+*Set up the following enzymatic digest for a 50 uL volume
+**43 uL PCR product
+**5 uL 10X Buffer
+**1 uL ''DpnI'' (assumed 20,000 U/mL)
+***''Dpn'' digests only methylated DNA at its recognition site. This should remove all template DNA.
+*React at 37C for 2 hours
+*Heat inactivate at 80C for 20 minutes (optional)
+*Add 1 uL BsaI (or equivalent)
+*React at 50C for 2 hours
+*Purify by standard methods (Gel purification, Qiagen PCR prep, etc.)
+==Step 3: Ligation and transformation==
+*Proceed with standard [[Silver:_Ligation|ligation]] and [[Silver:_Bacterial_Transformation|transformation]] protocols

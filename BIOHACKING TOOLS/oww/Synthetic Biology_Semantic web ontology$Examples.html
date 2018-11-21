@@ -1,0 +1,181 @@
+{{Synthetic biology top}}
+<div style="padding: 10px; color: #000000; background-color: #ccccff; width:730px" >
+
+'''Ontology''' - essentially, a formal description of objects and their interrelationships
+Described using RDF Schema and/or OWL.
+*[[Wikipedia:Ontology_(computer_science)|Wikipedia ontology article]]
+*[http://www-ksl.stanford.edu/kst/what-is-an-ontology.html What is an ontology?]
+*[http://www.omg.org/docs/ad/05-09-08.pdf Ontology Definition Metamodel]
+*Benefits
+**Controlled vocabulary
+**Theory of content
+**Knowledge management: systematization, sharing, reusability
+**Data integration
+
+==Upper level ontologies==
+*[[Wikipedia:Upper_ontology_(computer_science)|Upper ontology]] Wikipedia article
+*[http://suo.ieee.org/ SUO WG] Standard Upper Ontology Working Group
+*[http://www.ontologyportal.org/ SUMO] Suggested Upper Merged Ontology
+**[[Wikipedia:Suggested_Upper_Merged_Ontology|SUMO]] Wikipedia article
+**[http://ontology.teknowledge.com/ Downloads] - ontology browser, virus ontology, etc
+**[http://virtual.cvut.cz/kifb/en/ Online SUMO browser]
+*[http://www.opencyc.org/ OpenCyc] an upper ontology for all of human consensus reality.
+**[[Wikipedia:OpenCyc|OpenCyc]] Wikipedia article
+*[[Wikipedia:General_Formal_Ontology|General Formal Ontology]]
+*[http://ontology.buffalo.edu/bfo/ Basic Formal Ontology (BFO)]
+
+==Intermediate level ontologies==
+*[http://sourceforge.net/projects/expo/ EXPO] ontology represents different stages of an experiment and the relationships between these stages; used by the [http://www.aber.ac.uk/compsci/Research/bio/robotsci/ Robot Scientist] ([http://bbu.uwcm.ac.uk/awbw2006/talks/LarisaSoldatova.pdf presentation slides] as PDF)
+**controlled vocabulary of scientific experiments
+**formalized electronic representation of scientific experiments
+**unified standards for representation, annotation, storage, and access to experimental results
+**reasoning over experimental data and conclusions
+*Bibliographic data ontology
+*[http://onto.eva.mpg.de/onto_functions.html Ontology of Functions] is included in the OWL version of the [http://www.onto-med.de/ General Formal Ontology] (see upper level ontologies)
+*[http://fugo.sf.net/ FuGO] Functional Genomics Ontology aims to provide consistent annotation of functional genomics experiments, regardless of the particular field of study (transcriptomics, proteomics and metabolomics, etc).
+*[http://hybrow.org/Docs/Ontology/ HyBrow ontology] for representing biological processes at different levels of detail
+
+==Domain level ontologies==
+
+===Life Sciences===
+*[http://www.ebi.ac.uk/ontology-lookup/ Ontology Lookup Service (OLS)]
+**[http://www.ebi.ac.uk/ontology-lookup/ontologyList.do List of ontologies]
+*[http://geneontology.org/ Gene Ontology] provides a controlled vocabulary to describe gene and gene product attributes in any organism. GO terms are organized in directed acyclic graphs (DAGs), which differ from hierarchies in that a 'child' (more specialized term) can have many 'parents' (less specialized terms). GO terms are connected by 'is a' (generalizations) and 'part of' (composition) relationships.
+**[[doi:10.1101/gr.180801|Creating the gene ontology resource: design and implementation]]
+**[[doi:10.1186/gb-2002-3-4-comment1006|Ontology recapitulates philology]] - comment
+**Namespace: ftp://ftp.geneontology.org/pub/go/xml/dtd/go.dtd
+**Properties: name, definition, isa, association, evidence
+*[http://yeasthub.gersteinlab.org Yeast Hub] - demonstrates how a life sciences data warehouse can be built using a native RDF data store (Sesame). This data warehouse allows integration of different types of yeast genome data provided by different resources in different formats including the tabular and RDF formats ([[doi:10.1093/bioinformatics/bti1026|paper]]).
+*[http://www.semanticmining.org/ Semantic Mining] - semantic interoperability and data mining in medicine ([http://www.semanticmining.org/wcm-site/jsps/index.jsp?type=page&cid=5350&lg=EN ontologies]).
+*[http://song.sourceforge.net/so.shtml Sequence Ontology]: features on a nucleotide or protein sequence
+*[http://www.biopax.org/ BioPAX]: biological pathway data
+**[http://www.biopaxwiki.org/ BioPAX wiki]
+*[http://www.co-ode.org/ontologies/amino-acid/ Amino Acid Ontology] - a small ontology of amino acids and their properties
+*[http://dev.isb-sib.ch/projects/uniprot-rdf/ UniProt] protein sequence and annotation data in RDF format. [http://dev.isb-sib.ch/projects/uniprot-rdf/owl/ UniProt OWL Ontology]
+*[http://sbml.org/documents/ SBML] uses [http://www.cellml.org/specifications/archive/metadata/20011102/cellml_metadata_specification.html CellML metadata] to describe its elements. See also a [http://www.sbml.org/forums/index.php?t=msg&goto=1435&rid=0#msg_1435 message] on SBML forum.
+*[http://biomodels.net/ BioModels] database and Systems Biology Ontologies (SBO) project
+*[http://obo.sourceforge.net/ Open Biomedical Ontologies]
+*[http://anil.cchmc.org/Bio-Ontologies.html Bio-Ontologies]
+*[http://www.bioinfo.de/isb/2002/02/0017/main.html Ontologies for molecular biology and bioinformatics]
+*[http://mged.sourceforge.net/ontologies/ Microarray Gene Expression Society (MGED) Ontology]
+*[http://www.schemaweb.info/ RDF Schemas directory]
+*[http://www.co-ode.org/ontologies/ CO-ODE ontology examples]
+**[http://smi-protege.stanford.edu:8080/KnowledgeZone/ KnowledgeZone] - peer reviewed ontology library
+*[http://www.onto-med.de/ Onto-Med] research group: ontologies in medicine
+*[http://esw.w3.org/topic/SemanticWebForLifeSciences HCLS Wiki]
+**[http://esw.w3.org/topic/HCLS/OntologyTaskForce/ HCLS Ontology Task Force]
+**[http://esw.w3.org/topic/HCLS/OntologyTaskForce/SeedOntology Seed Ontology]
+*[http://esw.w3.org/topic/HCLSIG_BioRDF_Subgroup HCLSIG BioRDF Subgroup]: [http://esw.w3.org/topic/HCLSIG_BioRDF_Subgroup/Meetings Meetings] and [http://esw.w3.org/topic/HCLSIG_BioRDF_Subgroup/Tasks Tasks]
+*[http://ncicb.nci.nih.gov/NCICB/infrastructure/cacore_overview/vocabulary NCI Enterprise Vocabulary Services (EVS)] - a set of services and resources that address NCI's needs for controlled vocabulary.
+*[http://lsdis.cs.uga.edu/library/resources/ Large Scale Distributed Information Systems (LSDIS)]: Ontologies and datasets
+*[http://bio-ontologies.man.ac.uk/ Bio-Ontologies workshop] has been a satellite meeting to the annual ISMB conference since 1998 as a Special Interest Group
+*[http://www.iscb.org/ismb2006 Intelligent Systems for Molecular Biology conference]
+*[http://integrativebioinformatics.nl/semanticdataintegration.html Semantic web approach to data integration] - from University of Amsterdam Integrative Bioinformatics Unit (IBU)
+*[http://mipe.sourceforge.net/ MIPE] - Minimal Information for PCR Experiments, an XML schema for the exchange of PCR related data
+*[http://www.cellcycleontology.org/ Cell Cycle Ontology] aims to extend the existing ontologies for cell cycle knowledge, to build a resource that integrates and manages knowledge about the cell cycle components and regulatory aspects in OBO and OWL.
+*[http://www.bioontology.org/resources.html The National Center for Biomedical Ontology] - resources
+
+Diagram of synthetic biology ontology v0.01 (developed using existing terminology described on the [http://parts2.mit.edu/r/parts/partsdb/index.cgi Registry website]):
+[[Image:SBOv0.01.png]]
+
+===Other===
+*[http://dublincore.org/ Dublin Core] provides a vocabulary to describe bibliographic metadata
+**[http://www.xml.com/lpt/a/2000/10/25/dublincore/index.html Introduction to Dublin Core] @ xml.com
+**Namespace: http://purl.org/dc/elements/1.1/
+**Properties: title, creator, publisher, identifier
+*[http://ramonantonio.net/doac/ DOAC] Description of a career
+**[[Wikipedia:Description_of_a_Career|Description of a Career]] Wikipedia article
+*[http://www.foaf-project.org/ FOAF] Friend of a Friend
+**[[Wikipedia:Friend_of_a_Friend_(Software)|FOAF]] Wikipedia article
+**[http://rdfweb.org/topic/FoafProject FOAF Wiki]
+*[http://usefulinc.com/doap DOAP] Description of a Project is an XML/RDF vocabulary to describe open source projects.
+*[http://vocab.org/ vocab.org] - a URI namespace for vocabularies
+**[http://vocab.org/relationship/ RDF Relationship] - a vocabulary for describing relationships between people
+*[[Wikipedia:RSS_(file_format)|RSS]] Wikipedia article
+**[http://web.resource.org/rss/1.0/spec RDF Site Summary] - RSS 1.0
+**[http://www.ibm.com/developerworks/library/w-rss.html Introduction to RSS newsfeeds] @ ibm.com
+**[http://blogs.law.harvard.edu/tech/rss RSS 2.0 Specification] - non-RDF
+*[http://www.wsmo.org/ Web Service Modeling Ontology] - date and time, location, purchase ontologies, etc.
+*[http://www.xml.com/pub/a/2005/02/16/edfg.html Eat Drink Feel Good Markup Language] @ xml.com
+*[http://www.w3.org/2003/01/geo/ Basic Geo Vocabulary]
+*Ontology directories:
+**[http://www.schemaweb.info/default.aspx SchemaWeb] - A comprehensive directory of RDF schemas and OWL ontologies
+**[http://www.daml.org/ontologies/ DAML Ontology Library]
+**[http://www.ontoware.org/ Ontoware] - ontology repository
+**[http://protege.stanford.edu/plugins/owl/owl-library/ Protégé-OWL Ontology library]
+**[http://smi-protege.stanford.edu:8080/KnowledgeZone/ Knowledge Zone] - search and browse ontologies
+*[http://www.gameontology.org Game Ontology Project] (GOP) is a framework for describing, analyzing and studying games
+
+==Metadata applications==
+*[http://swoogle.umbc.edu/ Swoogle] Search and metadata for semantic web
+*[http://semantical.org/ Semantical] - open source Semantic Web-based search engine for searching W3C standard RDF ontologies and tags
+*[http://triplestore.aktors.org/ AKT Triplestore]: is an RDF store containing information about the UK HE computer science community (view sources contain in triplestore or browse and query the triplestore)
+**[http://www.aktors.org/publications/ontology/ AKT Reference Ontology]
+*[http://base.google.com/ Google Base]
+*[http://biozon.org/ Biozon] -  a unified biological resource on DNA sequences, proteins, complexes and cellular pathways.  The information in Biozon is logically represented as a graph in which nodes represent some unit of data, and edges indicate a relationship between two nodes.
+*[http://www.nlm.nih.gov/research/umls/ Unified Medical Language System (UMLS)] project develops and distributes multi-purpose, electronic "Knowledge Sources" and associated lexical programs for system developers. Researchers will find the UMLS products useful in investigating knowledge representation and retrieval questions.
+**Metathesaurus is a very large, multi-purpose, and multi-lingual vocabulary database that contains information about biomedical and health related concepts, their various names, and the relationships among them
+**Semantic Network provides a consistent categorization of all concepts represented in the UMLS Metathesaurus and to provide a set of useful relationships between these concepts.
+**The SPECIALIST lexicon has been developed to provide the lexical information needed for the SPECIALIST Natural Language Processing System (NLP). It is intended to be a general English lexicon that includes many biomedical terms.
+**MetamorphoSys is the UMLS installation wizard and customization tool included in each UMLS release.
+*[http://www.snomed.org/ SNOMED Clinical Terms® (SNOMED CT®)] is the universal health care terminology that makes health care knowledge usable and accessible wherever and whenever it is needed (included in UMLS since 2003).  [http://www.connectingforhealth.nhs.uk/technical/standards/snomed/browser/ SNOMED browser].
+*[http://lin.ncgr.org/ The Legume Information Network (LIN)] This is a prototype to demonstrate the power of semantic-MOBY framework to integrate disparate data sources into a virtual legume information network.
+*[http://pkb.stanford.edu/ Pathway Knowledge Base (PKB)] @ Stanford - integrated human, ecoli and yeast pathway data in BioPAX format from Kegg, BioCyc and Reactome.  The underlying data is stored in an RDF triple store and all queries are made directly on the BioPAX model. This has some drawbacks in terms of performance but has allowed us to preserve the semantics specified in the BioPAX model.
+*[http://bibster.semanticweb.org/ Bibster] - A Semantics-Based Bibliographic Peer-to-Peer System
+*[http://esw.w3.org/topic/RdfCalendarPresentation Rdf Calendar] from W3C
+*[http://sw.nokia.com/ Nokia Semantic Web Server demo] provides access to metadata describing products, documents, vocabularies, schemas, and other resources which is made available to Nokia customers and partners in a machine processable format. This server is intended for use primarily by automated systems and is not optimized for human use.
+**[http://swdev.nokia.com/ Nokia Semantic Web R&D Server demo]
+**[http://swdev.nokia.com/rdfq RDF Query] demo.  RDFQ is a tool for knowledge discovery, rather than for knowledge management or knowledge manipulation.
+*[http://labs.intellidimension.com/demo/default.rsp Intellidimension Labs] - A Collection of RDF Gateway Demos, Examples, and Experiments (Uniprot, etc)
+**[http://www.semanticwebsearch.com/ Intellidimension Semantic Web Search]
+*[http://semanticmoby.org/ Semantic MOBY] searches Virtual Plant Information Network ([http://vpin.ncgr.org/ VPIN]) - a consortium of information resources using emerging semantic web services technologies.
+*[http://bioontology.org/resources.html National Center for Biomedical Ontology]:
+**A virtual library of Open Biomedical Ontologies (OBO).
+**A Web-based BioPortal to allow investigators and intelligent computer programs to access and use OBO.
+**Tools to assist biomedical investigators use ontologies accessible through BioPortal to annotate experimental data.
+**An online repository of OBO annotations on experimental data accessible via BioPortal known as Open Biomedical Data (OBD).
+*[http://mspace.fm/ mSpace] is an interaction model and software framework to help people access and explore information.
+*[http://hybrow.org/ HyBrow] is a prototype bioinformatics tool for designing hypotheses and evaluating them for consistency with existing knowledge; it consists of:
+**a modeling framework with the ability to accommodate diverse biological information sources
+**an event-based [http://hybrow.org/Docs/Ontology/ ontology] for representing biological processes at different levels of detail
+**a database to query information in the ontology
+**programs to perform hypothesis design and evaluation
+*[http://swan.mindinformatics.org/ SWAN] is a project to develop effective specialist knowledge bases for the Alzheimer Disease research community, using the Semantic Web technology
+*[http://www.radarnetworks.com/ Radar Networks] is "building technology for enriching content that will catalyze the evolution of a new dimension of the Web".
+*[[Synthetic_Biology:Semantic_web_ontology/Examples/Cyc|Cyc]] - formalized common knowledge
+
+===Datasets===
+*[http://mcdb750.med.yale.edu/yeasthub/list.jsp Yeast Hub RDF datasets]
+*[http://rdf.dmoz.org/ Open Directory RDF dump] The Open Directory Project (DMOZ) is the largest, most comprehensive human-edited directory of the Web. It is constructed and maintained by a vast, global community of volunteer editors.
+*[http://chefmoz.org/rdf.html ChefMoz RDF files] the project goal is to produce the most comprehensive guide to restaurants, by relying on a vast army of volunteer editors.
+*[http://labs.systemone.at/wikipedia3 Wikipedia³] is a conversion of the English Wikipedia into RDF.
+*[http://web.media.mit.edu/~hugo/conceptnet/ ConceptNet] is a semantic network, a freely available commonsense knowledgebase and natural-language-processing toolkit
+*[http://wordnet.princeton.edu/ WordNet] is a semantic lexicon for the English language
+**[[Wikipedia:WordNet|WordNet]] Wikipedia article
+*[http://www.w3.org/2004/ontaria/ Ontaris] is a searchable and browsable directory of semantic web data
+*[http://www4.wiwiss.fu-berlin.de/dblp/ DBLP Bibliography Database] - a D2R server
+
+==Resources==
+*[[Synthetic_Biology:Abstraction_hierarchy|Abstraction hierarchy]]
+**Parts are basic biological f(x)'s encoded via genetic material.
+**Devices provide human-defined f(x)'s using one or more parts.
+**Systems provide human-defined f(x)’s using one or more devices.
+*[http://dimer.tamu.edu/GO/wiki GO annotation wiki] (from [[User:Skosuri|Sri]])
+*[http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html Ontology Development 101: A Guide to Creating Your First Ontology] - what is an ontology and why we need it
+*[http://www.co-ode.org/resources/tutorials/ProtegeOWLTutorial.pdf Protégé OWL Tutorial] (PDF)
+*[http://www.co-ode.org/downloads/pizzafinder/ Manchester Pizza Finder]
+*[http://www.co-ode.org/resources/papers/ekaw2004.pdf OWL Pizzas]: Practical Experience of Teaching OWL-DL: Common Errors & Common Patterns (PDF)
+*[http://www.co-ode.org/resources/tutorials/iswc2004/ Ontology Design Patterns and Problems: Practical Ontology Engineering using Protege-OWL]
+*[http://www.co-ode.org/resources/tutorials/intro/ Tutorial Materials: A Practical Introduction to Ontologies & OWL]
+*[http://wiki.m3t4.com/display/SemToolkit/Ontology+Development+101 Ontology Development 101] from m3t4.studio
+*[http://bioontology.org/ National Center for Biomedical Ontology]
+*[http://genomebiology.com/2005/6/5/R46 Relations in biomedical ontologies] - paper in Genome Biology
+*[[doi:10.1038/nbt0905-1095|Are the current ontologies in biology good ontologies?]]
+*[[doi:10.1038/msb4100073|Synthetic biology: new engineering rules for an emerging discipline]] describes a possible hierarchy for synthetic biology inspired by computer engineering.
+*[http://www.ifomis.uni-saarland.de/ IFOMIS] - Institute for Formal Ontology and Medical Information Science, Saarland University
+*[http://gong.man.ac.uk/ Gene Ontology Next Generation]: GONG project aims to make tools and procedures for easy migration of biological ontologies to formal languages like OWL and explore the issues related to maintenance of large biological ontologies.  Also a blog.
+*[http://gong.man.ac.uk/ontologydesignpatterns/ Ontology Design Patterns] are the application of the same concept as Software Design Patterns (SDPs) from Object Oriented Programming to ontology engineering.
+
+
+</div>
+{{Synthetic biology bottom}}

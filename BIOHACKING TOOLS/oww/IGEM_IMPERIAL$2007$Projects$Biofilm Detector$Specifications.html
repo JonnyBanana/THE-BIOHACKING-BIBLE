@@ -1,0 +1,76 @@
+=Infector Detector: Specifications=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector|Introduction]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Design|Design]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Implementation|Fabrication]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/TestingValidation|Testing]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Data Analysis|Data Analysis]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Validation|Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+__TOC__
+
+====Project plan====
+Our plan is to make the basic construct of the detector system and test it in the three chassis mentioned above. The results can then be compared to determine the best chassis for the system. For each chassis, the system will be tested for: <br>
+[[Image:IC2007_biofilm_design.png|right|thumb||400px|Figure 1: Proposed system]] 
+*the response time for different temperatures and AHL concentrations
+*the variation in reporter expression for different concentrations of AHL 
+*the variation in reporter expression for different temperatures 
+*the lifespan of the system in different temperatures
+
+We will also test atleast two reporters with our system and the final design would have the reporter best suited to our requirements. The reporter we need must:<br>
+*have a fast response time (steady state reponse)
+*would respond to very low concentrations of AHL
+
+<br>The AHL will intially be induced directly into the detector solution for each of the experiment, to verify that the system responds to it. Later the AHL can be introduced into the system by creating a signalling system within an E coli. To fully test the system for its application, the detector needs to be tested on a biofilm. For this purpose a biofilm might be grown in the lab, but this test will only be carried out of time allows it. Figure 1 on the right shows the final infector detector construct.
+
+To improve the efficiency of the detector, HRP may be incorporated into the design. The HRP system will not only work to amplify the output signal but also increase the repsonse time of the system. This stage can only be completed after the HRP system has been fully characterised.
+
+
+====Specification v.3 (Most Recent)====
+
+We have had to reconsider our original specifications due to :
+
+#Concentration of AHL in biofilms can go up to 1&micro;M or more. This is due to more concentrated bacteria and slower diffusion within biofilms
+#Quorum sensing threshold of AHL is approximately 50nM
+#Functional range of pLux is between 1-100nM. This also depends on the concentration of LuxR, which should not be less than one magnitude lower of AHL concentration.
+#Diffusion of AHL outside the biofilm is slow. Approximately 10nM of AHL can be found in the solution outside the biofilm.
+
+The '''infector detector''' system must: <br>
+*be able to detect AHL present in its surroundings and report it
+*have sensitivity to AHL of within the range of 5nM-50nM
+*output a signal visible to naked eye within 3 hours (response time)
+*have a reporter whose sensitivity increases with increasing [AHL]
+*be applied through a gel spray or cream, or sampled and used in reaction tube
+*work within temperatures between 20-30˚C (as the biofilm detector is to be used within a hospital)
+*work in a pH range of 6-8 
+*not contaminate the environment it is exposed to
+*be portable and convenient to use
+
+
+====Specification v.1 (Out of Date)====
+
+The '''infector detector''' system must: <br>
+*be able to detect AHL present in its surroundings and report it
+*have sensitivity to AHL of at least 0.1nM<cite>AHL_conc</cite>
+*output a signal visible to naked eye within 3 hours (response time)
+*have a reporter whose sensitivity increases with increasing [AHL]
+*be applied through a gel spray or cream
+*work within temperatures between 20-30˚C (as the biofilm detector is to be used within a hospital)
+*work in a pH range of 6-8 
+*not contaminate the environment it is exposed to
+*be portable and convenient to use
+*have a lifespan of 4 days 
+
+<biblio>
+# AHL_conc http://www.blackwell-synergy.com/doi/abs/10.1046/j.1462-2920.2000.00136.x
+</biblio>

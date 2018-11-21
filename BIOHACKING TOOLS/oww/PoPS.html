@@ -1,0 +1,27 @@
+Polymerases Per Second.  
+
+A standard unit to measure the inputs and outputs of a BioBrick Device.  
+
+PoPS have yet to be directly measured ''in vivo''.
+
+See also:[[RiPS]]
+
+===What is PoPS?===
+'''PoPS''' is an acronymn for '''Po'''lymerases '''p'''er '''S'''econd.  It is the units for the signal via which information is transmitted in transcription-based logic devices (devices which carry out boolean logic at the transcriptional level).  It represents the rate at which RNA polymerase moves past a given position in the DNA.  In some sense, it can be thought of as analogous to current flowing through a particular point in a wire.  
+
+Previously, the MIT SBWG called this unit '''TIPS''' for '''T'''ranscription '''I'''nitiations '''p'''er '''S'''econd.  However, this name is a bit misleading because there are locations on a piece of DNA where we care about the flow of PoPS even though transcription isn't technically initiating at that point.  For instance, it is useful to know the rate at which RNA polymerase moves through a terminator.  Such a rate is not really transcription initiations per second.  PoPS is probably more appropriate.  This unit has also occasionally been called '''PAR''' for '''P'''olymerase '''A'''rrival '''R'''ate or the rate at which RNA polymerase arrives at a certain point in the DNA.
+
+===Why use PoPS?===
+PoPS is a common signal carrier for transcription-based devices.  (See the [http://parts.mit.edu/r/parts/htdocs/AbstractionHierarchy/index.cgi registry abstraction hierarchy page] for a comparison of more traditional inverter devices in which signals are in protein concentrations versus PoPS based devices ... I won't repeat that discussion here.)  Devices which have both an input and output in PoPS are '''composable.'''  They can be arbitrarily hooked up to one another to create more complex devices and systems.  It's only by having composable devices that we can begin to think about characterizing many devices independently and then combining them to create more complex circuits with predictable behavior.  It is this goal of '''independent device characterization''' that provides the primary motivation for using a common signal carrier like PoPS.
+
+===What's the difference between PoPS and transcription rate?===
+Transcription rate is generally a parameter associated with a particular transcript and has units of transcripts per unit time.  In contrast, PoPS is essentially transcription rate at a particular location on the DNA.  The value of PoPS just downstream of a coding region should be equal to the coding region's transcription rate.  However, there are certain positions at which a transcription rate doesn't necessarily make sense yet PoPS does.  For instance, as biological engineers, we care about the rate at which RNA polymerase moves through a terminator (or the PoPS downstream of a terminator) but yet most people don't talk about the transcription rate of a terminator.
+
+===What are some examples of PoPS devices?===
+A promoter is an example of a PoPS source (or a battery): it produces a steady output PoPS with no input.  A terminator is like a PoPS sink or a connection to ground: it takes a PoPS input and gives no output.  A PoPS based inverter consists of an RBS, repressor coding region, terminator and cognate promoter.  It takes an input signal in PoPS and inverts the signal.  A high PoPS input leads to repressor expression and promoter binding thereby producing a low output signal.  A low PoPS input leads to little to no repressor expression and therefore the promoter is free to generate PoPS.  An RBS is kind of just like a wire, it just permits PoPS signals to pass through it.  Similarly, a coding region is also a wire but it may have some resistance: its output PoPS may be less than its input PoPS.  
+
+====But what about devices that propagate signals via other means like phosphorylation?====
+PoPS is just a common signal carrier not a universal signal carrier.  Other classes of devices may rely on other signal carriers to propagate information.  For example, devices implemented in kinases may carry signals in other units.  See Samantha Sutton's work on [[Ssutton: PTL Logic | post-translational logic]].  It is also conceivable that there will be some devices that serve to convert signals from one signal carrier (like PoPS) to another signal carrier.  Since biology takes advantage of multiple signal carriers, in all likelihood, so will synthetic biological devices.
+
+===How do you measure PoPS?===
+Currently, there is no ''in vivo'' technique for measuring PoPS directly.  If you figure one out, then we'll rename PoPS after you (or so Drew promises).  [[Caitlin Conboy]] and [[Jen Braff]] worked on a project to measure PoPs indirectly by measuring other parameters and inferring PoPS.  Nevertheless, even if PoPS isn't measurable currently, it is still a useful abstraction for thinking about transcription-based logic devices.  It still allows the engineer to define composable devices.

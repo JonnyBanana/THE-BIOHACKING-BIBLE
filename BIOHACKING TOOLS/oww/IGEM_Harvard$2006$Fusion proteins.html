@@ -1,0 +1,50 @@
+<div class="tabs">
+<ul>
+<li id="current">[[IGEM:Harvard/2006/Fusion proteins|1. Main Page]]</li>
+<li>[[IGEM:Harvard/2006/Fusion proteins/Notebook|2. Lab Notebook]]</li>
+<li>[[IGEM:Harvard/2006/Fusion proteins/Literature|3. Literature]]</li>
+<li>[[IGEM:Harvard/2006/Fusion proteins/Oligos|4. Oligos]]</li>
+</ul>
+</div>
+<br style="clear:both">
+<div class="tabcontent">
+=Project Overview=
+*The cell surface streptavidin project approaches targeting from a different direction, that is, from the cell. While the adaptamer project uses nucleic acids to target any two substrates to each other, the cell surface streptavidin project seeks to target any substrate(s) to the cell surface.
+*The method of targeting would be implemented through the '''expression of streptavidin protein on the cell surface'''. Streptavidin is a protein which binds strongly to the biotin molecule, thus there is a common practice of biotinylating (adding biotin to) nucleic acids or peptides for streptavidin affinity purification or antibody conjugation. We would be utilizing this strong streptavidin-biotin binding to target <u>any</u> biotinylated nucleic acid or peptide to the outside of a cell expressing streptavidin on the surface. Here are some potentially useful applications.
+**bringing a biotinylated protein to the cell surface for facilitated interaction with some other surface element.
+**linking a cell with another protein/cell via a biotinylated aptamer.
+**delivering a DNA nanobox to the cell surface through a biotinylated oligonucleotide.
+
+*Streptavidin would be expressed on the cell surface through the '''Lpp-OmpA surface display vehicle''' (Earhart, 2000). The complete vehicle consists of three fused protein domains.
+**Signal peptide of lipoprotein (Lpp). This targets the protein to the outer membrane.
+** Transmembrane domains of outer membrane protein A (OmpA). This spans the protein across the outer membrane to the cell surface.
+**The surface protein.
+
+*Assembly of the fusion protein would be carried out through a '''modified BioBricks assembly for protein domains''' (Phillips and Silver, 2006). Standard BioBricks parts separated from the flanking XbaI and SpeI sites by a single spacer nucleotide, in order to prevent Dam methylation. If you leave out these spacer nucleotides, the mixed site formed between assembled parts is six base pairs long, and so reading frame can be maintained between assembled protein domains.
+
+<gallery>
+Image:Lpp ompa.JPG|Lpp-OmpA surface display vehicle (Francisco et al., 1993)
+Image:Protein domain biobrick.JPG|Modified BioBricks assembly for protein domains
+</gallery>
+
+=Results=
+*We completed assembly of constructs using the following BioBrick parts.
+**J04500. a composite part of a lac promoter (R0010) and a strong ribosome binding site (B0031)
+**J36835. Lpp, the lipoprotein signal peptide.
+**J36837 or J36838. OmpA, one (O1) or five (O5) transmembrane domains, respectively. Both have been shown to work (Earhart, 2000).
+**J36841 or J36843. Streptavidin, either wild-type "SW" (Howarth, 2006), or single-chain dimeric "SD" (Aslan, 2005).
+***Note: Streptavidin exists naturally as a soluble tetramer, but restriction to the surface might allow only monomeric/dimeric forms. What is interesting is that there has been research done to engineer such forms, in order to render biotin binding less strong but more easily reversible (Wu, 2005).
+*Western blots were performed with transformed and induced cells, probing with anti-his6 antibody (each streptavidin had a His6 tag) and with anti-streptavidin antibody. Distinct bands were observed at the expected sizes in anti-his6 probing, and bands were observed at the same places with the anti-streptavidin probing. These results suggest the following.
+**The promoter and ribosome binding site are functioning correctly for expression of these fusion protein construct.
+**The BioBricks assembly of the fusion protein was successful in that reading frame was maintained, since the coding sequence for the His6 tag is found at the end of the construct.
+**The streptavidin part of the fusion protein is still folding in such a way that anti-streptavidin antibody can recognize it.
+
+<gallery>
+Image:Cell surface streptavidin construct.JPG|Diagram of cell surface streptavidin construct
+Image:Cell surface streptavidin westerns.JPG|Western blots of cell surface streptavidin constructs
+</gallery>
+
+=Future Plans=
+*Now that we know that the construct is being expressed, we need to determine whether or not the construct is being localized to the outer membrane. We can separate the cell lysate by centrifugation, isolate the outer membrane proteins, and then perform Western blots, probing with anti-his6 and anti-streptavidin antibody.
+*If the construct is indeed being localized to the outer membrane, we then need to determine if the streptavidin is being displayed functionally on the cell surface. We can probe whole cells with anti-streptavidin antibodies or even fluorescently tagged streptavidin aptamers for in-cell westerns, or we can visualize surface binding of biotinylated, fluorescently tagged oligonucleotides under a microscope.
+*If streptavidin is being expressed on the cell surface, we can switch in other engineered streptavidin clones and compare biotin binding. We can also try adding a length of amino acids between OmpA and streptavidin, which might give spatial flexibility to allow formation of tetramers on the cell surface or to allow the streptavidin to extend outside of any extracellular complexes.

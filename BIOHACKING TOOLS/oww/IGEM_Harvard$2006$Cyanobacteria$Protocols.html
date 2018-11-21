@@ -1,0 +1,338 @@
+{{IGEM:/Harvard/2006/Cyanobacteria}}
+
+==Ligation Protocol for manly men (or womenly women)==
+If you fear labwork, this ligation protocol may kill you. Bewarned!
+
+===Obtaining template and insert DNA===
+*1) Grow 25mL to 100mL of template or insert DNA containing E. coli overnight at 37C; we will use this for a midiprep as we need the concentration to be very high. 
+*2) Midiprep both sets of DNA; the midiprep guidelines can be found in most of the midiprep books on the 5th floor lab.
+*3) Make sure the concentration is greater than 100ng/uL.
+*4) Try to elute in dH20 as we know that works for digestion. Avoid milicue water; it's low pH.  (Note: all water will become acidic if exposed to air.  Either used buffered water or risk acidity; different "types" of water will all show the same behavior)
+
+===Digesting template and insert DNA containing plasmids===
+For the digest, a modification of the Silver protocol has worked well for me. This protocol is:
+  ~400ng-800ng DNA
+  1uL 10x Buffer
+  1uL 10x BSA
+  0.2uL enzyme1
+  0.2uL enzyme2
+  dH20 to 10uL
+
+Note that the DNA is given in a set amount. As for the timing, for /XP or /SP digests:
+*400ng: 4h at 45C most of the time cuts 90% of the DNA. For a full clean cut do more time.
+*800ng: At least 6 hours @ 45C, maybe more.
+*O/N @45C is safest. 2h@45C is not safe.
+
+===CIP Treatment of the insert===
+There is CIP in the 4C freezer where the plates are. Use 1uL of the CIP stock per reaction; CIP is quite potent so this will be enough. 1h@37C incubation for CIP. 
+
+'''CIP ONLY THE INSERT.'''
+
+To get rid of it, you will need to do agarose gel electrphoresis or a PCR purification. Heat inactivation DOES NOT work; any remaining CIP will drastically reduce ligation efficiency.
+
+
+*1) Make a 1.2% agarose gel WITHOUT ETBR.
+*2) Run @120V for 1h-1h30:
+  1: Ladder
+  2: a bit (400ng) of your undigested plasmid
+  3: a bit (200ng) of your digestion product
+  4ton-1: digestion products
+  n: a bit (200ng) of your digestion product
+*3) Cut out the left and right hand side (Lanes1-3 and lane n), and poststain this in a solution of 150mL TBE + 15uL EtBr. '''Use nitrile gloves; the latex ones are not EtBr resistant.''' Poststain for 15 minutes at least.
+*4) Image the post-stained parts, and cut out the band of interest.
+*5) Put these agarose slices with the cut pieces back with the gel w/lanes 4ton-1. Allign the cut areas, and cut the corresponding area in the gel w/lanes 4ton-1.
+*6) Poststain all parts of the gel in the same solution of EtBr; image to make sure correct area cutg.
+
+===Gel purification===
+We need absolute clean DNA for the ligation to be high efficiency. Keep that in mind!
+
+With the Qiagen kit, make these modificaitions:
+*1) Make sure the agarose is completely dissolved in QG.
+*2) Do the extra QG wash step, and two if you're feeling good.
+*3) Let the product sit in PE for 5 minutes to soak.
+*4) After the two PE spins, do a third for 1-2 min. to remove any residual PE.
+*5) Elute in EB heated to 70C.  ''Note: DO NOT USE dH20 if you are having trouble with ligations.  The millicue and water comes out of the tap at pH 8 but quickly drops and stabelizes to around pH 5.5, either from CO2 exposure or residue on our glassware.  Read up on quiagen columns; elution is very pH sensitive.  EB does not seem to decrease ligation efficincy, in small amounts at least.''
+
+You should now have the same amount of 50uL gel extraction products as you did digests.
+
+===PCR purification===
+To concentrate the DNA, we will send the X clonal gel extraction products through the same column following the Qiagen PCR purification protocol. Modifications:
+
+*3) Let the product sit in PE for 5 minutes to soak.
+*4) After the two PE spins, do a third for 1-2 min. to remove any residual PE.
+*5) Elute in 30uL EB heated to 70C.  ''Note: DO NOT USE dH20 if you do not know the pH of it. The millicue and water sitting out has pH around 5 from dissolved CO2, which is really bad for elution efficiency. EB does not seem to decrease ligation efficincy, in small amounts at least.''
+
+Nanodrop this and make sure you get peaks, and concentrations greater than 30ng/uL.
+
+===Ligation===
+
+For ligation, we use the Roche 5min quick ligase kit. Vials 2 and 1 are proprietary, but Vial 3 is generic T4 DNA ligase.
+
+''Regarding the contents of the buffer 2:'' Called, they said that the DNA dilution buffer was proprietary but one should use 2ul of the 5X stock + 8uL DNA to add to 10uL. Checked the pH of the Dilution Buffer, and it either is set around 7 or actually is not a pH buffer at all.
+
+''Regarding buffer 1:'' It contains ATP, so try not to freeze/thaw the stock.
+
+It is still unknown if a 1:3 volume ratio or a 1:3 molar ratio is ideal for ligations. I personally use the latter and would recommend that over the former. 1:1 may be good for small inserts, big vectors; we havent tested it though so we're not sure.
+
+In a pot, combine:
+  X ng vector DNA
+  3*(length of insert / length of vector)* X from above = Y ng insert DNA
+  2uL 5X DNA dilution buffer
+  dH20 up to 10uL.
+  10ul Ligation buffer
+  1ul ligase
+
+*'''Make sure the reaction is 10uL!
+*''' Also make sure '''the total amount of DNA does not exceed 200ng'''. Efficiency won't improve with that much DNA. 
+*USE the 5x DNA dilution buffer; do not skimp on it!
+*Add 10uL tube 1, 1uL tube 3. 
+*Let sit at Room Temperature for '''30min to 1h or longer.'''
+
+===Transformation===
+
+For transformation, we use Top10 chemically competent cells in the -80 Freezer. You don't need that many cells per reaction; 20uL as a minimum is good, and 10-15uL per positive or negative control (the puc19 is the positive, water is the negative). These are expensive - one tube is ~$15! Do not use all 50uL of the cells for one transformation! '''Thaw these on ice when you do the ligation step.'''
+
+After the ligation, put the ligation products on ice and aliquot cells into seperate '''pre-ice-incubated''' tubes. Then add the ligation DNA into the tube and mix by tapping the side of the tube. Never touch the bottom of the tube! Let incubate on ice for 30min.
+
+Prepare your heat block to be at 42C with water in the tubes. Also heat up 250uL of SOC per reaction. After 30 min of ice incubation, move tubes into the block for 30 seconds. Then, ice incubate for another 2 minutes, add 250uL of preheated SOC per reaction, and move to 37C shaker  for 1 hour to recover.
+
+Plate each, using all 250uL. Grow 14-16h.
+
+===Selection===
+
+By now, you should have colonies. There are 2 ways to select:
+
+1) PCR from VF2 to VR (for biobricks); if ligation succeeded then the PCR will show corresponding band.
+2) Digest the plasmid.
+
+====PCR====
+To do #1, after colonies grow prepare per-colony a tube containing 8uL of PCR Supermix, and 1uL of each primer (2nM), for a total volume of 10uL. Also pre-warm plates corresponding to the resistance. If you want, you can create liquid stocks too on the side. Screen at least 3 colonies/plate.
+
+For each colony, pick it off the plate, restreak it, dip it in the PCR reaction, and (optional:) dip in the LB+resistance. 
+
+The PCR protocol is:
+  95@15
+  95@30s
+  55@30s
+  72@Xmin, where X is the length of your insert in kbp + 30s
+  Loop to Step 2, 30x
+  72@10m
+  Hold@4
+
+Egel it and look for the insert. Digest working ones from your solid or liquid stocks.
+
+====Digestion test====
+Innoculate liquid stock + create plates for each colony of interest, miniprep, and digest. Look for correct size bands.
+
+==Western Blots==
+
+===[[IGEM:Harvard/2006/Cyanobacteria/Western_Blot | Western Blot Outline]]===
+
+===Solutions===
+
+''100mL Lysis Buffer (12.5 mM Tris pH 6.8, 4%SDS)''
+*Already made; Nick has it.
+*1.25 mL 1M Tris (pH 8)
+* 78.75 mL H2O
+*Adjust pH to 6.8 if necissary
+* top off to 100mL with H2O
+*4g SDS
+
+''1L: Elecrophoresis buffer''
+*200mL 10x TrisGlysine SDS (RT)
+*1800 mL H20
+
+''500mL Blotting/Transfer Buffer''
+*40mL 25x Tris-Glycine Transfer Buffer
+*50mL Methanol
+*410 mL dH20
+
+OR
+*100mL 10x Tris-Glycine Transfer Buffer
+*50mL Methanol
+*350mL dH20
+
+''Blocking Buffer''
+*Bought from Sigma.  In one of the large fridges.
+
+''Buffer for Antibody Washes and dilutions''
+*1/2 Blocking Buffer
+*1/2 PBS-Tween(0.01% Tween)
+
+== Media ==
+=== 1L agar for freshwater cyanobacteria (no glucose) ===
+This protocol produces 1L agar suitable for plating freshwater cyanobacteria (PCC7942 and PCC6803). '''<cite>cyano_prot1</cite>'''
+
+#Mix 10 g agar and 1 mM thiosulfate (= 0.248 g), top off with H20 to 500 mL total volume.
+#Autoclave the product of (1)
+#Mix 20mL 50x BG-11 solution and 480 mL of H20
+#Autoclave the product of (3)
+#Mix (2) and (4), pour plates and let cool
+
+=== 1L agar for freshwater cyanobacteria (with glucose) ===
+This protocol produces 1L agar with 5 mM glucose suitable for plating PCC6803 cyanobacteria.
+
+#Mix 10 g agar and 1mM thiosulfate (= 0.248 g), top off with H20 to 500 mL total volume
+#Autoclave the product of (1)
+#Mix 20 mL 50x BG-11 solution and 230 mL of H20
+#Autoclave the product of (3)
+#Mix 5 mL glucose and 245 mL of H20. '''<cite>cyano_prot3</cite>'''
+#Autoclave the product of (5)
+#Mix (2) and (4) and (6), pour plates and let cool
+
+=== 1L liquid media for freshwater cyanobacteria ===
+This protocol produces 1L of liquid media suitable for culturing PCC7942 and PCC6803.
+
+#Add 20 mL 50x BG-11 and 1 mM thiosulfate (= 0.248 g), top off with H20 to 1L total volume
+#Filter the solution into the desired container with a 0.2 µm filter.
+
+== Notes on growing freshwater cyanobacteria in liquid media ==
+*'''Spray your gloves, containers, and working surfaces with ethanol, and let the ethanol dry, before handling cyanobacteria'''. We take this precaution because our bacteria do not have any antibiotic resistance as far as we know, so contamination is a bigger risk than with ''E. coli.''
+*The [[Media: Working_with_algae.pdf |algae guide]] recommends growing bacteria in 125mL of media in a 250 mL Erlenmeyer flask (to give an idea of how high the flask should be filled).
+*Use notched caps on the flasks, to permit gas flow while avoiding aerial contamination.
+*When inoculating a culture, use autoclaved toothpicks to scrape the colony/streaks of interest, and throw them in the solution.
+*According to [https://dspace.mit.edu/bitstream/1721.1/32302/1/61347289.pdf Jeffrey Chabot's PhD thesis], cyanobacteria should be grown at 4200lux, cool white fluorescent lighting; this illumination can be higher during the initial growth stage.
+
+==Freezing and thawing freshwater cyanobacteria==
+
+===Freezing for freshwater strains===
+#Run the bacteria through a centrifuge to form a pellet. 10X concentration, pellet down at least 5 minutes!
+#Resuspend pullet in 8% DMSO solution / 46% 1x BG-11 / 46% H20, in a cryo-friendly tube
+#Freeze (-70C or -80C is fine)
+
+===Thawing===
+#After taking the bacteria out of the freezer, pass them briefly through a stream of hot water or rub them with your fingers. This melts the solution around the walls of the tube.
+#Open the tube and jab the center of the frozen mass with a sterile toothpick, then pull the mass out, like pulling a popsicle out of a popsicle mold.
+#Immediately place the frozen bacteria in liquid media. Give a week or so for the bacteria to recover and regrow.
+
+==Transformation in cyanobacteria==
+*See [http://www.pubmedcentral.gov/articlerender.fcgi?artid=215375 Optimal Conditions for Genetic Transformation of the Cyanobacterium Anacystis nidulans R2], Golden and Sherman, 1984.
+*Newer paper: [http://www.pubmedcentral.gov/articlerender.fcgi?tool=pubmed&pubmedid=7961432 Efficient Gene Transfer in Synechococcus sp. Strains PCC 7942 and PCC 6301 by Interspecies Conjugation and Chromosomal Recombination], Tsinoremas ''et al.'', 1994.
+
+==Zero-blunt TOPO cloning kit==
+*This kit is used for cloning blunt-ended PCR products, such as those produced by Vent polymerase. See the protocol at Invitrogen's website [http://www.invitrogen.com/content/sfs/manuals/zeroblunttopo_man.pdf here].
+
+==Midiprep Protocol==
+
+Pre-Midiprep
+
+:# Put buffer P3 in the refrigerator.
+:# Check buffer P2 for precipitate; if there is then redissolve @ 37&deg;C.
+
+Growth
+
+:# Pick a single colony and inoculate a sulture of 2-5 ml LB, incubate for ~8 h at 37&deg;C with shaking.
+:# Dilute the starter culture 1/500 to 1/1000 into selective LB medium.
+:# High-copy: 25 mL; Low-copy: 25 mL.
+
+Midiprep
+
+:# Harvest the bacterial cells by centrifugation at 6000 x g for 15 min at 4&deg;C.
+:#* Big centrifuge: SLA-1500; Rotor code 28; 6290 rpm.
+:#* Big centrifuge: HB6; Rotor code 23; 6060 rpm.
+:# Resuspend the bacterial pellet in 4 ml(HC) or 10 ml Buffer P1(LC).
+:# Add 4 ml Buffer P2, mix by inverting 4-6 times, then incubate at room temperature for <5 minutes.
+:# Add 4 ml Buffer P3, mix by inverting 4-6 times, then incubate on ice for 15-20 minutes.
+:# Mix the sample again.
+:# Centrifuge at >20,000 x g (or 12,000 rpm) for 30 min at 4&deg;C, and remove the supernatant promptly.
+:#* Centrifuge in non-glass tube.
+:# Centrifuge the supernatant again at >20,000 x g for 15 min at 4&deg;C, and remove the supernatant  promptly.
+:#* Remove a 240 ul sample to test.
+:#* Equilibrate a QIAGEN-tip 100 by applying 4 ml Buffer QBT, and allow the column to empty by gravity flow.
+:# Apply supernatant to QIAGEN-tip and allow it to enter the resin by gravity flow.
+:#* Remove a 240 ul sample from flow-through and save for a sample to test.
+:# Wash the QIAGEN-tip twice with 10 ml Buffer QC, and allow to move through the QIAGEN-tip by gravity flow.
+:#* Remove a 400 ul sample to test.
+:# Elute DNA with 5 ml QF.
+:#* Collect the eluate in a 10 ml tube.
+:#* Remove a 100 ul sample to test.
+:# Precipitate DNA by adding 3.5 ml room-temperature 9sopropanol to the eluted DNA.  
+:# Mix and centrifuge immediately at >15,000 g for 30 minutes at 4&deg;C, and decant the supernatant.
+:#* 11,000 rpm in a Sorvall SS-34 rotor
+:# Wash DNA pellet with 2 ml of room-temperature 70% ethanol and centrifuge at >15,000 g for 10 minutes.
+:# Decant the supernatant, and don't disturb the pellet.
+:# Air-dry the pellet for 5-10 min, and redissolve the DNA in 250 ul ddH<sub>2</sub>O
+
+Adapted from the QIAGEN Midiprep protocol.
+
+== References ==
+<br>'''[1]''': The use of thiosufate is discussed in the following papers; it is isn't required, but it supposedly improves growth rate.
+<biblio>
+#cyano_prot1 pmid=2513249
+#cyano_prot2 pmid=10762263
+</biblio>
+
+<br>'''[2]''': Usage of glucose is to take advantage of heterotrophic growth of PCC6803 with glucose; this supposedly cuts down the growth cycle to 4 days, according to the 2006 MIT iGEM team.
+<biblio>
+#cyano_prot3 pmid=15498761
+</biblio>
+
+<br>
+
+'''Cyanobacteria Western Blot Outline'''
+
+''Growing Cultures''
+We want to get a reproducible absolute amount of protein between experiments, 
+and thus must start with a reproducible absolute amount of bacteria.  We do 
+this by using a set volume of bacteria from a culture of known bacterial concentration.
+This concentration is measured by it's optical density (OD)--the percentage of light
+absorbed the culture absorbs.  The task, therefore, is to determine the easiest/fastest
+method to grow cultures to a specified OD.
+
+#Start an overnight LB culture from a single colony on a streaked plate.  Overnight the culture will reach stationary phase.
+#Take an aliquot (amount to be determined empirically or from Alain's experience) and add it to fresh LB culture.  Since we are starting with an enormous number of bacteria, the OD of this culture will increase rapidly.  
+#Check the OD of the sample at regular intervals until the desired OD is reached (OD =  ~.4)
+
+''Storing Time Points''
+We need to obtain our protein mix such that it can be stored frozen until we are ready to run it on a gel.  The extract can be frozen either before lysis as an E. coli pellet or after lysis frozen in lysis buffer. We'll do the former, as it is easier to lyse all samples at once.
+
+#Spin down 1mL of your correct-OD culture at 13K for two minutes to pellet.
+#Resuspend cells in lysis buffer such that the final concentration is 2x10^6 cells/uL (use OD/cfu curve).  This concentration has been verified by the Endy lab as correct for the MC4100-pSB4A3.I7101 plasmid.  Adjust the spin volume or resuspension volume if required.
+#Freeze lysates at -20C.
+
+''Preparing Extracts for Gel'
+Here we will lyse the cells to release the desired protein.
+#Unfreeze the samples and boil them for 10 minutes (the heat block at 95 should be sufficient)
+#Spin down lysate at 13K for 10 minutes.
+#Add lysate to sample buffer (generally 2X) into PCR tubes at a concentration of ~1x107 cells/sample (adjust volumes as necessary).
+#Boil for another 10 minutes.
+#Immediately spin down at 13K and load into the gel.
+#Use pre-cast tris-glycine acrylamide gel from fridge--use the gel that will get us the most separation (as phosphorylation is subtle)
+#Make sure to load marker to tell when gel is finished running (3 uL Amersham Rainbow marker #755?  Check with MingMing/Alain for available markers)
+
+''Run Gel''
+Run until sufficient separation is observed in markers.  MingMing might know the order of magnitude of how long to wait, but for the first gel we'll need to check at regular intervals.
+
+''Transferring to Nitrocelluolse''
+The inside of an acrylimide gel is an inconvenient environment to handle protein.  First of all, the protein is relative mobile and we'd like it stationary so the spatial separation we established running the gel in the previous step don't change.  Second of all, we can't easily get antibody into the inside of a gel.  To solve these problems, we will transfer the protein out of the gel onto the surface of a Nitrocellulose sheet.  Fortunately, protein sticks to this surface in an effectively permanent interaction. 
+
+
+The transfer is performed by running the protein vertically off the gel setting up a voltage potential vertically out of the flat surface of the gel.  Basically, after separating protein by running it across the gel, we have the protein make a right turn vertically up and out of the gel.
+
+
+#Cut away stacking gel, cut corner to mark orientation, and soak in transfer buffer for between 10 and 45 minutes, shaking on the orbital shaker. This equilibrates the gel to the new solution.  
+#Obtain a nitrocellulose sheet and two pieces of thick filter paper.  We have two types, thick and thin.  Use the thick sheets. Cut off a corner of each so you can tell their orientation. Let them soak in transfer buffer for 10 minutes.  (Should we wash them in methanol then H20 first?). Roll over the submerged filter paper with the blotting roller to remove any air bubbles.  Air bubbles will block protein transfer, so we need to get rid of them.
+#Place one piece of filter paper on the blotting machine surface.  Remove any air bubbles using the blotter.  
+#Place the nitrocellulose membrane on top of the filter paper on the blotting machine.  Roll out any air bubbles.
+#Place the gel on top of the nitrocellulose membrane.  Roll out any air bubbles.  If you're frightened rolling your gel, you can use your gloved finger.  Be careful here; the gel can easily break.  There are a variety of strategies that can be employed here to support the gel as you move it.
+#Place the remaining piece of filter paper on top.  Roll out any air bubbles.  Admire your new nitrocellulose and acrylimide sandwich.
+#Put the top on the blotting machine/  Plug everything in.
+#Run the machine at 20V for 30-60minutes.
+
+''Processing Nitrocellulose''
+Remember that the Nitrocellulose binds protein.  We don't want to bind our antibody to the sheet, and so we must "block" the sheet by coat all the free sheet surface with protein.  "Blocking" the sheet blocks any further protein binding to it.  Traditionally, milk is used to do this.  We, however, have a special buffer for this (which most likely is expensive, diluted milk)
+
+Once we've blocked the buffer, we incubate with our primary antibody.  Once the antibody is bound, we then wash with the second, fluorescent antibody.  The complex of anigen<-primary antibody<-secondary antibody will fluoresce in our machine.
+
+
+#The sheet can be stored by letting it air dry and storing in an air-tight plastic bag at room temperature, 4C or -80C.
+#Block the sheet for X hours by letting it soak in blocking buffer, on the orbital shaker.
+#Wash the sheet with ??? buffer.
+#Incubate with appropriate dilution of your primary antibody in ??? buffer for Y hours.
+#Recycle your antibody in ??? buffer by pouring it into a new tube in the fridge.
+#Wash the sheet 3x with ??? buffer for 10 minutes.
+#Incubate with appropriate dilution of your secondary antibody in ??? buffer for half an hour.
+#Wash the sheet 3x with ??? buffer for 10 minutes.
+
+''Visualizing the Nitrocellulose''
+#Over to the Science Center!

@@ -1,0 +1,170 @@
+__NOTOC__
+{{Template:ImperialCollege Spring2008 SyntheticBiologyCourse ComputerModellingPractical‎}}
+<div style="padding: 10px; width: 720px; border: 5px solid #B3CD4E;">
+<div style="padding: 0px; width: 720px; color: #2171B7; background-color: #B3CD4E">
+<center><font face="trebuchet ms" style="color:#2171B7" size="5">
+'''CellDesigner Tutorial'''
+</font><br></center>
+</div>
+<div class="tabs">
+<ul>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial |Overview]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/GUI |GUI]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Compounds |Compounds]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Reactions |Reactions]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Kinetic Simulation |Kinetic Model]]</li>
+<li>[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Simulation Panel |Simulation Panel]]</li>
+<li id="current">[[Imperial College/Courses/Spring2008/Synthetic Biology/Computer Modelling Practicals/CellDesigner Tutorial/Example |Example]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+=Example: A --> B=
+
+==Toy model for this example==
+
+* We are considering a '''very simple reaction''' network. 
+* It takes a '''compound 'A'''' to be converted into a '''compound 'B''''.
+* Following '''mass action laws''', the kinetic law associated to the reaction is a '''first order reaction''', with '''parameter k1'''.
+* '''Model described'''    : <math>A \xrightarrow{k_{1}} B </math>
+* '''Kinetic Law for 'A'''': <math> \frac{d[A]}{dt} = -k_{1}[A] ;   [A]_{t=0} = A_{0} > 0 </math>
+* '''Kinetic Law for 'B'''': <math> \frac{d[B]}{dt} = k_{1}[A] ;   [B]_{t=0} = 0 </math>
+
+==Starting a new CellDesigner Project==
+
+{| border="1" cellpadding="10" cellspacing="2" style="width:700px"
+|
+* Open '''CellDesigner''' Application: '''Double-click''' on the '''icon''' found on the desktop.
+* Open a '''New''' Project: File --> New.
+* Name your project 'test_1', for example. No need to change the dimensions of the work area.
+|
+[[Image:CellDesigner_Tutorial_Example_1.png|300px|CellDesigner]]
+|}
+
+==Defining the reaction network==
+
+{| border="1" cellpadding="10" cellspacing="2" style="width:700px"
+|
+'''Main Working Area: Creating Compounds'''
+* We want now to '''create 2 compounds''': 'A' and 'B'.
+* Click on the ''''Simple Molecule'''' icon [[Image:CellDesigner_Tutorial_Example_2.png]]
+* Click then in the working area, where you want to create the first compound. Name the compound 'A'.
+* Repeat the previous operations to create compound 'B'.
+* Save your project. File --> Save.
+|
+[[Image:CellDesigner_Tutorial_Example_3.png|300px|CellDesigner]]
+|-
+|
+'''Main Working Area: Defining the reaction'''
+* To create the reaction linking 'A' to 'B', click on the ''''State Transition' icon''' [[Image:CellDesigner_Tutorial_Example_4.png]]
+* Back to the working area, '''Click''' first on compound 'A', and then on compound 'B'. A reaction link is created.
+* The topology of your reaction network is now created.
+* Save your project. File --> Save.
+|
+[[Image:CellDesigner_Tutorial_Example_5.png|300px|CellDesigner]]
+|}
+
+==Defining the reaction kinetic==
+
+{| border="1" cellpadding="10" cellspacing="2" style="width:700px"
+|
+'''Main Working Area: Defining the kinetic law'''
+* We want now to set the '''kinetic property''' of the defined reaction
+* '''Right-click''' on the reaction link. It turns blue when you click on it.
+* Select the ''''Edit Reaction'''' fom the pop-up menu. A new window pops out with the reaction properties. 
+|
+[[Image:CellDesigner_Tutorial_Example_5b.png|300px|CellDesigner]]
+|- 
+|
+''''Reaction' Window'''
+* This window describes the attributes of the selected reaction link.
+* A kinetic law has to be described to allow us to simulate the reactions.
+* Click on: Kinetic Law  ''''Create''''. A new window pops out.
+|
+[[Image:CellDesigner_Tutorial_Example_6.png|300px|CellDesigner]]
+|-
+|
+''''Kinetic Law' Window'''
+* The reaction link describes how reactants are converted into products.
+* The kinetic law represents how the reactants reacts in time to form the products.
+* First, you need to create a '''New parameter''' K1. Click on '''ListOfParameters NEW'''. 
+* A new window pops out.
+|
+[[Image:CellDesigner_Tutorial_Example_7.png|300px|CellDesigner]]
+|-
+|
+''''Parameter' Window'''
+* Set parameter '''id = k1''', '''name = k1''', '''initial value .01''' . No units, Constant = True.
+* Then click 'Add' to register the new parameter. And then, Click 'Close'.
+* The window closes. You are now back to the 'Kinetic Law' Window.
+|
+[[Image:CellDesigner_Tutorial_Example_8.png|300px|CellDesigner]]
+|-
+|
+''''Kinetic Law' Window'''
+* The actual mathematical description of the reaction is now needed. 
+* Use the field called 'Math' to enter the kinetic law: <math> k_{1}[A]</math>
+* [A] must be represented by its id, not its name !
+* If you Click on the compound 'A' in the main working area, its 'id' will pop out in the Kinetic Law window.
+* Once you are done, Click on 'Update'. And then 'Close'.
+* Save your project. '''File --> Save'''.
+|
+[[Image:CellDesigner_Tutorial_Example_9.png|300px|CellDesigner]]
+|}
+
+==Simulating the reactions==
+
+===Main Simulation Features===
+
+{| border="1" cellpadding="10" cellspacing="2" style="width:700px"
+|
+'''Main Working Area'''
+* Your reaction network is now ready to run a simulation.
+* Select within the '''Menu 'Simulation' --> Control Panel'''
+* The 'Control Panel' for the simulations pops out.
+|
+[[Image:CellDesigner_Tutorial_Example_10.png|300px|CellDesigner]]
+|-
+|
+''''Control Panel' Window
+* At the moment, both compounds, 'A' and 'B', have a '''default initial value of zero'''. Nothing interesting could happen.
+* Change 'A' initial amount from the 'Species' menu. Set it to 100.
+* Set EndTime = 1000, NbPoints = 1000.
+* You can now press the ''''Execute'''' button to launch the simulation.  
+|
+[[Image:CellDesigner_Tutorial_Example_11.png|300px|CellDesigner]]
+|}
+
+===Interactive Simulation===
+
+{| border="1" cellpadding="10" cellspacing="2" style="width:700px"
+|
+''''Control Panel' Window
+* This function helps you to vary a parameter, or a compound amount interactively.
+* Select the ''''Interactive Simulation'''' Menu, in the left area of the control panel.
+* Select the 'parameter' button, and the slide menu gives you the option to vary k1. 
+* [http://www.systems-biology.org/cd/help/CP/CDH_CP-6.html >>> more info]  
+|
+[[Image:CellDesigner_Tutorial_Example_12.png|300px|CellDesigner]]
+|}
+
+===Parameter Scan===
+
+{| border="1" cellpadding="10" cellspacing="2" style="width:700px"
+|
+''''Control Panel' Window
+* Select the ''''Parameter Scan'''' Menu
+* It allows you to run multiple simulation while varying a specific parameter.
+* This function is useful to run a '''simple sensitivity analysis''' on a given model.
+* Check how the k1, or initial amount of A, are impacting the simulations.
+* [http://www.systems-biology.org/cd/help/CP/CDH_CP-5.html >>> more info]
+|
+[[Image:CellDesigner_Tutorial_Example_13.png|300px|CellDesigner]]
+|}
+
+==Additional features==
+
+To finish this first part of the tutorial, take the time to explore some features that will be useful for you to write your reports: 
+* Save image
+* Export data
+* [http://celldesigner.org/documents/StartupGuide211.html >> more info] from the CellDesigner Tutorial.

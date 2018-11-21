@@ -1,0 +1,128 @@
+==Equipment==
+
+[[Image:Endy NikonTE2000.jpg|500px]]
+===CCD Camera===
+Hamamatsu Digital CCD Camera C4742-80-12AG --  [http://www.sales.hamamatsu.com/en/products/system-division/cameras/all-uv-vis-ir-cameras/c4742-80-12ag-.php ORCA-AG Deep Cooled Digital Camera]
+
+[http://microscopyu.com/articles/digitalimaging/digitalintro.html Digital Imaging with CCD Camera]
+
+This [http://microscopyu.com/tutorials/flash/pixelcalc/index.html page] and this [http://www.microscopyu.com/tutorials/java/digitalimaging/pixelcalculator/index.html page] explains why the 60X is almost as good as the 100X objective for our camera.
+
+[[Methods to determine the size of an object in microns]]
+
+===Condenser===
+[[Focusing the Nikon TE2000 Condenser|Focusing the condenser]]
+
+===FL Lamp===
+*It takes the lamp about 2 minutes to warm up.
+*After a lamp has been turned off, it is a good idea to wait 30 min. before turning on again.
+
+===Objectives===
+We have the following objectives:
+
+====Dry Objectives====
+*2X
+*10X
+*20X
+*40X
+
+====Oil Objectives====
+*60X DIC -- 1.40NA
+*60X Phase Contrast -- 1.40NA
+*100X DIC -- 1.40NA
+
+(need to add the other features of these objectives, NA, working distance, etc.)
+
+===Filter Sets===
+
+[[FITC/GFP Filter Set]]
+
+[[CFP Filter Set]]
+
+[[YFP Filter Set]]
+
+[[RFP Filter Set]]
+
+[[UV/DAPI Filter Set]]
+
+===Solent incubation chamber===
+
+[[Endy:Changing the sensor zero value on Solent incubator|Changing the sensor zero value on Solent incubator]]
+
+===Power Mac G5 Dual Processor===
+'''Internal IP address''' - 192.168.4.102
+
+==Installation==
+
+#Install IPLab from IPLab CD
+#Install all other files on IPLab CD (Camera Control, Motion control, etc.)
+#In the folder Applications -> IPLab 3.9 Folder -> Device Modules, move all devce modules to the Device Modules - Disabled folder '''EXCEPT''':
+##Ludl S&F.ipmd
+##Ludl Stage.ipmd
+##Nikon TE2000.ipmd
+##Orca-DCAM.ipma
+##Virtual Camera.ipma
+#Install Keyspan software from Keyspan CD
+#Make sure that the switch box, camera, and microscope are all plugged into the Mac.
+#Open IPLab
+#If the window doesn't open up automatically, open the menu Control -> Device Setup
+##You should see the following:
+###Cameras: Orca-DCAM and VirtualCam
+###Stages: Ludl Stage and Nikon TE2000 Z-Axis
+###Positioners: Ludl S&F and Nikon E2000 Light Path
+##If any of the following are listed at triangles, select them and hit Setup
+##Select the appropriate port, and hit Ok, then connect.
+#Open the Control -> Device Select menu
+##Under '''Stages''', select the following:
+###XY Stage: Ludl Stage
+###Z axis: Nikon TE2000 Z-axis
+##Under ''Microscope'', select the following "Positioners":
+###Ludl Shutter 1
+###Ludl Shutter 2
+###TE2 Filter Cube Turret
+###TE2 Analyzer
+###TE2 Optical Path (or something like that)
+#Check your scripts to make sure that they are calling the correct Positioners (e.g. you are opening Ludl Shutter 1 when you want a FL image, etc.)
+#Make sure that the camera is set to 12 bit by going to Camera -> Camera Settings -> Bit Depth = 12.
+# To ensure that all users have the same setup, move the following files from administrator -> Library -> Preferences to the corresponding folders in the desired user folder:
+##DCAM.plist
+##com.biovis.ivisionmac.app.plist
+#Also, copy everything from iVision user folder in the administrator account into the user iVision user folder.
+
+==Protocols==
+
+[[Quantitative Microscopy]]
+
+[[How to reduce agarose pad sliding]]
+
+[[Getting started on the microscope|Help, I can't find my cells!]]
+
+==IPLab Scripts==
+[[Autofocus IPLab Scripts]]
+
+[[High-throughput Imaging IPLab Scripts]]
+
+[[Movie-making IPLab Scripts]]
+
+==Image editing==
+===For Mac OS X===
+Only "Graphics converter" and "Image J" can read the IPLab images directly. For ImageJ to open those images, you need to install a macro. Go to the Plugins Menu, choose "Macro", then "Install". Install the macro named OpenMacIPLab. The description of the file IPLab Mac format is in the User's Guide (Appendix), Other programs with a configurable "import" command may be able to open them once an specific configuration is set.
+
+==Links==
+*[http://microscopyu.com/ Nikon MicroscopyU] is a useful resource for learning more about the optics relevant to the scope.
+*[http://microscopy.fsu.edu/ Molecular Expressions] has general information related to microscopy.  Some of this information appears to the the same as that offered by MicroscopyU.  <br> ''Note: one of the more useful parts of these two site are the Javascript tutorials.  Unfortunately, they don't seem to load under Mac OS 10.3 using either Firefox or Safari.  They do work in Tiger 10.4 using Safari however.  If anyone knows of a workaround in 10.3, please place a link or note here.''
+*[http://www.mathworks.com/access/helpdesk/help/toolbox/images/images_product_page.html Image processing toolbox] from [http://www.mathworks.com/ Matlab].
+
+==Issues==
+[[Endy:Nikon TE2000 microscope service history|Service history]]
+
+==Troubleshooting==
+Q:Someone mistakenly put oil on the 40X dry objective.  What's the best
+procedure for cleaning that off, without causing damage to the lens?
+
+A(from Barry Alpert):Use either ether or chloroform with a wooden handled q tip ( I know thw lab supply houses carry this item )and gently wipe the oil off the lens. DO NOT scrub , as it will damage the coating.
+
+==Contact==
+[[Jason Kelly]]
+
+[[Category:Equipment]] [[Category:Microscopy]]

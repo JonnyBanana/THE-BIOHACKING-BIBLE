@@ -1,0 +1,51 @@
+==Oscilloscope Lab==
+{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 01:36, 29 August 2007 (EDT):Excellent lab notebook, Zane!  I am thinking of using it as an example for others to emulate.  Of course, I have some suggestions for improvements, but really it is excellent, especially without any guidance from me ahead of time!}}
+
+----
+'''Setting Up'''
+I received an oscilloscope and a wave generator and using BNC cables, plugged the "SYNC" labeled connection into the CH1 Connection of the oscilloscope.   Originally this result when selecting the sine wave profile on the wave generator, produced a series of small square sine waves.  This was the incorrect setting as Antonio and I figured out that the wave profile of sine (and other profiles) require the "Vp-p" slot, not SYNC as previously mentioned.  I still do not know why this is the correct setting, however I'm sure an answer will present itself.{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 01:36, 29 August 2007 (EDT):I imagine that Vp-p stands for Voltage peak to peak, or something, implying a waveform that is bipolar.  The SYNC output is likely for purposes such as triggering.  For example, you could maybe connect SYNC to the trigger input on the scope, and this would make triggering less dependent on your choice of waveform and DC offset.}}
+
+----
+'''Measuring the Sine Wave'''
+
+1) '''Counting Grid Lines.''' The amplitude of the wave generated is four grid lines in length, or 1 volt.  Prof. Koch posed a question about increasing the accuracy of this measurement,  and to answer the question would be to use the Volts/Div knob to increase the viewing size of the current graph.  Using this, the new measurement would be 900 mV as a new amplitude.
+
+2) '''Using Cursors.''' I had moderate trouble figuring out how to use the "cursors" menu, but figured out that the buttons on the side of the screen are much like an ATM machine in that they control what options you are selecting on screen.  Using this method, I obtained a value of 940 mV.
+
+3) '''Using Measure''' The new measure feature was amazing to use indeed.  Cycling through all the various options about the profile on the screen was most educational.  Here I cycled to the Max value setting under "Type" and obtained that my graphs max value or amplitude is indeed 940 mV.
+
+'''Continuing Investigation of these features.'''
+
+It appears that for very small frequencies ( <math>f</math> ), such as when <math>f</math> approaches zero, the measure reads less than half of what it normally measures even at extremely high values of <math>f</math>!  Messing with the Offset knob on the wave generator changes the calibration I originally set, so I do not believe that in the spirit of the question, that this was meant to alter the graph.  Continuing it seems that turning the amplitude all the way up, confuses the machine to the point of adding asymptotic profile on what used to be a sine graph.  The measured amplitude was 2.5? V leading me to believe that this is another problem in using these. 
+
+----
+'''Triggering'''
+Triggering on a rising edge means, that the graph stops according to when the graph reaches a rising voltage.  Messing with the the Trig Menu on the Osc. allowed me to see that there is also a falling option, which is basically the opposite of what was just discussed.
+
+When using edge trigger, the graph stills to the edge of the graph providing a more stable trace, depending on rising or falling slope.  Using a video trigger seems to make the graph precess back and forth, and pulse has no noticeable difference.
+
+----
+'''AC Coupling'''
+
+Prof. Koch gave a small talk on ac coupling: Described a few graphs talking about the Voltage the charge and current as measured by the osc.
+
+2) The biggest noticeable difference between the two graphs (AC and DC) is that with DC, a square potential well type graph (best well to describe it) is shown and a similar graph is shown with AC, however the main difference is there is some amount of error associated with the graph over-shooting the square well of the DC and then trying to get back to what seems like an equilibrium state.
+
+3) '''Measuring the Fall Time.''' 
+For this section, I set my DC voltage on CH 1 to be 900 mV, the example in the lab procedure was a little to big for the osc. to handle.  Using the cursors, I get a fall time of 10*5.00 ms giving 20 ms.  Using the measure feature I reach a value of 16.88 ms, which isn't too far from my "eyed" value.  Matt and I investigated this further and we found trouble in calculating somewhat valid answers.{{Side comment|comment=[[User:Steven J. Koch|Steven J. Koch]] 01:36, 29 August 2007 (EDT):I am not sure what is going on either.  Wouldn't 10*5.00 ms = 50 ms, though?  50 ms is closer to what people were getting.  I am not sure the website Antonio found is exactly correct, although certainly it is the best found yet.}}
+
+4) '''The RC constant.''' 
+Resistance*Capacitance= <math>t</math> which is supposed to be equal to my fall time, in this case; 16.88 ms.
+
+5) '''Expected Values'''
+Received a website from Antonio about where to find the expected value of the oscilloscope... [http://www.tek.com/Measurement/cgi-bin/framed.pl?Document=/Measurement/Support/scopes/faq/tds1_2000_1.html&FrameSet=oscilloscopes# tek.com, see question 13].  From this we can see the expected value is about 10 ms... so as for a value of 16.88 ms my value isn't too far off.
+
+----
+
+'''FFT'''
+
+1) Using the Math FFT tool, and slowing the sec/div knob my frequency is 22.89 Hz which is the first delta function.
+
+3)  There are definitely similarities between the two, in the applet both the square wave and triangular wave function get more exact as you increase the number of terms, however you can never reach the exactness on at infinity.  What the oscilloscope shows is the transform of the sine which follows directly from both the triangle and square in the applet.
+
+4) FFT stands for Fast Fourier Transform.  The necessity of having this function is, say you have a noisy signal and you wish to know the frequency you are operating at.  Well what the FFT does is single those frequencies out that you're operating at in the form of a delta function.  The actual frequency that you're operating at should be the most defined tallest line.  Thanks to Prof. Koch for this explanation.

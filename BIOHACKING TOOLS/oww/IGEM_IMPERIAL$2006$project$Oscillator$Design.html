@@ -1,0 +1,92 @@
+==The Lotka-Volterra Model and Its Consequences==
+
+[[Image:Designdocfig1.png|thumb|Figure 1. A block diagram of Predator-Prey Interactions with A being the prey and B being the predator.   Predator eating prey (modelled with A+B) leads to progeny of B, whilst A continuously reproduces exponentially.]]
+
+Predator-prey interactions form stable biological oscillations with frequency which can be calculated with precise frequency given certain assumptions.  We decided to model our biological oscillator on the basis of predator-prey interactions hoping that this novel approach will lead to success.  
+
+In order to ensure that the concentration of our molecules outside the cell will be fluctuating, we must have a multi-cellular system.  The flaw in previous relaxed oscillator models was that it was based upon a single-cellular culture, unable to control the entire population effectively.  By having a two cell design, then we force molecules to interact outside of the cell, thus changing the concentration of the extracellular medium.  
+
+The key assumptions to the Lotka-Volterra model are as follows:
+*Predator and prey distributions are random.
+*The only cause of death to the prey species is through predation
+*The growth rate of the predator species is solely dependent on predation of the prey.
+*The Prey species shows exponential growth in the absence of predation with no carrying capacity
+*The Parameters are constant over time 
+
+Only once all of these assumptions are met can biological oscillations occur.  
+
+Since chemical species are more controllable than biological ecosystems, it should, in theory, work better in the laboratory.  However, oscillatory chemical reactions will eventually die down due to the second law of thermodynamics, which states that the energy can neither be created nor destroyed.  Oscillatory chemical systems pose a sort of Holy Grail for chemistry, since their existence would signify a perpetual motion system enabling energy to be created continuously without input.  The closest chemical system which approximates oscillatory movement is the Belousov-Zhabotinsky (BZ) reaction.  This reaction oscillates between cerium oxidations states III and IV, producing a remarkable change in colour.  These oscillations can be sustained for approximately an hour before dying down with a frequency which is dependent upon the concentrations of the reactants in the system.  
+
+Biological systems offer a completely different perspective on oscillatory behaviour since the oscillatory movements will no longer be bound by the second law of thermodynamics.  The BZ reaction will theoretically be continuous if we are able to sustain the reactants of the system.  However, in biological systems, we are able to feed the organisms to continuously produce the oscillatory behaviour, so we can inherently maintain the oscillatory behaviour.  If we are considering Escherichia coli (E. coli) as our species, then all that is required is to keep the media supply running with constant oxygenation.  Now all that is required is to find molecules/proteins which will mimic the behaviour of species A and B in the Lotka-Volterra model.
+
+==Quorum Sensing/Quenching==
+
+It is desired to have a molecule that easily passes through the membrane in order for the system concentration to change.  In comparison to the Lotka-Volterra model, then we need the plasma membrane of E. coli to be permeable to molecules A and B.  Quorum sensing/quenching molecules offer good candidates for molecules A and B.  Their small molecular structure enables it to easily pass through the cell and affect the transcription of another cell, so it necessarily has to exit the cell.  Quorum sensing is a cell-cell communication device allowing a cell to be able to quantify how many cells are around them.  This is important especially in expressing virulence, where mass quantities of cells are required before bacteria will start producing toxins.  Several types of these quorum sensing molecules have been found, all based upon N-acyl homoserine lactone (AHL) backbone.
+
+[[Image:Designdocfig2.png|thumb|300px|left|Figure 2.  N-acylhomoserine lactone (AHL) molecule, typical quorum sensing molecule in gram negative bacteria [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=15765063&dopt=Abstract]]]
+<br style="clear:both;"/>
+Our predator can then be the AHL degradation enzyme which will “eat” the prey (AHL), thus can no longer be active as a signalling molecule.
+
+[[Image:Designdocfig3.png|thumb|600px|left|Figure 3.  The degradation action of AHL-lactonase and AHL-acyclase, two different methods of quorum quenching[http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=15765063&dopt=Abstract]]]
+<br style="clear:both;"/>
+By using AHL as our prey and an AHL-lactonase or AHL-acyclase as our predator in the Lotka-Volterra model, then it is only required to fiddle with the expression of the two in the cell in order to produce oscillatory movements.  We must remember that the key assumptions listed above (now applied to chemical species), must still hold for the model to operate.
+
+Possible candidates for the predator in our biological model are quorum quenching enzymes such as AiiA and AiiD.  In a paper published in 2005 by Yi-Hu Dong et al., they investigated several quorum quenching enzymes discovered throughout the years and compared their activities.  aiiA, by far, was the most general of AHL-acylase enzymes, whose effect was seen in both gram negative and gram positive bacteria.  As seen in Figure 3, acyclase enzymes hydrolyse the amine group in the AHL molecule, rendering the products useless in cell to cell communication.  In a separate paper published also in 2005 by Kim et al. [http://www.pnas.org/cgi/content/abstract/102/49/17606], they provide a mechanism for the action of AiiA and other AHL-lactonase enzymes.  Zinc ions seem to have an important role in the catalytic mechanicsm, which may explain MIT's results in 2004.  MIT used M9 media, which does not contain any zinc ions, while the protocol in Yi-Hu Dong's paper used LB medium[http://www.pnas.org/cgi/content/full/97/7/3526], most probably containing zinc ions provided by the yeast extract.
+
+Following correspondence with Dr. Zhang of the A-star institute in Singapore, we have decided not to pursue AiiD as a possible quorum quenching enzyme.  AiiD, an AHL-acyclase does not work as well as AHL-lactonases according to his experience.  Thus, we are focusing our efforts on 1) getting AiiA (AHL-lactonase) to work or 2) obtaining the sequence of other AHL-lactonases such as AhlD.
+
+==System Design==
+
+The main system design consists of a black box with the output as a sinusoidal (oscillating) signal.  The input will not be required, since we assume that there will be inherent noise in the system to set the system in motion.  However, when modelling a perfect system, transcription must be activated first, but this is discussed further in the modelling document.  
+
+[[Image:Designdocfig4.png|thumb|left|600px|Figure 4.  System design view, showing sinusoidal output]]
+<br style="clear:both;"/>
+Within the system, we have our predator and prey cell which will be producing molecules A and B.  
+
+[[Image:Designdocfig5.png|thumb|left|600px|Figure 5.  General design level diagram implementation of the Lotka-Volterra model within the system using two molecules, A and B  ]]
+<br style="clear:both;"/>
+We will be monitoring the concentration of molecule A.  Within our system, cell A produces molecule A which gets “eaten” by molecule B.  The AB complex then activates cell B to produce more molecule B.  We then came up with two different methods of making a positive feedback mechanism to produce molecule A to promote the exponential growth required by the Lotka-Volterra predator-prey model.  
+
+After looking at possible molecules of A and B, we have decided that molecule A will be AHL and molecule B will be AiiA, the quorum quenching enzyme.
+
+[[Image:Designdocfig6.png|thumb|left|600px|Figure 6.  Part diagram of cell A (prey producing cell) using a constitutive promoter and positive feedback]]
+<br style="clear:both;"/>
+The constitutive promoter (Pc) continuously produces LuxR, a receptor for molecule A (AHL).  Initial stimulation by AHL will result in the formation of an AHL/LuxR complex which will activate transcription at the promoter pLux.  Consequently, AHL is produced from the cell.  After the initial stimulus, production of AHL continues as it binds automatically to the pLux promoter, not needing another injection of AHL.  
+
+[[Image:Designdocfig7.png|thumb|left|600px|Figure 7.  Part diagram of cell A (prey cell), stimulated by pLux promoter]]
+<br style="clear:both;"/>
+In this design, the production of both LuxR and LuxI (AHL) will self-stimulate the production of more LuxI, contributing to the positive feedback loop.  Using CellDesigner software, we are able to model each and determine the characteristic output which would result in a perfect system without noise.  More information on this is contained within the modelling document.  
+
+After we are able to produce a exponential growth in the prey, we need to create a complementary predator design.  Keeping in mind that the predator should combine with the prey and stimulate the production of more predator (assumption in Lotka-Volterra model), we are again able to use LuxR as an internal receptor and aiiA to degrade the AHL inside the cell.  One must remember that the action of LuxR and aiiA are contained within the cell.  If we are able to create a concentration gradient across cell B, then the diffusion across the membrane will be proportional to the concentration outside the cell, even with desired oscillations.  
+
+[[Image:Designdocfig8.png|thumb|left|600px|Figure 8.  Cell B (predator cell) showing influx of molecule A and subsequent degradation]]
+<br style="clear:both;"/>
+As seen in Figure 8 above, we can use aiiA as our predator to consume the population of molecule A (AHL).  By degrading AHL, we increase the concentration gradient between the outside and inside of the cell, resulting in the decrease in the concentration of A outside the cell.  Once the gradient has reached the low threshold, production of aiiA will stop, enabling the build-up of AHL outside the cell again.  Once cell A and B are activated to work together, then this oscillatory concentration change of AHL theoretically would continue until nutrients are depleted.  If we keep these cells in a bioreactor, removing dead cells and replenishing the medium, we can sustain these oscillations until we stop the bioreactor.  
+
+We should note that aiiA and LuxR are fully contained within the cell and are unable to diffuse through the membrane.  AHL, on the other hand, is very permeable, and diffuses readily through the membrane.  
+
+Our primary design also has the strength that there are already working parts from the Registry of Standard Biological Parts (Registry) that we can use.
+
+[[Image:Designdocfig9.png|frame|left|Figure 9.  Part BBa_F2620, 3OC6HSL Receiver Device (LuxR), controlled by tetR operator with pLux operator attached to end]]
+[[Image:Designdocfig10.png|frame|left|Figure 10.  Part BBa_F1610, 3OC6HSL Sender Device (LuxI), to be connected to part BBa_F2620 in Cell A]]
+<br style="clear:both;"/>
+[[Image:Designdocfig11.png|frame|left|Figure 11.  Part BBa_F2621, 3OC6HSL Receiver Device (LuxR), controlled by pLux]]
+[[Image:Designdocfig12.png|frame|left|Figure 12.  Part BBa_I0460, aiiA Device, ASL degradation enzyme, to be connected to part BBa_F2621 in Cell B]]
+<br style="clear:both;"/>
+Figures 9 and 10 show parts which can be used for the positive feedback mechanism located in cell A, while figures 11 and 12 show parts which can be used for the receiver and aiiA production in cell B.  The three parts (F2620, F2621, and F1610) are well characterised and have documentation.  However, part I0460 currently has no documentation and has not been shown to work in systems yet.  During the testing phase, we should test this part to ensure that it works.  If not, our other option includes aiiD, or similar AHL degradation enzymes to act as our predator.  Figure 9 is connected by a tetR operator, which will act as our constitute promoter, continuously producing LuxR.  
+
+Since our parts will inherently have noise (i.e. ribosomes will still be able to attach to the RBS and induce transcription), the injection of AHL to begin the system is actually not necessary.  Once cells A and B are placed in the same medium, oscillatory behaviour should be evident after a short period (generally 2 to 3 oscillations) to reach a steady state of constant amplitude and frequency.  
+
+Since we only have 4 parts, our design is relatively simple, and theoretically should work.  By continuous modelling using realistic values, we should be able to obtain a deeper understanding of our system and how the molecules will interact with each other to produce oscillations.
+
+As of 20 August, we have updated the design of our system due to some complication we overlooked when designing our initial system.  First, the prey cell must be controlled so that it does not reach a steady state before we implement it into our system.  Ideally, we would like to have a method of control to induce or inhibit the expression of AHL molecules in our system.  Thus, we have formulated several designs which we hope will be viable in controlling the exponential expression of AHL.  
+
+Following reserach into the riboswitch, we have decided to explore this option.  We are using a theophylline induced riboswitch which will be placed between the pLuxR promoter and the LuxI protein coding region (the part which codes for the AHL).  Once we inject theophylline into the system, the prey cell will then start the exponential growth.  
+
+Another idea we developed to control the exponential expression is the CRE system mentioned by Dr. Mann.  Basically, the CRE system is a section of DNA which does not code for anything, but is placed in the middle of a coding region.  Only until the necessary proteins to cut the sequence out of the DNA is manufactured, expression is repressed.  The only drawback to this system is it requires two plasmids within the same cell, which might not be an easy task to achieve.  Read more about the [[IGEM:IMPERIAL/2006/project/parts/BBa J37015/Cre-LoxP system|Cre-Lox System]] Design.
+
+Furthermore, we have decided to alter the design of the predator cell by adding a FLAG immunotag.  The purpose of this was so that we are able to characterise the AiiA halflife and activity before producing the final system construct.  When testing is done in conjunction with the modelling, this will provide us a better understanding of the way the system works.  Moreover, we will be able to simulate with real values to see what we expect in our biological oscillator.  The immunotag is attached to the beginning of the AiiA protein coding sequence, since we are using the AiiA sequence already containing an LVA degradation tag.  We do not want the degradation tag to interfere with the immunotag, so we have decided to PCR in the immunotag to the 5' end of the sequence.  The 3D design of the AiiA enzyme in one of the papers has suggested that the ends of the sequence are not close to the active site of the enzyme, so there is a small but unlikely chance that the tags will interfere with the activity of the enzyme.
+
+Into the tenth week of the iGEM project, the team has decided to scrap the riboswitch part (J37015RS) in favour of using an acylase to control the AHL levels in the prey cell.  If we innoculate the culture with an acylase, it should degrade most of the AHL maintaining the concentration in an exponential growth phase.  When putting the system together, we can easily remove the acylase by flushing out and adding the predator cell in it's place.  Hence, the oscillator should begin with the prey cell not having reached the peak of the exponential production phase.  
+
+The acylase itself cleaves the entire lactone ring from the n-acyl homoserine lactone molecule as seen above producing homoserine lactone and a fatty acid.  The products are no longer biologically active; however, the paper on the structure of AiiA has commented that HSL is a competitive inhibitor for AHL.  This may lead to some problems depending upon the concentration of HSL left in the chemostat after we flush the acylase out.

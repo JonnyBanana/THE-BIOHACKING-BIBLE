@@ -1,0 +1,86 @@
+__NOTOC__
+{| border="1" cellpadding="0" width="100%"
+|- style="background:#CCCCFF"
+!height="25pt" width="80pt"| Super Parts
+!colspan="3" | [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Prey_Construct | Prey Construct]]
+|-
+!style="background:#FF9966" height="25pt" width="80pt"|Actual Part
+!colspan="3"| [[Image:T9002.JPG|350px]]<br><font color=#FF9966> <big>T9002: Test Sensing Prey Construct</big></font color> 
+|- style="background:#CCCCFF"
+! height="25pt" width="80pt"|Sub Parts
+![[IGEM:IMPERIAL/2006/project/Oscillator/project browser/intermediate_part/F2620| F2620]] 
+! [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/intermediate_part| intermediate_part]] 
+! [[IGEM:IMPERIAL/2006/project/Oscillator/project browser/intermediate_part| intermediate_part]] 
+|}
+<div class="tabs-blue">
+<ul>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Prey_Construct |Specifications]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Prey_Construct/Design|Design]]</li>
+<li id="current">[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Prey_Construct/Modelling|Modelling]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Prey_Construct/Implementation|Implementation]]</li>
+<li >[[IGEM:IMPERIAL/2006/project/Oscillator/project browser/Test_Sensing_Prey_Construct/TestingValidation|Testing/Validation]]</li>
+</ul>
+</div>
+<br style="clear:both">
+
+==Model assumptions and relevance==
+*General assumptions on gene expression modelling:
+**Quasi-steady state hypothesis on mRNA expression.
+**Gene activation can be approximated by [http://en.wikipedia.org/wiki/Hill_equation Hill equations].
+
+*Assumptions linked to the quorum sensing:
+**As a first approximation, we assume that luxR and AHL molecules form a heterodimer (even if it has been found that the complex formed is more complicated)
+**The relationship between the heterodimer formed from LuxR and AHL in activating genes is linear
+**LuxR is at steady state since it is under the control of the constitutive promoter tetR
+**LuxR is in excess of AHL (ie not saturated by AHL)
+
+==Model description==
+
+*Mathematical Description of GFP levels (prey sensitivity): 
+
+:<math> \frac{d[GFP]}{dt} = \frac{a \times [AHL]}{a_{0} + [AHL]} - d_{GFP} \times [GFP]</math>
+
+:For a full derivation, see [http://openwetware.org/wiki/IGEM:IMPERIAL/2006/project/Oscillator/Modelling/T9002 Modelling Prey Sensing Test Construct]
+
+
+*[http://openwetware.org/images/5/5f/T9002.xml T9002 Model in Cell Designer]
+
+{|
+|-
+| valign="top"|
+[[image:T9002_Model.JPG|thumb|left|250px|Graphical Representation of Model in Cell Designer]]
+| valign="top"|
+[[Image:T9002pic.PNG|thumb|right|230px|Output from model in Cell Designer based on modelling equation above]]
+|}
+
+==Model variables and parameters==
+
+
+{| border="1" width="100%"
+| style="background:lightblue" colspan="5"| '''Variables'''
+|- style="background:lightgrey"
+!Name !! Description !! Initial Value !! Confidence !! Reference
+|-
+|width="100"| AHL || Acyl Homoserince Lactone representing the prey molecule || Concentration Range varying between 0nM and 10uM|| known || links
+|-
+|width="100"| GFP || Green Fluorescent Protein to act as PoPs || 0 || to be measured || links
+|}
+
+{| border="1" width="100%" 
+| style="background:lightblue" colspan="5"| '''Parameters'''
+|- style="background:lightgrey"
+! Name !! Description !! Value !! Confidence !! Reference
+|-
+|width="100"| a || population-dependent || ? || to be extracted using experimental data || links
+|-
+|width="100"| a<sub>0</sub> || constant || ? || to be extracted using experimental data || links
+|-
+|width="100"| d<sub>GFP</sub> || degradation constant due to GFP degradation (Half-life 45min.) || ? || to be extracted using experimental data || links
+|}
+
+==Dynamical and sensitivity analysis==
+
+N/A
+
+==Characterization==
+*Describe how you plan to use the modelling to characterize the part

@@ -1,0 +1,118 @@
+==1. Designing Primers to Make a New Biobrick==
+
+===Basics of primer design===
+
+Apologies if I am insulting anyone's intelligence, but I am getting a lot of requests for primer synthesis which show some basic misunderstandings. So, let's start at the beginning.
+
+In living organisms, '''DNA is double stranded'''. There are two strands running '''anti-parallel''': that is, the 5' end of one strand corresponds to the 3' end of the other strand. However, since the sequence of one strand can be absolutely predicted from the sequence of the other, it is usual to write only one strand, which is '''always written from 5' to 3''''.
+
+'''Example'''
+
+The sequence written as
+
+ATGCGCTCCCTGGAACCC...CGTGCCGGGCCCAAACCGTGA
+
+actually means
+
+5'-ATGCGCTCCCTGGAACCC...CGTGCCGGGCCCAAACCGTGA-3'
+
+3'-TACGCGAGGGACCTTGGG...GCACGGCCCGGGTTTGGCACT-5'
+
+The exception to this is oligonucleotide primers, which are single stranded and are always written from 5' to 3'. To amplify a gene by PCR, you need a '''forward primer''' and a '''reverse primer''': ie two primers corresponding to the two strands of the DNA and pointing towards each other. For example, to amplify the gene shown above, the forward primer could be:
+
+5'-ATGCGCTCCCTGGAACC-3'
+
+and the reverse primer could be:
+
+5'-TCACGGTTTGGGCCCGGCAC-3'
+
+Make sure you understand where this reverse primer sequence came from before you read further!
+
+===How long should the primers be?===
+
+Generally, for bacteria, the complementary parts (ie the parts which match the target sequence) should be about 17 to 20 bases long. The primers may also have non-complementary 'tails' '''at the 5' end (the 3' end must match the target sequence perfectly for proper extension)'''. These tails can include restriction sites such as the Biobrick prefix and suffix.
+
+===Are there any other constraints?===
+
+To ensure good binding at the 3' end, which will be extended, it is generally a good idea if the 3' end of your primer has one or two G or C bases, since these form tighter bonds than A or T bases. Also, try to avoid long stretches of A/T or G/C in the primer, if possible; try to get a good mixture of the 4 bases, since the primer is then less likely to mis-anneal at the wrong site. You should also avoid sequences with a high degree of secondary structure, or which can form primer-dimers. This is material from the advanced course in primer design, but most oligo-design programs, ordering sites etc. will warn you if your primer has these characteristics.
+
+Having said all this, when designing primers for biobricks, you often don't have much choice about where to put them.
+
+===The Biobrick prefix and suffix===
+
+These are described [http://parts.mit.edu/registry/index.php/Help:BioBrick_Prefix_and_Suffix here]. To summarise, the prefix is:
+
+gaattc gcggccgc t tctaga g
+
+consisting of an EcoRI site, NotI site, extra t base, XbaI site, and extra G base. This should be added '''at the 5' end''' of your forward primer. There is an important exception to this. If the biobrick is a coding sequence, you should leave off the last two bases of the prefix shown, so that the final A of the XbaI site is provided by the A of the ATG start codon. The reason for this is to reduce the distance between the ribosome binding site (which you will have to add) and the start codon. For example, to convert the forward primer shown above into a biobrick forward primer, you would add the coding sequence prefix to get
+
+gaattc gcggccgc t tctag ATGCGCTCCCTGGAACC
+
+(note that there is no difference between capital and small letters - this is just to distinguish the prefix from the complementary part of the primer).
+
+The suffix, as shown in the Registry help page, is:
+
+t actagt a gcggccg ctgcag
+
+consisting of a T base, SpeI site, extra A base, NotI site, and partially overlapping PstI site. '''BUT NOTE: although it is not indicated, this is the sequence from 5' to 3' that will be present in the final product! This is NOT the sequence you need to add your primer!''' You need to add the complement of this sequence:
+
+ctgcag cggccgc t actagt a
+
+Thus, to make a Biobrick primer of the reverse primer shown above, the proper sequence is
+
+ctgcag cggccgc t actagt a TCACGGTTTGGGCCCGGCAC
+
+Actually, there is one more thing to bear in mind here. The Registry recommends that coding sequence biobricks should end in TAA TAA, rather than TGA as this one does. So your final primer should actually be:
+
+ctgcag cggccgc t actagt a tta ttACGGTTTGGGCCCGGCAC
+
+Make sure you understand why before you design your own primers!
+
+===Requirements for direct restriction digestion of PCR products===
+
+OK, so now you have your biobrick primers ready to order, right? Not so fast! There are two more important points to consider.The first is this: you are probably planning to digest your PCR product with restriction enzymes and insert it into a suitable vector such as pSB1A3, using a permissible pair of restriction enzymes such as EcoRI/SpeI, EcoRI/PstI, or XbaI/PstI. If so, you need to bear in mind that '''most restriction enzymes will NOT cut a site which is right at the end of a DNA fragment'''. They require a few extra bases in order to bind well to the DNA. These bases must be added to the 5' end of your primer. The bases you add do not matter; only the number of bases added matters. Different enzymes have different requirements in this regard. According to the Technical Appendix in the Promega catalog, 2006, page 353, the details for relevant enzymes are as follows:
+
+*EcoRI: requires at least 2 extra bases for good cutting.
+*PstI: requires at least 3 extra bases for good cutting.
+*SpeI: does not require extra bases, will happily cut right at the end (but I would add a couple of bases just to be safe).
+*XbaI: requires at least 2 extra bases for good cutting.
+
+So, if you wanted to use EcoRI/PstI to insert your PCR product into the vector, you should include an extra 2 or more bases at the 5' end of the forward primer, and at least 3 bases at the 5' end of the reverse primer.
+
+But wait, why would you want to do this? Either EcoRI/SpeI or XbaI/PstI would work fine, and then you would not need to add extra bases to both primers, only to one. In fact, come to think of it, you could make one primer a whole lot shorter by leaving out the site you don't want to use. So, in the example above, if you wanted to insert as EcoRI/SpeI, you could use the primer pair:
+
+forward: at gaattc gcggccgc t tctag ATGCGCTCCCTGGAACC
+
+reverse: ct actagt a tta ttACGGTTTGGGCCCGGCAC (note, I have included a couple of extra bases before the SpeI site, just to be safe).
+
+Or, if you wanted to insert as XbaI/PstI, you could order:
+
+forward: gc t tctag ATGCGCTCCCTGGAACC
+
+reverse: att ctgcag cggccgc t actagt a tta ttACGGTTTGGGCCCGGCAC
+
+Of course, primers are so cheap now that you may feel it is not worth cutting this particular corner, especially if you think you might want to use the primers later for a PCR strategy to combine biobricks.
+
+But wait again: couldn't you make both primers shorter by leaving off both the EcoRI site and the PstI site, and inserting as XbaI/SpeI? No, you couldn't. XbaI and SpeI generate compatible sticky ends, and intramolecular ligation is much more efficient than intermolecular ligation, so you would probably get a very high degree of vector recircularization and insert circularization, and a very low level of insertion, leading to few or no transformants (yes, OK, you could use alkaline phosphatase on your vector, but you can't use it on both vector and insert - there have to be some 5'-phosphates somewhere for ligation to occur). BUT, you can achieve the same effect (except in coding sequence biobricks) by using a SacI site at the 5' end, overlapping the XbaI site. This is the strategy used in our Edinbrick vectors, described below.
+
+All of the above assumes that you are planning direct cloning of your PCR product into a biobrick vector. If you are planning to initially clone your PCR product into a specialised PCR cloning vector such as pGemT (Stratagene), and then cut it out and insert it into a biobrick vector, you do not need extra bases on the end, since the PCR cloning vector will supply them.
+
+===Benefits of adding an extra SacI site overlapping the XbaI site===
+
+What I want to point out here is the possibility of designing a primer with a SacI site (GAGTCT) overlapping the XbaI site of the biobrick prefix, so that the prefix runs:
+
+nnnngaattcgcggccgcttctagag ctc nnnnn
+
+Note that this does not in any way interfere with the required prefix sequence; biobricks incorporating such a SacI site are fully compliant (but note that this cannot be done for coding sequences, for which the prefix must overlap the ATG of the start codon).
+
+What is the advantage of this? Mainly that you don't have to include either a full prefix or a full suffix on your forward and reverse primers, provided that the sequence you intend to clone contains no internal SacI sites. Your prefix can be as short as: nnGAGCTC and your suffix as short as nnACTAGTA. You can then digest your PCR product with SacI/SpeI and insert it into a vector which will provide the rest of the required sites to make a fully compliant biobrick. We have prepared a series of such vectors based on pSB1A2, containing marker genes which can be excised and replaced with the PCR product. These are:
+*Edinbrick1: contains lacZ', which generates a blue pigment in lacZ-delta-M15 hosts such as JM109 in the presence of IPTG and Xgal (best for general use)
+*Edinbrick2: contains xylE, which generates a yellow pigment in the presence of catechol (for use when your biobrick has LacZ activity)
+*Edinbrick3: contains idoA, which generates a blue pigment with no chromogenic substrate required (in the current version activity is so low that it takes 2 days for colour to develop, so not that useful, but we may make a better version, which will save on Xgal and not require a special host)
+*Edinbrick4: contains both lacZ' and xylE.
+
+Another potential advantage is that the SacI sites are preserved during the Biobrick combination process. This means that if you have a complicated composite biobrick made up of parts with SacI sites, you can digest with SacI and run on a gel to generate a ladder of the individual parts, to check sizes. This provides an easy way of checking that you have what you think you have without sequencing (eg, if you have just revived a clone from the freezer and want to check that it really is what it says on the label).
+
+Edinbrick2 has already been deposited in the Registry as BBa_J33204, so should be on the iGEM2007 plates. We will be happy to supply any or all of the others on request. Next step is to make better versions in pSB1A3 and other suitable vectors.
+
+[[French_Lab|Back to main page]]

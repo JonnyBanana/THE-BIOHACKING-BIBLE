@@ -1,0 +1,157 @@
+'''[[Image:PlasmidInventory IGEM2005.xls|Excel File of Inventory]]''' 
+===Strains===
+[http://www.neb.com/nebecomm/tech_reference/restriction_enzymes/ecoli/strains_add.pdf E.coli Strain Genotypes]
+# NB115 (pCT-4-4-20) -- 7.02 -80°C
+# NB116 (pCT302 S101A) -- 7.02 -80°C
+# NB118 (pCT-4M5.3) -- 7.02 -80°C
+# MC4100
+#*Genotype: F- araD139 delta(argF-lac)U169 prsL150 relA1 deoC1 rbsR fthD5301 fruA25 lambda-  [http://www.atcc.org/common/catalog/numSearch/numResults.cfm?atccNum=35695 [s]]
+
+===Plasmids===
+[[../Plasmid Info/]]
+# pSB1AK3-1 -- as plate, to be made into glycerol stock thursday 
+# pSB1AC3-1 -- ditto
+# pSB1AT3-1 -- ditto
+# pSB2K3-1  -- ditto 
+# [[Image:PCT302.pdf|pCT302 map]] 
+# [[../PCT302 (aka pCT-4-4-20)/]]-- 7.02 4°C
+# [[../PCT302 S101A/]] -- 7.02 4°C
+# [[../PCT-4M5.3/]] -- 7.02 4°C
+
+===PCR Amplification===
+
+#Spin PCR purification kit ()<br>
+#Platinum, TAQ polymerase (DNA polymerase for PCR)<br>
+#DNTP mix (25mm ea. dntp) (nucleotides for PCR)<Br>
+
+===Agarose gels===
+
+#Agarose 100g	(pouring gels)<br>
+#10X TAE buffer (pouring/running gels)<br>
+#1 kb DNA ladder 250µg  (molecular weight standard)<br>
+#Ethidium Bromide Solution (10mg/mL) (staining DNA)<br>
+		
+===Cutting/joining DNA fragments===
+
+#EcoR1 10,000 u (Restriction Enzyme)<br>			
+#PstI 10,000 u (Restriction Enzyme)<br>				
+#SpeI 2500 u	(Restriction Enzyme)<br>	
+#Xba1 3,000 u	(Restriction Enzyme)<br>				
+#T4 DNA Ligase 100,000un  (Ligating DNA fragments)<br>
+
+===Purifying DNA===
+#Spin Plasmid Kit, Mini(for minipreps)<br>			
+#Gel Extraction Kit 50  (purifying from gel slices)<br>		
+#Spin PCR Purification Kit (purifying PCR products)<br>
+
+===Microbiology supplies===
+# LB amp -- Cold Room
+# Amp stock -- -20 Fridge
+#VWR Petri Dish (100x15mm, case of 500) (for pouring plates)<br>		
+#Test Tube, Culture (Polystyrene, 12x75, case of 1000)	(special tubes for FACS)<br>
+
+
+===Bio Bricks===
+'''pSB1AT3-1'''
+# <b>BBa_J07012</b> scFv anti-fluorescein [4-4-20]
+# <b>BBa_J07013</b> scFv anti-fluorescein [S101A]           
+# <b>BBa_J07014</b> scFv anti-fluorescein [4M5.3]
+# <B>BBa_J07017</b> FecA protein (full length)
+'''pSB1AC3'''
+# <b>BBa_J07021</b> FecR
+# <b>BBa_J07022</b> FecI
+'''pSB1AK3'''
+#<b>BBa_J07043</b> J07012.B0015 scFv4-4-20.TT 
+#<b>BBa_J07044</b> J07013.B0015 scFvS101A.TT
+#<b>BBa_J07045</b> J07014.B0015 scFv4M5.3.TT
+
+====Miniprepped DNA====
+#R0053 -- Amp -- KBlab -- 4°C
+#R0040 -- Amp -- KBlab -- 4°C
+#R0011 -- Amp -- KBlab -- 4°C
+#[[../Quad part inverters/]]
+#E0420 -- Amp -- KBlab -- 4°C
+#E0430 -- Amp -- KBlab -- 4°C
+#E0840 (rbs:gfp:term)
+#B0015 (term)
+#R0040 (tetR promoter)
+#R0011 (lacI regulated promoter)
+#B0030 (Strong RBS)
+#J13002 (R0040.B0034)	
+
+====Streaked out on a plate====
+#I0500 (pBad/AraC promoter)
+
+====Ordered as Stabs====
+#R0010
+#R0051
+#J04500
+#I1030
+#I1031
+#I1032
+#I1033
+
+====Assemblies Ordered from Registry====
+note: the registry probably will not make these in any reasonable time frame. We need to make them ourselves. 
+#J07036
+#J07037
+#J07038
+#J07039
+#J07040
+#J07041
+#J07042
+
+
+===Planning/Building Bio Bricks===
+# <b>BBa_J07005</b> [msr] E.coli JM83 alkaline phosphatase gene (PhoA) <font color=grey size=1>1416 bp</font>
+# <b>BBa_J07006</b> [tmp] malE  <font color=grey size=1>1191 bp</font>                                            
+# <b>BBa_J07007</b> [reg] ctx promoter  <font color=grey size=1>145 bp</font>
+# <b>BBa_J07008</b> [tmp] ToxR w.t. (from Vibrio Cholarae, aa's 1-294)  <font color=grey size=1>1160 bp</font>
+# <b>BBa_J07009</b> [reg] ToxR' (aa's 1-210)  <font color=grey size=1>630 bp</font>
+# <b>BBa_J07010</b> [reg] ToxR inner (aa's 1-198; cytoplasm + TM) <font color=grey size=1>594 bp</font>
+# <b>BBa_J07011</b> [rpt] ctx promoter :: gfp reporter	<font color=grey size=1>871 bp</font>
+
+===Primers===
+====Specified:====
+Please click link in order to see [[../Sequences of primers specified/]]. They consist of the following:
+
+====Ordered/Received:====
+*Not completely or not received primers are listed in <i>italics</i>
+#<b>scFv</b> fwd, rev 
+#<b>FecA</b> fwd, rev, mid-fwd, mid-rev
+#<b>FecA promoter</b> fwd, rev
+#<b>MalE</b> fwd, rev 
+#<b>PhoA</b> fwd, rev, mid1-fwd, mid1-rev, mid2-fwd, mid2-rev
+#<b>FecI</b> fwd, rev
+#<b>FecR</b> fwd, rev, mid-fwd, mid-rev
+#<b>ToxR ATCC</b> fwd, rev
+#<b>''Linker''</b> fwd1, rev1, fwd2, rev2, rev3, 
+#<b>scFv fwd flag test</b> (for introducing a start codon)
+#<b>FecA knockout with Tetracycline marker</b>
+#<b>Fur knockout with Chloramphenicol marker</b>
+#<b>FecA promoter</b> Reverse, version2
+#<B>''Fusion''</b> 
+ <u>Arrived: 8/4/2005</u>
+ fwd & rev138
+ fwd & rev155
+ fwd & rev176
+ fwd & rev178
+ fwd180
+ fwd & rev527
+ fwd & rev571
+ fwd & rev138-141
+ fwd & rev155-158
+ fwd & rev176-180
+ fwd & rev178-182 
+ fwd & rev180-184
+ fwd & rev521-529
+ fwd & rev523-531
+ fwd & rev527-531
+ fwd & rev567-576 
+ fwd571-574
+ <u>Arrived: 8/5/2005</u>
+ Rev180
+ Rev571-574
+
+
+(n.b: "mid" refers to primers intended to introduce point mutations to take out restriction sites in our parts)

@@ -1,0 +1,19 @@
+It is very easy to run background processes on Linux boxes without causing inconvenience to others. Every process is assigned a priority level which on Linux ranges from -20 to 20, with the default level being 0. Although it might seem a bit backward, -20 is actually the highest priority a process can have, while 20 is the lowest. To control process priority, you use the "nice" and "renice" commands.
+For example:
+ $ nice -n 20 ./mysimulation args
+Otherwise, if you want to renice a process which is already running:
+ $ renice 20 pid
+where pid is process id of the program you are running.
+
+----
+
+If you want your simulations to run even after you log out, use nohup:
+ $ nohup mysimulation args &
+Another option is to use screen. It is a full-screen manager that multiplexes physical terminal between several processes.
+To start a process using screen:
+ $ screen mysimulation
+To detach the process window and switch back to shell, type C-a d (press and hold <Ctrl>, hit <a>, release both and hit <d>).
+If you want to get back to your program (say to check output), then simply reattach:
+ $ screen -r
+You can get more info from screen manual page:
+ $ man screen

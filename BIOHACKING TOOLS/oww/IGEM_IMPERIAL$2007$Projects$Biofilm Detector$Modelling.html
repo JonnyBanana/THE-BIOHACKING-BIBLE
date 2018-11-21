@@ -1,0 +1,194 @@
+=Infector Detector: Modelling=
+__NOTOC__
+
+<div class="tabs-blue">
+<ul>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector|Introduction]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Specifications|Specifications]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Design|Design]]</li>
+<li id="current">[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Modelling|Modelling]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Implementation|Fabrication]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/TestingValidation|Testing]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Data Analysis|Data Analysis]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Validation|Validation]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Notes|Notes]]</li>
+<li>[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/References|References]]</li>
+</ul>
+</div>
+<br style="clear:both"> 
+
+==Overview of Modelling ==
+
+Welcome to our Portal Page for the modelling of Infector Detector.
+
+Infector Dectector (ID) is based on the Quorum Sensing Pathway and our aim in modelling of ID is to determine the concentration of AHL in biofilm we can detect such that we report a visible signal .We are looking at two constructs to emulate the quorum sensing pathway:
+
+
+{| cellspacing="5"
+|-valign="top"
+|width=50%| 
+
+<font size=+3>'''[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Modelling/Construct1|Construct 1]]'''</font>
+
+The main feature of this construct is that it constitutively expresses LuxR
+
+Here is what our construct looks like composed of biobricks
+
+[[image:ICGEMS_sys_Ptet_luxR_Plux_gfp.png|left|thumb|400px|Ptet promoting LuxR, Plux promoting GFP]]
+
+|width=50%|
+
+<font size=+3>'''[[IGEM:IMPERIAL/2007/Projects/Biofilm Detector/Modelling/Construct2|Construct 2]]'''</font>
+
+The main feature of this construct is that it does not constitutively expresses LuxR and therefore enables us to determine the initial concentration of LuxR
+[[image:ICGEMS_sys_Plux_gfp.png‎|left|thumb|200px|Plux promoting GFP]]
+
+<!--ROW 2-->
+|-valign="top"
+||
+
+Here is a Block Diagram Picture of how construct 1 will work
+
+[[Image: Biofilm-Construct 1.jpg|thumb|left|500px|Construct 1 - LuxR expressed constitutively]]<br clear = "all">
+
+||
+
+Here is a Block Diagram Picture of how construct 2 will work<br>
+
+[[Image: Biofilm-Construct_2.jpg|thumb|left|500px|Construct 2 - LuxR not expressed]]<br clear = "all">
+
+<!--ROW 3-->
+|-valign="top"
+||<!--CONSTRUCT 1-->
+Transient response of construct 1
+[[IMAGE: ID_transient_C1.jpg|thumb|left|500px|Construct 1 - transient response<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+
+[LuxR]o=0 ; [AHL]o=variable ; [A]o=0 ; [P]o=1 ; [AP]o=0 ; [FP]o=0  
+
+||<!--CONSTRUCT 2-->
+Transient response of construct 2
+[[IMAGE: ID_transient_C2.jpg|thumb|left|500px|Construct 2 - transient response<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+
+[LuxR]o=10 ; [AHL]o=variable ; [A]o=0 ; [P]o=1 ; [AP]o=0 ; [FP]o=0  
+
+|}
+
+*As can be seen from the above plots, construct 1 takes longer to reach steady state [FP], meaning that over the same time period it reaches a lower maximum value
+
+{| cellspacing="5"
+|-valign="top"
+|width=50%| 
+
+<!--ROW 4-->
+|-valign="top"
+||<!--CONSTRUCT 1-->
+Transfer function of system:
+*We have taken the inputs of our transfer function to be the AHL concentrationto be detected
+*We have taken the ouputs of our transfer function to be the [FP] at time , s= 1
+[[IMAGE:ICGEMS ID transfer C1 1.0.jpg|thumb|left|500px|Construct 1 - transfer function<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+*max output at s=1 is [FP]=0.2351
+*threshold (50% of max output) occours between : [AHL] = 0.5012 to 0.631
+
+||<!--CONSTRUCT 2-->
+Transfer function of system:
+*We have taken the inputs of our transfer function to be the AHL concentrationto be detected
+*We have taken the ouputs of our transfer function to be the [FP] at time , s =1 
+[[IMAGE:ICGEMS ID transfer C2.jpg |thumb|left|500px|Construct 2 - transfer function <br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+*max output at s=1 is [FP]=0.2812
+*threshold (50% of max output) occours between : [AHL] = 0.631 to 0.7943
+
+
+<!--ROW 5-->
+|-valign="top"
+||<!--CONSTRUCT 1-->
+Transfer function of system:
+*We have taken the inputs of our transfer function to be the AHL concentrationto be detected
+*We have taken the ouputs of our transfer function to be the [FP] at time , s= 0.5
+[[IMAGE:ICGEMS ID transfer C1 0.5.jpg|thumb|left|500px|Construct 1 - transfer function<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+
+||<!--CONSTRUCT 2-->
+Transfer function of system:
+*We have taken the inputs of our transfer function to be the AHL concentrationto be detected
+*We have taken the ouputs of our transfer function to be the [FP] at time , s =0.5 
+[[IMAGE:ICGEMS ID transfer C2.jpg |thumb|left|500px|Construct 2 - transfer function<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+
+<!--ROW 6-->
+|-valign="top"
+||<!--CONSTRUCT 1-->
+Advanced plot of transfer function:
+[[Image:ICGEMS ID tf C1 AHLvGFP(mesh).jpg|thumb|left|500px|Construct 1 - transfer function<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+*Transfer function at low [AHL] is the similar regardless of s
+
+||<!--CONSTRUCT 2-->
+Advanced plot of transfer function:
+[[IMAGE:ICGEMS ID tf C2 AHLvGFP.jpg |thumb|left|500px|Construct 2 - transfer function<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+*Transfer function at low [AHL] is the similar regardless of [LuxR]
+*Increase in [LuxR] allows increased in [AHL] sensitivity
+
+<!--ROW 7-->
+|-valign="top"
+||<!--CONSTRUCT 1-->
+[[IMAGE:ICGEMS ID tf C1 3D2(mesh-grid).jpg |thumb|left|500px|Construct 1 - transfer function<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+*Interesting point: at low [AHL], only little s is required to give maximum GFP output
+
+||<!--CONSTRUCT 2-->
+[[IMAGE:ICGEMS ID tf C2 3D1(mesh-grid).jpg |thumb|left|500px|Construct 2 - transfer function<br><font color="red">Where is the source vode for this graph? Please upload it.</font>]]<br clear = "all">
+*Interesting point: at low [AHL], only low [LuxR] is required to give maximum GFP output
+
+<!--ROW 8-->
+|-valign="top"
+||<!--CONSTRUCT 1-->
+
+||<!--CONSTRUCT 2-->
+
+
+|}
+
+As can be seen from the plots above the the threshold moves according to the level of LuxR.  Looking at our plots we can see that at time, s=0.5 the threshold is different for construct 1 to construct 2
+
+==17.08.07 Modelling General Concerns==
+
+For protocols to figure out :
+#Degradation terms:GFP,LuxR,AHL - want expt to find delta as a function of chassis
+#*''If we put protease inhibitors in the mixture and can we assume negligible degradation for GFP and luxR, not sure about AHL have to look in literature for that.''
+#What is the visual threshold of [GFP] - want expt to find this
+#*''Do you need to do it for GFP or just for the final reporter used, which is dsRED''
+#What is the concentration of promoters - is this chassis dependant ?
+#*''You know - the weight of DNA added, and the mass of each plasmid. Knowing that there is only one promoter on each plasmid, you can calculate the concentration of promoters.''
+#Activation/Response Time of Plux (F2620)?
+#*''You might want to check the part [http://parts.mit.edu/registry/index.php/Part:BBa_F2620 F2620], not sure if the information is useful, or valid for ''in vitro''.''
+(Protocols) Construct 1 specific:
+#What is the lifespan of the whole system?
+#Can we get steady-stateof LuxR? - When will this happen ? - Before cell dies ?
+#Having reached steady state is there enough E left to express [GFP]
+(Protocols) Construct 2 specific:
+#Can we obtain purified LuxR to be injected into System - protocol for prep of LuxR
+#Protease inhibitors available?
+#*''Yes, in homemade extract. For commercial extract, still waiting for reply from promega.''
+#How long will it take to get construct 2 ready ?
+#*''Week 8, earliest (unfortunately)''
+
+For modelling to figure out :
+#K-values for rxn pathway
+#*''k5/k4 = 5*10<sup>-10</sup>M [source: pmid=17400743]''
+#Response of Biofilm : Is [AHL] constant ?
+#Simulation of [LuxR] vs. Time
+
+==Concentration of LuxR for construct 2==
+At equilibrium:
+<math> [A][P] = K_D[AP] </math><br>
+Let us assign initial concentrations as [A<sub>0</sub>] and [P<sub>0</sub>]
+<br>We want to have n% of the promoters bound, thus [AP] = n[P<sub>0</sub>]
+
+<math> ([A_0]-n[P_0])([P_0]-n[P_0]) = nK_D[P_0] </math><br>
+<math> [A_0]-n[P_0] = \frac{n}{1-n}K_D </math><br>
+<math> [A_0] = \frac{n}{1-n}K_D+n[P_0] </math><br>
+Substituting 0.1nM for K<sub>D</sub> and 0.1nM for [P<sub>0</sub>], and let ''n'' be 95%...<br>
+The concentration of A<sub>0</sub> required is 2nM.<br>
+Knowing that at eqm:<br>
+<math> [AHL][LuxR] = K_D[A_0] </math><br>
+<math> ([AHL_0]-[A_0])([LuxR_0]-[A_0]) = K_D[A_0] </math><br>
+<math> [LuxR_0] = \frac{K_D[A_0]}{[AHL_0]-[A_0]} + [A_0] </math><br>
+The concentration of AHL<sub>0</sub> would be 50nM, K<sub>D</sub> would be 1nM.<br>
+The concentration of LuxR<sub>0</sub> required is ~3nM.<br>
+Note that the K<sub>D</sub> of AHL-LuxR is only an estimate and may be incorrect.

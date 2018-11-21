@@ -1,0 +1,50 @@
+Code for parsing OMIM, transposed from the 20 March notebook.
+
+<pre>
+from Bio.EUtils import DBIdsClient
+import xml.dom.minidom
+from xml.dom.minidom import parse, parseString
+
+# C-style struct to pass parameters
+class AllelicVariant:
+	pass
+
+# queries the database and returns all info in an XML format
+def omim_snp_search(dnsnp_id):
+	client = DBIdsClient.DBIdsClient()
+	query = client.search(dnsnp_id, "omim")
+	records = [i.efetch(rettype="xml") for i in query]
+	return records
+
+# basic text extraction from XML; based on http://docs.python.org/lib/dom-example.html
+def get_text(node_list):
+    rc = ""
+    for node in node_list:
+        if node.nodeType == node.TEXT_NODE:
+            rc = rc + node.data
+    return rc
+
+# extracts allelic variant data, as the name implies, using the struct above
+def extract_allelic_variant_data(str):
+	dom = parseString(str)
+	variants = dom.getElementsByTagName("Mim-allelic-variant")
+	if len(variants) == 0:
+		return
+	parsed = []
+	for v in variants:
+		a = AllelicVariant() # create empty instance of struct
+		# now populate the struct
+		a.name = get_text(v.getElementsByTagName("Mim-allelic-variant_name")[0].childNodes)
+		a.mutation = get_text(v.getElementsByTagName("Mim-allelic-variant_mutation")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+		a.description = get_text(v.getElementsByTagName("Mim-allelic-variant_description")[0].getElementsByTagName("Mim-text_text")[0].childNodes)
+		parsed.append(a)
+	return parsed
+	
+for i in omim_snp_search("rs11200638"):
+	v = extract_allelic_variant_data(i.read())
+	if v != None:
+		for a in v:
+			print a.name
+			print a.mutation
+			print a.description
+</pre>

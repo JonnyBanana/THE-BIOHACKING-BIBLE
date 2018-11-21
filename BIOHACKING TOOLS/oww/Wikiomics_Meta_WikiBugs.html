@@ -1,0 +1,29 @@
+__TOC__
+
+=== Bug reports ===
+
+Please report the bugs you found while using this wiki, either here or directly be emailing an [[Administrators|administrator]], thank you!
+
+* (none)
+
+=== Known bugs ===
+
+==== "regular expression too large" ====
+When you save a page, an error message like this appears:
+ Warning: preg_match() [function.preg-match]: Compilation failed: regular expression too large at offset 0 in /data/www/wikiomics/extensions/SpamBlacklist/SpamBlacklist_body.php on line 119
+This is because:
+# The blacklist is too long and should be split into fragments. This bug of older versions of SpamBlacklist.
+# Newer versions of SpamBlacklist are incompatible with the version of MediaWiki that we are using. We need to upgrade.
+# The source code of SpamBlackList is horribly written, in a horrible language (PHP), an I am not used to spend so much time for a so tiny fix.
+You must wait for the upgrade, which may not be simple.
+
+However, it still saves pages, so you can still use the wiki, although it's very unconvenient.
+
+Update: for now the quick fix was to use only the latest 1000 entries of the list (no, Iam not proud of it). It might not fight spam very well...
+
+==== Email not working ====
+Email confirmation, notification, etc seems to be broken at the moment.
+Please be patient...
+
+==== References disappearing ====
+Occasionally all the PubMed or ISBN bibliographic references disappear: this is due to temporary connection problems to one of these services. It should happen only when a page is updated. The solution is to wait until their service is back. If it lasts too long, complain to them or suggest an equivalent server.

@@ -1,0 +1,87 @@
+===General Information===
+ *'''Dates:''' March 19 - March 23, 2007.
+ *'''Final presentations:''' March 26, 1:30-3:00PM GH114
+
+ *'''Location:''' 
+ M-W, F: 9AM-12PM BH 211
+ TH: 9AM-12PM BH 212
+ M-F: 9AM-5PM N114
+
+ *Breakfast/coffee @845AM every day.
+ *Lunch @~12:30 in N114 every day.
+
+ *Contact
+ Jeff Tabor: jeff DOT tabor AT gmail DOT com
+ Howard Salis: howard DOT salis AT gmail DOT com
+
+===Schedule===
+[http://openwetware.org/images/e/e6/Schedule_2.pdf Schedule]
+
+===Groups===
+*1. Charles, Laura, Sheel (part #'s: J64700-J64799)<br>
+*2. David, Sai, Rebeca, Jeremy (part #'s: J64800-J64899)<br> 
+*3. Maya, Ryan, Reid, Kris(part #'s: J64900-J64999)<br>
+
+===Background Material===
+[http://www.openwetware.org/images/1/1c/ModelingGeneNetworks.pdf A Short Introduction to Modeling Gene Networks]
+
+===Links===
+[http://parts.mit.edu/registry/index.php/Main_Page MIT's registry of biological parts]<br>
+[http://ecocyc.org/ EcoCyc E.coli encyclopedia]<br>
+[http://das.hgc.jp/ KEGG DAS organism annotation database]<br>
+[http://genolist.pasteur.fr/Colibri/ Colibri E.coli genome browser]<br>
+[http://regulondb.ccg.unam.mx/ regulondb] <br>
+
+===Notes/Powerpoint===
+ '''Day 1'''
+ Lab: Specify an operon >5kb from the literature in the registry.  <br>
+ Parts:Specify each promoter, rbs, open reading frame and transcription terminator as a separate part<br>
+ Document the function of each part<br>
+ Document any subfeatures (i.e. -35, -10 sequence, operator sites, etc.)
+ Remove all EcoRI, XbaI, SpeI and PstI sites and annotate those mutations<br>
+ Initiate each ORF with an ATG and terminate with 2-consecutive TAA's <br>
+ (note: ribosome binding sites tend to have 5'-AGGA(N6-11)ATG-3' sequences around the start codon). <br> you don't have to document all of these unless they're obvious <br>
+ [http://openwetware.org/images/1/15/Tabor_day_1.ppt Jeff's day 1 slides]
+
+ '''Day 2'''
+ Lab: Design a synthetic gene expression system with XOR logic.  Use parts already in the registry or design your own <br>
+ Specify the system in the registry. <br>
+ Checkpoint @ ~4PM.  Teams will chalkboard nascent ideas and get feedback from instructors, other teams. <br>
+ [http://openwetware.org/images/b/ba/Jt_day_2.ppt Jeff's day 2 slides] <br>
+ [http://openwetware.org/images/f/f9/HowardsDayTwoSlides.pdf Howard's day 2 slides]
+
+ '''Day 3'''
+ Lab: Begin developing a model of your proposed synthetic gene network. Use the provided Matlab files as a starting point. <br>
+ [http://openwetware.org/images/3/33/Gene_SigmaFactors.m SigmaFactors.m]: Explore how changing the amounts of available sigma factor affect active RNA polymerase (Holoenzyme) numbers. <br>
+ [http://openwetware.org/images/4/4c/BasalExpression.m BasalExpression.m]: Determine the effects of the number of active sigma factors and genome competition on basal gene expression. <br>
+ [http://openwetware.org/images/4/42/Gene_Basal.m Gene_Basal.m]: A template of a function describing the basal expression of a gene. <br>
+ [http://openwetware.org/images/b/b9/Gene_Repression.m Gene_Repression.m]: A template of a function describing the repressed expression of a gene (with two overlapping, repressor-binding operators with possible cooperativity). <br>
+ [http://openwetware.org/images/8/8c/BistableSwitch.m BistableSwitch.m]: A template of a system of ordinary differential equations describing the bistable toggle switch (a system of two genes, each producing a repressor that represses the other gene.) <br>
+
+ '''Day 4'''
+ 12:30: Lunch GH 114
+ 1:30: Checkpoint.  Teams chalkboard project status and receive feedback from instructors/other students.
+
+ '''Day 5'''
+ 12:30: Lunch GH 114
+ 1:30: Checkpoint.  Teams chalkboard project status and receive feedback from instructors/other students.
+
+===Final Presentation/Rubric===
+[http://openwetware.org/images/8/80/Teamchallenge.ppt Powerpoint guideline for final presentation]
+
+===References===
+*Elowitz and Leibler, Nature. 2000
+*Gardner et al., Nature 2000
+*Guet et al., Science 2002
+*Yokobayashi et al., PNAS 2002
+*Kobayashi et al., PNAS 2004
+*Basu et al., PNAS 2004
+*Isaacs et al., Nat. Biotechnol. 2004
+*Endy, Nature 2005
+*Basu et al., Nature 2005
+*Chan et al., Nature/EMBO MSB 2005
+*Levskaya et al., Nature 2005
+*Anderson et al., JMB 2005
+*Bayer and Smolke, Nat. Biotechnol. 2005
+*Rackham and Chin, Nat. Chem. Biol., 2005
+*Posfai et al., Science 2006.

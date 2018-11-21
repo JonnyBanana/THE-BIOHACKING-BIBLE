@@ -1,0 +1,75 @@
+{{Template:Maloof Lab}}
+{| cellspacing="2px" cellpadding="0" border="0" style="padding: 0px; width: 700px; color: #000000; background-color: #ffffff;"
+|-valign="top"
+|width=750px style="padding: 15px; background-color: #ffffff; border: 2px solid #F8B603;" |
+
+<h3><font style="color:#F8B603;">Instructions for using the LI1800 light meter</font></h3>
+----
+
+
+It is important to have the batteries of both the LI1800 and the laptop charged before starting. If not, the LI1800 meter will delete it’s calibration file and will not be able to measure accurately. The computer will simply not be able to start running. Therefore is most important to make sure to turn both devices off once you’re done.
+
+<b>To start measuring light</b>
+
+#Connect laptop and LI1800 sensor
+
+#Turn on laptop and exit windows (Alt+F) to DOS
+#Change directory to C:\LI1800 - <code>> cd LI1800</code>
+#Open pc1800 – <code>> pc1800</code>
+#Go to Terminal using the up and down arrows
+#Turn the light meter OFF when asked (if it was ON) and press enter
+#Turn the light meter ON when asked and press enter
+#When it finishes recognizing the terminal (It says it is OK) press Enter
+#When prompt FCT: write <code>SC</code> (for scanner)
+#File: <code>WHATEVER_NAME</code> (or hit Enter if you want to rewrite the last option)
+#REM – Reminder sentence (if none just press enter)
+#LO – <code>600</code> (min 300)
+#HI – <code>800</code> (max 1100)
+#SCANS for 1 press enter, for more type the number
+#when it finishes scanning the spectrum, press Esc
+
+<b>Option 1, Calculating the Red/Far Red ratio</b>
+
+#Go to Analize/Display
+#Go to List/Select
+#Move to WHATEVER_NAME file with the up and down arrow 
+#Press Enter to select the file and Esc to leave the menu
+#Go to Ratio
+#Go to Quantum (result in µmol m-2s-1(µE)) /no Quantum (result in W m-2)
+::	Numerator (RED)
+:::		High: <code>655</code>
+:::		Low: <code>665</code>
+::	Denominator (FAR RED)
+:::		High: <code>725</code>
+:::		Low: <code>735</code>
+#Press enter.
+#After annotating the result given in the screen press esc to begin again (Go to Terminal)
+
+<b>Option 2, Writing the Spectrum into a File</b>
+
+#Go to File Operations
+#Go to List/Select
+#Move to WHATEVER_NAME with the up and down arrow and press enter to select it
+#Press Esc when done
+#Go to Bin -> Text
+#Go to Quantum (result in umol m-2s-1) /no Quantum (result in W m-2). Now the files are in the computers folder C:\LI1800 with the extension .PRN
+#To copy the files into a 3 ½’’ inches diskette:
+#Select Quit to exit the PC1800 program
+#While in C:\LI1800, write in DOS promt: <code>>COPY WHATEVER_NAME.PRN A:</code>
+
+<b>Option 3, Deleting the Spectrum Files</b>
+
+It is a good practice to delete your files when done;
+
+In the C:\LI1800 folder of the computer
+#Go to File Operations
+#Go to List/Select
+#Move to WHATEVER_NAME with the up and down arrow and press enter to select it
+#Press Esc when done
+#Go to Delete and select YES with the left/right arrow keys when prompted
+#Press Enter
+
+In the C:\LI1800 folder of the computer
+#While in C:\LI1800, write in DOS promt: <code>> DELETE WHATEVER_NAME.PRN</code>
+
+|}

@@ -1,0 +1,74 @@
+* Add or delete the sections that you require.
+
+=Designing a Chemical Program using Chemical Organization Theory=
+'''Author(s): '''[[User:NaokiMatsumaru|Naoki Matsumaru]], [[User:Iguzutiu|Thorsten Lenser]], Thomas Hinze, Peter Dittrich
+<br> 
+'''Affiliations:''' Bio Systems Analysis Group, Institute of Computer Science, Friedrich-Schiller-University Jena <br>
+'''Contact:'''email: naoki@minet.uni-jena.de <br>
+'''Keywords:''' 'Reaction network analysis' 'Chemical computing' 'Qualitative analysis' 'Maximal independent set problem'
+
+[[Category:BioSysBio Keywords Reaction network analysis]] 
+[[Category:BioSysBio Keywords Chemical computing]]
+[[Category:BioSysBio Keywords Qualitative analysis]]
+[[Category:BioSysBio Keywords Maximal independent set problem]]
+
+==Background/Introduction==
+
+Behaviors of biological organisms are results of complex but orchestrated biochemical reactions.
+The complexity of the reaction network is the source of robustness and adaptability of the biological systems.
+When exploiting biochemical reaction systems for computation, however, that complexity hinders users to control and program the systems as desired.
+A small modification on the reaction may cause the system to enter unknown behavioral regions. 
+A major modification may exhibit little change in the global level.
+In order to harness the complexity,
+the gap between micro level (e.g., reaction rules) and macro level (e.g., chemotaxis behavior) has to be bridged.
+As a method to link these two levels, we would like to introduce chemical organization theory[[#References | [1]]].
+The utility of the theory is exemplified with a chemical program to solve the maximal independent set problem on an undirected graph.
+
+==Results==
+
+Given an undirected graph with <math>N</math> vertexes and <math>M</math> edges, a chemical program is designed as a chemical reaction network with <math>2N</math> molecular species and <math>2(M+N)</math> reactions as described in [[#Appendix|Appendix B]].
+There are <math>2N</math> species because two species are employed for each vertex to represent inclusion in or exclusion from the maximal independent set. 
+Applying the chemical organization theory, the reaction network is decomposed into overlapping sub-networks called '''organizations,''' sets of molecular species that are closed and self-maintaining.  The organizational structure embedded in the network can be visualized as a Hasse diagram.
+Focusing on the organizations constituted of <math>N</math> species, the configuration of the species in any of these organizations corresponds to a maximal independent set.
+A proof of the association between maximal independent sets and organizations of size <math>N</math> in the reaction network can be found in [[#Appendix|Appendix C]].
+
+==Case study==
+In this section, we show through a concrete example how the chemical organization theory benefits chemical programming.
+
+The problem instance is to find maximal independent set on an undirected graph with four nodes and four edges as shown in the leftmost figure.  Chemical reaction network (shown in the middle figure) is designed as described in [[#Appendix | Appendix B]].  The organzational structure of the reaction network is shown in the rightmost figure.  A detail description is provided when each figure is clicked.
+
+{|
+|-
+|[[Image:Graph-structure-mis-n04-01.png|thumb|150px|none|Example of an undirected graph with four vertexes and four edges.]]
+|[[Image:ReactionNets-structure-mis-n04-01-nets.png|thumb|none|Chemical reaction network to find maximal independent sets in the graph given as an example.]]
+|[[Image:Organizational-structure-mis-n04-01.png|thumb|none|Organizational decomposition of the reaction network programmed.]]
+|-
+|}
+
+==Conclusion==
+
+A chemical organization in a reaction network is defined as a set of molecular species that is closed and self-maintaining, induced only by the stoichiometry.
+In accordance with this notion, the reaction network is probed for the organizations and decomposed into overlapping sub-networks.
+The hierarchy of organizations provides a repertoir of dynamical behavior patterns of the reaction system in terms of molecular species present (qualitative state).
+This rather high level of abstraction is useful, especially, for designing reaction system with desired behavior.
+The analysis is suitable for biological applications because of its independence of the reaction kinetics.
+Furthermore, the organization may be attributed to a complicated reaction process, and thus the complexity of biological systems is embraced in it.
+The organization-oriented design of chemical program facilitates the exploitation of this complexity.
+
+The software tool for the organization analysis is developed in the Systems Biology Workbench framework and supports Systems Biology Markup Language.
+
+==Appendix==
+[[/Appendix|Appendix A: Chemical Organization Theory]]
+
+[[/AppendixB|Appendix B: Algorithm to design reaction network to solve the maximal independent set problem]]
+
+[[/AppendixC|Appendix C: Proof of exact association between maximal independent sets and organizations of size N]]
+
+==References==
+
+[1] P. Dittrich, P. Speroni di Fenizio: '''Chemical Organization Theory.''' ''Bull. Math. Biol.,'' 2006, (accepted)
+
+
+For further help on editing, please see [ http://en.wikipedia.org/wiki/Help:Editing here] 
+
+__NOTOC__
