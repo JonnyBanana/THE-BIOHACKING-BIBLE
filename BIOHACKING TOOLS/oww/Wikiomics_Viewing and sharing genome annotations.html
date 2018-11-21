@@ -1,0 +1,46 @@
+__TOC__
+
+== What's a Genome Annotation? ==
+
+Genome annotation is the assignment of some known or predicted biological function or experimental observation to a particular physical region of a genomic sequence. A region consists of a contiguous span along a nucleotide sequence from a genomic sequence assembly, marking the beginning and ending position of the annotation (or "feature") on the sequence. 
+
+For example, the [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=full_report&list_uids=351 APP gene] is located between nucleotides 26,465,00 and 26,175,00 on human chromosome 21. In this case, the APP [http://en.wikipedia.org/wiki/Genes gene] is an annotation on chromosome 21 of the human genome and it contains child annotations consisting of the individual [http://en.wikipedia.org/wiki/Exons exons], with their own genomic locations. Annotations can be nested to an arbitrary depth, so even the exons may contain child annotations (e.g., locations of splice site donors and acceptors). There are many types of genome annotations including gene regulatory regions, pseudogenes, transposons, repeat regions, and others.
+
+An annotation can also be derived from an experimental result, such as a gene expression signal that can be assigned to a region of genomic sequence based on a set of probes that detect transcription within that region, or genetic variations such as single nucleotide polymorphisms or copy number variations observed by sequencing a set of biological samples.
+
+Other classes of biological sequences besides assembled genomes can also be annotated, such as proteins or cDNA. The types of annotations assigned to protein sequences typically concern structural and functional aspects of the folded polypeptide and are not used for annotating  genomic sequences directly, though the locations of protein annotations can be mapped from the protein sequence into genomic sequence coordinates (more on coordinates below). This can be handy for certain kinds of sequence analysis and comparison.
+
+The [http://www.sequenceontology.org/ Sequence Ontology] provides a comprehensive framework for typing sequence annotations. It is one of the ontologies within the [http://obo.sourceforge.net/ Open Biomedical Ontologies] group.
+
+=== What are annotated genomes used for? ===
+* One can predict location of genes and other functional elements by comparing the genome sequences of two organisms to locate regions of homology and then transfer annotations from one to the other. 
+* Genome-wide expression data from different tissues or disease states can be compared to known annotations to obtain global gene activity patterns and identify potentially new genes, regulatory elements, and potential drug targets. 
+* Overlaying different types of annotations and experimental results on a genome sequence helps to integrate different data sets and gain new insights into the underlying biology. 
+* Cataloging the functional elements of completed genome sequences is an active area of investigation in and of itself (see the [http://www.genome.gov/10005107 ENCODE project]).
+* "Completed" genome sequences themselves continue to improve over time as gaps are closed and the sequence assembly becomes more complete. Mapping annotations from one genome assembly version to another is an ongoing effort.
+
+=== Coordinate Systems ===
+
+The beginning and ending positions of an annotation along a sequence are called its coordinates. A given biological sequence defines its own coordinate system, where numbering starts at the first nucleotide of that sequence (at either 1 or 0). The coordinates of a child annotation can be relative its parent's or grandparent's (or great grandparent's, depending on how deeply nested the annotation is) coordinate system. For example, the first exon of the APP gene could be given using the gene's coordinate system or the chromosome's coordinate system. So it's important to know the coordinate system being used for a given annotation. Sticking with a single coordinate system (the assembled chromosome) is often most convenient. 
+
+Coordinate systems may start numbering the nucleotides of a sequence at zero rather than one, though the standard used in the major public databases (GenBank, EMBL, DDBJ -- collectively known as the [http://www.ncbi.nlm.nih.gov/projects/collab/ INSD]) start numbering at one (a.k.a. "one-based"). The latest version of the DAS system described below uses a zero-based numbering system, described in more detail [http://biodas.org/documents/das2/das2_get.html#segment_ranges here].
+
+== Genome Browsers ==
+
+There are number of tools for browsing annotated genomic sequences. Here are the major ones:
+
+* [http://img.jgi.doe.gov/ DOE-JGI's IMG system]
+* [http://www.ncbi.nlm.nih.gov/mapview NCBI Map Viewer]
+* [http://genome.ucsc.edu UCSC Genome Browser]
+* [http://www.ensembl.org Ensembl]
+* [http://www.gmod.org/ggb Gbrowse]
+* [http://xgdb.sourceforge.net xGDB]
+* [http://www.broad.mit.edu/annotation/argo/ ARGO]
+* [http://manatee.sourceforge.net Manatee]
+
+== DAS: Distributed Annotation System ==
+
+The [http://www.biodas.org Distributed Annotation System] is a protocol for use by both producers and consumers of biological sequence annotations for the purpose of sharing annotations of public genome or protein sequences. A DAS-enabled browser application can permit users to view and compare annotations from multiple sources side-by-side, increasing the power of multiple data sets and permitting decentralized collaborations.
+
+== See Also ==
+[http://en.wikipedia.org/wiki/Genome_annotation#Genome_annotation Genome Annotation (Wikipedia)]

@@ -1,0 +1,16 @@
+== Technical overview ==
+
+Wiblio queries are made in the [http://www.json.org JSON] format. It is a simple format, which is easy to read and easy to edit. In addition, it is straightforwardly available in Javascript, and there are libraries for many programming languages.
+
+Wiblio takes a query (CGI argument "q") in the JSON syntax. The format of the different possible queries is changing and it is not documented yet. It returns some result which is either wrapped in a JSON data structure, or javascript code that performs a callback on the data, or is directly formatted into a target format (text, BibTeX, EndNote, ...).
+
+Possible sources that are currently accepted by wiblio: PMIDs, ISBNs, all the input formats accepted by [http://www.scripps.edu/~cdputnam/software/bibutils/ bibutils] (BibTeX, COPAC, EndNote, ISI, Medline, RIS and MODS XML) passed directly or as an uploaded file or as a URL.
+
+As a consequence, CiteULike collections can be processed directly by passing the corresponding URL in the BibTeX format.
+
+Wiblio can be used to convert one bibliography format into another, or just export it to a format which is ready for display, which is basically text or HTML.
+
+== Features that may be added soon ==
+
+* input in the [[biblio]] format
+* interface for adding stuff to a CiteULike collection (the problem of user authentication is being investigated)
