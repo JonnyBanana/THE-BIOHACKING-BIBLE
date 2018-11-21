@@ -1,4 +1,4 @@
-:collision: :collision: :collision: <h2>THE-BIOHACKING-BIBLE:collision: :collision: :collision:</h2> 
+ <h2>:collision: :collision: :collision: THE-BIOHACKING-BIBLE :collision: :collision: :collision:</h2> 
  
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
 
