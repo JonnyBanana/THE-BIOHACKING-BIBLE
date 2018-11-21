@@ -39,3 +39,11 @@ List of useful resources for Biohacking studies and operations:
 <h2></h2>
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/brain-hack.JPG)
+
+</BR>
+
+The repo will be updated about monthly, if you want to see the original list here you can find the original repo:
+
+https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE
+
+
