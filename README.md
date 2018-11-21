@@ -44,8 +44,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://pubchem.ncbi.nlm.nih.gov/">Open Chemistry Database</a>
 
-
-
+<a href="http://lab.wikia.com/wiki/Laboratory_Wiki">Laboratory Wiki</a>
 
 
 <h2>CRISPR</h2>
@@ -59,6 +58,9 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://biodesign.cc/2013/12/25/diy-incubator/">Incubator</a>
 
 <a href="https://hackteria.org/wiki/DIY_Incubator">Incubator2</a>
+
+<a href="https://www.instructables.com/id/Portable-Laminar-Flow-Hood/">Laminar Flow Hood</a>
+
 
 <a href="https://hackaday.io/project/3794/logs">Syringe Pump</a>
 
