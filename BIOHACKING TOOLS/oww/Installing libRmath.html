@@ -1,6 +1,0 @@
-This library allows you to access some of R's functionality from a C program. It took me all morning to install. The pre-compiled SuSE package for R does not include the standalone library, so I downloaded the source code for R and built it using configure/make, but I still found that the standalone library was not "standing alone". In the path /usr/local/lib64/R/include I found Rmath.h, the include file for the standalone, but the library libRmath.so, which should have been in /usr/local/lib64/R/lib, was missing. I found online a RedHat .rpm package that had it, so I installed that by downloaded it and double-clicking on the desktop. This opens zen-installer, which knows how to open .rpm files, and that did the trick. Then it said "installation successful", but I couldn't find the file, but it turns out that it was installed correctly into /usr/lib64/, so I could access all the functions by including the flags -lRmath and -lm into my gcc command. However, gcc still didn't know to look in /usr/local/lib64/R/include for Rmath.h, so I linked it to /usr/include/Rmath.h. Now all I have to do is put the two lines
-
-  #define MATHLIB_STANDALONE 1
-  #include <Rmath.h>
-
-at the top of my C code, and link with -lm and -lRmath, and I can access all the functions I want from R.

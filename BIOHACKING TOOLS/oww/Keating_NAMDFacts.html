@@ -1,8 +1,0 @@
-{{KeatingLabToolbar}}
-
-== NAMD ==
-Everyone is highly encouraged to post their findings about NAMD here.
-
-* When using custom Tcl boundary conditions (tclBC) and running NAMD in multi-processor mode, on certain platforms at random points the following type of error occurs while evaluating the tclBCScript: "FATAL ERROR: unknown floating-point error, errno = 4" or "FATAL ERROR: unknown floating-point error". I think this has to do with some strange platform-dependent Tcl interpreter bug and the fix is (as strange as it sounds) to use the +netpoll flag on the command line for NAMD (e.g. '~/bin/charmrun ~/bin/namd2 ++local +p2 +netpoll script.ctl').
-* Different reasons why immediately after solvation (in the first step), the energy is VERY large (i.e. 999999):
-** The protein or the solvent crosses the bounadry. For example, if a spherical boundary condition is specified and the protein is longer than the diameter of the sphere.

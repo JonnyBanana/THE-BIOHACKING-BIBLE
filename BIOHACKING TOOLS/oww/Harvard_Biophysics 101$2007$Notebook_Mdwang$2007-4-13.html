@@ -1,9 +1,0 @@
-'''Deliverable by April 19:'''
-Based on a list of rs ID's from the dbSNP search, return a list of gene loci and the cumulative percentage of mutation in the population for all disease related SNPs in that loci.
-
-'''Current Issues'''
-So unfortunately, the deliverable will not be met today.  I'm still having some issues determining exactly what sort of frequency data I should be trying to accumulate.  It seems as if genecards is the best source of allele frequencies, but I can't just sum those up because many of them are in the same haplotype.  [[http://www.genecards.org/cgi-bin/carddisp.pl?gene=BRCA1&search=brca1 Link here]] 
-
-Since brca1 is a pretty well studied gene, I looked at the hapmap data for it, but the allele frequencies output seems rather uninterpretable.  [[http://www.hapmap.org/cgi-perl/gbrowse/hapmap20_B35/?start=38449840;stop=38530994;ref=chr17;width=600;version=100;label=CYT:overview-gts:overview-mRNA-plugin:LD%20Plot;PairplotAnnotator.JPT=1;PairplotAnnotator.CHB=1;PairplotAnnotator.YRI=1 Link here]]
-
-The overall goal that I'm envisioning is some sort of metric that corresponds to the total frequency of all deleterious alleles in a particular gene, but maybe that's too ambitious.  Ideally, the "harmfulness" of a particular allele could be weighted by the relative risk or something similar, but I'm pretty sure that would be too ambitious.

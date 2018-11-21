@@ -1,9 +1,0 @@
-==From OS X to Ubuntu Linux==
-*Download and install a VNC client (e.g., [http://sourceforge.net/projects/cotvnc/ Chicken of the VNC]) on the Mac
-*Configure the VNC server to require the user to enter password and not to ask for a confirmation
-*Establishe an SSH tunnel from the client to the server using local port forwarding (in this case SSH connection is made to the same machine as the server is running on):
- $ ssh -L 5900:localhost:5900 username@server.tld
-*Set up a profile in Chicken of the VNC with the following settings:
-**Host: localhost
-**Display: 0
-**Password: the one specified in VNC server settings

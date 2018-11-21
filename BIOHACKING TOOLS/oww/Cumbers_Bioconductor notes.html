@@ -1,9 +1,0 @@
-There seems to be an error or something weird going on with bioconductor and smart vs curly quotes.
-
-This line below was written in MS word, where quotes appear normal, the code runs fine if copied and pasted into R.  However, if copied and pasted into an R script and then run from R, the two different types of quotes appear and you get a Syntax error.   Very strange. 
-
-solution: don't copy it into a script, or change to all smart quotes!
-
-p1=new("phenoData",pData=data.frame(sample=c(rep("normal",2),rep("treated",2)), day=c(“Jan-10-2006”,”Jan-11-2006”,”Jan-10-2006”,”Jan-12-2006”)),
-varLabels=list(sample=”description about what sample means”,day=”for example, date of the hybridization experiement”),
-varMetadata=data.frame(varNames=c("Sample",”day”)))

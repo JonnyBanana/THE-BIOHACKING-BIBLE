@@ -1,9 +1,0 @@
-*This [[:Image:Victor3PlateReaderDataProcessing.m|wrapper]] script will read in a text or .csv file of plate reader data and process the time course data.  It calculates and plots growth rates, fluorescent protein synthesis rates etc.  It requires each of the following function files:
-**[[:Image:BC-Platereaderread3.m|Platereaderread3.m]] - This function looks after importing the data.
-**[[:Image:Platereadersmooth.m|Platereadersmooth.m]] - This function looks after data smoothing (may require signal processing toolbox).
-**[[:Image:Absbackgroundsubtract.m|Absbackgroundsubtract.m]] - This function will subtract an absorbance background from experimental samples.
-**[[:Image:FPbackgroundsubtract.m|FPbackgroundsubtract.m]] - This function will subtract a fluorescence background from experimental samples.
-**[[:Image:AbsProcess.m|AbsProcess.m]] - Calculates growth rate based on the absorbance data.
-**[[:Image:FPBulkProcess.m|FPBulkProcess.m]] - Calculates GFP synthesis rates.
-**[[:Image:platereaderstats.m|platereaderstats.m]] - Calculates the mean and 95% confidence interval of each datapoint in a time course.
-Any problems or bugs in the above code (and there are bound to be some), contact [[Barry Canton]]
