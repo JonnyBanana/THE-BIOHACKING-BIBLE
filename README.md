@@ -4,6 +4,7 @@
  
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
 
+</BR>
 
 List of useful resources for Biohacking studies and operations:
 
