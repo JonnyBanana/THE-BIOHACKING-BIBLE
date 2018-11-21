@@ -101,7 +101,12 @@ List of useful resources for Biohacking studies and operations:
   <a href="http://www.the-odin.com">Odin</a>
   
 
-<h2>Various Articles</h2>
+
+<h2>Various Articles and Referencies</h2>
+
+<a href="http://parts.igem.org/Lux">Lux Operon</a>
+
+
 
 
 <h2>Videos</h2>
