@@ -38,8 +38,7 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Plasmids</h2>
 
-<a href="
-http://www.subtiwiki.uni-goettingen.de/wiki/index.php/List_of_plasmids">Plasmids-List</a>
+<a href="http://www.subtiwiki.uni-goettingen.de/wiki/index.php/List_of_plasmids">Plasmids-List</a>
 
 
 <h2>Shop</h2>
