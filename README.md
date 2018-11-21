@@ -28,7 +28,9 @@ List of useful resources for Biohacking studies and operations:
 
 
 <h2>Books</h2>
+
 <a href="https://www.amazon.com/BioBuilder-Synthetic-Biology-Natalie-Kuldell/dp/1491904291/ref=sr_1_10?s=books&ie=UTF8&qid=1542778035&sr=1-10&keywords=biohacking">Bio Builders</a>
+
 
 <a href="https://www.amazon.com/Biohacking-Manifesto-scientific-anti-aging-neuroscience-ebook/dp/B00X7CCNOY/ref=sr_1_6?s=books&ie=UTF8&qid=1542778035&sr=1-6&keywords=biohacking">The Biohacking Manifesto</a>
 
