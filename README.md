@@ -20,6 +20,8 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Bacteria</h2>
 
+<a href="https://openwetware.org/wiki/E._coli_genotypes">E. Coli Genotypes</a>
+
 <h2>Books</h2>
 
 <h2>CheatSheets</h2>
@@ -33,6 +35,8 @@ List of useful resources for Biohacking studies and operations:
 <h2>CRISPR</h2>
 
 <h2>DIY Lab</h2>
+
+<a href="https://hackaday.io/project/3794/logs">Syringe Pump</a>
 
 <h2>Github Resources</h2>
 
