@@ -12,7 +12,7 @@
 
 List of useful resources for Biohacking studies and operations:
 
-<h2>Associations</h2>
+<h2>Associations & Community Projects</h2>
 
 <h2>Bacteria</h2>
 
