@@ -1,0 +1,149 @@
+{{Template:20.109(F07)}}
+==Introduction==
+“Addition by subtraction” is a counterintuitive adage that holds true in a remarkable number of instances. Managers of sports teams have seen fortune turnaround after the departure of one problematic or disruptive player. Cooks find some recipes tastier once some overwhelming or incongruous ingredient is removed. Simplification has benefits but looking around, the living world appears far from simple. Biology does not seem to conform to unifying principles such as E=mc^2 or Boyle’s Law. There are a few rules that hold true of all organisms (they evolve, they use energy, they’re made of cells) but what the science of biology explores is the awesome diversity of the living world. Survival is a challenge and cells have evolved complex responses to meet the demands. Even a superficial examination of existing genomes reveals content that influences the cell’s existence only some of the time, for example genes to express when food is scarce, genes for protective proteins if temperature or salts rise, genes that respond to viral attacks. Genomes also carry the history of such challenges. Even single celled organisms like <i> E. coli </i> bear scars such as integrated cryptic phage, transposon sequences that once hopped but are now frozen, and damaged genes that have functional duplicates elsewhere in the genome. Genomes are complex historical artifacts that continue to exist and react in instructive and interesting ways. 
+
+Whole-genome sequence information is being used for both bottom up and top down re-engineering of cells. In a bottom up approach, the genetic components for a “minimal cell” would be specified and built from raw chemicals. Success in this endeavor would confirm a complete genetic “parts list” that enables life to exist in a given environment. Success would also require a precise definition of life (think back to your Module 1 editorial work). In a top down approach, existing cells would be paired down to their minimal genetic content, revealing sequences that are non-essential under a defined set of conditions. Further examination of such “deletion strains” would reveal responsive but often-unnecessary functions encoded by the genome as well as the redundant features that may have arisen in response to the cell’s evolutionary history. Such deletion strains could also open up genetic “real estate” to add novel functions to cells. 
+
+It’s no trivial effort to build cells either by composing from chemicals up or by paring existing cells down. Gene prediction programs are flawed and modifications to genomes can have unexpected detrimental effects. Yet as sequence information becomes available for whole-genomes from related species, it’s possible to compare related bugs and make some guesses about which G's, A's, T's, and C's must stay and which might go. [[Image:Fig1 MDS Sci06.png|left|150 pixels]]This is precisely the approach taken by Fred Blattner and colleagues in their [http://www.sciencemag.org/cgi/content/abstract/312/5776/1044  2006 paper]. Beginning with the 4,639,675 base pair genome of an <i> E. coli  K-12</i> strain called [http://www.genome.wisc.edu/resources/strains.htm MG1655], the researchers identified ~100 regions that were present in MG1655 but were absent in 5 other closely related <i> E. coli </i> strains. Using a specialized recombination method called [http://rothlab.ucdavis.edu/protocols/Lin.Transform.html  “lambda Red”] that can precisely excise sequences without leaving scars, MG1655 was systematically reduced to give strains anywhere from 8 to 15% of their original size.  These new strains are called MDS, for “multiple deletion strains.” You will be working with MDS12, 41, 42, and 43 as well as an unpublished deletion strain, MDS-60 (gift from Fred Blattner), today. 
+
+Characterization of the deletion strains showed some surprising things. The most extreme deletions gave rise to bacteria that could take up exogenous DNA more efficiently (remember the transformation efficiency measurements you did in the first experimental module!), that could maintain plasmids seen to be unstable in other bacterial hosts, and that spontaneously mutated ~20% less often. These emergent properties of the reduced genomes provide a genetic example of “addition by subtraction” and a useful foothold for our follow up experiments with our redesigned M13.
+
+You’ll work on two simple math problems for today: First, you’ll add a redesigned M13 to one of the lab’s collection of deletion strains so that next time you can titer the phage from the supernatant of these strains. Second, you’ll peel away portions of a slide’s surface coat so that next time you can add phage nanowires to the places where the coat remains. The slide’s coats are ITO ([http://www.cerac.com/pubs/proddata/ito.htm  “indium tin oxide”]), which is a transparent conductive material. Eventually, the ITO will serve as the electrodes of our phage-based electrochromic device (preview the device architecture [http://openwetware.org/wiki/Image:ECD_off.png here])
+
+==Protocols==
+===Part 1: Pattern for phage deposition===
+There are two dangerous parts in today's lab. You will be working with an Exact-O knife to carefully cut a pattern onto your slide. These knives are <b> extremely sharp </b> and everyone should show the greatest care in handling these or you will end up at MIT medical. The second danger is the <b>concentrated acid treatment </b> needed to pattern the slides. You must, must, must wear lab coat, closed-toed shoes, gloves (perhaps double gloves), and goggles when you are dealing with the HCl, HNO3 solution. In today's lab it will be the teaching faculty who suit up to do this.  
+# Collect an ITO slide from the teaching faculty, touching the slide with a gloved hand and only on the edges. [[Image:Macintosh HD-Users-nkuldell-Desktop-20.109(F07)-20.109(F07) Mod3 ECD-Mod3F07 wiki images-multimeter.jpg|thumb|right|multimeter set to measure current rather than resistance as you should be doing]] ITO stands for "indium tin oxide" and it will serve as a transparent electrode in our electrochromic devices. 
+# It will not be obvious which side of the slide has ITO so you will have to measure the conductance of each surface. To do this, you should put a Chemwipe down on your bench and rest the slide on it. Use the multimeter to measure the conductance of both surfaces. Hold the probes a set distance from one another and measure resistance (in ohms). If the material that you are touching is unable to conduct a current, the resistance will read "0L."  The side of the slide with ITO should give a numerical reading, depending on how far apart the probes are held.
+# Clean the ITO slide by placing it into a 50 ml falcon tube with 1% Liquinox.  Sonicate for 2 minutes.  Remove the slide from the Liquinox solution with gloves or with tweezers and briefly rinse in Millipore H2O.  Place the slide in a 50 mL Falcon tube with methanol.  Sonicate for 2 minutes.  Remove the slide and then let it air-dry on a paper towel on the bench. Do not wipe the ITO surface. Save the tubes of Liquinox and methanol for the end of lab. 
+# While the slide is drying, decide on your ECD design. What you choose should fit into a 1 inch by 1 inch box, as shown in the figure that is on the "talk" page of today's lab.    As you think about what image to choose note that the area of your image that you want dark (i.e. visible) should remain under tape and you will cut out the areas that you want clear. Also note that current <b>must</b> be able to flow across to the image when we finally hook it up, so make sure that you leave your image connected to the rest of the ITO, unlike the "MIT" example shown in today's protocols. Print out three copies of your image: one for the slide and one for each of your notebooks.
+# When your slide is dry, place it ITO side up onto the bench and fully cover it with a strip of red 3M tape. Press the air-bubbles out.[[Image:Macintosh_HD-Users-nkuldell-Desktop-redtape.jpg|thumb|left]][[Image:Macintosh_HD-Users-nkuldell-Desktop-tapedpattern.jpg|thumb|right]]
+# Cover the end that you'll pattern with double-sided scotch tape and then tape your printed image to the slide. 
+# Cut the pattern you've chosen, running the knife-blade back and forth a few times on each cut to insure that all the tapes have been cut. 
+# Peel off the paper, scotch-tape and red tape to expose the areas of the slide where the ITO is to be removed (i.e. where no phage will bind, i.e. where no color will form). The silver tweezers in your drawer should be useful for this step. Use the Exact-O knife as needed also. 
+# One of the teaching faculty will place your slide, pattern down, into the acid wash solution that is gently mixing on a stir plate in the hood. Balance your slide on the edge of the beaker, so the red tape remains outside the acidic solution. It should be possible to balance 4 slides in each beaker. [[Image:Macintosh_HD-Users-nkuldell-Desktop-cutpattern.jpg|thumb|left]][[Image:Macintosh_HD-Users-nkuldell-Desktop-removingITO.jpg|thumb|right]]
+# Incubate the slide in the acid solution for 20 minutes. 
+# Wash the slide by swirling it three times in the 1L beaker of H2O that is in the hood. Be very careful not to drip any of the acid wash solution as you move the slide. 
+# Clean the slide by placing it back in the falcon tube with MeOH, then allow the slide to air dry on a paper towel on the bench.
+# Before fully removing the tape that remains on the slide, verify that the ITO has been removed from the exposed regions. Peel back a small corner of the red tape that remained outside the acid solution. Use the multimeter to compare the conduction when the probes are
+<center>
+{| border="1"
+|
+| mV
+|-
+| both touching bench top or glass slide
+| 
+|-
+| both touching metal
+|
+|- 
+| both touching untreated area
+| 
+|-
+| both touching treated area
+| 
+|-
+| touching treated/untreated area
+| 
+|}
+</center>
+14. Remove the tape from the surface.  If there are bits of glue left on the slide, you can clean them off with a cotton-tipped applicator that you dip in methanol.  You must remove all glue and tape from the slide before depositing the nanowires.
+
+===Part 2: M13.1===
+As a class we will be comparing the production of phage (M13K07 and M13.1) from a "standard" lab strain, namely MG1655, and a "minimal" strain from the MDS collection. Four of these minimal strains (MDS12, MDS41, MDS 42, MDS43) are described in a [http://www.sciencemag.org/cgi/content/full/312/5776/1044?maxtoshow=&HITS=10&hits=10&RESULTFORMAT=&fulltext=blattner&searchid=1&FIRSTINDEX=0&sortspec=date&resourcetype=HWCIT_DocSum 2006 Science] article from Fred Blattner's group. A fifth strain, MDS60, is an unpublished strain with additional genomic deletions. We will make the strains competent for transformation using the protocol described by [http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&cmd=Retrieve&dopt=AbstractPlus&list_uids=2265755&query_hl=3&itool=pubmed_DocSum Inoue, Nojima and Okayama] in their 1990 publication.  
+<center>
+{| border="1"
+! Team Color 
+! NB#
+! MDS#
+|-
+| everyone
+| NB258
+| MG1655
+|-
+| Green 
+| NB259
+| MDS12
+|-
+| Purple
+| NB260
+| MDS41
+|-
+| Red
+| NB261
+| MDS42
+|-
+| Blue
+| NB262
+| MDS43
+|-
+| Pink 
+| NB263
+| MDS60
+|-
+| Yellow
+| NB263
+| MDS60
+|}
+</center>
+
+# Collect the wild type strain (MG1655) and the MDS you will work with, as listed on the table above. Describe in your lab notebook the deletions that the strain includes. Note that MDS60 is an unpublished strain provided by Fred Blattner's group to our lab. It is  F- lambda- ilvG- rfb-50 rph-1 plus >15.27% deletion.
+# Move 5 ml of log phase cells (MG1655 and the MDS) and to 15 ml falcon tubes. 
+# Spin your tubes (balanced against another) in the clinical centrifuge, 3000 RPM for five minutes. 
+# Pour off the supernatant from the pellets. 
+# Resuspend the bacterial pellets in 1 ml ice cold "TB". Move the cells to an eppendorf tube and leave on ice for 10 minutes.
+# Spin the cells in a microfuge for 30 seconds at full speed. 
+# Aspirate the supernatant from the pellets.
+# Resuspend the pellet in 150 ul ice cold "TB".
+# Add 10.5 ul DMSO to the suspensions of cells and flick the tubes to mix.
+# For each strain you should move 75 ul of cells to a new eppendorf with 5 ul of M13K07 DNA. 
+# For each strain you should move another 75 ul of cells to another new eppendorf with 5 ul of M13.1 DNA. 
+# Incubate the six tubes (no DNA, +M13K07, +M13.1) on ice for 5 minutes. 
+# Heat shock the six tubes at 42° for 90 seconds exactly. 
+# Add 500 ul of LB to each tube and incubate at 37° for at least 30 minutes. Prewarm and dry 6 LB+Kan plates at this time as well.   
+# Invert the tubes to mix the contents and spread 200 ul of each transformation mix on an LB+Kan plate. 
+# Incubate 37° overnight. 
+# Before leaving lab, you should innoculate 4 sterile glass tubes with 2.5 ml LB+Kan, labeling the top of the tubes with your team color and the contents of the tube (e.g. M13K07 in MG1655, M13.1 in MDS#). These will be used to grow transformants for you for next time.
+
+
+===Part 3: Research Proposal===
+You should be on your way to becoming an expert on your research topic. You should have been reading and thinking a lot about it and you may feel <br>
+(a) like there's too much to read <br>
+(b) like you have too many ideas and no way to map or prioritize them <br>
+(c) like you don't understand what you're reading <br>
+(d) all of the above. <br>
+
+One of the best ways to help frame the problem for yourself is to discuss it with someone new. While your slides are in the acid bath, you will have time to talk with '''another''' lab group. That group will offer you a fresh ear to consider your proposal. Try to describe your research problem to them. Articulate why it's important. Tell them about some recent, relevant data. Describe what you're proposing to do and what the findings from your experiments might reveal. Throughout your discussion, keep careful track of the questions they ask since these will point you to the confusing concepts or fuzzy parts of your explanation or understanding. 
+
+Then be a good listener to hear the proposal that they've been working on. Ask lots of questions. No questions are dumb. You are there to offer a naive ear and seek complete explanations. You will have time at the very end of class to reconvene with your own lab partner to hear how their conversation went. Try to identify repeated questions or concerns since these are probably the holes in the project as it stands. You can rework your proposal based on the conversations you've had.
+
+DONE!
+
+==For next time==
+# Refer to the ring feature map that appears in the introduction to today's lab to answer the following questions about MG1655 and the MDS strain you are using. Consult the [http://www.sciencemag.org/cgi/content/full/312/5776/1044 text] and any online resources associated with it. 
+#* How many basepairs are associated with MG1655 and with your MDS? 
+#* How many genes have been deleted from MG1655 in your MDS?
+#* What do the grey rings in the center of Figure 1 represent?
+#* What color is used in Figure 1 to represent the deletions of your MDS?
+# Interestingly, a [[Media:MIT Scarab MTA.pdf| Material Transfer Agreement]] ("MTA") was needed to enable us to use the MDS strains today. The agreement was brokered by MIT's Office of Intellectual Property Counsel and the sole commercial source for the deletion strains, a company called Scarab Genomics, founded by Prof. Blattner and others involved in the MDS project. To secure the right to purchase these strains for $650, the teaching faculty agreed to keep the strains in our lab (i.e. not share them), to modify them only in ways specified as "OK by Scarab," grant Scarab non-exclusive license to discoveries made with the strains and not use the strains for commercial purposes. Check out the pdf associated with the MTA link (above) and then comment. 
+# Outline your research proposal presentation. Recall that you will need to present
+#* a brief project overview (1 slide)
+#* sufficient background information for everyone to understand your proposal (1-3 slides) 
+#* a statement of the research problem and goals (1 slide) 
+#* project details and methods (3-5 slides)
+#* predicted outcomes if everything goes according to plan and if nothing does (3-5 slides)
+#* needed resources to complete the work (1 slide)
+#* societal impact if all goes well (1 slide)
+Suggested numbers of slides are listed here but the number may vary depending on the particulars of your proposal. You will have time to work on the presentation in lab next time as well as ask questions about the format, but you should begin to prepare, in powerpoint or similar presentation program, the materials you need.
+
+==Reagents list==
+Acid wash solution ("aqua regia")
+
+Beaker for acid solution:
+VWR 100x50  Cat No: 89000-290  
+
+100 mL H2O
+
+85 mL HCl
+
+30 mL HNO3
