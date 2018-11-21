@@ -20,13 +20,13 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Converter & Tools</h2>
 
- <a href="https://www.addgene.org/">Addgene</a>
+<a href="https://www.addgene.org/">Addgene</a>
 
 <h2>CRISPR</h2>
 
 <h2>DIY Lab</h2>
 
-<h2>Github resources</h2>
+<h2>Github Resources</h2>
 
 <h2>Micropropagation</h2>
 
@@ -36,11 +36,15 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Shop</h2>
 
- <a href="https://www.addgene.org/search/advanced/?q=&depositor=&article=&gene=&vector=&tags=&advanced_query=&results_per_page=20&page=1&selected_facets=popularity_exact%3A3&sort_type=relevance">Addgene</a>
+<a href="https://www.addgene.org/search/advanced/?q=&depositor=&article=&gene=&vector=&tags=&advanced_query=&results_per_page=20&page=1&selected_facets=popularity_exact%3A3&sort_type=relevance">Addgene</a>
  
- <a href="http://www.the-odin.com">Odin</a>
-  
- <a href="http://www.the-odin.com">Odin</a>
+<a href="https://www.carolina.com/">Carolina.com</a>
+ 
+ <a href=" https://www.fishersci.com/us/en/home.html">Fisher Scientific</a>
+ 
+  <a href="http://www.the-odin.com">Odin</a>
+ 
+
 
 <h2>Videos</h2>
 
