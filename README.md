@@ -69,7 +69,6 @@ The repo will be updated about monthly, if you want to see the original list her
 
 https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE
 
-</BR>
 
 <h3>To do:</h3>
 
