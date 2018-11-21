@@ -37,6 +37,8 @@ List of useful resources for Biohacking studies and operations:
 <h2>Shop</h2>
 
 <a href="https://www.addgene.org/search/advanced/?q=&depositor=&article=&gene=&vector=&tags=&advanced_query=&results_per_page=20&page=1&selected_facets=popularity_exact%3A3&sort_type=relevance">Addgene</a>
+
+  <a href="http://www.bio-rad.com/>Bio-Rad</a>
  
 <a href="https://www.carolina.com/">Carolina.com</a>
  
