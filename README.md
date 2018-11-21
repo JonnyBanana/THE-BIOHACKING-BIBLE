@@ -1,3 +1,3 @@
 :collision: :collision: :collision: THE-BIOHACKING-BIBLE :collision: :collision: :collision:
  
-Lots of resources on the world of Biohacking, Genetic Editing, Biology, Bacteria, DNA, CRISPR, Cas9, Plasmids, Antibiotics, PCR, and moooreeeee ....
+![Alt text](https://github.com/JonnyBanana/safari-ie-reaper.github.io/blob/master/img/trolling%20studios.JPG)
