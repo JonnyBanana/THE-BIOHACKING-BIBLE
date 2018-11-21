@@ -1,2 +1,3 @@
-# -pill-pill-pill-THE-BIOHACKING-BIBLE-pill-pill-pill-
+ :pill: :pill: :pill:THE-BIOHACKING-BIBLE :pill: :pill: :pill:
+ 
 Lots of resources on the world of Biohacking, Genetic Editing, Biology, Bacteria, DNA, CRISPR, Cas9, Plasmids, Antibiotics, PCR, and moooreeeee ....
