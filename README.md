@@ -18,7 +18,11 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Cheapest and Helpful Stuff</h2>
 
-<h2>Converters</h2>
+<h2>Converter & Tools</h2>
+
+ <a href="https://www.addgene.org/">Addgene</a>
+
+
 
 <h2>CRISPR</h2>
 
@@ -32,7 +36,11 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Shop</h2>
 
-http://www.the-odin.com
+ <a href="https://www.addgene.org/search/advanced/?q=&depositor=&article=&gene=&vector=&tags=&advanced_query=&results_per_page=20&page=1&selected_facets=popularity_exact%3A3&sort_type=relevance">Addgene</a>
+ 
+ <a href="http://www.the-odin.com">Odin</a>
+  
+ <a href="http://www.the-odin.com">Odin</a>
 
 <h2>Videos</h2>
 
