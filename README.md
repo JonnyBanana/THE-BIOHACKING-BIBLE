@@ -52,10 +52,14 @@ List of useful resources for Biohacking studies and operations:
   <a href="http://www.bio-rad.com/">Bio-Rad</a>
  
 <a href="https://www.carolina.com/">Carolina.com</a>
+
+  <a href="https://dangerousthings.com/">Dangerous Things</a>
  
  <a href="https://www.fishersci.com">Fisher Scientific</a>
  
   <a href="http://www.the-odin.com">Odin</a>
+  
+
  
 
 
