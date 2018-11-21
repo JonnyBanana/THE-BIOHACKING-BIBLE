@@ -113,6 +113,8 @@ List of useful resources for Biohacking studies and operations:
 
  <a href="https://www.youtube.com/watch?v=DaaRrR-ZHP4">Extract your DNA</a>
  
+ <a href="https://www.youtube.com/watch?v=ew9-YGrgpWo">Extract DNA from a Banana!</a>
+ 
  <a href="https://www.youtube.com/watch?v=GfE04tpaqxU">DNA Extraction from Blood</a>
  
  </BR>
