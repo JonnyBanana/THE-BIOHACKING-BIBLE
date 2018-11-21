@@ -22,8 +22,6 @@ List of useful resources for Biohacking studies and operations:
 
  <a href="https://www.addgene.org/">Addgene</a>
 
-
-
 <h2>CRISPR</h2>
 
 <h2>DIY Lab</h2>
@@ -31,6 +29,8 @@ List of useful resources for Biohacking studies and operations:
 <h2>Github resources</h2>
 
 <h2>Micropropagation</h2>
+
+<h2>Nootropics</h2>
 
 <h2>Plasmids</h2>
 
