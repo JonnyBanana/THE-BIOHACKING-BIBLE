@@ -100,6 +100,10 @@ List of useful resources for Biohacking studies and operations:
  
   <a href="http://www.the-odin.com">Odin</a>
   
+  <a href="https://www.thermofisher.com">Thermo Fisher</a>
+  
+  
+  
 
 
 <h2>Various Articles and Referencies</h2>
