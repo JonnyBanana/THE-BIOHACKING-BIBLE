@@ -37,24 +37,50 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.amazon.com/dp/B01BA0E086/ref=sxbs_sxwds-stppvp_2?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=d45777d6-4c64-4117-8332-1659db52e64f&pd_rd_wg=YjRRH&pf_rd_r=PZMX798ZPJPFHF07911S&pf_rd_s=desktop-sx-bottom-slot&pf_rd_t=301&pd_rd_i=B01BA0E086&pd_rd_w=WWFT6&pf_rd_i=biohacking&pd_rd_r=ccd438fb-931c-4a35-94c6-1e82b60cfb70&ie=UTF8&qid=1542778096&sr=2">Nootropics and Smart Drugs</a>
 
-
 <a href="https://www.amazon.com/Biohacking-Manifesto-scientific-anti-aging-neuroscience-ebook/dp/B00X7CCNOY/ref=sr_1_6?s=books&ie=UTF8&qid=1542778035&sr=1-6&keywords=biohacking">The Biohacking Manifesto</a>
 
+
+
+
+
+
 <h2>CheatSheets</h2>
+
+<a href="http://leganerd.com/wp-content/uploads/2014/04/PMT-table.png">Mario Periodic Table</a>
+
+<a href="https://sciencenotes.org/wp-content/uploads/2018/02/PeriodicTableCharge-2018.png">Periodic Table</a>
+
+
+
+
 
 
 <h2>Cheapest and Helpful Stuff</h2>
 
 
+
+
+
 <h2>Converter & Tools</h2>
 
+
+
+
 <a href="https://www.addgene.org/">Addgene</a>
+
+<a href="http://www.endmemo.com/sconvert/mg_gul_l.php">mg/g ul/l Batch Converter</a>
+
+<a href="http://www.endmemo.com/sconvert/milligram_ml.php">Milligram/mL Unit Conversions  </a>
 
 <a href="https://www.ncbi.nlm.nih.gov/">National Center for Biotechnology Information</a>
 
 <a href="https://pubchem.ncbi.nlm.nih.gov/">Open Chemistry Database</a>
 
 <a href="http://lab.wikia.com/wiki/Laboratory_Wiki">Laboratory Wiki</a>
+
+<a href="https://www.convertunits.com/from/ug/to/mg">ug/mg Converter</a>
+
+
 
 
 <h2>CRISPR</h2>
