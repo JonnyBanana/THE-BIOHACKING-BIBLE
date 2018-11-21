@@ -153,7 +153,7 @@ List of useful resources for Biohacking studies and operations:
   
 
 
-<h2>Various Articles and Referencies</h2>
+<h2>Various Articles and References</h2>
 
 <a href="http://parts.igem.org/Lux">Lux Operon</a>
 
