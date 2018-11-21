@@ -38,6 +38,10 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Plasmids</h2>
 
+<a href="
+http://www.subtiwiki.uni-goettingen.de/wiki/index.php/List_of_plasmids">Plasmids-List</a>
+
+
 <h2>Shop</h2>
 
 <a href="https://www.addgene.org/search/advanced/?q=&depositor=&article=&gene=&vector=&tags=&advanced_query=&results_per_page=20&page=1&selected_facets=popularity_exact%3A3&sort_type=relevance">Addgene</a>
