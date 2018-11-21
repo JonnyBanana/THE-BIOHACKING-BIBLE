@@ -5,5 +5,6 @@
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
 
 
+List of useful resources for Biohacking studies and operations:
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/brain-hack.JPG)
