@@ -60,14 +60,11 @@ List of useful resources for Biohacking studies and operations:
   <a href="http://www.the-odin.com">Odin</a>
   
 
- 
+<h2>Various Articles</h2>
 
 
 <h2>Videos</h2>
 
-<h2></h2>
-<h2></h2>
-<h2></h2>
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/brain-hack.JPG)
 
