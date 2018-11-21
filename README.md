@@ -69,4 +69,11 @@ The repo will be updated about monthly, if you want to see the original list her
 
 https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE
 
+</BR>
+
+<h3>To do:</h3>
+
+There are so many things to do, and anyone can contribute by sending url, images, pdf etc, just make a pull request </BR>
+or simply send an email to howtohackitalia@gmail.com with the changes you want to propose, all requests are very welcome!!!
+
 
