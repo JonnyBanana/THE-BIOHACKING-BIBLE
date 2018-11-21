@@ -34,8 +34,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.amazon.com/Biohacking-Manifesto-scientific-anti-aging-neuroscience-ebook/dp/B00X7CCNOY/ref=sr_1_6?s=books&ie=UTF8&qid=1542778035&sr=1-6&keywords=biohacking">The Biohacking Manifesto</a>
 
-<a href="
-https://www.amazon.com/Biopunk-Solving-Biotechs-Problems-Kitchens/dp/1617230073/ref=sr_1_17?s=books&ie=UTF8&qid=1542778024&sr=1-17&keywords=biohacking">BioPunk</a>
+<a href="https://www.amazon.com/Biopunk-Solving-Biotechs-Problems-Kitchens/dp/1617230073/ref=sr_1_17?s=books&ie=UTF8&qid=1542778024&sr=1-17&keywords=biohacking" target="blank">BioPunk</a>
 
 
 
