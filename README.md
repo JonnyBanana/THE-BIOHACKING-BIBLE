@@ -37,7 +37,7 @@ List of useful resources for Biohacking studies and operations:
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/personalgenome.png)
 
-<a href="https://www.personalgenomes.org/">website</a>
+- <a href="https://www.personalgenomes.org/">website</a>
 
 </BR>
 
@@ -47,11 +47,11 @@ List of useful resources for Biohacking studies and operations:
 
 <img src="https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/BiohackspaceLondon.png" width="250" height="250">
 
-<a href="https://biohackspace.org/">Website</a>
+- <a href="https://biohackspace.org/">Website</a>
 
-<a href="https://github.com/london-biohackers">Github</a>
+- <a href="https://github.com/london-biohackers">Github</a>
 
-<a href="https://www.youtube.com/channel/UCVvQ6wcApxQrQOFBjyXi7hg">YouTube</a>
+- <a href="https://www.youtube.com/channel/UCVvQ6wcApxQrQOFBjyXi7hg">YouTube</a>
 
 </BR>
 
@@ -61,9 +61,9 @@ List of useful resources for Biohacking studies and operations:
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/biohack-academy.png)
 
-<a href="http://biohackacademy.github.io/">Website</a>
+- <a href="http://biohackacademy.github.io/">Website</a>
 
-<a href="https://github.com/biohackacademy">Github</a>
+- <a href="https://github.com/biohackacademy">Github</a>
 
 </BR>
 
