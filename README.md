@@ -13,7 +13,20 @@
 List of useful resources for Biohacking studies and operations:
 
 
+
+
+
 <h2>Antibiotics</h2>
+
+<a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The Iliad Project Kit</a>
+
+<a href="http://www.the-odin.com/antibiotic-test-discs-100/">Antibiotics Test Disc</a>
+
+
+
+
+
+
 
 
 <h2>Associations & Community Projects</h2>
@@ -81,6 +94,8 @@ List of useful resources for Biohacking studies and operations:
 - <a href="https://github.com/DIYbiosphere">Github</a>
 
 </BR>
+
+
 
 
 
@@ -166,6 +181,21 @@ List of useful resources for Biohacking studies and operations:
 
 
 <h2>CRISPR</h2>
+
+<a href="https://www.theatlantic.com/science/archive/2016/01/the-most-exciting-uses-of-gene-editing-technology-involve-no-editing/422619/">CRISPR's Most Exciting Uses Have Nothing to Do With Gene-Editing </a>
+
+<a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
+
+<a href="http://www.the-odin.com/diyhumancrispr/">DIY CRISPR Engineering</a>
+
+<a href="https://www.oreilly.com/ideas/editing-our-world-crispr-and-the-future-of-genomics">Editing our world: CRISPR and the future of genomics</a>
+
+<a href="http://www.the-odin.com/human-myostatin-knock-out-targeting-crispr-cas9-plasmid/">Human Myostatin Knock-Out Targeting CRISPR-Cas9 Plasmid </a>
+
+<a href="https://www.broadinstitute.org/what-broad/areas-focus/project-spotlight/questions-and-answers-about-crispr">Questions about CRISPR</a>
+
+
+
 
 
 
