@@ -18,9 +18,13 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Antibiotics</h2>
 
-<a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The Iliad Project Kit</a>
+<a href="https://docs.google.com/document/d/15_XAfkTFnHxo8E91ljYQBweAy3rpwj8JJT7iG1sX1gY/edit">The Iliad Project Kit</a>
+
+
+<a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The Iliad Project Manual</a>
 
 <a href="http://www.the-odin.com/antibiotic-test-discs-100/">Antibiotics Test Disc</a>
+
 
 
 
