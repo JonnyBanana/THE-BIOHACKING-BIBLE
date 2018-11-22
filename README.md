@@ -322,7 +322,9 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Programs</h2>
 
+<a href="http://www.snapgene.com/products/snapgene/about_snapgene/">Snap Gene</a>
 
+<a href="http://www.snapgene.com/products/snapgene_viewer/">Snap Gene viewer</a>
 
 
 
