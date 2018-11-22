@@ -40,7 +40,7 @@ List of useful resources for Biohacking studies and operations:
 
 <h3>London BioHack Space</h3>
 
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/BiohackspaceLondon.png width="250" height="250")
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/BiohackspaceLondon.png =250x250)
 
 <a href="https://biohackspace.org/">Website</a>
 
