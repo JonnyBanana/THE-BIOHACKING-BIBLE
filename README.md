@@ -315,7 +315,28 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Plasmids</h2>
 
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUSkVlN3RFdmgzZ2s/edit">From Dusk till Down</a>
+
+<a href="http://www.the-odin.com/lambda-red-recombination-plasmids/">lamba Red Recombination Plasmids</a>
+
+<a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">Open Human Map</a>
+
+<a href="http://www.the-odin.com/open-human-plasmid/">Open Human Plasmid</a>
+
+<a href="http://www.the-odin.com/pdusk-and-pdawn-light-controlled-fluorescent-protein-expression/">pDusk and pDown</a>
+
 <a href="http://www.subtiwiki.uni-goettingen.de/wiki/index.php/List_of_plasmids">Plasmids-List</a>
+
+<a href="http://www.the-odin.com/plasmid-pje202-pvib-to-create-bioluminescent-bacteria/">Plasmid pJE202/pVIB to Create Bioluminescent Bacteria</a>
+
+<a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">pOpen Human Map</a>
+
+<a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">pOpen Human Amp Map</a>
+
+
+
+
+
 
 
 
