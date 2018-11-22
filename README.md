@@ -207,6 +207,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.instructables.com/id/DIY-Bioprinter/">Bioprinter</a>
 
+<a href="https://www.oreilly.com/ideas/how-to-build-and-use-a-gene-gun">Gene Gun</a>
+
 <a href="https://biodesign.cc/2013/12/25/diy-incubator/">Incubator</a>
 
 <a href="https://hackteria.org/wiki/DIY_Incubator">Incubator2</a>
@@ -214,6 +216,8 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://www.instructables.com/id/Portable-Laminar-Flow-Hood/">Laminar Flow Hood</a>
 
 <a href="https://hackaday.io/project/3794/logs">Syringe Pump</a>
+
+
 
 
 
@@ -301,6 +305,27 @@ List of useful resources for Biohacking studies and operations:
 <h2>Plasmids</h2>
 
 <a href="http://www.subtiwiki.uni-goettingen.de/wiki/index.php/List_of_plasmids">Plasmids-List</a>
+
+
+
+
+
+
+
+
+<h2>Programs</h2>
+
+
+
+
+
+
+
+
+
+
+
+<h2>Protocols</h2>
 
 
 
