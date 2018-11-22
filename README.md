@@ -343,7 +343,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.oreilly.com/ideas/lab-in-a-box">Bento Bioworks</a>
 
-<a href="ps://www.dezeen.com/2018/10/09/bioplastic-projects-algae-corn-starch-beetle-shells/">10 Bioplastic Projects</a>
+<a href="https://www.dezeen.com/2018/10/09/bioplastic-projects-algae-corn-starch-beetle-shells/">10 Bioplastic Projects</a>
 
 <a href="https://www.oreilly.com/ideas/darpa-and-the-future-of-synthetic-biology">DARPA and the Future of Synthetic Biology</a>
 
