@@ -13,6 +13,7 @@
 List of useful resources for Biohacking studies and operations:
 
 
+<h2>Antibiotics</h2>
 
 
 <h2>Associations & Community Projects</h2>
@@ -89,7 +90,19 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Bacteria</h2>
 
+<a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
+
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5404626/">Cyanobacterial Strains</a>
+
 <a href="https://openwetware.org/wiki/E._coli_genotypes">E. Coli Genotypes</a>
+
+<a href="https://www.dezeen.com/2015/05/04/growduce-aakriti-jain-guillian-graves-bacteria-yeast-micro-factory-grow-cellulose-based-products/">Growduce</a>
+
+<a href="https://pubs.rsc.org/en/content/articlelanding/2018/mt/c7mt00312a#!divAbstract">Synergistic gold–copper detoxification at the core of gold biomineralisation in Cupriavidus metallidurans</a>
+
+
+
+
 
 
 
@@ -126,7 +139,7 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-<h2>Cheapest and Helpful Stuff</h2>
+<h2>Cheapest Stuff 4 Labs</h2>
 
 
 
@@ -161,6 +174,8 @@ List of useful resources for Biohacking studies and operations:
 <h2>DIY Lab</h2>
 
 <a href="https://makezine.com/2017/04/11/how-to-set-up-your-own-lab/">Biolab Setup</a>
+
+<a href="https://www.instructables.com/id/DIY-Bioprinter/">Bioprinter</a>
 
 <a href="https://biodesign.cc/2013/12/25/diy-incubator/">Incubator</a>
 
@@ -231,6 +246,8 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+<h2>Micology</h2>
+
 
 
 
@@ -290,11 +307,28 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Various Articles and References</h2>
 
+<a href="http://longevityfacts.com/diy-3d-bioprinter-create-bioprinting-organs/">3D Printed Organs</a>
+
+<a href="https://www.oreilly.com/ideas/this-company-uses-ai-to-accelerate-drug-discovery">AI to accelerate Drug Discovery</a>
+
+<a href="https://www.oreilly.com/ideas/lab-in-a-box">Bento Bioworks</a>
+
+<a href="ps://www.dezeen.com/2018/10/09/bioplastic-projects-algae-corn-starch-beetle-shells/">10 Bioplastic Projects</a>
+
+<a href="https://www.oreilly.com/ideas/darpa-and-the-future-of-synthetic-biology">DARPA and the Future of Synthetic Biology</a>
+
 <a href="http://diyhpl.us/wiki/">DIY h Plus Wiki</a>
+
+<a href="https://www.oreilly.com/ideas/building-artificial-connectomes">How to Build Artificial Connectomes</a>
 
 <a href="http://parts.igem.org/Lux">Lux Operon</a>
 
+<a href="https://www.oreilly.com/ideas/minipcr-enabling-the-era-of-personal-dna">miniPCR: Enabling the era of personal DNA</a>
+
+<a href="https://www.oreilly.com/ideas/open-insulin-and-open-source-biologics">Open insulin and Open Source Biologics</a>
+
 <a href="https://www.nature.com/news/bionic-roses-implanted-with-electronic-circuits-1.18851">Roses Circuit Implant</a>
+
 
 
 
