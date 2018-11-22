@@ -19,6 +19,8 @@ List of useful resources for Biohacking studies and operations:
 
 <h3>Four Thieves Vinegar</h3>
 
+</BR>
+
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/4ThievesVinegar.jpg)
 
 <a href="https://fourthievesvinegar.org/">Website</a>
@@ -31,6 +33,8 @@ List of useful resources for Biohacking studies and operations:
 
 <h3>The Personal Genome Project</h3>
 
+</BR>
+
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/personalgenome.png)
 
 <a href="https://www.personalgenomes.org/">website</a>
@@ -38,6 +42,8 @@ List of useful resources for Biohacking studies and operations:
 </BR>
 
 <h3>London BioHack Space</h3>
+
+</BR>
 
 <img src="https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/BiohackspaceLondon.png" width="250" height="250">
 
@@ -50,6 +56,8 @@ List of useful resources for Biohacking studies and operations:
 </BR>
 
 <h3>BioHack Academy</h3>
+
+</BR>
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/biohack-academy.png)
 
