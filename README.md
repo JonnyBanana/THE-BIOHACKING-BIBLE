@@ -13,18 +13,43 @@
 List of useful resources for Biohacking studies and operations:
 
 
+
+
+
 <h2>Associations & Community Projects</h2>
+
+<h3>Four Thieves Vinegar</h3>
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/4ThievesVinegar.jpg)
 
-<a href="https://fourthievesvinegar.org/">Four Thieves Vinegar</a>
+<a href="https://fourthievesvinegar.org/">Website</a>
 
-<a href="https://www.personalgenomes.org/">The Personal Genome Project</a>
+<a href="https://github.com/FourThievesVinegar">Github</a>
+
+<a href="https://www.youtube.com/channel/UCdTUCsxpar9vIX_qoQoLIvA/videos">YouTube</a>
+
+
+<h3>The Personal Genome Project</h3>
+
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/personalgenome.png)
+
+<a href="https://www.personalgenomes.org/">website</a>
+
+
+
+
+
 
 
 <h2>Bacteria</h2>
 
 <a href="https://openwetware.org/wiki/E._coli_genotypes">E. Coli Genotypes</a>
+
+
+
+
+
+
 
 
 <h2>Books</h2>
@@ -64,8 +89,6 @@ List of useful resources for Biohacking studies and operations:
 <h2>Converter & Tools</h2>
 
 
-
-
 <a href="https://www.addgene.org/">Addgene</a>
 
 <a href="http://www.endmemo.com/sconvert/mg_gul_l.php">mg/g ul/l Batch Converter</a>
@@ -86,8 +109,10 @@ List of useful resources for Biohacking studies and operations:
 <h2>CRISPR</h2>
 
 
-<h2>DIY Lab</h2>
 
+
+
+<h2>DIY Lab</h2>
 
 <a href="https://makezine.com/2017/04/11/how-to-set-up-your-own-lab/">Biolab Setup</a>
 
@@ -97,8 +122,19 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.instructables.com/id/Portable-Laminar-Flow-Hood/">Laminar Flow Hood</a>
 
-
 <a href="https://hackaday.io/project/3794/logs">Syringe Pump</a>
+
+
+
+
+
+<h2>Forum</h2>
+
+<a href="https://forum.biohack.me/">Biohack.me</a>
+
+
+
+
 
 
 
@@ -148,15 +184,37 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://github.com/BioHackAcademy/BHA_Webcam_Microscope">WebCam Microscope</a>
 
 
+
+
+
+
 <h2>Micropropagation</h2>
+
+
+
+
+
 
 
 <h2>Nootropics</h2>
 
 
+
+
+
+
+
+
 <h2>Plasmids</h2>
 
 <a href="http://www.subtiwiki.uni-goettingen.de/wiki/index.php/List_of_plasmids">Plasmids-List</a>
+
+
+
+
+
+
+
 
 
 <h2>Shop</h2>
@@ -177,11 +235,27 @@ List of useful resources for Biohacking studies and operations:
   
   
   
+  
+  
+  
+  
+  
 
 
 <h2>Various Articles and References</h2>
 
+<a href="http://diyhpl.us/wiki/">DIY h Plus Wiki</a>
+
 <a href="http://parts.igem.org/Lux">Lux Operon</a>
+
+<a href="https://www.nature.com/news/bionic-roses-implanted-with-electronic-circuits-1.18851">Roses Circuit Implant</a>
+
+
+
+
+
+
+
 
 
 
