@@ -61,7 +61,7 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-<img src="https://cloud.githubusercontent.com/assets/yourgif.gif" width="400" height="790">
+<img src="https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/biohack-academy.png" width="400" height="790">
 
 
 
