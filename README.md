@@ -40,7 +40,7 @@ List of useful resources for Biohacking studies and operations:
 
 <h3>London BioHack Space</h3>
 
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/4ThievesVinegar.jpg)
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/BiohackspaceLondon.png)
 
 <a href="https://biohackspace.org/">Website</a>
 
@@ -49,6 +49,17 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://www.youtube.com/channel/UCVvQ6wcApxQrQOFBjyXi7hg">YouTube</a>
 
 </BR>
+
+<h3>BioHack Academy</h3>
+
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/biohack-academy.png)
+
+<a href="http://biohackacademy.github.io/">Website</a>
+
+<a href="https://github.com/biohackacademy">Github</a>
+
+</BR>
+
 
 
 
