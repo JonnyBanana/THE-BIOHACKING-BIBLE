@@ -23,11 +23,11 @@ List of useful resources for Biohacking studies and operations:
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/4ThievesVinegar.jpg)
 
-<a href="https://fourthievesvinegar.org/">Website</a>
+- <a href="https://fourthievesvinegar.org/">Website</a>
 
-<a href="https://github.com/FourThievesVinegar">Github</a>
+- <a href="https://github.com/FourThievesVinegar">Github</a>
 
-<a href="https://www.youtube.com/channel/UCdTUCsxpar9vIX_qoQoLIvA/videos">YouTube</a>
+- <a href="https://www.youtube.com/channel/UCdTUCsxpar9vIX_qoQoLIvA/videos">YouTube</a>
 
 </BR>
 
