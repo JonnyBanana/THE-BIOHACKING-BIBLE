@@ -36,6 +36,20 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.personalgenomes.org/">website</a>
 
+</BR>
+
+<h3>London BioHack Space</h3>
+
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/4ThievesVinegar.jpg)
+
+<a href="https://biohackspace.org/">Website</a>
+
+<a href="https://github.com/london-biohackers">Github</a>
+
+<a href="https://www.youtube.com/channel/UCVvQ6wcApxQrQOFBjyXi7hg">YouTube</a>
+
+</BR>
+
 
 
 
