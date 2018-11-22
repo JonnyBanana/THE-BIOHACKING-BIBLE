@@ -282,6 +282,10 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Micology</h2>
 
+<a href="https://www.3ders.org/articles/20181112-bionic-mushrooms-covered-in-3d-printed-cyanobacteria-produce-bio-electricity.html">Bionic Mushrooms</a>
+
+<a href="https://www.dezeen.com/2013/10/20/mycelium-chair-by-eric-klarenbeek-is-3d-printed-with-living-fungus/">Mycelium Printing</a>
+
 
 
 
