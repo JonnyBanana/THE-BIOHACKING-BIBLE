@@ -192,6 +192,9 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/human-myostatin-knock-out-targeting-crispr-cas9-plasmid/">Human Myostatin Knock-Out Targeting CRISPR-Cas9 Plasmid </a>
 
+
+<a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">MSTN CRISPR</a>
+
 <a href="https://www.broadinstitute.org/what-broad/areas-focus/project-spotlight/questions-and-answers-about-crispr">Questions about CRISPR</a>
 
 
