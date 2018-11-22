@@ -340,6 +340,12 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Protocols</h2>
 
+<a href="https://openwetware.org/wiki/NanoBio:_Bacterial_Transformation">Bacterial Transformation</a>
+
+<a href="https://openwetware.org/wiki/Preparing_chemically_competent_cells">Preparing Chemically Competent Cells</a>
+
+<a href="https://openwetware.org/wiki/NanoBio:_Protocol_for_gene_knockout">Protocol for Gene Knockout</a>
+
 
 
 
