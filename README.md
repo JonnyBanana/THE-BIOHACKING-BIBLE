@@ -123,7 +123,7 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-
+<h2>Biohacking Kit</h2>
 
 
 
@@ -169,13 +169,33 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.addgene.org/">Addgene</a>
 
+<a href="https://www.atum.bio/resources/bioinformatics-tools">ATUM Bioinformatics Toolbox</a>
+
+<a href="http://chopchop.cbu.uib.no/">ChopChop</a>
+
+<a href="https://www.atum.bio/eCommerce/cas9/input">CRISPR gRNA Design tool</a>
+
+<a href="https://www.addgene.org/crispr/reference/grna-sequence/">CRISPR Validated gRNA Target Sequences</a>
+
+<a href="https://www.ncbi.nlm.nih.gov/genome/gdv/?org=zea-mays">Genome Data Viewer</a>
+
+<a href="http://opal.biology.gatech.edu/GeneMark/heuristic_gmhmmp.cgi">Heuristic Approach for Gene Prediction</a>
+
+<a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&PROG_DEF=blastn&BLAST_PROG_DEF=megaBlast&BLAST_SPEC=OGP__9606__9558">Human Nucleotide BLAST</a>
+
+<a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&BLAST_SPEC=MicrobialGenomes">Microbial Nucleotide BLAST</a>
+
 <a href="http://www.endmemo.com/sconvert/mg_gul_l.php">mg/g ul/l Batch Converter</a>
 
 <a href="http://www.endmemo.com/sconvert/milligram_ml.php">Milligram/mL Unit Conversions  </a>
 
 <a href="https://www.ncbi.nlm.nih.gov/">National Center for Biotechnology Information</a>
 
+<a href="https://www.dnaatlas.com/plasmid-map/demo">Plasmid Map Tool</a>
+
 <a href="https://pubchem.ncbi.nlm.nih.gov/">Open Chemistry Database</a>
+
+<a href="https://www.ncbi.nlm.nih.gov/orffinder/">Open Reading Frame Finder</a>
 
 <a href="http://lab.wikia.com/wiki/Laboratory_Wiki">Laboratory Wiki</a>
 
@@ -184,9 +204,25 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <h2>CRISPR</h2>
 
+<a href="https://www.atum.bio/eCommerce/cas9/input">CRISPR gRNA Design tool</a>
+
 <a href="https://www.theatlantic.com/science/archive/2016/01/the-most-exciting-uses-of-gene-editing-technology-involve-no-editing/422619/">CRISPR's Most Exciting Uses Have Nothing to Do With Gene-Editing </a>
+
+<a href="https://www.addgene.org/crispr/reference/grna-sequence/">CRISPR Validated gRNA Target Sequences</a>
 
 <a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
 
@@ -195,7 +231,6 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://www.oreilly.com/ideas/editing-our-world-crispr-and-the-future-of-genomics">Editing our world: CRISPR and the future of genomics</a>
 
 <a href="http://www.the-odin.com/human-myostatin-knock-out-targeting-crispr-cas9-plasmid/">Human Myostatin Knock-Out Targeting CRISPR-Cas9 Plasmid </a>
-
 
 <a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">MSTN CRISPR</a>
 
@@ -287,7 +322,7 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-<h2>Micology</h2>
+<h2>Mushrooms</h2>
 
 <a href="https://www.3ders.org/articles/20181112-bionic-mushrooms-covered-in-3d-printed-cyanobacteria-produce-bio-electricity.html">Bionic Mushrooms</a>
 
@@ -296,15 +331,20 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-<h2>Micropropagation</h2>
-
-
-
-
 
 
 
 <h2>Nootropics</h2>
+
+
+
+
+
+
+
+<h2>Plants</h2>
+
+
 
 
 
@@ -347,9 +387,19 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Programs</h2>
 
+
+<a href="https://www.atum.bio/resources/genedesigner#1">Gene Designer 2.0</a>
+
+<a href="http://www.snapgene.com/products/snapgene/about_snapgene/">Gene Mark</a>
+
 <a href="http://www.snapgene.com/products/snapgene/about_snapgene/">Snap Gene</a>
 
 <a href="http://www.snapgene.com/products/snapgene_viewer/">Snap Gene viewer</a>
+
+
+
+
+
 
 
 
@@ -366,6 +416,28 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://openwetware.org/wiki/Preparing_chemically_competent_cells">Preparing Chemically Competent Cells</a>
 
 <a href="https://openwetware.org/wiki/NanoBio:_Protocol_for_gene_knockout">Protocol for Gene Knockout</a>
+
+
+
+
+
+
+
+
+
+
+<h2>References</h2>
+
+<a href="http://diyhpl.us/wiki/">DIY h Plus Wiki</a>
+
+<a href="https://www.ncbi.nlm.nih.gov/genome/browse/#!/overview/">Genome Information by Organism</a>
+
+<a href="https://www.ncbi.nlm.nih.gov/gene">Gene Refernces</a>
+
+<a href="https://www.ncbi.nlm.nih.gov/genome/microbes/">Microbial Genomes</a>
+
+<a href="https://www.ncbi.nlm.nih.gov/genome/viruses/">Viral Genomes</a>
+
 
 
 
@@ -393,14 +465,18 @@ List of useful resources for Biohacking studies and operations:
   
   
   
+  <a href=" http://www.aldevron.com/">Aldevron</a>
+    
+   <a href="https://www.elimbio.com/">Elim BioPharm</a>
   
+ 
   
   
   
   
 
 
-<h2>Various Articles and References</h2>
+<h2>Various Articles</h2>
 
 <a href="http://longevityfacts.com/diy-3d-bioprinter-create-bioprinting-organs/">3D Printed Organs</a>
 
@@ -411,8 +487,6 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://www.dezeen.com/2018/10/09/bioplastic-projects-algae-corn-starch-beetle-shells/">10 Bioplastic Projects</a>
 
 <a href="https://www.oreilly.com/ideas/darpa-and-the-future-of-synthetic-biology">DARPA and the Future of Synthetic Biology</a>
-
-<a href="http://diyhpl.us/wiki/">DIY h Plus Wiki</a>
 
 <a href="https://www.oreilly.com/ideas/building-artificial-connectomes">How to Build Artificial Connectomes</a>
 
