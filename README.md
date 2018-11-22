@@ -28,6 +28,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.youtube.com/channel/UCdTUCsxpar9vIX_qoQoLIvA/videos">YouTube</a>
 
+</BR>
 
 <h3>The Personal Genome Project</h3>
 
