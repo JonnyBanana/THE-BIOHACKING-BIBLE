@@ -69,7 +69,17 @@ List of useful resources for Biohacking studies and operations:
 </BR>
 
 
+<h3>DIY Biosphere</h3>
 
+</BR>
+
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/DIYbiosphere.png)
+
+- <a href="http://sphere.diybio.org/">Website</a>
+
+- <a href="https://github.com/DIYbiosphere">Github</a>
+
+</BR>
 
 
 
