@@ -18,12 +18,28 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Antibiotics</h2>
 
+<a href="https://labtestsonline.org/articles/antibiotic-resistance-bacteria">Antibiotic Resistance in Bacteria</a>
+
+<a href="http://www.the-odin.com/antibiotic-test-discs-100/">Antibiotics Test Disc</a>
+
+<a href="http://www.vetfolio.com/clinical-pathology/bacterial-culture-and-antibiotic-susceptibility-testing">Bacterial Culture and Antibiotic Susceptibility Testing</a>
+
+<a href="https://www.doomandbloom.net/making-penicillin-at-home/">DIY Penicillin</a>
+
+<a href="https://labiotech.eu/medical/biosensor-antibiotic-resistance-freiburg/">Microfluidics and Biosensors to tackle Antibiotic Resistance</a>
+
 <a href="https://docs.google.com/document/d/15_XAfkTFnHxo8E91ljYQBweAy3rpwj8JJT7iG1sX1gY/edit">The Iliad Project Kit</a>
 
 
 <a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The Iliad Project Manual</a>
 
-<a href="http://www.the-odin.com/antibiotic-test-discs-100/">Antibiotics Test Disc</a>
+
+
+
+
+
+
+
 
 
 
@@ -108,6 +124,11 @@ List of useful resources for Biohacking studies and operations:
 
 
 <h2>Bacteria</h2>
+
+
+<a href="https://labtestsonline.org/articles/antibiotic-resistance-bacteria">Antibiotic Resistance in Bacteria</a>
+
+<a href="http://www.vetfolio.com/clinical-pathology/bacterial-culture-and-antibiotic-susceptibility-testing">Bacterial Culture and Antibiotic Susceptibility Testing</a>
 
 <a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
 
