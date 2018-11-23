@@ -432,7 +432,7 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-<h2>Implant</h2>
+<h2>Implants</h2>
 
 
 
