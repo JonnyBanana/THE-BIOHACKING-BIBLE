@@ -132,19 +132,67 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
 
+<a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
+
 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5404626/">Cyanobacterial Strains</a>
 
+<a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
+
 <a href="https://openwetware.org/wiki/E._coli_genotypes">E. Coli Genotypes</a>
+
+<a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
+
+<a href="http://www.the-odin.com/grow-bioluminescent-e-coli-kit/">Grow Bioluminescent E. coli Kit</a>
+
+<a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
 
 <a href="https://www.dezeen.com/2015/05/04/growduce-aakriti-jain-guillian-graves-bacteria-yeast-micro-factory-grow-cellulose-based-products/">Growduce</a>
 
 <a href="https://pubs.rsc.org/en/content/articlelanding/2018/mt/c7mt00312a#!divAbstract">Synergistic gold–copper detoxification at the core of gold biomineralisation in Cupriavidus metallidurans</a>
+
+<a href="http://www.the-odin.com/bacterial-16s-rdna-primers-for-bacterial-identification/">Bacterial 16s rDNA primers for Bacterial identification</a>
+
+<a href="http://www.the-odin.com/bacterial-crispr-kit-replacement-perishables/">Bacterial CRISPR Kit Replacement Perishables</a>
+
+<a href="http://www.the-odin.com/bacterial-transformation-buffer-20-ml-200-transformations/">Bacterial Transformation Buffer</a>
+
+<a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
+
+<a href="http://www.the-odin.com/e-coli-bl21-de3/">E. coli BL21 (DE3)</a>
+
+<a href="http://www.the-odin.com/e-coli-dh5a/">E. coli DH5a</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <h2>Biohacking Kit</h2>
+
+
+<a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
+
+<a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
+
+<a href="http://www.the-odin.com/grow-bioluminescent-e-coli-kit/">Grow Bioluminescent E. coli Kit</a>
+
+<a href="http://www.the-odin.com/e-coli-dh5a/">E. coli DH5a</a>
+
+<a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
 
 
 
@@ -377,6 +425,8 @@ List of useful resources for Biohacking studies and operations:
 <h2>Plasmids</h2>
 
 <a href="https://drive.google.com/file/d/0B_R75gIJvkFUSkVlN3RFdmgzZ2s/edit">From Dusk till Down</a>
+
+<a href="http://www.the-odin.com/colorbacteria/">GFP plasmid </a>
 
 <a href="http://www.the-odin.com/lambda-red-recombination-plasmids/">lamba Red Recombination Plasmids</a>
 
