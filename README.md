@@ -197,7 +197,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The ILIAD Project Kit - Find New Antibiotics at Home</a>
 
-<a href=""></a>
+
 
 
 
@@ -310,6 +310,12 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.broadinstitute.org/what-broad/areas-focus/project-spotlight/questions-and-answers-about-crispr">Questions about CRISPR</a>
 
+<a href="https://docs.google.com/document/d/1VnO3EXZbrLYNc1qw6z6oOnbC3RNbR9SjAjBRAabiaa0/edit">Step-by-Step Guide for Using CRISPR in Bacteria</a>
+
+<a href="https://docs.google.com/document/d/1AM4kMU7AOD4ba2tWaP8dELiO4O36PjsJ38Msc89DmfM/edit">Step-by-Step Guide for Using CRISPR in Eukaryotes - Draft</a>
+
+<a href="https://docs.google.com/document/d/1XwT50qzXqd8ZaIOv3-x8ESEdDCc90uK9JeV8i9hwbu8/edit">Step-by-Step Guide for Using CRISPR on Yourself</a>
+
 
 
 
@@ -420,6 +426,17 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://github.com/BioHackAcademy/BHA_Thermocycler">Thermocycler</a>
 
 <a href="https://github.com/BioHackAcademy/BHA_Webcam_Microscope">WebCam Microscope</a>
+
+
+
+
+
+
+<h2>Implant</h2>
+
+
+
+
 
 
 
