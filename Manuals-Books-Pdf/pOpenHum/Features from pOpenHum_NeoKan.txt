@@ -1,0 +1,25 @@
+source                    	1..1519   	1519
+rop Promoter?             	1..309    	309 
+rop                       	310..501  	192 
+??                        	502..561  	60  
+bom spacer???             	562..602  	41  
+bom                       	603..745  	143 
+Origin spacer???          	746..930  	185 
+ori                       	931..1519 	589 
+Origin Promoter?          	1520..1579	60  
+J23119(SpeI) promoter     	1580..1614	35  
+SV40 promoter             	1621..1978	358 
+SV40 ori                  	1829..1964	136 
+Kozak                     	1998..2006	9   
+source                    	2007..2801	795 
+aph(3')-II (or nptII)     	2007..2801	795 
+SV40 poly(A) signal       	2810..2931	122 
+CMV-pre????               	2932..3006	75  
+CMV enhancer              	3007..3386	380 
+CMV promoter              	3387..3590	204 
+post CMV???               	3591..3676	86  
+HTLV-1 Region             	3678..3905	228 
+bglobin splice site?      	3906..4064	159 
+ORF                       	4065..4085	21  
+spacer??                  	4086..4147	62  
+beta-globin poly(A) signal	4148..4203	56  
