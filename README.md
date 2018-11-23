@@ -397,7 +397,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://github.com/BioHackAcademy/BHA_GelBox">Gel Box</a>
 
-<a href="https://github.com/BioDesignRealWorld/Fermento/">Fermento</a
+<a href="https://github.com/BioDesignRealWorld/Fermento/">Fermento</a>
  
  <a href="https://github.com/BioHackAcademy/BHA_Incubator">Incubator</a>
  
