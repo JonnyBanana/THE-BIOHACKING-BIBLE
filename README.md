@@ -183,16 +183,21 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Biohacking Kit</h2>
 
+<a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
 
 <a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
+
+<a href="http://www.the-odin.com/e-coli-dh5a/">E. coli DH5a</a>
 
 <a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
 
 <a href="http://www.the-odin.com/grow-bioluminescent-e-coli-kit/">Grow Bioluminescent E. coli Kit</a>
 
-<a href="http://www.the-odin.com/e-coli-dh5a/">E. coli DH5a</a>
+<a href="http://www.the-odin.com/plant-callus-formation-kit-learn-plant-cell-culture/">Plant Callus Formation Kit - Learn Plant Cell Culture</a>
 
-<a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
+<a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The ILIAD Project Kit - Find New Antibiotics at Home</a>
+
+<a href=""></a>
 
 
 
@@ -332,6 +337,33 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+<h2>DNA</h2>
+
+<a href="http://www.the-odin.com/16s-rdna-amplification/">16s rDNA Amplification</a>
+
+<a href="http://www.the-odin.com/bacterial-16s-rdna-primers-for-bacterial-identification/">Bacterial 16s rDNA primers for Bacterial identification</a>
+
+<a href="https://docs.google.com/document/d/1IxJGXwd07j7OL7UVWnSmPfzpFRRlAd4q6HGwsoZ7i2I/edit">DNA Sequencing & Analysis Using BLAST</a>
+
+<a href="http://www.the-odin.com/drd4-genotyping/">DRD4 Genotyping</a>
+
+<a href="http://www.the-odin.com/make-agarose-gels-and-run-gel-electrophoresis/">Make Agarose Gels and Run Gel Electrophoresis</a>
+
+<a href="https://docs.google.com/document/d/1yqZM98GY6RW-qEfWdxch69UV_Nc71JWklJt4yeKzMuM/edit">Minipreps & Plasmid Purification</a>
+
+<a href="https://docs.google.com/document/d/1_MCg110oy6SsnxgwFGeGAJN1ahuJCVgtzlOs3dUJXnA/edit">PCR Guide</a>
+
+<a href="https://docs.google.com/document/d/1XVig-oZBV42On7Tc4kC4V2gJV_bG4wVaIuVl-kvzEDY/edit">PCR Reactions</a>
+
+<a href="http://www.the-odin.com/primer-design/">Primer Design</a>
+
+
+
+
+
+
+
+
 
 
 <h2>Forum</h2>
@@ -395,7 +427,12 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.3ders.org/articles/20181112-bionic-mushrooms-covered-in-3d-printed-cyanobacteria-produce-bio-electricity.html">Bionic Mushrooms</a>
 
+<a href="https://drive.google.com/drive/u/0/folders/1kb8jLXa-OpiS5ACWBz_rVnnNn2M7ByfR">Efficient transformation and expression of gfp genein the edible mushroom Pleurotus nebrodensis</a>
+
+<a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
+
 <a href="https://www.dezeen.com/2013/10/20/mycelium-chair-by-eric-klarenbeek-is-3d-printed-with-living-fungus/">Mycelium Printing</a>
+
 
 
 
@@ -414,6 +451,8 @@ List of useful resources for Biohacking studies and operations:
 <h2>Plants</h2>
 
 
+<a href="http://www.the-odin.com/plant-callus-formation-kit-learn-plant-cell-culture/">Plant Callus Formation Kit - Learn Plant Cell Culture</a>
+
 
 
 
@@ -430,6 +469,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/lambda-red-recombination-plasmids/">lamba Red Recombination Plasmids</a>
 
+<a href="https://docs.google.com/document/d/1yqZM98GY6RW-qEfWdxch69UV_Nc71JWklJt4yeKzMuM/edit">Minipreps & Plasmid Purification</a>
+
 <a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">Open Human Map</a>
 
 <a href="http://www.the-odin.com/open-human-plasmid/">Open Human Plasmid</a>
@@ -443,6 +484,9 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">pOpen Human Map</a>
 
 <a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">pOpen Human Amp Map</a>
+
+
+
 
 
 
@@ -480,13 +524,41 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+
+
+
+
 <h2>Protocols</h2>
 
+
+
+<a href="https://docs.google.com/document/d/1C_j7ytVqXDbOLfTBCzACD29_0Ks8q0qD8mEZQQtSF7w/edit">Agar Stabs</a>
+
 <a href="https://openwetware.org/wiki/NanoBio:_Bacterial_Transformation">Bacterial Transformation</a>
+
+<a href="https://docs.google.com/document/d/1e9heRklEyINMc_sHPyRcBB3mxT0vnf4wqxkn7aiwlBM/edit">How to Pipette</a>
+
+<a href="https://docs.google.com/document/d/1sri7Xer8BEreP-dp2rcqIalfDeffTTB9fvRPFpaTd8Y/edit">How to Make Agarose Gels and Run Electrophoresis</a>
+
+<a href="https://docs.google.com/document/d/1nSiN0CId6RpvscEXPgn8-2wQRETWHYXPSDO8mk-aYss/edit">How to Use a Scale/Balance</a>
+
+<a href="https://docs.google.com/document/d/1HDTlFRySrLdvkLl-uU-Wz1kMn6lyCG-jlfqn4IOywIw/edit">How to Use Your Microcentrifuge</a>
 
 <a href="https://openwetware.org/wiki/Preparing_chemically_competent_cells">Preparing Chemically Competent Cells</a>
 
 <a href="https://openwetware.org/wiki/NanoBio:_Protocol_for_gene_knockout">Protocol for Gene Knockout</a>
+
+<a href="https://docs.google.com/document/d/1UcbshGXeTEyNg-4ZxiJDeOM8r6mN5CZDreM5c7n6bzE/edit">Making Agar Plates for Bacteria or Yeast</a>
+
+<a href="https://docs.google.com/document/d/1VnO3EXZbrLYNc1qw6z6oOnbC3RNbR9SjAjBRAabiaa0/edit">Understand where a protein binds or interacts with other molecules</a>
+
+
+
+
+
+
+
+
 
 
 
@@ -538,12 +610,13 @@ List of useful resources for Biohacking studies and operations:
   
   <a href="https://www.aldevron.com/">Aldevron</a>
     
-   <a href="https://www.elimbio.com/">Elim BioPharm</a>
+  <a href="https://www.elimbio.com/">Elim BioPharm</a>
   
  
   
   
-  
+
+
   
 
 
@@ -559,6 +632,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.oreilly.com/ideas/darpa-and-the-future-of-synthetic-biology">DARPA and the Future of Synthetic Biology</a>
 
+<a href="https://www.pili.bio/9/technology">Grow Your Own Ink</a>
+
 <a href="https://www.oreilly.com/ideas/building-artificial-connectomes">How to Build Artificial Connectomes</a>
 
 <a href="http://parts.igem.org/Lux">Lux Operon</a>
@@ -569,6 +644,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.nature.com/news/bionic-roses-implanted-with-electronic-circuits-1.18851">Roses Circuit Implant</a>
 
+<a href="https://hackaday.com/2015/07/30/the-biohacking-movement-and-open-source-insulin/">The Biohacker Movement and the Open Source Insulin</a>
 
 
 
@@ -588,7 +664,39 @@ List of useful resources for Biohacking studies and operations:
  
  <a href="https://www.youtube.com/watch?v=GfE04tpaqxU">DNA Extraction from Blood</a>
  
+  <a href="https://www.youtube.com/watch?v=vdY8uCQ84_4">Bacterial Transformation Definition, Process and Genetic Engineering of E col</a>
+  
+  <a href="https://vimeo.com/246708087">We Biofabricate Living Colors</a>
+   
+  
+ 
  </BR>
+ 
+ 
+   <a href="https://vimeo.com/246708087">We Biofabricate Living Colors</a>
+ 
+ 
+ 
+ <h2>Yest</h2>
+
+ <a href="http://www.the-odin.com/add-on-genetically-engineer-any-brewing-or-baking-yeast-to-fluoresce/">Add on - Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
+ 
+ <a href="http://www.the-odin.com/ge-yeast/">Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
+ 
+ <a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
+
+<a href="http://www.the-odin.com/yeast-transformation-kit/">Yeast Transformation Kit</a>
+
+
+ 
+ </BR>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/brain-hack.JPG)
