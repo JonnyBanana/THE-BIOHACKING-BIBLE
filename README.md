@@ -677,13 +677,13 @@ List of useful resources for Biohacking studies and operations:
  
  
  
- <h2>Yest</h2>
+ <h2>Yeast</h2>
 
  <a href="http://www.the-odin.com/add-on-genetically-engineer-any-brewing-or-baking-yeast-to-fluoresce/">Add on - Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
  
  <a href="http://www.the-odin.com/ge-yeast/">Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
  
- <a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
+<a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
 
 <a href="http://www.the-odin.com/yeast-transformation-kit/">Yeast Transformation Kit</a>
 
