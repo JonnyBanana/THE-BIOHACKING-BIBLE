@@ -132,23 +132,6 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
 
-<a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
-
-<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5404626/">Cyanobacterial Strains</a>
-
-<a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
-
-<a href="https://openwetware.org/wiki/E._coli_genotypes">E. Coli Genotypes</a>
-
-<a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
-
-<a href="http://www.the-odin.com/grow-bioluminescent-e-coli-kit/">Grow Bioluminescent E. coli Kit</a>
-
-<a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
-
-<a href="https://www.dezeen.com/2015/05/04/growduce-aakriti-jain-guillian-graves-bacteria-yeast-micro-factory-grow-cellulose-based-products/">Growduce</a>
-
-<a href="https://pubs.rsc.org/en/content/articlelanding/2018/mt/c7mt00312a#!divAbstract">Synergistic gold–copper detoxification at the core of gold biomineralisation in Cupriavidus metallidurans</a>
 
 <a href="http://www.the-odin.com/bacterial-16s-rdna-primers-for-bacterial-identification/">Bacterial 16s rDNA primers for Bacterial identification</a>
 
@@ -158,9 +141,30 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
 
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5404626/">Cyanobacterial Strains</a>
+
+<a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
+
 <a href="http://www.the-odin.com/e-coli-bl21-de3/">E. coli BL21 (DE3)</a>
 
 <a href="http://www.the-odin.com/e-coli-dh5a/">E. coli DH5a</a>
+
+<a href="https://openwetware.org/wiki/E._coli_genotypes">E. Coli Genotypes</a>
+
+<a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
+
+<a href="http://www.the-odin.com/grow-bioluminescent-e-coli-kit/">Grow Bioluminescent E. coli Kit</a>
+
+<a href="https://www.dezeen.com/2015/05/04/growduce-aakriti-jain-guillian-graves-bacteria-yeast-micro-factory-grow-cellulose-based-products/">Growduce</a>
+
+<a href="https://pubs.rsc.org/en/content/articlelanding/2018/mt/c7mt00312a#!divAbstract">Synergistic gold–copper detoxification at the core of gold biomineralisation in Cupriavidus metallidurans</a>
+
+<a href="https://docs.google.com/document/d/1WfinyShknOAw4TPQ1uNsd3pNgzvNMPF-ya0igXmjQ68/edit">Transormation Bacterial Protocol</a>
+
+
+
+
+
 
 
 
@@ -315,6 +319,11 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://docs.google.com/document/d/1AM4kMU7AOD4ba2tWaP8dELiO4O36PjsJ38Msc89DmfM/edit">Step-by-Step Guide for Using CRISPR in Eukaryotes - Draft</a>
 
 <a href="https://docs.google.com/document/d/1XwT50qzXqd8ZaIOv3-x8ESEdDCc90uK9JeV8i9hwbu8/edit">Step-by-Step Guide for Using CRISPR on Yourself</a>
+
+<a href="https://docs.google.com/document/d/1l4c1XVISPIdXbIO8nawNdfiZL16nkfY719o8OHnsPM4/edit">Yeast CRISPR Guide</a>
+
+
+
 
 
 
@@ -472,6 +481,16 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+<a href="https://drive.google.com/drive/u/0/folders/0B_R75gIJvkFUckt2VnVfTW1MVU0"></a>
+
+<a href=""></a>
+
+<a href=""></a>
+
+<a href=""></a>
+
+
+
 
 
 
@@ -528,9 +547,9 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.snapgene.com/products/snapgene_viewer/">Snap Gene viewer</a>
 
+<a href="http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD">Visual Molecular Dynamics (VMD)</a>
 
-
-
+<a href="http://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/">VMD Tutorial</a>
 
 
 
@@ -566,6 +585,12 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://openwetware.org/wiki/NanoBio:_Protocol_for_gene_knockout">Protocol for Gene Knockout</a>
 
 <a href="https://docs.google.com/document/d/1UcbshGXeTEyNg-4ZxiJDeOM8r6mN5CZDreM5c7n6bzE/edit">Making Agar Plates for Bacteria or Yeast</a>
+
+<a href="http://www.the-odin.com/protein-computational-science">Protein Computational Science</a>
+
+<a href="https://docs.google.com/document/d/1WfinyShknOAw4TPQ1uNsd3pNgzvNMPF-ya0igXmjQ68/edit">Transormation Bacterial Protocol</a>
+
+<a href="https://docs.google.com/document/d/15oQxYsg7fimezO0veolQ8T3Yh9YdgMFYNQE_tnjt00k/edit">Transformation Yeast</a>
 
 <a href="https://docs.google.com/document/d/1VnO3EXZbrLYNc1qw6z6oOnbC3RNbR9SjAjBRAabiaa0/edit">Understand where a protein binds or interacts with other molecules</a>
 
@@ -698,11 +723,25 @@ List of useful resources for Biohacking studies and operations:
 
  <a href="http://www.the-odin.com/add-on-genetically-engineer-any-brewing-or-baking-yeast-to-fluoresce/">Add on - Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
  
- <a href="http://www.the-odin.com/ge-yeast/">Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
+<a href="http://www.the-odin.com/ge-yeast/">Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
  
 <a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
 
+<a href="https://docs.google.com/document/d/15oQxYsg7fimezO0veolQ8T3Yh9YdgMFYNQE_tnjt00k/edit">Transformation Yeast</a>
+
+<a href="https://docs.google.com/document/d/1l4c1XVISPIdXbIO8nawNdfiZL16nkfY719o8OHnsPM4/edit">Yeast CRISPR Guide</a>
+
 <a href="http://www.the-odin.com/yeast-transformation-kit/">Yeast Transformation Kit</a>
+
+
+
+
+<a href=""></a>
+
+<a href=""></a>
+
+
+
 
 
  
