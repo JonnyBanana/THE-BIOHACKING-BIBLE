@@ -227,6 +227,8 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>CheatSheets</h2>
 
+<a href="https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE/tree/master/CheatSheets">CheatSheets</a>
+
 <a href="http://leganerd.com/wp-content/uploads/2014/04/PMT-table.png">Mario Periodic Table</a>
 
 <a href="https://sciencenotes.org/wp-content/uploads/2018/02/PeriodicTableCharge-2018.png">Periodic Table</a>
@@ -476,16 +478,43 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Plants</h2>
 
+<a href="https://drive.google.com/file/d/1XfpJoQIJ4rbUelgpIJGA9okR64faBhy0/view?usp=sharing">2,4D Callus Formation</a>
+
+<a href="https://drive.google.com/file/d/1GEXtGmeKq3qAnYcLrOj8Ro5WI9bI0C6G/view?usp=sharing">A MICROPROPAGATION SYSTEM FOR CLONING OF HEMP (CANNABIS SATIVA L.) BY SHOOT TIP CULTURE</a>
+
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUN2ZnOU1fX0xrZXM/view?usp=sharing">Arabidopsis mesophyll protoplasts: a versatile cellsystem for transient gene expression analysis</a>
+
+<a href="https://drive.google.com/file/d/1Oi5-BQeRCHhHjxONFE8wmSx5wrAiFFrX/view?usp=sharing">Biotechnology in Agriculture Development</a>
+
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUVmZHcEpMX0VMck0/view?usp=sharing">Carrot Tissue Culture Kit</a>
+
+<a href="https://drive.google.com/file/d/1tR3LhV258W9AlN9LzMs6lHhgoZQDygX-/view?usp=sharing">Development of a rapid, low-cost protoplast transfection systemfor switchgrass</a>
+
+<a href="https://drive.google.com/file/d/1Z9xA0o3AmdMvJtRHIjiWmrTTrpGzQnsh/view?usp=sharing">EXPERIMENTS IN Plant Tissue Culture</a>
+
+<a href="https://drive.google.com/file/d/1tDb-FCysplmKiIyKo37B_QOZrOxMAUr7/view?usp=sharing">High Frequency Plant Regeneration from Leaf Derived Callus of High Δ9-Tetrahydrocannabinol Yielding Cannabis sativa L.</a>
+
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUclc5dHVRUjJwS0U/view?usp=sharing">Infiltration of Nicotiana benthamiana Protocol for Transient Expression via Agrobacterium</a>
+
+<a href="https://drive.google.com/file/d/1Xi716WsLcwPNN7Lid1CR4IfpSfq4Pfjp/view?usp=sharing">Low cost options for tissue culture technology in developing countries</a>
+
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFULXV3WnJJZHNzUk0/view?usp=sharing">Mini Tomatoes Protocol</a>
 
 <a href="http://www.the-odin.com/plant-callus-formation-kit-learn-plant-cell-culture/">Plant Callus Formation Kit - Learn Plant Cell Culture</a>
 
+<a href="https://drive.google.com/file/d/12SGrR7dVn9HeZ-fE78TpaANu1pAumSQJ/view?usp=sharing">Plant Propagation By Tissue Culture</a>
 
+<a href="https://drive.google.com/file/d/1UGzEhw6BJQEX1JoQHsduxvPPaWjaTRtW/view?usp=sharing">Plant Tissue Culture</a>
 
-<a href="https://drive.google.com/drive/u/0/folders/0B_R75gIJvkFUckt2VnVfTW1MVU0"></a>
+<a href="https://drive.google.com/file/d/1fNwapqrskrdtN5unT3juyPRmUA30GNQd/view?usp=sharing">PLANT TISSUE CULTURE</a>
 
-<a href=""></a>
+<a href="https://drive.google.com/file/d/1QaKQNMQuXu-6fE6PTZa5z1KNeqjWNxCo/view?usp=sharing">PLANT TISSUE CULTURE ENGINEERING</a>
 
-<a href=""></a>
+<a href="https://drive.google.com/file/d/1HS1lZu6cf81nWtGOEEl2qmoARDf8h3QI/view?usp=sharing">Plant Tissue Culture Media</a>
+
+<a href="https://drive.google.com/file/d/1PiCXpzpUjTb8DgaKMIcOxdEuGImhx1QD/view?usp=sharing">Plant Tissue Culture Techniques and Experiments</a>
+
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUcm5jakxrQ1JVaFE/view?usp=sharing">Soybean Transformation</a>
 
 <a href=""></a>
 
