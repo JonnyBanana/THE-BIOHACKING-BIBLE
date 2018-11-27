@@ -312,7 +312,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/human-myostatin-knock-out-targeting-crispr-cas9-plasmid/">Human Myostatin Knock-Out Targeting CRISPR-Cas9 Plasmid </a>
 
-<a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">MSTN CRISPR</a>
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUZXB1c3d1WlJvTlU/view?usp=sharing">MSTN CRISPR</a>
 
 <a href="https://www.broadinstitute.org/what-broad/areas-focus/project-spotlight/questions-and-answers-about-crispr">Questions about CRISPR</a>
 
@@ -455,7 +455,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.3ders.org/articles/20181112-bionic-mushrooms-covered-in-3d-printed-cyanobacteria-produce-bio-electricity.html">Bionic Mushrooms</a>
 
-<a href="https://drive.google.com/drive/u/0/folders/1kb8jLXa-OpiS5ACWBz_rVnnNn2M7ByfR">Efficient transformation and expression of gfp genein the edible mushroom Pleurotus nebrodensis</a>
+<a href="https://drive.google.com/file/d/1oJqvBcrFhfPcPbus8qrfqUapQN5zinzI/view?usp=sharing">Efficient transformation and expression of gfp genein the edible mushroom Pleurotus nebrodensis</a>
 
 <a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
 
