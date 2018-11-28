@@ -886,6 +886,8 @@ The repo will be updated about monthly, if you want to see the original list her
 
 https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE
 
+</BR>
+
 
 ![Alt text](https://media.giphy.com/media/30pdYnh6VSw5mWD0Z0/giphy.gif)
 
