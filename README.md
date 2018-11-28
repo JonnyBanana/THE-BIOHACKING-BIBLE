@@ -444,7 +444,40 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-<h2>Implants</h2>
+
+
+
+
+
+
+<h2>Implants and Body Hack</h2>
+
+<a href="https://arstechnica.com/features/2018/01/a-practical-guide-to-microchip-implants/">A practical guide to microchip implants</a>
+
+<a href="https://news.bitcoin.com/bio-implantable-bitcoin-growing-popular/">Bio-Implantable Bitcoin Wallets Becoming a Popular Storage Solution</a>
+
+<a href="https://motherboard.vice.com/en_us/article/d7yzvj/biohackers-are-implanting-led-lights-under-their-skin">Biohackers Are Implanting LED Lights Under Their Skin</a>
+
+<a href="https://www.popsci.com/technology/article/2010-10/new-ultra-flexible-waterproof-leds-can-be-implanted-under-your-skin">Bored By Non-Glowing Skin? Ultra-Flexible, Waterproof LED Implants Are What You Seek</a>
+
+<a href="https://dangerousthings.com/">Dangerous Things</a>
+
+<a href="http://gochipme.com/index.php/shop">GoChipMe</a>
+
+<a href="https://www.youtube.com/watch?v=pdauofdGFBM">NFC Chip Implant Bitcoin Payments in Paralelni Polis</a>
+
+<a href="https://www.youtube.com/watch?v=5FndLJj7tSk">Northstar V1 Implant (cw: Bloody)</a>
+
+<a href="https://www.youtube.com/watch?v=Gj5g454AD4E">RFID Hand Implant with SparkFun!</a>
+
+<a href="https://www.youtube.com/watch?v=3aVwvJn7vpo">The Complete Guide to Magnet Implants</a>
+
+<a href="https://www.nanalyze.com/2017/08/who-makes-rfid-chip-implants-humans/">Who Makes the RFID Chip Implants for Humans?</a>
+
+<a href="https://cyborgnest.net/">CyborgNest</a>
+
+<a href="https://www.ledinside.com/news/2015/11/biohackers_illuminate_tattoos_with_led_implants">Biohackers Illuminate Tattoos with LED Implants</a>
+
 
 
 
@@ -714,12 +747,18 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://www.elimbio.com/">Elim BioPharm</a>
  
 <a href="https://www.fishersci.com">Fisher Scientific</a>
+
+<a href="http://gochipme.com/index.php/shop">GoChipMe</a>
  
 <a href="http://www.the-odin.com">Odin</a>
 
 <a href="http://www.plasmachem.com/shop/en/">PlasmaChem</a>
   
 <a href="https://www.thermofisher.com">Thermo Fisher</a>
+
+
+
+
 
 
   
@@ -760,6 +799,8 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://www.nature.com/news/bionic-roses-implanted-with-electronic-circuits-1.18851">Roses Circuit Implant</a>
 
 <a href="https://hackaday.com/2015/07/30/the-biohacking-movement-and-open-source-insulin/">The Biohacker Movement and the Open Source Insulin</a>
+
+<a href="https://nerdist.com/augmented-reality-tattoo-sonic-the-hedgehog-game/">This Augmented Reality Tattoo Generates a SONIC THE HEDGEHOG Game</a>
 
 
 
