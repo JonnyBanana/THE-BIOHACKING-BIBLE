@@ -130,8 +130,9 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.vetfolio.com/clinical-pathology/bacterial-culture-and-antibiotic-susceptibility-testing">Bacterial Culture and Antibiotic Susceptibility Testing</a>
 
-<a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
+<a href="https://www.education.com/science-fair/article/what-s-weakest-solution-bleach-will-kill/">Bacteria Science Fair Project: How Does Bleach Kill Bacteria?</a>
 
+<a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
 
 <a href="http://www.the-odin.com/bacterial-16s-rdna-primers-for-bacterial-identification/">Bacterial 16s rDNA primers for Bacterial identification</a>
 
@@ -451,6 +452,41 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+
+
+
+
+
+
+
+
+<h2>Materials and Nanotech</h2>
+
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5707215/">A Simple Approach for Synthesizing of Fluorescent Carbon Quantum Dots from Tofu Wastewater</a>
+
+<a href="https://www.beilstein-journals.org/bjnano/home">Beilstein Nanotech Journal</a>
+
+<a href="http://www.plasmachem.com/shop/en/62--cdte-quantum-dots-powder-hydrophilic-water-soluble">CdTe Quantum Dots, hydrophilic</a>
+
+<a href="https://www.beilstein-journals.org/bjnano/articles/4/101">Energy transfer in complexes of water-soluble quantum dots and chlorin e6 molecules in different environments</a>
+
+<a href="https://www.hindawi.com/journals/ijac/2018/3164347/">Limiting the Growth of Water-Soluble, Monolayer-Protected Quantum Dots</a>
+
+<a href="https://archive.education.mrsec.wisc.edu/nanolab/CdSe/index.html">Synthesis of Cadmium Selenide Quantum Dot Nanoparticles</a>
+
+<a href="https://pubs.rsc.org/en/content/articlelanding/2018/ra/c7ra13400b#!divAbstract">Synthesis of water-soluble and bio-taggable CdSe@ZnS quantum dots </a>
+
+<a href="http://science.sciencemag.org/content/300/5624/1434.full">http://science.sciencemag.org/content/300/5624/1434.full</a>
+
+
+
+
+
+
+
+
+
+
 <h2>Mushrooms</h2>
 
 <a href="https://www.3ders.org/articles/20181112-bionic-mushrooms-covered-in-3d-printed-cyanobacteria-produce-bio-electricity.html">Bionic Mushrooms</a>
@@ -536,7 +572,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://docs.google.com/document/d/1yqZM98GY6RW-qEfWdxch69UV_Nc71JWklJt4yeKzMuM/edit">Minipreps & Plasmid Purification</a>
 
-<a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">Open Human Map</a>
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUUlhITEI3ZnZUck0/view?usp=sharing">Open Human Map</a>
 
 <a href="http://www.the-odin.com/open-human-plasmid/">Open Human Plasmid</a>
 
@@ -546,9 +582,9 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/plasmid-pje202-pvib-to-create-bioluminescent-bacteria/">Plasmid pJE202/pVIB to Create Bioluminescent Bacteria</a>
 
-<a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">pOpen Human Map</a>
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUdERFTG5TTVhpNTA/view?usp=sharing">pOpen Human Map</a>
 
-<a href="https://drive.google.com/drive/folders/0B_R75gIJvkFUMU1ubjl3SEsxSkU">pOpen Human Amp Map</a>
+<a href="https://drive.google.com/file/d/0B_R75gIJvkFUZWtlYVhkTDdGR1E/view?usp=sharing">pOpen Human Amp Map</a>
 
 
 
@@ -644,6 +680,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://diyhpl.us/wiki/">DIY h Plus Wiki</a>
 
+<a href="https://www.genecards.org/">GeneCards</a>
+
 <a href="https://www.ncbi.nlm.nih.gov/genome/browse/#!/overview/">Genome Information by Organism</a>
 
 <a href="https://www.ncbi.nlm.nih.gov/gene">Gene Refernces</a>
@@ -665,28 +703,34 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.addgene.org/search/advanced/?q=&depositor=&article=&gene=&vector=&tags=&advanced_query=&results_per_page=20&page=1&selected_facets=popularity_exact%3A3&sort_type=relevance">Addgene</a>
 
-  <a href="http://www.bio-rad.com/">Bio-Rad</a>
+<a href="https://www.aldevron.com/">Aldevron</a>
+
+<a href="http://www.bio-rad.com/">Bio-Rad</a>
  
 <a href="https://www.carolina.com/">Carolina.com</a>
 
-  <a href="https://dangerousthings.com/">Dangerous Things</a>
+<a href="https://dangerousthings.com/">Dangerous Things</a>
+
+<a href="https://www.elimbio.com/">Elim BioPharm</a>
  
- <a href="https://www.fishersci.com">Fisher Scientific</a>
+<a href="https://www.fishersci.com">Fisher Scientific</a>
  
-  <a href="http://www.the-odin.com">Odin</a>
+<a href="http://www.the-odin.com">Odin</a>
+
+<a href="http://www.plasmachem.com/shop/en/">PlasmaChem</a>
   
-  <a href="https://www.thermofisher.com">Thermo Fisher</a>
-  
-  
-  
-  <a href="https://www.aldevron.com/">Aldevron</a>
-    
-  <a href="https://www.elimbio.com/">Elim BioPharm</a>
-  
- 
-  
+<a href="https://www.thermofisher.com">Thermo Fisher</a>
+
+
   
 
+
+    
+
+  
+ 
+  
+  
 
   
 
@@ -729,17 +773,27 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Videos</h2>
 
- <a href="https://www.youtube.com/watch?v=DaaRrR-ZHP4">Extract your DNA</a>
+<a href="https://www.youtube.com/watch?v=vdY8uCQ84_4">Bacterial Transformation Definition, Process and Genetic Engineering of E  col</a>
+
+<a href="https://www.youtube.com/watch?v=DaaRrR-ZHP4">Extract your DNA</a>
  
- <a href="https://www.youtube.com/watch?v=ew9-YGrgpWo">Extract DNA from a Banana!</a>
+<a href="https://www.youtube.com/watch?v=ew9-YGrgpWo">Extract DNA from a Banana!</a>
  
- <a href="https://www.youtube.com/watch?v=GfE04tpaqxU">DNA Extraction from Blood</a>
+<a href="https://www.youtube.com/watch?v=GfE04tpaqxU">DNA Extraction from Blood</a>
  
-  <a href="https://www.youtube.com/watch?v=vdY8uCQ84_4">Bacterial Transformation Definition, Process and Genetic Engineering of E col</a>
-  
-  <a href="https://vimeo.com/246708087">We Biofabricate Living Colors</a>
+<a href="https://www.youtube.com/watch?v=W_Xa-m5zMYI">How to make colorful carbon quantum dots out of table sugar</a>
+
+<a href="https://www.youtube.com/watch?v=s3H0_8TLs-A&feature=youtu.be">How to Make Quantum Dots</a>
+
+<a href="https://www.youtube.com/watch?v=LPkINJkII1w">How to make quantum dots at home</a>
+
+<a href="https://vimeo.com/246708087">We Biofabricate Living Colors</a>
    
-  
+
+
+
+
+
  
 
  
@@ -763,9 +817,7 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-<a href=""></a>
 
-<a href=""></a>
 
 
 
