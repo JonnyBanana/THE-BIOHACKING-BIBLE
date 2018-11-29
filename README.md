@@ -914,8 +914,8 @@ send an email to howtohackitalia@gmail.com <BR> with the changes you want to pro
 </BR>
 
 
-Do you have an association or a BioHackLab and are not mentioned in the list? </BR>
-Send logo, and any site or github page and you will be entered as soon as possible
+Do you have an association or a BioHackLab and are not mentioned in the list??? </BR>
+Send your logo, and any site or github page, and you will be entered as soon as possible...
 
 </BR>
 
@@ -924,5 +924,18 @@ Send logo, and any site or github page and you will be entered as soon as possib
 </BR>
 
 
+<h3>Contributors</h3>
 
+</BR>
+
+<a href="https://github.com/JonnyBanana">Jonny Banana</a> Bologna, Italy (Creator)
+
+<a href="">M1n1xM0rK</a> Rome, Italy (Link Sender)
+
+</BR>
+
+![Alt text](https://media.giphy.com/media/4HeqoiYgpd31x0SJi7/giphy.gif)
+
+
+</BR>
 
