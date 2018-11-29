@@ -99,7 +99,7 @@ List of useful resources for Biohacking studies and operations:
 
 </BR>
 
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/golden_black_CMYK-01_1__07769.1507047492.1280.1280.png)
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/zPk39H-G_400x400.jpg)
 
 - <a href="http://www.the-odin.com/">website</a>
 
