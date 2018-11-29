@@ -131,15 +131,21 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://labtestsonline.org/articles/antibiotic-resistance-bacteria">Antibiotic Resistance in Bacteria</a>
 
+<a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
+
+
 <a href="http://www.vetfolio.com/clinical-pathology/bacterial-culture-and-antibiotic-susceptibility-testing">Bacterial Culture and Antibiotic Susceptibility Testing</a>
 
-<a href="https://www.education.com/science-fair/article/what-s-weakest-solution-bleach-will-kill/">Bacteria Science Fair Project: How Does Bleach Kill Bacteria?</a>
+<a href="https://academic.oup.com/femsre/article/33/5/892/562963">Bacterial strain typing in the genomic era</a>
 
-<a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
+<a href="https://www.education.com/science-fair/article/what-s-weakest-solution-bleach-will-kill/">Bacteria Science Fair Project: How Does Bleach Kill Bacteria?</a>
 
 <a href="http://www.the-odin.com/bacterial-16s-rdna-primers-for-bacterial-identification/">Bacterial 16s rDNA primers for Bacterial identification</a>
 
 <a href="http://www.the-odin.com/bacterial-crispr-kit-replacement-perishables/">Bacterial CRISPR Kit Replacement Perishables</a>
+
+
+<a href="http://wolfson.huji.ac.il/expression/bac-strains-prot-exp.html">Bacterial Strains for Protein Expression</a>
 
 <a href="http://www.the-odin.com/bacterial-transformation-buffer-20-ml-200-transformations/">Bacterial Transformation Buffer</a>
 
@@ -161,16 +167,13 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.dezeen.com/2015/05/04/growduce-aakriti-jain-guillian-graves-bacteria-yeast-micro-factory-grow-cellulose-based-products/">Growduce</a>
 
+<a href="https://www.exeter.ac.uk/news/research/title_681220_en.html">New bacterial strain named after Cornish discovery </a>
+
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4991899/">Revised Estimates for the Number of Human and Bacteria Cells in the Body</a>
+
 <a href="https://pubs.rsc.org/en/content/articlelanding/2018/mt/c7mt00312a#!divAbstract">Synergistic gold–copper detoxification at the core of gold biomineralisation in Cupriavidus metallidurans</a>
 
 <a href="https://docs.google.com/document/d/1WfinyShknOAw4TPQ1uNsd3pNgzvNMPF-ya0igXmjQ68/edit">Transormation Bacterial Protocol</a>
-
-
-
-
-
-
-
 
 
 
