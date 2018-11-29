@@ -919,7 +919,7 @@ Send logo, and any site or github page and you will be entered as soon as possib
 
 </BR>
 
-![Alt text](https://media.giphy.com/media/P2cTW4k9BXs0U/giphy.gif)
+![Alt text](https://media.giphy.com/media/pjmvfxU6J6Lh0WiM9j/giphy.gif)
 
 </BR>
 
