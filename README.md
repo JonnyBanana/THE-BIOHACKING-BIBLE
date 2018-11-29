@@ -896,7 +896,11 @@ https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE
 
 <h3>To do:</h3>
 
+</BR>
+
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/logos.png)
+
+</BR>
 
 There are so many things to do, and anyone can contribute by sending url, images, pdf etc,
 but also proposing improvements, new recipes, cheatsheets, etc. just make a pull request or simply
@@ -908,6 +912,17 @@ send an email to howtohackitalia@gmail.com <BR> with the changes you want to pro
 ![Alt text](https://media.giphy.com/media/Tvk1KBG32oYgM/giphy.gif)
 
 </BR>
+
+
+Do you have an association or a BioHackLab and are not mentioned in the list? </BR>
+Send logo, and any site or github page and you will be entered as soon as possible
+
+</BR>
+
+![Alt text](https://media.giphy.com/media/P2cTW4k9BXs0U/giphy.gif)
+
+</BR>
+
 
 
 
