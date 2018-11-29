@@ -1,0 +1,13 @@
+1. disperse the QD in CH2Cl2 
+2. add MAA.  -> precipitate could be observed.
+3. add TEA as dropwise until precipitate diappears. -> reaction heat could be felt.
+4. add excess acetone to obtain precipitate of ligand exchanged InP/ZnS 
+5. centrifugate to recover the InP/ZnS. Repeat this washing ~3 times until the smell of MAA disappears.
+6. add water to obtain uniform dispersion.
+If the precipitation could not observed at 4, a drop of NH3 aq may be added to dissociate the ligand MAA to COO-.
+Both MAA and TEA seem to etch the ZnS slightly, so ZnS shell should be formd a little bit thicker than ideal thickness.
+
+
+from:
+
+https://www.researchgate.net/post/How_to_make_Quantum_dots_water_dispersable_soluble_with_high_stability
