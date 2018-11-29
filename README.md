@@ -95,6 +95,19 @@ List of useful resources for Biohacking studies and operations:
 </BR>
 
 
+<h3>The Odin</h3>
+
+</BR>
+
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/golden_black_CMYK-01_1__07769.1507047492.1280.1280.png)
+
+- <a href="http://www.the-odin.com/">website</a>
+
+</BR>
+
+</BR>
+
+
 <h3>The Personal Genome Project</h3>
 
 </BR>
