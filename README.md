@@ -505,7 +505,18 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+<h2>Magazine</h2>
 
+
+<a href="https://biologywise.com/">BiologyWise</a>
+
+<a href="https://gizmodo.com/tag/bio-hacking">Gizmodo</a>
+
+<a href="https://motherboard.vice.com/en_us">Motherboard</a>
+
+<a href="http://physicsopenlab.org/">physicOpenLab</a>
+
+<a href="https://www.wired.co.uk/topic/biohacking">Wired</a>
 
 
 
