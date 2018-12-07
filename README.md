@@ -337,6 +337,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.broadinstitute.org/what-broad/areas-focus/project-spotlight/questions-and-answers-about-crispr">Questions about CRISPR</a>
 
+<a href="https://www.wired.com/story/scientists-upload-a-galloping-horse-gif-into-bacteria-with-crispr/">Scientists Upload a Galloping Horse GIF Into Bacteria With Crispr</a>
+
 <a href="https://docs.google.com/document/d/1VnO3EXZbrLYNc1qw6z6oOnbC3RNbR9SjAjBRAabiaa0/edit">Step-by-Step Guide for Using CRISPR in Bacteria</a>
 
 <a href="https://docs.google.com/document/d/1AM4kMU7AOD4ba2tWaP8dELiO4O36PjsJ38Msc89DmfM/edit">Step-by-Step Guide for Using CRISPR in Eukaryotes - Draft</a>
@@ -344,8 +346,6 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://docs.google.com/document/d/1XwT50qzXqd8ZaIOv3-x8ESEdDCc90uK9JeV8i9hwbu8/edit">Step-by-Step Guide for Using CRISPR on Yourself</a>
 
 <a href="https://docs.google.com/document/d/1l4c1XVISPIdXbIO8nawNdfiZL16nkfY719o8OHnsPM4/edit">Yeast CRISPR Guide</a>
-
-
 
 
 
@@ -548,7 +548,10 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
 
+<a href="https://www.amazon.com/Glow-Dark-Mushroom-Growing-Habitat/dp/B01KMA6NJE">Glow in the Dark Mushroom Growing Habitat Kit</a>
+
 <a href="https://www.dezeen.com/2013/10/20/mycelium-chair-by-eric-klarenbeek-is-3d-printed-with-living-fungus/">Mycelium Printing</a>
+
 
 
 
@@ -773,6 +776,8 @@ List of useful resources for Biohacking studies and operations:
 <a href="http://www.the-odin.com">Odin</a>
 
 <a href="http://www.plasmachem.com/shop/en/">PlasmaChem</a>
+
+<a href="https://ita.promega.com/">Promega</a>
   
 <a href="https://www.thermofisher.com">Thermo Fisher</a>
 
@@ -782,7 +787,6 @@ List of useful resources for Biohacking studies and operations:
 
 
   
-
 
     
 
