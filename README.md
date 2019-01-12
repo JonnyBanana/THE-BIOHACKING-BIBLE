@@ -23,6 +23,12 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://labtestsonline.org/articles/antibiotic-resistance-bacteria">Antibiotic Resistance in Bacteria</a>
 
+<a href="https://www.carolina.com/microbiology-supplies/antibiotic-disk-mini-set/806499.pr?intid=jl_pdpfam&jl_ctx=on_site">Antibiotic Disk Mini Set</a>
+
+<a href="https://www.carolina.com/bacteria/antibiotics-in-action-kit/154776.pr?question=antibiotic+kit#">Antibiotics in Action Kit</a>
+
+<a href="https://www.carolina.com/microbiology-supplies/antibiotic-sensitivity-disks-set/805081.pr?question=antibiotic">Antibiotic Sensitivity Disks Set</a>
+
 <a href="http://www.the-odin.com/antibiotic-test-discs-100/">Antibiotics Test Disc</a>
 
 <a href="http://www.vetfolio.com/clinical-pathology/bacterial-culture-and-antibiotic-susceptibility-testing">Bacterial Culture and Antibiotic Susceptibility Testing</a>
@@ -35,6 +41,10 @@ List of useful resources for Biohacking studies and operations:
 
 
 <a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The Iliad Project Manual</a>
+
+
+
+
 
 
 
@@ -207,6 +217,8 @@ List of useful resources for Biohacking studies and operations:
 
 
 <h2>Biohacking Kit</h2>
+
+<a href="https://www.carolina.com/bacteria/antibiotics-in-action-kit/154776.pr?question=antibiotic+kit#">Antibiotics in Action Kit</a>
 
 <a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
 
