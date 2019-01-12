@@ -433,6 +433,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://github.com/BioHackAcademy/BHA_Microscope">DIY Microscope</a>
 
+<a href="https://github.com/allanino/DNA">DNA</a>
+
 <a href="https://github.com/BioHackAcademy/BHA_GelBox">Gel Box</a>
 
 <a href="https://github.com/BioDesignRealWorld/Fermento/">Fermento</a>
@@ -458,9 +460,6 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://github.com/BioHackAcademy/BHA_Thermocycler">Thermocycler</a>
 
 <a href="https://github.com/BioHackAcademy/BHA_Webcam_Microscope">WebCam Microscope</a>
-
-
-
 
 
 
@@ -795,8 +794,7 @@ List of useful resources for Biohacking studies and operations:
   
 <a href="https://www.thermofisher.com">Thermo Fisher</a>
 
-
-
+<a href="https://en.vectorbuilder.com/design.html">Vector Builderr</a>
 
 
 
