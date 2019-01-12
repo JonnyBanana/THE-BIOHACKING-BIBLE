@@ -381,6 +381,9 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/bacterial-16s-rdna-primers-for-bacterial-identification/">Bacterial 16s rDNA primers for Bacterial identification</a>
 
+<a href="https://motherboard.vice.com/en_us/article/wj3yy9/this-teen-translated-a-bible-verse-into-dna-and-injected-it-into-himself
+">bible Verse into DNA</a>
+
 <a href="https://nakedsecurity.sophos.com/2018/01/25/bitcoins-stored-in-dna-when-truth-is-stranger-than-fiction/">Bitcoin Stoered in DNA</a>
 
 <a href="https://docs.google.com/document/d/1IxJGXwd07j7OL7UVWnSmPfzpFRRlAd4q6HGwsoZ7i2I/edit">DNA Sequencing & Analysis Using BLAST</a>
@@ -398,7 +401,6 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://docs.google.com/document/d/1XVig-oZBV42On7Tc4kC4V2gJV_bG4wVaIuVl-kvzEDY/edit">PCR Reactions</a>
 
 <a href="http://www.the-odin.com/primer-design/">Primer Design</a>
-
 
 
 
