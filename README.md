@@ -189,8 +189,6 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/grow-bioluminescent-e-coli-kit/">Grow Bioluminescent E. coli Kit</a>
 
-<a href="https://www.dezeen.com/2015/05/04/growduce-aakriti-jain-guillian-graves-bacteria-yeast-micro-factory-grow-cellulose-based-products/">Growduce</a>
-
 <a href="https://www.exeter.ac.uk/news/research/title_681220_en.html">New bacterial strain named after Cornish discovery </a>
 
 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4991899/">Revised Estimates for the Number of Human and Bacteria Cells in the Body</a>
@@ -583,6 +581,8 @@ List of useful resources for Biohacking studies and operations:
 <a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
 
 <a href="https://www.amazon.com/Glow-Dark-Mushroom-Growing-Habitat/dp/B01KMA6NJE">Glow in the Dark Mushroom Growing Habitat Kit</a>
+
+<a href="https://www.dezeen.com/2015/05/04/growduce-aakriti-jain-guillian-graves-bacteria-yeast-micro-factory-grow-cellulose-based-products/">Growduce</a>
 
 <a href="https://www.dezeen.com/2013/10/20/mycelium-chair-by-eric-klarenbeek-is-3d-printed-with-living-fungus/">Mycelium Printing</a>
 
