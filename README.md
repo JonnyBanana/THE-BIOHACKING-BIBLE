@@ -598,7 +598,25 @@ List of useful resources for Biohacking studies and operations:
 
 
 
+<a href="https://www.healthline.com/nutrition/nootropics">Best Nootropics and Smart Drugs</a>
 
+<a href="https://www.braintropic.com/how-to-create-a-beginner-stack/">How To Create a Beginner Nootropic Stack</a>
+
+<a href="https://www.braintropic.com/how-to-make-your-own-nootropic-capsules/">How to Make Your Own Nootropic Capsules</a>
+
+<a href="https://bengreenfieldfitness.com/article/brain-articles/how-to-make-your-own-smart-drugs-natural-nootropic-stacks-my-brain-enhancing-compounds-of-choice-much-more/">How to Make Your Own Smart Drugs, Natural Nootropic Stacks</a>
+
+<a href="https://www.purenootropics.net/the-ultimate-nootropics-diy-guide/">The Ultimate Nootropics DIY Guide</a>
+
+<a href="https://www.mindlabpro.com/blog/nootropics/list-nootropics/">List of Nootropics</a>
+
+<a href="https://www.reddit.com/r/Nootropics/">r/nootropics</a>
+
+<a href="https://www.braintropic.com/list-of-nootropics/">The Big List of Nootropics</a>
+
+<a href="https://nootropicsexpert.com/nootropics-list/">The Big List of Nootropics two</a>
+
+<a href="https://queal.com/the-definitive-guide-to-nootropics/">The Definitive Guide to Nootropics</a>
 
 
 
