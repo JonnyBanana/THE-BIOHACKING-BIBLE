@@ -381,9 +381,13 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://www.the-odin.com/bacterial-16s-rdna-primers-for-bacterial-identification/">Bacterial 16s rDNA primers for Bacterial identification</a>
 
+<a href="https://nakedsecurity.sophos.com/2018/01/25/bitcoins-stored-in-dna-when-truth-is-stranger-than-fiction/">Bitcoin Stoered in DNA</a>
+
 <a href="https://docs.google.com/document/d/1IxJGXwd07j7OL7UVWnSmPfzpFRRlAd4q6HGwsoZ7i2I/edit">DNA Sequencing & Analysis Using BLAST</a>
 
 <a href="http://www.the-odin.com/drd4-genotyping/">DRD4 Genotyping</a>
+
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3672958/">Low Maintenance Storage of Digital Information in Synthesised DNA</a>
 
 <a href="http://www.the-odin.com/make-agarose-gels-and-run-gel-electrophoresis/">Make Agarose Gels and Run Gel Electrophoresis</a>
 
@@ -394,6 +398,13 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://docs.google.com/document/d/1XVig-oZBV42On7Tc4kC4V2gJV_bG4wVaIuVl-kvzEDY/edit">PCR Reactions</a>
 
 <a href="http://www.the-odin.com/primer-design/">Primer Design</a>
+
+
+
+
+
+
+
 
 
 
@@ -676,6 +687,8 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://www.atum.bio/resources/genedesigner#1">Gene Designer 2.0</a>
 
 <a href="http://www.snapgene.com/products/snapgene/about_snapgene/">Gene Mark</a>
+
+<a href="http://www.exelixis-lab.org/web/software/pear">PEAR</a>
 
 <a href="http://www.snapgene.com/products/snapgene/about_snapgene/">Snap Gene</a>
 
