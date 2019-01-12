@@ -415,7 +415,7 @@ List of useful resources for Biohacking studies and operations:
 <a href="http://www.the-odin.com/primer-design/">Primer Design</a>
 
 
-
+<a href="https://www.horizondiscovery.com/gene-editing/raav">rAAV</a>
 
 
 
@@ -521,7 +521,6 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://cyborgnest.net/">CyborgNest</a>
 
 <a href="https://www.ledinside.com/news/2015/11/biohackers_illuminate_tattoos_with_led_implants">Biohackers Illuminate Tattoos with LED Implants</a>
-
 
 
 
@@ -776,6 +775,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="http://diyhpl.us/wiki/">DIY h Plus Wiki</a>
 
+<a href="http://www.fourmilab.ch/">Formilab</a>
+
 <a href="https://www.genecards.org/">GeneCards</a>
 
 <a href="https://www.ncbi.nlm.nih.gov/genome/browse/#!/overview/">Genome Information by Organism</a>
@@ -783,6 +784,8 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://www.ncbi.nlm.nih.gov/gene">Gene Refernces</a>
 
 <a href="https://www.ncbi.nlm.nih.gov/genome/microbes/">Microbial Genomes</a>
+
+<a href="https://osf.io">Open Science Framework</a>
 
 <a href="https://www.ncbi.nlm.nih.gov/genome/viruses/">Viral Genomes</a>
 
@@ -837,7 +840,9 @@ List of useful resources for Biohacking studies and operations:
   
 
 
-<h2>Various Articles</h2>
+<h2>Various</h2>
+
+<a href="https://www.dezeen.com/2018/10/09/bioplastic-projects-algae-corn-starch-beetle-shells/">10 Bioplastic Projects</a>
 
 <a href="http://longevityfacts.com/diy-3d-bioprinter-create-bioprinting-organs/">3D Printed Organs</a>
 
@@ -845,7 +850,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.oreilly.com/ideas/lab-in-a-box">Bento Bioworks</a>
 
-<a href="https://www.dezeen.com/2018/10/09/bioplastic-projects-algae-corn-starch-beetle-shells/">10 Bioplastic Projects</a>
+<a href="https://www.wellnessfx.com/packages/">Blood test</a>
 
 <a href="https://www.oreilly.com/ideas/darpa-and-the-future-of-synthetic-biology">DARPA and the Future of Synthetic Biology</a>
 
