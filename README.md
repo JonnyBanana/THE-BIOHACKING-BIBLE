@@ -271,9 +271,6 @@ List of useful resources for Biohacking studies and operations:
 
 
 
-<h2>Cheapest Stuff 4 Labs</h2>
-
-
 
 
 
