@@ -1053,6 +1053,10 @@ Send your logo, and any site or github page, and you will be entered as soon as 
 </BR>
 
 
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/rick.jpg)
+
+
+</BR>
 
 
 
