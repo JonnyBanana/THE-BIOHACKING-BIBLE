@@ -897,6 +897,12 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Videos</h2>
 
+<a href="https://www.youtube.com/watch?v=PMpsE8oOlmk">3 Streaking for Isolation--Subcultures--Strep Pyogenes w/Stab Technique</a>
+
+<a href="https://www.youtube.com/watch?v=bRadiLXkqoU">Aseptic Technique</a>
+
+<a href="https://www.youtube.com/watch?v=dfmon5w1ZJI">Bacterial Cell Culture Methods</a>
+
 <a href="https://www.youtube.com/watch?v=vdY8uCQ84_4">Bacterial Transformation Definition, Process and Genetic Engineering of E  col</a>
 
 <a href="https://www.youtube.com/watch?v=DaaRrR-ZHP4">Extract your DNA</a>
@@ -911,7 +917,32 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.youtube.com/watch?v=LPkINJkII1w">How to make quantum dots at home</a>
 
+<a href="https://www.youtube.com/watch?v=cneascR3OEc">Media Prep</a>
+
+<a href="https://www.youtube.com/watch?v=Z1yyuQ8qHQI">Motility Determination in Bacteria</a>
+
+<a href="https://www.youtube.com/watch?v=-t-jPqfrvHQ">Stab Culture Method</a>
+
+<a href="https://www.youtube.com/watch?v=bNvrs2FKYl8">Stab Culture Technique</a>
+
+<a href="https://www.youtube.com/watch?v=_1KP9zOtjXk">Streak Plate Method</a>
+
+<a href="https://www.youtube.com/watch?v=0rmWVw1eDcI">Streak/Stab Technique</a>
+
+<a href="https://www.youtube.com/watch?v=cL2iSTH8LlY">Swabbing a plate</a>
+
+<a href="https://www.youtube.com/watch?v=on5-5oQNNqo">The Bacterial Smear</a>
+
+<a href="https://www.youtube.com/watch?v=370xxVcujyg">Types of Media and Inoculation</a>
+
 <a href="https://vimeo.com/246708087">We Biofabricate Living Colors</a>
+
+
+
+
+
+
+
    
 
 
@@ -927,6 +958,8 @@ List of useful resources for Biohacking studies and operations:
  <h2>Yeast</h2>
 
  <a href="http://www.the-odin.com/add-on-genetically-engineer-any-brewing-or-baking-yeast-to-fluoresce/">Add on - Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
+ 
+ <a href="https://www.engadget.com/2017/05/31/crispr-glowing-fluorescent-beer/?guccounter=1&guce_referrer_us=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_cs=EjhQeoamkHbo1AaF5eGM8Q">Bio-engineered Glowing Beer</a>
  
 <a href="http://www.the-odin.com/ge-yeast/">Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
  
