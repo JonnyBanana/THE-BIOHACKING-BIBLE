@@ -1,0 +1,22 @@
+This medium can be used to isolate and grow bioluminescent marine bacteria from fresh fish, shrimp or squid (or just seawater, sometimes...) 
+It's pretty salty, so most non-marine bacteria won't grow well on it. It's requires addition of Glycerol as an energy source: 
+it's more digestable by the bacteria to encourage vigorous light production, and some mightn't be able to grow on Tryptone alone. 
+Note that reduce the ammount of Tryptone called for.
+
+BROTH
+
+. 3Ml Glycerol
+. 5Gr. Tryptone (or Phytone - Soy Based Peptone, see recipes in the "recipes" directory)
+. 5Gr. Yeast Extract 
+. 35 Gr. Sodium Chloride 
+. 1Gr. Calcium Carbonate
+
+
+AGAR MEDIA
+
+. 3Ml Glycerol
+. 5Gr. Tryptone (or Phytone - Soy Based Peptone, see recipes in the "recipes" directory)
+. 5Gr. Yeast Extract 
+. 35Gr. Sodium Chloride 
+. 1Gr. Calcium Carbonate
+. 15Gr. Agar

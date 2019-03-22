@@ -1,0 +1,22 @@
+Potato Dextrose Broth & Agar Media
+
+This simple medium is used to grow bacteria (or molds/fungi/yeasts) that attack plants
+in the soil, and consists happily of only two key ingredients besides optional Agar.
+Dextrose being not unlike normal sugar, will react oddly with other molecules as 
+it caremelises in the autoclave, so sterilisation after pressure is reached shouldn't
+exceed 15 minutes. You can use PDA to grow common yeasts used in the kitchen, perhaps to
+breed your own strains or to test for the viability of your yeast before baking an 
+important cake. Or maybe you'd like to grow up broths of yeast and make your own yeast extract!
+
+
+BROTH
+
+. 200 Gr. Potato Infusion (Boil scrubbed/sliced potatoes for 30 mins. and filter out solids)
+. 20 Gr. Dextrose
+
+
+AGAR MEDIA
+
+. 200 Gr. Potato Infusion 
+. 20 Gr. Dextrose
+. 20Gr. Agar
