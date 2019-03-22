@@ -11,11 +11,3 @@ I hope that other Biohackers around the world will help him as well ...
 
 </BR>
 
-This is a collection of recipes that I have recovered over the years ...
-Most come from University of Perugia studies.
-
-</BR>
-
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/DVBPG.png)
-
-</BR>
