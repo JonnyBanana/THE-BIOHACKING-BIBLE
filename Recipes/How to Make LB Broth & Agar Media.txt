@@ -1,0 +1,63 @@
+How to Make LB Broth...
+
+
+LB broth is composed of the following:
+
+
+
+LB BROTH (LURIA):
+
+. 1Lt. Deionised/Distilled water (or can use bottle water)
+. 10Gr. Tryptone (or Phytone - Soy Based Peptone, see recipes in the "recipes" directory) as a carbon source and energy; saves us from adding sugars.
+. 5Gr. Yeast Extract 
+. 0.5 Gr. Sodium Chloride (NaCl - a.k.a. Salt) 
+. Sodium hydroxide (a.k.a. Caustic Soda) to make pH 7.5
+
+
+LB AGAR MEDIA (LURIA):
+
+. 1Lt. Deionised/Distilled water 
+. 10Gr. Tryptone 
+. 5Gr. Yeast Extract 
+. 0.5 Gr. Sodium Chloride 
+. Sodium hydroxide 
+. 15Gr. Agar
+
+
+
+LB BROTH (LENNOX):
+
+. 1Lt. Deionised/Distilled water 
+. 10Gr. Tryptone 
+. 5Gr. Yeast Extract 
+. 5 Gr. Sodium Chloride 
+. Sodium hydroxide 
+
+
+LB AGAR MEDIA (LENNOX):
+
+. 1Lt. Deionised/Distilled water 
+. 10Gr. Tryptone 
+. 5Gr. Yeast Extract 
+. 5 Gr. Sodium Chloride 
+. Sodium hydroxide 
+. 15Gr. Agar
+
+
+LB BROTH (MILLER):
+
+. 1Lt. Deionised/Distilled water 
+. 10Gr. Tryptone 
+. 5Gr. Yeast Extract 
+. 10 Gr. Sodium Chloride 
+. Sodium hydroxide 
+
+
+LB AGAR MEDIA (MILLER):
+
+. 1Lt. Deionised/Distilled water 
+. 10Gr. Tryptone 
+. 5Gr. Yeast Extract 
+. 10 Gr. Sodium Chloride 
+. Sodium hydroxide 
+. 15Gr. Agar
