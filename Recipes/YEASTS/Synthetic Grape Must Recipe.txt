@@ -1,0 +1,11 @@
+Synthetic Grape Must Recipe
+
+This media it's used for Fermentation tests
+
+- Yeast Nitrogen Base (Difco) 13.7Gr.
+- Glucose 24% (v/w)
+
+
+pH Must be 3.0
+
+sterilize through tindalization for 30 min at 100C° (repeat for 3 days....)
