@@ -15,3 +15,6 @@ Most come from University of Perugia studies.
 
 </BR>
 
+With these recipes it is possible to reproduce almost any type of yeast, including freeze-dried ones ...
+
+</BR>
