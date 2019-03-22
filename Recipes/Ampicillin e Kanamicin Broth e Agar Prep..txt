@@ -1,4 +1,4 @@
-prepare stock solutions of Ampicillin (100 mg/mL) and Kanamycin (50 mg/mL). 
+Prepare stock solutions of Ampicillin (100 mg/mL) and Kanamycin (50 mg/mL). 
 Then add 1 uL of Ampicilln or Kanamycin in 1 mL medium (it will be 1:1000 diluted). 
 Working concentration of the Ampicillin and Kanamycin is 50-100 and 25-50 ug/mL respectively.
 
@@ -38,3 +38,5 @@ AMPICILLIN OR KANAMYCIN AGAR MEDIUM
 0,5 ml  Ampicillin or Kanamycin Solution in 500 ml of water + 20Gr. LB Agar
 
 0,25 ml Ampicillin or Kanamycin Solution in 250 ml of water + 10Gr. LB Agar 
+
+
