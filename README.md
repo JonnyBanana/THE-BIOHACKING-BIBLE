@@ -1054,7 +1054,9 @@ Send your logo, and any site or github page, and you will be entered as soon as 
 
 </BR>
 
-:syringe::syringe::syringe::syringe::syringe: <h1>IN CELL WE TRUST</h1> :syringe::syringe::syringe::syringe::syringe:
+:syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe: <h1>IN CELL WE TRUST!!!</h1> :syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe:
+
+</BR>
 
 ![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/rick.jpg)
 
