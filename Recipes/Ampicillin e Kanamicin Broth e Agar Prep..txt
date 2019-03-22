@@ -8,9 +8,33 @@ BIG PREP. (for preparations with poor instrumentation.)
 
 AMPICILLIN OR KANAMYCIN MEDIUM (BROTH OR AGAR)
 
-1 ml Ampicillin  or Kanamycin Solution in 1000 lt of medium (Broth or Agar Medium)
+1 ml Ampicillin  or Kanamycin Solution in 1000 ML of medium (Broth or Agar Medium)
 
 0,5 ml  Ampicillin or Kanamycin Solution in 500 ml of medium (Broth or Agar Medium)
 
 
 0,25 ml Ampicillin or Kanamycin Solution in 250 ml of medium (Broth or Agar Medium)
+
+
+
+COMPLETE RECIPE:
+
+
+
+AMPICILLIN OR KANAMYCIN MEDIUM BROTH
+
+1 ml Ampicillin  or Kanamycin Solution + 1000 ML of water + 20Gr. LB Broth 
+
+0,5 ml  Ampicillin or Kanamycin Solution in 500 ml of water + 10Gr. LB Broth 
+
+0,25 ml Ampicillin or Kanamycin Solution in 250 ml of water + 5Gr. LB Broth 
+
+
+
+AMPICILLIN OR KANAMYCIN AGAR MEDIUM 
+
+1 ml Ampicillin  or Kanamycin Solution + 1000 ML of water + 40Gr. LB Agar
+
+0,5 ml  Ampicillin or Kanamycin Solution in 500 ml of water + 20Gr. LB Agar
+
+0,25 ml Ampicillin or Kanamycin Solution in 250 ml of water + 10Gr. LB Agar 
