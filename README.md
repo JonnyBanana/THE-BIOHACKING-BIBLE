@@ -899,6 +899,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.youtube.com/watch?v=PMpsE8oOlmk">3 Streaking for Isolation--Subcultures--Strep Pyogenes w/Stab Technique</a>
 
+<a href="https://www.youtube.com/watch?v=DQ0PvPTDVoU">Adding ampicillin to flask containing L.B. media</a>
+
 <a href="https://www.youtube.com/watch?v=bRadiLXkqoU">Aseptic Technique</a>
 
 <a href="https://www.youtube.com/watch?v=dfmon5w1ZJI">Bacterial Cell Culture Methods</a>
