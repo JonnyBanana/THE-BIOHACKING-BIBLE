@@ -6,7 +6,8 @@
  
  </BR>
  
-![Alt text](https://media.giphy.com/media/s1IJ0L8hZ4wms/giphy.gif)
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
+
  
 </BR>
 
@@ -14,7 +15,7 @@ List of useful resources for Biohacking studies and operations:
 
 </BR>
 
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/crisprcas9amazing_stories_annual_19271.jpg)
 
 
 </BR>
@@ -27,7 +28,8 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 </BR>
 
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/crisprcas9amazing_stories_annual_19271.jpg)
+
+![Alt text](https://media.giphy.com/media/s1IJ0L8hZ4wms/giphy.gif)
 
 
 </BR>
