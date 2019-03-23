@@ -6,14 +6,15 @@
  
  </BR>
  
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
-
+![Alt text](https://media.giphy.com/media/s1IJ0L8hZ4wms/giphy.gif)
+ 
 </BR>
 
 List of useful resources for Biohacking studies and operations:
 
+</BR>
 
-![Alt text](https://media.giphy.com/media/s1IJ0L8hZ4wms/giphy.gif)
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/bible.jpg)
 
 
 </BR>
