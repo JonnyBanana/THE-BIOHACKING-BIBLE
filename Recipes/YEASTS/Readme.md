@@ -18,3 +18,10 @@ Most come from University of Perugia studies.
 With these recipes it is possible to reproduce almost any type of yeast, including freeze-dried ones ...
 
 </BR>
+
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/Turbo-Yeast.jpg)
+
+</BR>
+
+
+
