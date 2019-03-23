@@ -980,6 +980,8 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://docs.google.com/document/d/1l4c1XVISPIdXbIO8nawNdfiZL16nkfY719o8OHnsPM4/edit">Yeast CRISPR Guide</a>
 
+<a href="https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE/tree/master/Recipes/YEASTS">Yeast Medium Recipes</a>
+
 <a href="http://www.the-odin.com/yeast-transformation-kit/">Yeast Transformation Kit</a>
 
 
