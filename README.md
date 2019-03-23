@@ -1083,10 +1083,6 @@ Send your logo, and any site or github page, and you will be entered as soon as 
 
 <h1>:syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe: </BR></BR>IN CELL WE TRUST!!! </BR></BR>:syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe::syringe:</h1>
 
-</BR>
-
-![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/DNA-Screens.gif)
-
 
 </BR>
 
