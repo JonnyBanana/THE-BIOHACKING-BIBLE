@@ -505,6 +505,26 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 
 
+<h2>Humans & Animals</h2>
+
+<a href="https://qz.com/1508028/a-teen-injected-dna-coded-with-the-bible-and-quran-into-his-leg/">16-year-old injected parts of the Qur’an and Bible into himself as DNA</a>
+
+<a href="https://www.vox.com/science-and-health/2018/5/31/17344406/crispr-mosquito-malaria-gene-drive-editing-target-africa-regulation-gmo">A genetically modified organism could end malaria and save millions of lives — if we decide to use it</a>
+
+<a href="http://www.the-odin.com/diyhumancrispr/">DIY Human CRISPR Guide</a>
+
+<a href="https://www.nature.com/articles/d41586-018-07607-3">First CRISPR babies</a>
+
+<a href="http://www.the-odin.com/frog-ge-kit/">Frog Genetic Engineering Kit</a>
+
+<a href="http://www.the-odin.com/human-myostatin-knock-out-targeting-crispr-cas9-plasmid/">Human Myostatin Knock-Out Targeting CRISPR-Cas9 Plasmid</a>
+
+<a href="http://www.the-odin.com/open-human-plasmid/">Open Human Plasmid</a>
+
+<a href="https://phys.org/news/2018-12-scientists-crispr-code-precise-human.html">Scientists crack the CRISPR code for precise human genome editing</a>
+
+
+
 
 
 
