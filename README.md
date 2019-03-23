@@ -574,6 +574,8 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>Mushrooms</h2>
 
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6213178/">A Review of Mushrooms as a Potential Source of Dietary Vitamin D</a>
+
 <a href="https://www.3ders.org/articles/20181112-bionic-mushrooms-covered-in-3d-printed-cyanobacteria-produce-bio-electricity.html">Bionic Mushrooms</a>
 
 <a href="https://drive.google.com/file/d/1oJqvBcrFhfPcPbus8qrfqUapQN5zinzI/view?usp=sharing">Efficient transformation and expression of gfp genein the edible mushroom Pleurotus nebrodensis</a>
@@ -586,7 +588,7 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://www.dezeen.com/2013/10/20/mycelium-chair-by-eric-klarenbeek-is-3d-printed-with-living-fungus/">Mycelium Printing</a>
 
-
+<a href="http://sciencenordic.com/uv-light-turns-mushrooms-vitamin-d-bombs">UV light turns mushrooms into vitamin D bombs</a>
 
 
 
@@ -634,7 +636,11 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://drive.google.com/file/d/1tR3LhV258W9AlN9LzMs6lHhgoZQDygX-/view?usp=sharing">Development of a rapid, low-cost protoplast transfection systemfor switchgrass</a>
 
-<a href="https://drive.google.com/file/d/1Z9xA0o3AmdMvJtRHIjiWmrTTrpGzQnsh/view?usp=sharing">EXPERIMENTS IN Plant Tissue Culture</a>
+
+<a href="https://www.cell.com/trends/plant-science/fulltext/S1360-1385(16)00039-X">Engineering Plants for Geminivirus Resistance with CRISPR/Cas9 System</a>
+
+
+<a href="https://drive.google.com/file/d/1Z9xA0o3AmdMvJtRHIjiWmrTTrpGzQnsh/view?usp=sharing">Experiments in Plant Tissue Culture</a>
 
 <a href="https://drive.google.com/file/d/1tDb-FCysplmKiIyKo37B_QOZrOxMAUr7/view?usp=sharing">High Frequency Plant Regeneration from Leaf Derived Callus of High Δ9-Tetrahydrocannabinol Yielding Cannabis sativa L.</a>
 
@@ -659,8 +665,6 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://drive.google.com/file/d/1PiCXpzpUjTb8DgaKMIcOxdEuGImhx1QD/view?usp=sharing">Plant Tissue Culture Techniques and Experiments</a>
 
 <a href="https://drive.google.com/file/d/0B_R75gIJvkFUcm5jakxrQ1JVaFE/view?usp=sharing">Soybean Transformation</a>
-
-<a href=""></a>
 
 
 
