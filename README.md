@@ -326,6 +326,8 @@ List of useful resources for Biohacking studies and operations:
 
 <h2>CRISPR</h2>
 
+<a href="https://www.theatlantic.com/science/archive/2018/02/biohacking-stunts-crispr/553511/">A Biohacker Regrets Publicly Injecting Himself With CRISPR</a>
+
 <a href="https://www.atum.bio/eCommerce/cas9/input">CRISPR gRNA Design tool</a>
 
 <a href="https://www.theatlantic.com/science/archive/2016/01/the-most-exciting-uses-of-gene-editing-technology-involve-no-editing/422619/">CRISPR's Most Exciting Uses Have Nothing to Do With Gene-Editing </a>
@@ -353,6 +355,8 @@ List of useful resources for Biohacking studies and operations:
 <a href="https://docs.google.com/document/d/1XwT50qzXqd8ZaIOv3-x8ESEdDCc90uK9JeV8i9hwbu8/edit">Step-by-Step Guide for Using CRISPR on Yourself</a>
 
 <a href="https://docs.google.com/document/d/1l4c1XVISPIdXbIO8nawNdfiZL16nkfY719o8OHnsPM4/edit">Yeast CRISPR Guide</a>
+
+
 
 
 
@@ -887,8 +891,9 @@ List of useful resources for Biohacking studies and operations:
 
 <a href="https://hackaday.com/2015/07/30/the-biohacking-movement-and-open-source-insulin/">The Biohacker Movement and the Open Source Insulin</a>
 
-<a href="https://nerdist.com/augmented-reality-tattoo-sonic-the-hedgehog-game/">This Augmented Reality Tattoo Generates a SONIC THE HEDGEHOG Game</a>
+<a href="https://www.theawl.com/2013/12/the-future-of-biohacking-in-the-age-of-patent-trolls/">The Future Of Biohacking In The Age Of Patent Trolls </a>
 
+<a href="https://nerdist.com/augmented-reality-tattoo-sonic-the-hedgehog-game/">This Augmented Reality Tattoo Generates a SONIC THE HEDGEHOG Game</a>
 
 
 
