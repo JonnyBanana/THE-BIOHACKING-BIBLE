@@ -18,6 +18,19 @@ List of useful resources for Biohacking studies and operations:
 
 </BR>
 
+The purpose of this Repo is to become a point of reference for the few Biohackers around the world.
+This is why the help of the community is more than welcome!
+I have included dozens of url's of interesting articles, guides, kits for Biohacking, and much more. But not only that, I have also included several recipes, pdf, books, books, cheatsheets and various bullshit ...
+Soon I will also post detailed Experiments, and Codes and Sketch to Build Different Devices for Various Experiments.
+I sincerely hope that it can also be used by other people to help them in their Biohacking experiments ...
+
+</BR>
+
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/crisprcas9amazing_stories_annual_19271.jpg)
+
+
+</BR>
+
 
 <h2>Antibiotics</h2>
 
