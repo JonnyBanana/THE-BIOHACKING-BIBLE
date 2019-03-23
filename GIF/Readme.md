@@ -15,6 +15,3 @@ https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE/blob/master/GIF/nature_crisp
 
 </BR>
 
-![Alt text](https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE/blob/master/GIF/eye.gif)
-
-</BR>
