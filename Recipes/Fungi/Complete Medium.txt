@@ -1,0 +1,14 @@
+Complete” Medium
+
+“Complete” Medium (a complicated recipe, but good for Aspergillus nidulans)
+10 g D-glucose (a.k.a. dextrose)
+2 g peptone
+1 g yeast extract
+1 g casamino acids
+50 ml 20X nitrate salts (see below)
+1 ml trace elements (see below)
+1 ml vitamin solution (see below)
+Adjust pH to 6.5 with 1 M NaOH.
+Add distilled water to 1 litre.
+For solid medium add 15 g agar.
+Autoclave.

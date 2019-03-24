@@ -1,0 +1,21 @@
+Dilute Salts (for inducing oomycete zoosporogenesis) makes 1 litre each stock. Store at 4°C.
+DSA
+
+
+13.6 g KH2PO4
+17.4 g K2HPO4
+13.2 g (NH4)2SO4
+DSB
+7.4 g CaCl2.2H2O
+10.2 g MgCl2.6H2O
+
+
+To use the Dilute Salts stocks, put 500 ml of distilled water in a 1000 ml flask, add 0.5 ml DSA
+and 1.0 ml DSB, swirl to mix well, and add distilled water to one litre. Swirl again. Mixing
+stocks directly causes precipitation.
+
+
+To induce zoosporogenesis: grow oomycete cultures of in liquid OM, overnight, starting with
+very small inocula, ~1mm3. Remove OM by aspiration, and replace with dilute salts. Remove
+replace two or three times in the first hour, and then once an hour. Should have good zoospore
+release by 4-5 h

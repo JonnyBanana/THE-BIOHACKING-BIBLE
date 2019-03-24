@@ -1,0 +1,130 @@
+For both of the PDA recipes it is possible to use 4g of dry potato infusion to 1000ml of water in place of making potato broth.
+
+Optional for both PDA recipes below is 2 grams of powdered nutritional yeast.
+
+Potato Dextrose Agar (PDA) (Formula 1)
+
+300 grams sliced potatoes (russet works well)
+1000ml distilled water + additional to replace what evaporates during boiling
+10 grams dextrose
+20 grams agar powder
+
+Potato Dextrose Agar (PDA) (Formula 2)
+
+300 grams sliced potatoes
+1000ml distilled water + additional to replace what evaporates during boiling
+20 grams dextrose
+15 grams agar powder
+
+
+
+
+Step 1: Thoroughly wash and slice your potatoes
+
+Tip: Keeping the skin of the potato intact all the way around the slices will help keep them whole while boiling. This will make filtering easier and faster by reducing the amount of potato fragments in the broth.
+
+Step 2: Place 300g sliced potatoes in 1000ml of boiling water and boil gently for 1 hour. You can cover your pan with a lid to reduce evaporation but allow it to vent a little bit. Top up with distilled water as required.
+
+Step 3: While your potatoes are boiling combine the dextrose and agar powder and set aside.
+
+Step 4: Carefully filter your potatoes through a fine mesh sieve, reserving the broth. If your potatoes didn't break apart too much this is usually sufficient. If you have clearly visible potato fragments 
+in your filtrate you must pass it through a finer sieve or filter paper. Permanent coffee filters also work well.
+
+Note: You can discard the overcooked potatoes or give them to your laboratory's dog for lunch. Just kidding, you shouldn't have a dog in the lab! ;)
+
+Step 4: A lot of water will have evaporated during boiling so it's important at this stage to top up it up to 1 litre with distilled water.
+
+Step 5: Add your powdered mix of agar and dextrose to the potato broth by slowly and steadily sprinkling it over top of the water until all of it has been added. This will help prevent clumping which can remain even
+ after you've sterilized your media.
+
+Step 6: Mix the ingredients thoroughly and pour it into the vessel you will be using to sterilize and pour from. Narrow necked flasks are the most effective and safest for processing. Any vessel that is autoclavable 
+and pours well without running or dripping is acceptable. Polypropylene vessels also hold up to sterilization at 15 PSI (121.2°C/250°F) and are often more affordable than glass. If you're using a polypropylene (PP) 
+vessel rather than glass for sterilization, you must not exceed 24PSI or 130°C/266°F. This wont be an issue here since 15 PSI is the maximum temperature recommended for sterilizing media containing sugars like malt and dextrose.
+
+NEVER FILL A VESSEL OVER 50% ITS VOLUME WITH LIQUID MEDIA DURING STERILIZATION OR IT CAN BOIL OVER
+
+Tip: You do not want to tightly close your vessel or it will form a seal as it cools making it difficult to open. Plugging with cotton or capping with foil is an acceptable practice.
+
+Step 7: Sterilize your media at 15 PSI for 30 minutes, 121.2°C/250°F. Do not sterilize at higher temperatures as you do not want the sugars to caramelize.
+Important note: Different altitudes require different pressures for proper sterilization since the boiling point of water lowers as you rise in altitude. This can become an issue as greater pressures are required to 
+achieve sterilization and most pressure cookers aren't built to handle pressures greater than 20 PSI and even that is pushing the limits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Potato Dextrose Agar (PDA)- Principle, Uses, Composition, Procedure and Colony Characteristics
+
+
+
+Last updated: October 26, 2018 by Sagar Aryal	
+
+Potato Dextrose Agar (PDA) is used for the cultivation of fungi. Potato Dextrose Agar (PDA) is a general purpose medium for yeasts and molds that can be supplemented with acid or antibiotics to inhibit bacterial growth.
+ It is recommended for plate count methods for foods, dairy products and testing cosmetics. PDA can be used for growing clinically significant yeast and molds. The nutritionally rich base (potato infusion) encourages mold 
+sporulation and pigment production in some dermatophytes.
+Principle of Potato Dextrose Agar (PDA)
+
+Potato Dextrose Agar is composed of dehydrated Potato Infusion and Dextrose that encourage luxuriant fungal growth. Agar is added as the solidifying agent. Many standard procedures use a specified amount of
+ sterile tartaric acid (10%) to lower the pH of this medium to 3.5 +/- 0.1, inhibiting bacterial growth. Chloramphenicol acts as a selective agent to inhibit bacterial overgrowth of competing microorganisms from mixed 
+specimens, while permitting the selective isolation of fungi.
+
+Note: Do not reheat the acidified medium, heating in the acid state will hydrolyze the agar.
+Uses of Potato Dextrose Agar (PDA)
+
+    Potato Dextrose Agar is used for the detection of yeasts and molds in dairy products and prepared foods.
+    It may also be used for the cultivation of yeasts and molds from clinical specimens.
+    Potato Dextrose Agar with TA (Tartaric Acid) is recommended for the microbial examination of food and dairy products.
+    Potato Dextrose Agar with Chlortetracycline is recommended for the microbial enumeration of yeast and mold from cosmetics.
+    Potato Dextrose Agar with Chloramphenicol is recommended for the selective cultivation of fungi from mixed samples.
+
+Composition of Potato Dextrose Agar (PDA)
+Preparing Ourself
+Potato infusion 	200 gm
+Dextrose 	20 gm
+Agar 	20 gm
+Distilled water 	1 liter
+
+Note: 200 gm of potato infusion is equivalent to 4.0 gm of potato extract.
+Preparing from Commercial Medium Powder
+Commercial PDA Powder (20 gm dextrose, 15 gm agar, and 4 gm potato starch) 	39 gm
+Distilled water 	1 liter
+Procedure of Potato Dextrose Agar (PDA)
+Preparing Ourself
+
+    To prepare potato infusion, boil 200 g sliced, unpeeled potatoes in 1 liter distilled water for 30 min.
+    Filter through cheesecloth, saving effluent, which is potato infusion (or use commercial dehydrated form).
+    Mix with Dextrose, Agar and Water and boil to dissolve.
+    Autoclave 15 min at 121°C.
+    Dispense 20-25 ml portions into sterile 15 × 100 mm petri dishes.
+    Final pH, 5.6 ± 0.2.
+
+Preparing from Commercial Medium Powder
+
+    Add 39 gm of Commercial PDA Powder to 1 Litre of Distilled water.
+    Boil while mixing to dissolve.
+    Autoclave 15 min at 121°C.
+
+In addition, Potato Dextrose Agar with Chlortetracycline contains:
+Chlortetracycline 	40.0 mg
+
+In addition, Potato Dextrose Agar with Chloramphenicol contains:
+Chloramphenicol 	25.0 mg
+
+Final pH of 5.6 +/- 0.2 at 25 degrees C.
+
+In addition, Potato Dextrose Agar with TA contains:
+Tartaric Acid 	1.4 gm
+
+Final pH of 3.5 +/- 0.3 at 25 degrees C.
+
+
+

@@ -1,0 +1,18 @@
+1000X Trace Elements
+
+1. Dissolve these salts in 80 ml of distilled water in the order indicated:
+FeSO4 ·7H2O (ferrous sulphate) 1.0g
+Disodium EDTA (ethylene diamine tetra-acetate) 10.0g
+Adjust pH upwards with KOH pellets. A golden yellow solution results above ~ pH 5.5, and
+this is sufficient to proceed.
+2. Dissolve these salts in 80 ml of distilled water in the order indicated:
+ZnSO4·7H2O (zinc sulphate) 4.4g
+H3BO3 (boric acid) 2.2g
+MnCl2·4H2O (manganous chloride) 1.0g
+CoCl2·6H2O (cobaltous chloride) 0.32g
+CuSO4·5H2O (cupric sulphate) 0.32g
+(NH4)6Mo7O24·4H2O (ammonium molybdate) 0.22g
+Combine Solutions (1) and (2), and readjust the pH to 6.5 using first KOH pellets, then KOH
+solutions of decreasing concentration. Bring the final volume to 200 ml with distilled water,
+and store at 4-8°C. As with traditionally prepared Hutner's TE, this solution is initially bright
+green, turning purple upon storage. Precipitates are never formed

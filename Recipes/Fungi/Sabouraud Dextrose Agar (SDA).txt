@@ -1,0 +1,137 @@
+Sabouraud Dextrose Agar (SDA) is used for the isolation, cultivation, and maintenance of non-pathogenic and pathogenic species of fungi and yeasts. SDA was formulated 
+by Sabouraud in 1892 for culturing dermatophytes. The pH is adjusted to approximately 5.6 in order to enhance the growth of fungi, especially dermatophytes, and to slightly inhibit bacterial growth in clinical specimens.
+Composition of SDA
+
+
+Ingredients:
+
+In gm/L
+Dextrose (Glucose) 	
+
+40 gm
+Peptone 	
+
+10 gm
+Agar 	
+
+15 gm
+Distilled Water 	
+
+1000 ml
+
+Final pH 5.6 +/- 0.2 at 25ºC.
+
+
+
+
+
+
+
+In addition,
+
+Sabouraud Dextrose Broth is the same formulation as above, without agar added.
+Final pH 5.6 +/- 0.2 at 25ºC.
+Sabouraud Dextrose Agar with Chloramphenicol contains 50.0 mg of chloramphenicol.
+Final pH 5.6 +/- 0.3 at 25ºC.
+Sabouraud Dextrose Agar with Chloramphenicol and Gentamicin contains 50.0 mg of chloramphenicol and 5.0 mg gentamicin.
+Final pH of 5.6 +/- 0.3 at 25ºC.
+Sabouraud Dextrose Agar with Chloramphenicol and Tetracycline contains 50.0 mg of chloramphenicol and 10.0 mg of tetracycline.
+Final pH of 5.6 +/- 0.3 at 25ºC.
+Sabouraud Dextrose Agar, Emmons has only 20.0 gm of dextrose.
+Final pH of 6.9 +/- 0.2 at 25ºC.
+Principle of SDA
+
+Peptone (Enzymatic Digest of Casein and Enzymatic Digest of Animal Tissue) provide the nitrogen and vitamin source required for organism growth in SDA. Dextrose is added as the energy and carbon source. Agar is the solidifying agent.
+
+Chloramphenicol and/or tetracycline may be added as broad spectrum antimicrobials to inhibit the growth of a wide range of gram-positive and gram-negative bacteria. Gentamicin is added to further inhibit the growth 
+of gram-negative bacteria.
+
+The neutral pH of the Emmons modification seems to enhance the growth of some pathogenic fungi, such as dermatophytes.
+Uses of SDA
+
+    SDA is primarily used for the selective cultivation of yeasts, molds and aciduric bacteria.
+    The medium is often used with antibiotics for the isolation of pathogenic fungi from material containing large numbers of other fungi or bacteria.
+    This medium is also employed to determine microbial contamination in food, cosmetics, and clinical specimens.
+
+Preparation of SDA
+
+    Combine all ingredients in ~900 ml of deioinized water.
+    Adjust to pH 5.6 with hydrochloric acid and adjust final volume to 1 liter.
+    Heat to boiling to dissolve the medium completely.
+    Autoclave at 121ºC for 15 minutes.
+    Cool to ~45 to 50°C and pour into petri dishes or tubes for slants.
+
+Sabouraud agar plates can be inoculated by streaking, as with standard bacteriological media, or by exposing the medium to ambient air. Typically, molds are incubated at room temperature (22 to 25°C) and yeasts are
+ incubated at 28 to 30°C or 37°C if suspected of being dimorphic fungi. Incubation times will vary, from approximately 2 days for the growth of yeast colonies such as Malasezzia, to 2 to 4 weeks for growth of dermatophytes 
+or dimorphic fungi such as Histoplasma capsulatum. Indeed, the incubation time required to acquire fungal growth is one diagnostic indicator used to identify or confirm fungal species.
+Result Interpretation on SDA
+
+Identification of fungi is performed by observing various aspects of colony morphology, characteristic microscopic structures, rate of growth, media which supports the organism’s growth, and source of specimen.
+ Yeasts are identified by various biochemical tests.
+
+Yeasts will grow as creamy to white colonies. Molds will grow as filamentous colonies of various colors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developed by French dermatologist Raymond J.A. Sabouraud in the late 1800’s primarily for the recovery of dermatophytes.  Traditionally this media (despite being a selective media) did not contain antibiotics and relied on a low pH (5.6) for the inhibition of bacterial growth, however antibiotics are commonly used with SDA in current clinical use.
+
+    Sabouraud’s agar is sufficient for the recovery of dermatophytes from cutaneous samples and yeasts from vaginal 
+cultures.
+    Not recommended as a primary isolation medium because it is insufficiently rich to recover certain fastidious 
+pathogenic species, particularly most of the dimorphic fungi.
+    Sabouraud’s dextrose agar (2{64e6c1a1710838655cc965f0e1ea13052e867597ac43370498029d1bc5831201}) is most useful 
+as a medium for the subculture of fungi recovered on enriched medium to enhance typical sporulation and provide the
+ more characteristic colony morphology.
+
+This media is commercially available from a number of companies.
+
+See comparison to inhibitory mould agar (IMA)
+
+Sabouraud agar can be purchased from a variety of commercial sources or for laboratories needing large number of plates is often made “in-house”.
+Sabouraud agar Recipe/Protocol
+
+Per liter of medium:
+Peptone, 10 g
+Glucose, 40 g
+Agar,      15 g
+
+1. Combine all ingredients in ~900 ml of deioinized water.
+2. Adjust to pH 5.6 with hydrochloric acid and adjust final volume to 1 liter.
+3. Autoclave 20 minutes at 121°C, 15 lb/in2.
+4. Cool to ~45 to 50°C and pour into petri dishes/tubes for slants.
+
+Chloramphenicol is added at the users preference.  If desired add 0.05g to the above recipe.
+Emmons modification of Sabouraud agar
+
+The neutral pH of the Emmons modification seems to enhance the growth of some pathogenic fungi, such as dermatophytes.
+Per liter of medium:
+Neo-peptone, 10 g
+Glucose, 20 g
+Agar, 20 g
+
+1. Follow steps 1 through 4, above, except adjust the pH to the range of 6.8 to 7.0 with hydrochloric acid before 
+autoclaving, cooling, and pouring.
+
+Either Sabouraud agar or its Emmons version can be made more selective by adding antibiotics.  
+Commonly used are gentamicin, which inhibits gram-negative bacteria, and/or chloramphenicol, which inhibits a wide range of gram-positives and gram-negatives, and cycloheximide, which inhibits primarily saprophytic fungi but not dermatophytes or yeasts (3).  Chloramphenicol and gentamicin are used at 50 mg/liter (dissolved in 10 ml of 95{64e6c1a1710838655cc965f0e1ea13052e867597ac43370498029d1bc5831201} ethanol before adding to molten media) and cycloheximide at 0.5 g/liter (dissolved in 2 ml of acetone first) (2).  Antibiotics should only be added after media has been autoclaved and then cooled to ~45 to 50°C.  Keep all plates at 4°C until they are used, regardless of whether they contain antibiotics.
+
+
+
+
+
+
+
+
+
+
+

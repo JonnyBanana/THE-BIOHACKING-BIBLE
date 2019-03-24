@@ -1,0 +1,7 @@
+Components	g/Liter
+
+Agar	15.0
+Soybean hydrolysate	10.0
+Glucose	10.0
+Cycloheximide	0.5
+Chloramphenicol	0.05

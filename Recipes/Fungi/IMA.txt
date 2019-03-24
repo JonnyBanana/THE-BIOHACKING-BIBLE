@@ -1,0 +1,32 @@
+Inhibitory Mould Agar (IMA)
+
+
+An enriched medium containing chloramphenicol (while some IMA plates also contain gentamicin) to prevent the growth 
+of bacteria – and are recommended for isolation of fungi from materials having an extensive flora of other fungi or
+ bacteria.
+
+IMA supports the growth of a wide range of fungi and due to the presence of antibiotics inhibits the growth of most
+ bacteria more effectively than other fungal culture media (Sabouraud dextrose agar (SDA)).  In prior studies IMA has 
+been found to support the growth of four times more fungal isolates when compared to SDA [1].  There are exceptions 
+to this “rule” and Rhodotorula spp. (growth is affected by chloramphenicol) and some hyaline hyphomycetes may grow 
+less well/not at all on IMA.
+
+This media is commercially available from a number of companies.  Plates should be “deep-filled” to prevent drying 
+during prolonged incubation and checked twice a week for growth.
+Recipe/Protocol
+
+Per Liter of medium:
+
+Pancreatic Digest of Casein 	3.0 g
+Sodium Phosphate 	2.0 g
+Peptic Digest of Animal Tissue 	2.0 g
+Magnesium Sulfate 	0.8 g
+Yeast Extract 	5.0 g
+Ferrous Sulfate 	0.04 g
+Dextrose 	5.0 g
+Sodium Chloride 	0.04 g
+Starch 	2.0 g
+Manganese Sulfate 	0.16 g
+Dextrin 	1.0 g
+Agar 	15.0 g
+Chloramphenicol 	0.125 g
