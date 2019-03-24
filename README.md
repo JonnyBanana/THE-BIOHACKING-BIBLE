@@ -618,17 +618,46 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.3ders.org/articles/20181112-bionic-mushrooms-covered-in-3d-printed-cyanobacteria-produce-bio-electricity.html">Bionic Mushrooms</a>
 
+<a href="http://bom.ca/building_glovebox.htm">Building a Mushroom Glovebox</a>
+
+<a href="https://www.youtube.com/watch?v=UFgg8ZBLruY">Collect Spores with Mushroom Spore Prints</a>
+
+<a href="https://www.instructables.com/id/DIY-Glove-Box/">DIY Glove Box</a>
+
 <a href="https://drive.google.com/file/d/1oJqvBcrFhfPcPbus8qrfqUapQN5zinzI/view?usp=sharing">Efficient transformation and expression of gfp genein the edible mushroom Pleurotus nebrodensis</a>
 
 <a href="http://www.the-odin.com/fungal-yeast-its-pcr-primers-for-identification-and-barcoding/">Fungal/Yeast ITS PCR Primers for identification and barcoding</a>
+
+<a href="https://www.shroomology.org/forums/topic/189-high-quality-glove-box-tek-by-str0be/">High Quality Glove Box</a>
+
+<a href="https://medium.com/@Ayahuasca_yage/how-to-grow-your-own-psychedelic-mushrooms-d2c777d780a2">How to grow your own psychedelic mushrooms</a>
+
+<a href="https://www.instructables.com/id/How-to-grow-wild-mushrooms-mycelium-from-spores-ex/">How to Grow Wild Mushrooms Mycelium From Spores (experimental)</a>
+
+<a href="https://www.namyco.org/spore_prints.php">How to Make a Spore Print</a>
+
+<a href="https://www.youtube.com/watch?v=iJgmyqjrIHk">How to set up your Oyster Mushroom Mini-Farm</a>
 
 <a href="https://www.amazon.com/Glow-Dark-Mushroom-Growing-Habitat/dp/B01KMA6NJE">Glow in the Dark Mushroom Growing Habitat Kit</a>
 
 <a href="https://www.dezeen.com/2015/05/04/growduce-aakriti-jain-guillian-graves-bacteria-yeast-micro-factory-grow-cellulose-based-products/">Growduce</a>
 
+<a href="https://thethirdwave.co/psychedelics/shrooms/grow-psilocybin-mushrooms/">Growing Psilocybin Mushrooms</a>
+
+<a href="https://www.instructables.com/id/Making-Mycelium/">Making Mycelium</a>
+
+<a href="https://www.youtube.com/watch?v=0ZdMSlXiDCg">Mycelium Cultivation at Home</a>
+
 <a href="https://www.dezeen.com/2013/10/20/mycelium-chair-by-eric-klarenbeek-is-3d-printed-with-living-fungus/">Mycelium Printing</a>
 
 <a href="http://sciencenordic.com/uv-light-turns-mushrooms-vitamin-d-bombs">UV light turns mushrooms into vitamin D bombs</a>
+
+
+
+
+
+
+
 
 
 
@@ -952,6 +981,8 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.youtube.com/watch?v=vdY8uCQ84_4">Bacterial Transformation Definition, Process and Genetic Engineering of E  col</a>
 
+<a href="https://www.youtube.com/watch?v=UFgg8ZBLruY">Collect Spores with Mushroom Spore Prints</a>
+
 <a href="https://www.youtube.com/watch?v=DaaRrR-ZHP4">Extract your DNA</a>
  
 <a href="https://www.youtube.com/watch?v=ew9-YGrgpWo">Extract DNA from a Banana!</a>
@@ -964,9 +995,13 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.youtube.com/watch?v=LPkINJkII1w">How to make quantum dots at home</a>
 
+<a href="https://www.youtube.com/watch?v=iJgmyqjrIHk">How to set up your Oyster Mushroom Mini-Farm</a>
+
 <a href="https://www.youtube.com/watch?v=cneascR3OEc">Media Prep</a>
 
 <a href="https://www.youtube.com/watch?v=Z1yyuQ8qHQI">Motility Determination in Bacteria</a>
+
+<a href="https://www.youtube.com/watch?v=0ZdMSlXiDCg">Mycelium Cultivation at Home</a>
 
 <a href="https://www.youtube.com/watch?v=-t-jPqfrvHQ">Stab Culture Method</a>
 
@@ -983,6 +1018,10 @@ I sincerely hope that it can also be used by other people to help them in their 
 <a href="https://www.youtube.com/watch?v=370xxVcujyg">Types of Media and Inoculation</a>
 
 <a href="https://vimeo.com/246708087">We Biofabricate Living Colors</a>
+
+
+
+
 
 
 
