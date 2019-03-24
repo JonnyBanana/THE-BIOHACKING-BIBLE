@@ -232,22 +232,64 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <h2>Biohacking Kit</h2>
 
+
+<a href="https://www.carolina.com/bacteria/advanced-high-school-bacteria-collection-set-living/154706.pr?question=bacteria">Advanced High School Bacteria Collection Set</a>
+
 <a href="https://www.carolina.com/bacteria/antibiotics-in-action-kit/154776.pr?question=antibiotic+kit#">Antibiotics in Action Kit</a>
+
+<a href="http://www.the-odin.com/bacterial-crispr-and-fluorescent-yeast-combo-kit/">Bacterial CRISPR and Fluorescent Yeast Combo kit</a>
 
 <a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
 
 <a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
 
-<a href="http://www.the-odin.com/e-coli-dh5a/">E. coli DH5a</a>
+<a href="https://www.carolina.com/environmental-science-water-quality/carolina-bacterial-pollution-of-water-kit/652704.pr?question=bacteria">Bacterial Pollution of Water Kit</a>
+
+<a href="https://www.carolina.com/protozoa/basic-microorganisms-set-living/130900.pr?question=bacteria">Basic Microorganisms Set</a>
+
+<a href="http://www.the-odin.com/biohacker-101-class/">Biohacker 101 Class</a>
+
+<a href="http://www.the-odin.com/biohacker-102-class-advanced-dna-programming/">Biohacker 102 Class - Advanced DNA Programming</a>
+
+<a href="https://www.carolina.com/protozoa/carolina-biokits-symbiosis/131190.pr?question=bacteria">BioKits®: Symbiosis</a>
+
+<a href="https://www.carolina.com/bacteria/bioluminescent-bacterium-kit/154750.pr?question=bacteria">Bioluminescent Bacterium Kit</a>
+
+<a href="https://www.carolina.com/biological-media-kits/carolina-environmental-sampling-kit/154601.pr?question=bacteria">Environmental Sampling Kit</a>
+
+<a href="https://www.carolina.com/evolution/evolution-in-real-time-bacteria-and-antibiotic-resistance-1-station-kit-with-perishables/171205P.pr?question=bacteria">Evolution in Real Time: Bacteria and Antibiotic Resistance</a>
+
+<a href="http://www.the-odin.com/frog-ge-kit/">Frog Genetic Engineering Kit - Learn to Genetically Modify Animals</a>
 
 <a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
 
+
+<a href="http://www.the-odin.com/ge-yeast/">Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
+
+<a href="http://www.the-odin.com/genetic-engineering-home-lab-kit/">Genetic Engineering Home Lab Kit</a>
+
+
 <a href="http://www.the-odin.com/grow-bioluminescent-e-coli-kit/">Grow Bioluminescent E. coli Kit</a>
+
+<a href="https://www.carolina.com/bacteria/introductory-bacteria-sets/FAM_154755.pr?question=bacteria">Introductory Bacteria Sets</a>
+
+<a href="http://www.the-odin.com/homebrew-yeast-capture-kit/">HomeBrew Yeast Capture Kit</a>
+
+<a href="https://www.carolina.com/environmental-science-water-quality/lamotte-bacteria-search-for-environmental-bacteria-project-kit/652562.pr?question=bacteria"> Bacteria - Search for Environmental Bacteria Project Kit</a>
+
+<a href="https://www.carolina.com/forensic-investigation-kits/microscopic-inquiry-set/291063.pr?question=bacteria">Microscopic Inquiry Set</a>
+
+<a href="https://www.carolina.com/animal-microscope-slides/oral-bacteria-slide-kit/319346.pr?question=bacteria">Oral Bacteria Slide Kit</a>
+
+<a href="https://www.carolina.com/bacteria/pigmented-bacteria-set-tube-cultures-living/154745.pr?question=bacteria">Pigmented Bacteria Set, Tube Cultures</a>
 
 <a href="http://www.the-odin.com/plant-callus-formation-kit-learn-plant-cell-culture/">Plant Callus Formation Kit - Learn Plant Cell Culture</a>
 
+<a href="http://www.the-odin.com/starter-kit-for-igem-competitors/">Starter Kit for iGEM Competitors</a>
+
 <a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The ILIAD Project Kit - Find New Antibiotics at Home</a>
 
+<a href="http://www.the-odin.com/yeast-transformation-kit/">Yeast Transformation Kit</a>
 
 
 
