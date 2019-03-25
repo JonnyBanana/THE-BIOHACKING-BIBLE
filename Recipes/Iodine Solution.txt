@@ -1,0 +1,23 @@
+Iodine solution
+
+Dissolve 1 g of iodine crystals and 2 g of potassium iodine in 300 cm³ of distilled water.
+
+Cellulose broth (for Trichoderma reesei)
+
+    800 cm3 distilled water
+
+    0.1 g CaCl2
+
+    0.5 g (NH4)2SO4
+
+    0.5 g yeast extract powder
+
+    0.5 g asparagine
+
+    10 g carboxymethylcellulose
+
+    1.0 g KH2PO4
+
+    pH6.2
+
+Mix ingredients, heat gently, and stir until dissolved.
