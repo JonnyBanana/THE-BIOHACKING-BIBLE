@@ -207,6 +207,8 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.exeter.ac.uk/news/research/title_681220_en.html">New bacterial strain named after Cornish discovery </a>
 
+<a href="https://microbiologyonline.org/teachers/preparation-of-media-and-cultures">Preparation of media and cultures</a>
+
 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4991899/">Revised Estimates for the Number of Human and Bacteria Cells in the Body</a>
 
 <a href="https://pubs.rsc.org/en/content/articlelanding/2018/mt/c7mt00312a#!divAbstract">Synergistic gold–copper detoxification at the core of gold biomineralisation in Cupriavidus metallidurans</a>
@@ -456,6 +458,8 @@ I sincerely hope that it can also be used by other people to help them in their 
 <a href="https://nakedsecurity.sophos.com/2018/01/25/bitcoins-stored-in-dna-when-truth-is-stranger-than-fiction/">Bitcoin Stoered in DNA</a>
 
 <a href="https://docs.google.com/document/d/1IxJGXwd07j7OL7UVWnSmPfzpFRRlAd4q6HGwsoZ7i2I/edit">DNA Sequencing & Analysis Using BLAST</a>
+
+<a href="https://www.instructables.com/id/DNAquiri-the-delicious-DNA-extraction/">DNAquiri: the Delicious DNA Extraction</a>
 
 <a href="http://www.the-odin.com/drd4-genotyping/">DRD4 Genotyping</a>
 
@@ -903,6 +907,9 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <h2>References</h2>
 
+
+<a href="https://cheapassscience.wordpress.com/">Cheapass Science</a>
+
 <a href="http://diyhpl.us/wiki/">DIY h Plus Wiki</a>
 
 <a href="http://www.fourmilab.ch/">Formilab</a>
@@ -915,9 +922,12 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.ncbi.nlm.nih.gov/genome/microbes/">Microbial Genomes</a>
 
+<a href="https://microbiologyonline.org/">microbiologyonline.org</a>
+
 <a href="https://osf.io">Open Science Framework</a>
 
 <a href="https://www.ncbi.nlm.nih.gov/genome/viruses/">Viral Genomes</a>
+
 
 
 
@@ -947,6 +957,8 @@ I sincerely hope that it can also be used by other people to help them in their 
 <a href="http://gochipme.com/index.php/shop">GoChipMe</a>
  
 <a href="http://www.the-odin.com">Odin</a>
+
+<a href="https://phytotechlab.com/home">Phyto Tech Lab</a>
 
 <a href="http://www.plasmachem.com/shop/en/">PlasmaChem</a>
 
@@ -983,6 +995,8 @@ I sincerely hope that it can also be used by other people to help them in their 
 <a href="https://www.wellnessfx.com/packages/">Blood test</a>
 
 <a href="https://www.oreilly.com/ideas/darpa-and-the-future-of-synthetic-biology">DARPA and the Future of Synthetic Biology</a>
+
+<a href="https://www.instructables.com/id/DIY-Quantum-DotsNanotech-in-Your-Kitchen/">DIY Quantum Dots(Nanotech in Your Kitchen)</a>
 
 <a href="https://www.pili.bio/9/technology">Grow Your Own Ink</a>
 
