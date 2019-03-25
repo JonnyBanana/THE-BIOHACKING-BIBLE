@@ -209,11 +209,15 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://microbiologyonline.org/teachers/preparation-of-media-and-cultures">Preparation of media and cultures</a>
 
+<a href="https://www.carolina.com/bacteria/pseudomonas-aeruginosa-microkwik-culture-vial/155250A.pr?question=bacteria">Pseudomonas aeruginosa, MicroKwik Culture®, Vial</a>
+
 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4991899/">Revised Estimates for the Number of Human and Bacteria Cells in the Body</a>
 
 <a href="https://pubs.rsc.org/en/content/articlelanding/2018/mt/c7mt00312a#!divAbstract">Synergistic gold–copper detoxification at the core of gold biomineralisation in Cupriavidus metallidurans</a>
 
 <a href="https://docs.google.com/document/d/1WfinyShknOAw4TPQ1uNsd3pNgzvNMPF-ya0igXmjQ68/edit">Transormation Bacterial Protocol</a>
+
+
 
 
 
@@ -775,6 +779,8 @@ I sincerely hope that it can also be used by other people to help them in their 
 <a href="https://www.youtube.com/watch?v=0ZdMSlXiDCg">Mycelium Cultivation at Home</a>
 
 <a href="https://www.dezeen.com/2013/10/20/mycelium-chair-by-eric-klarenbeek-is-3d-printed-with-living-fungus/">Mycelium Printing</a>
+
+<a href="https://www.carolina.com/bacteria/carolina-spore-wars-kit/FAM_154717C.pr?question=Spore+Wars+Kit">Spore Wars Kit</a>
 
 <a href="http://sciencenordic.com/uv-light-turns-mushrooms-vitamin-d-bombs">UV light turns mushrooms into vitamin D bombs</a>
 
