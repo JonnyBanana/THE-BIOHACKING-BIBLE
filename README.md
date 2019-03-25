@@ -235,13 +235,28 @@ I sincerely hope that it can also be used by other people to help them in their 
 <h2>Biohacking Kit</h2>
 
 
+
+<a href="https://www.carolina.com/transformation-dna-transfer-kits/advanced-bacterial-conjugation-kit/FAM_211127.pr?question=bacteria">Advanced Bacterial Conjugation Kit</a>
+
 <a href="https://www.carolina.com/bacteria/advanced-high-school-bacteria-collection-set-living/154706.pr?question=bacteria">Advanced High School Bacteria Collection Set</a>
 
 <a href="https://www.carolina.com/bacteria/antibiotics-in-action-kit/154776.pr?question=antibiotic+kit#">Antibiotics in Action Kit</a>
 
+<a href="https://www.carolina.com/bacteria/carolina-biokits-antibiotic-sensitivity/FAM_154740.pr?question=bacteria">Antibiotic Sensitivity Kit</a>
+
+<a href="https://www.carolina.com/bacteria/carolina-antibiotic-production-kit/FAM_154739.pr?question=bacteria">Antibiotic Production Kit</a>
+
+<a href="https://www.carolina.com/medical-microbiology/carolina-biokits-antiseptic-versus-disinfectant-sensitivity-kits/FAM_155001.pr?question=bacteria">Antiseptic Versus Disinfectant Sensitivity Kits</a>
+
 <a href="http://www.the-odin.com/bacterial-crispr-and-fluorescent-yeast-combo-kit/">Bacterial CRISPR and Fluorescent Yeast Combo kit</a>
 
+<a href="https://www.carolina.com/bacteria/bacterial-fermentation-kit/FAM_154710.pr?question=bacteria">Bacterial Fermentation Kit</a>
+
+<a href="https://www.carolina.com/environmental-science-water-quality/lamotte-bacteria-search-for-environmental-bacteria-project-kit/652562.pr?question=bacteria"> Bacteria - Search for Environmental Bacteria Project Kit</a>
+
 <a href="http://www.the-odin.com/bacterial-transformation-kit/">Bacterial Transformation Kit</a>
+
+<a href="https://www.carolina.com/ap-environmental-science-lab-kits/carolina-investigations-for-ap-environmental-science-biomass-to-biofuel-grasses-for-ethanol-production/FAM_181115.pr?question=bacteria">Biomass to Biofuel: Grasses for Ethanol Production</a>
 
 <a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
 
@@ -257,41 +272,106 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.carolina.com/bacteria/bioluminescent-bacterium-kit/154750.pr?question=bacteria">Bioluminescent Bacterium Kit</a>
 
+<a href="https://www.carolina.com/ap-environmental-science-lab-kits/carolina-investigations-for-ap-environmental-science-cultural-eutrophication-and-biodegradable-waste-kit/FAM_181074.pr?question=bacteria"> Cultural Eutrophication and Biodegradable Waste</a>
+
+<a href="https://www.carolina.com/cyanobacteria/cyanobacteria-set/151515.pr">Cyanobacteria Set</a>
+
+<a href="https://www.carolina.com/carolina-ecokits/carolina-ecokits-ecological-succession/187110.pr?question=bacteria">Ecological Succession</a>
+
+<a href="https://www.carolina.com/bacteria/enteric-biochemical-detective-kit/FAM_154717.pr?question=bacteria">Enteric Biochemical Detective Kit</a>
+
+<a href="https://www.carolina.com/organic-chemistry/carolina-chemkits-exploring-nanotechnology-kit/840730.pr?question=bacteria">Exploring Nanotechnology Kit</a>
+
 <a href="https://www.carolina.com/biological-media-kits/carolina-environmental-sampling-kit/154601.pr?question=bacteria">Environmental Sampling Kit</a>
 
 <a href="https://www.carolina.com/evolution/evolution-in-real-time-bacteria-and-antibiotic-resistance-1-station-kit-with-perishables/171205P.pr?question=bacteria">Evolution in Real Time: Bacteria and Antibiotic Resistance</a>
 
+<a href="https://www.carolina.com/biotechnology-classroom-resources/exploring-the-crispr-cas-defense-system-kit/FAM_211772.pr?question=Exploring+the+CRISPR-Cas+Defense+System+Kit+">Exploring the CRISPR-Cas Defense System Kit</a>
+
 <a href="http://www.the-odin.com/frog-ge-kit/">Frog Genetic Engineering Kit - Learn to Genetically Modify Animals</a>
 
-<a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
+<a href="https://www.carolina.com/bacteria/genetic-construction-kit/FAM_171015.pr?question=bacteria">Genetic Construction Kit</a>
 
+<a href="http://www.the-odin.com/colorbacteria/">Genetic Design Starter Kit - Glowing Jellyfish Bacteria</a>
 
 <a href="http://www.the-odin.com/ge-yeast/">Genetically Engineer Any Brewing or Baking Yeast to Fluoresce </a>
 
 <a href="http://www.the-odin.com/genetic-engineering-home-lab-kit/">Genetic Engineering Home Lab Kit</a>
 
+<a href="https://www.carolina.com/microbiology-supplies/gram-stain-and-bacterial-morphology-kit/FAM_154728.pr?question=++Gram+Stain+and+Bacterial+Morphology+Kit">Gram Stain and Bacterial Morphology Kit</a>
+
+<a href="https://www.carolina.com/transformation-dna-transfer-kits/ap-biology-lab-6-molecular-biology-module-1-transformation-teacher-demonstration-kit-with-perishables/211080P.pr?question=Green+Gene+Colony+Transformation+Teacher+Demonstration+Kit">Green Gene Colony Transformation Teacher Demonstration Kit</a>
 
 <a href="http://www.the-odin.com/grow-bioluminescent-e-coli-kit/">Grow Bioluminescent E. coli Kit</a>
 
-<a href="https://www.carolina.com/bacteria/introductory-bacteria-sets/FAM_154755.pr?question=bacteria">Introductory Bacteria Sets</a>
+<a href="https://www.carolina.com/bacteria/hand-soap-evaluation-kit/154731.pr?question=bacteria">Hand Soap Evaluation Kit</a>
 
 <a href="http://www.the-odin.com/homebrew-yeast-capture-kit/">HomeBrew Yeast Capture Kit</a>
 
-<a href="https://www.carolina.com/environmental-science-water-quality/lamotte-bacteria-search-for-environmental-bacteria-project-kit/652562.pr?question=bacteria"> Bacteria - Search for Environmental Bacteria Project Kit</a>
+<a href="https://www.carolina.com/bacteria/introductory-bacteria-sets/FAM_154755.pr?question=bacteria">Introductory Bacteria Sets</a>
+
+<a href="https://www.carolina.com/environmental-science-water-quality/lamotte-green-water-quality-monitoring-kit/652567.pr?question=bacteria">Low-Cost Water Quality Monitoring Kit</a>
 
 <a href="https://www.carolina.com/forensic-investigation-kits/microscopic-inquiry-set/291063.pr?question=bacteria">Microscopic Inquiry Set</a>
 
+<a href="https://www.carolina.com/bacteria/mouthwash-evaluation-kit/154736.pr?question=bacteria">Mouthwash Evaluation Kit</a>
+
 <a href="https://www.carolina.com/animal-microscope-slides/oral-bacteria-slide-kit/319346.pr?question=bacteria">Oral Bacteria Slide Kit</a>
+
+<a href="https://www.carolina.com/transformation-dna-transfer-kits/lab-6-pblu-colony-transformation-kit/FAM_211145X.pr?question=bacteria">pBLU® Colony Transformation Kit</a>
+
+<a href="https://www.carolina.com/transformation-dna-transfer-kits/pclone-exploring-promoters-with-synthetic-biology/FAM_211150.pr?question=bacteria">pClone: Exploring Promoters with Synthetic Biology</a>
 
 <a href="https://www.carolina.com/bacteria/pigmented-bacteria-set-tube-cultures-living/154745.pr?question=bacteria">Pigmented Bacteria Set, Tube Cultures</a>
 
 <a href="http://www.the-odin.com/plant-callus-formation-kit-learn-plant-cell-culture/">Plant Callus Formation Kit - Learn Plant Cell Culture</a>
 
+<a href="https://www.carolina.com/ap-environmental-science-lab-kits/carolina-investigations-for-ap-environmental-science-primary-productivity-and-energy-flow-kit/FAM_181066.pr?question=bacteria">Primary Productivity and Energy Flow</a>
+
+<a href="https://www.carolina.com/transformation-dna-transfer-kits/module-2-purification-8-station-kit/211072.pr?question=bacteria">Purification of Green Fluorescent Protein 8-Station Kit</a>
+
+<a href="https://www.carolina.com/bacteria/secret-message-kit/154751.pr?question=bacteria">Secret Message Kit</a>
+
+<a href="https://www.carolina.com/bacteria/simple-stain-kit/154757.pr?question=bacteria">Simple Stain Kit</a>
+
+<a href="https://www.carolina.com/microbes-in-action-series/slick-oil-lab-kit/154654.pr?question=bacteria">Slick Oil Lab Kit</a>
+
+<a href="https://www.carolina.com/virus-kits/soil-bacteriophage-kit/FAM_121200.pr?question=bacteria">Soil Bacteriophage Kit</a>
+
+<a href="https://www.carolina.com/bacteria/carolina-spore-wars-kit/FAM_154717C.pr?question=bacteria">Spore Wars Kit</a>
+
 <a href="http://www.the-odin.com/starter-kit-for-igem-competitors/">Starter Kit for iGEM Competitors</a>
+
+<a href="https://www.carolina.com/bacteria/temperature-dependent-gene-expression-kit-with-perishables/154769P.pr?question=Temperature-Dependent+Gene+Expression+Kit">Temperature-Dependent Gene Expression Kit</a>
 
 <a href="http://www.the-odin.com/the-iliad-project-kit-find-new-antibiotics-at-home/">The ILIAD Project Kit - Find New Antibiotics at Home</a>
 
 <a href="http://www.the-odin.com/yeast-transformation-kit/">Yeast Transformation Kit</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
