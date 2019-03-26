@@ -1,0 +1,46 @@
+Assessment of extraction methods for microcystin-LR fromMicrocystis aeruginosa
+
+Method
+
+Cultured Microcystis aeruginosa cells were filtered through preweighed glass fibre filters (GF/C 47 mm dia. - Whatman) 
+and dried in a vacuum desiccator overnight at room temperature (approx. 22 degrees C). Filters were reweighed the following 
+morning and extracted in one of five extraction solvents for assessment (2 filters per solvent, 2.0 ml of solvent per filter).
+ 
+The solvents used were as follows;
+
+    (1) 80% Ethanol : Milli-Q H2O
+
+    (2) 5% Acetic acid : 95% Milli-Q H2 (3) 50% Methanol : 50% Milli-Q H2 (4) 100% Milli-Q H2O
+
+    (5) 5% n-Butanol : 20% Methanol : 75% Milli-Q H2O 
+
+Filters were extracted for one hour with shaking and 1.0 ml of each extract was filtered for analysis by HPLC. The remaining 
+liquid in each tube was discarded and an additional 2.0 ml of the appropriate solvent added to each of the filters. Again,
+ extraction was for one hour with shaking. The proceedure was repeated until each filter had been extracted three times in 2.0 ml of one of the five solvents.
+
+For the sake of simplicity (and the absence of more microcystin standards) the extraction of microcystin-LR by each solvent
+ was analysed. The results are summarized in the tables below.
+
+Percent of microcystin-LR extracted per extraction using the solvents listed above
+		Extraction
+Solvent	1st	2nd 	3rd
+80% Ethanol	100	0	0
+5% Acetic acid	0	0	0
+50% Methanol	84.6	10.4	5.0
+100% H2O	82.9	12.8	4.3
+n-Butanol:Methanol:Water	82.2	13.0	4.8
+
+
+Relative microcystin-LR extraction efficiency of each solvent compared to n-Butanol:Methanol:Water (100%). That is, the total amount of microcystin-LR extracted using each solvent, 
+relative to the amount extracted using n-Butanol:Methanol:Water.
+Solvent	Extraction efficiency
+(% But:Meth:H2O)
+80% Ethanol	31.9
+5% Acetic acid	0.0
+50% Methanol	98.7
+100% H2O	77.4
+n-Butanol:Methanol:Water	100
+
+
+It is interesting to note that 80% Ethanol extracted only two major compounds from the strain of M. aeruginosa used in this experiment. Water extracted three major compounds, 
+whereas the Butanol:Methanol:Water mix extracted four major peaks and 50% Methanol, five. 
