@@ -1,0 +1,25 @@
+Alcool Dilution from 95° to 40°
+
+
+
+from ethyl alcohol to 90°	distilled water
+
+from ethyl alcohol to 85°	6.56
+
+from ethyl alcohol to 80°	13.79
+
+from ethyl alcohol to 75°	21.89
+
+from ethyl alcohol to 70°	31.10
+
+from ethyl alcohol to 65°	41.53
+
+from ethyl alcohol to 60°	53.65
+
+from ethyl alcohol to 55°	67.87
+
+from ethyl alcohol to 50°	84.71
+
+from ethyl alcohol to 45°	105.34
+
+from ethyl alcohol to 40°	130.80

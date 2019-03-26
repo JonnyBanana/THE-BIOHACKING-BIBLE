@@ -1,0 +1,6 @@
+How to store the fixed material for the microscope
+
+The fixed material is preserved in ethyl alcohol at 80 °, or formalin at 5 or 10%
+
+keep in mind that alcohol should not be used for formalin-fixed parts; 
+formalin should not be used for material fixed with liquids containing corrosive sublimate.
