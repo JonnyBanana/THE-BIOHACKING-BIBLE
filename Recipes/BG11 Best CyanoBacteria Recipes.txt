@@ -1,0 +1,69 @@
+BG-11 medium
+
+	
+	
+A) Stock solutions for BG-11:
+
+Stock 1:
+	
+Na2MG EDTA
+	0.1g/liter
+Ferric ammonium citrate
+	0.6g/liter
+Citric acid . 1H2O
+	0.6g/liter
+CaCl2 . 2H2O
+	3.6g/liter
+Filter sterilize into a sterile bottle or autoclave
+	
+Stock 2:
+	
+MgSO4 . 7H2O
+	7.5g/liter
+Filter sterilize into a sterile bottle or autoclave
+	
+Stock 3:
+	
+K2HPO4 . 3H2O
+	4.0g/liter
+or K2HPO4
+	3.05g/liter
+Filter sterilize into a sterile bottle or autoclave
+	
+Stock 5 (Microelements):
+	
+H3BO3
+	2.86g/liter
+MnCl2 . 4H2O
+	1.81g/liter
+ZnSO4 . 7H2O
+	0.222g/liter
+CuSO4 . 5H2O
+	0.079g/liter
+COCl2 . 6H2O
+	0.050g/liter
+NaMoO4 . 2H2O
+	0.391g/liter
+or MoO4 (85%)
+	0.018g/liter
+
+
+
+B) For basic BG11 medium combine the following stock solutions:
+
+Stock Solution 	Per Liter of medium
+Stock 1 	
+10 ml
+Stock 2 	
+10 ml
+Stock 3 	
+10 ml
+Na2CO3 	
+0.02g
+Stock 5 	
+1.0 ml
+NaNO3 	
+1.5g
+
+
+Combine stocks and adjust pH to 7.5 (use 1.0N HCl). Aliquot into flasks (50 ml/125 ml flask) with cotton stoppers on top and autoclave. After autoclaving and cooling the pH is about 7.1. For solid media add 1% noble agar. For BG-11o don't add NaNO3.
