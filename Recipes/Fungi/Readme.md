@@ -1,4 +1,4 @@
-<h1>fungi</h1>
+<h1>Fungi</h1>
 
 </BR>
 
