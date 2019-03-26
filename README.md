@@ -193,6 +193,8 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5404626/">Cyanobacterial Strains</a>
 
+<a href="http://www-cyanosite.bio.purdue.edu/">Cyanosite for Cyanobacteria</a>
+
 <a href="http://www.the-odin.com/diy-crispr-kit/">DIY Bacterial Gene Engineering CRISPR Kit</a>
 
 <a href="http://www.the-odin.com/e-coli-bl21-de3/">E. coli BL21 (DE3)</a>
