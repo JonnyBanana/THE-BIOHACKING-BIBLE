@@ -25,6 +25,10 @@ https://mega.nz/#!zWwgXIjY!gX7UPsfSenY9MS9dAXM3AlcTxCKugpFsHozxEPK1LRI
 
 </BR>
 
+![Alt text](https://raw.githubusercontent.com/JonnyBanana/THE-BIOHACKING-BIBLE/master/img/DNA%20to%20Genes%20to%20Genomes.JPG)
+
+</BR>
+
 Enjoy it!
 
 
