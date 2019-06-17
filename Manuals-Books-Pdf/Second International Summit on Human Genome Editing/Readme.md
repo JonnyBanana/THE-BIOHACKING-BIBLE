@@ -16,7 +16,7 @@ http://www.nationalacademies.org/gene-editing/2nd_summit/index.htm
 
 </BR>
 
-Some .pptx files (PowerPoint Files) exceed 25mb and therefore Github does not allow uploading ...
+Some .pptx files (PowerPoint Files) exceed 25mb and therefore Github does not allow uploading ...</BR>
 However, I uploaded these files here:
 
 </BR>
