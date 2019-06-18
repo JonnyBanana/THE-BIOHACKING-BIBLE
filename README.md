@@ -526,7 +526,12 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.instructables.com/id/Portable-Laminar-Flow-Hood/">Laminar Flow Hood</a>
 
+<a href="http://www.the-odin.com/mini-4k-centrifuge/">Mini 4k Centrifuge</a>
+
 <a href="https://hackaday.io/project/3794/logs">Syringe Pump</a>
+
+
+
 
 
 
