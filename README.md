@@ -1300,7 +1300,7 @@ Send your logo, and any site or github page, and you will be entered as soon as 
 </BR>
 
 
-Download with GIT:
+<h3>Download with GIT:</h3>
 
 * `git clone https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE`
 * `cd THE-BIOHACKING-BIBLE
