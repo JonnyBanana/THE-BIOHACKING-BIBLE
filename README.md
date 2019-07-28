@@ -1300,12 +1300,19 @@ Send your logo, and any site or github page, and you will be entered as soon as 
 </BR>
 
 
+Download with GIT:
+
+* `git clone https://github.com/JonnyBanana/THE-BIOHACKING-BIBLE`
+* `cd THE-BIOHACKING-BIBLE
+
+</BR>
+
 <h3>Last Update</h3>
 
 </BR>
 
 
-18/06/2019 02:53 am (gmt+1)
+28/07/2019 19:10 am (gmt+1)
 
 
 
