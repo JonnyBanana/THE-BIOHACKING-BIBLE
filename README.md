@@ -1041,6 +1041,8 @@ I sincerely hope that it can also be used by other people to help them in their 
  
 <a href="https://www.carolina.com/">Carolina.com</a>
 
+<a href="https://cyberise.me/10-multipassme">Cyberise.me</a>
+
 <a href="https://dangerousthings.com/">Dangerous Things</a>
 
 <a href="https://www.elimbio.com/">Elim BioPharm</a>
@@ -1085,7 +1087,11 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://www.oreilly.com/ideas/lab-in-a-box">Bento Bioworks</a>
 
+<a href="https://www.statnews.com/2019/09/01/biohacker-conference-las-vegas/?utm_source=ODIN&utm_campaign=a0fa525691-EMAIL_CAMPAIGN_2019_09_04_08_54&utm_medium=email&utm_term=0_fac116480b-a0fa525691-101844725&mc_cid=a0fa525691&mc_eid=69702eaacb">Biohacking The Planet 2019</a>
+
 <a href="https://www.wellnessfx.com/packages/">Blood test</a>
+
+<a href="https://www.wellnessfx.com/packages/">Pirated Cheap version of a Million-Dollar Gene Therapy</a>
 
 <a href="https://www.oreilly.com/ideas/darpa-and-the-future-of-synthetic-biology">DARPA and the Future of Synthetic Biology</a>
 
