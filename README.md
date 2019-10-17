@@ -749,6 +749,30 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 
 
+<h2>Molds/h2>
+
+
+<a href="https://jb.asm.org/content/104/3/1119.short">Isolation and Characterization of a Galactosamine Wall from Spores and Spherules of Physarum polycephalum</a>
+
+<a href="https://www.carolina.com/slime-molds/living-physarum-review-set/155774.pr">Living Physarum Review Set</a>
+
+<a href="https://en.wikipedia.org/wiki/Physarum_polycephalum">Physarum polycephalum</a>
+
+<a href="https://www.carolina.com/teacher-resources/Interactive/think-single-celled-organisms-are-simple-think-again-the-slime-mold-physarum-polycephalum-a-single-celled-organism-for-student-investigations/tr41405.tr">The Slime Mold Physarum polycephalum, a Single-Celled Organism for Student Investigations</a>
+
+<a href="https://www.carolina.com/slime-molds/physarum-culture-kit/155825.pr">Physarum Culture Kit</a>
+
+<a href="https://www.carolina.com/slime-molds/physarum-polycephalum-plasmodium-living-plate/156193.pr#">Physarum polycephalum Plasmodium, Living, Plate</a>
+
+<a href="https://www.carolina.com/slime-molds/physarum-polycephalum-sclerotium-living-box/156190.pr?intid=jl_pdp&jl_ctx=on_site#">Physarum polycephalum Sclerotium, Living, Box</a>
+
+
+
+
+
+
+
+
 <h2>Mushrooms</h2>
 
 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6213178/">A Review of Mushrooms as a Potential Source of Dietary Vitamin D</a>
