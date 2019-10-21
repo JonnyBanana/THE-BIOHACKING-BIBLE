@@ -1,1 +1,1 @@
-.
+https://bomb.bio/
