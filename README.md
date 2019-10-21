@@ -1351,7 +1351,7 @@ Send your logo, and any site or github page, and you will be entered as soon as 
 </BR>
 
 
-05/09/2019 00:40 am (gmt+1)
+21/10/2019 04:00 am (gmt+1)
 
 
 
