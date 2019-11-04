@@ -749,7 +749,7 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 
 
-<h2>Molds/h2>
+<h2>Molds</h2>
 
 
 <a href="https://jb.asm.org/content/104/3/1119.short">Isolation and Characterization of a Galactosamine Wall from Spores and Spherules of Physarum polycephalum</a>
