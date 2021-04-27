@@ -173,6 +173,7 @@ I sincerely hope that it can also be used by other people to help them in their 
 
 <a href="https://gizmodo.com/5948739/researchers-discover-bacteria-that-can-produce-pure-gold">Bacteria That Produces Pure Gold</a>
 
+<a href="https://en.wikipedia.org/wiki/Bacterial_cellulose">Bacterial Cellulose</a>
 
 <a href="http://www.vetfolio.com/clinical-pathology/bacterial-culture-and-antibiotic-susceptibility-testing">Bacterial Culture and Antibiotic Susceptibility Testing</a>
 
